@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-projeto-cria',
@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjetoCriaComponent implements OnInit {
 
+  @Input() projeto = {  
+    nomeProjeto: '' ,
+    mercadoProjeto: '',
+    valorProjeto: '',
+    dorProjeto: ''
+  }
+
   constructor() { }
 
   ngOnInit() {
+    
+  }
+
+
+  onSubmit() {
+    console.log("Projeto: ", this.projeto);
   }
 
 }

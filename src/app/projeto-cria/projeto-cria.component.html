@@ -6,24 +6,24 @@
           <div class="header">
             <h4 class="title">Projeto - Novo</h4>
           </div>
-          <form class="content">
+          <form #projetoForm="ngForm" class="content" (ngSubmit)="onSubmit()">
             <div class="form-group">
               <label for="nomeProjeto">Nome do Projeto</label>
-              <input type="text" class="form-control" id="nomeProjeto" placeholder="Nome do Projeto">
+              <input [(ngModel)]="projeto.nomeProjeto" #nomeProjeto="ngModel" type="text" class="form-control" id="nomeProjeto" placeholder="Nome do Projeto">
             </div>
             <div class="form-group">
               <label for="mercadoProjeto">Mercado</label>
-              <input type="text" class="form-control" id="mercadoProjeto" placeholder="Mercado">
+              <input [(ngModel)]="projeto.mercadoProjeto" type="text" class="form-control" id="mercadoProjeto" placeholder="Mercado">
             </div>
             <div class="form-group">
               <label for="valorProjeto">Valor</label>
-              <input type="text" class="form-control" id="valorProjeto" placeholder="Valor">
+              <input [(ngModel)]="projeto.valorProjeto" type="text" class="form-control" id="valorProjeto" placeholder="Valor">
             </div>
             <div class="form-group">
               <label for="dorProjeto">Dor</label>
-              <input type="text" class="form-control" id="dorProjeto" placeholder="Dor">
+              <input [(ngModel)]="projeto.dorProjeto" type="text" class="form-control" id="dorProjeto" placeholder="Dor">
             </div>
-            <button type="submit" class="btn btn-primary btn-sm">Enviar</button>
+            <button type="submit" class="btn btn-success btn-sm">Enviar</button>
             <button type="cancel" class="btn btn-primary btn-sm">Cancelar</button>
           </form>
         </div>

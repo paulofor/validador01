@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { ProjetoCriaComponent } from './projeto-cria/projeto-cria.component';
 import { ProjetoEditaComponent } from './projeto-edita/projeto-edita.component';
 import { ProjetoExibeComponent } from './projeto-exibe/projeto-exibe.component'
+import { FormsModule } from '@angular/forms'; 
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ProjetoExibeComponent } from './projeto-exibe/projeto-exibe.component'
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

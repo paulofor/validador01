@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Projeto } from   '../model/projeto';
+import { ProjetoService } from '../servicos/projeto.service';
 
 @Component({
   selector: 'app-projeto-cria',
@@ -7,14 +9,10 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ProjetoCriaComponent implements OnInit {
 
-  @Input() projeto = {  
-    nomeProjeto: '' ,
-    mercadoProjeto: '',
-    valorProjeto: '',
-    dorProjeto: ''
-  }
+ 
+  model = new Projeto('', '', '', '');
 
-  constructor() { }
+  constructor(private servico: ProjetoService) { }
 
   ngOnInit() {
     
@@ -22,7 +20,7 @@ export class ProjetoCriaComponent implements OnInit {
 
 
   onSubmit() {
-    console.log("Projeto: ", this.projeto);
+    console.log("Projeto: ", this.model);
   }
 
 }

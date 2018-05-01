@@ -9,22 +9,22 @@
           <form #projetoForm="ngForm" class="content" (ngSubmit)="onSubmit()">
             <div class="form-group">
               <label for="nomeProjeto">Nome do Projeto</label>
-              <input [(ngModel)]="projeto.nomeProjeto" #nomeProjeto="ngModel" type="text" class="form-control" id="nomeProjeto" placeholder="Nome do Projeto">
+              <input [(ngModel)]="model.nomeProjeto" #nomeProjeto="ngModel" type="text" class="form-control" name="nomeProjeto">
             </div>
             <div class="form-group">
               <label for="mercadoProjeto">Mercado</label>
-              <input [(ngModel)]="projeto.mercadoProjeto" type="text" class="form-control" id="mercadoProjeto" placeholder="Mercado">
+              <input [(ngModel)]="model.mercadoProjeto" type="text" class="form-control" name="mercadoProjeto">
             </div>
             <div class="form-group">
               <label for="valorProjeto">Valor</label>
-              <input [(ngModel)]="projeto.valorProjeto" type="text" class="form-control" id="valorProjeto" placeholder="Valor">
+              <input [(ngModel)]="model.valorProjeto" type="text" class="form-control" name="valorProjeto">
             </div>
             <div class="form-group">
               <label for="dorProjeto">Dor</label>
-              <input [(ngModel)]="projeto.dorProjeto" type="text" class="form-control" id="dorProjeto" placeholder="Dor">
+              <input [(ngModel)]="model.dorProjeto" type="text" class="form-control" name="dorProjeto">
             </div>
             <button type="submit" class="btn btn-success btn-sm">Enviar</button>
-            <button type="cancel" class="btn btn-primary btn-sm">Cancelar</button>
+            <button type="cancel" class="btn btn-cancel btn-sm">Cancelar</button>
           </form>
         </div>
       </div>

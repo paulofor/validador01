@@ -12,7 +12,8 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { ProjetoCriaComponent } from './projeto-cria/projeto-cria.component';
 import { ProjetoEditaComponent } from './projeto-edita/projeto-edita.component';
 import { ProjetoExibeComponent } from './projeto-exibe/projeto-exibe.component'
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule } from '@angular/forms';
+import { ExemploCanvasComponent } from './exemplo-canvas/exemplo-canvas.component'; 
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     ProjetosComponent,
     ProjetoCriaComponent,
     ProjetoEditaComponent,
-    ProjetoExibeComponent
+    ProjetoExibeComponent,
+    ExemploCanvasComponent
   ],
   imports: [
     BrowserModule,

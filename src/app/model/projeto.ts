@@ -1,10 +1,11 @@
 export class Projeto {
 
     constructor(
-      public nomeProjeto: string,
-      public mercadoProjeto: string,
-      public valorProjeto: string,
-      public dorProjeto: string
+      public id:number,
+      public nome: string,
+      public mercado: string,
+      public valor: string,
+      public dor: string
     ) {  }
   
   }

@@ -16,6 +16,8 @@ import { FormsModule } from '@angular/forms';
 import { ExemploCanvasComponent } from './exemplo-canvas/exemplo-canvas.component';
 import { CanvasProjetoComponent } from './canvas-projeto/canvas-projeto.component'; 
 
+import { ProjetoService } from './servicos/projeto.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +35,9 @@ import { CanvasProjetoComponent } from './canvas-projeto/canvas-projeto.componen
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    ProjetoService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

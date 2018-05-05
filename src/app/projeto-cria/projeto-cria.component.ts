@@ -10,7 +10,7 @@ import { ProjetoService } from '../servicos/projeto.service';
 export class ProjetoCriaComponent implements OnInit {
 
  
-  model = new Projeto('', '', '', '');
+  model = new Projeto(0, '', '', '','');
 
   constructor(private servico: ProjetoService) { }
 

@@ -1,29 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 
-declare interface TableData {
-  headerRow: string[];
-  dataRows: string[][];
-}
+import { ProjetoService } from '../servicos/projeto.service';
+import { Projeto } from '../model/projeto';
+
+
+
 
 @Component({
   selector: 'app-projetos',
   templateUrl: './projetos.component.html',
   styleUrls: ['./projetos.component.scss']
 })
+
 export class ProjetosComponent implements OnInit {
 
-  public tableData1: TableData;
-  public tableData2: TableData;
+  projetos: Projeto[];
 
-  constructor() { }
+  constructor(private projetoService: ProjetoService) { }
 
   ngOnInit() {
-    this.tableData1 = {
-      headerRow: [ 'Projeto', 'Mercado', 'Valor' , 'Dor'],
-      dataRows: [
-          ['Loja de Roupa Feminina Atacado', 'Empreendedoras Moda', 'Organização', 'Administração'],
-      ]
-  };
+    this.projetoService.getPratos()
+      .subscribe(projetos => this.projetos = projetos);
   }
 
 }

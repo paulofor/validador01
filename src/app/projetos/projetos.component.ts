@@ -7,6 +7,9 @@ import { Projeto } from '../shared/sdk/models';
 import { ProjetoApi } from '../shared/sdk/services/custom/Projeto';
 
 
+
+
+
 @Component({
   selector: 'app-projetos',
   templateUrl: './projetos.component.html',
@@ -20,8 +23,8 @@ export class ProjetosComponent implements OnInit {
   constructor(private projetoService: ProjetoApi) { }
 
   ngOnInit() {
-    this.projetoService.find({})
-      .subscribe(projetos => this.projetos = projetos);
+    this.projetoService.find()
+      .subscribe((projetos: Projeto[]) => this.projetos = projetos)
   }
 
 }

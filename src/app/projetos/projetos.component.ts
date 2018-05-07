@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ProjetoService } from '../servicos/projeto.service';
-import { Projeto } from '../model/projeto';
 
-
+import { LoopBackConfig } from '../shared/sdk/';
+import { Projeto } from '../shared/sdk/models';
+import { ProjetoApi } from '../shared/sdk/services/custom/Projeto';
 
 
 @Component({
@@ -16,10 +17,10 @@ export class ProjetosComponent implements OnInit {
 
   projetos: Projeto[];
 
-  constructor(private projetoService: ProjetoService) { }
+  constructor(private projetoService: ProjetoApi) { }
 
   ngOnInit() {
-    this.projetoService.getPratos()
+    this.projetoService.find({})
       .subscribe(projetos => this.projetos = projetos);
   }
 

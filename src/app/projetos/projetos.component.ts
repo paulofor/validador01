@@ -25,8 +25,10 @@ export class ProjetosComponent implements OnInit {
 
   ngOnInit() {
     this.projetoService.find()
-      .subscribe((projetos: Projeto[]) => this.projetos = projetos,
-        errmess => this.errMess = <any>errmess);
+      .subscribe((projetos: Projeto[]) => 
+        this.projetos = projetos
+       );
+    
   }
 
 }

@@ -171,6 +171,7 @@ TODO Fix Merge Conflict */
         filter(event => event instanceof HttpResponse),
         map((res: HttpResponse<any>) => {
           console.log('Status:' + res.status);
+          console.log('Corpo: ' + JSON.stringify(res.body));
           res.body}
         ),
         catchError((e) => this.errorHandler.handleError(e))

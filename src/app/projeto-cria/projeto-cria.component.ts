@@ -23,10 +23,11 @@ export class ProjetoCriaComponent implements OnInit {
 
   onSubmit() {
     console.log("Projeto: ", this.model);
-    this.servico.create(this.model, (err,obj) => {
+    this.servico
+      .create(this.model, (err,obj) => {
       console.log("Erro:" + err.message);
-    });
-
+      }).subscribe((e:any)  => console.log(JSON.stringify(e)));
+    
   }
 
 }

@@ -1,6 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Projeto } from   '../model/projeto';
+
 import { ProjetoService } from '../servicos/projeto.service';
+
+import { Projeto } from '../shared/sdk/models';
+import { ProjetoApi } from '../shared/sdk/services/custom/Projeto';
 
 @Component({
   selector: 'app-projeto-cria',
@@ -9,18 +12,21 @@ import { ProjetoService } from '../servicos/projeto.service';
 })
 export class ProjetoCriaComponent implements OnInit {
 
- 
-  model = new Projeto(0, '', '', '','');
+  model = new Projeto();
 
-  constructor(private servico: ProjetoService) { }
+  constructor(private servico: ProjetoApi) { }
 
   ngOnInit() {
-    
+
   }
 
 
   onSubmit() {
     console.log("Projeto: ", this.model);
+    this.servico.create(this.model, (err,obj) => {
+      console.log("Erro:" + err.message);
+    });
+
   }
 
 }

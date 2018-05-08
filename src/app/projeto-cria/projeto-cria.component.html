@@ -8,20 +8,20 @@
           </div>
           <form #projetoForm="ngForm" class="content" (ngSubmit)="onSubmit()">
             <div class="form-group">
-              <label for="nomeProjeto">Nome do Projeto</label>
-              <input [(ngModel)]="model.nomeProjeto" #nomeProjeto="ngModel" type="text" class="form-control" name="nomeProjeto">
+              <label for="nome">Nome do Projeto</label>
+              <input [(ngModel)]="model.nome" #nome="ngModel" type="text" class="form-control" name="nomeProjeto">
             </div>
             <div class="form-group">
-              <label for="mercadoProjeto">Mercado</label>
-              <input [(ngModel)]="model.mercadoProjeto" type="text" class="form-control" name="mercadoProjeto">
+              <label for="mercado">Mercado</label>
+              <input [(ngModel)]="model.mercado" type="text" class="form-control" name="mercado">
             </div>
             <div class="form-group">
-              <label for="valorProjeto">Valor</label>
-              <input [(ngModel)]="model.valorProjeto" type="text" class="form-control" name="valorProjeto">
+              <label for="valor">Valor</label>
+              <input [(ngModel)]="model.valor" type="text" class="form-control" name="valor">
             </div>
             <div class="form-group">
-              <label for="dorProjeto">Dor</label>
-              <input [(ngModel)]="model.dorProjeto" type="text" class="form-control" name="dorProjeto">
+              <label for="dor">Dor</label>
+              <input [(ngModel)]="model.dor" type="text" class="form-control" name="dor">
             </div>
             <button type="submit" class="btn btn-success btn-sm">Enviar</button>
             <button type="cancel" class="btn btn-cancel btn-sm">Cancelar</button>

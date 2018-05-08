@@ -162,6 +162,10 @@ TODO Fix Merge Conflict */
         params         : httpParams,
         withCredentials: LoopBackConfig.getRequestOptionsCredentials()
       });
+      console.log("Request: " + request.urlWithParams);
+      console.log("Metodo" + request.method);
+      console.log("Body:" + JSON.stringify(request.body));
+    )
       return this.http.request(request).pipe(
         filter(event => event instanceof HttpResponse),
         map((res: HttpResponse<any>) => res.body),

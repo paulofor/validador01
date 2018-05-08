@@ -19,12 +19,14 @@ import { ProjetoApi } from '../shared/sdk/services/custom/Projeto';
 export class ProjetosComponent implements OnInit {
 
   projetos: Projeto[];
+  errMess: string;
 
   constructor(private projetoService: ProjetoApi) { }
 
   ngOnInit() {
     this.projetoService.find()
-      .subscribe((projetos: Projeto[]) => this.projetos = projetos)
+      .subscribe((projetos: Projeto[]) => this.projetos = projetos,
+        errmess => this.errMess = <any>errmess);
   }
 
 }

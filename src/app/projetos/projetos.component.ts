@@ -34,7 +34,7 @@ export class ProjetosComponent implements OnInit {
   }
 
   goCanvas(id: number){        
-    this.router.navigate(['projetoCanvas']);
+    this.router.navigate(['projetoCanvas/' + id]);
   }
 
 }

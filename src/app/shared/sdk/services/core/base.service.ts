@@ -169,11 +169,7 @@ TODO Fix Merge Conflict */
     
       return this.http.request(request).pipe(
         filter(event => event instanceof HttpResponse),
-        map((res: HttpResponse<any>) => {
-          console.log('Status:' + res.status);
-          console.log('Corpo: ' + JSON.stringify(res.body));
-          res.body}
-        ),
+        map((res: HttpResponse<any>) => res.body),
         catchError((e) => this.errorHandler.handleError(e))
         
       );

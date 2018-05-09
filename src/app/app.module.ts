@@ -42,8 +42,6 @@ import { InternalStorage } from './shared/sdk/storage/storage.swaps';
     AppRoutingModule,
     FormsModule,
     HttpClientModule 
-   
-
   ],
   providers: [
     ProjetoService,

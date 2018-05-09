@@ -4,6 +4,7 @@ import { ProjetoService } from '../servicos/projeto.service';
 
 import { Projeto } from '../shared/sdk/models';
 import { ProjetoApi } from '../shared/sdk/services/custom/Projeto';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-projeto-cria',
@@ -14,7 +15,8 @@ export class ProjetoCriaComponent implements OnInit {
 
   model = new Projeto();
 
-  constructor(private servico: ProjetoApi) { }
+  constructor(private servico: ProjetoApi,
+              private router: Router) { }
 
   ngOnInit() {
 
@@ -26,8 +28,10 @@ export class ProjetoCriaComponent implements OnInit {
     this.servico
       .create(this.model, (err,obj) => {
       console.log("Erro:" + err.message);
-      }).subscribe((e:any)  => console.log(JSON.stringify(e)));
-    
+      }).subscribe((e:any)  => { 
+        console.log(JSON.stringify(e));
+        this.router.navigate(['projetos']);
+      });
   }
 
 }

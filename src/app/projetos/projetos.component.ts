@@ -2,11 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 import { ProjetoService } from '../servicos/projeto.service';
 
-import { LoopBackConfig } from '../shared/sdk/';
 import { Projeto } from '../shared/sdk/models';
 import { ProjetoApi } from '../shared/sdk/services/custom/Projeto';
 
-
+import { Router } from '@angular/router';
 
 
 
@@ -21,7 +20,10 @@ export class ProjetosComponent implements OnInit {
   projetos: Projeto[];
   errMess: string;
 
-  constructor(private projetoService: ProjetoApi) { }
+  constructor(private projetoService: ProjetoApi,
+              private router: Router) { 
+
+  }
 
   ngOnInit() {
     this.projetoService.find()
@@ -29,6 +31,10 @@ export class ProjetosComponent implements OnInit {
         this.projetos = projetos
        );
     
+  }
+
+  goCanvas(id: number){        
+    this.router.navigate(['projetoCanvas']);
   }
 
 }

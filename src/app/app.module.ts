@@ -24,6 +24,7 @@ import { SocketDriver } from './shared/sdk/sockets/socket.driver';
 import { SDKModels } from './shared/sdk/services/custom/SDKModels';
 import { LoopBackAuth } from './shared/sdk/services/core/auth.service';
 import { InternalStorage } from './shared/sdk/storage/storage.swaps';
+import { ProjetoCanvasCriaComponent } from './projeto-canvas-cria/projeto-canvas-cria.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { InternalStorage } from './shared/sdk/storage/storage.swaps';
     ProjetoEditaComponent,
     ProjetoExibeComponent,
     ExemploCanvasComponent,
-    CanvasProjetoComponent
+    CanvasProjetoComponent,
+    ProjetoCanvasCriaComponent
   ],
   imports: [
     BrowserModule,

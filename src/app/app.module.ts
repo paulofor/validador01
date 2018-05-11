@@ -28,6 +28,7 @@ import { ProjetoCanvasCriaComponent } from './projeto-canvas-cria/projeto-canvas
 
 import {MatDialogModule} from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CanvasProjeto2Component } from './canvas-projeto-2/canvas-projeto-2.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ProjetoExibeComponent,
     ExemploCanvasComponent,
     CanvasProjetoComponent,
-    ProjetoCanvasCriaComponent
+    ProjetoCanvasCriaComponent,
+    CanvasProjeto2Component
   ],
   entryComponents: [ProjetoCanvasCriaComponent],
   imports: [

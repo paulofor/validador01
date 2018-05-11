@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { } from '../shared/sdk/services/custom/'
+
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 @Component({
   selector: 'app-projeto-canvas-cria',
@@ -9,9 +10,12 @@ import { } from '../shared/sdk/services/custom/'
 })
 export class ProjetoCanvasCriaComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialogRef: MatDialogRef<ProjetoCanvasCriaComponent>) { }
 
   ngOnInit() {
   }
 
+  closeDialog() {
+    this.dialogRef.close('Pizza!');
+  }
 }

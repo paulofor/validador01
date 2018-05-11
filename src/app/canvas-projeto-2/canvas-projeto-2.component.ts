@@ -11,13 +11,12 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { BASE_URL, API_VERSION } from '../shared/sdk/base.url'; 
 import { LoopBackConfig } from '../shared/sdk/';
 
-
 @Component({
-  selector: 'app-canvas-projeto',
-  templateUrl: './canvas-projeto.component.html',
-  styleUrls: ['./canvas-projeto.component.scss']
+  selector: 'app-canvas-projeto-2',
+  templateUrl: './canvas-projeto-2.component.html',
+  styleUrls: ['./canvas-projeto-2.component.scss']
 })
-export class CanvasProjetoComponent implements OnInit {
+export class CanvasProjeto2Component implements OnInit {
 
   projeto: Projeto;
   errMess: string;
@@ -32,21 +31,6 @@ export class CanvasProjetoComponent implements OnInit {
   ngOnInit() {
     LoopBackConfig.setBaseURL(BASE_URL);
     LoopBackConfig.setApiVersion(API_VERSION);
-    carregaDados();
-
-  }
-
-  openDialog() {
-    this.dialog.open(ProjetoCanvasCriaComponent, {height: '400px', width: '600px' , 
-      data: {
-        projeto: ''
-      }});
-    this.dialog.afterClosed().subscribe(result => {
-      carregaDados();
-    });
-  }
-  
-  carregaDados() {
     this.route.params.subscribe((params: Params) => {
       let userId = params['id'];
       console.log('Id: ' , userId);
@@ -56,7 +40,15 @@ export class CanvasProjetoComponent implements OnInit {
           this.projeto = valor;
         })
     });
+
   }
- 
+
+  openDialog() {
+    this.dialog.open(ProjetoCanvasCriaComponent, {
+      data: {
+        animal: 'panda'
+      }
+    });
+  }
 
 }

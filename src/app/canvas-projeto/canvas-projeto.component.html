@@ -1,12 +1,9 @@
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=1024,initial-scale=1,maximum-scale=1">
+
 
   <link rel="stylesheet" href="assets/css/vendor.36bb0ebb.css">
   <link rel="stylesheet" href="assets/css/main.b03f2ea9.css">
-</head>
 
-<body class="dashboard" style="overflow: auto; padding-top: 0px;">
+<div class="dashboard" style="padding-top: 0px;">
   <div class="canvas-container" id="canvas">
     <header class="header-canvas-core">
       <input type="text" placeholder="Título do Canvas" class="canvas-input-title" value="xxx">
@@ -26,7 +23,7 @@
                 </button>
               </li>
             </ul>
-            <button class="add-postit"  (click)="chamaProjetoCanvasCria()">+ Adicionar post-it</button>
+            <button class="add-postit" (click)="openDialog()" >+ Adicionar post-it</button>
           </div>
         </div>
         <section class="canvas-column" >
@@ -176,4 +173,4 @@
       </div>
     </div>
   </div>
-</body>
+</div>

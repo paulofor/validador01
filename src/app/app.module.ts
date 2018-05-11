@@ -26,6 +26,9 @@ import { LoopBackAuth } from './shared/sdk/services/core/auth.service';
 import { InternalStorage } from './shared/sdk/storage/storage.swaps';
 import { ProjetoCanvasCriaComponent } from './projeto-canvas-cria/projeto-canvas-cria.component';
 
+import {MatDialogModule} from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,21 +42,24 @@ import { ProjetoCanvasCriaComponent } from './projeto-canvas-cria/projeto-canvas
     CanvasProjetoComponent,
     ProjetoCanvasCriaComponent
   ],
+  entryComponents: [ProjetoCanvasCriaComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule 
+    HttpClientModule ,
+    MatDialogModule,
+    BrowserAnimationsModule
   ],
   providers: [
     ProjetoService,
     ProjetoApi,
     HttpClient,
-    SocketConnection,
+    SocketConnection, 
     SocketDriver,
     SDKModels,
     LoopBackAuth,
-    InternalStorage
+    InternalStorage,
 
   ],
   bootstrap: [AppComponent]

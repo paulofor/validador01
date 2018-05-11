@@ -9,7 +9,7 @@
 <body class="dashboard" style="overflow: auto; padding-top: 0px;">
   <div class="canvas-container" id="canvas">
     <header class="header-canvas-core">
-      <input type="text" placeholder="Título do Canvas" class="canvas-input-title" value="{{projeto.nome}}">
+      <input type="text" placeholder="Título do Canvas" class="canvas-input-title" value="xxx">
     </header>
     <div class="canvas-core-container" >
       <div class="canvas-core" >
@@ -21,12 +21,12 @@
             <ul class="canvas-posts" >
               <li class="canvas-postit yellow" >
                 <p class="postit-name">Google</p>
-                <button class="btn" >
+                <button class="btn">
                   <span class="s s-pencil"></span>
                 </button>
               </li>
             </ul>
-            <button class="add-postit">+ Adicionar post-it</button>
+            <button class="add-postit"  (click)="chamaProjetoCanvasCria()">+ Adicionar post-it</button>
           </div>
         </div>
         <section class="canvas-column" >

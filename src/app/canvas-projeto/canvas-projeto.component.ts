@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 import { ActivatedRoute, Params } from '@angular/router';
 
 import { ProjetoCanvasCriaComponent } from '../projeto-canvas-cria/projeto-canvas-cria.component'; 
-import { MdDialog, MdDialogRef } from '@angular/material';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 @Component({
   selector: 'app-canvas-projeto',
@@ -20,7 +20,7 @@ export class CanvasProjetoComponent implements OnInit {
   errMess: string;
 
 
-  constructor(public dialog: MdDialog, private projetoService: ProjetoApi,
+  constructor(public dialog: MatDialog, private projetoService: ProjetoApi,
     private router: Router,
     private route: ActivatedRoute) {
 
@@ -41,7 +41,9 @@ export class CanvasProjetoComponent implements OnInit {
   }
 
   chamaProjetoCanvasCria() {
-    let loginRef = this.dialog.open(ProjetoCanvasCriaComponent, {width: '500px', height: '450px'});
+    let dialogRef = this.dialog.open(ProjetoCanvasCriaComponent, {width: '500px', height: '450px'});
+
+ 
     /*
     loginRef.afterClosed()
       .subscribe(result => {

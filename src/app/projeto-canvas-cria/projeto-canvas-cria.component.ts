@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 
+import { Projeto } from '../shared/sdk/models';
+import { ProjetoApi } from '../shared/sdk/services/custom/Projeto';
 
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
@@ -10,9 +12,21 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 })
 export class ProjetoCanvasCriaComponent implements OnInit {
 
-  constructor(public dialogRef: MatDialogRef<ProjetoCanvasCriaComponent>) { }
+  projeto : Projeto;
+  tipo: string;
+
+  constructor(public dialogRef: MatDialogRef<ProjetoCanvasCriaComponent>
+    ,@Inject(MAT_DIALOG_DATA) public data:any) { }
+
+
+  onSubmit() {
+    
+  }
 
   ngOnInit() {
+    console.log('Data: ' , JSON.stringify(this.data));
+    this.projeto = this.data.projeto;
+    this.tipo = this.data.tipo;
   }
 
   closeDialog() {

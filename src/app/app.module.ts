@@ -30,6 +30,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CanvasProjeto2Component } from './canvas-projeto-2/canvas-projeto-2.component';
 
+import { MatFormFieldModule, MatInputModule, MatButtonModule } from '@angular/material';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +53,10 @@ import { CanvasProjeto2Component } from './canvas-projeto-2/canvas-projeto-2.com
     FormsModule,
     HttpClientModule ,
     MatDialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule
   ],
   providers: [
     ProjetoService,

@@ -7,10 +7,10 @@ import { Router } from '@angular/router';
 import { ActivatedRoute, Params } from '@angular/router';
 
 import { ProjetoCanvasCriaComponent } from '../projeto-canvas-cria/projeto-canvas-cria.component'; 
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { BASE_URL, API_VERSION } from '../shared/sdk/base.url'; 
 import { LoopBackConfig } from '../shared/sdk/';
-
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @Component({
   selector: 'app-canvas-projeto',
@@ -32,18 +32,18 @@ export class CanvasProjetoComponent implements OnInit {
   ngOnInit() {
     LoopBackConfig.setBaseURL(BASE_URL);
     LoopBackConfig.setApiVersion(API_VERSION);
-    carregaDados();
+    this.carregaDados();
 
   }
 
-  openDialog() {
-    this.dialog.open(ProjetoCanvasCriaComponent, {height: '400px', width: '600px' , 
+  openDialog(tipoArea) {
+    console.log('Tipo:' , tipoArea)
+    this.dialog.open(ProjetoCanvasCriaComponent, {
+      width: '600px' , 
       data: {
-        projeto: ''
+        projeto: this.projeto,
+        tipo: tipoArea
       }});
-    this.dialog.afterClosed().subscribe(result => {
-      carregaDados();
-    });
   }
   
   carregaDados() {

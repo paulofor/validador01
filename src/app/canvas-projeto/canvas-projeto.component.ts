@@ -8,7 +8,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 
 import { ProjetoCanvasCriaComponent } from '../projeto-canvas-cria/projeto-canvas-cria.component'; 
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
-import { BASE_URL, API_VERSION } from '../shared/sdk/base.url'; 
+import { BASE_URL, API_VERSION } from '../constantes/base.url';
 import { LoopBackConfig } from '../shared/sdk/';
 import {MatFormFieldModule} from '@angular/material/form-field';
 

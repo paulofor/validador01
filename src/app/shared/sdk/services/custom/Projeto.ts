@@ -12,7 +12,7 @@ import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
 import { Projeto } from '../../models/Projeto';
 import { SocketConnection } from '../../sockets/socket.connections';
-import { Projeto-Canvas } from '../../models/Projeto-Canvas';
+import { ProjetoCanvas } from '../../models/ProjetoCanvas';
 
 
 /**
@@ -32,11 +32,11 @@ export class ProjetoApi extends BaseLoopBackApi {
   }
 
   /**
-   * Find a related item by id for projeto-Canvases.
+   * Find a related item by id for ProjetoCanvasRel.
    *
    * @param {any} id projeto id
    *
-   * @param {any} fk Foreign key for projeto-Canvases
+   * @param {any} fk Foreign key for ProjetoCanvasRel
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -47,10 +47,10 @@ export class ProjetoApi extends BaseLoopBackApi {
    * This usually means the response is a `Projeto` object.)
    * </em>
    */
-  public findByIdProjeto-Canvases(id: any, fk: any, customHeaders?: Function): Observable<any> {
+  public findByIdProjetoCanvasRel(id: any, fk: any, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/projetos/:id/projeto-Canvases/:fk";
+    "/projetos/:id/ProjetoCanvasRel/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -62,11 +62,11 @@ export class ProjetoApi extends BaseLoopBackApi {
   }
 
   /**
-   * Delete a related item by id for projeto-Canvases.
+   * Delete a related item by id for ProjetoCanvasRel.
    *
    * @param {any} id projeto id
    *
-   * @param {any} fk Foreign key for projeto-Canvases
+   * @param {any} fk Foreign key for ProjetoCanvasRel
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -74,10 +74,10 @@ export class ProjetoApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public destroyByIdProjeto-Canvases(id: any, fk: any, customHeaders?: Function): Observable<any> {
+  public destroyByIdProjetoCanvasRel(id: any, fk: any, customHeaders?: Function): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/projetos/:id/projeto-Canvases/:fk";
+    "/projetos/:id/ProjetoCanvasRel/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -89,11 +89,11 @@ export class ProjetoApi extends BaseLoopBackApi {
   }
 
   /**
-   * Update a related item by id for projeto-Canvases.
+   * Update a related item by id for ProjetoCanvasRel.
    *
    * @param {any} id projeto id
    *
-   * @param {any} fk Foreign key for projeto-Canvases
+   * @param {any} fk Foreign key for ProjetoCanvasRel
    *
    * @param {object} data Request data.
    *
@@ -108,10 +108,10 @@ export class ProjetoApi extends BaseLoopBackApi {
    * This usually means the response is a `Projeto` object.)
    * </em>
    */
-  public updateByIdProjeto-Canvases(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
+  public updateByIdProjetoCanvasRel(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PUT";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/projetos/:id/projeto-Canvases/:fk";
+    "/projetos/:id/ProjetoCanvasRel/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -125,7 +125,7 @@ export class ProjetoApi extends BaseLoopBackApi {
   }
 
   /**
-   * Queries projeto-Canvases of projeto.
+   * Queries ProjetoCanvasRel of projeto.
    *
    * @param {any} id projeto id
    *
@@ -140,10 +140,10 @@ export class ProjetoApi extends BaseLoopBackApi {
    * This usually means the response is a `Projeto` object.)
    * </em>
    */
-  public getProjeto-Canvases(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
+  public getProjetoCanvasRel(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/projetos/:id/projeto-Canvases";
+    "/projetos/:id/ProjetoCanvasRel";
     let _routeParams: any = {
       id: id
     };
@@ -155,7 +155,7 @@ export class ProjetoApi extends BaseLoopBackApi {
   }
 
   /**
-   * Creates a new instance in projeto-Canvases of this model.
+   * Creates a new instance in ProjetoCanvasRel of this model.
    *
    * @param {any} id projeto id
    *
@@ -172,10 +172,10 @@ export class ProjetoApi extends BaseLoopBackApi {
    * This usually means the response is a `Projeto` object.)
    * </em>
    */
-  public createProjeto-Canvases(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
+  public createProjetoCanvasRel(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/projetos/:id/projeto-Canvases";
+    "/projetos/:id/ProjetoCanvasRel";
     let _routeParams: any = {
       id: id
     };
@@ -188,7 +188,7 @@ export class ProjetoApi extends BaseLoopBackApi {
   }
 
   /**
-   * Deletes all projeto-Canvases of this model.
+   * Deletes all ProjetoCanvasRel of this model.
    *
    * @param {any} id projeto id
    *
@@ -198,10 +198,10 @@ export class ProjetoApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public deleteProjeto-Canvases(id: any, customHeaders?: Function): Observable<any> {
+  public deleteProjetoCanvasRel(id: any, customHeaders?: Function): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/projetos/:id/projeto-Canvases";
+    "/projetos/:id/ProjetoCanvasRel";
     let _routeParams: any = {
       id: id
     };
@@ -212,7 +212,7 @@ export class ProjetoApi extends BaseLoopBackApi {
   }
 
   /**
-   * Counts projeto-Canvases of projeto.
+   * Counts ProjetoCanvasRel of projeto.
    *
    * @param {any} id projeto id
    *
@@ -226,10 +226,10 @@ export class ProjetoApi extends BaseLoopBackApi {
    *
    *  - `count` – `{number}` - 
    */
-  public countProjeto-Canvases(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
+  public countProjetoCanvasRel(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/projetos/:id/projeto-Canvases/count";
+    "/projetos/:id/ProjetoCanvasRel/count";
     let _routeParams: any = {
       id: id
     };
@@ -303,7 +303,7 @@ export class ProjetoApi extends BaseLoopBackApi {
   }
 
   /**
-   * Creates a new instance in projeto-Canvases of this model.
+   * Creates a new instance in ProjetoCanvasRel of this model.
    *
    * @param {any} id projeto id
    *
@@ -320,10 +320,10 @@ export class ProjetoApi extends BaseLoopBackApi {
    * This usually means the response is a `Projeto` object.)
    * </em>
    */
-  public createManyProjeto-Canvases(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
+  public createManyProjetoCanvasRel(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/projetos/:id/projeto-Canvases";
+    "/projetos/:id/ProjetoCanvasRel";
     let _routeParams: any = {
       id: id
     };

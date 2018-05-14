@@ -1,36 +1,38 @@
 /* tslint:disable */
 
 declare var Object: any;
-export interface Projeto-CanvasInterface {
+export interface ProjetoCanvasInterface {
   "id"?: number;
   "descricao": string;
-  "area": string;
+  "idProjeto": number;
+  "tipo": string;
   "projetoId"?: number;
 }
 
-export class Projeto-Canvas implements Projeto-CanvasInterface {
+export class ProjetoCanvas implements ProjetoCanvasInterface {
   "id": number;
   "descricao": string;
-  "area": string;
+  "idProjeto": number;
+  "tipo": string;
   "projetoId": number;
-  constructor(data?: Projeto-CanvasInterface) {
+  constructor(data?: ProjetoCanvasInterface) {
     Object.assign(this, data);
   }
   /**
    * The name of the model represented by this $resource,
-   * i.e. `Projeto-Canvas`.
+   * i.e. `ProjetoCanvas`.
    */
   public static getModelName() {
-    return "Projeto-Canvas";
+    return "ProjetoCanvas";
   }
   /**
   * @method factory
   * @author Jonathan Casarrubias
   * @license MIT
-  * This method creates an instance of Projeto-Canvas for dynamic purposes.
+  * This method creates an instance of ProjetoCanvas for dynamic purposes.
   **/
-  public static factory(data: Projeto-CanvasInterface): Projeto-Canvas{
-    return new Projeto-Canvas(data);
+  public static factory(data: ProjetoCanvasInterface): ProjetoCanvas{
+    return new ProjetoCanvas(data);
   }
   /**
   * @method getModelDefinition
@@ -41,9 +43,9 @@ export class Projeto-Canvas implements Projeto-CanvasInterface {
   **/
   public static getModelDefinition() {
     return {
-      name: 'Projeto-Canvas',
-      plural: 'Projetos-Canvas',
-      path: 'Projetos-Canvas',
+      name: 'ProjetoCanvas',
+      plural: 'ProjetoCanvases',
+      path: 'ProjetoCanvases',
       idName: 'id',
       properties: {
         "id": {
@@ -54,8 +56,12 @@ export class Projeto-Canvas implements Projeto-CanvasInterface {
           name: 'descricao',
           type: 'string'
         },
-        "area": {
-          name: 'area',
+        "idProjeto": {
+          name: 'idProjeto',
+          type: 'number'
+        },
+        "tipo": {
+          name: 'tipo',
           type: 'string'
         },
         "projetoId": {

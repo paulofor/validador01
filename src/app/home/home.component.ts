@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { BASE_URL, API_VERSION } from '../shared/sdk/base.url'; 
+import { BASE_URL, API_VERSION } from '../constantes/base.url';
 import { LoopBackConfig } from '../shared/sdk/';
+
 
 @Component({
   selector: 'app-home',

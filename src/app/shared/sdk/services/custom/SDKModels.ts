@@ -2,7 +2,7 @@
 import { Injectable } from '@angular/core';
 import { User } from '../../models/User';
 import { Projeto } from '../../models/Projeto';
-import { Projeto-Canvas } from '../../models/Projeto-Canvas';
+import { ProjetoCanvas } from '../../models/ProjetoCanvas';
 
 export interface Models { [name: string]: any }
 
@@ -12,7 +12,7 @@ export class SDKModels {
   private models: Models = {
     User: User,
     Projeto: Projeto,
-    Projeto-Canvas: Projeto-Canvas,
+    ProjetoCanvas: ProjetoCanvas,
     
   };
 

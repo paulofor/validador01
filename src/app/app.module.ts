@@ -18,6 +18,7 @@ import { CanvasProjetoComponent } from './canvas-projeto/canvas-projeto.componen
 
 import { ProjetoService } from './servicos/projeto.service';
 import { ProjetoApi } from './shared/sdk/services/custom/Projeto';
+import { ProjetoCanvasApi } from './shared/sdk/services/custom/ProjetoCanvas';
 import { HttpClient, HttpResponse, HttpClientModule } from '@angular/common/http';
 import { SocketConnection } from './shared/sdk/sockets/socket.connections';
 import { SocketDriver } from './shared/sdk/sockets/socket.driver';
@@ -61,6 +62,7 @@ import { MatFormFieldModule, MatInputModule, MatButtonModule } from '@angular/ma
   providers: [
     ProjetoService,
     ProjetoApi,
+    ProjetoCanvasApi,
     HttpClient,
     SocketConnection, 
     SocketDriver,

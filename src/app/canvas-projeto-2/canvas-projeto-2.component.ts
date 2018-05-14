@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 
 import { Projeto } from '../shared/sdk/models';
 import { ProjetoApi } from '../shared/sdk/services/custom/Projeto';
+import { ProjetoCanvas } from '../shared/sdk/models';
 
 import { Router } from '@angular/router';
 import { ActivatedRoute, Params } from '@angular/router';
 
 import { ProjetoCanvasCriaComponent } from '../projeto-canvas-cria/projeto-canvas-cria.component'; 
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
-import { BASE_URL, API_VERSION } from '../shared/sdk/base.url'; 
+import { BASE_URL, API_VERSION } from '../constantes/base.url';
 import { LoopBackConfig } from '../shared/sdk/';
 
 @Component({
@@ -20,6 +21,8 @@ export class CanvasProjeto2Component implements OnInit {
 
   projeto: Projeto;
   errMess: string;
+
+  listaParceiro: ProjetoCanvas[];
 
 
   constructor(private dialog: MatDialog, private projetoService: ProjetoApi,
@@ -41,6 +44,10 @@ export class CanvasProjeto2Component implements OnInit {
         })
     });
 
+  }
+
+  carregaParceiro() {
+    this.projetoService.findByIdProjetoCanvasRel
   }
 
   openDialog() {

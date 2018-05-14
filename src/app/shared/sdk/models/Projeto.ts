@@ -1,6 +1,6 @@
 /* tslint:disable */
 import {
-  Projeto-Canvas
+  ProjetoCanvas
 } from '../index';
 
 declare var Object: any;
@@ -10,7 +10,7 @@ export interface ProjetoInterface {
   "mercado"?: string;
   "id"?: number;
   "dor"?: string;
-  projeto-Canvases?: Projeto-Canvas[];
+  ProjetoCanvasRel?: ProjetoCanvas[];
 }
 
 export class Projeto implements ProjetoInterface {
@@ -19,7 +19,7 @@ export class Projeto implements ProjetoInterface {
   "mercado": string;
   "id": number;
   "dor": string;
-  projeto-Canvases: Projeto-Canvas[];
+  ProjetoCanvasRel: ProjetoCanvas[];
   constructor(data?: ProjetoInterface) {
     Object.assign(this, data);
   }
@@ -75,10 +75,10 @@ export class Projeto implements ProjetoInterface {
         },
       },
       relations: {
-        projeto-Canvases: {
-          name: 'projeto-Canvases',
-          type: 'Projeto-Canvas[]',
-          model: 'Projeto-Canvas',
+        ProjetoCanvasRel: {
+          name: 'ProjetoCanvasRel',
+          type: 'ProjetoCanvas[]',
+          model: 'ProjetoCanvas',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'projetoId'

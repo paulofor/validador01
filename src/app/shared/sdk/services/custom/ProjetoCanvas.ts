@@ -10,15 +10,15 @@ import { ErrorHandler } from '../core/error.service';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
-import { Projeto-Canvas } from '../../models/Projeto-Canvas';
+import { ProjetoCanvas } from '../../models/ProjetoCanvas';
 import { SocketConnection } from '../../sockets/socket.connections';
 
 
 /**
- * Api services for the `Projeto-Canvas` model.
+ * Api services for the `ProjetoCanvas` model.
  */
 @Injectable()
-export class Projeto-CanvasApi extends BaseLoopBackApi {
+export class ProjetoCanvasApi extends BaseLoopBackApi {
 
   constructor(
     @Inject(HttpClient) protected http: HttpClient,
@@ -43,13 +43,13 @@ export class Projeto-CanvasApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Projeto-Canvas` object.)
+   * This usually means the response is a `ProjetoCanvas` object.)
    * </em>
    */
   public patchOrCreate(data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Projetos-Canvas";
+    "/ProjetoCanvases";
     let _routeParams: any = {};
     let _postBody: any = {
       data: data
@@ -62,7 +62,7 @@ export class Projeto-CanvasApi extends BaseLoopBackApi {
   /**
    * Patch attributes for a model instance and persist it into the data source.
    *
-   * @param {any} id Projeto-Canvas id
+   * @param {any} id ProjetoCanvas id
    *
    * @param {object} data Request data.
    *
@@ -74,13 +74,13 @@ export class Projeto-CanvasApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Projeto-Canvas` object.)
+   * This usually means the response is a `ProjetoCanvas` object.)
    * </em>
    */
   public patchAttributes(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Projetos-Canvas/:id";
+    "/ProjetoCanvases/:id";
     let _routeParams: any = {
       id: id
     };
@@ -94,9 +94,9 @@ export class Projeto-CanvasApi extends BaseLoopBackApi {
 
   /**
    * The name of the model represented by this $resource,
-   * i.e. `Projeto-Canvas`.
+   * i.e. `ProjetoCanvas`.
    */
   public getModelName() {
-    return "Projeto-Canvas";
+    return "ProjetoCanvas";
   }
 }

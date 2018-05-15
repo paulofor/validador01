@@ -3,6 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { Projeto } from '../shared/sdk/models';
 import { ProjetoApi } from '../shared/sdk/services/custom/Projeto';
 
+import { ProjetoCanvas } from '../shared/sdk/models';
+import { ProjetoCanvasApi } from '../shared/sdk/services/custom/ProjetoCanvas';
+
 import { Router } from '@angular/router';
 import { ActivatedRoute, Params } from '@angular/router';
 
@@ -22,16 +25,21 @@ export class CanvasProjetoComponent implements OnInit {
   projeto: Projeto;
   errMess: string;
 
+  parceiros: ProjetoCanvas[] = [];
+
 
   constructor(private dialog: MatDialog, private projetoService: ProjetoApi,
+    private projetoCanvasService: ProjetoCanvasApi,
     private router: Router,
     private route: ActivatedRoute) {
 
   }
 
   ngOnInit() {
+    console.log('CanvasProjetoComponent');
     LoopBackConfig.setBaseURL(BASE_URL);
     LoopBackConfig.setApiVersion(API_VERSION);
+    this.parceiros = [];
     this.carregaDados();
 
   }
@@ -54,8 +62,26 @@ export class CanvasProjetoComponent implements OnInit {
         .subscribe((valor : Projeto) => {
           console.log('Item: ' + JSON.stringify(valor));
           this.projeto = valor;
+          this.carregaParceiro();
         })
     });
+    
+  }
+
+  carregaParceiro() {
+    this.projetoService.getProjetoCanvasRel(this.projeto.id)
+    .subscribe((valor : ProjetoCanvas[]) => {
+      console.log('Lista: ' + JSON.stringify(valor));
+      this.parceiros = valor;
+    })
+
+    /*
+    this.projetoCanvasService.find({where: {idProjeto: this.projeto.id}})
+      .subscribe((valor : ProjetoCanvas[]) => {
+        console.log('Lista: ' + JSON.stringify(valor));
+        this.parceiros = valor;
+      })
+      */
   }
  
 

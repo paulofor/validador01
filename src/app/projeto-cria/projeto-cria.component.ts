@@ -19,7 +19,7 @@ export class ProjetoCriaComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
-
+    
   }
 
 

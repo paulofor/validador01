@@ -16,12 +16,14 @@
               <h3 class="board-title red">Parceiros Chave</h3>
             </header>
             <ul class="canvas-posts" >
-              <li class="canvas-postit yellow" >
-                <p class="postit-name">Google</p>
+              
+              <li class="canvas-postit yellow" *ngFor="let projetoCanvas of parceiros"  >
+                <p class="postit-name">{{projetoCanvas.descricao}}</p>
                 <button class="btn">
                   <span class="s s-pencil"></span>
                 </button>
               </li>
+            
             </ul>
             <button class="add-postit" (click)="openDialog('PARCEIRO')" >+ Adicionar post-it</button>
           </div>
@@ -108,14 +110,15 @@
               <h3 class="board-title bluegreen" >Segmentos de Mercado</h3>
             </header>
             <ul class="canvas-posts">
+              <!-- -->
               <li class="canvas-postit yellow">
-                
                 <p class="postit-name" >Acompanha preços e entende que existe uma pequena diferença de preço importa
                 </p>
                 <button class="btn" >
                   <span class="s s-pencil" ></span>
                 </button>
               </li>
+              <!-- -->
               <li class="canvas-postit yellow" >
                 <p class="postit-name" >Quem tem paciência para comprar no melhor momento</p>
                 <button class="btn" >

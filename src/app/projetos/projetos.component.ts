@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { ProjetoService } from '../servicos/projeto.service';
 
-import { Projeto } from '../shared/sdk/models';
-import { ProjetoApi } from '../shared/sdk/services/custom/Projeto';
+import { ProjetoMySql } from '../shared/sdk/models';
+import { ProjetoMySqlApi } from '../shared/sdk/services/custom/ProjetoMySql';
 
 import { Router } from '@angular/router';
 
@@ -17,17 +17,17 @@ import { Router } from '@angular/router';
 
 export class ProjetosComponent implements OnInit {
 
-  projetos: Projeto[];
+  projetos: ProjetoMySql[];
   errMess: string;
 
-  constructor(private projetoService: ProjetoApi,
+  constructor(private projetoService: ProjetoMySqlApi,
               private router: Router) { 
 
   }
 
   ngOnInit() {
     this.projetoService.find()
-      .subscribe((projetos: Projeto[]) => 
+      .subscribe((projetos: ProjetoMySql[]) => 
         this.projetos = projetos
        );
     

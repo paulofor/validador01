@@ -51,6 +51,8 @@ import { RealTime } from './services/core/real.time';
 import { UserApi } from './services/custom/User';
 import { ProjetoApi } from './services/custom/Projeto';
 import { ProjetoCanvasApi } from './services/custom/ProjetoCanvas';
+import { ProjetoMySqlApi } from './services/custom/ProjetoMySql';
+import { ProjetoCanvasMySqlApi } from './services/custom/ProjetoCanvasMySql';
 /**
 * @module SDKBrowserModule
 * @description
@@ -84,6 +86,8 @@ export class SDKBrowserModule {
         UserApi,
         ProjetoApi,
         ProjetoCanvasApi,
+        ProjetoMySqlApi,
+        ProjetoCanvasMySqlApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser },
         { provide: SocketDriver, useClass: SocketBrowser }

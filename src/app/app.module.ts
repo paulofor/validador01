@@ -19,6 +19,8 @@ import { CanvasProjetoComponent } from './canvas-projeto/canvas-projeto.componen
 import { ProjetoService } from './servicos/projeto.service';
 import { ProjetoApi } from './shared/sdk/services/custom/Projeto';
 import { ProjetoCanvasApi } from './shared/sdk/services/custom/ProjetoCanvas';
+import { ProjetoMySqlApi } from './shared/sdk/services/custom/ProjetoMySql';
+import { ProjetoCanvasMySqlApi } from './shared/sdk/services/custom/ProjetoCanvasMySql';
 import { HttpClient, HttpResponse, HttpClientModule } from '@angular/common/http';
 import { SocketConnection } from './shared/sdk/sockets/socket.connections';
 import { SocketDriver } from './shared/sdk/sockets/socket.driver';
@@ -69,6 +71,8 @@ import { MatFormFieldModule, MatInputModule, MatButtonModule } from '@angular/ma
     SDKModels,
     LoopBackAuth,
     InternalStorage,
+    ProjetoMySqlApi,
+    ProjetoCanvasMySqlApi
 
   ],
   bootstrap: [AppComponent]

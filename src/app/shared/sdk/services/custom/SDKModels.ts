@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { User } from '../../models/User';
 import { Projeto } from '../../models/Projeto';
 import { ProjetoCanvas } from '../../models/ProjetoCanvas';
+import { ProjetoMySql } from '../../models/ProjetoMySql';
+import { ProjetoCanvasMySql } from '../../models/ProjetoCanvasMySql';
 
 export interface Models { [name: string]: any }
 
@@ -13,6 +15,8 @@ export class SDKModels {
     User: User,
     Projeto: Projeto,
     ProjetoCanvas: ProjetoCanvas,
+    ProjetoMySql: ProjetoMySql,
+    ProjetoCanvasMySql: ProjetoCanvasMySql,
     
   };
 

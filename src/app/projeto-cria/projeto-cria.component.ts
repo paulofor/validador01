@@ -2,8 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 
 import { ProjetoService } from '../servicos/projeto.service';
 
-import { Projeto } from '../shared/sdk/models';
-import { ProjetoApi } from '../shared/sdk/services/custom/Projeto';
+import { ProjetoMySql } from '../shared/sdk/models';
+import { ProjetoMySqlApi } from '../shared/sdk/services/custom/ProjetoMySql';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,9 +13,9 @@ import { Router } from '@angular/router';
 })
 export class ProjetoCriaComponent implements OnInit {
 
-  model = new Projeto();
+  model = new ProjetoMySql();
 
-  constructor(private servico: ProjetoApi,
+  constructor(private servico: ProjetoMySqlApi,
               private router: Router) { }
 
   ngOnInit() {

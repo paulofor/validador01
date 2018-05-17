@@ -1,12 +1,12 @@
 import { Component, OnInit, Inject } from '@angular/core';
 
-import { Projeto } from '../shared/sdk/models';
-import { ProjetoApi } from '../shared/sdk/services/custom/Projeto';
+import { ProjetoMySql } from '../shared/sdk/models';
+import { ProjetoMySqlApi } from '../shared/sdk/services/custom/ProjetoMySql';
 
-import { ProjetoCanvas } from '../shared/sdk/models/ProjetoCanvas';
-import { ProjetoCanvasApi } from '../shared/sdk/services/custom/ProjetoCanvas';
+import { ProjetoCanvasMySql } from '../shared/sdk/models/ProjetoCanvasMySql';
+import { ProjetoCanvasMySqlApi } from '../shared/sdk/services/custom/ProjetoCanvasMySql';
 
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-projeto-canvas-cria',
@@ -15,34 +15,34 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 })
 export class ProjetoCanvasCriaComponent implements OnInit {
 
-  projeto : Projeto;
+  projeto: ProjetoMySql;
   tipo: string;
-  model : ProjetoCanvas;
+  model: ProjetoCanvasMySql;
 
-  constructor(private servico: ProjetoApi, public dialogRef: MatDialogRef<ProjetoCanvasCriaComponent>
-    ,@Inject(MAT_DIALOG_DATA) public data:any) { }
+  constructor(private servico: ProjetoMySqlApi, public dialogRef: MatDialogRef<ProjetoCanvasCriaComponent>
+    , @Inject(MAT_DIALOG_DATA) public data: any) { }
 
 
   onSubmit() {
     console.log('Model: ' + JSON.stringify(this.model));
     this.servico
-    .createProjetoCanvasRel(this.projeto.id, this.model, (err,obj) => {
-    console.log("Erro:" + err.message);
-    }).subscribe((e:any)  => { 
-      console.log(JSON.stringify(e));
-      
-    });
+      .createProjetoCanvasMySqls(this.projeto.id, this.model, (err, obj) => {
+        console.log("Erro:" + err.message);
+      }).subscribe((e: any) => {
+        console.log(JSON.stringify(e));
+        this.closeDialog();
+      });
   }
 
   ngOnInit() {
-    console.log('Data: ' , JSON.stringify(this.data));
-    this.model = new ProjetoCanvas();
+    console.log('Data: ', JSON.stringify(this.data));
+    this.model = new ProjetoCanvasMySql();
     this.projeto = this.data.projeto;
     this.tipo = this.data.tipo;
-    this.model.idProjeto = this.projeto.id;
-    this.model.tipo  = this.tipo;
+    this.model.projetoMySqlId = this.projeto.id;
+    this.model.tipo = this.tipo;
 
-   
+
   }
 
   closeDialog() {

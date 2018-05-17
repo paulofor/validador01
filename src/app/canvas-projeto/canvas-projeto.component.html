@@ -1,176 +1,159 @@
+<link rel="stylesheet" href="assets/css/vendor.36bb0ebb.css">
 
-
-  <link rel="stylesheet" href="assets/css/vendor.36bb0ebb.css">
-  <link rel="stylesheet" href="assets/css/main.b03f2ea9.css">
+<link rel="stylesheet" href="assets/css/main.b03f2ea9.css">
 
 <div class="dashboard" style="padding-top: 0px;">
   <div class="canvas-container" id="canvas">
     <header class="header-canvas-core">
       <input type="text" placeholder="Título do Canvas" class="canvas-input-title" value="xxx">
     </header>
-    <div class="canvas-core-container" >
-      <div class="canvas-core" >
-        <div class="canvas-column" >
-          <div class="canvas-board parceiros" >
-            <header class="board-header" >
+    <div class="canvas-core-container">
+      <div class="canvas-core">
+        <div class="canvas-column">
+          <div class="canvas-board parceiros">
+            <header class="board-header">
               <h3 class="board-title red">Parceiros Chave</h3>
             </header>
-            <ul class="canvas-posts" >
-              
-              <li class="canvas-postit yellow" *ngFor="let projetoCanvas of parceiros"  >
+            <ul class="canvas-posts">
+
+              <li class="canvas-postit yellow" *ngFor="let projetoCanvas of parceiros">
                 <p class="postit-name">{{projetoCanvas.descricao}}</p>
                 <button class="btn">
                   <span class="s s-pencil"></span>
                 </button>
               </li>
-            
+
             </ul>
-            <button class="add-postit" (click)="openDialog('PARCEIRO')" >+ Adicionar post-it</button>
+            <button class="add-postit" (click)="openDialog('PARCEIRO')">+ Adicionar post-it</button>
           </div>
         </div>
-        <section class="canvas-column" >
+        <section class="canvas-column">
           <div class="canvas-board -half atividades">
-            <header class="board-header" >
-              <h3 class="board-title pink" >Atividades Chave</h3>
+            <header class="board-header">
+              <h3 class="board-title pink">Atividades Chave</h3>
             </header>
             <ul class="canvas-posts">
-              <li class="canvas-postit yellow" >
-                <p class="postit-name" >Desenvolvimento do Software</p>
-                <button class="btn" >
-                  <span class="s s-pencil" ></span>
+
+              <li class="canvas-postit yellow" *ngFor="let projetoCanvas of atividades">
+                <p class="postit-name">{{projetoCanvas.descricao}}</p>
+                <button class="btn">
+                  <span class="s s-pencil"></span>
                 </button>
               </li>
+
             </ul>
-            <button class="add-postit">+ Adicionar post-it</button>
+            <button class="add-postit"  (click)="openDialog('ATIVIDADE')">+ Adicionar post-it</button>
           </div>
           <div class="canvas-board -half recursos">
-            <header class="board-header" >
-              <h3 class="board-title green" >Recursos Chave</h3>
+            <header class="board-header">
+              <h3 class="board-title green">Recursos Chave</h3>
             </header>
             <ul class="canvas-posts">
-              <li class="canvas-postit yellow">
-                <p class="postit-name" >Sistema Coletor de Preços</p>
-                <button class="btn" >
-                  <span class="s s-pencil" ></span>
+              <li class="canvas-postit yellow" *ngFor="let projetoCanvas of recursos">
+                <p class="postit-name">{{projetoCanvas.descricao}}</p>
+                <button class="btn">
+                  <span class="s s-pencil"></span>
                 </button>
               </li>
             </ul>
-            <button class="add-postit" >+ Adicionar post-it</button>
+            <button class="add-postit" (click)="openDialog('RECURSO')">+ Adicionar post-it</button>
           </div>
         </section>
-        <section class="canvas-column" >
-          <div class="canvas-board proposta" >
-            <header class="board-header" >
+        <section class="canvas-column">
+          <div class="canvas-board proposta">
+            <header class="board-header">
               <h3 class="board-title yellow">Proposta de Valor</h3>
             </header>
-            <ul class="canvas-posts" >
-              <li class="canvas-postit yellow" >
-                <p class="postit-name" >Aviso de produto de interesse quando o valor estiver mais baixo</p>
-                <button class="btn" >
+            <ul class="canvas-posts">
+              <li class="canvas-postit yellow" *ngFor="let projetoCanvas of valores">
+                <p class="postit-name">{{projetoCanvas.descricao}}</p>
+                <button class="btn">
                   <span class="s s-pencil"></span>
                 </button>
               </li>
             </ul>
-            <button class="add-postit">+ Adicionar post-it</button>
+            <button class="add-postit" (click)="openDialog('VALOR')">+ Adicionar post-it</button>
           </div>
         </section>
         <section class="canvas-column">
-          <div class="canvas-board -half relacao" >
-            <header class="board-header" >
-              <h3 class="board-title orange" >Relação com o Cliente</h3>
+          <div class="canvas-board -half relacao">
+            <header class="board-header">
+              <h3 class="board-title orange">Relação com o Cliente</h3>
             </header>
-            <ul class="canvas-posts" >
-              <li class="canvas-postit yellow" >
-                <p class="postit-name">AdWords</p>
-                <button class="btn" >
+            <ul class="canvas-posts">
+              <li class="canvas-postit yellow" *ngFor="let projetoCanvas of relacionamentos">
+                <p class="postit-name">{{projetoCanvas.descricao}}</p>
+                <button class="btn">
                   <span class="s s-pencil"></span>
                 </button>
               </li>
             </ul>
-            <button class="add-postit">+ Adicionar post-it</button>
+            <button class="add-postit" (click)="openDialog('RELACIONAMENTO')">+ Adicionar post-it</button>
           </div>
-          <div class="canvas-board -half canais" >
-            <header class="board-header" >
-              <h3 class="board-title blue" >Canais</h3>
+          <div class="canvas-board -half canais">
+            <header class="board-header">
+              <h3 class="board-title blue">Canais</h3>
             </header>
-            <ul class="canvas-posts" >
-              <li class="canvas-postit yellow" >
-                <p class="postit-name">Google Play</p>
-                <button class="btn" >
-                  <span class="s s-pencil" ></span>
+            <ul class="canvas-posts">
+              <li class="canvas-postit yellow" *ngFor="let projetoCanvas of canais">
+                <p class="postit-name">{{projetoCanvas.descricao}}</p>
+                <button class="btn">
+                  <span class="s s-pencil"></span>
                 </button>
               </li>
             </ul>
-            <button class="add-postit" >+ Adicionar post-it</button>
+            <button class="add-postit" (click)="openDialog('CANAL')">+ Adicionar post-it</button>
           </div>
         </section>
         <section class="canvas-column">
-          <div class="canvas-board segmentos" >
-            <header class="board-header" >
-              <h3 class="board-title bluegreen" >Segmentos de Mercado</h3>
+          <div class="canvas-board segmentos">
+            <header class="board-header">
+              <h3 class="board-title bluegreen">Segmentos de Mercado</h3>
             </header>
             <ul class="canvas-posts">
               <!-- -->
-              <li class="canvas-postit yellow">
-                <p class="postit-name" >Acompanha preços e entende que existe uma pequena diferença de preço importa
-                </p>
-                <button class="btn" >
-                  <span class="s s-pencil" ></span>
+              <li class="canvas-postit yellow" *ngFor="let projetoCanvas of segmentos">
+                <p class="postit-name">{{projetoCanvas.descricao}}</p>
+                <button class="btn">
+                  <span class="s s-pencil"></span>
                 </button>
               </li>
               <!-- -->
-              <li class="canvas-postit yellow" >
-                <p class="postit-name" >Quem tem paciência para comprar no melhor momento</p>
-                <button class="btn" >
-                  <span class="s s-pencil" ></span>
-                </button>
-              </li>
+
             </ul>
-            <button class="add-postit" >+ Adicionar post-it</button>
+            <button class="add-postit" (click)="openDialog('SEGMENTO')">+ Adicionar post-it</button>
           </div>
         </section>
         <section class="canvas-column -half">
-          <div class="canvas-board estrutura" >
-            <header class="board-header" >
+          <div class="canvas-board estrutura">
+            <header class="board-header">
               <h3 class="board-title purple">Estrutura de Custos</h3>
             </header>
-            <ul class="canvas-posts" >
-              <li class="canvas-postit yellow" >
-                <p class="postit-name" >Serviço Financeiro para as assinaturas</p>
-                <button class="btn" >
-                  <span class="s s-pencil" ></span>
-                </button>
-              </li>
-              <li class="canvas-postit yellow" >
-                <p class="postit-name">Hospedagens Internet</p>
-                <button class="btn" >
-                  <span class="s s-pencil" ></span>
-                </button>
-              </li>
-              <li  class="canvas-postit yellow" >
-                <p class="postit-name">Propaganda AdWords</p>
+            <ul class="canvas-posts">
+              <li class="canvas-postit yellow" *ngFor="let projetoCanvas of custos">
+                <p class="postit-name">{{projetoCanvas.descricao}}</p>
                 <button class="btn">
-                  <span class="s s-pencil" ></span>
+                  <span class="s s-pencil"></span>
                 </button>
               </li>
             </ul>
-            <button class="add-postit" >+ Adicionar post-it</button>
+            <button class="add-postit" (click)="openDialog('CUSTO')">+ Adicionar post-it</button>
           </div>
         </section>
-        <section class="canvas-column -half" >
-          <div class="canvas-board fontes" >
-            <header class="board-header" >
+        <section class="canvas-column -half">
+          <div class="canvas-board fontes">
+            <header class="board-header">
               <h3 class="board-title brown">Fontes de Renda</h3>
             </header>
             <ul class="canvas-posts">
-              <li  class="canvas-postit yellow">
-                <p class="postit-name">Assinaturas</p>
+              <li class="canvas-postit yellow" *ngFor="let projetoCanvas of receitas">
+                <p class="postit-name">{{projetoCanvas.descricao}}</p>
                 <button class="btn">
-                  <span class="s s-pencil" ></span>
+                  <span class="s s-pencil"></span>
                 </button>
               </li>
             </ul>
-            <button class="add-postit" >+ Adicionar post-it</button>
+            <button class="add-postit" (click)="openDialog('RECEITA')">+ Adicionar post-it</button>
           </div>
         </section>
       </div>

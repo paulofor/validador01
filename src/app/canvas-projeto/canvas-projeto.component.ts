@@ -10,7 +10,9 @@ import { ProjetoCanvasMySqlApi } from '../shared/sdk/services/custom/ProjetoCanv
 import { Router } from '@angular/router';
 import { ActivatedRoute, Params } from '@angular/router';
 
+import { ProjetoCanvasEditaComponent } from '../projeto-canvas-edita/projeto-canvas-edita.component';
 import { ProjetoCanvasCriaComponent } from '../projeto-canvas-cria/projeto-canvas-cria.component';
+
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { BASE_URL, API_VERSION } from '../constantes/base.url';
 import { LoopBackConfig } from '../shared/sdk/';
@@ -70,8 +72,15 @@ export class CanvasProjetoComponent implements OnInit {
     });
   }
 
-  editaItem(idProjetoCanvas) {
-    console.log('ID Edicao: ' + idProjetoCanvas);
+  editaItem(projetoCanvas) {
+    console.log('ID Edicao: ' + JSON.stringify(projetoCanvas));
+    this.dialog.open(ProjetoCanvasEditaComponent, {
+      width: '600px',
+      data: {
+        projeto: this.projeto,
+        edicao: projetoCanvas
+      }
+    });
   }
 
   carregaDados() {

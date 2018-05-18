@@ -34,6 +34,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CanvasProjeto2Component } from './canvas-projeto-2/canvas-projeto-2.component';
 
 import { MatFormFieldModule, MatInputModule, MatButtonModule } from '@angular/material';
+import { ProjetoCanvasEditaComponent } from './projeto-canvas-edita/projeto-canvas-edita.component';
 
 @NgModule({
   declarations: [
@@ -47,9 +48,13 @@ import { MatFormFieldModule, MatInputModule, MatButtonModule } from '@angular/ma
     ExemploCanvasComponent,
     CanvasProjetoComponent,
     ProjetoCanvasCriaComponent,
-    CanvasProjeto2Component
+    CanvasProjeto2Component,
+    ProjetoCanvasEditaComponent
   ],
-  entryComponents: [ProjetoCanvasCriaComponent],
+  entryComponents: [
+    ProjetoCanvasCriaComponent,
+    ProjetoCanvasEditaComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

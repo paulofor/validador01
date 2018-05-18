@@ -18,7 +18,7 @@
 
               <li class="canvas-postit yellow" *ngFor="let projetoCanvas of parceiros">
                 <p class="postit-name">{{projetoCanvas.descricao}}</p>
-                <button class="btn" (click)="editaItem(i)">
+                <button class="btn" (click)="editaItem(projetoCanvas)">
                   <span class="s s-pencil"></span>
                 </button>
               </li>
@@ -36,7 +36,7 @@
 
               <li class="canvas-postit yellow" *ngFor="let projetoCanvas of atividades">
                 <p class="postit-name">{{projetoCanvas.descricao}}</p>
-                <button class="btn">
+                <button class="btn" (click)="editaItem(projetoCanvas)">
                   <span class="s s-pencil"></span>
                 </button>
               </li>
@@ -51,7 +51,7 @@
             <ul class="canvas-posts">
               <li class="canvas-postit yellow" *ngFor="let projetoCanvas of recursos">
                 <p class="postit-name">{{projetoCanvas.descricao}}</p>
-                <button class="btn">
+                <button class="btn" (click)="editaItem(projetoCanvas)">
                   <span class="s s-pencil"></span>
                 </button>
               </li>
@@ -67,7 +67,7 @@
             <ul class="canvas-posts">
               <li class="canvas-postit yellow" *ngFor="let projetoCanvas of valores">
                 <p class="postit-name">{{projetoCanvas.descricao}}</p>
-                <button class="btn">
+                <button class="btn" (click)="editaItem(projetoCanvas)">
                   <span class="s s-pencil"></span>
                 </button>
               </li>
@@ -83,7 +83,7 @@
             <ul class="canvas-posts">
               <li class="canvas-postit yellow" *ngFor="let projetoCanvas of relacionamentos">
                 <p class="postit-name">{{projetoCanvas.descricao}}</p>
-                <button class="btn">
+                <button class="btn" (click)="editaItem(projetoCanvas)">
                   <span class="s s-pencil"></span>
                 </button>
               </li>
@@ -97,7 +97,7 @@
             <ul class="canvas-posts">
               <li class="canvas-postit yellow" *ngFor="let projetoCanvas of canais">
                 <p class="postit-name">{{projetoCanvas.descricao}}</p>
-                <button class="btn">
+                <button class="btn" (click)="editaItem(projetoCanvas)">
                   <span class="s s-pencil"></span>
                 </button>
               </li>
@@ -114,7 +114,7 @@
               <!-- -->
               <li class="canvas-postit yellow" *ngFor="let projetoCanvas of segmentos">
                 <p class="postit-name">{{projetoCanvas.descricao}}</p>
-                <button class="btn">
+                <button class="btn" (click)="editaItem(projetoCanvas)">
                   <span class="s s-pencil"></span>
                 </button>
               </li>
@@ -132,7 +132,7 @@
             <ul class="canvas-posts">
               <li class="canvas-postit yellow" *ngFor="let projetoCanvas of custos">
                 <p class="postit-name">{{projetoCanvas.descricao}}</p>
-                <button class="btn">
+                <button class="btn" (click)="editaItem(projetoCanvas)">
                   <span class="s s-pencil"></span>
                 </button>
               </li>
@@ -148,7 +148,7 @@
             <ul class="canvas-posts">
               <li class="canvas-postit yellow" *ngFor="let projetoCanvas of receitas">
                 <p class="postit-name">{{projetoCanvas.descricao}}</p>
-                <button class="btn">
+                <button class="btn" (click)="editaItem(projetoCanvas)">
                   <span class="s s-pencil"></span>
                 </button>
               </li>

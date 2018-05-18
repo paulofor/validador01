@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Projeto } from '../shared/sdk/models';
-import { ProjetoApi } from '../shared/sdk/services/custom/Projeto';
+import { ProjetoMySql } from '../shared/sdk/models';
+import { ProjetoMySqlApi } from '../shared/sdk/services/custom/ProjetoMySql';
+import { ProjetoCanvasMySql } from '../shared/sdk/models';
+import { ProjetoCanvasMySqlApi } from '../shared/sdk/services/custom/ProjetoCanvasMySql';
 
-import { ProjetoCanvas } from '../shared/sdk/models';
-import { ProjetoCanvasApi } from '../shared/sdk/services/custom/ProjetoCanvas';
+
 
 import { Router } from '@angular/router';
 import { ActivatedRoute, Params } from '@angular/router';
@@ -22,24 +23,24 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 })
 export class CanvasProjetoComponent implements OnInit {
 
-  itensCanvas: ProjetoCanvas[];
-  projeto: Projeto;
+  itensCanvas: ProjetoCanvasMySql[];
+  projeto: ProjetoMySql;
   errMess: string;
 
-  parceiros: ProjetoCanvas[] = [];
-  segmentos: ProjetoCanvas[] = [];
-  valores: ProjetoCanvas[] = [];
-  receitas: ProjetoCanvas[] = [];
-  atividades: ProjetoCanvas[] = [];
-  recursos: ProjetoCanvas[] = [];
-  relacionamentos: ProjetoCanvas[];
-  canais: ProjetoCanvas[] = [];
-  custos: ProjetoCanvas[] = [];
+  parceiros: ProjetoCanvasMySql[] = [];
+  segmentos: ProjetoCanvasMySql[] = [];
+  valores: ProjetoCanvasMySql[] = [];
+  receitas: ProjetoCanvasMySql[] = [];
+  atividades: ProjetoCanvasMySql[] = [];
+  recursos: ProjetoCanvasMySql[] = [];
+  relacionamentos: ProjetoCanvasMySql[];
+  canais: ProjetoCanvasMySql[] = [];
+  custos: ProjetoCanvasMySql[] = [];
 
 
 
-  constructor(private dialog: MatDialog, private projetoService: ProjetoApi,
-    private projetoCanvasService: ProjetoCanvasApi,
+  constructor(private dialog: MatDialog, private projetoService: ProjetoMySqlApi,
+    private projetoCanvasService: ProjetoCanvasMySqlApi,
     private router: Router,
     private route: ActivatedRoute) {
 
@@ -74,7 +75,7 @@ export class CanvasProjetoComponent implements OnInit {
       let userId = params['id'];
       console.log('Id: ', userId);
       this.projetoService.findById(userId)
-        .subscribe((valor: Projeto) => {
+        .subscribe((valor: ProjetoMySql) => {
           console.log('Item: ' + JSON.stringify(valor));
           this.projeto = valor;
           this.carregaCanvas();
@@ -84,8 +85,8 @@ export class CanvasProjetoComponent implements OnInit {
   }
 
   carregaCanvas() {
-    this.projetoService.getProjetoCanvasRel(this.projeto.id)
-      .subscribe((valor: ProjetoCanvas[]) => {
+    this.projetoService.getProjetoCanvasMySqls(this.projeto.id)
+      .subscribe((valor: ProjetoCanvasMySql[]) => {
         console.log('Lista: ' + JSON.stringify(valor));
         this.itensCanvas = valor;
         this.distribuiItensCanvas();

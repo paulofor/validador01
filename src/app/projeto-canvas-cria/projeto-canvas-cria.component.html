@@ -1,10 +1,10 @@
-<h2 mat-dialog-title>Cadastro de Hipótese </h2>
+<h2 mat-dialog-title>Cadastro de Hipótese - {{projeto.nome}}</h2>
 
 <form #hipoteseForm="ngForm" class="content" (ngSubmit)="onSubmit()">
 <mat-dialog-content>
   <div class="example-container">
     <mat-form-field>
-      <textarea [(ngModel)]="model.descricao" class="form-control" 
+      <textarea [(ngModel)]="model.descricao"  
         name="descricao" matInput rows="6" placeholder="Descricao"></textarea>
     </mat-form-field>
   </div>

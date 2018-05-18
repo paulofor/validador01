@@ -1,3 +1,33 @@
-<p>
-  projeto-edita works!
-</p>
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">Projeto - Novo</h4>
+          </div>
+          <form #projetoForm="ngForm" class="content" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="nome">Nome do Projeto</label>
+              <input [(ngModel)]="model.nome" type="text" class="form-control" name="nome">
+            </div>
+            <div class="form-group">
+              <label for="mercado">Mercado</label>
+              <input [(ngModel)]="model.mercado" type="text" class="form-control" name="mercado">
+            </div>
+            <div class="form-group">
+              <label for="valor">Valor</label>
+              <input [(ngModel)]="model.valor" type="text" class="form-control" name="valor">
+            </div>
+            <div class="form-group">
+              <label for="dor">Dor</label>
+              <input [(ngModel)]="model.dor" type="text" class="form-control" name="dor">
+            </div>
+            <button type="submit" class="btn btn-success btn-sm">Enviar</button>
+            <button type="cancel" class="btn btn-cancel btn-sm">Cancelar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -70,6 +70,10 @@ export class CanvasProjetoComponent implements OnInit {
     });
   }
 
+  editaItem(idProjetoCanvas) {
+    console.log('ID Edicao: ' + idProjetoCanvas);
+  }
+
   carregaDados() {
     this.route.params.subscribe((params: Params) => {
       let userId = params['id'];

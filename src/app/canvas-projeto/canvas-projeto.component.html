@@ -18,7 +18,7 @@
 
               <li class="canvas-postit yellow" *ngFor="let projetoCanvas of parceiros">
                 <p class="postit-name">{{projetoCanvas.descricao}}</p>
-                <button class="btn">
+                <button class="btn" (click)="editaItem(i)">
                   <span class="s s-pencil"></span>
                 </button>
               </li>

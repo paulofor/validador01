@@ -26,7 +26,7 @@ export class ProjetoCanvasEditaComponent implements OnInit {
   onSubmit() {
     console.log('Model: ' + JSON.stringify(this.model));
     this.servico
-      .updateAttributes(this.projeto.id, this.model, (err, obj) => {
+      .updateAttributes(this.model.id, this.model, (err, obj) => {
         console.log("Erro:" + err.message);
       }).subscribe((e: any) => {
         console.log(JSON.stringify(e));

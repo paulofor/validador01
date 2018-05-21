@@ -13,7 +13,7 @@ import { ProjetoCriaComponent } from './projeto-cria/projeto-cria.component';
 import { ProjetoEditaComponent } from './projeto-edita/projeto-edita.component';
 import { ProjetoExibeComponent } from './projeto-exibe/projeto-exibe.component'
 import { FormsModule } from '@angular/forms';
-import { ExemploCanvasComponent } from './exemplo-canvas/exemplo-canvas.component';
+
 import { CanvasProjetoComponent } from './canvas-projeto/canvas-projeto.component'; 
 
 import { ProjetoService } from './servicos/projeto.service';
@@ -31,7 +31,7 @@ import { ProjetoCanvasCriaComponent } from './projeto-canvas-cria/projeto-canvas
 
 import {MatDialogModule} from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CanvasProjeto2Component } from './canvas-projeto-2/canvas-projeto-2.component';
+
 
 import { MatFormFieldModule, MatInputModule, MatButtonModule } from '@angular/material';
 import { ProjetoCanvasEditaComponent } from './projeto-canvas-edita/projeto-canvas-edita.component';
@@ -45,10 +45,8 @@ import { ProjetoCanvasEditaComponent } from './projeto-canvas-edita/projeto-canv
     ProjetoCriaComponent,
     ProjetoEditaComponent,
     ProjetoExibeComponent,
-    ExemploCanvasComponent,
     CanvasProjetoComponent,
     ProjetoCanvasCriaComponent,
-    CanvasProjeto2Component,
     ProjetoCanvasEditaComponent
   ],
   entryComponents: [

@@ -14,7 +14,7 @@
                 <tr>
                   <th>Nome</th>
                   <th>Mercado</th>
-                  <th>Dor</th>
+                  <th></th>
                   <th></th>
                 </tr>
               </thead>
@@ -22,8 +22,8 @@
                 <tr *ngFor="let projeto of projetos">
                   <td>{{projeto.nome}}</td>
                   <td>{{projeto.mercado}}</td>
-                  <td>{{projeto.dor}}</td>
-                  <td><a routerLink="/projetoCanvas/{{projeto.id}}">canvas</a></td>
+                  <td><a routerLink="/projetoCanvas/{{projeto.id}}">Negócio</a></td>
+                  <td><a routerLink="/mvpCanvas/{{projeto.id}}">Mvp</a></td>
                 </tr>
               </tbody>
             </table>

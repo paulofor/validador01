@@ -35,6 +35,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatFormFieldModule, MatInputModule, MatButtonModule } from '@angular/material';
 import { ProjetoCanvasEditaComponent } from './projeto-canvas-edita/projeto-canvas-edita.component';
+import { CanvasMvpComponent } from './canvas-mvp/canvas-mvp.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { ProjetoCanvasEditaComponent } from './projeto-canvas-edita/projeto-canv
     ProjetoExibeComponent,
     CanvasProjetoComponent,
     ProjetoCanvasCriaComponent,
-    ProjetoCanvasEditaComponent
+    ProjetoCanvasEditaComponent,
+    CanvasMvpComponent
   ],
   entryComponents: [
     ProjetoCanvasCriaComponent,

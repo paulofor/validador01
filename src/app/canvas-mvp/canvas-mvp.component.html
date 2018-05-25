@@ -14,27 +14,27 @@
 
         <!-- Coluna 1-->
         <section class="canvas-coluna-mvp">
+          <!-- Painel A -->
           <div class="canvas-board -half atividades">
             <header class="board-header">
               <h3 class="board-title pink">Persona & Plataforma</h3>
             </header>
             <ul class="canvas-post-mvp">
-
               <li class="canvas-postit yellow" *ngFor="let projetoCanvas of atividades">
                 <p class="postit-name">{{projetoCanvas.descricao}}</p>
                 <button class="btn" (click)="editaItem(projetoCanvas)">
                   <span class="s s-pencil"></span>
                 </button>
               </li>
-
             </ul>
-            <button class="add-postit"  (click)="openDialog('ATIVIDADE')">+ Adicionar post-it</button>
+            <button class="add-postit" (click)="openDialog('ATIVIDADE')">+ Adicionar post-it</button>
           </div>
+          <!-- Painel B -->
           <div class="canvas-board -half recursos">
             <header class="board-header">
               <h3 class="board-title green">Jornadas</h3>
             </header>
-            <ul class="canvas-posts">
+            <ul class="canvas-post-mvp">
               <li class="canvas-postit yellow" *ngFor="let projetoCanvas of recursos">
                 <p class="postit-name">{{projetoCanvas.descricao}}</p>
                 <button class="btn" (click)="editaItem(projetoCanvas)">
@@ -48,11 +48,13 @@
 
         <!-- Coluna 2-->
         <section class="canvas-coluna-mvp">
-          <div class="canvas-board proposta">
+
+          <!-- Painel a -->
+          <div class="canvas-board -terco proposta">
             <header class="board-header">
               <h3 class="board-title yellow">Proposta de Valor</h3>
             </header>
-            <ul class="canvas-posts">
+            <ul class="canvas-post-mvp">
               <li class="canvas-postit yellow" *ngFor="let projetoCanvas of valores">
                 <p class="postit-name">{{projetoCanvas.descricao}}</p>
                 <button class="btn" (click)="editaItem(projetoCanvas)">
@@ -62,6 +64,39 @@
             </ul>
             <button class="add-postit" (click)="openDialog('VALOR')">+ Adicionar post-it</button>
           </div>
+
+          <!-- Painel b -->
+          <div class="canvas-board -terco proposta">
+            <header class="board-header">
+              <h3 class="board-title yellow">Proposta de Valor</h3>
+            </header>
+            <ul class="canvas-post-mvp">
+              <li class="canvas-postit yellow" *ngFor="let projetoCanvas of valores">
+                <p class="postit-name">{{projetoCanvas.descricao}}</p>
+                <button class="btn" (click)="editaItem(projetoCanvas)">
+                  <span class="s s-pencil"></span>
+                </button>
+              </li>
+            </ul>
+            <button class="add-postit" (click)="openDialog('VALOR')">+ Adicionar post-it</button>
+          </div>
+
+          <!-- Painel b -->
+          <div class="canvas-board -terco proposta">
+            <header class="board-header">
+              <h3 class="board-title yellow">Proposta de Valor</h3>
+            </header>
+            <ul class="canvas-post-mvp">
+              <li class="canvas-postit yellow" *ngFor="let projetoCanvas of valores">
+                <p class="postit-name">{{projetoCanvas.descricao}}</p>
+                <button class="btn" (click)="editaItem(projetoCanvas)">
+                  <span class="s s-pencil"></span>
+                </button>
+              </li>
+            </ul>
+            <button class="add-postit" (click)="openDialog('VALOR')">+ Adicionar post-it</button>
+          </div>
+
         </section>
 
         <!-- Coluna 3-->
@@ -70,7 +105,7 @@
             <header class="board-header">
               <h3 class="board-title orange">Resultado Esperado</h3>
             </header>
-            <ul class="canvas-posts">
+            <ul class="canvas-post-mvp">
               <li class="canvas-postit yellow" *ngFor="let projetoCanvas of relacionamentos">
                 <p class="postit-name">{{projetoCanvas.descricao}}</p>
                 <button class="btn" (click)="editaItem(projetoCanvas)">
@@ -84,7 +119,7 @@
             <header class="board-header">
               <h3 class="board-title blue">Métricas de Validação</h3>
             </header>
-            <ul class="canvas-posts">
+            <ul class="canvas-post-mvp">
               <li class="canvas-postit yellow" *ngFor="let projetoCanvas of canais">
                 <p class="postit-name">{{projetoCanvas.descricao}}</p>
                 <button class="btn" (click)="editaItem(projetoCanvas)">
@@ -96,10 +131,10 @@
           </div>
         </section>
 
-    
 
-       
-      
+
+
+
 
 
       </div>

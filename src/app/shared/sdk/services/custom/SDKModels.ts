@@ -5,6 +5,7 @@ import { Projeto } from '../../models/Projeto';
 import { ProjetoCanvas } from '../../models/ProjetoCanvas';
 import { ProjetoMySql } from '../../models/ProjetoMySql';
 import { ProjetoCanvasMySql } from '../../models/ProjetoCanvasMySql';
+import { MvpCanvasMySql } from '../../models/MvpCanvasMySql';
 
 export interface Models { [name: string]: any }
 
@@ -17,6 +18,7 @@ export class SDKModels {
     ProjetoCanvas: ProjetoCanvas,
     ProjetoMySql: ProjetoMySql,
     ProjetoCanvasMySql: ProjetoCanvasMySql,
+    MvpCanvasMySql: MvpCanvasMySql,
     
   };
 

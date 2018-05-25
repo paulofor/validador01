@@ -53,6 +53,7 @@ import { ProjetoApi } from './services/custom/Projeto';
 import { ProjetoCanvasApi } from './services/custom/ProjetoCanvas';
 import { ProjetoMySqlApi } from './services/custom/ProjetoMySql';
 import { ProjetoCanvasMySqlApi } from './services/custom/ProjetoCanvasMySql';
+import { MvpCanvasMySqlApi } from './services/custom/MvpCanvasMySql';
 /**
 * @module SDKBrowserModule
 * @description
@@ -88,6 +89,7 @@ export class SDKBrowserModule {
         ProjetoCanvasApi,
         ProjetoMySqlApi,
         ProjetoCanvasMySqlApi,
+        MvpCanvasMySqlApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser },
         { provide: SocketDriver, useClass: SocketBrowser }

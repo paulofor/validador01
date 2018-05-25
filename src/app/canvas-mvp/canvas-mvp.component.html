@@ -1,3 +1,108 @@
-<p>
-  canvas-mvp works!
-</p>
+<link rel="stylesheet" href="assets/css/vendor.36bb0ebb.css">
+<link rel="stylesheet" href="assets/css/main.b03f2ea9.css">
+<link rel="stylesheet" href="assets/css/canvas-digicom2.css">
+
+
+<div class="dashboard" style="padding-top: 0px;">
+  <div class="canvas-container" id="canvas">
+    <header class="header-canvas-core">
+      <!--input type="text" placeholder="Título do Canvas" class="canvas-input-title" value="xxx">-->
+      <span class="canvas-input-title">{{projeto.nome}}</span>
+    </header>
+    <div class="canvas-core-container">
+      <div class="canvas-core">
+
+        <!-- Coluna 1-->
+        <section class="canvas-coluna-mvp">
+          <div class="canvas-board -half atividades">
+            <header class="board-header">
+              <h3 class="board-title pink">Persona & Plataforma</h3>
+            </header>
+            <ul class="canvas-post-mvp">
+
+              <li class="canvas-postit yellow" *ngFor="let projetoCanvas of atividades">
+                <p class="postit-name">{{projetoCanvas.descricao}}</p>
+                <button class="btn" (click)="editaItem(projetoCanvas)">
+                  <span class="s s-pencil"></span>
+                </button>
+              </li>
+
+            </ul>
+            <button class="add-postit"  (click)="openDialog('ATIVIDADE')">+ Adicionar post-it</button>
+          </div>
+          <div class="canvas-board -half recursos">
+            <header class="board-header">
+              <h3 class="board-title green">Jornadas</h3>
+            </header>
+            <ul class="canvas-posts">
+              <li class="canvas-postit yellow" *ngFor="let projetoCanvas of recursos">
+                <p class="postit-name">{{projetoCanvas.descricao}}</p>
+                <button class="btn" (click)="editaItem(projetoCanvas)">
+                  <span class="s s-pencil"></span>
+                </button>
+              </li>
+            </ul>
+            <button class="add-postit" (click)="openDialog('RECURSO')">+ Adicionar post-it</button>
+          </div>
+        </section>
+
+        <!-- Coluna 2-->
+        <section class="canvas-coluna-mvp">
+          <div class="canvas-board proposta">
+            <header class="board-header">
+              <h3 class="board-title yellow">Proposta de Valor</h3>
+            </header>
+            <ul class="canvas-posts">
+              <li class="canvas-postit yellow" *ngFor="let projetoCanvas of valores">
+                <p class="postit-name">{{projetoCanvas.descricao}}</p>
+                <button class="btn" (click)="editaItem(projetoCanvas)">
+                  <span class="s s-pencil"></span>
+                </button>
+              </li>
+            </ul>
+            <button class="add-postit" (click)="openDialog('VALOR')">+ Adicionar post-it</button>
+          </div>
+        </section>
+
+        <!-- Coluna 3-->
+        <section class="canvas-coluna-mvp">
+          <div class="canvas-board -half relacao">
+            <header class="board-header">
+              <h3 class="board-title orange">Resultado Esperado</h3>
+            </header>
+            <ul class="canvas-posts">
+              <li class="canvas-postit yellow" *ngFor="let projetoCanvas of relacionamentos">
+                <p class="postit-name">{{projetoCanvas.descricao}}</p>
+                <button class="btn" (click)="editaItem(projetoCanvas)">
+                  <span class="s s-pencil"></span>
+                </button>
+              </li>
+            </ul>
+            <button class="add-postit" (click)="openDialog('RELACIONAMENTO')">+ Adicionar post-it</button>
+          </div>
+          <div class="canvas-board -half canais">
+            <header class="board-header">
+              <h3 class="board-title blue">Métricas de Validação</h3>
+            </header>
+            <ul class="canvas-posts">
+              <li class="canvas-postit yellow" *ngFor="let projetoCanvas of canais">
+                <p class="postit-name">{{projetoCanvas.descricao}}</p>
+                <button class="btn" (click)="editaItem(projetoCanvas)">
+                  <span class="s s-pencil"></span>
+                </button>
+              </li>
+            </ul>
+            <button class="add-postit" (click)="openDialog('CANAL')">+ Adicionar post-it</button>
+          </div>
+        </section>
+
+    
+
+       
+      
+
+
+      </div>
+    </div>
+  </div>
+</div>

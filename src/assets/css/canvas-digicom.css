@@ -50,7 +50,6 @@
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     display: block;
-
 }
 canvas-board.segmento {
     background-image: url(../images/grafico.png);

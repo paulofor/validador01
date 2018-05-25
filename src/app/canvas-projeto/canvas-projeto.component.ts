@@ -105,13 +105,6 @@ export class CanvasProjetoComponent implements OnInit {
         this.distribuiItensCanvas();
       })
 
-    /*
-    this.projetoCanvasService.find({where: {idProjeto: this.projeto.id}})
-      .subscribe((valor : ProjetoCanvas[]) => {
-        console.log('Lista: ' + JSON.stringify(valor));
-        this.parceiros = valor;
-      })
-      */
   }
 
 

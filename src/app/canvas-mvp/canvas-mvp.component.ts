@@ -9,8 +9,8 @@ import { MvpCanvasMySqlApi } from '../shared/sdk/services/custom/MvpCanvasMySql'
 import { Router } from '@angular/router';
 import { ActivatedRoute, Params } from '@angular/router';
 
-import { ProjetoCanvasEditaComponent } from '../projeto-canvas-edita/projeto-canvas-edita.component';
-import { ProjetoCanvasCriaComponent } from '../projeto-canvas-cria/projeto-canvas-cria.component';
+import { MvpCanvasEditaComponent } from '../mvp-canvas-edita/mvp-canvas-edita.component';
+import { MvpCanvasCriaComponent } from '../mvp-canvas-cria/mvp-canvas-cria.component';
 
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { BASE_URL, API_VERSION } from '../constantes/base.url';
@@ -60,7 +60,7 @@ export class CanvasMvpComponent implements OnInit {
       console.log(`Dialog result: ${result}`); 
       this.carregaDados();
     });
-    this.dialog.open(ProjetoCanvasCriaComponent, {
+    this.dialog.open(MvpCanvasCriaComponent, {
       width: '600px',
       data: {
         projeto: this.projeto,
@@ -71,7 +71,7 @@ export class CanvasMvpComponent implements OnInit {
 
   editaItem(projetoCanvas) {
     console.log('ID Edicao: ' + JSON.stringify(projetoCanvas));
-    this.dialog.open(ProjetoCanvasEditaComponent, {
+    this.dialog.open(MvpCanvasEditaComponent, {
       width: '600px',
       data: {
         projeto: this.projeto,
@@ -95,7 +95,7 @@ export class CanvasMvpComponent implements OnInit {
   }
 
   carregaCanvas() {
-    this.projetoService.getProjetoCanvasMySqls(this.projeto.id)
+    this.projetoService.getMvpCanvasMySqls(this.projeto.id)
       .subscribe((valor: MvpCanvasMySql[]) => {
         console.log('Lista: ' + JSON.stringify(valor));
         this.itensCanvas = valor;
@@ -107,7 +107,7 @@ export class CanvasMvpComponent implements OnInit {
 
   distribuiItensCanvas() {
     this.personas = this.itensCanvas.filter(
-      item => item.tipo === 'PARCEIRO');
+      item => item.tipo === 'PERSONA');
     this.jornadas = this.itensCanvas.filter(
       item => item.tipo === 'JORNADA');
     this.visoes = this.itensCanvas.filter(

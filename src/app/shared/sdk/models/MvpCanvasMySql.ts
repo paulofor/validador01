@@ -5,14 +5,14 @@ export interface MvpCanvasMySqlInterface {
   "id"?: number;
   "descricao": string;
   "tipo": string;
-  "projetoCanvasMySqlId"?: number;
+  "projetoMySqlId"?: number;
 }
 
 export class MvpCanvasMySql implements MvpCanvasMySqlInterface {
   "id": number;
   "descricao": string;
   "tipo": string;
-  "projetoCanvasMySqlId": number;
+  "projetoMySqlId": number;
   constructor(data?: MvpCanvasMySqlInterface) {
     Object.assign(this, data);
   }
@@ -58,8 +58,8 @@ export class MvpCanvasMySql implements MvpCanvasMySqlInterface {
           name: 'tipo',
           type: 'string'
         },
-        "projetoCanvasMySqlId": {
-          name: 'projetoCanvasMySqlId',
+        "projetoMySqlId": {
+          name: 'projetoMySqlId',
           type: 'number'
         },
       },

@@ -59,7 +59,9 @@ import { MvpCanvasEditaComponent } from './mvp-canvas-edita/mvp-canvas-edita.com
   ],
   entryComponents: [
     ProjetoCanvasCriaComponent,
-    ProjetoCanvasEditaComponent
+    ProjetoCanvasEditaComponent,
+    MvpCanvasCriaComponent,
+    MvpCanvasEditaComponent
   ],
   imports: [
     BrowserModule,

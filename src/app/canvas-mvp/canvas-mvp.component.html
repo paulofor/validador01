@@ -20,7 +20,7 @@
               <h3 class="board-title pink">Personas & Plataformas</h3>
             </header>
             <ul class="canvas-post-mvp">
-              <li class="canvas-postit yellow" *ngFor="let projetoCanvas of atividades">
+              <li class="canvas-postit yellow" *ngFor="let projetoCanvas of personas">
                 <p class="postit-name">{{projetoCanvas.descricao}}</p>
                 <button class="btn" (click)="editaItem(projetoCanvas)">
                   <span class="s s-pencil"></span>
@@ -35,7 +35,7 @@
               <h3 class="board-title green">Jornadas</h3>
             </header>
             <ul class="canvas-post-mvp">
-              <li class="canvas-postit yellow" *ngFor="let projetoCanvas of recursos">
+              <li class="canvas-postit yellow" *ngFor="let projetoCanvas of jornadas">
                 <p class="postit-name">{{projetoCanvas.descricao}}</p>
                 <button class="btn" (click)="editaItem(projetoCanvas)">
                   <span class="s s-pencil"></span>
@@ -54,8 +54,8 @@
             <header class="board-header">
               <h3 class="board-title yellow">Visão do MVP</h3>
             </header>
-            <ul class="canvas-post-mvp">
-              <li class="canvas-postit yellow" *ngFor="let projetoCanvas of valores">
+            <ul class="canvas-post-mvp-menor">
+              <li class="canvas-postit yellow" *ngFor="let projetoCanvas of visoes">
                 <p class="postit-name">{{projetoCanvas.descricao}}</p>
                 <button class="btn" (click)="editaItem(projetoCanvas)">
                   <span class="s s-pencil"></span>
@@ -70,8 +70,8 @@
             <header class="board-header">
               <h3 class="board-title yellow">Funcionalidades</h3>
             </header>
-            <ul class="canvas-post-mvp">
-              <li class="canvas-postit yellow" *ngFor="let projetoCanvas of valores">
+            <ul class="canvas-post-mvp-menor">
+              <li class="canvas-postit yellow" *ngFor="let projetoCanvas of funcionalidades">
                 <p class="postit-name">{{projetoCanvas.descricao}}</p>
                 <button class="btn" (click)="editaItem(projetoCanvas)">
                   <span class="s s-pencil"></span>
@@ -86,8 +86,8 @@
             <header class="board-header">
               <h3 class="board-title yellow">Custo & Cronograma</h3>
             </header>
-            <ul class="canvas-post-mvp">
-              <li class="canvas-postit yellow" *ngFor="let projetoCanvas of valores">
+            <ul class="canvas-post-mvp-menor">
+              <li class="canvas-postit yellow" *ngFor="let projetoCanvas of custos">
                 <p class="postit-name">{{projetoCanvas.descricao}}</p>
                 <button class="btn" (click)="editaItem(projetoCanvas)">
                   <span class="s s-pencil"></span>
@@ -106,7 +106,7 @@
               <h3 class="board-title orange">Resultado Esperado</h3>
             </header>
             <ul class="canvas-post-mvp">
-              <li class="canvas-postit yellow" *ngFor="let projetoCanvas of relacionamentos">
+              <li class="canvas-postit yellow" *ngFor="let projetoCanvas of resultados">
                 <p class="postit-name">{{projetoCanvas.descricao}}</p>
                 <button class="btn" (click)="editaItem(projetoCanvas)">
                   <span class="s s-pencil"></span>
@@ -120,7 +120,7 @@
               <h3 class="board-title blue">Métricas para validar as hipóteses de negócio</h3>
             </header>
             <ul class="canvas-post-mvp">
-              <li class="canvas-postit yellow" *ngFor="let projetoCanvas of canais">
+              <li class="canvas-postit yellow" *ngFor="let projetoCanvas of metricas">
                 <p class="postit-name">{{projetoCanvas.descricao}}</p>
                 <button class="btn" (click)="editaItem(projetoCanvas)">
                   <span class="s s-pencil"></span>

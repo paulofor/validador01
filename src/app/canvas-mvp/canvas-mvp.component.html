@@ -7,7 +7,7 @@
   <div class="canvas-container" id="canvas">
     <header class="header-canvas-core">
       <!--input type="text" placeholder="Título do Canvas" class="canvas-input-title" value="xxx">-->
-      <span class="canvas-input-title">{{projeto.nome}}</span>
+      <span *ngIf="projeto" class="canvas-input-title">{{projeto.nome}}</span>
     </header>
     <div class="canvas-core-container">
       <div class="canvas-core">
@@ -17,7 +17,7 @@
           <!-- Painel A -->
           <div class="canvas-board -half atividades">
             <header class="board-header">
-              <h3 class="board-title pink">Persona & Plataforma</h3>
+              <h3 class="board-title pink">Personas & Plataformas</h3>
             </header>
             <ul class="canvas-post-mvp">
               <li class="canvas-postit yellow" *ngFor="let projetoCanvas of atividades">
@@ -27,7 +27,7 @@
                 </button>
               </li>
             </ul>
-            <button class="add-postit" (click)="openDialog('ATIVIDADE')">+ Adicionar post-it</button>
+            <button class="add-postit" (click)="openDialog('PERSONA')">+ Adicionar post-it</button>
           </div>
           <!-- Painel B -->
           <div class="canvas-board -half recursos">
@@ -42,7 +42,7 @@
                 </button>
               </li>
             </ul>
-            <button class="add-postit" (click)="openDialog('RECURSO')">+ Adicionar post-it</button>
+            <button class="add-postit" (click)="openDialog('JORNADA')">+ Adicionar post-it</button>
           </div>
         </section>
 
@@ -52,7 +52,7 @@
           <!-- Painel a -->
           <div class="canvas-board -terco proposta">
             <header class="board-header">
-              <h3 class="board-title yellow">Proposta de Valor</h3>
+              <h3 class="board-title yellow">Visão do MVP</h3>
             </header>
             <ul class="canvas-post-mvp">
               <li class="canvas-postit yellow" *ngFor="let projetoCanvas of valores">
@@ -62,13 +62,13 @@
                 </button>
               </li>
             </ul>
-            <button class="add-postit" (click)="openDialog('VALOR')">+ Adicionar post-it</button>
+            <button class="add-postit" (click)="openDialog('VISAO_MVP')">+ Adicionar post-it</button>
           </div>
 
           <!-- Painel b -->
           <div class="canvas-board -terco proposta">
             <header class="board-header">
-              <h3 class="board-title yellow">Proposta de Valor</h3>
+              <h3 class="board-title yellow">Funcionalidades</h3>
             </header>
             <ul class="canvas-post-mvp">
               <li class="canvas-postit yellow" *ngFor="let projetoCanvas of valores">
@@ -78,13 +78,13 @@
                 </button>
               </li>
             </ul>
-            <button class="add-postit" (click)="openDialog('VALOR')">+ Adicionar post-it</button>
+            <button class="add-postit" (click)="openDialog('FUNCIONALIDADE')">+ Adicionar post-it</button>
           </div>
 
           <!-- Painel b -->
           <div class="canvas-board -terco proposta">
             <header class="board-header">
-              <h3 class="board-title yellow">Proposta de Valor</h3>
+              <h3 class="board-title yellow">Custo & Cronograma</h3>
             </header>
             <ul class="canvas-post-mvp">
               <li class="canvas-postit yellow" *ngFor="let projetoCanvas of valores">
@@ -94,7 +94,7 @@
                 </button>
               </li>
             </ul>
-            <button class="add-postit" (click)="openDialog('VALOR')">+ Adicionar post-it</button>
+            <button class="add-postit" (click)="openDialog('CUSTO_CRONOGRAMA')">+ Adicionar post-it</button>
           </div>
 
         </section>
@@ -113,11 +113,11 @@
                 </button>
               </li>
             </ul>
-            <button class="add-postit" (click)="openDialog('RELACIONAMENTO')">+ Adicionar post-it</button>
+            <button class="add-postit" (click)="openDialog('RESULTADO')">+ Adicionar post-it</button>
           </div>
           <div class="canvas-board -half canais">
             <header class="board-header">
-              <h3 class="board-title blue">Métricas de Validação</h3>
+              <h3 class="board-title blue">Métricas para validar as hipóteses de negócio</h3>
             </header>
             <ul class="canvas-post-mvp">
               <li class="canvas-postit yellow" *ngFor="let projetoCanvas of canais">
@@ -127,7 +127,7 @@
                 </button>
               </li>
             </ul>
-            <button class="add-postit" (click)="openDialog('CANAL')">+ Adicionar post-it</button>
+            <button class="add-postit" (click)="openDialog('METRICA')">+ Adicionar post-it</button>
           </div>
         </section>
 

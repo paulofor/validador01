@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ProjetoMySql } from '../shared/sdk/models';
+import { ProjetoMySql, MvpCanvasMySql } from '../shared/sdk/models';
 import { ProjetoMySqlApi } from '../shared/sdk/services/custom/ProjetoMySql';
-import { ProjetoCanvasMySql } from '../shared/sdk/models';
-import { ProjetoCanvasMySqlApi } from '../shared/sdk/services/custom/ProjetoCanvasMySql';
+import { MvpCanvasMySqlApi } from '../shared/sdk/services/custom/MvpCanvasMySql';
 
 
 
@@ -25,24 +24,22 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 })
 export class CanvasMvpComponent implements OnInit {
 
-  itensCanvas: ProjetoCanvasMySql[];
+  itensCanvas: MvpCanvasMySql[];
   projeto: ProjetoMySql;
   errMess: string;
 
-  parceiros: ProjetoCanvasMySql[] = [];
-  segmentos: ProjetoCanvasMySql[] = [];
-  valores: ProjetoCanvasMySql[] = [];
-  receitas: ProjetoCanvasMySql[] = [];
-  atividades: ProjetoCanvasMySql[] = [];
-  recursos: ProjetoCanvasMySql[] = [];
-  relacionamentos: ProjetoCanvasMySql[];
-  canais: ProjetoCanvasMySql[] = [];
-  custos: ProjetoCanvasMySql[] = [];
+  personas: MvpCanvasMySql[];
+  jornadas: MvpCanvasMySql[];
+  visoes: MvpCanvasMySql[];
+  funcionalidades: MvpCanvasMySql[];
+  custos: MvpCanvasMySql[];
+  resultados: MvpCanvasMySql[];
+  metricas: MvpCanvasMySql[];
 
 
 
   constructor(private dialog: MatDialog, private projetoService: ProjetoMySqlApi,
-    private projetoCanvasService: ProjetoCanvasMySqlApi,
+    private canvasService: MvpCanvasMySqlApi,
     private router: Router,
     private route: ActivatedRoute) {
 
@@ -86,10 +83,10 @@ export class CanvasMvpComponent implements OnInit {
   carregaDados() {
     this.route.params.subscribe((params: Params) => {
       let userId = params['id'];
-      console.log('Id: ', userId);
+      console.log('IdProjeto: ', userId);
       this.projetoService.findById(userId)
         .subscribe((valor: ProjetoMySql) => {
-          console.log('Item: ' + JSON.stringify(valor));
+          console.log('Projeto: ' + JSON.stringify(valor));
           this.projeto = valor;
           this.carregaCanvas();
         })
@@ -99,7 +96,7 @@ export class CanvasMvpComponent implements OnInit {
 
   carregaCanvas() {
     this.projetoService.getProjetoCanvasMySqls(this.projeto.id)
-      .subscribe((valor: ProjetoCanvasMySql[]) => {
+      .subscribe((valor: MvpCanvasMySql[]) => {
         console.log('Lista: ' + JSON.stringify(valor));
         this.itensCanvas = valor;
         this.distribuiItensCanvas();
@@ -109,24 +106,20 @@ export class CanvasMvpComponent implements OnInit {
 
 
   distribuiItensCanvas() {
-    this.parceiros = this.itensCanvas.filter(
+    this.personas = this.itensCanvas.filter(
       item => item.tipo === 'PARCEIRO');
-    this.segmentos = this.itensCanvas.filter(
-      item => item.tipo === 'SEGMENTO');
-    this.valores = this.itensCanvas.filter(
-      item => item.tipo === 'VALOR');
-    this.receitas = this.itensCanvas.filter(
-      item => item.tipo === 'RECEITA');
-    this.atividades = this.itensCanvas.filter(
-      item => item.tipo === 'ATIVIDADE');
-    this.recursos = this.itensCanvas.filter(
-      item => item.tipo === 'RECURSO');
-    this.relacionamentos = this.itensCanvas.filter(
-      item => item.tipo === 'RELACIONAMENTO');
-    this.canais = this.itensCanvas.filter(
-      item => item.tipo === 'CANAL');
+    this.jornadas = this.itensCanvas.filter(
+      item => item.tipo === 'JORNADA');
+    this.visoes = this.itensCanvas.filter(
+      item => item.tipo === 'VISAO_MVP');
+    this.funcionalidades = this.itensCanvas.filter(
+      item => item.tipo === 'FUNCIONALIDADE');
+    this.resultados = this.itensCanvas.filter(
+      item => item.tipo === 'RESULTADO');
     this.custos = this.itensCanvas.filter(
-      item => item.tipo === 'CUSTO');
+      item => item.tipo === 'CUSTO_CRONOGRAMA');
+    this.metricas = this.itensCanvas.filter(
+      item => item.tipo === 'METRICA');
   }
 
 

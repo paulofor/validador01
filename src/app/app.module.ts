@@ -21,6 +21,8 @@ import { ProjetoApi } from './shared/sdk/services/custom/Projeto';
 import { ProjetoCanvasApi } from './shared/sdk/services/custom/ProjetoCanvas';
 import { ProjetoMySqlApi } from './shared/sdk/services/custom/ProjetoMySql';
 import { ProjetoCanvasMySqlApi } from './shared/sdk/services/custom/ProjetoCanvasMySql';
+import { MvpCanvasMySqlApi } from './shared/sdk/services/custom/MvpCanvasMySql';
+
 import { HttpClient, HttpResponse, HttpClientModule } from '@angular/common/http';
 import { SocketConnection } from './shared/sdk/sockets/socket.connections';
 import { SocketDriver } from './shared/sdk/sockets/socket.driver';
@@ -70,14 +72,15 @@ import { CanvasMvpComponent } from './canvas-mvp/canvas-mvp.component';
     ProjetoService,
     ProjetoApi,
     ProjetoCanvasApi,
-    HttpClient,
-    SocketConnection, 
+    HttpClient, 
+    SocketConnection  , 
     SocketDriver,
     SDKModels,
     LoopBackAuth,
     InternalStorage,
     ProjetoMySqlApi,
-    ProjetoCanvasMySqlApi
+    ProjetoCanvasMySqlApi,
+    MvpCanvasMySqlApi
 
   ],
   bootstrap: [AppComponent]

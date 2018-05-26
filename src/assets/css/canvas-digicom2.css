@@ -7,4 +7,9 @@
 
 .canvas-post-mvp {
     height: 220px;
+    padding: 5px;
+}
+
+.canvas-board.-terco{
+    height:33%
 }

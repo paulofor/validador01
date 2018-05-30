@@ -8,12 +8,14 @@
 .canvas-post-mvp {
     height: 220px;
     padding: 5px;
+    overflow-y: auto; /* aparece quando precisa */
 }
 .canvas-post-mvp-menor {
     height: 120px;
     padding: 5px;
+    overflow-y: auto;
 }
 
 .canvas-board.-terco{
-    height:33%
+    height:33%;
 }

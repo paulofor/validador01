@@ -30,11 +30,11 @@
             <button class="add-postit" (click)="openDialog('PERSONA')">+ Adicionar post-it</button>
           </div>
           <!-- Painel B -->
-          <div class="canvas-board -half recursos">
+          <div class="canvas-board -half recursos "  >
             <header class="board-header">
               <h3 class="board-title green">Jornadas</h3>
             </header>
-            <ul class="canvas-post-mvp">
+            <ul class="canvas-post-mvp" style="overflow-y: scroll;">
               <li class="canvas-postit yellow" *ngFor="let projetoCanvas of jornadas">
                 <p class="postit-name">{{projetoCanvas.descricao}}</p>
                 <button class="btn" (click)="editaItem(projetoCanvas)">

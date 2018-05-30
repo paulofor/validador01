@@ -40,6 +40,7 @@ import { ProjetoCanvasEditaComponent } from './projeto-canvas-edita/projeto-canv
 import { CanvasMvpComponent } from './canvas-mvp/canvas-mvp.component';
 import { MvpCanvasCriaComponent } from './mvp-canvas-cria/mvp-canvas-cria.component';
 import { MvpCanvasEditaComponent } from './mvp-canvas-edita/mvp-canvas-edita.component';
+import { CanvasPropostaValorComponent } from './canvas-proposta-valor/canvas-proposta-valor.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { MvpCanvasEditaComponent } from './mvp-canvas-edita/mvp-canvas-edita.com
     ProjetoCanvasEditaComponent,
     CanvasMvpComponent,
     MvpCanvasCriaComponent,
-    MvpCanvasEditaComponent
+    MvpCanvasEditaComponent,
+    CanvasPropostaValorComponent
   ],
   entryComponents: [
     ProjetoCanvasCriaComponent,

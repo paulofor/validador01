@@ -41,6 +41,9 @@ import { CanvasMvpComponent } from './canvas-mvp/canvas-mvp.component';
 import { MvpCanvasCriaComponent } from './mvp-canvas-cria/mvp-canvas-cria.component';
 import { MvpCanvasEditaComponent } from './mvp-canvas-edita/mvp-canvas-edita.component';
 import { CanvasPropostaValorComponent } from './canvas-proposta-valor/canvas-proposta-valor.component';
+import { CanvasDorGanhoComponent } from './canvas-dor-ganho/canvas-dor-ganho.component';
+import { DorGanhoCanvasCriaComponent } from './dor-ganho-canvas-cria/dor-ganho-canvas-cria.component';
+import { DorGanhoCanvasEditaComponent } from './dor-ganho-canvas-edita/dor-ganho-canvas-edita.component';
 
 @NgModule({
   declarations: [
@@ -57,13 +60,18 @@ import { CanvasPropostaValorComponent } from './canvas-proposta-valor/canvas-pro
     CanvasMvpComponent,
     MvpCanvasCriaComponent,
     MvpCanvasEditaComponent,
-    CanvasPropostaValorComponent
+    CanvasPropostaValorComponent,
+    CanvasDorGanhoComponent,
+    DorGanhoCanvasCriaComponent,
+    DorGanhoCanvasEditaComponent
   ],
   entryComponents: [
     ProjetoCanvasCriaComponent,
     ProjetoCanvasEditaComponent,
     MvpCanvasCriaComponent,
-    MvpCanvasEditaComponent
+    MvpCanvasEditaComponent,
+    DorGanhoCanvasCriaComponent,
+    DorGanhoCanvasEditaComponent
   ],
   imports: [
     BrowserModule,

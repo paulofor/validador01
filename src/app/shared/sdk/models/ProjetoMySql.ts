@@ -1,7 +1,8 @@
 /* tslint:disable */
 import {
   ProjetoCanvasMySql,
-  MvpCanvasMySql
+  MvpCanvasMySql,
+  GanhoDorCanvasMySql
 } from '../index';
 
 declare var Object: any;
@@ -13,6 +14,7 @@ export interface ProjetoMySqlInterface {
   "dor"?: string;
   projetoCanvasMySqls?: ProjetoCanvasMySql[];
   mvpCanvasMySqls?: MvpCanvasMySql[];
+  ganhoDorCanvasMySqls?: GanhoDorCanvasMySql[];
 }
 
 export class ProjetoMySql implements ProjetoMySqlInterface {
@@ -23,6 +25,7 @@ export class ProjetoMySql implements ProjetoMySqlInterface {
   "dor": string;
   projetoCanvasMySqls: ProjetoCanvasMySql[];
   mvpCanvasMySqls: MvpCanvasMySql[];
+  ganhoDorCanvasMySqls: GanhoDorCanvasMySql[];
   constructor(data?: ProjetoMySqlInterface) {
     Object.assign(this, data);
   }
@@ -90,6 +93,14 @@ export class ProjetoMySql implements ProjetoMySqlInterface {
           name: 'mvpCanvasMySqls',
           type: 'MvpCanvasMySql[]',
           model: 'MvpCanvasMySql',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'projetoMySqlId'
+        },
+        ganhoDorCanvasMySqls: {
+          name: 'ganhoDorCanvasMySqls',
+          type: 'GanhoDorCanvasMySql[]',
+          model: 'GanhoDorCanvasMySql',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'projetoMySqlId'

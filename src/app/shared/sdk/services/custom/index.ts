@@ -5,5 +5,6 @@ export * from './ProjetoCanvas';
 export * from './ProjetoMySql';
 export * from './ProjetoCanvasMySql';
 export * from './MvpCanvasMySql';
+export * from './GanhoDorCanvasMySql';
 export * from './SDKModels';
 export * from './logger.service';

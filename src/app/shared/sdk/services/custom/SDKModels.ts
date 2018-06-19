@@ -6,6 +6,7 @@ import { ProjetoCanvas } from '../../models/ProjetoCanvas';
 import { ProjetoMySql } from '../../models/ProjetoMySql';
 import { ProjetoCanvasMySql } from '../../models/ProjetoCanvasMySql';
 import { MvpCanvasMySql } from '../../models/MvpCanvasMySql';
+import { GanhoDorCanvasMySql } from '../../models/GanhoDorCanvasMySql';
 
 export interface Models { [name: string]: any }
 
@@ -19,6 +20,7 @@ export class SDKModels {
     ProjetoMySql: ProjetoMySql,
     ProjetoCanvasMySql: ProjetoCanvasMySql,
     MvpCanvasMySql: MvpCanvasMySql,
+    GanhoDorCanvasMySql: GanhoDorCanvasMySql,
     
   };
 

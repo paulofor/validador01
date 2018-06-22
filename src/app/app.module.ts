@@ -17,7 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { CanvasProjetoComponent } from './canvas-projeto/canvas-projeto.component'; 
 
 import { ProjetoService } from './servicos/projeto.service';
-import { ProjetoApi } from './shared/sdk/services/custom/Projeto';
+import { ProjetoApi, GanhoDorCanvasMySqlApi } from './shared/sdk/services/custom';
 import { ProjetoCanvasApi } from './shared/sdk/services/custom/ProjetoCanvas';
 import { ProjetoMySqlApi } from './shared/sdk/services/custom/ProjetoMySql';
 import { ProjetoCanvasMySqlApi } from './shared/sdk/services/custom/ProjetoCanvasMySql';
@@ -96,7 +96,8 @@ import { DorGanhoCanvasEditaComponent } from './dor-ganho-canvas-edita/dor-ganho
     InternalStorage,
     ProjetoMySqlApi,
     ProjetoCanvasMySqlApi,
-    MvpCanvasMySqlApi
+    MvpCanvasMySqlApi,
+    GanhoDorCanvasMySqlApi
 
   ],
   bootstrap: [AppComponent]

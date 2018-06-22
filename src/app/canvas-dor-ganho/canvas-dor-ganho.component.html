@@ -5,10 +5,125 @@
 <div class="dashboard" style="padding-top: 0px;">
   <div class="canvas-container" id="canvas">
     <header class="header-canvas-core">
-       <span *ngIf="projeto" class="canvas-input-title">{{projeto.nome}} - Dor/Ganho Canvas</span>
+      <span *ngIf="projeto" class="canvas-input-title">{{projeto.nome}} - Dor/Ganho Canvas</span>
     </header>
 
+    <div class="canvas-core-container">
+      <div class="canvas-core">
+
+        <!-- Coluna 1-->
+        <section class="canvas-coluna-ganhodor">
+          <!-- Painel A -->
+          <div class="canvas-board atividades">
+            <header class="board-header">
+              <h3 class="board-title pink">Produtos & Servicos</h3>
+            </header>
+            <ul class="canvas-post-mvp">
+              <li class="canvas-postit yellow" *ngFor="let projetoCanvas of personas">
+                <p class="postit-name">{{projetoCanvas.descricao}}</p>
+                <button class="btn" (click)="editaItem(projetoCanvas)">
+                  <span class="s s-pencil"></span>
+                </button>
+              </li>
+            </ul>
+            <button class="add-postit" (click)="openDialog('PERSONA')">+ Adicionar post-it</button>
+          </div>
+
+        </section>
 
 
+        <!-- Coluna 2-->
+        <section class="canvas-coluna-ganhodor">
+          <!-- Painel A -->
+          <div class="canvas-board -half atividades">
+            <header class="board-header">
+              <h3 class="board-title pink">Criadores de Ganho</h3>
+            </header>
+            <ul class="canvas-post-mvp">
+              <li class="canvas-postit yellow" *ngFor="let projetoCanvas of personas">
+                <p class="postit-name">{{projetoCanvas.descricao}}</p>
+                <button class="btn" (click)="editaItem(projetoCanvas)">
+                  <span class="s s-pencil"></span>
+                </button>
+              </li>
+            </ul>
+            <button class="add-postit" (click)="openDialog('PERSONA')">+ Adicionar post-it</button>
+          </div>
+          <!-- Painel B -->
+          <div class="canvas-board -half recursos ">
+            <header class="board-header">
+              <h3 class="board-title green">Alivio de Dores</h3>
+            </header>
+            <ul class="canvas-post-mvp" style="overflow-y: scroll;">
+              <li class="canvas-postit yellow" *ngFor="let projetoCanvas of jornadas">
+                <p class="postit-name">{{projetoCanvas.descricao}}</p>
+                <button class="btn" (click)="editaItem(projetoCanvas)">
+                  <span class="s s-pencil"></span>
+                </button>
+              </li>
+            </ul>
+            <button class="add-postit" (click)="openDialog('JORNADA')">+ Adicionar post-it</button>
+          </div>
+        </section>
+
+
+
+        <!-- Coluna 3-->
+        <section class="canvas-coluna-ganhodor">
+          <!-- Painel A -->
+          <div class="canvas-board -half atividades">
+            <header class="board-header">
+              <h3 class="board-title pink">Ganhos</h3>
+            </header>
+            <ul class="canvas-post-mvp">
+              <li class="canvas-postit yellow" *ngFor="let projetoCanvas of personas">
+                <p class="postit-name">{{projetoCanvas.descricao}}</p>
+                <button class="btn" (click)="editaItem(projetoCanvas)">
+                  <span class="s s-pencil"></span>
+                </button>
+              </li>
+            </ul>
+            <button class="add-postit" (click)="openDialog('PERSONA')">+ Adicionar post-it</button>
+          </div>
+          <!-- Painel B -->
+          <div class="canvas-board -half recursos ">
+            <header class="board-header">
+              <h3 class="board-title green">Dores</h3>
+            </header>
+            <ul class="canvas-post-mvp" style="overflow-y: scroll;">
+              <li class="canvas-postit yellow" *ngFor="let projetoCanvas of jornadas">
+                <p class="postit-name">{{projetoCanvas.descricao}}</p>
+                <button class="btn" (click)="editaItem(projetoCanvas)">
+                  <span class="s s-pencil"></span>
+                </button>
+              </li>
+            </ul>
+            <button class="add-postit" (click)="openDialog('JORNADA')">+ Adicionar post-it</button>
+          </div>
+        </section>
+
+        <!-- Coluna 4-->
+        <section class="canvas-coluna-ganhodor">
+          <!-- Painel A -->
+          <div class="canvas-board atividades">
+            <header class="board-header">
+              <h3 class="board-title pink">Tarefas</h3>
+            </header>
+            <ul class="canvas-post-mvp">
+              <li class="canvas-postit yellow" *ngFor="let projetoCanvas of personas">
+                <p class="postit-name">{{projetoCanvas.descricao}}</p>
+                <button class="btn" (click)="editaItem(projetoCanvas)">
+                  <span class="s s-pencil"></span>
+                </button>
+              </li>
+            </ul>
+            <button class="add-postit" (click)="openDialog('PERSONA')">+ Adicionar post-it</button>
+          </div>
+
+        </section>
+
+
+      </div>
+    </div>
   </div>
 </div>

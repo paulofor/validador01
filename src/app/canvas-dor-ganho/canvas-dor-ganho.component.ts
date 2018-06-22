@@ -44,7 +44,7 @@ export class CanvasDorGanhoComponent implements OnInit {
 
  
   ngOnInit() {
-    console.log('CanvasMvpComponent');
+    console.log('CanvasDorGanhoComponent');
     LoopBackConfig.setBaseURL(BASE_URL);
     LoopBackConfig.setApiVersion(API_VERSION);
 
@@ -69,7 +69,7 @@ export class CanvasDorGanhoComponent implements OnInit {
 
   editaItem(projetoCanvas) {
     console.log('ID Edicao: ' + JSON.stringify(projetoCanvas));
-    this.dialog.open(MvpCanvasEditaComponent, {
+    this.dialog.open(DorGanhoCanvasEditaComponent, {
       width: '600px',
       data: {
         projeto: this.projeto,
@@ -93,8 +93,8 @@ export class CanvasDorGanhoComponent implements OnInit {
   }
 
   carregaCanvas() {
-    this.projetoService.getMvpCanvasMySqls(this.projeto.id)
-      .subscribe((valor: MvpCanvasMySql[]) => {
+    this.projetoService.getGanhoDorCanvasMySqls(this.projeto.id)
+      .subscribe((valor: GanhoDorCanvasMySql[]) => {
         console.log('Lista: ' + JSON.stringify(valor));
         this.itensCanvas = valor;
         this.distribuiItensCanvas();

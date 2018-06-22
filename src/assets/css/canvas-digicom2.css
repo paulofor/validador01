@@ -4,6 +4,12 @@
     height: 600px;
     float: left;
 }
+.canvas-coluna-ganhodor {
+    width: 25%;
+    height: 600px;
+    float: left;
+}
+
 
 .canvas-post-mvp {
     height: 220px;

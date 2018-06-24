@@ -27,13 +27,12 @@ export class CanvasDorGanhoComponent implements OnInit {
   projeto: ProjetoMySql;
   errMess: string;
 
-  personas: GanhoDorCanvasMySql[];
-  jornadas: GanhoDorCanvasMySql[];
-  visoes: GanhoDorCanvasMySql[];
-  funcionalidades: GanhoDorCanvasMySql[];
-  custos: GanhoDorCanvasMySql[];
-  resultados: GanhoDorCanvasMySql[];
-  metricas: GanhoDorCanvasMySql[];
+  produtosServicos: GanhoDorCanvasMySql[];
+  criaGanhos: GanhoDorCanvasMySql[];
+  aliviaDores : GanhoDorCanvasMySql[];
+  ganhos: GanhoDorCanvasMySql[];
+  dores: GanhoDorCanvasMySql[];
+  tarefas: GanhoDorCanvasMySql[];
 
   constructor(private dialog: MatDialog, private projetoService: ProjetoMySqlApi,
     private canvasService: GanhoDorCanvasMySqlApi,
@@ -98,26 +97,25 @@ export class CanvasDorGanhoComponent implements OnInit {
         console.log('Lista: ' + JSON.stringify(valor));
         this.itensCanvas = valor;
         this.distribuiItensCanvas();
+        
       })
 
   }
 
 
   distribuiItensCanvas() {
-    this.personas = this.itensCanvas.filter(
-      item => item.tipo === 'PERSONA');
-    this.jornadas = this.itensCanvas.filter(
-      item => item.tipo === 'JORNADA');
-    this.visoes = this.itensCanvas.filter(
-      item => item.tipo === 'VISAO_MVP');
-    this.funcionalidades = this.itensCanvas.filter(
-      item => item.tipo === 'FUNCIONALIDADE');
-    this.resultados = this.itensCanvas.filter(
-      item => item.tipo === 'RESULTADO');
-    this.custos = this.itensCanvas.filter(
-      item => item.tipo === 'CUSTO_CRONOGRAMA');
-    this.metricas = this.itensCanvas.filter(
-      item => item.tipo === 'METRICA');
+    this.produtosServicos = this.itensCanvas.filter(
+      item => item.tipo === 'PRODUTO_SERVICO');
+    this.criaGanhos = this.itensCanvas.filter(
+      item => item.tipo === 'CRIA_GANHO');
+    this.aliviaDores = this.itensCanvas.filter(
+      item => item.tipo === 'ALIVIA_DOR');
+    this.dores = this.itensCanvas.filter(
+      item => item.tipo === 'DOR');
+    this.ganhos = this.itensCanvas.filter(
+      item => item.tipo === 'GANHO');
+    this.tarefas = this.itensCanvas.filter(
+      item => item.tipo === 'TAREFA');
   }
 
 

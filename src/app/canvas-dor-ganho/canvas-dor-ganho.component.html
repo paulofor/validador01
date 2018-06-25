@@ -18,7 +18,7 @@
             <header class="board-header">
               <h3 class="board-title pink">Produtos & Servicos</h3>
             </header>
-            <ul class="canvas-post-mvp">
+            <ul class="canvas-post-mvp-coluna">
               <li class="canvas-postit yellow" *ngFor="let projetoCanvas of produtosServicos">
                 <p class="postit-name">{{projetoCanvas.descricao}}</p>
                 <button class="btn" (click)="editaItem(projetoCanvas)">
@@ -109,7 +109,7 @@
             <header class="board-header">
               <h3 class="board-title pink">Tarefas</h3>
             </header>
-            <ul class="canvas-post-mvp">
+            <ul class="canvas-post-mvp-coluna">
               <li class="canvas-postit yellow" *ngFor="let projetoCanvas of tarefas">
                 <p class="postit-name">{{projetoCanvas.descricao}}</p>
                 <button class="btn" (click)="editaItem(projetoCanvas)">

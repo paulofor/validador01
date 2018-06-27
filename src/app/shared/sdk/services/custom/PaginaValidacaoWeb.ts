@@ -9,16 +9,16 @@ import { LoopBackFilter,  } from '../../models/BaseModels';
 import { ErrorHandler } from '../core/error.service';
 import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Projeto } from '../../models/Projeto';
+import { PaginaValidacaoWeb } from '../../models/PaginaValidacaoWeb';
 import { SocketConnection } from '../../sockets/socket.connections';
-import { ProjetoCanvas } from '../../models/ProjetoCanvas';
+import { ItemValidacaoPagina } from '../../models/ItemValidacaoPagina';
 
 
 /**
- * Api services for the `Projeto` model.
+ * Api services for the `PaginaValidacaoWeb` model.
  */
 @Injectable()
-export class ProjetoApi extends BaseLoopBackApi {
+export class PaginaValidacaoWebApi extends BaseLoopBackApi {
 
   constructor(
     @Inject(HttpClient) protected http: HttpClient,
@@ -31,11 +31,11 @@ export class ProjetoApi extends BaseLoopBackApi {
   }
 
   /**
-   * Find a related item by id for ProjetoCanvasRel.
+   * Find a related item by id for itemValidacaoPaginas.
    *
-   * @param {any} id projeto id
+   * @param {any} id PaginaValidacaoWeb id
    *
-   * @param {any} fk Foreign key for ProjetoCanvasRel
+   * @param {any} fk Foreign key for itemValidacaoPaginas
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -43,13 +43,13 @@ export class ProjetoApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Projeto` object.)
+   * This usually means the response is a `PaginaValidacaoWeb` object.)
    * </em>
    */
-  public findByIdProjetoCanvasRel(id: any, fk: any, customHeaders?: Function): Observable<any> {
+  public findByIdItemValidacaoPaginas(id: any, fk: any, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/projetos/:id/ProjetoCanvasRel/:fk";
+    "/PaginaValidacaoWebs/:id/itemValidacaoPaginas/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -61,11 +61,11 @@ export class ProjetoApi extends BaseLoopBackApi {
   }
 
   /**
-   * Delete a related item by id for ProjetoCanvasRel.
+   * Delete a related item by id for itemValidacaoPaginas.
    *
-   * @param {any} id projeto id
+   * @param {any} id PaginaValidacaoWeb id
    *
-   * @param {any} fk Foreign key for ProjetoCanvasRel
+   * @param {any} fk Foreign key for itemValidacaoPaginas
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -73,10 +73,10 @@ export class ProjetoApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public destroyByIdProjetoCanvasRel(id: any, fk: any, customHeaders?: Function): Observable<any> {
+  public destroyByIdItemValidacaoPaginas(id: any, fk: any, customHeaders?: Function): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/projetos/:id/ProjetoCanvasRel/:fk";
+    "/PaginaValidacaoWebs/:id/itemValidacaoPaginas/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -88,11 +88,11 @@ export class ProjetoApi extends BaseLoopBackApi {
   }
 
   /**
-   * Update a related item by id for ProjetoCanvasRel.
+   * Update a related item by id for itemValidacaoPaginas.
    *
-   * @param {any} id projeto id
+   * @param {any} id PaginaValidacaoWeb id
    *
-   * @param {any} fk Foreign key for ProjetoCanvasRel
+   * @param {any} fk Foreign key for itemValidacaoPaginas
    *
    * @param {object} data Request data.
    *
@@ -104,13 +104,13 @@ export class ProjetoApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Projeto` object.)
+   * This usually means the response is a `PaginaValidacaoWeb` object.)
    * </em>
    */
-  public updateByIdProjetoCanvasRel(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
+  public updateByIdItemValidacaoPaginas(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PUT";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/projetos/:id/ProjetoCanvasRel/:fk";
+    "/PaginaValidacaoWebs/:id/itemValidacaoPaginas/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -124,9 +124,9 @@ export class ProjetoApi extends BaseLoopBackApi {
   }
 
   /**
-   * Queries ProjetoCanvasRel of projeto.
+   * Queries itemValidacaoPaginas of PaginaValidacaoWeb.
    *
-   * @param {any} id projeto id
+   * @param {any} id PaginaValidacaoWeb id
    *
    * @param {object} filter 
    *
@@ -136,13 +136,13 @@ export class ProjetoApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Projeto` object.)
+   * This usually means the response is a `PaginaValidacaoWeb` object.)
    * </em>
    */
-  public getProjetoCanvasRel(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
+  public getItemValidacaoPaginas(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/projetos/:id/ProjetoCanvasRel";
+    "/PaginaValidacaoWebs/:id/itemValidacaoPaginas";
     let _routeParams: any = {
       id: id
     };
@@ -154,9 +154,9 @@ export class ProjetoApi extends BaseLoopBackApi {
   }
 
   /**
-   * Creates a new instance in ProjetoCanvasRel of this model.
+   * Creates a new instance in itemValidacaoPaginas of this model.
    *
-   * @param {any} id projeto id
+   * @param {any} id PaginaValidacaoWeb id
    *
    * @param {object} data Request data.
    *
@@ -168,13 +168,13 @@ export class ProjetoApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Projeto` object.)
+   * This usually means the response is a `PaginaValidacaoWeb` object.)
    * </em>
    */
-  public createProjetoCanvasRel(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
+  public createItemValidacaoPaginas(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/projetos/:id/ProjetoCanvasRel";
+    "/PaginaValidacaoWebs/:id/itemValidacaoPaginas";
     let _routeParams: any = {
       id: id
     };
@@ -187,9 +187,9 @@ export class ProjetoApi extends BaseLoopBackApi {
   }
 
   /**
-   * Deletes all ProjetoCanvasRel of this model.
+   * Deletes all itemValidacaoPaginas of this model.
    *
-   * @param {any} id projeto id
+   * @param {any} id PaginaValidacaoWeb id
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -197,10 +197,10 @@ export class ProjetoApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public deleteProjetoCanvasRel(id: any, customHeaders?: Function): Observable<any> {
+  public deleteItemValidacaoPaginas(id: any, customHeaders?: Function): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/projetos/:id/ProjetoCanvasRel";
+    "/PaginaValidacaoWebs/:id/itemValidacaoPaginas";
     let _routeParams: any = {
       id: id
     };
@@ -211,9 +211,9 @@ export class ProjetoApi extends BaseLoopBackApi {
   }
 
   /**
-   * Counts ProjetoCanvasRel of projeto.
+   * Counts itemValidacaoPaginas of PaginaValidacaoWeb.
    *
-   * @param {any} id projeto id
+   * @param {any} id PaginaValidacaoWeb id
    *
    * @param {object} where Criteria to match model instances
    *
@@ -225,10 +225,10 @@ export class ProjetoApi extends BaseLoopBackApi {
    *
    *  - `count` – `{number}` - 
    */
-  public countProjetoCanvasRel(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
+  public countItemValidacaoPaginas(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/projetos/:id/ProjetoCanvasRel/count";
+    "/PaginaValidacaoWebs/:id/itemValidacaoPaginas/count";
     let _routeParams: any = {
       id: id
     };
@@ -252,13 +252,13 @@ export class ProjetoApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Projeto` object.)
+   * This usually means the response is a `PaginaValidacaoWeb` object.)
    * </em>
    */
   public patchOrCreate(data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/projetos";
+    "/PaginaValidacaoWebs";
     let _routeParams: any = {};
     let _postBody: any = {
       data: data
@@ -271,7 +271,7 @@ export class ProjetoApi extends BaseLoopBackApi {
   /**
    * Patch attributes for a model instance and persist it into the data source.
    *
-   * @param {any} id projeto id
+   * @param {any} id PaginaValidacaoWeb id
    *
    * @param {object} data Request data.
    *
@@ -283,13 +283,13 @@ export class ProjetoApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Projeto` object.)
+   * This usually means the response is a `PaginaValidacaoWeb` object.)
    * </em>
    */
   public patchAttributes(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/projetos/:id";
+    "/PaginaValidacaoWebs/:id";
     let _routeParams: any = {
       id: id
     };
@@ -302,9 +302,9 @@ export class ProjetoApi extends BaseLoopBackApi {
   }
 
   /**
-   * Creates a new instance in ProjetoCanvasRel of this model.
+   * Creates a new instance in itemValidacaoPaginas of this model.
    *
-   * @param {any} id projeto id
+   * @param {any} id PaginaValidacaoWeb id
    *
    * @param {object} data Request data.
    *
@@ -316,13 +316,13 @@ export class ProjetoApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Projeto` object.)
+   * This usually means the response is a `PaginaValidacaoWeb` object.)
    * </em>
    */
-  public createManyProjetoCanvasRel(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
+  public createManyItemValidacaoPaginas(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/projetos/:id/ProjetoCanvasRel";
+    "/PaginaValidacaoWebs/:id/itemValidacaoPaginas";
     let _routeParams: any = {
       id: id
     };
@@ -336,9 +336,9 @@ export class ProjetoApi extends BaseLoopBackApi {
 
   /**
    * The name of the model represented by this $resource,
-   * i.e. `Projeto`.
+   * i.e. `PaginaValidacaoWeb`.
    */
   public getModelName() {
-    return "Projeto";
+    return "PaginaValidacaoWeb";
   }
 }

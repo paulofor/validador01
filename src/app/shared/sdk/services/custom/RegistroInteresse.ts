@@ -9,15 +9,15 @@ import { LoopBackFilter,  } from '../../models/BaseModels';
 import { ErrorHandler } from '../core/error.service';
 import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { GanhoDorCanvasMySql } from '../../models/GanhoDorCanvasMySql';
+import { RegistroInteresse } from '../../models/RegistroInteresse';
 import { SocketConnection } from '../../sockets/socket.connections';
 
 
 /**
- * Api services for the `GanhoDorCanvasMySql` model.
+ * Api services for the `RegistroInteresse` model.
  */
 @Injectable()
-export class GanhoDorCanvasMySqlApi extends BaseLoopBackApi {
+export class RegistroInteresseApi extends BaseLoopBackApi {
 
   constructor(
     @Inject(HttpClient) protected http: HttpClient,
@@ -42,13 +42,13 @@ export class GanhoDorCanvasMySqlApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `GanhoDorCanvasMySql` object.)
+   * This usually means the response is a `RegistroInteresse` object.)
    * </em>
    */
   public patchOrCreate(data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/GanhoDorCanvasMySqls";
+    "/RegistroInteresses";
     let _routeParams: any = {};
     let _postBody: any = {
       data: data
@@ -61,7 +61,7 @@ export class GanhoDorCanvasMySqlApi extends BaseLoopBackApi {
   /**
    * Patch attributes for a model instance and persist it into the data source.
    *
-   * @param {any} id GanhoDorCanvasMySql id
+   * @param {any} id RegistroInteresse id
    *
    * @param {object} data Request data.
    *
@@ -73,13 +73,13 @@ export class GanhoDorCanvasMySqlApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `GanhoDorCanvasMySql` object.)
+   * This usually means the response is a `RegistroInteresse` object.)
    * </em>
    */
   public patchAttributes(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/GanhoDorCanvasMySqls/:id";
+    "/RegistroInteresses/:id";
     let _routeParams: any = {
       id: id
     };
@@ -93,9 +93,9 @@ export class GanhoDorCanvasMySqlApi extends BaseLoopBackApi {
 
   /**
    * The name of the model represented by this $resource,
-   * i.e. `GanhoDorCanvasMySql`.
+   * i.e. `RegistroInteresse`.
    */
   public getModelName() {
-    return "GanhoDorCanvasMySql";
+    return "RegistroInteresse";
   }
 }

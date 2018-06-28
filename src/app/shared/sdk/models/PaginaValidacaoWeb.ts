@@ -6,13 +6,13 @@ import {
 declare var Object: any;
 export interface PaginaValidacaoWebInterface {
   "id"?: number;
-  "titulo"?: string;
+  "nome"?: string;
   itemValidacaoPaginas?: ItemValidacaoPagina[];
 }
 
 export class PaginaValidacaoWeb implements PaginaValidacaoWebInterface {
   "id": number;
-  "titulo": string;
+  "nome": string;
   itemValidacaoPaginas: ItemValidacaoPagina[];
   constructor(data?: PaginaValidacaoWebInterface) {
     Object.assign(this, data);
@@ -51,8 +51,8 @@ export class PaginaValidacaoWeb implements PaginaValidacaoWebInterface {
           name: 'id',
           type: 'number'
         },
-        "titulo": {
-          name: 'titulo',
+        "nome": {
+          name: 'nome',
           type: 'string'
         },
       },

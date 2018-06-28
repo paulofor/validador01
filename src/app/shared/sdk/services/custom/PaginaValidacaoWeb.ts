@@ -7,7 +7,8 @@ import { LoopBackConfig } from '../../lb.config';
 import { LoopBackAuth } from '../core/auth.service';
 import { LoopBackFilter,  } from '../../models/BaseModels';
 import { ErrorHandler } from '../core/error.service';
-import { Observable, Subject } from 'rxjs';
+import { Subject } from 'rxjs/Subject';
+import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
 import { PaginaValidacaoWeb } from '../../models/PaginaValidacaoWeb';
 import { SocketConnection } from '../../sockets/socket.connections';
@@ -297,6 +298,39 @@ export class PaginaValidacaoWebApi extends BaseLoopBackApi {
       data: data
     };
     let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Fetches belongsTo relation projetoCanvasMySql.
+   *
+   * @param {any} id PaginaValidacaoWeb id
+   *
+   * @param {any} nk Foreign key for itemValidacaoPaginas.
+   *
+   * @param {boolean} refresh 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `PaginaValidacaoWeb` object.)
+   * </em>
+   */
+  public getItemValidacaoPaginasProjetoCanvasMySql(id: any, nk: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/PaginaValidacaoWebs/:id/itemValidacaoPaginas/:nk/projetoCanvasMySql";
+    let _routeParams: any = {
+      id: id,
+      nk: nk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof refresh !== 'undefined' && refresh !== null) _urlParams.refresh = refresh;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }

@@ -1,6 +1,7 @@
 /* tslint:disable */
 import {
-  ItemValidacaoPagina
+  ItemValidacaoPagina,
+  RegistroInteresse
 } from '../index';
 
 declare var Object: any;
@@ -8,12 +9,14 @@ export interface PaginaValidacaoWebInterface {
   "id"?: number;
   "nome"?: string;
   itemValidacaoPaginas?: ItemValidacaoPagina[];
+  registroInteresses?: RegistroInteresse[];
 }
 
 export class PaginaValidacaoWeb implements PaginaValidacaoWebInterface {
   "id": number;
   "nome": string;
   itemValidacaoPaginas: ItemValidacaoPagina[];
+  registroInteresses: RegistroInteresse[];
   constructor(data?: PaginaValidacaoWebInterface) {
     Object.assign(this, data);
   }
@@ -61,6 +64,14 @@ export class PaginaValidacaoWeb implements PaginaValidacaoWebInterface {
           name: 'itemValidacaoPaginas',
           type: 'ItemValidacaoPagina[]',
           model: 'ItemValidacaoPagina',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'paginaValidacaoWebId'
+        },
+        registroInteresses: {
+          name: 'registroInteresses',
+          type: 'RegistroInteresse[]',
+          model: 'RegistroInteresse',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'paginaValidacaoWebId'

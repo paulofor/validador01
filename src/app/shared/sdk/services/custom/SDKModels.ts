@@ -9,6 +9,7 @@ import { MvpCanvasMySql } from '../../models/MvpCanvasMySql';
 import { GanhoDorCanvasMySql } from '../../models/GanhoDorCanvasMySql';
 import { PaginaValidacaoWeb } from '../../models/PaginaValidacaoWeb';
 import { ItemValidacaoPagina } from '../../models/ItemValidacaoPagina';
+import { RegistroInteresse } from '../../models/RegistroInteresse';
 
 export interface Models { [name: string]: any }
 
@@ -25,6 +26,7 @@ export class SDKModels {
     GanhoDorCanvasMySql: GanhoDorCanvasMySql,
     PaginaValidacaoWeb: PaginaValidacaoWeb,
     ItemValidacaoPagina: ItemValidacaoPagina,
+    RegistroInteresse: RegistroInteresse,
     
   };
 

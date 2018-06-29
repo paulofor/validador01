@@ -1,5 +1,6 @@
 /* tslint:disable */
 import {
+  ProjetoMySql,
   ItemValidacaoPagina
 } from '../index';
 
@@ -10,6 +11,7 @@ export interface ProjetoCanvasMySqlInterface {
   "tipo": string;
   "projetoMySqlId"?: number;
   "projetoExemploId"?: number;
+  projeto?: ProjetoMySql;
   itemValidacaoPaginas?: ItemValidacaoPagina[];
 }
 
@@ -19,6 +21,7 @@ export class ProjetoCanvasMySql implements ProjetoCanvasMySqlInterface {
   "tipo": string;
   "projetoMySqlId": number;
   "projetoExemploId": number;
+  projeto: ProjetoMySql;
   itemValidacaoPaginas: ItemValidacaoPagina[];
   constructor(data?: ProjetoCanvasMySqlInterface) {
     Object.assign(this, data);
@@ -75,6 +78,14 @@ export class ProjetoCanvasMySql implements ProjetoCanvasMySqlInterface {
         },
       },
       relations: {
+        projeto: {
+          name: 'projeto',
+          type: 'ProjetoMySql',
+          model: 'ProjetoMySql',
+          relationType: 'belongsTo',
+                  keyFrom: 'projetoMySqlId',
+          keyTo: 'id'
+        },
         itemValidacaoPaginas: {
           name: 'itemValidacaoPaginas',
           type: 'ItemValidacaoPagina[]',

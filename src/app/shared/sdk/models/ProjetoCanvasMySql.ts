@@ -9,6 +9,7 @@ export interface ProjetoCanvasMySqlInterface {
   "descricao": string;
   "tipo": string;
   "projetoMySqlId"?: number;
+  "projetoExemploId"?: number;
   itemValidacaoPaginas?: ItemValidacaoPagina[];
 }
 
@@ -17,6 +18,7 @@ export class ProjetoCanvasMySql implements ProjetoCanvasMySqlInterface {
   "descricao": string;
   "tipo": string;
   "projetoMySqlId": number;
+  "projetoExemploId": number;
   itemValidacaoPaginas: ItemValidacaoPagina[];
   constructor(data?: ProjetoCanvasMySqlInterface) {
     Object.assign(this, data);
@@ -65,6 +67,10 @@ export class ProjetoCanvasMySql implements ProjetoCanvasMySqlInterface {
         },
         "projetoMySqlId": {
           name: 'projetoMySqlId',
+          type: 'number'
+        },
+        "projetoExemploId": {
+          name: 'projetoExemploId',
           type: 'number'
         },
       },

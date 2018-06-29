@@ -9,5 +9,6 @@ export * from './GanhoDorCanvasMySql';
 export * from './PaginaValidacaoWeb';
 export * from './ItemValidacaoPagina';
 export * from './RegistroInteresse';
+export * from './ProjetoExemplo';
 export * from './SDKModels';
 export * from './logger.service';

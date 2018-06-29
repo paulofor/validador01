@@ -6,6 +6,7 @@ export interface GanhoDorCanvasMySqlInterface {
   "descricao": string;
   "tipo": string;
   "projetoMySqlId"?: number;
+  "projetoExemploId"?: number;
 }
 
 export class GanhoDorCanvasMySql implements GanhoDorCanvasMySqlInterface {
@@ -13,6 +14,7 @@ export class GanhoDorCanvasMySql implements GanhoDorCanvasMySqlInterface {
   "descricao": string;
   "tipo": string;
   "projetoMySqlId": number;
+  "projetoExemploId": number;
   constructor(data?: GanhoDorCanvasMySqlInterface) {
     Object.assign(this, data);
   }
@@ -60,6 +62,10 @@ export class GanhoDorCanvasMySql implements GanhoDorCanvasMySqlInterface {
         },
         "projetoMySqlId": {
           name: 'projetoMySqlId',
+          type: 'number'
+        },
+        "projetoExemploId": {
+          name: 'projetoExemploId',
           type: 'number'
         },
       },

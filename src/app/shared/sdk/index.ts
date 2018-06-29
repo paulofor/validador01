@@ -58,6 +58,7 @@ import { GanhoDorCanvasMySqlApi } from './services/custom/GanhoDorCanvasMySql';
 import { PaginaValidacaoWebApi } from './services/custom/PaginaValidacaoWeb';
 import { ItemValidacaoPaginaApi } from './services/custom/ItemValidacaoPagina';
 import { RegistroInteresseApi } from './services/custom/RegistroInteresse';
+import { ProjetoExemploApi } from './services/custom/ProjetoExemplo';
 /**
 * @module SDKBrowserModule
 * @description
@@ -98,6 +99,7 @@ export class SDKBrowserModule {
         PaginaValidacaoWebApi,
         ItemValidacaoPaginaApi,
         RegistroInteresseApi,
+        ProjetoExemploApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser },
         { provide: SocketDriver, useClass: SocketBrowser }

@@ -10,6 +10,7 @@ import { CanvasMvpComponent } from '../canvas-mvp/canvas-mvp.component';
 import { CanvasPropostaValorComponent } from '../canvas-proposta-valor/canvas-proposta-valor.component';
 import { CanvasDorGanhoComponent } from '../canvas-dor-ganho/canvas-dor-ganho.component';
 import { PropostaValorComponent } from '../proposta-valor/proposta-valor.component';
+import { DetalheValorComponent } from '../detalhe-valor/detalhe-valor.component';
 
 export const routes : Routes = [
     { path: 'home' , component: HomeComponent },
@@ -18,6 +19,7 @@ export const routes : Routes = [
     { path: 'valorCanvas/:id' , component: CanvasPropostaValorComponent },
     { path: 'mvpCanvas/:id' , component: CanvasMvpComponent },
     { path: 'projetoCanvas/:id' , component: CanvasProjetoComponent },
+    { path: 'detalheValorCanvas/:id' , component: DetalheValorComponent },
     { path: 'projetos' , component: ProjetosComponent},
     { path: 'propostaValor' , component: PropostaValorComponent},
     { path: 'projetos/insere' , component: ProjetoCriaComponent},

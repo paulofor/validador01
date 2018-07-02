@@ -42,8 +42,6 @@ export class CanvasProjetoComponent implements OnInit {
 
 
   constructor(private dialog: MatDialog, private projetoService: ProjetoMySqlApi,
-    private projetoCanvasService: ProjetoCanvasMySqlApi,
-    private router: Router,
     private route: ActivatedRoute) {
 
   }
@@ -94,7 +92,6 @@ export class CanvasProjetoComponent implements OnInit {
           this.carregaCanvas();
         })
     });
-
   }
 
   carregaCanvas() {

@@ -14,9 +14,14 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let valor of valores">
-                  <td>{{valor.descricao}}</td>
-                </tr>
+                <ng-container *ngFor="let projeto of valores">
+                  <tr>
+                    <td><h5>{{projeto.nome}}</h5></td>
+                  </tr>
+                  <tr *ngFor="let valor of projeto.projetoCanvasMySqls">
+                    <td><a href="#" routerLink="/detalheValorCanvas/{{valor.id}}"><h6>{{valor.descricao}}</h6></a></td>
+                  </tr>
+                </ng-container>
               </tbody>
             </table>
 

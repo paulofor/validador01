@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProjetoCanvasMySql, ProjetoCanvasMySqlApi } from '../shared/sdk/index';
+import { ProjetoMySql, ProjetoMySqlApi } from '../shared/sdk/index';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-proposta-valor',
@@ -8,17 +9,20 @@ import { ProjetoCanvasMySql, ProjetoCanvasMySqlApi } from '../shared/sdk/index';
 })
 export class PropostaValorComponent implements OnInit {
 
-  valores: ProjetoCanvasMySql[];
+  valores: ProjetoMySql[];
   errMess: string;
 
 
-  constructor(private projetoCanvasService: ProjetoCanvasMySqlApi) { }
+  constructor(public router: Router, private projetoService: ProjetoMySqlApi) { }
 
   ngOnInit() {
-    this.projetoCanvasService.find({where: {tipo: 'VALOR'}})
-    .subscribe((valores: ProjetoCanvasMySql[]) => 
-      this.valores = valores
-     );
+    this.projetoService.find({"include":{"relation":"projetoCanvasMySqls", "scope": {"where":{"tipo":"VALOR"}}}})
+    .subscribe((valores: ProjetoMySql[]) => {
+      this.valores = valores;
+      console.log('Valores: ' , this.valores);
+    });
   }
+
+
 
 }

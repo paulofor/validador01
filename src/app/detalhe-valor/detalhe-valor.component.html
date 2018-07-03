@@ -5,36 +5,35 @@
         <div class="card">
 
           <div class="header">
-            <h3 class="logo-font">Descrição de Valor</h3>
-            <p>Nome do Projeto</p>
+            <h3 *ngIf="itemValor" class="logo-font">{{itemValor.descricao}}</h3>
+            <p *ngIf="itemValor">{{itemValor.projeto.nome}}</p>
           </div>
 
-          <div class="content">
-
-            <form class="example-form">
-              <mat-form-field class="example-full-width">
-                <input matInput [(ngModel)]="signo.titulo" name="titulo" placeholder="Titulo" />
-              </mat-form-field>
 
 
-              <mat-form-field class="example-full-width">
-                <input matInput [(ngModel)]="signo.descricaoSimples" name="descricaoSimples" placeholder="Descrição" />
-              </mat-form-field>
+          <form #projetoForm="ngForm" class="content example-form" (ngSubmit)="onSubmit()">
 
-              <mat-form-field class="example-full-width">
-                <input matInput [(ngModel)]="signo.bullet1" name="bullet1" placeholder="Bullet 1" />
-              </mat-form-field>
-              <mat-form-field class="example-full-width">
-                <input matInput [(ngModel)]="signo.bullet2" name="bullet2" placeholder="Bullet 2" />
-              </mat-form-field>
-              <mat-form-field class="example-full-width">
-                <input matInput [(ngModel)]="signo.bullet3" name="bullet3" placeholder="Bullet 3" />
-              </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input matInput [(ngModel)]="signo.titulo" name="titulo" placeholder="Titulo" />
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input matInput [(ngModel)]="signo.descricaoSimples" name="descricaoSimples" placeholder="Descrição" />
+            </mat-form-field>
 
-              <button type="submit" class="btn btn-success btn-sm">Enviar</button>
-              <button type="cancel" class="btn btn-cancel btn-sm">Cancelar</button>
-            </form>
-          </div>
+            <mat-form-field class="example-full-width">
+              <input matInput [(ngModel)]="signo.bullet1" name="bullet1" placeholder="Bullet 1" />
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input matInput [(ngModel)]="signo.bullet2" name="bullet2" placeholder="Bullet 2" />
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input matInput [(ngModel)]="signo.bullet3" name="bullet3" placeholder="Bullet 3" />
+            </mat-form-field>
+
+            <button type="submit" class="btn btn-success btn-sm">Enviar</button>
+            <button type="cancel" class="btn btn-cancel btn-sm">Cancelar</button>
+          </form>
+
 
         </div>
       </div>

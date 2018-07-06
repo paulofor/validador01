@@ -11,10 +11,12 @@ import { CanvasPropostaValorComponent } from '../canvas-proposta-valor/canvas-pr
 import { CanvasDorGanhoComponent } from '../canvas-dor-ganho/canvas-dor-ganho.component';
 import { PropostaValorComponent } from '../proposta-valor/proposta-valor.component';
 import { DetalheValorComponent } from '../detalhe-valor/detalhe-valor.component';
+import { ReceitaProjetoComponent } from '../receita-projeto/receita-projeto.component';
 
 export const routes : Routes = [
     { path: 'home' , component: HomeComponent },
 
+    { path: 'receita/:id' , component: ReceitaProjetoComponent },
     { path: 'dorGanhoCanvas/:id' , component: CanvasDorGanhoComponent },
     { path: 'valorCanvas/:id' , component: CanvasPropostaValorComponent },
     { path: 'mvpCanvas/:id' , component: CanvasMvpComponent },

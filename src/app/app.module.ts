@@ -46,6 +46,7 @@ import { DorGanhoCanvasCriaComponent } from './dor-ganho-canvas-cria/dor-ganho-c
 import { DorGanhoCanvasEditaComponent } from './dor-ganho-canvas-edita/dor-ganho-canvas-edita.component';
 import { PropostaValorComponent } from './proposta-valor/proposta-valor.component';
 import { DetalheValorComponent } from './detalhe-valor/detalhe-valor.component';
+import { ReceitaProjetoComponent } from './receita-projeto/receita-projeto.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { DetalheValorComponent } from './detalhe-valor/detalhe-valor.component';
     DorGanhoCanvasCriaComponent,
     DorGanhoCanvasEditaComponent,
     PropostaValorComponent,
-    DetalheValorComponent
+    DetalheValorComponent,
+    ReceitaProjetoComponent
   ],
   entryComponents: [
     ProjetoCanvasCriaComponent,

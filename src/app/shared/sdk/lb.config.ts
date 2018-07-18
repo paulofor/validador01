@@ -20,8 +20,8 @@
 * }
 **/
 export class LoopBackConfig {
-  //private static path: string = '//localhost:21101';
-  private static path: string = '//validacao.kinghost.net:21101';
+  private static path: string = '//localhost:21101';
+  //private static path: string = '//validacao.kinghost.net:21101';
   private static version: string | number = 'api';
   private static authPrefix: string = '';
   private static debug: boolean = true;

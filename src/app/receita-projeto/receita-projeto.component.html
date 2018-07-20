@@ -11,11 +11,17 @@
               <thead>
                 <tr>
                   <th>Nome</th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let receita of itens">
                   <td>{{receita.descricao}}</td>
+                  <td>
+                    <a md-icon-button  (click)="edita(receita)">
+                      <i class="fa fa-edit fa-lg"></i>
+                    </a>
+                  </td>
                 </tr>
               </tbody>
             </table>

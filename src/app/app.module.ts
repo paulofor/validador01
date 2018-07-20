@@ -47,6 +47,7 @@ import { DorGanhoCanvasEditaComponent } from './dor-ganho-canvas-edita/dor-ganho
 import { PropostaValorComponent } from './proposta-valor/proposta-valor.component';
 import { DetalheValorComponent } from './detalhe-valor/detalhe-valor.component';
 import { ReceitaProjetoComponent } from './receita-projeto/receita-projeto.component';
+import { ReceitaEditaComponent } from './receita-edita/receita-edita.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { ReceitaProjetoComponent } from './receita-projeto/receita-projeto.compo
     DorGanhoCanvasEditaComponent,
     PropostaValorComponent,
     DetalheValorComponent,
-    ReceitaProjetoComponent
+    ReceitaProjetoComponent,
+    ReceitaEditaComponent
   ],
   entryComponents: [
     ProjetoCanvasCriaComponent,

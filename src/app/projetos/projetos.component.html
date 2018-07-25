@@ -17,12 +17,14 @@
                   <th></th>
                   <th></th>
                   <th></th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let projeto of projetos">
                   <td>{{projeto.nome}}</td>
                   <td>{{projeto.mercado}}</td>
+                  <td><a routerLink="/receita/{{projeto.id}}">Receitas</a></td>
                   <td><a routerLink="/dorGanhoCanvas/{{projeto.id}}">Ganho/Dor</a></td>
                   <td><a routerLink="/projetoCanvas/{{projeto.id}}">Negócio</a></td>
                   <td><a routerLink="/mvpCanvas/{{projeto.id}}">Mvp</a></td>

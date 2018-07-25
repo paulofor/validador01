@@ -17,7 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { CanvasProjetoComponent } from './canvas-projeto/canvas-projeto.component'; 
 
 import { ProjetoService } from './servicos/projeto.service';
-import { ProjetoApi, GanhoDorCanvasMySqlApi } from './shared/sdk/services/custom';
+import { ProjetoApi, GanhoDorCanvasMySqlApi, ItemValidacaoPaginaApi } from './shared/sdk/services/custom';
 import { ProjetoCanvasApi } from './shared/sdk/services/custom/ProjetoCanvas';
 import { ProjetoMySqlApi } from './shared/sdk/services/custom/ProjetoMySql';
 import { ProjetoCanvasMySqlApi } from './shared/sdk/services/custom/ProjetoCanvasMySql';
@@ -46,6 +46,8 @@ import { DorGanhoCanvasCriaComponent } from './dor-ganho-canvas-cria/dor-ganho-c
 import { DorGanhoCanvasEditaComponent } from './dor-ganho-canvas-edita/dor-ganho-canvas-edita.component';
 import { PropostaValorComponent } from './proposta-valor/proposta-valor.component';
 import { DetalheValorComponent } from './detalhe-valor/detalhe-valor.component';
+import { ReceitaProjetoComponent } from './receita-projeto/receita-projeto.component';
+import { ReceitaEditaComponent } from './receita-edita/receita-edita.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +69,9 @@ import { DetalheValorComponent } from './detalhe-valor/detalhe-valor.component';
     DorGanhoCanvasCriaComponent,
     DorGanhoCanvasEditaComponent,
     PropostaValorComponent,
-    DetalheValorComponent
+    DetalheValorComponent,
+    ReceitaProjetoComponent,
+    ReceitaEditaComponent
   ],
   entryComponents: [
     ProjetoCanvasCriaComponent,
@@ -101,7 +105,8 @@ import { DetalheValorComponent } from './detalhe-valor/detalhe-valor.component';
     ProjetoMySqlApi,
     ProjetoCanvasMySqlApi,
     MvpCanvasMySqlApi,
-    GanhoDorCanvasMySqlApi
+    GanhoDorCanvasMySqlApi,
+    ItemValidacaoPaginaApi
 
   ],
   bootstrap: [AppComponent]

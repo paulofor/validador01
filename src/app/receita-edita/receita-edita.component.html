@@ -1,0 +1,18 @@
+<h2 mat-dialog-title>Cadastro de Hipótese /h2>
+
+<form #hipoteseForm="ngForm" class="content" (ngSubmit)="onSubmit()">
+<mat-dialog-content>
+  <div class="example-container">
+    <mat-form-field >
+      <textarea [(ngModel)]="model.descricao"  
+        name="descricao" matInput rows="6" placeholder="Descricao"></textarea>
+    </mat-form-field>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button>Enviar</button>
+  <button mat-button mat-dialog-close>Cancelar</button>
+</mat-dialog-actions>
+</form>
+

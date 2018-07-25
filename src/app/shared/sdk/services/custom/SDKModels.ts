@@ -11,6 +11,7 @@ import { PaginaValidacaoWeb } from '../../models/PaginaValidacaoWeb';
 import { ItemValidacaoPagina } from '../../models/ItemValidacaoPagina';
 import { RegistroInteresse } from '../../models/RegistroInteresse';
 import { ProjetoExemplo } from '../../models/ProjetoExemplo';
+import { Receita } from '../../models/Receita';
 
 export interface Models { [name: string]: any }
 
@@ -29,6 +30,7 @@ export class SDKModels {
     ItemValidacaoPagina: ItemValidacaoPagina,
     RegistroInteresse: RegistroInteresse,
     ProjetoExemplo: ProjetoExemplo,
+    Receita: Receita,
     
   };
 

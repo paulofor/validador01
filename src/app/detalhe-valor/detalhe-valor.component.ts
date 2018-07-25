@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProjetoCanvasMySql, ProjetoCanvasMySqlApi, ItemValidacaoPagina } from '../shared/sdk';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ProjetoCanvasMySql, ProjetoCanvasMySqlApi, ItemValidacaoPagina, ItemValidacaoPaginaApi } from '../shared/sdk';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-detalhe-valor',
@@ -12,7 +12,10 @@ export class DetalheValorComponent implements OnInit {
   itemValor: ProjetoCanvasMySql;
   signo: ItemValidacaoPagina;
 
-  constructor(private itemSrv: ProjetoCanvasMySqlApi,private route: ActivatedRoute) { }
+  constructor(private itemSrv: ProjetoCanvasMySqlApi,
+              private route: ActivatedRoute,
+              private signoSrv: ItemValidacaoPaginaApi,
+              private router: Router) { }
 
   ngOnInit() {
     this.signo = new ItemValidacaoPagina();
@@ -30,6 +33,18 @@ export class DetalheValorComponent implements OnInit {
           this.itemValor = valor;
         })
     });
+  }
+
+  onSubmit() {
+    this.signo.projetoCanvasMySqlId = this.itemValor.id;
+    console.log("Signo: ", this.signo);
+    this.signoSrv
+      .create(this.signo, (err,obj) => {
+      console.log("Erro:" + err.message);
+      }).subscribe((e:any)  => { 
+        console.log(JSON.stringify(e));
+        this.router.navigate(['propostaValor']);
+      });
   }
 
 }

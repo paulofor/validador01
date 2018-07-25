@@ -1,7 +1,8 @@
 /* tslint:disable */
 import {
   ProjetoMySql,
-  ItemValidacaoPagina
+  ItemValidacaoPagina,
+  Receita
 } from '../index';
 
 declare var Object: any;
@@ -13,6 +14,7 @@ export interface ProjetoCanvasMySqlInterface {
   "projetoExemploId"?: number;
   projeto?: ProjetoMySql;
   itemValidacaoPaginas?: ItemValidacaoPagina[];
+  receita?: Receita[];
 }
 
 export class ProjetoCanvasMySql implements ProjetoCanvasMySqlInterface {
@@ -23,6 +25,7 @@ export class ProjetoCanvasMySql implements ProjetoCanvasMySqlInterface {
   "projetoExemploId": number;
   projeto: ProjetoMySql;
   itemValidacaoPaginas: ItemValidacaoPagina[];
+  receita: Receita[];
   constructor(data?: ProjetoCanvasMySqlInterface) {
     Object.assign(this, data);
   }
@@ -90,6 +93,14 @@ export class ProjetoCanvasMySql implements ProjetoCanvasMySqlInterface {
           name: 'itemValidacaoPaginas',
           type: 'ItemValidacaoPagina[]',
           model: 'ItemValidacaoPagina',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'projetoCanvasMySqlId'
+        },
+        receita: {
+          name: 'receita',
+          type: 'Receita[]',
+          model: 'Receita',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'projetoCanvasMySqlId'

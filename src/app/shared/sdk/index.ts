@@ -59,6 +59,7 @@ import { PaginaValidacaoWebApi } from './services/custom/PaginaValidacaoWeb';
 import { ItemValidacaoPaginaApi } from './services/custom/ItemValidacaoPagina';
 import { RegistroInteresseApi } from './services/custom/RegistroInteresse';
 import { ProjetoExemploApi } from './services/custom/ProjetoExemplo';
+import { ReceitaApi } from './services/custom/Receita';
 /**
 * @module SDKBrowserModule
 * @description
@@ -100,6 +101,7 @@ export class SDKBrowserModule {
         ItemValidacaoPaginaApi,
         RegistroInteresseApi,
         ProjetoExemploApi,
+        ReceitaApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser },
         { provide: SocketDriver, useClass: SocketBrowser }

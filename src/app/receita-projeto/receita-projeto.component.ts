@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, Params, ActivatedRoute } from '@angular/router';
 import { ProjetoMySqlApi, ProjetoMySql } from '../shared/sdk';
+import { MatDialog } from '@angular/material';
+import { ReceitaEditaComponent } from '../receita-edita/receita-edita.component';
 
 @Component({
   selector: 'app-receita-projeto',
@@ -11,7 +13,7 @@ export class ReceitaProjetoComponent implements OnInit {
 
   itens : ProjetoMySql[];
 
-  constructor(private router: Router, 
+  constructor(private dialog: MatDialog,private router: Router, 
               private projetoService : ProjetoMySqlApi,
               private route: ActivatedRoute) { }
 
@@ -19,6 +21,14 @@ export class ReceitaProjetoComponent implements OnInit {
     this.carregaDados();
   }
 
+  edita(receita:ProjetoMySql) {
+    this.dialog.open(ReceitaEditaComponent, {
+      width: '600px',
+      data: {
+        receita: receita
+      }
+    });
+  }
 
   carregaDados() {
     this.route.params.subscribe((params: Params) => {

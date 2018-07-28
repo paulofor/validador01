@@ -47,4 +47,12 @@ export class DetalheValorComponent implements OnInit {
       });
   }
 
+  insereItem() {
+
+  }
+
+  atualizaItem() {
+    
+  }
+
 }

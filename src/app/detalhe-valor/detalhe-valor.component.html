@@ -1,4 +1,4 @@
-<div class="home-page">
+<div *ngIf="itemValor" class="home-page">
 
   <div class="banner">
     <div class="container">
@@ -8,25 +8,32 @@
   </div>
 
   <div class="container">
-    <form class="example-form">
-      <mat-form-field class="example-full-width">
-        <input matInput [(ngModel)]="signo.titulo" name="titulo" placeholder="Titulo" />
-      </mat-form-field>
+    <form class="example-form" (ngSubmit)="onSubmit()">
 
+      <mat-dialog-content>
+        <mat-form-field class="example-full-width">
+          <input matInput [(ngModel)]="signo.titulo" name="titulo" placeholder="Titulo" />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput [(ngModel)]="signo.descricaoSimples" name="descricaoSimples" placeholder="Descrição" />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput [(ngModel)]="signo.bullet1" name="bullet1" placeholder="Bullet 1" />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput [(ngModel)]="signo.bullet2" name="bullet2" placeholder="Bullet 2" />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput [(ngModel)]="signo.bullet3" name="bullet3" placeholder="Bullet 3" />
+        </mat-form-field>
+      </mat-dialog-content>
 
-      <mat-form-field class="example-full-width">
-        <input matInput [(ngModel)]="signo.descricaoSimples" name="descricaoSimples" placeholder="Descrição" />
-      </mat-form-field>
+      <image-upload></image-upload>
 
-      <mat-form-field class="example-full-width">
-        <input matInput [(ngModel)]="signo.bullet1" name="bullet1" placeholder="Bullet 1" />
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <input matInput [(ngModel)]="signo.bullet2" name="bullet2" placeholder="Bullet 2" />
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <input matInput [(ngModel)]="signo.bullet3" name="bullet3" placeholder="Bullet 3" />
-      </mat-form-field>
+      <mat-dialog-actions>
+        <button mat-button>Enviar</button>
+        <button mat-button mat-dialog-close>Cancelar</button>
+      </mat-dialog-actions>
 
     </form>
   </div>

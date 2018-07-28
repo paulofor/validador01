@@ -90,7 +90,8 @@ import { ReceitaEditaComponent } from './receita-edita/receita-edita.component';
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    ImageUploadModule.forRoot(),
   ],
   providers: [
     ProjetoService,

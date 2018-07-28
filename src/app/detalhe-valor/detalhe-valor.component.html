@@ -1,75 +1,35 @@
-<div class="main-content">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-12">
+<div class="home-page">
 
-
-        <!-- Card 1 -->
-        <div class="card">
-          <div class="header">
-            <h3 *ngIf="itemValor" class="logo-font">{{itemValor.descricao}}</h3>
-            <p *ngIf="itemValor">{{itemValor.projeto.nome}}</p>
-          </div>
-          <form #projetoForm="ngForm" class="content example-form" (ngSubmit)="onSubmit()">
-
-            <mat-form-field class="example-full-width">
-              <input matInput [(ngModel)]="signo.titulo" name="titulo" placeholder="Titulo" />
-            </mat-form-field>
-            <mat-form-field class="example-full-width">
-              <input matInput [(ngModel)]="signo.descricaoSimples" name="descricaoSimples" placeholder="Descrição" />
-            </mat-form-field>
-
-            <mat-form-field class="example-full-width">
-              <input matInput [(ngModel)]="signo.bullet1" name="bullet1" placeholder="Bullet 1" />
-            </mat-form-field>
-            <mat-form-field class="example-full-width">
-              <input matInput [(ngModel)]="signo.bullet2" name="bullet2" placeholder="Bullet 2" />
-            </mat-form-field>
-            <mat-form-field class="example-full-width">
-              <input matInput [(ngModel)]="signo.bullet3" name="bullet3" placeholder="Bullet 3" />
-            </mat-form-field>
-
-            <button type="submit" class="btn btn-success btn-sm">Enviar</button>
-            <button type="cancel" class="btn btn-cancel btn-sm">Cancelar</button>
-          </form>
-        </div>
-        <!-- Card 1-->
-
-
-        <!-- Card 2 -->
-        <div class="card">
-          <div class="header">
-            <p>Representação</p>
-          </div>
-          <div class="content">
-            <section id="produto" class="about wow fadeInUp" (show)="itemExibido">
-              <div class="container">
-                <div class="row">
-                  <div class="col-lg-6 about-img">
-                    <img src="assets/img/tela01.jpg" alt="">
-                  </div>
-                  <div class="col-lg-6 content vcenter">
-                    <h2>Exibir Produtos</h2>
-                    <h3>Você vai poder rapidamente disponibilizar aos clientes toda sua coleção de peças</h3>
-                    <ul>
-                      <li>
-                        <i class="ion-android-checkmark-circle"></i> Mostrar sua coleção de peças para os clientes.</li>
-                      <li>
-                        <i class="ion-android-checkmark-circle"></i> Lançar novos modelos.</li>
-                      <li>
-                        <i class="ion-android-checkmark-circle"></i> Organizar e coleção no celular do cliente.</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
-        </div>
-        <!-- Card 2 -->
-
-
-
-      </div>
+  <div class="banner">
+    <div class="container">
+      <h3 class="logo-font">{{ itemValor.descricao }}</h3>
+      <p>{{ itemValor.projeto.nome }}</p>
     </div>
   </div>
+
+  <div class="container">
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="signo.titulo" name="titulo" placeholder="Titulo" />
+      </mat-form-field>
+
+
+      <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="signo.descricaoSimples" name="descricaoSimples" placeholder="Descrição" />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="signo.bullet1" name="bullet1" placeholder="Bullet 1" />
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="signo.bullet2" name="bullet2" placeholder="Bullet 2" />
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="signo.bullet3" name="bullet3" placeholder="Bullet 3" />
+      </mat-form-field>
+
+    </form>
+  </div>
+
+
 </div>

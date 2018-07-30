@@ -12,9 +12,11 @@ import { CanvasDorGanhoComponent } from '../canvas-dor-ganho/canvas-dor-ganho.co
 import { PropostaValorComponent } from '../proposta-valor/proposta-valor.component';
 import { DetalheValorComponent } from '../detalhe-valor/detalhe-valor.component';
 import { ReceitaProjetoComponent } from '../receita-projeto/receita-projeto.component';
+import { ImageTesteComponent } from '../image-teste/image-teste.component';
 
 export const routes : Routes = [
     { path: 'home' , component: HomeComponent },
+    { path: 'imagem' , component: ImageTesteComponent},
 
     { path: 'receita/:id' , component: ReceitaProjetoComponent },
     { path: 'dorGanhoCanvas/:id' , component: CanvasDorGanhoComponent },

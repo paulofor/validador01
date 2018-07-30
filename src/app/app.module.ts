@@ -48,6 +48,9 @@ import { PropostaValorComponent } from './proposta-valor/proposta-valor.componen
 import { DetalheValorComponent } from './detalhe-valor/detalhe-valor.component';
 import { ReceitaProjetoComponent } from './receita-projeto/receita-projeto.component';
 import { ReceitaEditaComponent } from './receita-edita/receita-edita.component';
+import { ImageTesteComponent } from './image-teste/image-teste.component';
+
+import { NgxImgModule } from 'ngx-img';
 
 @NgModule({
   declarations: [
@@ -71,7 +74,8 @@ import { ReceitaEditaComponent } from './receita-edita/receita-edita.component';
     PropostaValorComponent,
     DetalheValorComponent,
     ReceitaProjetoComponent,
-    ReceitaEditaComponent
+    ReceitaEditaComponent,
+    ImageTesteComponent
   ],
   entryComponents: [
     ProjetoCanvasCriaComponent,
@@ -90,7 +94,8 @@ import { ReceitaEditaComponent } from './receita-edita/receita-edita.component';
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    NgxImgModule.forRoot()
   ],
   providers: [
     ProjetoService,

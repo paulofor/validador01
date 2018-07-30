@@ -11,6 +11,7 @@ export class DetalheValorComponent implements OnInit {
 
   itemValor: ProjetoCanvasMySql;
   signo: ItemValidacaoPagina;
+  arquivoSelecionado = null;
 
   constructor(private itemSrv: ProjetoCanvasMySqlApi,
               private route: ActivatedRoute,
@@ -20,6 +21,12 @@ export class DetalheValorComponent implements OnInit {
   ngOnInit() {
     this.signo = new ItemValidacaoPagina();
     this.carregaItemValor();
+  }
+
+
+  previewImage(event) {
+    this.arquivoSelecionado = event.target.files[0];
+    console.log('Imagem:' , this.arquivoSelecionado);
   }
 
 

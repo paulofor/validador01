@@ -95,11 +95,7 @@ import { NgxImgModule } from 'ngx-img';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-<<<<<<< HEAD
-    ImageUploadModule.forRoot(),
-=======
     NgxImgModule.forRoot()
->>>>>>> 384ab3c690c45a6f180b048ad3355b602305473f
   ],
   providers: [
     ProjetoService,

@@ -1,0 +1,1024 @@
+[
+  {
+    "name": "AngularFontAwesomeModule",
+    "file": "lib/src/angular-font-awesome.module.ts",
+    "providers": [
+      {
+        "name": "AngularFontAwesomeService"
+      }
+    ],
+    "declarations": [
+      {
+        "name": "AngularFontAwesomeComponent"
+      }
+    ],
+    "imports": [
+      {
+        "name": "CommonModule"
+      }
+    ],
+    "exports": [
+      {
+        "name": "AngularFontAwesomeComponent"
+      }
+    ],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "pos": 277,
+        "end": 303,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 277,
+          "end": 287,
+          "flags": 0,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 288,
+          "end": 303,
+          "flags": 0,
+          "kind": 182,
+          "elements": [
+            {
+              "pos": 290,
+              "end": 302,
+              "flags": 0,
+              "escapedText": "CommonModule"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 304,
+        "end": 350,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 304,
+          "end": 319,
+          "flags": 0,
+          "escapedText": "declarations"
+        },
+        "initializer": {
+          "pos": 320,
+          "end": 350,
+          "flags": 0,
+          "kind": 182,
+          "elements": [
+            {
+              "pos": 322,
+              "end": 349,
+              "flags": 0,
+              "escapedText": "AngularFontAwesomeComponent"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 351,
+        "end": 392,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 351,
+          "end": 363,
+          "flags": 0,
+          "escapedText": "providers"
+        },
+        "initializer": {
+          "pos": 364,
+          "end": 392,
+          "flags": 0,
+          "kind": 182,
+          "elements": [
+            {
+              "pos": 366,
+              "end": 391,
+              "flags": 0,
+              "escapedText": "AngularFontAwesomeService"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 393,
+        "end": 434,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 393,
+          "end": 403,
+          "flags": 0,
+          "escapedText": "exports"
+        },
+        "initializer": {
+          "pos": 404,
+          "end": 434,
+          "flags": 0,
+          "kind": 182,
+          "elements": [
+            {
+              "pos": 406,
+              "end": 433,
+              "flags": 0,
+              "escapedText": "AngularFontAwesomeComponent"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "AppRoutingModule",
+    "file": "app/app-routing/app-routing.module.ts",
+    "providers": [],
+    "declarations": [],
+    "imports": [
+      {
+        "name": "CommonModule"
+      },
+      {
+        "ns": "RouterModule",
+        "name": "RouterModule.forRoot(args)"
+      }
+    ],
+    "exports": [
+      {
+        "name": "RouterModule"
+      }
+    ],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "pos": 232,
+        "end": 304,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 232,
+          "end": 243,
+          "flags": 0,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 244,
+          "end": 304,
+          "flags": 0,
+          "kind": 182,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 246,
+              "end": 264,
+              "flags": 0,
+              "escapedText": "CommonModule"
+            },
+            {
+              "pos": 265,
+              "end": 299,
+              "flags": 0,
+              "kind": 186,
+              "expression": {
+                "pos": 265,
+                "end": 291,
+                "flags": 0,
+                "kind": 184,
+                "expression": {
+                  "pos": 265,
+                  "end": 283,
+                  "flags": 0,
+                  "escapedText": "RouterModule"
+                },
+                "name": {
+                  "pos": 284,
+                  "end": 291,
+                  "flags": 0,
+                  "escapedText": "forRoot"
+                }
+              },
+              "arguments": [
+                {
+                  "pos": 292,
+                  "end": 298,
+                  "flags": 0,
+                  "escapedText": "routes"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "pos": 305,
+        "end": 334,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 305,
+          "end": 316,
+          "flags": 0,
+          "escapedText": "exports"
+        },
+        "initializer": {
+          "pos": 317,
+          "end": 334,
+          "flags": 0,
+          "kind": 182,
+          "elements": [
+            {
+              "pos": 319,
+              "end": 332,
+              "flags": 0,
+              "escapedText": "RouterModule"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 335,
+        "end": 355,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 335,
+          "end": 351,
+          "flags": 0,
+          "escapedText": "declarations"
+        },
+        "initializer": {
+          "pos": 352,
+          "end": 355,
+          "flags": 0,
+          "kind": 182,
+          "elements": []
+        }
+      }
+    ]
+  },
+  {
+    "name": "AppModule",
+    "file": "src/app/app.module.ts",
+    "providers": [
+      {
+        "name": "ProjetoService"
+      },
+      {
+        "name": "ProjetoApi"
+      },
+      {
+        "name": "ProjetoCanvasApi"
+      },
+      {
+        "name": "HttpClient"
+      },
+      {
+        "name": "SocketConnection"
+      },
+      {
+        "name": "SocketDriver"
+      },
+      {
+        "name": "SDKModels"
+      },
+      {
+        "name": "LoopBackAuth"
+      },
+      {
+        "name": "InternalStorage"
+      },
+      {
+        "name": "ProjetoMySqlApi"
+      },
+      {
+        "name": "ProjetoCanvasMySqlApi"
+      },
+      {
+        "name": "MvpCanvasMySqlApi"
+      },
+      {
+        "name": "GanhoDorCanvasMySqlApi"
+      },
+      {
+        "name": "ItemValidacaoPaginaApi"
+      }
+    ],
+    "declarations": [
+      {
+        "name": "AppComponent",
+        "file": "src/app/app.component.ts",
+        "selector": "app-root",
+        "providers": [],
+        "templateUrl": [
+          "app.component.html"
+        ],
+        "styleUrls": [
+          "app.component.scss"
+        ],
+        "__raw": [
+          {
+            "pos": 58,
+            "end": 82,
+            "flags": 0,
+            "kind": 269,
+            "name": {
+              "pos": 58,
+              "end": 70,
+              "flags": 0,
+              "escapedText": "selector"
+            },
+            "initializer": {
+              "pos": 71,
+              "end": 82,
+              "flags": 0,
+              "kind": 9,
+              "text": "app-root"
+            }
+          },
+          {
+            "pos": 83,
+            "end": 122,
+            "flags": 0,
+            "kind": 269,
+            "name": {
+              "pos": 83,
+              "end": 98,
+              "flags": 0,
+              "escapedText": "templateUrl"
+            },
+            "initializer": {
+              "pos": 99,
+              "end": 122,
+              "flags": 0,
+              "kind": 9,
+              "text": "./app.component.html"
+            }
+          },
+          {
+            "pos": 123,
+            "end": 162,
+            "flags": 0,
+            "kind": 269,
+            "name": {
+              "pos": 123,
+              "end": 136,
+              "flags": 0,
+              "escapedText": "styleUrls"
+            },
+            "initializer": {
+              "pos": 137,
+              "end": 162,
+              "flags": 0,
+              "kind": 182,
+              "elements": [
+                {
+                  "pos": 139,
+                  "end": 161,
+                  "flags": 0,
+                  "kind": 9,
+                  "text": "./app.component.scss"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "SidebarComponent"
+      },
+      {
+        "name": "HomeComponent"
+      },
+      {
+        "name": "ProjetosComponent"
+      },
+      {
+        "name": "ProjetoCriaComponent"
+      },
+      {
+        "name": "ProjetoEditaComponent"
+      },
+      {
+        "name": "ProjetoExibeComponent"
+      },
+      {
+        "name": "CanvasProjetoComponent"
+      },
+      {
+        "name": "ProjetoCanvasCriaComponent"
+      },
+      {
+        "name": "ProjetoCanvasEditaComponent"
+      },
+      {
+        "name": "CanvasMvpComponent"
+      },
+      {
+        "name": "MvpCanvasCriaComponent"
+      },
+      {
+        "name": "MvpCanvasEditaComponent"
+      },
+      {
+        "name": "CanvasPropostaValorComponent"
+      },
+      {
+        "name": "CanvasDorGanhoComponent"
+      },
+      {
+        "name": "DorGanhoCanvasCriaComponent"
+      },
+      {
+        "name": "DorGanhoCanvasEditaComponent"
+      },
+      {
+        "name": "PropostaValorComponent"
+      },
+      {
+        "name": "DetalheValorComponent"
+      },
+      {
+        "name": "ReceitaProjetoComponent"
+      },
+      {
+        "name": "ReceitaEditaComponent"
+      }
+    ],
+    "imports": [
+      {
+        "name": "BrowserModule"
+      },
+      {
+        "name": "AppRoutingModule"
+      },
+      {
+        "name": "FormsModule"
+      },
+      {
+        "name": "HttpClientModule"
+      },
+      {
+        "name": "MatDialogModule"
+      },
+      {
+        "name": "BrowserAnimationsModule"
+      },
+      {
+        "name": "MatFormFieldModule"
+      },
+      {
+        "name": "MatInputModule"
+      },
+      {
+        "name": "MatButtonModule"
+      }
+    ],
+    "exports": [],
+    "bootstrap": [
+      {
+        "name": "AppComponent"
+      }
+    ],
+    "__raw": [
+      {
+        "pos": 3211,
+        "end": 3832,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 3211,
+          "end": 3227,
+          "flags": 0,
+          "escapedText": "declarations"
+        },
+        "initializer": {
+          "pos": 3228,
+          "end": 3832,
+          "flags": 0,
+          "kind": 182,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 3230,
+              "end": 3248,
+              "flags": 0,
+              "escapedText": "AppComponent"
+            },
+            {
+              "pos": 3249,
+              "end": 3271,
+              "flags": 0,
+              "escapedText": "SidebarComponent"
+            },
+            {
+              "pos": 3272,
+              "end": 3291,
+              "flags": 0,
+              "escapedText": "HomeComponent"
+            },
+            {
+              "pos": 3292,
+              "end": 3315,
+              "flags": 0,
+              "escapedText": "ProjetosComponent"
+            },
+            {
+              "pos": 3316,
+              "end": 3342,
+              "flags": 0,
+              "escapedText": "ProjetoCriaComponent"
+            },
+            {
+              "pos": 3343,
+              "end": 3370,
+              "flags": 0,
+              "escapedText": "ProjetoEditaComponent"
+            },
+            {
+              "pos": 3371,
+              "end": 3398,
+              "flags": 0,
+              "escapedText": "ProjetoExibeComponent"
+            },
+            {
+              "pos": 3399,
+              "end": 3427,
+              "flags": 0,
+              "escapedText": "CanvasProjetoComponent"
+            },
+            {
+              "pos": 3428,
+              "end": 3460,
+              "flags": 0,
+              "escapedText": "ProjetoCanvasCriaComponent"
+            },
+            {
+              "pos": 3461,
+              "end": 3494,
+              "flags": 0,
+              "escapedText": "ProjetoCanvasEditaComponent"
+            },
+            {
+              "pos": 3495,
+              "end": 3519,
+              "flags": 0,
+              "escapedText": "CanvasMvpComponent"
+            },
+            {
+              "pos": 3520,
+              "end": 3548,
+              "flags": 0,
+              "escapedText": "MvpCanvasCriaComponent"
+            },
+            {
+              "pos": 3549,
+              "end": 3578,
+              "flags": 0,
+              "escapedText": "MvpCanvasEditaComponent"
+            },
+            {
+              "pos": 3579,
+              "end": 3613,
+              "flags": 0,
+              "escapedText": "CanvasPropostaValorComponent"
+            },
+            {
+              "pos": 3614,
+              "end": 3643,
+              "flags": 0,
+              "escapedText": "CanvasDorGanhoComponent"
+            },
+            {
+              "pos": 3644,
+              "end": 3677,
+              "flags": 0,
+              "escapedText": "DorGanhoCanvasCriaComponent"
+            },
+            {
+              "pos": 3678,
+              "end": 3712,
+              "flags": 0,
+              "escapedText": "DorGanhoCanvasEditaComponent"
+            },
+            {
+              "pos": 3713,
+              "end": 3741,
+              "flags": 0,
+              "escapedText": "PropostaValorComponent"
+            },
+            {
+              "pos": 3742,
+              "end": 3769,
+              "flags": 0,
+              "escapedText": "DetalheValorComponent"
+            },
+            {
+              "pos": 3770,
+              "end": 3799,
+              "flags": 0,
+              "escapedText": "ReceitaProjetoComponent"
+            },
+            {
+              "pos": 3800,
+              "end": 3827,
+              "flags": 0,
+              "escapedText": "ReceitaEditaComponent"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 3833,
+        "end": 4054,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 3833,
+          "end": 3852,
+          "flags": 0,
+          "escapedText": "entryComponents"
+        },
+        "initializer": {
+          "pos": 3853,
+          "end": 4054,
+          "flags": 0,
+          "kind": 182,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 3855,
+              "end": 3887,
+              "flags": 0,
+              "escapedText": "ProjetoCanvasCriaComponent"
+            },
+            {
+              "pos": 3888,
+              "end": 3921,
+              "flags": 0,
+              "escapedText": "ProjetoCanvasEditaComponent"
+            },
+            {
+              "pos": 3922,
+              "end": 3950,
+              "flags": 0,
+              "escapedText": "MvpCanvasCriaComponent"
+            },
+            {
+              "pos": 3951,
+              "end": 3980,
+              "flags": 0,
+              "escapedText": "MvpCanvasEditaComponent"
+            },
+            {
+              "pos": 3981,
+              "end": 4014,
+              "flags": 0,
+              "escapedText": "DorGanhoCanvasCriaComponent"
+            },
+            {
+              "pos": 4015,
+              "end": 4049,
+              "flags": 0,
+              "escapedText": "DorGanhoCanvasEditaComponent"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 4055,
+        "end": 4278,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 4055,
+          "end": 4066,
+          "flags": 0,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 4067,
+          "end": 4278,
+          "flags": 0,
+          "kind": 182,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 4069,
+              "end": 4088,
+              "flags": 0,
+              "escapedText": "BrowserModule"
+            },
+            {
+              "pos": 4089,
+              "end": 4111,
+              "flags": 0,
+              "escapedText": "AppRoutingModule"
+            },
+            {
+              "pos": 4112,
+              "end": 4129,
+              "flags": 0,
+              "escapedText": "FormsModule"
+            },
+            {
+              "pos": 4130,
+              "end": 4152,
+              "flags": 0,
+              "escapedText": "HttpClientModule"
+            },
+            {
+              "pos": 4154,
+              "end": 4175,
+              "flags": 0,
+              "escapedText": "MatDialogModule"
+            },
+            {
+              "pos": 4176,
+              "end": 4205,
+              "flags": 0,
+              "escapedText": "BrowserAnimationsModule"
+            },
+            {
+              "pos": 4206,
+              "end": 4230,
+              "flags": 0,
+              "escapedText": "MatFormFieldModule"
+            },
+            {
+              "pos": 4231,
+              "end": 4251,
+              "flags": 0,
+              "escapedText": "MatInputModule"
+            },
+            {
+              "pos": 4252,
+              "end": 4273,
+              "flags": 0,
+              "escapedText": "MatButtonModule"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 4279,
+        "end": 4614,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 4279,
+          "end": 4292,
+          "flags": 0,
+          "escapedText": "providers"
+        },
+        "initializer": {
+          "pos": 4293,
+          "end": 4614,
+          "flags": 0,
+          "kind": 182,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 4295,
+              "end": 4315,
+              "flags": 0,
+              "escapedText": "ProjetoService"
+            },
+            {
+              "pos": 4316,
+              "end": 4332,
+              "flags": 0,
+              "escapedText": "ProjetoApi"
+            },
+            {
+              "pos": 4333,
+              "end": 4355,
+              "flags": 0,
+              "escapedText": "ProjetoCanvasApi"
+            },
+            {
+              "pos": 4356,
+              "end": 4372,
+              "flags": 0,
+              "escapedText": "HttpClient"
+            },
+            {
+              "pos": 4373,
+              "end": 4396,
+              "flags": 0,
+              "escapedText": "SocketConnection"
+            },
+            {
+              "pos": 4399,
+              "end": 4418,
+              "flags": 0,
+              "escapedText": "SocketDriver"
+            },
+            {
+              "pos": 4419,
+              "end": 4434,
+              "flags": 0,
+              "escapedText": "SDKModels"
+            },
+            {
+              "pos": 4435,
+              "end": 4453,
+              "flags": 0,
+              "escapedText": "LoopBackAuth"
+            },
+            {
+              "pos": 4454,
+              "end": 4475,
+              "flags": 0,
+              "escapedText": "InternalStorage"
+            },
+            {
+              "pos": 4476,
+              "end": 4497,
+              "flags": 0,
+              "escapedText": "ProjetoMySqlApi"
+            },
+            {
+              "pos": 4498,
+              "end": 4525,
+              "flags": 0,
+              "escapedText": "ProjetoCanvasMySqlApi"
+            },
+            {
+              "pos": 4526,
+              "end": 4549,
+              "flags": 0,
+              "escapedText": "MvpCanvasMySqlApi"
+            },
+            {
+              "pos": 4550,
+              "end": 4578,
+              "flags": 0,
+              "escapedText": "GanhoDorCanvasMySqlApi"
+            },
+            {
+              "pos": 4579,
+              "end": 4607,
+              "flags": 0,
+              "escapedText": "ItemValidacaoPaginaApi"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 4615,
+        "end": 4644,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 4615,
+          "end": 4628,
+          "flags": 0,
+          "escapedText": "bootstrap"
+        },
+        "initializer": {
+          "pos": 4629,
+          "end": 4644,
+          "flags": 0,
+          "kind": 182,
+          "elements": [
+            {
+              "pos": 4631,
+              "end": 4643,
+              "flags": 0,
+              "escapedText": "AppComponent"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "SDKBrowserModule",
+    "file": "shared/sdk/index.ts",
+    "providers": [
+      {
+        "name": "ErrorHandler"
+      },
+      {
+        "name": "SocketConnection"
+      }
+    ],
+    "declarations": [],
+    "imports": [
+      {
+        "name": "CommonModule"
+      },
+      {
+        "name": "HttpClientModule"
+      }
+    ],
+    "exports": [],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "pos": 3128,
+        "end": 3180,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 3128,
+          "end": 3139,
+          "flags": 0,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 3140,
+          "end": 3180,
+          "flags": 0,
+          "kind": 182,
+          "elements": [
+            {
+              "pos": 3147,
+              "end": 3160,
+              "flags": 0,
+              "escapedText": "CommonModule"
+            },
+            {
+              "pos": 3161,
+              "end": 3178,
+              "flags": 0,
+              "escapedText": "HttpClientModule"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 3181,
+        "end": 3202,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 3181,
+          "end": 3197,
+          "flags": 0,
+          "escapedText": "declarations"
+        },
+        "initializer": {
+          "pos": 3198,
+          "end": 3202,
+          "flags": 0,
+          "kind": 182,
+          "elements": []
+        }
+      },
+      {
+        "pos": 3203,
+        "end": 3224,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 3203,
+          "end": 3214,
+          "flags": 0,
+          "escapedText": "exports"
+        },
+        "initializer": {
+          "pos": 3215,
+          "end": 3224,
+          "flags": 0,
+          "kind": 182,
+          "elements": []
+        }
+      },
+      {
+        "pos": 3225,
+        "end": 3290,
+        "flags": 0,
+        "kind": 269,
+        "name": {
+          "pos": 3225,
+          "end": 3238,
+          "flags": 0,
+          "escapedText": "providers"
+        },
+        "initializer": {
+          "pos": 3239,
+          "end": 3290,
+          "flags": 0,
+          "kind": 182,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 3244,
+              "end": 3262,
+              "flags": 0,
+              "escapedText": "ErrorHandler"
+            },
+            {
+              "pos": 3263,
+              "end": 3285,
+              "flags": 0,
+              "escapedText": "SocketConnection"
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

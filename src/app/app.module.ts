@@ -51,6 +51,8 @@ import { ReceitaEditaComponent } from './receita-edita/receita-edita.component';
 import { ImageTesteComponent } from './image-teste/image-teste.component';
 
 import { NgxImgModule } from 'ngx-img';
+import { ArquivosComponent } from './arquivos/arquivos.component';
+import { FileSelectDirective } from 'ng2-file-upload';
 
 @NgModule({
   declarations: [
@@ -75,7 +77,9 @@ import { NgxImgModule } from 'ngx-img';
     DetalheValorComponent,
     ReceitaProjetoComponent,
     ReceitaEditaComponent,
-    ImageTesteComponent
+    ImageTesteComponent,
+    ArquivosComponent,
+    FileSelectDirective
   ],
   entryComponents: [
     ProjetoCanvasCriaComponent,

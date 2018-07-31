@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProjetoCanvasMySql, ProjetoCanvasMySqlApi, ItemValidacaoPagina, ItemValidacaoPaginaApi } from '../shared/sdk';
+import { ProjetoCanvasMySql, ProjetoCanvasMySqlApi, ItemValidacaoPagina, ItemValidacaoPaginaApi, ContainerApi } from '../shared/sdk';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
@@ -16,6 +16,7 @@ export class DetalheValorComponent implements OnInit {
   constructor(private itemSrv: ProjetoCanvasMySqlApi,
               private route: ActivatedRoute,
               private signoSrv: ItemValidacaoPaginaApi,
+              private containerSrv: ContainerApi,
               private router: Router) { }
 
   ngOnInit() {
@@ -26,6 +27,7 @@ export class DetalheValorComponent implements OnInit {
 
   previewImage(event) {
     this.arquivoSelecionado = event.target.files[0];
+    this.containerSrv.upload("",this.arquivoSelecionado)
     console.log('Imagem:' , this.arquivoSelecionado);
   }
 

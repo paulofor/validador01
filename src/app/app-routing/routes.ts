@@ -13,10 +13,12 @@ import { PropostaValorComponent } from '../proposta-valor/proposta-valor.compone
 import { DetalheValorComponent } from '../detalhe-valor/detalhe-valor.component';
 import { ReceitaProjetoComponent } from '../receita-projeto/receita-projeto.component';
 import { ImageTesteComponent } from '../image-teste/image-teste.component';
+import { ArquivosComponent } from '../arquivos/arquivos.component';
 
 export const routes : Routes = [
     { path: 'home' , component: HomeComponent },
     { path: 'imagem' , component: ImageTesteComponent},
+    { path: 'arquivos' , component: ArquivosComponent},
 
     { path: 'receita/:id' , component: ReceitaProjetoComponent },
     { path: 'dorGanhoCanvas/:id' , component: CanvasDorGanhoComponent },

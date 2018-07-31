@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Directive } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
@@ -52,7 +52,11 @@ import { ImageTesteComponent } from './image-teste/image-teste.component';
 
 import { NgxImgModule } from 'ngx-img';
 import { ArquivosComponent } from './arquivos/arquivos.component';
-import { FileSelectDirective } from 'ng2-file-upload';
+
+import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-upload/ng2-file-upload';
+
+
+
 
 @NgModule({
   declarations: [
@@ -87,7 +91,8 @@ import { FileSelectDirective } from 'ng2-file-upload';
     MvpCanvasCriaComponent,
     MvpCanvasEditaComponent,
     DorGanhoCanvasCriaComponent,
-    DorGanhoCanvasEditaComponent
+    DorGanhoCanvasEditaComponent,
+    ArquivosComponent
   ],
   imports: [
     BrowserModule,

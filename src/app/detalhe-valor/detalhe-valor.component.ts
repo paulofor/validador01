@@ -45,6 +45,8 @@ export class DetalheValorComponent implements OnInit {
   }
 
   onSubmit() {
+    const fd = new FormData();
+    fd.append('image',this.arquivoSelecionado,this.arquivoSelecionado.name);
     this.signo.projetoCanvasMySqlId = this.itemValor.id;
     console.log("Signo: ", this.signo);
     this.signoSrv

@@ -45,9 +45,11 @@ export class FileUploadNgxFileDropComponent implements OnInit {
             'security-token': 'mytoken'
           })
  
+          console.log('Vai fazer upload');
           this.containerSrv.upload("container", formData)
-          .subscribe(data => {
+          .subscribe((e:any) => {
             // Sanitized logo returned from backend
+            console.log('Data:' , e);
           })
 
           /*

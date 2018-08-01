@@ -23,6 +23,8 @@ import { ProjetoMySqlApi } from './shared/sdk/services/custom/ProjetoMySql';
 import { ProjetoCanvasMySqlApi } from './shared/sdk/services/custom/ProjetoCanvasMySql';
 import { MvpCanvasMySqlApi } from './shared/sdk/services/custom/MvpCanvasMySql';
 
+import { ContainerApi } from './shared/sdk/services/custom';
+
 import { HttpClient, HttpResponse, HttpClientModule } from '@angular/common/http';
 import { SocketConnection } from './shared/sdk/sockets/socket.connections';
 import { SocketDriver } from './shared/sdk/sockets/socket.driver';
@@ -51,10 +53,13 @@ import { ReceitaEditaComponent } from './receita-edita/receita-edita.component';
 import { ImageTesteComponent } from './image-teste/image-teste.component';
 
 import { NgxImgModule } from 'ngx-img';
-import { ArquivosComponent } from './arquivos/arquivos.component';
+
 
 import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-upload/ng2-file-upload';
+import { FileUploadNg2FileUploadComponent } from './file-upload-ng2-file-upload/file-upload-ng2-file-upload.component';
+import { FileUploadNgxFileDropComponent } from './file-upload-ngx-file-drop/file-upload-ngx-file-drop.component';
 
+import { FileDropModule } from 'ngx-file-drop';
 
 
 
@@ -82,8 +87,10 @@ import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-u
     ReceitaProjetoComponent,
     ReceitaEditaComponent,
     ImageTesteComponent,
-    ArquivosComponent,
-    FileSelectDirective
+    //ArquivosComponent,
+    FileSelectDirective,
+    FileUploadNg2FileUploadComponent,
+    FileUploadNgxFileDropComponent
   ],
   entryComponents: [
     ProjetoCanvasCriaComponent,
@@ -92,7 +99,7 @@ import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-u
     MvpCanvasEditaComponent,
     DorGanhoCanvasCriaComponent,
     DorGanhoCanvasEditaComponent,
-    ArquivosComponent
+    //ArquivosComponent
   ],
   imports: [
     BrowserModule,
@@ -104,7 +111,8 @@ import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-u
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    NgxImgModule.forRoot()
+    NgxImgModule.forRoot(),
+    FileDropModule
   ],
   providers: [
     ProjetoService,
@@ -120,7 +128,8 @@ import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-u
     ProjetoCanvasMySqlApi,
     MvpCanvasMySqlApi,
     GanhoDorCanvasMySqlApi,
-    ItemValidacaoPaginaApi
+    ItemValidacaoPaginaApi,
+    ContainerApi
 
   ],
   bootstrap: [AppComponent]

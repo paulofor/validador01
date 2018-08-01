@@ -13,12 +13,14 @@ import { PropostaValorComponent } from '../proposta-valor/proposta-valor.compone
 import { DetalheValorComponent } from '../detalhe-valor/detalhe-valor.component';
 import { ReceitaProjetoComponent } from '../receita-projeto/receita-projeto.component';
 import { ImageTesteComponent } from '../image-teste/image-teste.component';
-import { ArquivosComponent } from '../arquivos/arquivos.component';
+import { FileUploadNg2FileUploadComponent } from '../file-upload-ng2-file-upload/file-upload-ng2-file-upload.component';
+import { FileUploadNgxFileDropComponent } from '../file-upload-ngx-file-drop/file-upload-ngx-file-drop.component';
+
 
 export const routes : Routes = [
     { path: 'home' , component: HomeComponent },
     { path: 'imagem' , component: ImageTesteComponent},
-    { path: 'arquivos' , component: ArquivosComponent},
+    { path: 'arquivos' , component: FileUploadNgxFileDropComponent},
 
     { path: 'receita/:id' , component: ReceitaProjetoComponent },
     { path: 'dorGanhoCanvas/:id' , component: CanvasDorGanhoComponent },

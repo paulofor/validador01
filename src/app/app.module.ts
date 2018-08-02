@@ -60,6 +60,7 @@ import { FileUploadNg2FileUploadComponent } from './file-upload-ng2-file-upload/
 import { FileUploadNgxFileDropComponent } from './file-upload-ngx-file-drop/file-upload-ngx-file-drop.component';
 
 import { FileDropModule } from 'ngx-file-drop';
+import { UploadModule } from './upload/upload.module';
 
 
 
@@ -112,7 +113,8 @@ import { FileDropModule } from 'ngx-file-drop';
     MatInputModule,
     MatButtonModule,
     NgxImgModule.forRoot(),
-    FileDropModule
+    FileDropModule,
+    UploadModule
   ],
   providers: [
     ProjetoService,

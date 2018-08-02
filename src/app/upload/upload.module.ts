@@ -17,14 +17,17 @@ import { CommonModule } from '@angular/common';
 //import { UploadComponent } from './dialog/dialog.component';
 import { MatButtonModule, MatDialogModule, MatListModule, MatProgressBarModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-//import { FlexLayoutModule } from '@angular/flex-layout';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 import { DialogComponent } from './dialog/dialog.component';
 import { UploadComponent } from './upload/upload.component';
+import { UploadService } from './upload.service';
 
 @NgModule({
-  imports: [CommonModule, MatButtonModule, MatDialogModule, MatListModule, HttpClientModule, BrowserAnimationsModule, MatProgressBarModule],
+  imports: [CommonModule, MatButtonModule, FlexLayoutModule, MatDialogModule, MatListModule, HttpClientModule, BrowserAnimationsModule, MatProgressBarModule],
   declarations: [DialogComponent, UploadComponent],
   exports: [DialogComponent],
+  entryComponents: [DialogComponent],
+  providers: [UploadService]
 })
 export class UploadModule {}

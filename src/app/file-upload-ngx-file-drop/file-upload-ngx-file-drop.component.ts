@@ -6,6 +6,7 @@ import { UploadFile, UploadEvent, FileSystemFileEntry, FileSystemDirectoryEntry 
 import { HttpHeaders } from '@angular/common/http';
 
 import { ContainerApi } from '../shared/sdk/services/custom';
+import { UploadService } from '../upload/upload.service';
  
 
 
@@ -16,7 +17,7 @@ import { ContainerApi } from '../shared/sdk/services/custom';
 })
 export class FileUploadNgxFileDropComponent implements OnInit {
 
-  constructor(private containerSrv: ContainerApi) { }
+  constructor(private containerSrv: ContainerApi, private uploadService:UploadService) { }
 
   ngOnInit() {
   }
@@ -46,11 +47,15 @@ export class FileUploadNgxFileDropComponent implements OnInit {
           })
  
           console.log('Vai fazer upload');
+
+          this.uploadService.enviaArquivo(file);
+          /*
           this.containerSrv.upload("container", formData)
           .subscribe((e:any) => {
             // Sanitized logo returned from backend
             console.log('Data:' , e);
           })
+          */
 
           /*
           this.http.post('https://mybackend.com/api/upload/sanitize-and-save-logo', formData, { headers: headers, responseType: 'blob' })

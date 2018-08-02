@@ -133,6 +133,7 @@ import { UploadModule } from './upload/upload.module';
     ItemValidacaoPaginaApi,
     ContainerApi
 
+
   ],
   bootstrap: [AppComponent]
 })

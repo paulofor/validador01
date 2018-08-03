@@ -61,6 +61,9 @@ import { FileUploadNgxFileDropComponent } from './file-upload-ngx-file-drop/file
 
 import { FileDropModule } from 'ngx-file-drop';
 import { UploadModule } from './upload/upload.module';
+import { Angular2ImageUploadComponent } from './angular2-image-upload/angular2-image-upload.component';
+import { ImageUploadModule } from "angular2-image-upload";
+
 
 
 
@@ -91,7 +94,8 @@ import { UploadModule } from './upload/upload.module';
     //ArquivosComponent,
     FileSelectDirective,
     FileUploadNg2FileUploadComponent,
-    FileUploadNgxFileDropComponent
+    FileUploadNgxFileDropComponent,
+    Angular2ImageUploadComponent
   ],
   entryComponents: [
     ProjetoCanvasCriaComponent,
@@ -114,7 +118,8 @@ import { UploadModule } from './upload/upload.module';
     MatButtonModule,
     NgxImgModule.forRoot(),
     FileDropModule,
-    UploadModule
+    UploadModule,
+    ImageUploadModule.forRoot(),
   ],
   providers: [
     ProjetoService,

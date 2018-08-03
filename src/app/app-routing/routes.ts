@@ -16,6 +16,7 @@ import { ImageTesteComponent } from '../image-teste/image-teste.component';
 import { FileUploadNg2FileUploadComponent } from '../file-upload-ng2-file-upload/file-upload-ng2-file-upload.component';
 import { FileUploadNgxFileDropComponent } from '../file-upload-ngx-file-drop/file-upload-ngx-file-drop.component';
 import { DialogComponent } from '../upload/dialog/dialog.component';
+import { Angular2ImageUploadComponent } from '../angular2-image-upload/angular2-image-upload.component';
 
 
 export const routes : Routes = [
@@ -23,6 +24,7 @@ export const routes : Routes = [
     { path: 'imagem' , component: ImageTesteComponent},
     { path: 'arquivos' , component: FileUploadNgxFileDropComponent},
     { path: 'upload' , component: DialogComponent},
+    { path: 'imagemUpload', component: Angular2ImageUploadComponent},
 
     { path: 'receita/:id' , component: ReceitaProjetoComponent },
     { path: 'dorGanhoCanvas/:id' , component: CanvasDorGanhoComponent },

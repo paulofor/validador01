@@ -17,6 +17,8 @@ import { FileUploadNg2FileUploadComponent } from '../file-upload-ng2-file-upload
 import { FileUploadNgxFileDropComponent } from '../file-upload-ngx-file-drop/file-upload-ngx-file-drop.component';
 import { DialogComponent } from '../upload/dialog/dialog.component';
 import { Angular2ImageUploadComponent } from '../angular2-image-upload/angular2-image-upload.component';
+import { ListaProjetoValorComponent } from '../lista-projeto-valor/lista-projeto-valor.component';
+import { DetalheProjetoValorComponent } from '../detalhe-projeto-valor/detalhe-projeto-valor.component';
 
 
 export const routes : Routes = [
@@ -35,5 +37,9 @@ export const routes : Routes = [
     { path: 'projetos' , component: ProjetosComponent},
     { path: 'propostaValor' , component: PropostaValorComponent},
     { path: 'projetos/insere' , component: ProjetoCriaComponent},
+
+    { path: 'projetosValor' , component: ListaProjetoValorComponent},
+    { path: 'projetosValor/:id' , component: DetalheProjetoValorComponent},
+
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

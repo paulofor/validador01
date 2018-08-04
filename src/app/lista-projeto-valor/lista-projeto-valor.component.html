@@ -1,0 +1,33 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">Projetos</h4>
+          </div>
+          <div class="content table-responsive table-full-width">
+            <table class="table table-hover table-striped">
+              <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th>Mercado</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let projeto of projetos">
+                  <td>{{projeto.nome}}</td>
+                  <td>{{projeto.mercado}}</td>
+                  <td><a routerLink="/projetosValor/{{projeto.id}}">Detalhe</a></td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

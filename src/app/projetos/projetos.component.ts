@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ProjetoService } from '../servicos/projeto.service';
+
 
 import { ProjetoMySql } from '../shared/sdk/models';
 import { ProjetoMySqlApi } from '../shared/sdk/services/custom/ProjetoMySql';

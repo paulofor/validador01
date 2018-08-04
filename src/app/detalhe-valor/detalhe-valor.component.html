@@ -27,8 +27,12 @@
           <input matInput [(ngModel)]="signo.bullet3" name="bullet3" placeholder="Bullet 3" />
         </mat-form-field>
 
-        <button type="button" md-button (click)="imgFileInput.click()">Add a photo</button>
-        <input hidden type="file" #imgFileInput (change)="previewImage($event)"/>
+
+        <image-upload url="{{url}}" 
+        (uploadFinished)="onUploadFinished($event)"
+        buttonCaption="Escolha a imagem"
+        dropBoxMessage="ou arraste aqui"
+        ></image-upload>
       </mat-dialog-content>
 
    

@@ -123,6 +123,28 @@ export class ItemValidacaoPaginaApi extends BaseLoopBackApi {
   }
 
   /**
+   * retorna o nome de imagem para o proximo registro
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * Data properties:
+   *
+   *  - `nomeImagem` – `{string}` - Nome da proxima imagem do cliente
+   */
+  public proximoNomeImagem(customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ItemValidacaoPaginas/proximoNomeImagem";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Fetches belongsTo relation projeto.
    *
    * @param {any} id ItemValidacaoPagina id

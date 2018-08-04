@@ -16,7 +16,6 @@ import { FormsModule } from '@angular/forms';
 
 import { CanvasProjetoComponent } from './canvas-projeto/canvas-projeto.component'; 
 
-import { ProjetoService } from './servicos/projeto.service';
 import { ProjetoApi, GanhoDorCanvasMySqlApi, ItemValidacaoPaginaApi } from './shared/sdk/services/custom';
 import { ProjetoCanvasApi } from './shared/sdk/services/custom/ProjetoCanvas';
 import { ProjetoMySqlApi } from './shared/sdk/services/custom/ProjetoMySql';
@@ -63,6 +62,13 @@ import { FileDropModule } from 'ngx-file-drop';
 import { UploadModule } from './upload/upload.module';
 import { Angular2ImageUploadComponent } from './angular2-image-upload/angular2-image-upload.component';
 import { ImageUploadModule } from "angular2-image-upload";
+import { ListaProjetoValorComponent } from './lista-projeto-valor/lista-projeto-valor.component';
+import { DetalheProjetoValorComponent } from './detalhe-projeto-valor/detalhe-projeto-valor.component';
+import { ListaValorPorProjetoComponent } from './lista-valor-por-projeto/lista-valor-por-projeto.component';
+import { ListaValidacaoPorValorComponent } from './lista-validacao-por-valor/lista-validacao-por-valor.component';
+import { EdicaoItemValidacaoComponent } from './edicao-item-validacao/edicao-item-validacao.component';
+import { ListaPaginaValidacaoPorProjetoComponent } from './lista-pagina-validacao-por-projeto/lista-pagina-validacao-por-projeto.component';
+import { EdicaoPaginaValidacaoComponent } from './edicao-pagina-validacao/edicao-pagina-validacao.component';
 
 
 
@@ -95,7 +101,14 @@ import { ImageUploadModule } from "angular2-image-upload";
     FileSelectDirective,
     FileUploadNg2FileUploadComponent,
     FileUploadNgxFileDropComponent,
-    Angular2ImageUploadComponent
+    Angular2ImageUploadComponent,
+    ListaProjetoValorComponent,
+    DetalheProjetoValorComponent,
+    ListaValorPorProjetoComponent,
+    ListaValidacaoPorValorComponent,
+    EdicaoItemValidacaoComponent,
+    ListaPaginaValidacaoPorProjetoComponent,
+    EdicaoPaginaValidacaoComponent
   ],
   entryComponents: [
     ProjetoCanvasCriaComponent,
@@ -122,7 +135,6 @@ import { ImageUploadModule } from "angular2-image-upload";
     ImageUploadModule.forRoot(),
   ],
   providers: [
-    ProjetoService,
     ProjetoApi,
     ProjetoCanvasApi,
     HttpClient, 

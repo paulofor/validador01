@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjetoCanvasMySql, ProjetoCanvasMySqlApi, ItemValidacaoPagina, ItemValidacaoPaginaApi, ContainerApi } from '../shared/sdk';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { FileHolder } from 'angular2-image-upload';
 
 @Component({
   selector: 'app-detalhe-valor',
@@ -9,9 +10,17 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 })
 export class DetalheValorComponent implements OnInit {
 
+
+  url = 'http://localhost:21101/api/containers/container1/upload';
+  urlImagem = 'http://localhost:21101/api/containers/container1/download';
+
   itemValor: ProjetoCanvasMySql;
   signo: ItemValidacaoPagina;
   arquivoSelecionado = null;
+  nomeImagemNova:string = '';
+
+  // Isso não esta bom alterar (até 04-10-2018)
+  nomeArquivoAlterar:string = '';
 
   constructor(private itemSrv: ProjetoCanvasMySqlApi,
               private route: ActivatedRoute,
@@ -22,6 +31,7 @@ export class DetalheValorComponent implements OnInit {
   ngOnInit() {
     this.signo = new ItemValidacaoPagina();
     this.carregaItemValor();
+    this.carregaNomeImagemNova();
   }
 
 
@@ -29,6 +39,15 @@ export class DetalheValorComponent implements OnInit {
     this.arquivoSelecionado = event.target.files[0];
     this.containerSrv.upload("",this.arquivoSelecionado)
     console.log('Imagem:' , this.arquivoSelecionado);
+  }
+
+  carregaNomeImagemNova() {
+    this.signoSrv.proximoNomeImagem()
+      .subscribe((result) => {
+
+        this.nomeImagemNova = result.nomeImagem;
+        console.log('Imagem Nova: ' , this.nomeImagemNova);
+      })
   }
 
 
@@ -45,9 +64,8 @@ export class DetalheValorComponent implements OnInit {
   }
 
   onSubmit() {
-    const fd = new FormData();
-    fd.append('image',this.arquivoSelecionado,this.arquivoSelecionado.name);
     this.signo.projetoCanvasMySqlId = this.itemValor.id;
+    this.signo.urlImagem = this.urlImagem + '/' + this.nomeArquivoAlterar;
     console.log("Signo: ", this.signo);
     this.signoSrv
       .create(this.signo, (err,obj) => {
@@ -65,5 +83,13 @@ export class DetalheValorComponent implements OnInit {
   atualizaItem() {
     
   }
+
+  onUploadFinished(item: FileHolder) {
+    console.log('onUploadFinished' , item.file.name);
+    this.nomeArquivoAlterar = item.file.name;
+  }
+  
+ 
+
 
 }

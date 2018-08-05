@@ -14,12 +14,12 @@ export class DetalheProjetoValorComponent implements OnInit {
   constructor(private route: ActivatedRoute, private srv: ProjetoMySqlApi) { }
 
   ngOnInit() {
-    this.carregaProjeto();
+    //this.carregaProjeto();
   }
 
   //this.srv..find(id,{"include":{"relation":"projetoCanvasMySqls", "scope": {"where":{"tipo":"VALOR"}}}})
  
-
+  /*
   carregaProjeto() {
     this.route.params.subscribe((params: Params) => {
       let id = params['id'];
@@ -32,5 +32,6 @@ export class DetalheProjetoValorComponent implements OnInit {
         })
     });
   }
+  */
 
 }

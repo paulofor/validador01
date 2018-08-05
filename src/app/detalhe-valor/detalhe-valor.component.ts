@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ProjetoCanvasMySql, ProjetoCanvasMySqlApi, ItemValidacaoPagina, ItemValidacaoPaginaApi, ContainerApi } from '../shared/sdk';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { FileHolder } from 'angular2-image-upload';
+import { BASE_URL } from '../constantes/base.url';
+
 
 @Component({
   selector: 'app-detalhe-valor',
@@ -11,8 +13,8 @@ import { FileHolder } from 'angular2-image-upload';
 export class DetalheValorComponent implements OnInit {
 
 
-  url = 'http://localhost:21101/api/containers/container1/upload';
-  urlImagem = 'http://localhost:21101/api/containers/container1/download';
+  url = BASE_URL + '/api/containers/container1/upload'
+  urlImagem =  BASE_URL + '/api/containers/container1/download';
 
   itemValor: ProjetoCanvasMySql;
   signo: ItemValidacaoPagina;

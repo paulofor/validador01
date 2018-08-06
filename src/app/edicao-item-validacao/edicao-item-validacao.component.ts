@@ -39,63 +39,63 @@ export class EdicaoItemValidacaoComponent implements OnInit {
       this.signo = new ItemValidacaoPagina();
       this.carregaItemValor();
       this.carregaNomeImagemNova();
+
     }
   }
-}
 
 
-previewImage(event) {
-  this.arquivoSelecionado = event.target.files[0];
-  this.containerSrv.upload("", this.arquivoSelecionado)
-  console.log('Imagem:', this.arquivoSelecionado);
-}
+  previewImage(event) {
+    this.arquivoSelecionado = event.target.files[0];
+    this.containerSrv.upload("", this.arquivoSelecionado)
+    console.log('Imagem:', this.arquivoSelecionado);
+  }
 
-carregaNomeImagemNova() {
-  this.signoSrv.proximoNomeImagem()
-    .subscribe((result) => {
+  carregaNomeImagemNova() {
+    this.signoSrv.proximoNomeImagem()
+      .subscribe((result) => {
 
-      this.nomeImagemNova = result.nomeImagem;
-      console.log('Imagem Nova: ', this.nomeImagemNova);
-    })
-}
-
-
-carregaItemValor() {
-  this.route.params.subscribe((params: Params) => {
-    let id = params['id'];
-    console.log('Id: ', id);
-    this.itemSrv.findById(id, { "include": "projeto" })
-      .subscribe((valor: ProjetoCanvasMySql) => {
-        console.log('Item: ' + JSON.stringify(valor));
-        this.itemValor = valor;
+        this.nomeImagemNova = result.nomeImagem;
+        console.log('Imagem Nova: ', this.nomeImagemNova);
       })
-  });
-}
+  }
 
-onSubmit() {
-  this.signo.projetoCanvasMySqlId = this.itemValor.id;
-  this.signo.urlImagem = this.urlImagem + '/' + this.nomeArquivoAlterar;
-  console.log("Signo: ", this.signo);
-  this.signoSrv
-    .create(this.signo, (err, obj) => {
-      console.log("Erro:" + err.message);
-    }).subscribe((e: any) => {
-      console.log(JSON.stringify(e));
-      this.router.navigate(['propostaValor']);
+
+  carregaItemValor() {
+    this.route.params.subscribe((params: Params) => {
+      let id = params['id'];
+      console.log('Id: ', id);
+      this.itemSrv.findById(id, { "include": "projeto" })
+        .subscribe((valor: ProjetoCanvasMySql) => {
+          console.log('Item: ' + JSON.stringify(valor));
+          this.itemValor = valor;
+        })
     });
-}
+  }
 
-insereItem() {
+  onSubmit() {
+    this.signo.projetoCanvasMySqlId = this.itemValor.id;
+    this.signo.urlImagem = this.urlImagem + '/' + this.nomeArquivoAlterar;
+    console.log("Signo: ", this.signo);
+    this.signoSrv
+      .create(this.signo, (err, obj) => {
+        console.log("Erro:" + err.message);
+      }).subscribe((e: any) => {
+        console.log(JSON.stringify(e));
+        this.router.navigate(['propostaValor']);
+      });
+  }
 
-}
+  insereItem() {
 
-atualizaItem() {
+  }
 
-}
+  atualizaItem() {
 
-onUploadFinished(item: FileHolder) {
-  console.log('onUploadFinished', item.file.name);
-  this.nomeArquivoAlterar = item.file.name;
-}
+  }
+
+  onUploadFinished(item: FileHolder) {
+    console.log('onUploadFinished', item.file.name);
+    this.nomeArquivoAlterar = item.file.name;
+  }
 
 }

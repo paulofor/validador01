@@ -108,7 +108,8 @@ import { EdicaoPaginaValidacaoComponent } from './edicao-pagina-validacao/edicao
     ListaValidacaoPorValorComponent,
     EdicaoItemValidacaoComponent,
     ListaPaginaValidacaoPorProjetoComponent,
-    EdicaoPaginaValidacaoComponent
+    EdicaoPaginaValidacaoComponent,
+
   ],
   entryComponents: [
     ProjetoCanvasCriaComponent,

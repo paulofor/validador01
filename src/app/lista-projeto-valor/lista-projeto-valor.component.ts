@@ -22,7 +22,6 @@ export class ListaProjetoValorComponent implements OnInit {
       .subscribe((projetos: ProjetoMySql[]) =>
         this.projetos = projetos
       );
-
   }
 
 

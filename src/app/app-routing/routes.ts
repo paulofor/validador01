@@ -19,6 +19,7 @@ import { DialogComponent } from '../upload/dialog/dialog.component';
 import { Angular2ImageUploadComponent } from '../angular2-image-upload/angular2-image-upload.component';
 import { ListaProjetoValorComponent } from '../lista-projeto-valor/lista-projeto-valor.component';
 import { DetalheProjetoValorComponent } from '../detalhe-projeto-valor/detalhe-projeto-valor.component';
+import { EdicaoItemValidacaoComponent } from '../edicao-item-validacao/edicao-item-validacao.component';
 
 
 export const routes : Routes = [
@@ -40,6 +41,9 @@ export const routes : Routes = [
 
     { path: 'projetosValor' , component: ListaProjetoValorComponent},
     { path: 'projetosValor/:id' , component: DetalheProjetoValorComponent},
+
+    { path: 'adicionaItemValidacaoPorItem/:id' , component: EdicaoItemValidacaoComponent} ,
+    { path: 'editaItemValidacao/:id' , component : EdicaoItemValidacaoComponent },
 
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

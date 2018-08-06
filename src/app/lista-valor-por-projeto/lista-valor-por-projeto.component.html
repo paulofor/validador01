@@ -2,14 +2,20 @@
   <thead>
     <tr>
       <th>Nome</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let valor of projeto.projetoCanvasMySqls">
-      <td>{{valor.descricao}}</td>
+    <ng-container *ngFor="let valor of projeto.projetoCanvasMySqls">
+      <tr>
+        <td><h5>{{valor.descricao}}</h5></td>
+        <td><a routerLink="/adicionaItemValidacaoPorItem/{{valor.id}}">Adicionar</a></td>
+      </tr>
       <tr *ngFor="let item of valor.itemValidacaoPaginas">
         <td>{{item.titulo}}</td>
+        <td><a routerLink="/editaItemValidacao/{{item.id}}">Editar</a></td>
       </tr>
-    </tr>
+    </ng-container>
   </tbody>
+
 </table>

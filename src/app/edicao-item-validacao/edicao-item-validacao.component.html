@@ -7,7 +7,7 @@
     </div>
   </div>
 
-  <div class="container">
+  <div  *ngIf="signo" class="container">
     <form class="example-form" (ngSubmit)="onSubmit()">
 
       <mat-dialog-content>

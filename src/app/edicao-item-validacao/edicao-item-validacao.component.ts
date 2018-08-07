@@ -32,8 +32,21 @@ export class EdicaoItemValidacaoComponent implements OnInit {
 
   ngOnInit() {
     const segments: UrlSegment[] = this.route.snapshot.url;
+    console.log('Segments:' , segments);
     if (this.route.snapshot.url[0].path === 'editaItemValidacao') {
 
+      this.route.params.subscribe((params: Params) => {
+        let id = params['id'];
+        console.log('IdProjeto: ', id);
+        this.signoSrv.findById(id, { "include" : "projetoCanvasMySql" })
+        .subscribe((result: ItemValidacaoPagina) => {
+          console.log('Resultado: ' , result);
+          this.signo = result;
+          this.itemValor = this.signo.projetoCanvasMySql;
+        })
+      });
+
+   
     } else {
       console.log('segments: ', segments);
       this.signo = new ItemValidacaoPagina();
@@ -73,29 +86,39 @@ export class EdicaoItemValidacaoComponent implements OnInit {
   }
 
   onSubmit() {
+    if (this.route.snapshot.url[0].path === 'editaItemValidacao') {
+      this.atualizaItem();
+    } else {
+      this.insereItem();
+    }
+  }
+
+  insereItem() {
     this.signo.projetoCanvasMySqlId = this.itemValor.id;
-    this.signo.urlImagem = this.urlImagem + '/' + this.nomeArquivoAlterar;
     console.log("Signo: ", this.signo);
     this.signoSrv
       .create(this.signo, (err, obj) => {
         console.log("Erro:" + err.message);
       }).subscribe((e: any) => {
         console.log(JSON.stringify(e));
-        this.router.navigate(['propostaValor']);
+        this.router.navigate(['projetosValor/'  + this.itemValor.projetoMySqlId]);
       });
   }
 
-  insereItem() {
-
-  }
-
   atualizaItem() {
-
+    this.signoSrv
+      .updateAttributes(this.signo.id, this.signo, (err, obj) => {
+        console.log("Erro:" + err.message);
+      }).subscribe((e: any) => {
+        console.log(JSON.stringify(e));
+        console.log('Navegacao: projetosValor/' + this.itemValor.projetoMySqlId);
+        this.router.navigate(['projetosValor/' + this.itemValor.projetoMySqlId ]);
+      });
   }
 
   onUploadFinished(item: FileHolder) {
     console.log('onUploadFinished', item.file.name);
-    this.nomeArquivoAlterar = item.file.name;
+    this.signo.urlImagem = this.urlImagem + '/' + item.file.name;
   }
 
 }

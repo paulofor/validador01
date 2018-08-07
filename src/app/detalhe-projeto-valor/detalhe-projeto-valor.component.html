@@ -1,15 +1,18 @@
-<div class="main-content"  *ngIf="projeto$ | async as projeto">
+<div class="main-content" *ngIf="projeto$ | async as projeto">
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
+
         <div class="card">
           <div class="header">
             <h4 class="title">{{ projeto.nome }}</h4>
+            <a routerLink="/paginaValidacaoPorProjeto/{{projeto.id}}">Paginas Validação</a>
           </div>
-          <div class="content table-responsive table-full-width">
-            <app-lista-valor-por-projeto [projeto]="projeto"></app-lista-valor-por-projeto>
-          </div>
+
+          <app-lista-valor-por-projeto [projeto]="projeto"></app-lista-valor-por-projeto>
+
         </div>
+
       </div>
     </div>
   </div>

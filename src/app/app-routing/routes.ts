@@ -21,6 +21,7 @@ import { ListaProjetoValorComponent } from '../lista-projeto-valor/lista-projeto
 import { DetalheProjetoValorComponent } from '../detalhe-projeto-valor/detalhe-projeto-valor.component';
 import { EdicaoItemValidacaoComponent } from '../edicao-item-validacao/edicao-item-validacao.component';
 import { ListaPaginaValidacaoPorProjetoComponent } from '../lista-pagina-validacao-por-projeto/lista-pagina-validacao-por-projeto.component';
+import { EdicaoPaginaValidacaoComponent } from '../edicao-pagina-validacao/edicao-pagina-validacao.component';
 
 
 export const routes : Routes = [
@@ -47,6 +48,8 @@ export const routes : Routes = [
     { path: 'editaItemValidacao/:id' , component : EdicaoItemValidacaoComponent },
 
     { path: 'paginaValidacaoPorProjeto/:id' , component: ListaPaginaValidacaoPorProjetoComponent },
+    { path: 'editaPaginaValidacaoWeb/:id' , component: EdicaoPaginaValidacaoComponent},
+    { path: 'adicionaPaginaValidacaoWeb', component: EdicaoItemValidacaoComponent  }
 
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

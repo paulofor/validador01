@@ -13,14 +13,7 @@ import { switchMap } from 'rxjs/operators';
 export class ListaPaginaValidacaoPorProjetoComponent implements OnInit {
 
   projeto$: Observable<ProjetoMySql>;
-  consulta = { "include" : 
-              { "relation" : "projetoCanvasMySqls" , 
-                "scope" : 
-                  { "include" : "itemValidacaoPaginas" , 
-                    "where" : {"tipo" : "VALOR"} 
-                  } 
-                } 
-              };
+  consulta = { "include" : { "relation" : "paginaValidacaoWebs" , "scope" : { "include" : "itemValidacaoPaginas" } } };
 
 
   constructor(private route: ActivatedRoute, private srv: ProjetoMySqlApi) { }

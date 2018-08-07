@@ -6,10 +6,26 @@
         <div class="card">
           <div class="header">
             <h4 class="title">{{ projeto.nome }}</h4>
-
+            <a routerLink="/adicionaPaginaValidacaoWeb">Nova</a>
           </div>
 
+          <div class="content table-responsive table-full-width">
+            <table class="table table-hover table-striped">
+              <thead>
+                <tr>
+                  <th>Página</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let pagina of projeto.paginaValidacaoWebs">
+                  <td>{{pagina.mensagemPrincipal}}</td>
+                  <td><a routerLink="/editaPaginaValidacaoWeb/{{pagina.id}}">Alterar</a></td>
+                </tr>
+              </tbody>
+            </table>
 
+          </div>
 
         </div>
 

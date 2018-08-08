@@ -49,7 +49,7 @@ export const routes : Routes = [
 
     { path: 'paginaValidacaoPorProjeto/:id' , component: ListaPaginaValidacaoPorProjetoComponent },
     { path: 'editaPaginaValidacaoWeb/:id' , component: EdicaoPaginaValidacaoComponent},
-    { path: 'adicionaPaginaValidacaoWeb', component: EdicaoItemValidacaoComponent  }
+    { path: 'adicionaPaginaValidacaoWebParaProjeto/:id', component: EdicaoPaginaValidacaoComponent  },
 
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

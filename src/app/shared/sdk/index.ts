@@ -44,8 +44,8 @@ import { CommonModule } from '@angular/common';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CookieBrowser } from './storage/cookie.browser';
 import { StorageBrowser } from './storage/storage.browser';
+import { SocketBrowser } from './sockets/socket.browser';
 
-import { SocketDriver } from './sockets/socket.driver';
 import { SocketConnection } from './sockets/socket.connections';
 import { RealTime } from './services/core/real.time';
 import { UserApi } from './services/custom/User';
@@ -105,8 +105,7 @@ export class SDKBrowserModule {
         ReceitaApi,
         ContainerApi,
         internalStorageProvider,
-        { provide: SDKStorage, useClass: StorageBrowser },
-
+        { provide: SDKStorage, useClass: StorageBrowser }
       ]
     };
   }

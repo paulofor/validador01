@@ -69,6 +69,7 @@ import { ListaValidacaoPorValorComponent } from './lista-validacao-por-valor/lis
 import { EdicaoItemValidacaoComponent } from './edicao-item-validacao/edicao-item-validacao.component';
 import { ListaPaginaValidacaoPorProjetoComponent } from './lista-pagina-validacao-por-projeto/lista-pagina-validacao-por-projeto.component';
 import { EdicaoPaginaValidacaoComponent } from './edicao-pagina-validacao/edicao-pagina-validacao.component';
+import { PaginaValidacaoWebApi } from './shared/sdk';
 
 
 
@@ -149,8 +150,8 @@ import { EdicaoPaginaValidacaoComponent } from './edicao-pagina-validacao/edicao
     MvpCanvasMySqlApi,
     GanhoDorCanvasMySqlApi,
     ItemValidacaoPaginaApi,
-    ContainerApi
-
+    ContainerApi,
+    PaginaValidacaoWebApi
 
   ],
   bootstrap: [AppComponent]

@@ -8448,17 +8448,18 @@
 									"model": {
 										"$ref": "AAAAAAFlBr5MUP+ILMk="
 									},
-									"visible": false,
 									"font": "Arial;13;0",
-									"left": 613,
-									"top": 274,
+									"left": 491,
+									"top": 266,
+									"width": 247.7744140625,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
 									"hostEdge": {
 										"$ref": "AAAAAAFlBr5MUf+M7Bk="
 									},
-									"edgePosition": 1
+									"edgePosition": 1,
+									"text": "+adicionaPaginaValidacaoWebParaProjeto"
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -8471,8 +8472,8 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 627,
-									"top": 268,
+									"left": 628,
+									"top": 261,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -8492,8 +8493,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 586,
-									"top": 285,
+									"left": 585,
+									"top": 277,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -8513,7 +8514,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 618,
+									"left": 614,
 									"top": 276,
 									"height": 13,
 									"alpha": 0.5235987755982988,
@@ -8534,7 +8535,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 629,
+									"left": 624,
 									"top": 285,
 									"height": 13,
 									"alpha": 0.7853981633974483,
@@ -8555,8 +8556,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 595,
-									"top": 260,
+									"left": 593,
+									"top": 259,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 25,
@@ -8576,7 +8577,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 617,
+									"left": 620,
 									"top": 283,
 									"height": 13,
 									"alpha": -0.5235987755982988,
@@ -8596,8 +8597,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 628,
-									"top": 275,
+									"left": 631,
+									"top": 276,
 									"height": 13,
 									"alpha": -0.7853981633974483,
 									"distance": 40,
@@ -8616,8 +8617,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 594,
-									"top": 297,
+									"left": 595,
+									"top": 296,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 25,
@@ -8636,6 +8637,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
+									"top": -8,
 									"width": 10,
 									"height": 10
 								},
@@ -8650,6 +8652,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
+									"top": -8,
 									"width": 10,
 									"height": 10
 								}
@@ -8662,7 +8665,7 @@
 								"$ref": "AAAAAAFlBrxDC/mr88U="
 							},
 							"lineStyle": 1,
-							"points": "617:253;600:286;614:319",
+							"points": "615:253;600:278;615:319",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAFlBr5MUv+Nb8k="
@@ -8717,17 +8720,18 @@
 									"model": {
 										"$ref": "AAAAAAFlGbPSRSX72/c="
 									},
-									"visible": false,
 									"font": "Arial;13;0",
-									"left": 683,
-									"top": 292,
+									"left": 678,
+									"top": 288,
+									"width": 158.88818359375,
 									"height": 13,
-									"alpha": 1.5707963267948966,
-									"distance": 15,
+									"alpha": 2.2357360428282926,
+									"distance": 86.20904824900923,
 									"hostEdge": {
 										"$ref": "AAAAAAFlGbPSRiX/wT0="
 									},
-									"edgePosition": 1
+									"edgePosition": 1,
+									"text": "+editaPaginaValidacaoWeb"
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -9468,6 +9472,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFlBrxDC/mp1/M="
 							},
+							"name": "adicionaPaginaValidacaoWebParaProjeto",
 							"end1": {
 								"_type": "UMLAssociationEnd",
 								"_id": "AAAAAAFlBr5MUf+JCxk=",
@@ -9496,6 +9501,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFlBrxDC/mp1/M="
 							},
+							"name": "editaPaginaValidacaoWeb",
 							"end1": {
 								"_type": "UMLAssociationEnd",
 								"_id": "AAAAAAFlGbPSRSX8rwk=",

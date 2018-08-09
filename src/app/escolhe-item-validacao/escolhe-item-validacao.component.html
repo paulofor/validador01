@@ -1,0 +1,25 @@
+<div class="card">
+  <div class="header">
+    <h4 class="title">nononono</h4>
+    <a href="#" (click)="openDialog(pagina)"></a>
+  </div>
+
+  <div class="content table-responsive table-full-width">
+    <table class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th>Página</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of pagina.itemValidacaoPaginas">
+          <td>{{item.titulo}}</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>

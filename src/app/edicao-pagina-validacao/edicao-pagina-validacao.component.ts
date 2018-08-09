@@ -7,6 +7,8 @@ import { switchMap } from 'rxjs/operators';
 import { ParamMap } from '@angular/router';
 import { Router } from '@angular/router';
 
+
+
 @Component({
   selector: 'app-edicao-pagina-validacao',
   templateUrl: './edicao-pagina-validacao.component.html',
@@ -14,17 +16,16 @@ import { Router } from '@angular/router';
 })
 export class EdicaoPaginaValidacaoComponent implements OnInit {
 
-  projeto$: Observable<ProjetoMySql>;
-  paginaValidacao$ : Observable<PaginaValidacaoWeb>;
-  pagina : PaginaValidacaoWeb;
-  projetoOrigem : ProjetoMySql;
+  consulta = {"include" : ["projeto","itemValidacaoPaginas"] };
 
-  constructor(private route: ActivatedRoute, private srv: ProjetoMySqlApi, 
-              private srvPagina: PaginaValidacaoWebApi, private router: Router ) { }
+  pagina: PaginaValidacaoWeb;
+
+  constructor(private route: ActivatedRoute, private srv: ProjetoMySqlApi,
+    private srvPagina: PaginaValidacaoWebApi, private router: Router) { }
 
   ngOnInit() {
     const segments: UrlSegment[] = this.route.snapshot.url;
-    console.log('Segments:' , segments);
+    console.log('Segments:', segments);
     if (this.route.snapshot.url[0].path === 'editaPaginaValidacaoWeb') {
       this.inicializaEdicao();
     } else {
@@ -40,20 +41,16 @@ export class EdicaoPaginaValidacaoComponent implements OnInit {
       this.insereItem();
     }
   }
+
   insereItem() {
-    this.projeto$.subscribe((result:ProjetoMySql) => {
-      this.projetoOrigem = result;
-      this.pagina.projetoMySqlId = this.projetoOrigem.id;
-      console.log("Signo: ", this.projetoOrigem);
-      this.srvPagina
-        .create(this.pagina, (err, obj) => {
-          console.log("Erro:" + err.message);
-        }).subscribe((e: any) => {
-          console.log(JSON.stringify(e));
-          this.router.navigate(['projetosValor/'  + this.projetoOrigem.id]);
-        });
-    })
-   
+    this.pagina.projetoMySqlId = this.pagina.projeto.id;
+    console.log("Pagina: ", this.pagina);
+    this.srvPagina
+      .create(this.pagina, (err, obj) => {
+        console.log("Erro:" + err.message);
+      }).subscribe((e: any) => {
+        this.router.navigate(['paginaValidacaoPorProjeto/' + this.pagina.projetoMySqlId]);
+      });
   }
 
   atualizaItem() {
@@ -61,26 +58,28 @@ export class EdicaoPaginaValidacaoComponent implements OnInit {
       .updateAttributes(this.pagina.id, this.pagina, (err, obj) => {
         console.log("Erro:" + err.message);
       }).subscribe((e: any) => {
-        console.log(JSON.stringify(e));
-        console.log('Navegacao: projetosValor/' + this.projetoOrigem.id);
-        this.router.navigate(['projetosValor/' + this.projetoOrigem.id ]);
+        this.router.navigate(['paginaValidacaoPorProjeto/' + this.pagina.projetoMySqlId]);
       });
   }
 
 
   inicializaEdicao() {
-    this.paginaValidacao$ = this.route.paramMap.pipe(
+    this.route.paramMap.pipe(
       switchMap((params: ParamMap) =>
-        this.srvPagina.findById(params.get('id'))
-    ))
+        this.srvPagina.findById(params.get('id'), this.consulta)
+      )).subscribe((paginaResult: PaginaValidacaoWeb) => {
+        this.pagina = paginaResult;
+      })
   }
 
   inicializaAdicao() {
     this.pagina = new PaginaValidacaoWeb();
-    this.projeto$ = this.route.paramMap.pipe(
+    this.route.paramMap.pipe(
       switchMap((params: ParamMap) =>
         this.srv.findById(params.get('id'))
-    ))
+      )).subscribe((projetoResult: ProjetoMySql) => {
+        this.pagina.projeto = projetoResult;
+      })
   }
 
 }

@@ -70,6 +70,8 @@ import { EdicaoItemValidacaoComponent } from './edicao-item-validacao/edicao-ite
 import { ListaPaginaValidacaoPorProjetoComponent } from './lista-pagina-validacao-por-projeto/lista-pagina-validacao-por-projeto.component';
 import { EdicaoPaginaValidacaoComponent } from './edicao-pagina-validacao/edicao-pagina-validacao.component';
 import { PaginaValidacaoWebApi } from './shared/sdk';
+import { EscolheItemValidacaoComponent } from './escolhe-item-validacao/escolhe-item-validacao.component';
+import { EscolhedorItemVallidacaoComponent } from './escolhedor-item-vallidacao/escolhedor-item-vallidacao.component';
 
 
 
@@ -110,6 +112,8 @@ import { PaginaValidacaoWebApi } from './shared/sdk';
     EdicaoItemValidacaoComponent,
     ListaPaginaValidacaoPorProjetoComponent,
     EdicaoPaginaValidacaoComponent,
+    EscolheItemValidacaoComponent,
+    EscolhedorItemVallidacaoComponent,
 
   ],
   entryComponents: [

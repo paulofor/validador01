@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BASE_URL } from '../constantes/base.url';
+import { URL_IMAGEM, URL_UPLOAD } from '../constantes/base.url';
 import { ProjetoCanvasMySql, ItemValidacaoPagina, ProjetoCanvasMySqlApi, ItemValidacaoPaginaApi, ContainerApi } from '../shared/sdk';
 import { Params, ActivatedRoute, Router, UrlSegment } from '@angular/router';
 import { FileHolder } from 'angular2-image-upload';
@@ -11,9 +11,6 @@ import { FileHolder } from 'angular2-image-upload';
 })
 export class EdicaoItemValidacaoComponent implements OnInit {
 
-
-  url = BASE_URL + '/api/containers/container1/upload'
-  urlImagem = BASE_URL + '/api/containers/container1/download';
 
   itemValor: ProjetoCanvasMySql;
   signo: ItemValidacaoPagina;
@@ -118,7 +115,7 @@ export class EdicaoItemValidacaoComponent implements OnInit {
 
   onUploadFinished(item: FileHolder) {
     console.log('onUploadFinished', item.file.name);
-    this.signo.urlImagem = this.urlImagem + '/' + item.file.name;
+    this.signo.urlImagem = URL_IMAGEM + '/' + item.file.name;
   }
 
 }

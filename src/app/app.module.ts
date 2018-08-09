@@ -123,6 +123,7 @@ import { EscolhedorItemVallidacaoComponent } from './escolhedor-item-vallidacao/
     MvpCanvasEditaComponent,
     DorGanhoCanvasCriaComponent,
     DorGanhoCanvasEditaComponent,
+    EscolhedorItemVallidacaoComponent
     //ArquivosComponent
   ],
   imports: [

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-escolhedor-item-vallidacao',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EscolhedorItemVallidacaoComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(public dialogRef: MatDialogRef<EscolhedorItemVallidacaoComponent>
+    , @Inject(MAT_DIALOG_DATA) public data: any) { 
+      console.log('EscolhedorItemVallidacaoComponent');
+  }
 
   ngOnInit() {
   }

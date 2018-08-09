@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Input } from '@angular/core';
 import { MatDialog } from '@angular/material';
-import { EscolhedorItemVallidacaoComponent } from 'src/app/escolhedor-item-vallidacao/escolhedor-item-vallidacao.component';
+import { EscolhedorItemVallidacaoComponent } from '../escolhedor-item-vallidacao/escolhedor-item-vallidacao.component';
 
 @Component({
   selector: 'app-escolhe-item-validacao',

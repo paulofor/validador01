@@ -2,7 +2,7 @@
   <table class="table table-hover table-striped">
     <thead>
       <tr>
-        <th>Valor</th>
+        <th>Valor / Item Validação</th>
         <th></th>
       </tr>
     </thead>
@@ -13,13 +13,13 @@
             <h5>{{valor.descricao}}</h5>
           </td>
           <td>
-            <a routerLink="/adicionaItemValidacaoPorItem/{{valor.id}}">Cria Item Validacao</a>
+            <a routerLink="/adicionaItemValidacaoPorItem/{{valor.id}}">Criar Item</a>
           </td>
         </tr>
         <tr *ngFor="let item of valor.itemValidacaoPaginas">
           <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{item.titulo}}</td>
           <td>
-            <a routerLink="/editaItemValidacao/{{item.id}}">Editar</a>
+            <a routerLink="/editaItemValidacao/{{item.id}}">Editar Item</a>
           </td>
         </tr>
       </ng-container>

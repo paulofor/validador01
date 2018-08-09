@@ -41,16 +41,19 @@ export class EdicaoPaginaValidacaoComponent implements OnInit {
     }
   }
   insereItem() {
-    this.projeto$.subscribe((result:ProjetoMySql) => this.projetoOrigem = result)
-    this.pagina.projetoMySqlId = this.projetoOrigem.id;
-    console.log("Signo: ", this.projetoOrigem);
-    this.srvPagina
-      .create(this.pagina, (err, obj) => {
-        console.log("Erro:" + err.message);
-      }).subscribe((e: any) => {
-        console.log(JSON.stringify(e));
-        this.router.navigate(['projetosValor/'  + this.projetoOrigem.id]);
-      });
+    this.projeto$.subscribe((result:ProjetoMySql) => {
+      this.projetoOrigem = result;
+      this.pagina.projetoMySqlId = this.projetoOrigem.id;
+      console.log("Signo: ", this.projetoOrigem);
+      this.srvPagina
+        .create(this.pagina, (err, obj) => {
+          console.log("Erro:" + err.message);
+        }).subscribe((e: any) => {
+          console.log(JSON.stringify(e));
+          this.router.navigate(['projetosValor/'  + this.projetoOrigem.id]);
+        });
+    })
+   
   }
 
   atualizaItem() {

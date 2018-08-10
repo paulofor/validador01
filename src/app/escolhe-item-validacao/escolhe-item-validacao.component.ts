@@ -33,7 +33,7 @@ export class EscolheItemValidacaoComponent implements OnInit {
       //this.carregaDados();
     });
     this.dialog.open(EscolhedorItemVallidacaoComponent, {
-      width: '600px',
+      width: '800px',
       data: {
         pagina: this.pagina
       }

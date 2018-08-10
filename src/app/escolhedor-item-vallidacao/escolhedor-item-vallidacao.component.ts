@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { ProjetoMySqlApi, ProjetoCanvasMySql, ItemValidacaoPagina } from '../shared/sdk';
+import {DropEvent} from 'ng-drag-drop';
 
 @Component({
   selector: 'app-escolhedor-item-vallidacao',
@@ -42,5 +43,18 @@ export class EscolhedorItemVallidacaoComponent implements OnInit {
     // Get the dropped data here
     console.log('Dropped: ', e.dragData);
     this.droppedItems.push(e.dragData);
+  }
+
+
+  onDrop(e: DropEvent) {
+    this.droppedItems.push(e.dragData);
+    this.removeItem(e.dragData, this.listaItem)
+  }
+
+  removeItem(item: any, list: Array<any>) {
+    let index = list.map(function (e) {
+      return e.name
+    }).indexOf(item.name);
+    list.splice(index, 1);
   }
 }

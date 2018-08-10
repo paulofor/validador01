@@ -1,21 +1,39 @@
 <h2 mat-dialog-title>Itens de Validação do Projeto</h2>
 <mat-dialog-content>
-<div class="row">
-    <div class="col-sm-3">
-        <ul class="list-group">
-            <li draggable *ngFor="let item of listaItem" [dragData]="item" class="list-group-item">{{item.titulo}}</li>
-        </ul>
-    </div>
-    
-    <div class="col-sm-3">
-    <div class="panel panel-default" droppable (onDrop)="onItemDrop($event)">
-        <div class="panel-heading">Drop Items here</div>
-            <div class="panel-body">
-              <li *ngFor="let item of droppedItems" class="list-group-item">{{item.titulo}}</li>
+
+    <div class="row">
+    <div class="col-sm-6">
+        <div class="card card-outline-primary mb-3">
+            <div class="card-header card-inverse card-primary">Disponíveis</div>
+            <div class="card-block scroll-list">
+                <ul class="list-group">
+                    <li draggable *ngFor="let item of listaItem" 
+                        [dragScope]="'default-css'" 
+                        [dragData]="item" class="list-group-item">
+                        {{item.titulo}}
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
+
+    <div class="col-sm-6">
+        <div class="card card-outline-primary mb-3" droppable [dropScope]="'default-css'"
+             (onDrop)="onDrop($event)">
+            <div class="card-header card-inverse card-primary">Na página</div>
+            <div class="card-block scroll-list">
+                <ul class="list-group">
+                    <li *ngFor="let item of droppedItems" class="list-group-item">
+                        {{item.titulo}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
 </div>
+
+
 </mat-dialog-content>
 <mat-dialog-actions>
   <button mat-button>Enviar</button>

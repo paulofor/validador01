@@ -72,7 +72,7 @@ import { EdicaoPaginaValidacaoComponent } from './edicao-pagina-validacao/edicao
 import { PaginaValidacaoWebApi } from './shared/sdk';
 import { EscolheItemValidacaoComponent } from './escolhe-item-validacao/escolhe-item-validacao.component';
 import { EscolhedorItemVallidacaoComponent } from './escolhedor-item-vallidacao/escolhedor-item-vallidacao.component';
-
+import { NgDragDropModule } from 'ng-drag-drop';
 
 
 
@@ -140,6 +140,7 @@ import { EscolhedorItemVallidacaoComponent } from './escolhedor-item-vallidacao/
     FileDropModule,
     UploadModule,
     ImageUploadModule.forRoot(),
+    NgDragDropModule.forRoot()
   ],
   providers: [
     ProjetoApi,

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Input } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { EscolhedorItemVallidacaoComponent } from '../escolhedor-item-vallidacao/escolhedor-item-vallidacao.component';
+import { ProjetoCanvasMySql, ProjetoMySqlApi } from '../shared/sdk';
 
 @Component({
   selector: 'app-escolhe-item-validacao',
@@ -10,12 +11,20 @@ import { EscolhedorItemVallidacaoComponent } from '../escolhedor-item-vallidacao
 })
 export class EscolheItemValidacaoComponent implements OnInit {
 
+
+
+
+
   @Input() pagina;
 
   constructor(private dialog: MatDialog) { }
 
   ngOnInit() {
+
   }
+
+ 
+
 
   openDialog(pagina) {
     console.log('Pagina:', pagina);

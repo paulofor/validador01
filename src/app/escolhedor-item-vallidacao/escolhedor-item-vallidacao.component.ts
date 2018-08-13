@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { ProjetoMySqlApi, ProjetoCanvasMySql, ItemValidacaoPagina } from '../shared/sdk';
-import {DropEvent} from 'ng-drag-drop';
+import { ProjetoMySqlApi, ProjetoCanvasMySql, ItemValidacaoPagina, PaginaValidacaoWeb, ItemValidacaoPaginaApi } from '../shared/sdk';
+import { DropEvent } from 'ng-drag-drop';
 
 @Component({
   selector: 'app-escolhedor-item-vallidacao',
@@ -15,9 +15,11 @@ export class EscolhedorItemVallidacaoComponent implements OnInit {
   listaItem: ItemValidacaoPagina[] = new Array(0);
 
   droppedItems: ItemValidacaoPagina[] = new Array(0);
+  pagina: PaginaValidacaoWeb;
 
   constructor(public dialogRef: MatDialogRef<EscolhedorItemVallidacaoComponent>
-    , @Inject(MAT_DIALOG_DATA) public data: any, private srv: ProjetoMySqlApi) {
+    , @Inject(MAT_DIALOG_DATA) public data: any, private srv: ProjetoMySqlApi,
+    private itemValidacaoSrv: ItemValidacaoPaginaApi) {
   }
 
   ngOnInit() {
@@ -25,7 +27,8 @@ export class EscolhedorItemVallidacaoComponent implements OnInit {
   }
 
   carregaListaValor() {
-    this.srv.getProjetoCanvasMySqls(this.data.pagina.projeto.id, this.consulta)
+    this.pagina = this.data.pagina;
+    this.srv.getProjetoCanvasMySqls(this.pagina.projeto.id, this.consulta)
       .subscribe((result: ProjetoCanvasMySql[]) => {
         this.listaValor = result;
 
@@ -47,8 +50,19 @@ export class EscolhedorItemVallidacaoComponent implements OnInit {
 
 
   onDrop(e: DropEvent) {
-    this.droppedItems.push(e.dragData);
-    this.removeItem(e.dragData, this.listaItem)
+    console.log('onDrop:', e.dragData);
+    let item = <ItemValidacaoPagina>e.dragData;
+    console.log('Data:', this.data);
+    item.paginaValidacaoWebId = this.pagina.id;
+    console.log('Pagina:', this.pagina);
+    console.log('Item', item);
+    this.itemValidacaoSrv.updateAttributes(item.id, item)
+      .subscribe((result: any) => {
+        console.log('Resultado: ', result);
+        this.droppedItems.push(e.dragData);
+        this.removeItem(e.dragData, this.listaItem)
+      })
+
   }
 
   removeItem(item: any, list: Array<any>) {

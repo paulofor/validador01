@@ -12,7 +12,7 @@ export class EscolhedorItemVallidacaoComponent implements OnInit {
 
   consulta = { "where": { "tipo": "VALOR" }, "include": { "relation": "itemValidacaoPaginas" } };
   listaValor: ProjetoCanvasMySql[];
-  listaItem: ItemValidacaoPagina[] = new Array(0);
+  listaItemDisponivel: ItemValidacaoPagina[] = new Array(0);
 
   //droppedItems: ItemValidacaoPagina[] = new Array(0);
   pagina: PaginaValidacaoWeb;
@@ -27,6 +27,7 @@ export class EscolhedorItemVallidacaoComponent implements OnInit {
   }
 
   carregaListaValor() {
+    
     this.pagina = this.data.pagina;
     this.srv.getProjetoCanvasMySqls(this.pagina.projeto.id, this.consulta)
       .subscribe((result: ProjetoCanvasMySql[]) => {
@@ -38,7 +39,7 @@ export class EscolhedorItemVallidacaoComponent implements OnInit {
 
   montaListaItem() {
     this.listaValor.forEach((valor: ProjetoCanvasMySql) => {
-      this.listaItem.push.apply(this.listaItem, valor.itemValidacaoPaginas);
+      this.listaItemDisponivel.push.apply(this.listaItemDisponivel, valor.itemValidacaoPaginas);
     });
   }
 
@@ -55,7 +56,7 @@ export class EscolhedorItemVallidacaoComponent implements OnInit {
       .subscribe((result: any) => {
         console.log('Resultado: ', result);
         this.pagina.itemValidacaoPaginas.push(e.dragData);
-        this.removeItem(e.dragData, this.listaItem)
+        this.removeItem(e.dragData, this.listaItemDisponivel)
       })
 
   }

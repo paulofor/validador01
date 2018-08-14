@@ -7,7 +7,7 @@
             <div class="card-header card-inverse card-primary">Disponíveis</div>
             <div class="card-block scroll-list">
                 <ul class="list-group">
-                    <li draggable *ngFor="let item of listaItem" 
+                    <li draggable *ngFor="let item of listaItemDisponivel" 
                         [dragScope]="'default-css'" 
                         [dragData]="item" class="list-group-item">
                         {{item.titulo}}

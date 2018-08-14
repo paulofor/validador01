@@ -14,7 +14,7 @@ export class EscolhedorItemVallidacaoComponent implements OnInit {
   listaValor: ProjetoCanvasMySql[];
   listaItem: ItemValidacaoPagina[] = new Array(0);
 
-  droppedItems: ItemValidacaoPagina[] = new Array(0);
+  //droppedItems: ItemValidacaoPagina[] = new Array(0);
   pagina: PaginaValidacaoWeb;
 
   constructor(public dialogRef: MatDialogRef<EscolhedorItemVallidacaoComponent>
@@ -42,12 +42,7 @@ export class EscolhedorItemVallidacaoComponent implements OnInit {
     });
   }
 
-  onItemDrop(e: any) {
-    // Get the dropped data here
-    console.log('Dropped: ', e.dragData);
-    this.droppedItems.push(e.dragData);
-  }
-
+ 
 
   onDrop(e: DropEvent) {
     console.log('onDrop:', e.dragData);
@@ -59,7 +54,7 @@ export class EscolhedorItemVallidacaoComponent implements OnInit {
     this.itemValidacaoSrv.updateAttributes(item.id, item)
       .subscribe((result: any) => {
         console.log('Resultado: ', result);
-        this.droppedItems.push(e.dragData);
+        this.pagina.itemValidacaoPaginas.push(e.dragData);
         this.removeItem(e.dragData, this.listaItem)
       })
 

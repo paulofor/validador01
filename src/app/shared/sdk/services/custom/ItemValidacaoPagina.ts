@@ -145,6 +145,31 @@ export class ItemValidacaoPaginaApi extends BaseLoopBackApi {
   }
 
   /**
+   * Retorna os itens disponiveis para um projeto
+   *
+   * @param {number} idProjeto Id do Projeto para pesquisa
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * Data properties:
+   *
+   *  - `listaItens` – `{any}` - Itens de Validacao disponiveis
+   */
+  public disponiveisPorProjeto(idProjeto: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ItemValidacaoPaginas/disponiveisProjeto";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof idProjeto !== 'undefined' && idProjeto !== null) _urlParams.idProjeto = idProjeto;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Fetches belongsTo relation projeto.
    *
    * @param {any} id ItemValidacaoPagina id

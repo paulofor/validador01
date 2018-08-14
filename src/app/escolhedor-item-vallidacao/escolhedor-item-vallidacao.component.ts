@@ -11,14 +11,13 @@ import { DropEvent } from 'ng-drag-drop';
 export class EscolhedorItemVallidacaoComponent implements OnInit {
 
   consulta = { "where": { "tipo": "VALOR" }, "include": { "relation": "itemValidacaoPaginas" } };
-  listaValor: ProjetoCanvasMySql[];
   listaItemDisponivel: ItemValidacaoPagina[] = new Array(0);
 
   //droppedItems: ItemValidacaoPagina[] = new Array(0);
   pagina: PaginaValidacaoWeb;
 
   constructor(public dialogRef: MatDialogRef<EscolhedorItemVallidacaoComponent>
-    , @Inject(MAT_DIALOG_DATA) public data: any, private srv: ProjetoMySqlApi,
+    , @Inject(MAT_DIALOG_DATA) public data: any,
     private itemValidacaoSrv: ItemValidacaoPaginaApi) {
   }
 
@@ -29,19 +28,13 @@ export class EscolhedorItemVallidacaoComponent implements OnInit {
   carregaListaValor() {
     
     this.pagina = this.data.pagina;
-    this.srv.getProjetoCanvasMySqls(this.pagina.projeto.id, this.consulta)
-      .subscribe((result: ProjetoCanvasMySql[]) => {
-        this.listaValor = result;
-
-        this.montaListaItem();
+    this.itemValidacaoSrv.disponiveisPorProjeto(this.pagina.projeto.id)
+      .subscribe((listaItens: any) => {
+        console.log("ListaItens" , listaItens);
+        this.listaItemDisponivel = listaItens;
       })
   }
 
-  montaListaItem() {
-    this.listaValor.forEach((valor: ProjetoCanvasMySql) => {
-      this.listaItemDisponivel.push.apply(this.listaItemDisponivel, valor.itemValidacaoPaginas);
-    });
-  }
 
  
 

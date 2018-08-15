@@ -31,7 +31,7 @@ export class EscolhedorItemVallidacaoComponent implements OnInit {
     this.itemValidacaoSrv.disponiveisPorProjeto(this.pagina.projeto.id)
       .subscribe((listaItens: any) => {
         console.log("ListaItens" , listaItens);
-        this.listaItemDisponivel = listaItens;
+        this.listaItemDisponivel = listaItens.listaItens;
       })
   }
 

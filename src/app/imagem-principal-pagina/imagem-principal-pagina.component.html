@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="header">
+    <h4 class="title">Imagem Principal de Fundo</h4>
+
+  </div>
+
+  <div class="content table-responsive table-full-width">
+    <image-upload url="{{URL_UPLOAD}}" 
+    (uploadFinished)="onUploadFinished($event)"
+    buttonCaption="Escolha a imagem"
+    dropBoxMessage="ou arraste aqui"
+    ></image-upload>
+
+  </div>
+
+</div>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FileHolder } from 'angular2-image-upload';
+import { URL_UPLOAD } from '../constantes/base.url';
+import { Inject } from '@angular/core';
 
 @Component({
   selector: 'app-angular2-image-upload',
@@ -9,7 +11,9 @@ import { FileHolder } from 'angular2-image-upload';
 export class Angular2ImageUploadComponent implements OnInit {
 
 
-  url = 'http://localhost:21101/api/containers/container1/upload';
+  //url = 'http://localhost:21101/api/containers/container1/upload';
+  //url = 'http://validacao.kinghost.net:21101/api/containers/container1/upload'
+  url = URL_UPLOAD;
 
   constructor() { }
 

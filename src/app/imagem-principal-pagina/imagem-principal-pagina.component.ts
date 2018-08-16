@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FileHolder } from 'angular2-image-upload';
-import { URL_IMAGEM } from '../constantes/base.url';
+import { URL_IMAGEM, URL_UPLOAD } from '../constantes/base.url';
 import { PaginaValidacaoWebApi } from '../shared/sdk';
 
 @Component({
@@ -12,9 +12,12 @@ export class ImagemPrincipalPaginaComponent implements OnInit {
 
   @Input() pagina;
 
+  urlUpload: string;
+
   constructor(private srvPagina: PaginaValidacaoWebApi) { }
 
   ngOnInit() {
+    this.urlUpload = URL_UPLOAD;
   }
 
 

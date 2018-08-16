@@ -20,6 +20,7 @@ export class EdicaoItemValidacaoComponent implements OnInit {
   // Isso não esta bom alterar (até 04-10-2018)
   nomeArquivoAlterar: string = '';
 
+  urlUpload = URL_UPLOAD;
 
   constructor(private itemSrv: ProjetoCanvasMySqlApi,
     private route: ActivatedRoute,

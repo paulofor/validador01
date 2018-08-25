@@ -31,11 +31,18 @@
         </mat-form-field>
 
 
-        <image-upload url="{{urlUpload}}" 
-        (uploadFinished)="onUploadFinished($event)"
-        buttonCaption="Escolha a imagem"
-        dropBoxMessage="ou arraste aqui"
-        ></image-upload>
+        <div class="content table-responsive table-full-width">
+          <img width="100%" *ngIf="signo.urlImagem" src="{{signo.urlImagem}}" >
+
+          <image-upload url="{{urlUpload}}" 
+          (uploadFinished)="onUploadFinished($event)"
+          buttonCaption="Escolha a imagem"
+          dropBoxMessage="ou arraste aqui"
+          ></image-upload>
+      
+        </div>
+
+
       </mat-dialog-content>
 
    

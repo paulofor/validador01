@@ -1,0 +1,34 @@
+<div  class="container">
+
+  <form class="example-full-width" (ngSubmit)="onSubmit()">
+
+    <mat-dialog-content>
+      <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="item.titulo1" name="titulo1" placeholder="Titulo1" />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="item.titulo2" name="titulo2" placeholder="Titulo2" />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="item.titulo3" name="titulo3" placeholder="Titulo3" />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="item.descricao1" name="descricao1" placeholder="Descricao1" />
+      </mat-form-field>
+
+
+      <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="item.descricao1" name="descricao1" placeholder="Descricao1" />
+      </mat-form-field>
+
+    </mat-dialog-content>
+
+    <mat-dialog-actions>
+      <button mat-button>Salvar Anúncio</button>
+    </mat-dialog-actions>
+
+  </form>
+</div>

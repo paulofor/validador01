@@ -13,5 +13,8 @@ export * from './ProjetoExemplo';
 export * from './Receita';
 export * from './Container';
 export * from './Visitante';
+export * from './AnuncioAds';
+export * from './CampanhaAds';
+export * from './PalavraChaveAds';
 export * from './BaseModels';
 export * from './FireLoopRef';

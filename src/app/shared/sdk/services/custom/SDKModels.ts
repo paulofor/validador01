@@ -14,6 +14,9 @@ import { ProjetoExemplo } from '../../models/ProjetoExemplo';
 import { Receita } from '../../models/Receita';
 import { Container } from '../../models/Container';
 import { Visitante } from '../../models/Visitante';
+import { AnuncioAds } from '../../models/AnuncioAds';
+import { CampanhaAds } from '../../models/CampanhaAds';
+import { PalavraChaveAds } from '../../models/PalavraChaveAds';
 
 export interface Models { [name: string]: any }
 
@@ -35,6 +38,9 @@ export class SDKModels {
     Receita: Receita,
     Container: Container,
     Visitante: Visitante,
+    AnuncioAds: AnuncioAds,
+    CampanhaAds: CampanhaAds,
+    PalavraChaveAds: PalavraChaveAds,
     
   };
 

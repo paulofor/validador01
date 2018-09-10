@@ -4,24 +4,29 @@
 
     <mat-dialog-content>
       <mat-form-field class="example-full-width">
-        <input matInput [(ngModel)]="item.titulo1" name="titulo1" placeholder="Titulo1" />
+        <input matInput maxlength="90" #titulo1 [(ngModel)]="item.titulo1" name="titulo1" placeholder="Titulo1" />
+        <mat-hint align="end">{{titulo1.value?.length || 0}}/90</mat-hint>
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-        <input matInput [(ngModel)]="item.titulo2" name="titulo2" placeholder="Titulo2" />
+        <input matInput [(ngModel)]="item.titulo2" #titulo2 name="titulo2" placeholder="Titulo2" />
+        <mat-hint align="end">{{titulo2.value?.length || 0}}/90</mat-hint>
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-        <input matInput [(ngModel)]="item.titulo3" name="titulo3" placeholder="Titulo3" />
+        <input matInput [(ngModel)]="item.titulo3" #titulo3 name="titulo3" placeholder="Titulo3" />
+        <mat-hint align="end">{{titulo3.value?.length || 0}}/90</mat-hint>
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
-        <input matInput [(ngModel)]="item.descricao1" name="descricao1" placeholder="Descricao1" />
+        <input matInput [(ngModel)]="item.descricao1" #descricao1 name="descricao1" placeholder="Descricao1" />
+        <mat-hint align="end">{{descricao1.value?.length || 0}}/90</mat-hint>
       </mat-form-field>
 
 
       <mat-form-field class="example-full-width">
-        <input matInput [(ngModel)]="item.descricao1" name="descricao1" placeholder="Descricao1" />
+        <input matInput [(ngModel)]="item.descricao2" #descricao2 name="descricao2" placeholder="Descricao2" />
+        <mat-hint align="end">{{descricao2.value?.length || 0}}/90</mat-hint>
       </mat-form-field>
 
     </mat-dialog-content>

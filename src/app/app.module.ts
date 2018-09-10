@@ -69,7 +69,7 @@ import { ListaValidacaoPorValorComponent } from './lista-validacao-por-valor/lis
 import { EdicaoItemValidacaoComponent } from './edicao-item-validacao/edicao-item-validacao.component';
 import { ListaPaginaValidacaoPorProjetoComponent } from './lista-pagina-validacao-por-projeto/lista-pagina-validacao-por-projeto.component';
 import { EdicaoPaginaValidacaoComponent } from './edicao-pagina-validacao/edicao-pagina-validacao.component';
-import { PaginaValidacaoWebApi } from './shared/sdk';
+import { PaginaValidacaoWebApi, AnuncioAdsApi, SDKBrowserModule } from './shared/sdk';
 import { EscolheItemValidacaoComponent } from './escolhe-item-validacao/escolhe-item-validacao.component';
 import { EscolhedorItemVallidacaoComponent } from './escolhedor-item-vallidacao/escolhedor-item-vallidacao.component';
 import { NgDragDropModule } from 'ng-drag-drop';
@@ -144,25 +144,16 @@ import { AnuncioAdsEditaComponent } from './anuncio-ads-edita/anuncio-ads-edita.
     FileDropModule,
     UploadModule,
     ImageUploadModule.forRoot(),
-    NgDragDropModule.forRoot()
+    NgDragDropModule.forRoot(),
+    SDKBrowserModule.forRoot()
   ],
   providers: [
-    ProjetoApi,
-    ProjetoCanvasApi,
     HttpClient, 
     SocketConnection  , 
     SocketDriver,
     SDKModels,
     LoopBackAuth,
-    InternalStorage,
-    ProjetoMySqlApi,
-    ProjetoCanvasMySqlApi,
-    MvpCanvasMySqlApi,
-    GanhoDorCanvasMySqlApi,
-    ItemValidacaoPaginaApi,
-    ContainerApi,
-    PaginaValidacaoWebApi
-
+    InternalStorage
   ],
   bootstrap: [AppComponent]
 })

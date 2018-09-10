@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ProjetoCanvasMySql, AnuncioAds } from '../shared/sdk';
+import { ProjetoCanvasMySql, AnuncioAds, AnuncioAdsApi } from '../shared/sdk';
 import { AnuncioAdsEditaBase } from './anuncio-ads-edita-base';
 
 
@@ -14,10 +14,46 @@ export class AnuncioAdsEditaComponent extends AnuncioAdsEditaBase implements OnI
   @Input() valor: ProjetoCanvasMySql;
   item: AnuncioAds;
 
-  constructor() { super() }
+  constructor(private srv:AnuncioAdsApi) { super() }
 
   ngOnInit() {
     this.item = new AnuncioAds();
   }
+
+  onSubmit() {
+    console.log('Item(onSubmit):' , this.item);
+    if (this.item.id) {
+      this.atualizaItem();
+    } else {
+      this.insereItem();
+    }
+  }
+
+  carregaItem() {
+    console.log('ItemRaiz(carregaItem):',this.valor );
+  }
+
+  insereItem() {
+    console.log('Item(insereItem):' , this.item);
+    this.item.projetoCanvasMySqlId = this.valor.id;
+    console.log("Item: ", this.item);
+    this.srv
+      .create(this.item, (err, obj) => {
+        console.log("Erro:" + err.message);
+      }).subscribe((e: any) => {
+        console.log(JSON.stringify(e));
+      });
+  }
+
+  atualizaItem() {
+    console.log('Item(atualizaItem):' , this.item);
+    this.srv
+      .updateAttributes(this.item.id, this.item, (err, obj) => {
+        console.log("Erro:" + err.message);
+      }).subscribe((e: any) => {
+        console.log(JSON.stringify(e));
+      });
+  }
+
 
 }

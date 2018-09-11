@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ProjetoCanvasMySql, AnuncioAds, AnuncioAdsApi } from '../shared/sdk';
+import { ProjetoCanvasMySql, AnuncioAds, AnuncioAdsApi, ProjetoCanvasApi, ProjetoCanvasMySqlApi } from '../shared/sdk';
 import { AnuncioAdsEditaBase } from './anuncio-ads-edita-base';
 
 
@@ -14,10 +14,11 @@ export class AnuncioAdsEditaComponent extends AnuncioAdsEditaBase implements OnI
   @Input() valor: ProjetoCanvasMySql;
   item: AnuncioAds;
 
-  constructor(private srv:AnuncioAdsApi) { super() }
+  constructor(private srv:AnuncioAdsApi, private valorSrv: ProjetoCanvasMySqlApi) { super() }
 
   ngOnInit() {
     this.item = new AnuncioAds();
+    this.carregaItem();
   }
 
   onSubmit() {
@@ -31,6 +32,7 @@ export class AnuncioAdsEditaComponent extends AnuncioAdsEditaBase implements OnI
 
   carregaItem() {
     console.log('ItemRaiz(carregaItem):',this.valor );
+    this.valorSrv.findByIdAnuncioAds(this.valor.id)
   }
 
   insereItem() {

@@ -75,6 +75,7 @@ import { EscolhedorItemVallidacaoComponent } from './escolhedor-item-vallidacao/
 import { NgDragDropModule } from 'ng-drag-drop';
 import { ImagemPrincipalPaginaComponent } from './imagem-principal-pagina/imagem-principal-pagina.component';
 import { AnuncioAdsEditaComponent } from './anuncio-ads-edita/anuncio-ads-edita.component';
+import { ProjetoAplicacaoComponent } from './projeto-aplicacao/projeto-aplicacao.component';
 
 
 
@@ -118,6 +119,7 @@ import { AnuncioAdsEditaComponent } from './anuncio-ads-edita/anuncio-ads-edita.
     EscolhedorItemVallidacaoComponent,
     ImagemPrincipalPaginaComponent,
     AnuncioAdsEditaComponent,
+    ProjetoAplicacaoComponent,
 
   ],
   entryComponents: [

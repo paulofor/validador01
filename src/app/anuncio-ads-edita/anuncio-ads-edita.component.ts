@@ -32,7 +32,7 @@ export class AnuncioAdsEditaComponent extends AnuncioAdsEditaBase implements OnI
 
   carregaItem() {
     console.log('ItemRaiz(carregaItem):',this.valor );
-    this.valorSrv.findByIdAnuncioAds(this.valor.id)
+    //this.valorSrv.findByIdAnuncioAds(this.valor.id)
   }
 
   insereItem() {

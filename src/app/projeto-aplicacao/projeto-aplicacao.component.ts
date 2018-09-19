@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProjetoMySql, ProjetoMySqlApi } from '../shared/sdk';
 
 @Component({
   selector: 'app-projeto-aplicacao',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjetoAplicacaoComponent implements OnInit {
 
-  constructor() { }
+  projetos: ProjetoMySql[];
+  errMess: string;
+
+  constructor(private projetoService: ProjetoMySqlApi) {
+
+  }
 
   ngOnInit() {
+    this.projetoService.find()
+      .subscribe((projetos: ProjetoMySql[]) =>
+        this.projetos = projetos
+      );
   }
 
 }

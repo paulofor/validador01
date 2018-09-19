@@ -76,6 +76,10 @@ import { NgDragDropModule } from 'ng-drag-drop';
 import { ImagemPrincipalPaginaComponent } from './imagem-principal-pagina/imagem-principal-pagina.component';
 import { AnuncioAdsEditaComponent } from './anuncio-ads-edita/anuncio-ads-edita.component';
 import { ProjetoAplicacaoComponent } from './projeto-aplicacao/projeto-aplicacao.component';
+import { EntidadePorAplicacaoComponent } from './entidade-por-aplicacao/entidade-por-aplicacao.component';
+import { DetalheAplicacaoComponent } from './detalhe-aplicacao/detalhe-aplicacao.component';
+import { ItensCanvasParaEntidadesComponent } from './itens-canvas-para-entidades/itens-canvas-para-entidades.component';
+import { ResumoAplicacaoComponent } from './resumo-aplicacao/resumo-aplicacao.component';
 
 
 
@@ -120,6 +124,10 @@ import { ProjetoAplicacaoComponent } from './projeto-aplicacao/projeto-aplicacao
     ImagemPrincipalPaginaComponent,
     AnuncioAdsEditaComponent,
     ProjetoAplicacaoComponent,
+    EntidadePorAplicacaoComponent,
+    DetalheAplicacaoComponent,
+    ItensCanvasParaEntidadesComponent,
+    ResumoAplicacaoComponent,
 
   ],
   entryComponents: [

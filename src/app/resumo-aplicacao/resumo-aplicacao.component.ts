@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResumoAplicacaoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private aplicacaoSrv: Apl) { }
 
   ngOnInit() {
   }

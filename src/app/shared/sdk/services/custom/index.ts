@@ -16,5 +16,8 @@ export * from './Visitante';
 export * from './AnuncioAds';
 export * from './CampanhaAds';
 export * from './PalavraChaveAds';
+export * from './Aplicacao';
+export * from './Atributo_entidade';
+export * from './Entidade';
 export * from './SDKModels';
 export * from './logger.service';

@@ -17,6 +17,9 @@ import { Visitante } from '../../models/Visitante';
 import { AnuncioAds } from '../../models/AnuncioAds';
 import { CampanhaAds } from '../../models/CampanhaAds';
 import { PalavraChaveAds } from '../../models/PalavraChaveAds';
+import { Aplicacao } from '../../models/Aplicacao';
+import { Atributo_entidade } from '../../models/Atributo_entidade';
+import { Entidade } from '../../models/Entidade';
 
 export interface Models { [name: string]: any }
 
@@ -41,6 +44,9 @@ export class SDKModels {
     AnuncioAds: AnuncioAds,
     CampanhaAds: CampanhaAds,
     PalavraChaveAds: PalavraChaveAds,
+    Aplicacao: Aplicacao,
+    Atributo_entidade: Atributo_entidade,
+    Entidade: Entidade,
     
   };
 

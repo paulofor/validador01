@@ -80,6 +80,8 @@ import { EntidadePorAplicacaoComponent } from './entidade-por-aplicacao/entidade
 import { DetalheAplicacaoComponent } from './detalhe-aplicacao/detalhe-aplicacao.component';
 import { ItensCanvasParaEntidadesComponent } from './itens-canvas-para-entidades/itens-canvas-para-entidades.component';
 import { ResumoAplicacaoComponent } from './resumo-aplicacao/resumo-aplicacao.component';
+import { ListaCampanhaPorPaginaComponent } from './lista-campanha-por-pagina/lista-campanha-por-pagina.component';
+import { CampanhaEditaCriaComponent } from './campanha-edita-cria/campanha-edita-cria.component';
 
 
 
@@ -128,6 +130,8 @@ import { ResumoAplicacaoComponent } from './resumo-aplicacao/resumo-aplicacao.co
     DetalheAplicacaoComponent,
     ItensCanvasParaEntidadesComponent,
     ResumoAplicacaoComponent,
+    ListaCampanhaPorPaginaComponent,
+    CampanhaEditaCriaComponent,
 
   ],
   entryComponents: [

@@ -1,3 +1,19 @@
-<p>
-  resumo-aplicacao works!
-</p>
+<div *ngIf="aplicacao" class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <app-detalhe-aplicacao [aplicacao]="aplicacao"></app-detalhe-aplicacao>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <app-itens-canvas-para-entidades [aplicacao]="aplicacao"></app-itens-canvas-para-entidades>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <app-entidade-por-aplicacao [aplicacao]="aplicacao"></app-entidade-por-aplicacao>
+            </div>
+        </div>
+    </div>
+</div>

@@ -32,6 +32,11 @@ export class AnuncioAdsEditaComponent extends AnuncioAdsEditaBase implements OnI
 
   carregaItem() {
     console.log('ItemRaiz(carregaItem):',this.valor );
+    this.srv.findOne({"where" : {"projetoCanvasMySqlId" : this.valor.id}})
+      .subscribe((result : AnuncioAds) => {
+        console.log("Ads do Valor:" , result);
+        this.item = result;
+      })
     //this.valorSrv.findByIdAnuncioAds(this.valor.id)
   }
 

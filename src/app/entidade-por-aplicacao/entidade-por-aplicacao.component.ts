@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Aplicacao } from '../shared/sdk';
 
 @Component({
   selector: 'app-entidade-por-aplicacao',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./entidade-por-aplicacao.component.scss']
 })
 export class EntidadePorAplicacaoComponent implements OnInit {
+
+
+  @Input() aplicacao: Aplicacao;
 
   constructor() { }
 

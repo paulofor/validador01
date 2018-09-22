@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Aplicacao } from '../shared/sdk';
 
 @Component({
   selector: 'app-detalhe-aplicacao',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./detalhe-aplicacao.component.scss']
 })
 export class DetalheAplicacaoComponent implements OnInit {
+
+  @Input() aplicacao: Aplicacao; 
 
   constructor() { }
 

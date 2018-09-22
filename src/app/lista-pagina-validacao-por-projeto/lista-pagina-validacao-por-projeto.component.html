@@ -15,11 +15,13 @@
                 <tr>
                   <th>Página de Validação</th>
                   <th></th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let pagina of projeto.paginaValidacaoWebs">
                   <td>{{pagina.mensagemPrincipal}}</td>
+                  <td><a routerLink="/listaCampanhaPorPaginaValidacao/{{pagina.id}}">Campanhas</a></td>
                   <td><a routerLink="/editaPaginaValidacaoWeb/{{pagina.id}}">Alterar</a></td>
                 </tr>
               </tbody>

@@ -11,8 +11,7 @@ import { ParamMap } from '@angular/router';
 })
 export class ResumoAplicacaoComponent implements OnInit {
 
-  consulta = {"include" : ["projeto","itemValidacaoPaginas"] };
-
+  
   aplicacao: Aplicacao;
 
   constructor(private route: ActivatedRoute, private aplicacaoSrv: AplicacaoApi) { }
@@ -24,9 +23,9 @@ export class ResumoAplicacaoComponent implements OnInit {
   carregaAplicacao() {
     this.route.paramMap.pipe(
       switchMap((params: ParamMap) =>
-        this.aplicacaoSrv.getProjetoMySql(params.get('id'))
-      )).subscribe((result: Aplicacao) => {
-        console.log('Aplicacao: ' + result);
+        this.aplicacaoSrv.findOne({ "where" : { "projetoMySqlId" : params.get('id') } })))
+        .subscribe((result: Aplicacao) => {
+        console.log('Aplicacao: ' + JSON.stringify(result));
         this.aplicacao = result;
       })
   }

@@ -24,6 +24,7 @@ import { ListaPaginaValidacaoPorProjetoComponent } from '../lista-pagina-validac
 import { EdicaoPaginaValidacaoComponent } from '../edicao-pagina-validacao/edicao-pagina-validacao.component';
 import { ProjetoAplicacaoComponent } from '../projeto-aplicacao/projeto-aplicacao.component';
 import { ResumoAplicacaoComponent } from '../resumo-aplicacao/resumo-aplicacao.component';
+import { ListaCampanhaPorPaginaComponent } from '../lista-campanha-por-pagina/lista-campanha-por-pagina.component';
 
 
 export const routes : Routes = [
@@ -55,6 +56,8 @@ export const routes : Routes = [
 
     { path: 'projetoAplicacao' , component: ProjetoAplicacaoComponent },
     { path: 'projetoAplicacao/:id' , component: ResumoAplicacaoComponent },
+
+    { path: 'listaCampanhaPorPaginaValidacao/:id' , component: ListaCampanhaPorPaginaComponent}
 
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

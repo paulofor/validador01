@@ -82,6 +82,7 @@ import { ItensCanvasParaEntidadesComponent } from './itens-canvas-para-entidades
 import { ResumoAplicacaoComponent } from './resumo-aplicacao/resumo-aplicacao.component';
 import { ListaCampanhaPorPaginaComponent } from './lista-campanha-por-pagina/lista-campanha-por-pagina.component';
 import { CampanhaEditaCriaComponent } from './campanha-edita-cria/campanha-edita-cria.component';
+import { EntidadeEditaCriaComponent } from './entidade-edita-cria/entidade-edita-cria.component';
 
 
 
@@ -132,6 +133,7 @@ import { CampanhaEditaCriaComponent } from './campanha-edita-cria/campanha-edita
     ResumoAplicacaoComponent,
     ListaCampanhaPorPaginaComponent,
     CampanhaEditaCriaComponent,
+    EntidadeEditaCriaComponent,
 
   ],
   entryComponents: [
@@ -141,7 +143,8 @@ import { CampanhaEditaCriaComponent } from './campanha-edita-cria/campanha-edita
     MvpCanvasEditaComponent,
     DorGanhoCanvasCriaComponent,
     DorGanhoCanvasEditaComponent,
-    EscolhedorItemVallidacaoComponent
+    EscolhedorItemVallidacaoComponent,
+    EntidadeEditaCriaComponent
     //ArquivosComponent
   ],
   imports: [

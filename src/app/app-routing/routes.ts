@@ -57,7 +57,7 @@ export const routes : Routes = [
     { path: 'projetoAplicacao' , component: ProjetoAplicacaoComponent },
     { path: 'projetoAplicacao/:id' , component: ResumoAplicacaoComponent },
 
-    { path: 'listaCampanhaPorPaginaValidacao/:id' , component: ListaCampanhaPorPaginaComponent}
+    { path: 'listaCampanhaPorPaginaValidacao/:id' , component: ListaCampanhaPorPaginaComponent},
 
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

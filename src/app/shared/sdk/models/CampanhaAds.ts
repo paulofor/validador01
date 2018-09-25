@@ -1,7 +1,8 @@
 /* tslint:disable */
 import {
   AnuncioAds,
-  PalavraChaveAds
+  GrupoPalavraChave,
+  ModeloCampanhaAds
 } from '../index';
 
 declare var Object: any;
@@ -18,8 +19,10 @@ export interface CampanhaAdsInterface {
   "orcamentoTotalPlanejado"?: number;
   "orcamentoTotalExecutado"?: number;
   "paginaValidacaoWebId"?: number;
+  "modeloCampanhaAdsId"?: number;
   anuncioAds?: AnuncioAds[];
-  palavraChaveAds?: PalavraChaveAds[];
+  grupoPalavraChaves?: GrupoPalavraChave[];
+  modeloCampanhaAds?: ModeloCampanhaAds;
 }
 
 export class CampanhaAds implements CampanhaAdsInterface {
@@ -35,8 +38,10 @@ export class CampanhaAds implements CampanhaAdsInterface {
   "orcamentoTotalPlanejado": number;
   "orcamentoTotalExecutado": number;
   "paginaValidacaoWebId": number;
+  "modeloCampanhaAdsId": number;
   anuncioAds: AnuncioAds[];
-  palavraChaveAds: PalavraChaveAds[];
+  grupoPalavraChaves: GrupoPalavraChave[];
+  modeloCampanhaAds: ModeloCampanhaAds;
   constructor(data?: CampanhaAdsInterface) {
     Object.assign(this, data);
   }
@@ -118,6 +123,10 @@ export class CampanhaAds implements CampanhaAdsInterface {
           name: 'paginaValidacaoWebId',
           type: 'number'
         },
+        "modeloCampanhaAdsId": {
+          name: 'modeloCampanhaAdsId',
+          type: 'number'
+        },
       },
       relations: {
         anuncioAds: {
@@ -130,15 +139,23 @@ export class CampanhaAds implements CampanhaAdsInterface {
           keyFrom: 'id',
           keyTo: 'campanhaAdsId'
         },
-        palavraChaveAds: {
-          name: 'palavraChaveAds',
-          type: 'PalavraChaveAds[]',
-          model: 'PalavraChaveAds',
+        grupoPalavraChaves: {
+          name: 'grupoPalavraChaves',
+          type: 'GrupoPalavraChave[]',
+          model: 'GrupoPalavraChave',
           relationType: 'hasMany',
-          modelThrough: 'CampanhaAdsPalavraChaveAds',
-          keyThrough: 'palavraChaveAdsId',
+          modelThrough: 'CampanhaAdsGrupoPalavraChave',
+          keyThrough: 'grupoPalavraChaveId',
           keyFrom: 'id',
           keyTo: 'campanhaAdsId'
+        },
+        modeloCampanhaAds: {
+          name: 'modeloCampanhaAds',
+          type: 'ModeloCampanhaAds',
+          model: 'ModeloCampanhaAds',
+          relationType: 'belongsTo',
+                  keyFrom: 'modeloCampanhaAdsId',
+          keyTo: 'id'
         },
       }
     }

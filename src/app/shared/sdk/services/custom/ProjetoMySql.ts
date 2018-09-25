@@ -932,6 +932,35 @@ export class ProjetoMySqlApi extends BaseLoopBackApi {
   }
 
   /**
+   * Itens de modelos canvas que vao ajudar a construir as entidades do sistema gerador
+   *
+   * @param {number} idProjeto 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * Data properties:
+   *
+   *  - `listaMvpCanvas` – `{any}` - listaGanhoDorCanvas
+   *
+   *  - `listaGanhoDorCanvas` – `{any}` - 
+   *
+   *  - `listaProjetoCanvas` – `{any}` - Lista de itens do canvas de modelo de negocio
+   */
+  public ItensAjudaEntidade(idProjeto: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProjetoMySqls/itensAjudaEntidade";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof idProjeto !== 'undefined' && idProjeto !== null) _urlParams.idProjeto = idProjeto;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Fetches belongsTo relation projeto.
    *
    * @param {any} id ProjetoMySql id

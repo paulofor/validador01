@@ -19,5 +19,7 @@ export * from './PalavraChaveAds';
 export * from './Aplicacao';
 export * from './Atributo_entidade';
 export * from './Entidade';
+export * from './GrupoPalavraChave';
+export * from './ModeloCampanhaAds';
 export * from './BaseModels';
 export * from './FireLoopRef';

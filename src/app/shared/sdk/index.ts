@@ -68,6 +68,8 @@ import { PalavraChaveAdsApi } from './services/custom/PalavraChaveAds';
 import { AplicacaoApi } from './services/custom/Aplicacao';
 import { Atributo_entidadeApi } from './services/custom/Atributo_entidade';
 import { EntidadeApi } from './services/custom/Entidade';
+import { GrupoPalavraChaveApi } from './services/custom/GrupoPalavraChave';
+import { ModeloCampanhaAdsApi } from './services/custom/ModeloCampanhaAds';
 /**
 * @module SDKBrowserModule
 * @description
@@ -118,9 +120,10 @@ export class SDKBrowserModule {
         AplicacaoApi,
         Atributo_entidadeApi,
         EntidadeApi,
+        GrupoPalavraChaveApi,
+        ModeloCampanhaAdsApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
-
       ]
     };
   }

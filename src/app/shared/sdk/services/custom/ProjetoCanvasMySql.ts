@@ -15,6 +15,7 @@ import { ProjetoMySql } from '../../models/ProjetoMySql';
 import { ItemValidacaoPagina } from '../../models/ItemValidacaoPagina';
 import { Receita } from '../../models/Receita';
 import { AnuncioAds } from '../../models/AnuncioAds';
+import { GrupoPalavraChave } from '../../models/GrupoPalavraChave';
 
 
 /**
@@ -330,6 +331,99 @@ export class ProjetoCanvasMySqlApi extends BaseLoopBackApi {
     let _method: string = "PUT";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/ProjetoCanvasMySqls/:id/anuncioAds/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Find a related item by id for grupoPalavraChaves.
+   *
+   * @param {any} id ProjetoCanvasMySql id
+   *
+   * @param {any} fk Foreign key for grupoPalavraChaves
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ProjetoCanvasMySql` object.)
+   * </em>
+   */
+  public findByIdGrupoPalavraChaves(id: any, fk: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProjetoCanvasMySqls/:id/grupoPalavraChaves/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Delete a related item by id for grupoPalavraChaves.
+   *
+   * @param {any} id ProjetoCanvasMySql id
+   *
+   * @param {any} fk Foreign key for grupoPalavraChaves
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public destroyByIdGrupoPalavraChaves(id: any, fk: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "DELETE";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProjetoCanvasMySqls/:id/grupoPalavraChaves/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Update a related item by id for grupoPalavraChaves.
+   *
+   * @param {any} id ProjetoCanvasMySql id
+   *
+   * @param {any} fk Foreign key for grupoPalavraChaves
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ProjetoCanvasMySql` object.)
+   * </em>
+   */
+  public updateByIdGrupoPalavraChaves(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "PUT";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProjetoCanvasMySqls/:id/grupoPalavraChaves/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -691,6 +785,122 @@ export class ProjetoCanvasMySqlApi extends BaseLoopBackApi {
   }
 
   /**
+   * Queries grupoPalavraChaves of ProjetoCanvasMySql.
+   *
+   * @param {any} id ProjetoCanvasMySql id
+   *
+   * @param {object} filter 
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ProjetoCanvasMySql` object.)
+   * </em>
+   */
+  public getGrupoPalavraChaves(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProjetoCanvasMySqls/:id/grupoPalavraChaves";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof filter !== 'undefined' && filter !== null) _urlParams.filter = filter;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Creates a new instance in grupoPalavraChaves of this model.
+   *
+   * @param {any} id ProjetoCanvasMySql id
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ProjetoCanvasMySql` object.)
+   * </em>
+   */
+  public createGrupoPalavraChaves(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProjetoCanvasMySqls/:id/grupoPalavraChaves";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Deletes all grupoPalavraChaves of this model.
+   *
+   * @param {any} id ProjetoCanvasMySql id
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public deleteGrupoPalavraChaves(id: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "DELETE";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProjetoCanvasMySqls/:id/grupoPalavraChaves";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Counts grupoPalavraChaves of ProjetoCanvasMySql.
+   *
+   * @param {any} id ProjetoCanvasMySql id
+   *
+   * @param {object} where Criteria to match model instances
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * Data properties:
+   *
+   *  - `count` – `{number}` - 
+   */
+  public countGrupoPalavraChaves(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProjetoCanvasMySqls/:id/grupoPalavraChaves/count";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof where !== 'undefined' && where !== null) _urlParams.where = where;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Patch an existing model instance or insert a new one into the data source.
    *
    * @param {object} data Request data.
@@ -995,6 +1205,269 @@ export class ProjetoCanvasMySqlApi extends BaseLoopBackApi {
   }
 
   /**
+   * Fetches belongsTo relation projetoCanvasMySql.
+   *
+   * @param {any} id ProjetoCanvasMySql id
+   *
+   * @param {any} nk Foreign key for anuncioAds.
+   *
+   * @param {boolean} refresh 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ProjetoCanvasMySql` object.)
+   * </em>
+   */
+  public getAnuncioAdsProjetoCanvasMySql(id: any, nk: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProjetoCanvasMySqls/:id/anuncioAds/:nk/projetoCanvasMySql";
+    let _routeParams: any = {
+      id: id,
+      nk: nk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof refresh !== 'undefined' && refresh !== null) _urlParams.refresh = refresh;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Find a related item by id for palavraChaveAds.
+   *
+   * @param {any} id ProjetoCanvasMySql id
+   *
+   * @param {any} nk Foreign key for grupoPalavraChaves.
+   *
+   * @param {any} fk Foreign key for palavraChaveAds
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ProjetoCanvasMySql` object.)
+   * </em>
+   */
+  public findByIdGrupoPalavraChavesPalavraChaveAds(id: any, nk: any, fk: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProjetoCanvasMySqls/:id/grupoPalavraChaves/:nk/palavraChaveAds/:fk";
+    let _routeParams: any = {
+      id: id,
+      nk: nk,
+      fk: fk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Delete a related item by id for palavraChaveAds.
+   *
+   * @param {any} id ProjetoCanvasMySql id
+   *
+   * @param {any} nk Foreign key for grupoPalavraChaves.
+   *
+   * @param {any} fk Foreign key for palavraChaveAds
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public destroyByIdGrupoPalavraChavesPalavraChaveAds(id: any, nk: any, fk: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "DELETE";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProjetoCanvasMySqls/:id/grupoPalavraChaves/:nk/palavraChaveAds/:fk";
+    let _routeParams: any = {
+      id: id,
+      nk: nk,
+      fk: fk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Update a related item by id for palavraChaveAds.
+   *
+   * @param {any} id ProjetoCanvasMySql id
+   *
+   * @param {any} nk Foreign key for grupoPalavraChaves.
+   *
+   * @param {any} fk Foreign key for palavraChaveAds
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ProjetoCanvasMySql` object.)
+   * </em>
+   */
+  public updateByIdGrupoPalavraChavesPalavraChaveAds(id: any, nk: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "PUT";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProjetoCanvasMySqls/:id/grupoPalavraChaves/:nk/palavraChaveAds/:fk";
+    let _routeParams: any = {
+      id: id,
+      nk: nk,
+      fk: fk
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Queries palavraChaveAds of GrupoPalavraChave.
+   *
+   * @param {any} id ProjetoCanvasMySql id
+   *
+   * @param {any} nk Foreign key for grupoPalavraChaves.
+   *
+   * @param {object} filter 
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ProjetoCanvasMySql` object.)
+   * </em>
+   */
+  public getGrupoPalavraChavesPalavraChaveAds(id: any, nk: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProjetoCanvasMySqls/:id/grupoPalavraChaves/:nk/palavraChaveAds";
+    let _routeParams: any = {
+      id: id,
+      nk: nk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof filter !== 'undefined' && filter !== null) _urlParams.filter = filter;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Creates a new instance in palavraChaveAds of this model.
+   *
+   * @param {any} id ProjetoCanvasMySql id
+   *
+   * @param {any} nk Foreign key for grupoPalavraChaves.
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ProjetoCanvasMySql` object.)
+   * </em>
+   */
+  public createGrupoPalavraChavesPalavraChaveAds(id: any, nk: any, data: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProjetoCanvasMySqls/:id/grupoPalavraChaves/:nk/palavraChaveAds";
+    let _routeParams: any = {
+      id: id,
+      nk: nk
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Deletes all palavraChaveAds of this model.
+   *
+   * @param {any} id ProjetoCanvasMySql id
+   *
+   * @param {any} nk Foreign key for grupoPalavraChaves.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public deleteGrupoPalavraChavesPalavraChaveAds(id: any, nk: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "DELETE";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProjetoCanvasMySqls/:id/grupoPalavraChaves/:nk/palavraChaveAds";
+    let _routeParams: any = {
+      id: id,
+      nk: nk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Counts palavraChaveAds of GrupoPalavraChave.
+   *
+   * @param {any} id ProjetoCanvasMySql id
+   *
+   * @param {any} nk Foreign key for grupoPalavraChaves.
+   *
+   * @param {object} where Criteria to match model instances
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * Data properties:
+   *
+   *  - `count` – `{number}` - 
+   */
+  public countGrupoPalavraChavesPalavraChaveAds(id: any, nk: any, where: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProjetoCanvasMySqls/:id/grupoPalavraChaves/:nk/palavraChaveAds/count";
+    let _routeParams: any = {
+      id: id,
+      nk: nk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof where !== 'undefined' && where !== null) _urlParams.where = where;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Creates a new instance in itemValidacaoPaginas of this model.
    *
    * @param {any} id ProjetoCanvasMySql id
@@ -1094,6 +1567,39 @@ export class ProjetoCanvasMySqlApi extends BaseLoopBackApi {
   }
 
   /**
+   * Creates a new instance in grupoPalavraChaves of this model.
+   *
+   * @param {any} id ProjetoCanvasMySql id
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ProjetoCanvasMySql` object.)
+   * </em>
+   */
+  public createManyGrupoPalavraChaves(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProjetoCanvasMySqls/:id/grupoPalavraChaves";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Creates a new instance in projetoCanvasMySqls of this model.
    *
    * @param {any} id ProjetoCanvasMySql id
@@ -1117,6 +1623,42 @@ export class ProjetoCanvasMySqlApi extends BaseLoopBackApi {
     "/ProjetoCanvasMySqls/:id/projeto/projetoCanvasMySqls";
     let _routeParams: any = {
       id: id
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Creates a new instance in palavraChaveAds of this model.
+   *
+   * @param {any} id ProjetoCanvasMySql id
+   *
+   * @param {any} nk Foreign key for grupoPalavraChaves.
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ProjetoCanvasMySql` object.)
+   * </em>
+   */
+  public createManyGrupoPalavraChavesPalavraChaveAds(id: any, nk: any, data: any[] = [], customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProjetoCanvasMySqls/:id/grupoPalavraChaves/:nk/palavraChaveAds";
+    let _routeParams: any = {
+      id: id,
+      nk: nk
     };
     let _postBody: any = {
       data: data

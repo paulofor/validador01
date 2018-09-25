@@ -20,6 +20,8 @@ import { PalavraChaveAds } from '../../models/PalavraChaveAds';
 import { Aplicacao } from '../../models/Aplicacao';
 import { Atributo_entidade } from '../../models/Atributo_entidade';
 import { Entidade } from '../../models/Entidade';
+import { GrupoPalavraChave } from '../../models/GrupoPalavraChave';
+import { ModeloCampanhaAds } from '../../models/ModeloCampanhaAds';
 
 export interface Models { [name: string]: any }
 
@@ -47,6 +49,8 @@ export class SDKModels {
     Aplicacao: Aplicacao,
     Atributo_entidade: Atributo_entidade,
     Entidade: Entidade,
+    GrupoPalavraChave: GrupoPalavraChave,
+    ModeloCampanhaAds: ModeloCampanhaAds,
     
   };
 

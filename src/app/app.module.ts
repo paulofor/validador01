@@ -83,6 +83,7 @@ import { ResumoAplicacaoComponent } from './resumo-aplicacao/resumo-aplicacao.co
 import { ListaCampanhaPorPaginaComponent } from './lista-campanha-por-pagina/lista-campanha-por-pagina.component';
 import { CampanhaEditaCriaComponent } from './campanha-edita-cria/campanha-edita-cria.component';
 import { EntidadeEditaCriaComponent } from './entidade-edita-cria/entidade-edita-cria.component';
+import { DorGanhoPalavraChaveComponent } from './dor-ganho-palavra-chave/dor-ganho-palavra-chave.component';
 
 
 
@@ -134,6 +135,7 @@ import { EntidadeEditaCriaComponent } from './entidade-edita-cria/entidade-edita
     ListaCampanhaPorPaginaComponent,
     CampanhaEditaCriaComponent,
     EntidadeEditaCriaComponent,
+    DorGanhoPalavraChaveComponent,
 
   ],
   entryComponents: [

@@ -1,4 +1,7 @@
 /* tslint:disable */
+import {
+  ProjetoCanvasMySql
+} from '../index';
 
 declare var Object: any;
 export interface AnuncioAdsInterface {
@@ -10,6 +13,7 @@ export interface AnuncioAdsInterface {
   "descricao2"?: string;
   "idAds"?: string;
   "projetoCanvasMySqlId"?: number;
+  projetoCanvasMySql?: ProjetoCanvasMySql;
 }
 
 export class AnuncioAds implements AnuncioAdsInterface {
@@ -21,6 +25,7 @@ export class AnuncioAds implements AnuncioAdsInterface {
   "descricao2": string;
   "idAds": string;
   "projetoCanvasMySqlId": number;
+  projetoCanvasMySql: ProjetoCanvasMySql;
   constructor(data?: AnuncioAdsInterface) {
     Object.assign(this, data);
   }
@@ -88,6 +93,14 @@ export class AnuncioAds implements AnuncioAdsInterface {
         },
       },
       relations: {
+        projetoCanvasMySql: {
+          name: 'projetoCanvasMySql',
+          type: 'ProjetoCanvasMySql',
+          model: 'ProjetoCanvasMySql',
+          relationType: 'belongsTo',
+                  keyFrom: 'projetoCanvasMySqlId',
+          keyTo: 'id'
+        },
       }
     }
   }

@@ -12,7 +12,8 @@ import { map } from 'rxjs/operators';
 import { CampanhaAds } from '../../models/CampanhaAds';
 import { SocketConnection } from '../../sockets/socket.connections';
 import { AnuncioAds } from '../../models/AnuncioAds';
-import { PalavraChaveAds } from '../../models/PalavraChaveAds';
+import { GrupoPalavraChave } from '../../models/GrupoPalavraChave';
+import { ModeloCampanhaAds } from '../../models/ModeloCampanhaAds';
 
 
 /**
@@ -218,11 +219,11 @@ export class CampanhaAdsApi extends BaseLoopBackApi {
   }
 
   /**
-   * Find a related item by id for palavraChaveAds.
+   * Find a related item by id for grupoPalavraChaves.
    *
    * @param {any} id CampanhaAds id
    *
-   * @param {any} fk Foreign key for palavraChaveAds
+   * @param {any} fk Foreign key for grupoPalavraChaves
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -233,10 +234,10 @@ export class CampanhaAdsApi extends BaseLoopBackApi {
    * This usually means the response is a `CampanhaAds` object.)
    * </em>
    */
-  public findByIdPalavraChaveAds(id: any, fk: any, customHeaders?: Function): Observable<any> {
+  public findByIdGrupoPalavraChaves(id: any, fk: any, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/CampanhaAds/:id/palavraChaveAds/:fk";
+    "/CampanhaAds/:id/grupoPalavraChaves/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -248,11 +249,11 @@ export class CampanhaAdsApi extends BaseLoopBackApi {
   }
 
   /**
-   * Delete a related item by id for palavraChaveAds.
+   * Delete a related item by id for grupoPalavraChaves.
    *
    * @param {any} id CampanhaAds id
    *
-   * @param {any} fk Foreign key for palavraChaveAds
+   * @param {any} fk Foreign key for grupoPalavraChaves
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -260,10 +261,10 @@ export class CampanhaAdsApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public destroyByIdPalavraChaveAds(id: any, fk: any, customHeaders?: Function): Observable<any> {
+  public destroyByIdGrupoPalavraChaves(id: any, fk: any, customHeaders?: Function): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/CampanhaAds/:id/palavraChaveAds/:fk";
+    "/CampanhaAds/:id/grupoPalavraChaves/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -275,11 +276,11 @@ export class CampanhaAdsApi extends BaseLoopBackApi {
   }
 
   /**
-   * Update a related item by id for palavraChaveAds.
+   * Update a related item by id for grupoPalavraChaves.
    *
    * @param {any} id CampanhaAds id
    *
-   * @param {any} fk Foreign key for palavraChaveAds
+   * @param {any} fk Foreign key for grupoPalavraChaves
    *
    * @param {object} data Request data.
    *
@@ -294,10 +295,10 @@ export class CampanhaAdsApi extends BaseLoopBackApi {
    * This usually means the response is a `CampanhaAds` object.)
    * </em>
    */
-  public updateByIdPalavraChaveAds(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
+  public updateByIdGrupoPalavraChaves(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PUT";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/CampanhaAds/:id/palavraChaveAds/:fk";
+    "/CampanhaAds/:id/grupoPalavraChaves/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -311,11 +312,11 @@ export class CampanhaAdsApi extends BaseLoopBackApi {
   }
 
   /**
-   * Add a related item by id for palavraChaveAds.
+   * Add a related item by id for grupoPalavraChaves.
    *
    * @param {any} id CampanhaAds id
    *
-   * @param {any} fk Foreign key for palavraChaveAds
+   * @param {any} fk Foreign key for grupoPalavraChaves
    *
    * @param {object} data Request data.
    *
@@ -330,10 +331,10 @@ export class CampanhaAdsApi extends BaseLoopBackApi {
    * This usually means the response is a `CampanhaAds` object.)
    * </em>
    */
-  public linkPalavraChaveAds(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
+  public linkGrupoPalavraChaves(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PUT";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/CampanhaAds/:id/palavraChaveAds/rel/:fk";
+    "/CampanhaAds/:id/grupoPalavraChaves/rel/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -347,11 +348,11 @@ export class CampanhaAdsApi extends BaseLoopBackApi {
   }
 
   /**
-   * Remove the palavraChaveAds relation to an item by id.
+   * Remove the grupoPalavraChaves relation to an item by id.
    *
    * @param {any} id CampanhaAds id
    *
-   * @param {any} fk Foreign key for palavraChaveAds
+   * @param {any} fk Foreign key for grupoPalavraChaves
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -359,10 +360,10 @@ export class CampanhaAdsApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public unlinkPalavraChaveAds(id: any, fk: any, customHeaders?: Function): Observable<any> {
+  public unlinkGrupoPalavraChaves(id: any, fk: any, customHeaders?: Function): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/CampanhaAds/:id/palavraChaveAds/rel/:fk";
+    "/CampanhaAds/:id/grupoPalavraChaves/rel/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -374,11 +375,11 @@ export class CampanhaAdsApi extends BaseLoopBackApi {
   }
 
   /**
-   * Check the existence of palavraChaveAds relation to an item by id.
+   * Check the existence of grupoPalavraChaves relation to an item by id.
    *
    * @param {any} id CampanhaAds id
    *
-   * @param {any} fk Foreign key for palavraChaveAds
+   * @param {any} fk Foreign key for grupoPalavraChaves
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -389,16 +390,46 @@ export class CampanhaAdsApi extends BaseLoopBackApi {
    * This usually means the response is a `CampanhaAds` object.)
    * </em>
    */
-  public existsPalavraChaveAds(id: any, fk: any, customHeaders?: Function): Observable<any> {
+  public existsGrupoPalavraChaves(id: any, fk: any, customHeaders?: Function): Observable<any> {
     let _method: string = "HEAD";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/CampanhaAds/:id/palavraChaveAds/rel/:fk";
+    "/CampanhaAds/:id/grupoPalavraChaves/rel/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
     };
     let _postBody: any = {};
     let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Fetches belongsTo relation modeloCampanhaAds.
+   *
+   * @param {any} id CampanhaAds id
+   *
+   * @param {boolean} refresh 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `CampanhaAds` object.)
+   * </em>
+   */
+  public getModeloCampanhaAds(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/CampanhaAds/:id/modeloCampanhaAds";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof refresh !== 'undefined' && refresh !== null) _urlParams.refresh = refresh;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
@@ -520,7 +551,7 @@ export class CampanhaAdsApi extends BaseLoopBackApi {
   }
 
   /**
-   * Queries palavraChaveAds of CampanhaAds.
+   * Queries grupoPalavraChaves of CampanhaAds.
    *
    * @param {any} id CampanhaAds id
    *
@@ -535,10 +566,10 @@ export class CampanhaAdsApi extends BaseLoopBackApi {
    * This usually means the response is a `CampanhaAds` object.)
    * </em>
    */
-  public getPalavraChaveAds(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
+  public getGrupoPalavraChaves(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/CampanhaAds/:id/palavraChaveAds";
+    "/CampanhaAds/:id/grupoPalavraChaves";
     let _routeParams: any = {
       id: id
     };
@@ -550,7 +581,7 @@ export class CampanhaAdsApi extends BaseLoopBackApi {
   }
 
   /**
-   * Creates a new instance in palavraChaveAds of this model.
+   * Creates a new instance in grupoPalavraChaves of this model.
    *
    * @param {any} id CampanhaAds id
    *
@@ -567,10 +598,10 @@ export class CampanhaAdsApi extends BaseLoopBackApi {
    * This usually means the response is a `CampanhaAds` object.)
    * </em>
    */
-  public createPalavraChaveAds(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
+  public createGrupoPalavraChaves(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/CampanhaAds/:id/palavraChaveAds";
+    "/CampanhaAds/:id/grupoPalavraChaves";
     let _routeParams: any = {
       id: id
     };
@@ -583,7 +614,7 @@ export class CampanhaAdsApi extends BaseLoopBackApi {
   }
 
   /**
-   * Deletes all palavraChaveAds of this model.
+   * Deletes all grupoPalavraChaves of this model.
    *
    * @param {any} id CampanhaAds id
    *
@@ -593,10 +624,10 @@ export class CampanhaAdsApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public deletePalavraChaveAds(id: any, customHeaders?: Function): Observable<any> {
+  public deleteGrupoPalavraChaves(id: any, customHeaders?: Function): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/CampanhaAds/:id/palavraChaveAds";
+    "/CampanhaAds/:id/grupoPalavraChaves";
     let _routeParams: any = {
       id: id
     };
@@ -607,7 +638,7 @@ export class CampanhaAdsApi extends BaseLoopBackApi {
   }
 
   /**
-   * Counts palavraChaveAds of CampanhaAds.
+   * Counts grupoPalavraChaves of CampanhaAds.
    *
    * @param {any} id CampanhaAds id
    *
@@ -621,10 +652,10 @@ export class CampanhaAdsApi extends BaseLoopBackApi {
    *
    *  - `count` – `{number}` - 
    */
-  public countPalavraChaveAds(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
+  public countGrupoPalavraChaves(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/CampanhaAds/:id/palavraChaveAds/count";
+    "/CampanhaAds/:id/grupoPalavraChaves/count";
     let _routeParams: any = {
       id: id
     };
@@ -731,7 +762,7 @@ export class CampanhaAdsApi extends BaseLoopBackApi {
   }
 
   /**
-   * Creates a new instance in palavraChaveAds of this model.
+   * Creates a new instance in grupoPalavraChaves of this model.
    *
    * @param {any} id CampanhaAds id
    *
@@ -748,10 +779,10 @@ export class CampanhaAdsApi extends BaseLoopBackApi {
    * This usually means the response is a `CampanhaAds` object.)
    * </em>
    */
-  public createManyPalavraChaveAds(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
+  public createManyGrupoPalavraChaves(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/CampanhaAds/:id/palavraChaveAds";
+    "/CampanhaAds/:id/grupoPalavraChaves";
     let _routeParams: any = {
       id: id
     };

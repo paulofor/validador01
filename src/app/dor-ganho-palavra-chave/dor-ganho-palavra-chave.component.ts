@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ProjetoMySql, ProjetoMySqlApi, GanhoDorCanvasMySql } from '../shared/sdk';
 
 @Component({
   selector: 'app-dor-ganho-palavra-chave',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DorGanhoPalavraChaveComponent implements OnInit {
 
-  constructor() { }
+
+  @Input() projeto: ProjetoMySql; 
+
+  consulta = {"where": {"or": [{"tipo": "GANHO"}, {"tipo": "DOR"}]}};
+
+  listaItens : GanhoDorCanvasMySql[];
+
+  constructor(private servico: ProjetoMySqlApi) { }
 
   ngOnInit() {
+    this.carregaItens();
+  }
+
+  carregaItens() {
+      this.servico.getGanhoDorCanvasMySqls(this.projeto.id,this.consulta)
+        .subscribe((result : GanhoDorCanvasMySql[]) => {
+          console.log("Resultado", result);
+          this.listaItens = result;
+        })
   }
 
 }

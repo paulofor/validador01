@@ -1,8 +1,21 @@
 <div class="card">
   <div class="header">
-    <h4 class="title">Titulo</h4>
+    <h4 class="title">Ganho / Dor</h4>
   </div>
-  <div class="content">
-    <p>Ola Mundo</p>
+
+  <div class="content table-responsive table-full-width">
+    <table class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th>Página de Validação</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of listaItens">
+          <td>{{item.descricao}}</td>
+        </tr>
+      </tbody>
+    </table>
+
   </div>
 </div>

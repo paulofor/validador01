@@ -11,7 +11,7 @@ export class DorGanhoPalavraChaveComponent implements OnInit {
 
   @Input() projeto: ProjetoMySql; 
 
-  consulta = {"where": {"or": [{"tipo": "GANHO"}, {"tipo": "DOR"}]}};
+  consulta = { "where": {"or": [{"tipo": "GANHO"}, {"tipo": "DOR"}]}};
 
   listaItens : GanhoDorCanvasMySql[];
 
@@ -21,6 +21,7 @@ export class DorGanhoPalavraChaveComponent implements OnInit {
     this.carregaItens();
   }
 
+  
   carregaItens() {
       this.servico.getGanhoDorCanvasMySqls(this.projeto.id,this.consulta)
         .subscribe((result : GanhoDorCanvasMySql[]) => {

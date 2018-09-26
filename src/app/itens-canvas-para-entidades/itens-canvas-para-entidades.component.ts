@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Aplicacao } from '../shared/sdk';
+import { Aplicacao, MvpCanvasMySql, GanhoDorCanvasMySql, ProjetoCanvas, ProjetoMySqlApi } from '../shared/sdk';
+
 
 @Component({
   selector: 'app-itens-canvas-para-entidades',
@@ -8,11 +9,27 @@ import { Aplicacao } from '../shared/sdk';
 })
 export class ItensCanvasParaEntidadesComponent implements OnInit {
 
+  listaProjetoCanvas: ProjetoCanvas[];
+  listaGanhoDorCanvas: GanhoDorCanvasMySql[];
+  listaMvpCanvas: MvpCanvasMySql[];
+
   @Input() aplicacao: Aplicacao;
 
-  constructor() { }
+
+  constructor(private servico:ProjetoMySqlApi) { }
 
   ngOnInit() {
+    this.carregaItemCanvas();
+  }
+
+  carregaItemCanvas() {
+    this.servico.ItensAjudaEntidade(this.aplicacao.projetoMySqlId)
+      .subscribe((resultado) => {
+        this.listaMvpCanvas = resultado.listaMvpCanvas;
+        this.listaGanhoDorCanvas = resultado.listaGanhoDorCanvas;
+        this.listaProjetoCanvas = resultado.listaProjetoCanvas;
+        console.log("Lista1:" , this.listaMvpCanvas);
+      })
   }
 
 }

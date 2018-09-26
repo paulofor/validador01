@@ -34,7 +34,8 @@ import { ProjetoCanvasCriaComponent } from './projeto-canvas-cria/projeto-canvas
 
 import {MatDialogModule} from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatListModule} from '@angular/material/list';
 
 import { MatFormFieldModule, MatInputModule, MatButtonModule } from '@angular/material';
 import { ProjetoCanvasEditaComponent } from './projeto-canvas-edita/projeto-canvas-edita.component';
@@ -84,6 +85,7 @@ import { ListaCampanhaPorPaginaComponent } from './lista-campanha-por-pagina/lis
 import { CampanhaEditaCriaComponent } from './campanha-edita-cria/campanha-edita-cria.component';
 import { EntidadeEditaCriaComponent } from './entidade-edita-cria/entidade-edita-cria.component';
 import { DorGanhoPalavraChaveComponent } from './dor-ganho-palavra-chave/dor-ganho-palavra-chave.component';
+import { PalavraChaveCriaComponent } from './palavra-chave-cria/palavra-chave-cria.component';
 
 
 
@@ -136,6 +138,7 @@ import { DorGanhoPalavraChaveComponent } from './dor-ganho-palavra-chave/dor-gan
     CampanhaEditaCriaComponent,
     EntidadeEditaCriaComponent,
     DorGanhoPalavraChaveComponent,
+    PalavraChaveCriaComponent,
 
   ],
   entryComponents: [
@@ -146,7 +149,8 @@ import { DorGanhoPalavraChaveComponent } from './dor-ganho-palavra-chave/dor-gan
     DorGanhoCanvasCriaComponent,
     DorGanhoCanvasEditaComponent,
     EscolhedorItemVallidacaoComponent,
-    EntidadeEditaCriaComponent
+    EntidadeEditaCriaComponent,
+    PalavraChaveCriaComponent
     //ArquivosComponent
   ],
   imports: [
@@ -164,7 +168,10 @@ import { DorGanhoPalavraChaveComponent } from './dor-ganho-palavra-chave/dor-gan
     UploadModule,
     ImageUploadModule.forRoot(),
     NgDragDropModule.forRoot(),
-    SDKBrowserModule.forRoot()
+    SDKBrowserModule.forRoot(),
+    MatExpansionModule,
+    MatListModule
+    
   ],
   providers: [
     HttpClient, 

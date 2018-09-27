@@ -1,10 +1,11 @@
-<div class="main-content">
+<div *ngIf="pagina" class="main-content">
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-12">
           <div class="card">
             <div class="header">
               <h4 class="title">Campanhas</h4>
+              <button mat-raised-button (click)="criaCampanha()">Nova</button>
             </div>
             <div class="content table-responsive table-full-width">
               <table class="table table-hover table-striped">
@@ -14,7 +15,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let campanha of campanhas">
+                  <tr *ngFor="let campanha of pagina.campanhaAds">
                     <td>{{campanha.nome}}</td>
                   </tr>
                 </tbody>

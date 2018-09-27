@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { CampanhaAds, CampanhaAdsApi } from '../shared/sdk';
+import { CampanhaAds, CampanhaAdsApi, PaginaValidacaoWeb, PaginaValidacaoWebApi } from '../shared/sdk';
 import { ActivatedRoute, Params } from '@angular/router';
+import { CampanhaEditaCriaComponent } from '../campanha-edita-cria/campanha-edita-cria.component';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-lista-campanha-por-pagina',
@@ -9,24 +11,44 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class ListaCampanhaPorPaginaComponent implements OnInit {
 
-  campanhas: CampanhaAds[];
-  errMess: string;
 
-  constructor(private srv: CampanhaAdsApi, private route: ActivatedRoute,) {
+  errMess: string;
+  pagina : PaginaValidacaoWeb;
+  consulta = {"include" : "campanhaAds"};
+
+  constructor(private srv: PaginaValidacaoWebApi, private route: ActivatedRoute, 
+    private dialog: MatDialog) {
 
   }
 
-  ngOnInit() {
+  carregaPaginaComCampanhas() {
     this.route.params.subscribe((params: Params) => {
-      let id = params['id'];
+      let id  = params['id'];
       console.log('IdPagina: ', id);
-      this.srv.find({"where": {"": id}})
-        .subscribe((valor: CampanhaAds[]) => {
+      this.srv.findById(id,this.consulta)
+        .subscribe((valor: PaginaValidacaoWeb) => {
           console.log('Item: ' + JSON.stringify(valor));
-          this.campanhas = valor;
+          this.pagina = valor;
         })
     });
   }
 
+
+  ngOnInit() {
+    this.carregaPaginaComCampanhas();
+  }
+
+  criaCampanha() {
+    this.dialog.afterAllClosed.subscribe(result => {
+      this.carregaPaginaComCampanhas();
+    });
+    this.dialog.open(CampanhaEditaCriaComponent, {
+      width: '800px',
+      data: {
+        pagina: this.pagina
+      }
+    });
+  
+  }
 
 }

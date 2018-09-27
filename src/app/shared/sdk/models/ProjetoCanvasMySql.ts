@@ -3,8 +3,7 @@ import {
   ProjetoMySql,
   ItemValidacaoPagina,
   Receita,
-  AnuncioAds,
-  GrupoPalavraChave
+  AnuncioAds
 } from '../index';
 
 declare var Object: any;
@@ -19,7 +18,6 @@ export interface ProjetoCanvasMySqlInterface {
   itemValidacaoPaginas?: ItemValidacaoPagina[];
   receita?: Receita[];
   anuncioAds?: AnuncioAds[];
-  grupoPalavraChaves?: GrupoPalavraChave[];
 }
 
 export class ProjetoCanvasMySql implements ProjetoCanvasMySqlInterface {
@@ -33,7 +31,6 @@ export class ProjetoCanvasMySql implements ProjetoCanvasMySqlInterface {
   itemValidacaoPaginas: ItemValidacaoPagina[];
   receita: Receita[];
   anuncioAds: AnuncioAds[];
-  grupoPalavraChaves: GrupoPalavraChave[];
   constructor(data?: ProjetoCanvasMySqlInterface) {
     Object.assign(this, data);
   }
@@ -121,14 +118,6 @@ export class ProjetoCanvasMySql implements ProjetoCanvasMySqlInterface {
           name: 'anuncioAds',
           type: 'AnuncioAds[]',
           model: 'AnuncioAds',
-          relationType: 'hasMany',
-                  keyFrom: 'id',
-          keyTo: 'projetoCanvasMySqlId'
-        },
-        grupoPalavraChaves: {
-          name: 'grupoPalavraChaves',
-          type: 'GrupoPalavraChave[]',
-          model: 'GrupoPalavraChave',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'projetoCanvasMySqlId'

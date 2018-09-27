@@ -8,7 +8,6 @@ export interface PalavraChaveAdsInterface {
   "id"?: number;
   "palavra": string;
   "ganhoDorCanvasMySqlId"?: number;
-  "grupoPalavraChaveId"?: number;
   ganhoDorCanvasMySql?: GanhoDorCanvasMySql;
 }
 
@@ -16,7 +15,6 @@ export class PalavraChaveAds implements PalavraChaveAdsInterface {
   "id": number;
   "palavra": string;
   "ganhoDorCanvasMySqlId": number;
-  "grupoPalavraChaveId": number;
   ganhoDorCanvasMySql: GanhoDorCanvasMySql;
   constructor(data?: PalavraChaveAdsInterface) {
     Object.assign(this, data);
@@ -61,10 +59,6 @@ export class PalavraChaveAds implements PalavraChaveAdsInterface {
         },
         "ganhoDorCanvasMySqlId": {
           name: 'ganhoDorCanvasMySqlId',
-          type: 'number'
-        },
-        "grupoPalavraChaveId": {
-          name: 'grupoPalavraChaveId',
           type: 'number'
         },
       },

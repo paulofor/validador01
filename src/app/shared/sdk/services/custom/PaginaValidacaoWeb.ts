@@ -783,33 +783,6 @@ export class PaginaValidacaoWebApi extends BaseLoopBackApi {
   }
 
   /**
-   * Delete a related item by id for projetoCanvasMySqls.
-   *
-   * @param {any} id PaginaValidacaoWeb id
-   *
-   * @param {any} fk Foreign key for projetoCanvasMySqls
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * This method returns no data.
-   */
-  public destroyByIdProjetoProjetoCanvasMySqls(id: any, fk: any, customHeaders?: Function): Observable<any> {
-    let _method: string = "DELETE";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/PaginaValidacaoWebs/:id/projeto/projetoCanvasMySqls/:fk";
-    let _routeParams: any = {
-      id: id,
-      fk: fk
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
-  }
-
-  /**
    * Update a related item by id for projetoCanvasMySqls.
    *
    * @param {any} id PaginaValidacaoWeb id
@@ -876,33 +849,6 @@ export class PaginaValidacaoWebApi extends BaseLoopBackApi {
   }
 
   /**
-   * Delete a related item by id for mvpCanvasMySqls.
-   *
-   * @param {any} id PaginaValidacaoWeb id
-   *
-   * @param {any} fk Foreign key for mvpCanvasMySqls
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * This method returns no data.
-   */
-  public destroyByIdProjetoMvpCanvasMySqls(id: any, fk: any, customHeaders?: Function): Observable<any> {
-    let _method: string = "DELETE";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/PaginaValidacaoWebs/:id/projeto/mvpCanvasMySqls/:fk";
-    let _routeParams: any = {
-      id: id,
-      fk: fk
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
-  }
-
-  /**
    * Update a related item by id for mvpCanvasMySqls.
    *
    * @param {any} id PaginaValidacaoWeb id
@@ -956,33 +902,6 @@ export class PaginaValidacaoWebApi extends BaseLoopBackApi {
    */
   public findByIdProjetoGanhoDorCanvasMySqls(id: any, fk: any, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/PaginaValidacaoWebs/:id/projeto/ganhoDorCanvasMySqls/:fk";
-    let _routeParams: any = {
-      id: id,
-      fk: fk
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
-  }
-
-  /**
-   * Delete a related item by id for ganhoDorCanvasMySqls.
-   *
-   * @param {any} id PaginaValidacaoWeb id
-   *
-   * @param {any} fk Foreign key for ganhoDorCanvasMySqls
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * This method returns no data.
-   */
-  public destroyByIdProjetoGanhoDorCanvasMySqls(id: any, fk: any, customHeaders?: Function): Observable<any> {
-    let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/PaginaValidacaoWebs/:id/projeto/ganhoDorCanvasMySqls/:fk";
     let _routeParams: any = {
@@ -1188,30 +1107,6 @@ export class PaginaValidacaoWebApi extends BaseLoopBackApi {
   }
 
   /**
-   * Deletes all projetoCanvasMySqls of this model.
-   *
-   * @param {any} id PaginaValidacaoWeb id
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * This method returns no data.
-   */
-  public deleteProjetoProjetoCanvasMySqls(id: any, customHeaders?: Function): Observable<any> {
-    let _method: string = "DELETE";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/PaginaValidacaoWebs/:id/projeto/projetoCanvasMySqls";
-    let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
-  }
-
-  /**
    * Counts projetoCanvasMySqls of ProjetoMySql.
    *
    * @param {any} id PaginaValidacaoWeb id
@@ -1304,30 +1199,6 @@ export class PaginaValidacaoWebApi extends BaseLoopBackApi {
   }
 
   /**
-   * Deletes all mvpCanvasMySqls of this model.
-   *
-   * @param {any} id PaginaValidacaoWeb id
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * This method returns no data.
-   */
-  public deleteProjetoMvpCanvasMySqls(id: any, customHeaders?: Function): Observable<any> {
-    let _method: string = "DELETE";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/PaginaValidacaoWebs/:id/projeto/mvpCanvasMySqls";
-    let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
-  }
-
-  /**
    * Counts mvpCanvasMySqls of ProjetoMySql.
    *
    * @param {any} id PaginaValidacaoWeb id
@@ -1414,30 +1285,6 @@ export class PaginaValidacaoWebApi extends BaseLoopBackApi {
     let _postBody: any = {
       data: data
     };
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
-  }
-
-  /**
-   * Deletes all ganhoDorCanvasMySqls of this model.
-   *
-   * @param {any} id PaginaValidacaoWeb id
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * This method returns no data.
-   */
-  public deleteProjetoGanhoDorCanvasMySqls(id: any, customHeaders?: Function): Observable<any> {
-    let _method: string = "DELETE";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/PaginaValidacaoWebs/:id/projeto/ganhoDorCanvasMySqls";
-    let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {};
     let _urlParams: any = {};
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;

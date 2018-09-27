@@ -150,7 +150,8 @@ import { PalavraChaveCriaComponent } from './palavra-chave-cria/palavra-chave-cr
     DorGanhoCanvasEditaComponent,
     EscolhedorItemVallidacaoComponent,
     EntidadeEditaCriaComponent,
-    PalavraChaveCriaComponent
+    PalavraChaveCriaComponent,
+    CampanhaEditaCriaComponent
     //ArquivosComponent
   ],
   imports: [

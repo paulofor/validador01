@@ -1,7 +1,6 @@
 /* tslint:disable */
 import {
   AnuncioAds,
-  GrupoPalavraChave,
   ModeloCampanhaAds
 } from '../index';
 
@@ -21,7 +20,6 @@ export interface CampanhaAdsInterface {
   "paginaValidacaoWebId"?: number;
   "modeloCampanhaAdsId"?: number;
   anuncioAds?: AnuncioAds[];
-  grupoPalavraChaves?: GrupoPalavraChave[];
   modeloCampanhaAds?: ModeloCampanhaAds;
 }
 
@@ -40,7 +38,6 @@ export class CampanhaAds implements CampanhaAdsInterface {
   "paginaValidacaoWebId": number;
   "modeloCampanhaAdsId": number;
   anuncioAds: AnuncioAds[];
-  grupoPalavraChaves: GrupoPalavraChave[];
   modeloCampanhaAds: ModeloCampanhaAds;
   constructor(data?: CampanhaAdsInterface) {
     Object.assign(this, data);
@@ -136,16 +133,6 @@ export class CampanhaAds implements CampanhaAdsInterface {
           relationType: 'hasMany',
           modelThrough: 'CampanhaAdsAnuncioAds',
           keyThrough: 'anuncioAdsId',
-          keyFrom: 'id',
-          keyTo: 'campanhaAdsId'
-        },
-        grupoPalavraChaves: {
-          name: 'grupoPalavraChaves',
-          type: 'GrupoPalavraChave[]',
-          model: 'GrupoPalavraChave',
-          relationType: 'hasMany',
-          modelThrough: 'CampanhaAdsGrupoPalavraChave',
-          keyThrough: 'grupoPalavraChaveId',
           keyFrom: 'id',
           keyTo: 'campanhaAdsId'
         },

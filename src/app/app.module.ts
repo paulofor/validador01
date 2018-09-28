@@ -40,6 +40,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 import { MatFormFieldModule, MatInputModule, MatButtonModule } from '@angular/material';
 import { ProjetoCanvasEditaComponent } from './projeto-canvas-edita/projeto-canvas-edita.component';
@@ -182,7 +183,8 @@ import { EditaAtributoEntidadeComponent } from './edita-atributo-entidade/edita-
     MatTabsModule,
     MatCardModule,
     MatIconModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSlideToggleModule
   ],
   providers: [
     HttpClient, 

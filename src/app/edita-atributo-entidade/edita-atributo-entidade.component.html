@@ -9,13 +9,40 @@
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
-      <mat-select placeholder="Tipo">
-        <mat-option>None</mat-option>
-        <mat-option value="option1">Tipo1</mat-option>
-        <mat-option value="option2">Tipo2</mat-option>
-        <mat-option value="option3">Tipo3</mat-option>
+      <mat-select placeholder="Tipo" #tipo [(ngModel)]="atributo.tipo" name="tipo" >
+        <mat-option value="TLbl">TLbl</mat-option>
+        <mat-option value="TLblLg">TLblLg</mat-option>
+        <mat-option value="TDesc">TDesc</mat-option>
+        <mat-option value="NInt">NInt</mat-option>
+        <mat-option value="Moeda">Moeda</mat-option>
+        <mat-option value="Data">Data</mat-option>
+        <mat-option value="DTemp">DTemp</mat-option>
+        <mat-option value="Logic">Logic</mat-option>
+        <mat-option value="Percent">Percent</mat-option>
+        <mat-option value="Decimal">Decimal</mat-option>
+        <mat-option value="Hidden">Hidden</mat-option>
+        <mat-option value="TNota10">TNota10</mat-option>
+        <mat-option value="Itens">Itens</mat-option>
+        <mat-option value="Tempo">Tempo</mat-option>
+        <mat-option value="Multivalorado">Multivalorado</mat-option>
+        <mat-option value="CriptoMoeda">CriptoMoeda</mat-option>
+        <mat-option value="CriptoTLbl">CriptoTLbl</mat-option>
       </mat-select>
     </mat-form-field>
+
+    <mat-slide-toggle #obrigatorio [(ngModel)]="atributo.obrigatorio" name="obrigatorio">Obrigatório</mat-slide-toggle>
+    
+    <mat-slide-toggle #editavel [(ngModel)]="atributo.editavel" name="editavel">Editável</mat-slide-toggle>
+    
+    <mat-form-field class="example-full-width">
+      <input matInput maxlength="30" #label_tela [(ngModel)]="atributo.label_tela" name="label_tela" placeholder="Label Tela" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput maxlength="30" #ordenacao_tela [(ngModel)]="atributo.ordenacao_tela" name="ordenacao_tela" placeholder="Ordenação" />
+    </mat-form-field>
+
+
 
   </mat-dialog-content>
 

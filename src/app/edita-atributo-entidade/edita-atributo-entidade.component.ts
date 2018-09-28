@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Atributo_entidade, Entidade, Atributo_entidadeApi } from '../shared/sdk';
+import { Inject } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-edita-atributo-entidade',
@@ -7,9 +10,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditaAtributoEntidadeComponent implements OnInit {
 
-  constructor() { }
+  entidade : Entidade;
+  atributo : Atributo_entidade;
+
+  constructor(public dialogRef: MatDialogRef<EditaAtributoEntidadeComponent>
+    , @Inject(MAT_DIALOG_DATA) public data: any,
+    private entidadaSrv: Atributo_entidadeApi) {
+  }
 
   ngOnInit() {
+    console.log("Parametro entrada" , this.data);
+    this.atributo = new Atributo_entidade();
+    this.entidade = this.data.entidade;
+  }
+
+  onSubmit() {
+    console.log('Model: ' + JSON.stringify(this.atributo));
+    this.atributo.id_entidade = this.entidade.id_entidade;
+    this.entidadaSrv.create(this.atributo, (err, obj) => {
+        console.log("Erro:" + err.message);
+      }).subscribe((e: any) => {
+        console.log(JSON.stringify(e));
+        this.closeDialog();
+      });
+  }
+
+  closeDialog() {
+    this.dialogRef.close('Pizza!');
   }
 
 }

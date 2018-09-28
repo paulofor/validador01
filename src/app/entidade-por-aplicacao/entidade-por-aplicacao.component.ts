@@ -26,7 +26,7 @@ export class EntidadePorAplicacaoComponent implements OnInit {
   atualizaLista() {
     this.route.paramMap.pipe(
       switchMap((params: ParamMap) =>
-        this.servico.getEntidades(this.aplicacao.id_aplicacao)
+        this.servico.getEntidades(this.aplicacao.id_aplicacao, {"include" : "atributoEntidades"})
       )).subscribe((listaEntidade : Entidade[]) => {
         this.listaEntidade = listaEntidade;
       })
@@ -46,7 +46,7 @@ export class EntidadePorAplicacaoComponent implements OnInit {
     });
   }
 
-  novoAtributoEntidade(item: Entidade) {
+  novoAtributo(item: Entidade) {
     console.log("Item:", item);
     this.dialog.afterAllClosed.subscribe(result => {
       console.log('Dialog result: ${result}');

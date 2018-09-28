@@ -21,7 +21,7 @@
         <mat-list role="list" *ngFor="let atributo of item.atributoEntidades">
           <mat-list-item role="listitem">{{atributo.nome}}</mat-list-item>
         </mat-list>
-        <button mat-button (click)="novoAtributo(item)">Novo</button>
+        <button mat-raised-button (click)="novoAtributo(item)">Novo</button>
       </mat-expansion-panel>
     </mat-accordion>
   </div>

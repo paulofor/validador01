@@ -4,6 +4,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 import { MatDialog } from '@angular/material';
 import { EntidadeEditaCriaComponent } from '../entidade-edita-cria/entidade-edita-cria.component';
+import { EditaAtributoEntidadeComponent } from '../edita-atributo-entidade/edita-atributo-entidade.component';
 
 @Component({
   selector: 'app-entidade-por-aplicacao',
@@ -41,6 +42,20 @@ export class EntidadePorAplicacaoComponent implements OnInit {
       width: '800px',
       data: {
         aplicacao: this.aplicacao
+      }
+    });
+  }
+
+  novoAtributoEntidade(item: Entidade) {
+    console.log("Item:", item);
+    this.dialog.afterAllClosed.subscribe(result => {
+      console.log('Dialog result: ${result}');
+      this.atualizaLista();
+    });
+    this.dialog.open(EditaAtributoEntidadeComponent, {
+      width: '800px',
+      data: {
+        entidade: item
       }
     });
   }

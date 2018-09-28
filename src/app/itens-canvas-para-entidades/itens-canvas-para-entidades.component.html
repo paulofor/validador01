@@ -1,3 +1,30 @@
-<p>
-  itens-canvas-para-entidades works!
-</p>
+<mat-card>
+
+  <mat-card-content>
+    <h2 class="example-h2">Canvas</h2>
+    <mat-tab-group class="demo-tab-group">
+      <mat-tab label="Modelo Negócio">
+        <div class="demo-tab-content">
+          <mat-list role="list" *ngFor="let item of listaProjetoCanvas" >
+            <mat-list-item role="listitem">{{ item.descricao }}</mat-list-item>
+          </mat-list>
+        </div>
+      </mat-tab>
+      <mat-tab label="Ganho/Dor">
+        <div class="demo-tab-content">
+          <mat-list role="list"  *ngFor="let item of listaGanhoDorCanvas">
+            <mat-list-item role="listitem">{{ item.descricao }}</mat-list-item>
+          </mat-list>
+        </div>
+      </mat-tab>
+      <mat-tab label="MVP">
+        <div class="demo-tab-content">
+          <mat-list role="list"  *ngFor="let item of listaMvpCanvas">
+            <mat-list-item role="listitem">{{ item.descricao }}</mat-list-item>
+          </mat-list>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+
+</mat-card>

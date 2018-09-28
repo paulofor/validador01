@@ -36,6 +36,9 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatListModule} from '@angular/material/list';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
 
 import { MatFormFieldModule, MatInputModule, MatButtonModule } from '@angular/material';
 import { ProjetoCanvasEditaComponent } from './projeto-canvas-edita/projeto-canvas-edita.component';
@@ -86,6 +89,7 @@ import { CampanhaEditaCriaComponent } from './campanha-edita-cria/campanha-edita
 import { EntidadeEditaCriaComponent } from './entidade-edita-cria/entidade-edita-cria.component';
 import { DorGanhoPalavraChaveComponent } from './dor-ganho-palavra-chave/dor-ganho-palavra-chave.component';
 import { PalavraChaveCriaComponent } from './palavra-chave-cria/palavra-chave-cria.component';
+import { EditaAtributoEntidadeComponent } from './edita-atributo-entidade/edita-atributo-entidade.component';
 
 
 
@@ -139,6 +143,7 @@ import { PalavraChaveCriaComponent } from './palavra-chave-cria/palavra-chave-cr
     EntidadeEditaCriaComponent,
     DorGanhoPalavraChaveComponent,
     PalavraChaveCriaComponent,
+    EditaAtributoEntidadeComponent,
 
   ],
   entryComponents: [
@@ -171,8 +176,10 @@ import { PalavraChaveCriaComponent } from './palavra-chave-cria/palavra-chave-cr
     NgDragDropModule.forRoot(),
     SDKBrowserModule.forRoot(),
     MatExpansionModule,
-    MatListModule
-    
+    MatListModule,
+    MatTabsModule,
+    MatCardModule,
+    MatIconModule
   ],
   providers: [
     HttpClient, 

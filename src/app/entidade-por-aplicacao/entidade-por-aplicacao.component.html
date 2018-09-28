@@ -4,22 +4,27 @@
     <button class="btn btn-primary btn-sm " (click)="openDialog(aplicacao)">Novo</button>
   </div>
 
-  <div class="content table-responsive table-full-width">
-    <table class="table table-hover table-striped">
-      <thead>
-        <tr>
-          <th>Nome</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of listaEntidade">
-          <td>{{item.nome}}</td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
 
+
+
+
+  <div class="content">
+    <mat-accordion>
+      <mat-expansion-panel *ngFor="let item of listaEntidade">
+
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{item.nome}}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <mat-list role="list" *ngFor="let atributo of item.atributoEntidades">
+          <mat-list-item role="listitem">{{atributo.nome}}</mat-list-item>
+        </mat-list>
+        <button mat-button (click)="novoAtributo(item)">Novo</button>
+      </mat-expansion-panel>
+    </mat-accordion>
   </div>
+
 
 </div>

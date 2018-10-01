@@ -25,6 +25,7 @@ import { EdicaoPaginaValidacaoComponent } from '../edicao-pagina-validacao/edica
 import { ProjetoAplicacaoComponent } from '../projeto-aplicacao/projeto-aplicacao.component';
 import { ResumoAplicacaoComponent } from '../resumo-aplicacao/resumo-aplicacao.component';
 import { ListaCampanhaPorPaginaComponent } from '../lista-campanha-por-pagina/lista-campanha-por-pagina.component';
+import { EntidadeResumoComponent } from '../entidade-resumo/entidade-resumo.component';
 
 
 export const routes : Routes = [
@@ -58,6 +59,8 @@ export const routes : Routes = [
     { path: 'projetoAplicacao/:id' , component: ResumoAplicacaoComponent },
 
     { path: 'listaCampanhaPorPaginaValidacao/:id' , component: ListaCampanhaPorPaginaComponent},
+
+    { path: 'entidadeResumo/:id' , component : EntidadeResumoComponent },
 
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="header">
+    <h4 class="title">Entidades</h4>
+    <button class="btn btn-primary btn-sm " (click)="openDialog(aplicacao)">Novo</button>
+  </div>
+
+  <div class="content">
+
+      <mat-nav-list *ngFor="let item of listaEntidade">
+          <a   routerLink="/entidadeResumo/{{item.id_entidade}}"  mat-list-item >{{item.nome}}</a>
+       </mat-nav-list>
+
+  </div>
+
+
+</div>

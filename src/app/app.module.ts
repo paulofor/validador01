@@ -92,6 +92,9 @@ import { EntidadeEditaCriaComponent } from './entidade-edita-cria/entidade-edita
 import { DorGanhoPalavraChaveComponent } from './dor-ganho-palavra-chave/dor-ganho-palavra-chave.component';
 import { PalavraChaveCriaComponent } from './palavra-chave-cria/palavra-chave-cria.component';
 import { EditaAtributoEntidadeComponent } from './edita-atributo-entidade/edita-atributo-entidade.component';
+import { EntidadeResumoComponent } from './entidade-resumo/entidade-resumo.component';
+import { EntidadePorAplicacaoV2Component } from './entidade-por-aplicacao-v2/entidade-por-aplicacao-v2.component';
+import { ListaAtributoPorEntidadeComponent } from './lista-atributo-por-entidade/lista-atributo-por-entidade.component';
 
 
 
@@ -146,6 +149,9 @@ import { EditaAtributoEntidadeComponent } from './edita-atributo-entidade/edita-
     DorGanhoPalavraChaveComponent,
     PalavraChaveCriaComponent,
     EditaAtributoEntidadeComponent,
+    EntidadeResumoComponent,
+    EntidadePorAplicacaoV2Component,
+    ListaAtributoPorEntidadeComponent,
 
   ],
   entryComponents: [

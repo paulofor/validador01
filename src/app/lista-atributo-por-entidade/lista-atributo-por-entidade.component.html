@@ -1,3 +1,10 @@
-<p>
-  lista-atributo-por-entidade works!
-</p>
+<div *ngIf="entidade.atributoEntidades" class="card">
+  <div class="header">
+    <h4 class="title">Atributos</h4>
+  </div>
+  <div class="content">
+    <mat-list *ngFor="let atributo of entidade.atributoEntidades">
+      <mat-list-item> {{atributo.nome}} </mat-list-item>
+    </mat-list>
+  </div>
+</div>

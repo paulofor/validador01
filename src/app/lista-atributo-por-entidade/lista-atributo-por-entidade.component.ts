@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Entidade, EntidadeApi, Atributo_entidade } from '../shared/sdk';
+import { EditaAtributoEntidadeComponent } from '../edita-atributo-entidade/edita-atributo-entidade.component';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-lista-atributo-por-entidade',
@@ -8,11 +10,11 @@ import { Entidade, EntidadeApi, Atributo_entidade } from '../shared/sdk';
 })
 export class ListaAtributoPorEntidadeComponent implements OnInit {
 
-
+  columnsToDisplay = ['nome'];
 
   @Input() entidade: Entidade; 
 
-  constructor(private srv:EntidadeApi) { }
+  constructor(private srv:EntidadeApi, private dialog: MatDialog) { }
 
   ngOnInit() {
     this.carregaAtributos();
@@ -21,8 +23,38 @@ export class ListaAtributoPorEntidadeComponent implements OnInit {
   carregaAtributos() {
     this.srv.getAtributoEntidades(this.entidade.id_entidade)
       .subscribe((result:Atributo_entidade[]) => {
+        console.log('result:' , result);
         this.entidade.atributoEntidades = result;
       })
+  }
+
+  novoAtributo() {
+    console.log("Item:", this.entidade);
+    this.dialog.afterAllClosed.subscribe(result => {
+      console.log('Dialog result: ${result}');
+      this.carregaAtributos();
+    });
+    this.dialog.open(EditaAtributoEntidadeComponent, {
+      width: '800px',
+      data: {
+        entidade: this.entidade
+      }
+    });
+  }
+
+  alteraAtributo(item) {
+    console.log("Item:", this.entidade);
+    this.dialog.afterAllClosed.subscribe(result => {
+      console.log('Dialog result: ${result}');
+      this.carregaAtributos();
+    });
+    this.dialog.open(EditaAtributoEntidadeComponent, {
+      width: '800px',
+      data: {
+        entidade: this.entidade,
+        atributo: item
+      }
+    });
   }
 
 }

@@ -20,7 +20,11 @@ export class EditaAtributoEntidadeComponent implements OnInit {
 
   ngOnInit() {
     console.log("Parametro entrada" , this.data);
-    this.atributo = new Atributo_entidade();
+    if (!this.data.atributo) {
+      this.atributo = new Atributo_entidade();
+    } else {
+      this.atributo = this.data.atributo;
+    }
     this.entidade = this.data.entidade;
   }
 

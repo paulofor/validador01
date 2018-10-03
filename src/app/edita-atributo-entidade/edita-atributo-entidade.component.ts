@@ -10,8 +10,8 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 })
 export class EditaAtributoEntidadeComponent implements OnInit {
 
-  entidade : Entidade;
-  atributo : Atributo_entidade;
+  entidade: Entidade;
+  atributo: Atributo_entidade;
 
   constructor(public dialogRef: MatDialogRef<EditaAtributoEntidadeComponent>
     , @Inject(MAT_DIALOG_DATA) public data: any,
@@ -19,7 +19,7 @@ export class EditaAtributoEntidadeComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log("Parametro entrada" , this.data);
+    console.log("Parametro entrada", this.data);
     if (!this.data.atributo) {
       this.atributo = new Atributo_entidade();
     } else {
@@ -30,13 +30,22 @@ export class EditaAtributoEntidadeComponent implements OnInit {
 
   onSubmit() {
     console.log('Model: ' + JSON.stringify(this.atributo));
-    this.atributo.id_entidade = this.entidade.id_entidade;
-    this.entidadaSrv.create(this.atributo, (err, obj) => {
+    if (this.atributo.id_atributo_entidade == 0) {
+      this.atributo.id_entidade = this.entidade.id_entidade;
+      this.entidadaSrv.create(this.atributo, (err, obj) => {
         console.log("Erro:" + err.message);
       }).subscribe((e: any) => {
         console.log(JSON.stringify(e));
         this.closeDialog();
       });
+    } else {
+      this.entidadaSrv.updateAttributes(this.atributo.id_atributo_entidade, this.atributo, (err, obj) => {
+        console.log("Erro:" + err.message);
+      }).subscribe((e: any) => {
+        console.log(JSON.stringify(e));
+        this.closeDialog();
+      });
+    }
   }
 
   closeDialog() {

@@ -1,7 +1,7 @@
 <div *ngIf="entidade.atributoEntidades" class="card">
   <div class="header">
     <h4 class="title">Relacionamentos</h4>
-    <button class="btn btn-primary btn-sm " (click)="novoAtributo()">Novo</button>
+    <button class="btn btn-primary btn-sm " (click)="novoItem()">Novo</button>
   </div>
 
   <div class="content table-responsive table-full-width">
@@ -9,29 +9,19 @@
       <thead>
         <tr>
           <th></th>
-          <th></th>
-          <th></th>
-          <th></th>
+          
           <th></th>
         </tr>
       </thead>
       <tbody>
-        <ng-container *ngFor="let atributo of entidade.atributoEntidades">
+        <ng-container *ngFor="let item of entidade.rel1">
           <tr>
             <td>
-              {{atributo.nome}}
+              {{item.nome1}}
             </td>
-            <td>
-              {{atributo.tipo}}
-            </td>
-            <td>
-              {{atributo.label_tela}}
-            </td>
-            <td>
-              {{atributo.ordenacao_tela}}
-            </td>
+            
             <td align="right">
-              <button class="btn btn-primary btn-sm " (click)="alteraAtributo(atributo)">Alterar</button>
+              <button class="btn btn-primary btn-sm " (click)="alteraItem(item)">Alterar</button>
             </td>
           </tr>
 

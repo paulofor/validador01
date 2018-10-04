@@ -1,6 +1,7 @@
 /* tslint:disable */
 import {
-  Atributo_entidade
+  Atributo_entidade,
+  Relacionamento_entidade
 } from '../index';
 
 declare var Object: any;
@@ -15,6 +16,8 @@ export interface EntidadeInterface {
   "id_entidade_pai"?: number;
   "id_aplicacao"?: number;
   atributoEntidades?: Atributo_entidade[];
+  rel1?: Relacionamento_entidade[];
+  rel2?: Relacionamento_entidade[];
 }
 
 export class Entidade implements EntidadeInterface {
@@ -28,6 +31,8 @@ export class Entidade implements EntidadeInterface {
   "id_entidade_pai": number;
   "id_aplicacao": number;
   atributoEntidades: Atributo_entidade[];
+  rel1: Relacionamento_entidade[];
+  rel2: Relacionamento_entidade[];
   constructor(data?: EntidadeInterface) {
     Object.assign(this, data);
   }
@@ -106,6 +111,22 @@ export class Entidade implements EntidadeInterface {
           relationType: 'hasMany',
                   keyFrom: 'id_entidade',
           keyTo: 'id_entidade'
+        },
+        rel1: {
+          name: 'rel1',
+          type: 'Relacionamento_entidade[]',
+          model: 'Relacionamento_entidade',
+          relationType: 'hasMany',
+                  keyFrom: 'id_entidade',
+          keyTo: 'id_entidade1'
+        },
+        rel2: {
+          name: 'rel2',
+          type: 'Relacionamento_entidade[]',
+          model: 'Relacionamento_entidade',
+          relationType: 'hasMany',
+                  keyFrom: 'id_entidade',
+          keyTo: 'id_entidade2'
         },
       }
     }

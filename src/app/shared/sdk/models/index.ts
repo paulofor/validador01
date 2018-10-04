@@ -20,5 +20,6 @@ export * from './Aplicacao';
 export * from './Atributo_entidade';
 export * from './Entidade';
 export * from './ModeloCampanhaAds';
+export * from './Relacionamento_entidade';
 export * from './BaseModels';
 export * from './FireLoopRef';

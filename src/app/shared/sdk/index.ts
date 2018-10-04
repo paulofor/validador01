@@ -69,6 +69,7 @@ import { AplicacaoApi } from './services/custom/Aplicacao';
 import { Atributo_entidadeApi } from './services/custom/Atributo_entidade';
 import { EntidadeApi } from './services/custom/Entidade';
 import { ModeloCampanhaAdsApi } from './services/custom/ModeloCampanhaAds';
+import { Relacionamento_entidadeApi } from './services/custom/Relacionamento_entidade';
 /**
 * @module SDKBrowserModule
 * @description
@@ -120,6 +121,7 @@ export class SDKBrowserModule {
         Atributo_entidadeApi,
         EntidadeApi,
         ModeloCampanhaAdsApi,
+        Relacionamento_entidadeApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
       ]

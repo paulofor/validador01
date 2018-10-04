@@ -1,6 +1,7 @@
 /* tslint:disable */
 import {
   AnuncioAds,
+  PalavraChaveAds,
   ModeloCampanhaAds
 } from '../index';
 
@@ -20,6 +21,7 @@ export interface CampanhaAdsInterface {
   "paginaValidacaoWebId"?: number;
   "modeloCampanhaAdsId"?: number;
   anuncioAds?: AnuncioAds[];
+  palavraChaveAds?: PalavraChaveAds[];
   modeloCampanhaAds?: ModeloCampanhaAds;
 }
 
@@ -38,6 +40,7 @@ export class CampanhaAds implements CampanhaAdsInterface {
   "paginaValidacaoWebId": number;
   "modeloCampanhaAdsId": number;
   anuncioAds: AnuncioAds[];
+  palavraChaveAds: PalavraChaveAds[];
   modeloCampanhaAds: ModeloCampanhaAds;
   constructor(data?: CampanhaAdsInterface) {
     Object.assign(this, data);
@@ -133,6 +136,16 @@ export class CampanhaAds implements CampanhaAdsInterface {
           relationType: 'hasMany',
           modelThrough: 'CampanhaAdsAnuncioAds',
           keyThrough: 'anuncioAdsId',
+          keyFrom: 'id',
+          keyTo: 'campanhaAdsId'
+        },
+        palavraChaveAds: {
+          name: 'palavraChaveAds',
+          type: 'PalavraChaveAds[]',
+          model: 'PalavraChaveAds',
+          relationType: 'hasMany',
+          modelThrough: 'CampanhaAdsPalavraChaveAds',
+          keyThrough: 'palavraChaveAdsId',
           keyFrom: 'id',
           keyTo: 'campanhaAdsId'
         },

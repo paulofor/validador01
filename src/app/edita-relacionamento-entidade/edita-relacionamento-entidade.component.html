@@ -1,3 +1,21 @@
-<p>
-  edita-relacionamento-entidade works!
-</p>
+<h2 mat-dialog-title>Atributo - {{entidade.nome}}</h2>
+
+<form class="example-full-width" (ngSubmit)="onSubmit()">
+
+  <mat-dialog-content>
+
+
+      <mat-select #noteField placeholder="Notes">
+          <mat-option *ngFor="let note of notes$ | async" [value]="note">
+            {{ note.yy }}
+          </mat-option>
+        </mat-select>
+
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button mat-raised-button>Salvar</button>
+    <button mat-raised-button mat-dialog-close>Fechar</button>
+  </mat-dialog-actions>
+
+</form>

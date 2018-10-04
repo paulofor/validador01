@@ -170,7 +170,8 @@ import { EditaRelacionamentoEntidadeComponent } from './edita-relacionamento-ent
     EntidadeEditaCriaComponent,
     PalavraChaveCriaComponent,
     CampanhaEditaCriaComponent,
-    EditaAtributoEntidadeComponent
+    EditaAtributoEntidadeComponent,
+    EditaRelacionamentoEntidadeComponent
     //ArquivosComponent
   ],
   imports: [

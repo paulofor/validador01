@@ -21,6 +21,7 @@ import { Aplicacao } from '../../models/Aplicacao';
 import { Atributo_entidade } from '../../models/Atributo_entidade';
 import { Entidade } from '../../models/Entidade';
 import { ModeloCampanhaAds } from '../../models/ModeloCampanhaAds';
+import { Relacionamento_entidade } from '../../models/Relacionamento_entidade';
 
 export interface Models { [name: string]: any }
 
@@ -49,6 +50,7 @@ export class SDKModels {
     Atributo_entidade: Atributo_entidade,
     Entidade: Entidade,
     ModeloCampanhaAds: ModeloCampanhaAds,
+    Relacionamento_entidade: Relacionamento_entidade,
     
   };
 

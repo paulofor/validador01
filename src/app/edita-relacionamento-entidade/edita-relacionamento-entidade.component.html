@@ -5,6 +5,16 @@
   <mat-dialog-content>
 
 
+      <mat-form-field class="example-full-width">
+          <mat-select placeholder="Entidade" #entidade [(ngModel)]="atributo.tipo" name="tipo" >
+            <mat-option value="TLbl">TLbl</mat-option>
+            <mat-option value="TLblLg">TLblLg</mat-option>
+            <mat-option value="TDesc">TDesc</mat-option>
+           
+            <mat-option value="CriptoMoeda">CriptoMoeda</mat-option>
+            <mat-option value="CriptoTLbl">CriptoTLbl</mat-option>
+          </mat-select>
+        </mat-form-field>
       <mat-select #noteField placeholder="Notes">
           <mat-option *ngFor="let note of notes$ | async" [value]="note">
             {{ note.yy }}

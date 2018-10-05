@@ -15,7 +15,7 @@ export class ListaRelacionamentoPorEntidadeComponent implements OnInit {
   @Input() entidade: Entidade; 
   
 
-  constructor(private srv:EntidadeApi, private dialog: MatDialog, private aplicacaoSrv: AplicacaoApi) { }
+  constructor(private srv:EntidadeApi, private dialog: MatDialog) { }
 
   ngOnInit() {
     this.carregaRelacionamentos();

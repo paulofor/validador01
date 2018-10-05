@@ -13,23 +13,14 @@ import { EditaAtributoEntidadeComponent } from '../edita-atributo-entidade/edita
 export class ListaRelacionamentoPorEntidadeComponent implements OnInit {
 
   @Input() entidade: Entidade; 
-  listaParaRelacionar: Entidade[];
+  
 
   constructor(private srv:EntidadeApi, private dialog: MatDialog, private aplicacaoSrv: AplicacaoApi) { }
 
   ngOnInit() {
-    this.carregaListaParaRelacionar();
     this.carregaRelacionamentos();
-  
   }
 
-  carregaListaParaRelacionar() {
-    this.aplicacaoSrv.getEntidades(this.entidade.id_aplicacao)
-      .subscribe((result: Entidade[]) => {
-        console.log("Lista para relacionar: " , JSON.stringify(result));
-
-      }) 
-  }
 
   carregaRelacionamentos() {
     this.srv.listaCompletaRelacionemnto(this.entidade.id_entidade)

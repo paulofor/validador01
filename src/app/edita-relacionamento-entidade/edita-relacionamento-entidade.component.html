@@ -1,25 +1,39 @@
 <h2 mat-dialog-title>Atributo - {{entidade.nome}}</h2>
 
-<form class="example-full-width" (ngSubmit)="onSubmit()">
+<form *ngIf="listaParaRelacionar" class="example-full-width" (ngSubmit)="onSubmit()">
 
   <mat-dialog-content>
 
 
-      <mat-form-field class="example-full-width">
-          <mat-select placeholder="Entidade" #entidade [(ngModel)]="atributo.tipo" name="tipo" >
-            <mat-option value="TLbl">TLbl</mat-option>
-            <mat-option value="TLblLg">TLblLg</mat-option>
-            <mat-option value="TDesc">TDesc</mat-option>
-           
-            <mat-option value="CriptoMoeda">CriptoMoeda</mat-option>
-            <mat-option value="CriptoTLbl">CriptoTLbl</mat-option>
-          </mat-select>
-        </mat-form-field>
-      <mat-select #noteField placeholder="Notes">
-          <mat-option *ngFor="let note of notes$ | async" [value]="note">
-            {{ note.yy }}
-          </mat-option>
-        </mat-select>
+    <mat-form-field class="example-full-width">
+      <input matInput maxlength="30" #nome1 [(ngModel)]="item.nome1" name="nome1" placeholder="Nome" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-select placeholder="Quantidade Relacionda" #quantidade1 [(ngModel)]="item.quantidade1" name="quantidade1" >
+        <mat-option value="1">1</mat-option>
+        <mat-option value="N">N</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-select placeholder="Entidade" #id_entidade2 [(ngModel)]="item.id_entidade2" name="id_entidade2">
+        <mat-option *ngFor="let entidade of listaParaRelacionar" [value]="id_entidade">
+          {{ entidade.nome }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput maxlength="30" #nome2 [(ngModel)]="item.nome2" name="nome2" placeholder="Nome para entidade" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-select placeholder="Quantidade Relacionda" #quantidade2 [(ngModel)]="item.quantidade2" name="quantidade2" >
+        <mat-option value="1">1</mat-option>
+        <mat-option value="N">N</mat-option>
+      </mat-select>
+    </mat-form-field>
 
   </mat-dialog-content>
 

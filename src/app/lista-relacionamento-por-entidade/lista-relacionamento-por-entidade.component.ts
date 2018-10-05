@@ -25,7 +25,7 @@ export class ListaRelacionamentoPorEntidadeComponent implements OnInit {
   carregaRelacionamentos() {
     this.srv.listaCompletaRelacionemnto(this.entidade.id_entidade)
       .subscribe((result:Relacionamento_entidade[]) => {
-        console.log('result:' , result);
+        console.log('listaCompleta:' , result);
         this.entidade.rel1 = result;
       })
   }

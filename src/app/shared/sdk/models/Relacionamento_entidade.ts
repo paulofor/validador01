@@ -1,4 +1,7 @@
 /* tslint:disable */
+import {
+  Entidade
+} from '../index';
 
 declare var Object: any;
 export interface Relacionamento_entidadeInterface {
@@ -14,6 +17,8 @@ export interface Relacionamento_entidadeInterface {
   "dependente"?: boolean;
   "id_entidade1"?: number;
   "id_entidade2"?: number;
+  entidade1?: Entidade;
+  entidade2?: Entidade;
 }
 
 export class Relacionamento_entidade implements Relacionamento_entidadeInterface {
@@ -29,6 +34,8 @@ export class Relacionamento_entidade implements Relacionamento_entidadeInterface
   "dependente": boolean;
   "id_entidade1": number;
   "id_entidade2": number;
+  entidade1: Entidade;
+  entidade2: Entidade;
   constructor(data?: Relacionamento_entidadeInterface) {
     Object.assign(this, data);
   }
@@ -112,6 +119,22 @@ export class Relacionamento_entidade implements Relacionamento_entidadeInterface
         },
       },
       relations: {
+        entidade1: {
+          name: 'entidade1',
+          type: 'Entidade',
+          model: 'Entidade',
+          relationType: 'belongsTo',
+                  keyFrom: 'id_entidade1',
+          keyTo: 'id_entidade'
+        },
+        entidade2: {
+          name: 'entidade2',
+          type: 'Entidade',
+          model: 'Entidade',
+          relationType: 'belongsTo',
+                  keyFrom: 'id_entidade2',
+          keyTo: 'id_entidade'
+        },
       }
     }
   }

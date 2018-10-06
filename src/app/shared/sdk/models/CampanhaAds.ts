@@ -18,6 +18,7 @@ export interface CampanhaAdsInterface {
   "orcamentoDia"?: number;
   "orcamentoTotalPlanejado"?: number;
   "orcamentoTotalExecutado"?: number;
+  "urlAlvo"?: string;
   "paginaValidacaoWebId"?: number;
   "modeloCampanhaAdsId"?: number;
   anuncioAds?: AnuncioAds[];
@@ -37,6 +38,7 @@ export class CampanhaAds implements CampanhaAdsInterface {
   "orcamentoDia": number;
   "orcamentoTotalPlanejado": number;
   "orcamentoTotalExecutado": number;
+  "urlAlvo": string;
   "paginaValidacaoWebId": number;
   "modeloCampanhaAdsId": number;
   anuncioAds: AnuncioAds[];
@@ -118,6 +120,10 @@ export class CampanhaAds implements CampanhaAdsInterface {
         "orcamentoTotalExecutado": {
           name: 'orcamentoTotalExecutado',
           type: 'number'
+        },
+        "urlAlvo": {
+          name: 'urlAlvo',
+          type: 'string'
         },
         "paginaValidacaoWebId": {
           name: 'paginaValidacaoWebId',

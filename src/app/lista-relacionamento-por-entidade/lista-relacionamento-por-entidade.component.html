@@ -1,15 +1,16 @@
 <div *ngIf="entidade.atributoEntidades" class="card">
   <div class="header">
     <h4 class="title">Relacionamentos</h4>
-    <button class="btn btn-primary btn-sm " (click)="novoItem()">Novo</button>
+    <button class="btn btn-primary btn-sm " (click)="novoRel()">Novo</button>
   </div>
 
   <div class="content table-responsive table-full-width">
     <table class="table table-hover table-striped">
       <thead>
         <tr>
-          <th></th>
-          
+          <th>Relação</th>
+          <th>Entidade</th>
+          <th>Nome</th>
           <th></th>
         </tr>
       </thead>
@@ -17,11 +18,17 @@
         <ng-container *ngFor="let item of entidade.rel1">
           <tr>
             <td>
-              {{item.nome1}}
+              {{getNumeros(item)}}
+            </td>
+            <td>
+              {{getEntidadeOposta(item)}}
+            </td>
+            <td>
+              {{getNome(item)}}
             </td>
             
             <td align="right">
-              <button class="btn btn-primary btn-sm " (click)="alteraItem(item)">Alterar</button>
+              <button class="btn btn-primary btn-sm " (click)="alteraRel(item)">Alterar</button>
             </td>
           </tr>
 

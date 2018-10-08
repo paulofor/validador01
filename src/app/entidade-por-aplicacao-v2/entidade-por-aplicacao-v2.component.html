@@ -3,14 +3,28 @@
     <h4 class="title">Entidades</h4>
     <button class="btn btn-primary btn-sm " (click)="openDialog(aplicacao)">Novo</button>
   </div>
+  <div class="content table-responsive table-full-width">
+    <table class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let item of listaEntidade">
+          <tr>
+            <td>
+              {{item.nome}}
+            </td>
 
-  <div class="content">
-
-      <mat-nav-list *ngFor="let item of listaEntidade">
-          <a   routerLink="/entidadeResumo/{{item.id_entidade}}"  mat-list-item >{{item.nome}}</a>
-       </mat-nav-list>
-
+            <td align="right">
+              <a routerLink="/entidadeResumo/{{item.id_entidade}}">Detalhe</a>&nbsp;&nbsp;
+              <button class="btn btn-primary btn-sm " (click)="alteraEntidade(item)">Alterar</button>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
   </div>
-
-
 </div>

@@ -8,7 +8,7 @@
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
-      <mat-select placeholder="Atributo Chave" #id_chave [(ngModel)]="item.id_chave" name="id_chave">
+      <mat-select placeholder="AtributoChave" #id_chave [(ngModel)]="item.id_chave" name="id_chave">
         <mat-option *ngFor="let atributo of listaAtributo" [value]="atributo.id_atributo">
           {{ atributo.nome }}
         </mat-option>

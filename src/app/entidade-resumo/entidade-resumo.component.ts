@@ -32,18 +32,5 @@ export class EntidadeResumoComponent implements OnInit {
   }
 
 
-  alteraEntidade(entidade) {
-    console.log('entidade:', entidade);
-    this.dialog.afterAllClosed.subscribe(result => {
-      console.log('Dialog result: ${result}'); 
-      this.carregaEntidade();
-    });
-    this.dialog.open(EntidadeEditaCriaComponent, {
-      width: '800px',
-      data: {
-        entidade: this.entidade
-      }
-    });
-  }
 
 }

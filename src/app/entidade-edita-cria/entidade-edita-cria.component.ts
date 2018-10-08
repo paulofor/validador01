@@ -15,7 +15,7 @@ export class EntidadeEditaCriaComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<EntidadeEditaCriaComponent>
     , @Inject(MAT_DIALOG_DATA) public data: any,
-    private entidadaSrv: EntidadeApi, private atributoSrv: Atributo_entidadeApi) {
+    private entidadaSrv: EntidadeApi) {
   }
 
   ngOnInit() {
@@ -28,8 +28,8 @@ export class EntidadeEditaCriaComponent implements OnInit {
       this.carregaAtributoEntidade();
     } else {
       console.log('fluxo altera entidade');
-      //this.item = this.data.entidade;
-      
+      this.item = this.data.entidade;
+      this.carregaAtributoEntidade();
     }
 
 

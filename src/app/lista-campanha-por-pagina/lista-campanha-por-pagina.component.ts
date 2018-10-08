@@ -27,7 +27,7 @@ export class ListaCampanhaPorPaginaComponent implements OnInit {
       console.log('IdPagina: ', id);
       this.srv.findById(id,this.consulta)
         .subscribe((valor: PaginaValidacaoWeb) => {
-          console.log('Item: ' + JSON.stringify(valor));
+          console.log('Pagina com Campanha: ' + JSON.stringify(valor));
           this.pagina = valor;
         })
     });
@@ -48,7 +48,24 @@ export class ListaCampanhaPorPaginaComponent implements OnInit {
         pagina: this.pagina
       }
     });
-  
   }
+
+
+
+  alteraCampanha(item) {
+    console.log("Item:", this.pagina);
+    this.dialog.afterAllClosed.subscribe(result => {
+      console.log('Dialog result: ${result}');
+      this.carregaPaginaComCampanhas();
+    });
+    this.dialog.open(CampanhaEditaCriaComponent, {
+      width: '800px',
+      data: {
+        pagina: this.pagina,
+        campanha: item
+      }
+    });
+  }
+
 
 }

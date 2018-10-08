@@ -12,12 +12,17 @@
                 <thead>
                   <tr>
                     <th>Titulo</th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr *ngFor="let campanha of pagina.campanhaAds">
                     <td>{{campanha.nome}}</td>
+                    <td align="right">
+                      <button class="btn btn-primary btn-sm " (click)="alteraCampanha(campanha)">Alterar</button>
+                    </td>
                   </tr>
+                  
                 </tbody>
               </table>
   

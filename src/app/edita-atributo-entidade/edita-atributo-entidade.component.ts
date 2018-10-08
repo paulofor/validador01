@@ -30,7 +30,7 @@ export class EditaAtributoEntidadeComponent implements OnInit {
 
   onSubmit() {
     console.log('Model: ' + JSON.stringify(this.atributo));
-    if (this.atributo.id_atributo_entidade == 0) {
+    if (!this.atributo.id_atributo_entidade) {
       this.atributo.id_entidade = this.entidade.id_entidade;
       this.entidadaSrv.create(this.atributo, (err, obj) => {
         console.log("Erro:" + err.message);

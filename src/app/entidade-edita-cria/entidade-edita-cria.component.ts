@@ -30,6 +30,7 @@ export class EntidadeEditaCriaComponent implements OnInit {
       console.log('fluxo altera entidade');
       this.item = this.data.entidade;
       this.carregaAtributoEntidade();
+      console.log('Item:' , JSON.stringify(this.item));
     }
 
 
@@ -61,6 +62,8 @@ export class EntidadeEditaCriaComponent implements OnInit {
     this.entidadaSrv.getAtributoEntidades(this.item.id_entidade)
       .subscribe((valor: Atributo_entidade[]) => {
         this.listaAtributo = valor;
+        console.log('Lista Atributo' , JSON.stringify(this.listaAtributo));
+        console.log('Entidade:' , JSON.stringify(this.item));
       })
   }
 

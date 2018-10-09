@@ -1,6 +1,6 @@
 <h2 mat-dialog-title>Edição Entidade</h2>
 
-<form class="example-full-width" (ngSubmit)="onSubmit()">
+<form *ngIf="item && listaAtributo" class="example-full-width" (ngSubmit)="onSubmit()">
 
   <mat-dialog-content>
     <mat-form-field class="example-full-width">
@@ -8,8 +8,20 @@
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
-      <mat-select placeholder="AtributoChave" #id_chave [(ngModel)]="item.id_chave" name="id_chave">
-        <mat-option *ngFor="let atributo of listaAtributo" [value]="atributo.id_atributo">
+      <input matInput maxlength="30" #classe_pai [(ngModel)]="item.classe_pai" name="classe_pai" placeholder="Classe Pai" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-select placeholder="Atributo Chave" #id_atributo_entidade [(ngModel)]="item.id_chave" name="id_atributo_entidade">
+        <mat-option *ngFor="let atributo of listaAtributo" [value]="atributo.id_atributo_entidade">
+          {{ atributo.nome }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-select placeholder="Atributo Identificador" #id_atributo_identificador [(ngModel)]="item.id_atributo_identificador" name="id_atributo_identificador">
+        <mat-option *ngFor="let atributo of listaAtributo" [value]="atributo.id_atributo_entidade">
           {{ atributo.nome }}
         </mat-option>
       </mat-select>

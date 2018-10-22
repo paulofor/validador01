@@ -98,6 +98,7 @@ import { EntidadePorAplicacaoV2Component } from './entidade-por-aplicacao-v2/ent
 import { ListaAtributoPorEntidadeComponent } from './lista-atributo-por-entidade/lista-atributo-por-entidade.component';
 import { ListaRelacionamentoPorEntidadeComponent } from './lista-relacionamento-por-entidade/lista-relacionamento-por-entidade.component';
 import { EditaRelacionamentoEntidadeComponent } from './edita-relacionamento-entidade/edita-relacionamento-entidade.component';
+import { ListaItemValidacaoPorProjetoComponent } from './lista-item-validacao-por-projeto/lista-item-validacao-por-projeto.component';
 
 
 
@@ -157,6 +158,7 @@ import { EditaRelacionamentoEntidadeComponent } from './edita-relacionamento-ent
     ListaAtributoPorEntidadeComponent,
     ListaRelacionamentoPorEntidadeComponent,
     EditaRelacionamentoEntidadeComponent,
+    ListaItemValidacaoPorProjetoComponent,
 
   ],
   entryComponents: [

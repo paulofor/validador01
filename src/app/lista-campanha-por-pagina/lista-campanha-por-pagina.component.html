@@ -12,12 +12,24 @@
                 <thead>
                   <tr>
                     <th>Titulo</th>
-                    <th></th>
+                    <th>Data Inicio</th>
+                    <td>Data Final</td>
+                    <td>Score</td>
+                    <td>Impressões</td>
+                    <td>Cliques</td>
+                    <td>Custo</td>
+                    <td></td>
                   </tr>
                 </thead>
                 <tbody>
                   <tr *ngFor="let campanha of pagina.campanhaAds">
                     <td>{{campanha.nome}}</td>
+                    <td>{{campanha.dataInicial | date: 'dd/MM/yyyy'}}</td>
+                    <td>{{campanha.dataFinal | date: 'dd/MM/yyyy'}}</td>
+                    <td>{{campanha.nome}}</td>
+                    <td>{{campanha.quantidadeImpressao}}</td>
+                    <td>{{campanha.quantidadeClique}}</td>
+                    <td>{{campanha.orcamentoTotalExecutado}}</td>
                     <td align="right">
                       <button class="btn btn-primary btn-sm " (click)="alteraCampanha(campanha)">Alterar</button>
                     </td>

@@ -9,16 +9,17 @@ import { LoopBackFilter,  } from '../../models/BaseModels';
 import { ErrorHandler } from '../core/error.service';
 import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { PalavraChaveAds } from '../../models/PalavraChaveAds';
+import { CampanhaAnuncioResultado } from '../../models/CampanhaAnuncioResultado';
 import { SocketConnection } from '../../sockets/socket.connections';
-import { GanhoDorCanvasMySql } from '../../models/GanhoDorCanvasMySql';
+import { AnuncioAds } from '../../models/AnuncioAds';
+import { CampanhaAds } from '../../models/CampanhaAds';
 
 
 /**
- * Api services for the `PalavraChaveAds` model.
+ * Api services for the `CampanhaAnuncioResultado` model.
  */
 @Injectable()
-export class PalavraChaveAdsApi extends BaseLoopBackApi {
+export class CampanhaAnuncioResultadoApi extends BaseLoopBackApi {
 
   constructor(
     @Inject(HttpClient) protected http: HttpClient,
@@ -31,9 +32,9 @@ export class PalavraChaveAdsApi extends BaseLoopBackApi {
   }
 
   /**
-   * Fetches belongsTo relation ganhoDorCanvasMySql.
+   * Fetches belongsTo relation anuncioAds.
    *
-   * @param {any} id PalavraChaveAds id
+   * @param {any} id CampanhaAnuncioResultado id
    *
    * @param {boolean} refresh 
    *
@@ -43,13 +44,43 @@ export class PalavraChaveAdsApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `PalavraChaveAds` object.)
+   * This usually means the response is a `CampanhaAnuncioResultado` object.)
    * </em>
    */
-  public getGanhoDorCanvasMySql(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
+  public getAnuncioAds(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/PalavraChaveAds/:id/ganhoDorCanvasMySql";
+    "/CampanhaAnuncioResultados/:id/anuncioAds";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof refresh !== 'undefined' && refresh !== null) _urlParams.refresh = refresh;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Fetches belongsTo relation campanhaAds.
+   *
+   * @param {any} id CampanhaAnuncioResultado id
+   *
+   * @param {boolean} refresh 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `CampanhaAnuncioResultado` object.)
+   * </em>
+   */
+  public getCampanhaAds(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/CampanhaAnuncioResultados/:id/campanhaAds";
     let _routeParams: any = {
       id: id
     };
@@ -73,13 +104,13 @@ export class PalavraChaveAdsApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `PalavraChaveAds` object.)
+   * This usually means the response is a `CampanhaAnuncioResultado` object.)
    * </em>
    */
   public patchOrCreate(data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/PalavraChaveAds";
+    "/CampanhaAnuncioResultados";
     let _routeParams: any = {};
     let _postBody: any = {
       data: data
@@ -92,7 +123,7 @@ export class PalavraChaveAdsApi extends BaseLoopBackApi {
   /**
    * Patch attributes for a model instance and persist it into the data source.
    *
-   * @param {any} id PalavraChaveAds id
+   * @param {any} id CampanhaAnuncioResultado id
    *
    * @param {object} data Request data.
    *
@@ -104,13 +135,13 @@ export class PalavraChaveAdsApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `PalavraChaveAds` object.)
+   * This usually means the response is a `CampanhaAnuncioResultado` object.)
    * </em>
    */
   public patchAttributes(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/PalavraChaveAds/:id";
+    "/CampanhaAnuncioResultados/:id";
     let _routeParams: any = {
       id: id
     };
@@ -123,38 +154,10 @@ export class PalavraChaveAdsApi extends BaseLoopBackApi {
   }
 
   /**
-   * <em>
-         * (The remote method definition does not provide any description.)
-         * </em>
-   *
-   * @param {number} idPagina 
-   *
-   * @returns {object[]} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `PalavraChaveAds` object.)
-   * </em>
-   */
-  public ParaCampanhaPorIdPagina(idPagina: any, customHeaders?: Function): Observable<any> {
-    let _method: string = "GET";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/PalavraChaveAds/paraCampanhaPorIdPagina";
-    let _routeParams: any = {};
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    if (typeof idPagina !== 'undefined' && idPagina !== null) _urlParams.idPagina = idPagina;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
-  }
-
-  /**
    * The name of the model represented by this $resource,
-   * i.e. `PalavraChaveAds`.
+   * i.e. `CampanhaAnuncioResultado`.
    */
   public getModelName() {
-    return "PalavraChaveAds";
+    return "CampanhaAnuncioResultado";
   }
 }

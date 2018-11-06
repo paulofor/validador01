@@ -22,6 +22,9 @@ import { Atributo_entidade } from '../../models/Atributo_entidade';
 import { Entidade } from '../../models/Entidade';
 import { ModeloCampanhaAds } from '../../models/ModeloCampanhaAds';
 import { Relacionamento_entidade } from '../../models/Relacionamento_entidade';
+import { CampanhaAnuncioResultado } from '../../models/CampanhaAnuncioResultado';
+import { CampanhaPalavraChaveResultado } from '../../models/CampanhaPalavraChaveResultado';
+import { TelaWeb } from '../../models/TelaWeb';
 
 export interface Models { [name: string]: any }
 
@@ -51,6 +54,9 @@ export class SDKModels {
     Entidade: Entidade,
     ModeloCampanhaAds: ModeloCampanhaAds,
     Relacionamento_entidade: Relacionamento_entidade,
+    CampanhaAnuncioResultado: CampanhaAnuncioResultado,
+    CampanhaPalavraChaveResultado: CampanhaPalavraChaveResultado,
+    TelaWeb: TelaWeb,
     
   };
 

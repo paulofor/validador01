@@ -1,7 +1,8 @@
 /* tslint:disable */
 import {
   ProjetoMySql,
-  Entidade
+  Entidade,
+  TelaWeb
 } from '../index';
 
 declare var Object: any;
@@ -14,6 +15,7 @@ export interface AplicacaoInterface {
   "projetoMySqlId"?: number;
   projetoMySql?: ProjetoMySql;
   entidades?: Entidade[];
+  telaWebs?: TelaWeb[];
 }
 
 export class Aplicacao implements AplicacaoInterface {
@@ -25,6 +27,7 @@ export class Aplicacao implements AplicacaoInterface {
   "projetoMySqlId": number;
   projetoMySql: ProjetoMySql;
   entidades: Entidade[];
+  telaWebs: TelaWeb[];
   constructor(data?: AplicacaoInterface) {
     Object.assign(this, data);
   }
@@ -99,6 +102,14 @@ export class Aplicacao implements AplicacaoInterface {
           relationType: 'hasMany',
                   keyFrom: 'id_aplicacao',
           keyTo: 'id_aplicacao'
+        },
+        telaWebs: {
+          name: 'telaWebs',
+          type: 'TelaWeb[]',
+          model: 'TelaWeb',
+          relationType: 'hasMany',
+                  keyFrom: 'id_aplicacao',
+          keyTo: 'aplicacaoId'
         },
       }
     }

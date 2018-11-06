@@ -21,5 +21,8 @@ export * from './Atributo_entidade';
 export * from './Entidade';
 export * from './ModeloCampanhaAds';
 export * from './Relacionamento_entidade';
+export * from './CampanhaAnuncioResultado';
+export * from './CampanhaPalavraChaveResultado';
+export * from './TelaWeb';
 export * from './SDKModels';
 export * from './logger.service';

@@ -45,7 +45,7 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CookieBrowser } from './storage/cookie.browser';
 import { StorageBrowser } from './storage/storage.browser';
 import { SocketBrowser } from './sockets/socket.browser';
-
+import { SocketDriver } from './sockets/socket.driver';
 import { SocketConnection } from './sockets/socket.connections';
 import { RealTime } from './services/core/real.time';
 import { UserApi } from './services/custom/User';
@@ -70,6 +70,9 @@ import { Atributo_entidadeApi } from './services/custom/Atributo_entidade';
 import { EntidadeApi } from './services/custom/Entidade';
 import { ModeloCampanhaAdsApi } from './services/custom/ModeloCampanhaAds';
 import { Relacionamento_entidadeApi } from './services/custom/Relacionamento_entidade';
+import { CampanhaAnuncioResultadoApi } from './services/custom/CampanhaAnuncioResultado';
+import { CampanhaPalavraChaveResultadoApi } from './services/custom/CampanhaPalavraChaveResultado';
+import { TelaWebApi } from './services/custom/TelaWeb';
 /**
 * @module SDKBrowserModule
 * @description
@@ -122,8 +125,12 @@ export class SDKBrowserModule {
         EntidadeApi,
         ModeloCampanhaAdsApi,
         Relacionamento_entidadeApi,
+        CampanhaAnuncioResultadoApi,
+        CampanhaPalavraChaveResultadoApi,
+        TelaWebApi,
         internalStorageProvider,
-        { provide: SDKStorage, useClass: StorageBrowser }
+        { provide: SDKStorage, useClass: StorageBrowser },
+        { provide: SocketDriver, useClass: SocketBrowser }
       ]
     };
   }

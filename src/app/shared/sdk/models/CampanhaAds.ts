@@ -2,7 +2,9 @@
 import {
   AnuncioAds,
   PalavraChaveAds,
-  ModeloCampanhaAds
+  ModeloCampanhaAds,
+  CampanhaAnuncioResultado,
+  CampanhaPalavraChaveResultado
 } from '../index';
 
 declare var Object: any;
@@ -19,11 +21,14 @@ export interface CampanhaAdsInterface {
   "orcamentoTotalPlanejado"?: number;
   "orcamentoTotalExecutado"?: number;
   "urlAlvo"?: string;
+  "finalizadaProducao"?: boolean;
   "paginaValidacaoWebId"?: number;
   "modeloCampanhaAdsId"?: number;
   anuncioAds?: AnuncioAds[];
   palavraChaveAds?: PalavraChaveAds[];
   modeloCampanhaAds?: ModeloCampanhaAds;
+  campanhaAnuncioResultados?: CampanhaAnuncioResultado[];
+  campanhaPalavraChaveResultados?: CampanhaPalavraChaveResultado[];
 }
 
 export class CampanhaAds implements CampanhaAdsInterface {
@@ -39,11 +44,14 @@ export class CampanhaAds implements CampanhaAdsInterface {
   "orcamentoTotalPlanejado": number;
   "orcamentoTotalExecutado": number;
   "urlAlvo": string;
+  "finalizadaProducao": boolean;
   "paginaValidacaoWebId": number;
   "modeloCampanhaAdsId": number;
   anuncioAds: AnuncioAds[];
   palavraChaveAds: PalavraChaveAds[];
   modeloCampanhaAds: ModeloCampanhaAds;
+  campanhaAnuncioResultados: CampanhaAnuncioResultado[];
+  campanhaPalavraChaveResultados: CampanhaPalavraChaveResultado[];
   constructor(data?: CampanhaAdsInterface) {
     Object.assign(this, data);
   }
@@ -125,6 +133,10 @@ export class CampanhaAds implements CampanhaAdsInterface {
           name: 'urlAlvo',
           type: 'string'
         },
+        "finalizadaProducao": {
+          name: 'finalizadaProducao',
+          type: 'boolean'
+        },
         "paginaValidacaoWebId": {
           name: 'paginaValidacaoWebId',
           type: 'number'
@@ -162,6 +174,22 @@ export class CampanhaAds implements CampanhaAdsInterface {
           relationType: 'belongsTo',
                   keyFrom: 'modeloCampanhaAdsId',
           keyTo: 'id'
+        },
+        campanhaAnuncioResultados: {
+          name: 'campanhaAnuncioResultados',
+          type: 'CampanhaAnuncioResultado[]',
+          model: 'CampanhaAnuncioResultado',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'campanhaAdsId'
+        },
+        campanhaPalavraChaveResultados: {
+          name: 'campanhaPalavraChaveResultados',
+          type: 'CampanhaPalavraChaveResultado[]',
+          model: 'CampanhaPalavraChaveResultado',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'campanhaAdsId'
         },
       }
     }

@@ -11,7 +11,6 @@ export interface AnuncioAdsInterface {
   "titulo3"?: string;
   "descricao1"?: string;
   "descricao2"?: string;
-  "idAds"?: string;
   "projetoCanvasMySqlId"?: number;
   projetoCanvasMySql?: ProjetoCanvasMySql;
 }
@@ -23,7 +22,6 @@ export class AnuncioAds implements AnuncioAdsInterface {
   "titulo3": string;
   "descricao1": string;
   "descricao2": string;
-  "idAds": string;
   "projetoCanvasMySqlId": number;
   projetoCanvasMySql: ProjetoCanvasMySql;
   constructor(data?: AnuncioAdsInterface) {
@@ -81,10 +79,6 @@ export class AnuncioAds implements AnuncioAdsInterface {
         },
         "descricao2": {
           name: 'descricao2',
-          type: 'string'
-        },
-        "idAds": {
-          name: 'idAds',
           type: 'string'
         },
         "projetoCanvasMySqlId": {

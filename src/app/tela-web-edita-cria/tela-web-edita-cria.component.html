@@ -1,3 +1,26 @@
-<p>
-  tela-web-edita-cria works!
-</p>
+<h2 mat-dialog-title>Edição TelaWeb</h2>
+
+<form *ngIf="item" class="example-full-width" (ngSubmit)="onSubmit()">
+
+  <mat-dialog-content>
+    <mat-form-field class="example-full-width">
+      <input matInput maxlength="30" #nome [(ngModel)]="item.nome" name="nome" placeholder="Nome" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput maxlength="30" #nomeMenu [(ngModel)]="item.nomeMenu" name="nomeMenu" placeholder="Nome no menu" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput maxlength="30" #objetivo [(ngModel)]="item.objetivo" name="objetivo" placeholder="Objetivo" />
+    </mat-form-field>
+
+
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button mat-raised-button>Salvar</button>
+    <button mat-raised-button mat-dialog-close>Fechar</button>
+  </mat-dialog-actions>
+
+</form>

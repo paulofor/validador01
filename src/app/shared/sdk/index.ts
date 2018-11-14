@@ -45,7 +45,7 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CookieBrowser } from './storage/cookie.browser';
 import { StorageBrowser } from './storage/storage.browser';
 import { SocketBrowser } from './sockets/socket.browser';
-import { SocketDriver } from './sockets/socket.driver';
+
 import { SocketConnection } from './sockets/socket.connections';
 import { RealTime } from './services/core/real.time';
 import { UserApi } from './services/custom/User';
@@ -73,6 +73,10 @@ import { Relacionamento_entidadeApi } from './services/custom/Relacionamento_ent
 import { CampanhaAnuncioResultadoApi } from './services/custom/CampanhaAnuncioResultado';
 import { CampanhaPalavraChaveResultadoApi } from './services/custom/CampanhaPalavraChaveResultado';
 import { TelaWebApi } from './services/custom/TelaWeb';
+import { TelaAppApi } from './services/custom/TelaApp';
+import { PalavraChaveRaizApi } from './services/custom/PalavraChaveRaiz';
+import { PalavraChaveGoogleApi } from './services/custom/PalavraChaveGoogle';
+import { PalavraChaveEstatisticaApi } from './services/custom/PalavraChaveEstatistica';
 /**
 * @module SDKBrowserModule
 * @description
@@ -128,9 +132,13 @@ export class SDKBrowserModule {
         CampanhaAnuncioResultadoApi,
         CampanhaPalavraChaveResultadoApi,
         TelaWebApi,
+        TelaAppApi,
+        PalavraChaveRaizApi,
+        PalavraChaveGoogleApi,
+        PalavraChaveEstatisticaApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser },
-        { provide: SocketDriver, useClass: SocketBrowser }
+
       ]
     };
   }

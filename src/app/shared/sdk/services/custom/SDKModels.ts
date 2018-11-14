@@ -25,6 +25,10 @@ import { Relacionamento_entidade } from '../../models/Relacionamento_entidade';
 import { CampanhaAnuncioResultado } from '../../models/CampanhaAnuncioResultado';
 import { CampanhaPalavraChaveResultado } from '../../models/CampanhaPalavraChaveResultado';
 import { TelaWeb } from '../../models/TelaWeb';
+import { TelaApp } from '../../models/TelaApp';
+import { PalavraChaveRaiz } from '../../models/PalavraChaveRaiz';
+import { PalavraChaveGoogle } from '../../models/PalavraChaveGoogle';
+import { PalavraChaveEstatistica } from '../../models/PalavraChaveEstatistica';
 
 export interface Models { [name: string]: any }
 
@@ -57,6 +61,10 @@ export class SDKModels {
     CampanhaAnuncioResultado: CampanhaAnuncioResultado,
     CampanhaPalavraChaveResultado: CampanhaPalavraChaveResultado,
     TelaWeb: TelaWeb,
+    TelaApp: TelaApp,
+    PalavraChaveRaiz: PalavraChaveRaiz,
+    PalavraChaveGoogle: PalavraChaveGoogle,
+    PalavraChaveEstatistica: PalavraChaveEstatistica,
     
   };
 

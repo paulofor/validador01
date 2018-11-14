@@ -1,0 +1,30 @@
+<div class="card">
+  <div class="header">
+    <h4 class="title">Tela Web</h4>
+    <button class="btn btn-primary btn-sm " (click)="openDialog(aplicacao)">Novo</button>
+  </div>
+  <div class="content table-responsive table-full-width">
+    <table class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let item of listaTelaWeb">
+          <tr>
+            <td>
+              {{item.nome}}
+            </td>
+
+            <td align="right">
+              <a routerLink="/telaWebResumo/{{item.id}}">Detalhe</a>&nbsp;&nbsp;
+              <button class="btn btn-primary btn-sm " (click)="alteraTela(item)">Alterar</button>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>

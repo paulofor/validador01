@@ -14,6 +14,9 @@ export interface CampanhaAdsInterface {
   "nome"?: string;
   "dataInicial"?: Date;
   "dataFinal"?: Date;
+  "dataPublicacao"?: Date;
+  "dataResultado"?: Date;
+  "dataFechamento"?: Date;
   "quantidadeImpressao"?: number;
   "quantidadeClique"?: number;
   "quantidadeConversao"?: number;
@@ -37,6 +40,9 @@ export class CampanhaAds implements CampanhaAdsInterface {
   "nome": string;
   "dataInicial": Date;
   "dataFinal": Date;
+  "dataPublicacao": Date;
+  "dataResultado": Date;
+  "dataFechamento": Date;
   "quantidadeImpressao": number;
   "quantidadeClique": number;
   "quantidadeConversao": number;
@@ -103,6 +109,18 @@ export class CampanhaAds implements CampanhaAdsInterface {
         },
         "dataFinal": {
           name: 'dataFinal',
+          type: 'Date'
+        },
+        "dataPublicacao": {
+          name: 'dataPublicacao',
+          type: 'Date'
+        },
+        "dataResultado": {
+          name: 'dataResultado',
+          type: 'Date'
+        },
+        "dataFechamento": {
+          name: 'dataFechamento',
           type: 'Date'
         },
         "quantidadeImpressao": {

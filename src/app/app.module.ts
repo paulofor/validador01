@@ -99,6 +99,8 @@ import { ListaAtributoPorEntidadeComponent } from './lista-atributo-por-entidade
 import { ListaRelacionamentoPorEntidadeComponent } from './lista-relacionamento-por-entidade/lista-relacionamento-por-entidade.component';
 import { EditaRelacionamentoEntidadeComponent } from './edita-relacionamento-entidade/edita-relacionamento-entidade.component';
 import { ListaItemValidacaoPorProjetoComponent } from './lista-item-validacao-por-projeto/lista-item-validacao-por-projeto.component';
+import { TelaWebPorAplicacaoComponent } from './tela-web-por-aplicacao/tela-web-por-aplicacao.component';
+import { TelaWebEditaCriaComponent } from './tela-web-edita-cria/tela-web-edita-cria.component';
 
 
 
@@ -159,6 +161,8 @@ import { ListaItemValidacaoPorProjetoComponent } from './lista-item-validacao-po
     ListaRelacionamentoPorEntidadeComponent,
     EditaRelacionamentoEntidadeComponent,
     ListaItemValidacaoPorProjetoComponent,
+    TelaWebPorAplicacaoComponent,
+    TelaWebEditaCriaComponent,
 
   ],
   entryComponents: [
@@ -173,7 +177,8 @@ import { ListaItemValidacaoPorProjetoComponent } from './lista-item-validacao-po
     PalavraChaveCriaComponent,
     CampanhaEditaCriaComponent,
     EditaAtributoEntidadeComponent,
-    EditaRelacionamentoEntidadeComponent
+    EditaRelacionamentoEntidadeComponent,
+    TelaWebEditaCriaComponent
     //ArquivosComponent
   ],
   imports: [

@@ -26,6 +26,7 @@ import { ProjetoAplicacaoComponent } from '../projeto-aplicacao/projeto-aplicaca
 import { ResumoAplicacaoComponent } from '../resumo-aplicacao/resumo-aplicacao.component';
 import { ListaCampanhaPorPaginaComponent } from '../lista-campanha-por-pagina/lista-campanha-por-pagina.component';
 import { EntidadeResumoComponent } from '../entidade-resumo/entidade-resumo.component';
+import { PalavraChaveRaizComponent } from '../palavra-chave-raiz/palavra-chave-raiz.component';
 
 
 export const routes : Routes = [
@@ -62,5 +63,6 @@ export const routes : Routes = [
 
     { path: 'entidadeResumo/:id' , component : EntidadeResumoComponent },
 
+    { path: 'palavraChaveRaiz' , component : PalavraChaveRaizComponent },
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

@@ -11,7 +11,7 @@ export interface PalavraChaveEstatisticaInterface {
   "VolumePesquisa"?: number;
   "IndiceCompeticao"?: number;
   "id"?: number;
-  "palavraChaveRaizId"?: string;
+  "palavraChaveRaizId"?: number;
   "palavraChaveGoogleId"?: string;
   palavraChaveRaiz?: PalavraChaveRaiz;
   palavraChaveGoogle?: PalavraChaveGoogle;
@@ -23,7 +23,7 @@ export class PalavraChaveEstatistica implements PalavraChaveEstatisticaInterface
   "VolumePesquisa": number;
   "IndiceCompeticao": number;
   "id": number;
-  "palavraChaveRaizId": string;
+  "palavraChaveRaizId": number;
   "palavraChaveGoogleId": string;
   palavraChaveRaiz: PalavraChaveRaiz;
   palavraChaveGoogle: PalavraChaveGoogle;
@@ -82,7 +82,7 @@ export class PalavraChaveEstatistica implements PalavraChaveEstatisticaInterface
         },
         "palavraChaveRaizId": {
           name: 'palavraChaveRaizId',
-          type: 'string'
+          type: 'number'
         },
         "palavraChaveGoogleId": {
           name: 'palavraChaveGoogleId',
@@ -96,7 +96,7 @@ export class PalavraChaveEstatistica implements PalavraChaveEstatisticaInterface
           model: 'PalavraChaveRaiz',
           relationType: 'belongsTo',
                   keyFrom: 'palavraChaveRaizId',
-          keyTo: 'palavra'
+          keyTo: 'id'
         },
         palavraChaveGoogle: {
           name: 'palavraChaveGoogle',

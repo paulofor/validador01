@@ -3,10 +3,16 @@
 declare var Object: any;
 export interface PalavraChaveRaizInterface {
   "palavra": string;
+  "dataUltimaAtualizacao"?: Date;
+  "ativo"?: boolean;
+  "id"?: number;
 }
 
 export class PalavraChaveRaiz implements PalavraChaveRaizInterface {
   "palavra": string;
+  "dataUltimaAtualizacao": Date;
+  "ativo": boolean;
+  "id": number;
   constructor(data?: PalavraChaveRaizInterface) {
     Object.assign(this, data);
   }
@@ -38,11 +44,23 @@ export class PalavraChaveRaiz implements PalavraChaveRaizInterface {
       name: 'PalavraChaveRaiz',
       plural: 'PalavraChaveRaizs',
       path: 'PalavraChaveRaizs',
-      idName: 'palavra',
+      idName: 'id',
       properties: {
         "palavra": {
           name: 'palavra',
           type: 'string'
+        },
+        "dataUltimaAtualizacao": {
+          name: 'dataUltimaAtualizacao',
+          type: 'Date'
+        },
+        "ativo": {
+          name: 'ativo',
+          type: 'boolean'
+        },
+        "id": {
+          name: 'id',
+          type: 'number'
         },
       },
       relations: {

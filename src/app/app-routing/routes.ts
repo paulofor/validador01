@@ -27,6 +27,9 @@ import { ResumoAplicacaoComponent } from '../resumo-aplicacao/resumo-aplicacao.c
 import { ListaCampanhaPorPaginaComponent } from '../lista-campanha-por-pagina/lista-campanha-por-pagina.component';
 import { EntidadeResumoComponent } from '../entidade-resumo/entidade-resumo.component';
 import { PalavraChaveRaizComponent } from '../palavra-chave-raiz/palavra-chave-raiz.component';
+import { MelhoresPalavrasTelaComponent } from '../melhores-palavras-tela/melhores-palavras-tela.component';
+import { PalavraChaveRaizDetalheComponent } from '../palavra-chave-raiz-detalhe/palavra-chave-raiz-detalhe.component';
+import { MelhoresPalavrasListaGeralComponent } from '../melhores-palavras-lista-geral/melhores-palavras-lista-geral.component';
 
 
 export const routes : Routes = [
@@ -64,5 +67,7 @@ export const routes : Routes = [
     { path: 'entidadeResumo/:id' , component : EntidadeResumoComponent },
 
     { path: 'palavraChaveRaiz' , component : PalavraChaveRaizComponent },
+    { path: 'palavraChaveRaiz/:id' , component : PalavraChaveRaizDetalheComponent },
+    { path: 'palavraMelhores' , component: MelhoresPalavrasListaGeralComponent },
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

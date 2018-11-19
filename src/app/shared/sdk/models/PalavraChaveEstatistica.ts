@@ -6,10 +6,11 @@ import {
 
 declare var Object: any;
 export interface PalavraChaveEstatisticaInterface {
-  "DataConsulta"?: Date;
-  "MediaCpc"?: number;
-  "VolumePesquisa"?: number;
-  "IndiceCompeticao"?: number;
+  "dataConsulta"?: Date;
+  "mediaCpc"?: number;
+  "volumePesquisa"?: number;
+  "indiceCompeticao"?: number;
+  "maisRecente"?: number;
   "id"?: number;
   "palavraChaveRaizId"?: number;
   "palavraChaveGoogleId"?: string;
@@ -18,10 +19,11 @@ export interface PalavraChaveEstatisticaInterface {
 }
 
 export class PalavraChaveEstatistica implements PalavraChaveEstatisticaInterface {
-  "DataConsulta": Date;
-  "MediaCpc": number;
-  "VolumePesquisa": number;
-  "IndiceCompeticao": number;
+  "dataConsulta": Date;
+  "mediaCpc": number;
+  "volumePesquisa": number;
+  "indiceCompeticao": number;
+  "maisRecente": number;
   "id": number;
   "palavraChaveRaizId": number;
   "palavraChaveGoogleId": string;
@@ -60,20 +62,24 @@ export class PalavraChaveEstatistica implements PalavraChaveEstatisticaInterface
       path: 'PalavraChaveEstatisticas',
       idName: 'id',
       properties: {
-        "DataConsulta": {
-          name: 'DataConsulta',
+        "dataConsulta": {
+          name: 'dataConsulta',
           type: 'Date'
         },
-        "MediaCpc": {
-          name: 'MediaCpc',
+        "mediaCpc": {
+          name: 'mediaCpc',
           type: 'number'
         },
-        "VolumePesquisa": {
-          name: 'VolumePesquisa',
+        "volumePesquisa": {
+          name: 'volumePesquisa',
           type: 'number'
         },
-        "IndiceCompeticao": {
-          name: 'IndiceCompeticao',
+        "indiceCompeticao": {
+          name: 'indiceCompeticao',
+          type: 'number'
+        },
+        "maisRecente": {
+          name: 'maisRecente',
           type: 'number'
         },
         "id": {

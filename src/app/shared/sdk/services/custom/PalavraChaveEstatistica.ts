@@ -154,7 +154,7 @@ export class PalavraChaveEstatisticaApi extends BaseLoopBackApi {
   }
 
   /**
-   * Insere uma lista de itens coletados
+   * Insere uma lista de itens coletados pelo Java. Insere PalavraChaveGoogle se necessario, atualiza mais recente, insere PalavraChaveEstatistica
    *
    * @param {object} data Request data.
    *
@@ -167,7 +167,7 @@ export class PalavraChaveEstatisticaApi extends BaseLoopBackApi {
    * This method returns no data.
    */
   public InsereLista(listaResultados: any, customHeaders?: Function): Observable<any> {
-    let _method: string = "PUT";
+    let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/PalavraChaveEstatisticas/insereLista";
     let _routeParams: any = {};
@@ -183,7 +183,7 @@ export class PalavraChaveEstatisticaApi extends BaseLoopBackApi {
    *
    * @param {object} data Request data.
    *
-   *  - `listaResultados` – `{any}` - 
+   *  - `listaResultados` – `{any}` - Fake do InsereLista. Apenas mostra o console o total de itens recebidos.
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -199,6 +199,61 @@ export class PalavraChaveEstatisticaApi extends BaseLoopBackApi {
     let _postBody: any = {};
     let _urlParams: any = {};
     if (typeof listaResultados !== 'undefined' && listaResultados !== null) _urlParams.listaResultados = listaResultados;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Lista os maisRecentes melhores, ordenados por indiceCompeticao. Considera volume maior que o informado e custo menor
+   *
+   * @param {number} limiteVolume valor minimo de volume mensal
+   *
+   * @param {number} limiteCpc valor maximo de cpc
+   *
+   * @param {number} idPalavraRaiz identificado da palavra raiz
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * Lista com os melhores
+   */
+  public ListaMelhores(limiteVolume: any, limiteCpc: any, idPalavraRaiz: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/PalavraChaveEstatisticas/listaMelhores";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof limiteVolume !== 'undefined' && limiteVolume !== null) _urlParams.limiteVolume = limiteVolume;
+    if (typeof limiteCpc !== 'undefined' && limiteCpc !== null) _urlParams.limiteCpc = limiteCpc;
+    if (typeof idPalavraRaiz !== 'undefined' && idPalavraRaiz !== null) _urlParams.idPalavraRaiz = idPalavraRaiz;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Lista de melhores casos com valores limites definidos no servidor. (Cpc: 0.9 , Volume: 5000)
+   *
+   * @param {number} idPalavraChaveRaiz 
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `PalavraChaveEstatistica` object.)
+   * </em>
+   */
+  public ListaMelhoresPadrao(idPalavraChaveRaiz: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/PalavraChaveEstatisticas/listaMelhoresPadrao";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof idPalavraChaveRaiz !== 'undefined' && idPalavraChaveRaiz !== null) _urlParams.idPalavraChaveRaiz = idPalavraChaveRaiz;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }

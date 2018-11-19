@@ -1,18 +1,23 @@
 /* tslint:disable */
+import {
+  PalavraChaveEstatistica
+} from '../index';
 
 declare var Object: any;
 export interface PalavraChaveRaizInterface {
   "palavra": string;
   "dataUltimaAtualizacao"?: Date;
-  "ativo"?: boolean;
+  "ativo"?: number;
   "id"?: number;
+  palavraChaveEstatisticas?: PalavraChaveEstatistica[];
 }
 
 export class PalavraChaveRaiz implements PalavraChaveRaizInterface {
   "palavra": string;
   "dataUltimaAtualizacao": Date;
-  "ativo": boolean;
+  "ativo": number;
   "id": number;
+  palavraChaveEstatisticas: PalavraChaveEstatistica[];
   constructor(data?: PalavraChaveRaizInterface) {
     Object.assign(this, data);
   }
@@ -56,7 +61,7 @@ export class PalavraChaveRaiz implements PalavraChaveRaizInterface {
         },
         "ativo": {
           name: 'ativo',
-          type: 'boolean'
+          type: 'number'
         },
         "id": {
           name: 'id',
@@ -64,6 +69,14 @@ export class PalavraChaveRaiz implements PalavraChaveRaizInterface {
         },
       },
       relations: {
+        palavraChaveEstatisticas: {
+          name: 'palavraChaveEstatisticas',
+          type: 'PalavraChaveEstatistica[]',
+          model: 'PalavraChaveEstatistica',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'palavraChaveRaizId'
+        },
       }
     }
   }

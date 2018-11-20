@@ -11,14 +11,19 @@
             <table class="table table-hover table-striped">
               <thead>
                 <tr>
-                  <th>Palavra</th>
+                  <th width="50%">Palavra</th>
+                  <th widht="25%">Ultima Atualização</th>
                   <th></th>
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let item of lista">
                   <td>{{item.palavra}}</td>
-                  <td><a routerLink="/palavraChaveRaiz/{{item.id}}">Melhores</a></td>
+                  <td>{{item.dataUltimaAtualizacao | date: 'dd/MM/yyyy'}}</td>
+                  <td align="right">
+                    <a routerLink="/palavraChaveRaiz/{{item.id}}">Melhores</a>&nbsp;&nbsp;&nbsp;
+                    <a routerLink="/palavraChaveRaizCompleta/{{item.id}}">Geral</a>
+                  </td>
                 </tr>
               </tbody>
             </table>

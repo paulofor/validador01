@@ -30,6 +30,7 @@ import { PalavraChaveRaizComponent } from '../palavra-chave-raiz/palavra-chave-r
 import { MelhoresPalavrasTelaComponent } from '../melhores-palavras-tela/melhores-palavras-tela.component';
 import { PalavraChaveRaizDetalheComponent } from '../palavra-chave-raiz-detalhe/palavra-chave-raiz-detalhe.component';
 import { MelhoresPalavrasListaGeralComponent } from '../melhores-palavras-lista-geral/melhores-palavras-lista-geral.component';
+import { PalavraChaveRaizDetalheCompletaComponent } from '../palavra-chave-raiz-detalhe-completa/palavra-chave-raiz-detalhe-completa.component';
 
 
 export const routes : Routes = [
@@ -68,6 +69,7 @@ export const routes : Routes = [
 
     { path: 'palavraChaveRaiz' , component : PalavraChaveRaizComponent },
     { path: 'palavraChaveRaiz/:id' , component : PalavraChaveRaizDetalheComponent },
+    { path: 'palavraChaveRaizCompleta/:id' , component : PalavraChaveRaizDetalheCompletaComponent },
     { path: 'palavraMelhores' , component: MelhoresPalavrasListaGeralComponent },
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

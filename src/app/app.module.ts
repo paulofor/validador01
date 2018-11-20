@@ -108,6 +108,7 @@ import { MelhoresPalavrasGeralComponent } from './melhores-palavras-geral/melhor
 import { MelhoresPalavrasListaGeralComponent } from './melhores-palavras-lista-geral/melhores-palavras-lista-geral.component';
 import { MelhoresPalavrasListaPorRaizComponent } from './melhores-palavras-lista-por-raiz/melhores-palavras-lista-por-raiz.component';
 import { PalavraChaveRaizDetalheComponent } from './palavra-chave-raiz-detalhe/palavra-chave-raiz-detalhe.component';
+import { PalavraChaveRaizDetalheCompletaComponent } from './palavra-chave-raiz-detalhe-completa/palavra-chave-raiz-detalhe-completa.component';
 
 
 
@@ -177,6 +178,7 @@ import { PalavraChaveRaizDetalheComponent } from './palavra-chave-raiz-detalhe/p
     MelhoresPalavrasListaGeralComponent,
     MelhoresPalavrasListaPorRaizComponent,
     PalavraChaveRaizDetalheComponent,
+    PalavraChaveRaizDetalheCompletaComponent,
 
   ],
   entryComponents: [

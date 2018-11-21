@@ -20,7 +20,7 @@ export class MelhoresPalavrasListaGeralComponent implements OnInit {
 
   atualizaLista() {
     console.log('Vai chamar melhores');
-    this.srv.ListaMelhoresPadrao(2)
+    this.srv.ListaMelhoresPadrao()
       .subscribe((result: PalavraChaveEstatistica[]) => {
         console.log('Tamanho lista' , result.length);
         this.lista = result;

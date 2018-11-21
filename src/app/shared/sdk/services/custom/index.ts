@@ -28,5 +28,6 @@ export * from './TelaApp';
 export * from './PalavraChaveRaiz';
 export * from './PalavraChaveGoogle';
 export * from './PalavraChaveEstatistica';
+export * from './PalavraGoogleProjeto';
 export * from './SDKModels';
 export * from './logger.service';

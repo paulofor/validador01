@@ -29,6 +29,7 @@ import { TelaApp } from '../../models/TelaApp';
 import { PalavraChaveRaiz } from '../../models/PalavraChaveRaiz';
 import { PalavraChaveGoogle } from '../../models/PalavraChaveGoogle';
 import { PalavraChaveEstatistica } from '../../models/PalavraChaveEstatistica';
+import { PalavraGoogleProjeto } from '../../models/PalavraGoogleProjeto';
 
 export interface Models { [name: string]: any }
 
@@ -65,6 +66,7 @@ export class SDKModels {
     PalavraChaveRaiz: PalavraChaveRaiz,
     PalavraChaveGoogle: PalavraChaveGoogle,
     PalavraChaveEstatistica: PalavraChaveEstatistica,
+    PalavraGoogleProjeto: PalavraGoogleProjeto,
     
   };
 

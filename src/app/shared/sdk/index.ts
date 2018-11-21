@@ -45,6 +45,7 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CookieBrowser } from './storage/cookie.browser';
 import { StorageBrowser } from './storage/storage.browser';
 import { SocketBrowser } from './sockets/socket.browser';
+
 import { SocketConnection } from './sockets/socket.connections';
 import { RealTime } from './services/core/real.time';
 import { UserApi } from './services/custom/User';
@@ -76,6 +77,7 @@ import { TelaAppApi } from './services/custom/TelaApp';
 import { PalavraChaveRaizApi } from './services/custom/PalavraChaveRaiz';
 import { PalavraChaveGoogleApi } from './services/custom/PalavraChaveGoogle';
 import { PalavraChaveEstatisticaApi } from './services/custom/PalavraChaveEstatistica';
+import { PalavraGoogleProjetoApi } from './services/custom/PalavraGoogleProjeto';
 /**
 * @module SDKBrowserModule
 * @description
@@ -135,6 +137,7 @@ export class SDKBrowserModule {
         PalavraChaveRaizApi,
         PalavraChaveGoogleApi,
         PalavraChaveEstatisticaApi,
+        PalavraGoogleProjetoApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser },
       ]

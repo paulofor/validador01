@@ -3,7 +3,8 @@ import {
   ProjetoCanvasMySql,
   MvpCanvasMySql,
   GanhoDorCanvasMySql,
-  PaginaValidacaoWeb
+  PaginaValidacaoWeb,
+  EtapaProjeto
 } from '../index';
 
 declare var Object: any;
@@ -13,10 +14,12 @@ export interface ProjetoMySqlInterface {
   "valor"?: string;
   "mercado"?: string;
   "dor"?: string;
+  "etapaProjetoId"?: number;
   projetoCanvasMySqls?: ProjetoCanvasMySql[];
   mvpCanvasMySqls?: MvpCanvasMySql[];
   ganhoDorCanvasMySqls?: GanhoDorCanvasMySql[];
   paginaValidacaoWebs?: PaginaValidacaoWeb[];
+  etapaProjeto?: EtapaProjeto;
 }
 
 export class ProjetoMySql implements ProjetoMySqlInterface {
@@ -25,10 +28,12 @@ export class ProjetoMySql implements ProjetoMySqlInterface {
   "valor": string;
   "mercado": string;
   "dor": string;
+  "etapaProjetoId": number;
   projetoCanvasMySqls: ProjetoCanvasMySql[];
   mvpCanvasMySqls: MvpCanvasMySql[];
   ganhoDorCanvasMySqls: GanhoDorCanvasMySql[];
   paginaValidacaoWebs: PaginaValidacaoWeb[];
+  etapaProjeto: EtapaProjeto;
   constructor(data?: ProjetoMySqlInterface) {
     Object.assign(this, data);
   }
@@ -82,6 +87,10 @@ export class ProjetoMySql implements ProjetoMySqlInterface {
           name: 'dor',
           type: 'string'
         },
+        "etapaProjetoId": {
+          name: 'etapaProjetoId',
+          type: 'number'
+        },
       },
       relations: {
         projetoCanvasMySqls: {
@@ -115,6 +124,14 @@ export class ProjetoMySql implements ProjetoMySqlInterface {
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'projetoMySqlId'
+        },
+        etapaProjeto: {
+          name: 'etapaProjeto',
+          type: 'EtapaProjeto',
+          model: 'EtapaProjeto',
+          relationType: 'belongsTo',
+                  keyFrom: 'etapaProjetoId',
+          keyTo: 'id'
         },
       }
     }

@@ -29,5 +29,7 @@ export * from './PalavraChaveRaiz';
 export * from './PalavraChaveGoogle';
 export * from './PalavraChaveEstatistica';
 export * from './PalavraGoogleProjeto';
+export * from './EtapaProjeto';
+export * from './MudancaEtapa';
 export * from './BaseModels';
 export * from './FireLoopRef';

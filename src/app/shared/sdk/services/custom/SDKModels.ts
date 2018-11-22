@@ -30,6 +30,8 @@ import { PalavraChaveRaiz } from '../../models/PalavraChaveRaiz';
 import { PalavraChaveGoogle } from '../../models/PalavraChaveGoogle';
 import { PalavraChaveEstatistica } from '../../models/PalavraChaveEstatistica';
 import { PalavraGoogleProjeto } from '../../models/PalavraGoogleProjeto';
+import { EtapaProjeto } from '../../models/EtapaProjeto';
+import { MudancaEtapa } from '../../models/MudancaEtapa';
 
 export interface Models { [name: string]: any }
 
@@ -67,6 +69,8 @@ export class SDKModels {
     PalavraChaveGoogle: PalavraChaveGoogle,
     PalavraChaveEstatistica: PalavraChaveEstatistica,
     PalavraGoogleProjeto: PalavraGoogleProjeto,
+    EtapaProjeto: EtapaProjeto,
+    MudancaEtapa: MudancaEtapa,
     
   };
 

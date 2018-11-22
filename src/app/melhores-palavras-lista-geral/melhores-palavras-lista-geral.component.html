@@ -4,16 +4,17 @@
       <div class="col-md-12">
         <div *ngIf="lista" class="card">
           <div class="header">
-            <h4 class="title">Melhores Palavras Chave</h4>
+            <h4 class="title">Melhores Palavras Chave Total - {{lista.length}} itens</h4>
           </div>
           <div class="content table-responsive table-full-width">
             <table class="table table-hover table-striped">
               <thead>
                 <tr>
-                  <th width="55%">Palavra</th>
+                  <th width="35%">Palavra</th>
                   <th width="15%">Cpc</th>
                   <th width="15%">Volume Mensal</th>
                   <th width="15%">Índice</th>
+                  <th width="20%">Raiz</th>
                 </tr>
               </thead>
               <tbody>
@@ -22,6 +23,10 @@
                   <td>{{item.mediaCpc}}</td>
                   <td>{{item.volumePesquisa}}</td>
                   <td>{{item.indiceCompeticao}}</td>
+                  <td>
+                    <a routerLink="/palavraChaveRaizCompleta/{{item.palavraChaveRaiz.id}}">
+                    {{item.palavraChaveRaiz.palavra}}</a>
+                  </td>
                 </tr>
               </tbody>
             </table>

@@ -4,7 +4,11 @@
       <div class="col-md-12">
         <div class="card">
           <div class="header">
-            <h4 class="title">Palavra Chave: {{raiz.palavra}} </h4>
+            <h4 class="title">Palavra Chave: {{raiz.palavra}} - Lista Melhores: {{raiz.palavraChaveEstatisticas.length}} itens </h4>
+            <p>
+                <span><a routerLink="/palavraChaveRaizCompleta/{{raiz.id}}">[Geral]</a></span>&nbsp;&nbsp;&nbsp;
+                <span><a routerLink="/palavraChaveRaiz">[Raiz]</a></span>
+              </p>
           </div>
           <div class="content table-responsive table-full-width">
             <table class="table table-hover table-striped">

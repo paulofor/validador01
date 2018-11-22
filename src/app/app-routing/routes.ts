@@ -27,7 +27,6 @@ import { ResumoAplicacaoComponent } from '../resumo-aplicacao/resumo-aplicacao.c
 import { ListaCampanhaPorPaginaComponent } from '../lista-campanha-por-pagina/lista-campanha-por-pagina.component';
 import { EntidadeResumoComponent } from '../entidade-resumo/entidade-resumo.component';
 import { PalavraChaveRaizComponent } from '../palavra-chave-raiz/palavra-chave-raiz.component';
-import { MelhoresPalavrasTelaComponent } from '../melhores-palavras-tela/melhores-palavras-tela.component';
 import { PalavraChaveRaizDetalheComponent } from '../palavra-chave-raiz-detalhe/palavra-chave-raiz-detalhe.component';
 import { MelhoresPalavrasListaGeralComponent } from '../melhores-palavras-lista-geral/melhores-palavras-lista-geral.component';
 import { PalavraChaveRaizDetalheCompletaComponent } from '../palavra-chave-raiz-detalhe-completa/palavra-chave-raiz-detalhe-completa.component';

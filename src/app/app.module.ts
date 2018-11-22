@@ -103,10 +103,8 @@ import { TelaWebPorAplicacaoComponent } from './tela-web-por-aplicacao/tela-web-
 import { TelaWebEditaCriaComponent } from './tela-web-edita-cria/tela-web-edita-cria.component';
 import { PalavraChaveRaizComponent } from './palavra-chave-raiz/palavra-chave-raiz.component';
 import { PalavraChaveRaizCriaEditaComponent } from './palavra-chave-raiz-cria-edita/palavra-chave-raiz-cria-edita.component';
-import { MelhoresPalavrasTelaComponent } from './melhores-palavras-tela/melhores-palavras-tela.component';
 import { MelhoresPalavrasGeralComponent } from './melhores-palavras-geral/melhores-palavras-geral.component';
 import { MelhoresPalavrasListaGeralComponent } from './melhores-palavras-lista-geral/melhores-palavras-lista-geral.component';
-import { MelhoresPalavrasListaPorRaizComponent } from './melhores-palavras-lista-por-raiz/melhores-palavras-lista-por-raiz.component';
 import { PalavraChaveRaizDetalheComponent } from './palavra-chave-raiz-detalhe/palavra-chave-raiz-detalhe.component';
 import { PalavraChaveRaizDetalheCompletaComponent } from './palavra-chave-raiz-detalhe-completa/palavra-chave-raiz-detalhe-completa.component';
 
@@ -173,10 +171,8 @@ import { PalavraChaveRaizDetalheCompletaComponent } from './palavra-chave-raiz-d
     TelaWebEditaCriaComponent,
     PalavraChaveRaizComponent,
     PalavraChaveRaizCriaEditaComponent,
-    MelhoresPalavrasTelaComponent,
     MelhoresPalavrasGeralComponent,
     MelhoresPalavrasListaGeralComponent,
-    MelhoresPalavrasListaPorRaizComponent,
     PalavraChaveRaizDetalheComponent,
     PalavraChaveRaizDetalheCompletaComponent,
 

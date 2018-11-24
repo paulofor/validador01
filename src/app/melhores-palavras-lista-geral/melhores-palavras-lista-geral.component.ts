@@ -29,7 +29,9 @@ export class MelhoresPalavrasListaGeralComponent implements OnInit {
       );
   }
 
-
+  selecionouPalavra(itemSelecionado:PalavraChaveEstatistica) {
+    console.log('Selecionou:' , itemSelecionado)
+  }
 
 
 

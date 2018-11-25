@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PalavraChaveEstatistica, PalavraChaveEstatisticaApi } from '../shared/sdk';
+import { MatDialog } from '@angular/material';
+import { AlocacaoPalavraChaveComponent } from '../alocacao-palavra-chave/alocacao-palavra-chave.component';
 
 @Component({
   selector: 'app-melhores-palavras-lista-geral',
@@ -11,7 +13,7 @@ export class MelhoresPalavrasListaGeralComponent implements OnInit {
   lista: PalavraChaveEstatistica[];
   errMess: string;
 
-  constructor(private srv: PalavraChaveEstatisticaApi) {
+  constructor(private srv: PalavraChaveEstatisticaApi, private dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -29,10 +31,19 @@ export class MelhoresPalavrasListaGeralComponent implements OnInit {
       );
   }
 
-  selecionouPalavra(itemSelecionado:PalavraChaveEstatistica) {
-    console.log('Selecionou:' , itemSelecionado)
-  }
+ 
 
+  selecionouPalavra(itemSelecionado:PalavraChaveEstatistica) {
+    this.dialog.afterAllClosed.subscribe(result => {
+      this.atualizaLista();
+    });
+    this.dialog.open(AlocacaoPalavraChaveComponent, {
+      width: '800px',
+      data: {
+        palavraEstatistica: itemSelecionado
+      }
+    });
+  }
 
 
 

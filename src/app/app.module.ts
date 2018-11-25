@@ -43,7 +43,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatTableModule} from '@angular/material/table';
 
-import { MatFormFieldModule, MatInputModule, MatButtonModule } from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatButtonModule, MatAutocompleteModule } from '@angular/material';
 import { ProjetoCanvasEditaComponent } from './projeto-canvas-edita/projeto-canvas-edita.component';
 import { CanvasMvpComponent } from './canvas-mvp/canvas-mvp.component';
 import { MvpCanvasCriaComponent } from './mvp-canvas-cria/mvp-canvas-cria.component';
@@ -103,7 +103,6 @@ import { TelaWebPorAplicacaoComponent } from './tela-web-por-aplicacao/tela-web-
 import { TelaWebEditaCriaComponent } from './tela-web-edita-cria/tela-web-edita-cria.component';
 import { PalavraChaveRaizComponent } from './palavra-chave-raiz/palavra-chave-raiz.component';
 import { PalavraChaveRaizCriaEditaComponent } from './palavra-chave-raiz-cria-edita/palavra-chave-raiz-cria-edita.component';
-import { MelhoresPalavrasGeralComponent } from './melhores-palavras-geral/melhores-palavras-geral.component';
 import { MelhoresPalavrasListaGeralComponent } from './melhores-palavras-lista-geral/melhores-palavras-lista-geral.component';
 import { PalavraChaveRaizDetalheComponent } from './palavra-chave-raiz-detalhe/palavra-chave-raiz-detalhe.component';
 import { PalavraChaveRaizDetalheCompletaComponent } from './palavra-chave-raiz-detalhe-completa/palavra-chave-raiz-detalhe-completa.component';
@@ -172,7 +171,6 @@ import { AlocacaoPalavraChaveComponent } from './alocacao-palavra-chave/alocacao
     TelaWebEditaCriaComponent,
     PalavraChaveRaizComponent,
     PalavraChaveRaizCriaEditaComponent,
-    MelhoresPalavrasGeralComponent,
     MelhoresPalavrasListaGeralComponent,
     PalavraChaveRaizDetalheComponent,
     PalavraChaveRaizDetalheCompletaComponent,
@@ -193,7 +191,8 @@ import { AlocacaoPalavraChaveComponent } from './alocacao-palavra-chave/alocacao
     EditaAtributoEntidadeComponent,
     EditaRelacionamentoEntidadeComponent,
     TelaWebEditaCriaComponent,
-    PalavraChaveRaizCriaEditaComponent
+    PalavraChaveRaizCriaEditaComponent,
+    AlocacaoPalavraChaveComponent
     //ArquivosComponent
   ],
   imports: [
@@ -219,7 +218,8 @@ import { AlocacaoPalavraChaveComponent } from './alocacao-palavra-chave/alocacao
     MatIconModule,
     MatSelectModule,
     MatSlideToggleModule,
-    MatTableModule
+    MatTableModule,
+    MatAutocompleteModule
   ],
   providers: [
     HttpClient, 

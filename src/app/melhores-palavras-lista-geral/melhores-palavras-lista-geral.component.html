@@ -19,7 +19,7 @@
               </thead>
               <tbody>
                 <tr *ngFor="let item of lista">
-                  <td><span (click)="selecionouPalavra(item)">{{item.palavraChaveGoogleId}}</span></td>
+                  <td><span style="cursor: pointer" (click)="selecionouPalavra(item)">{{item.palavraChaveGoogleId}}</span></td>
                   <td>{{item.mediaCpc}}</td>
                   <td>{{item.volumePesquisa}}</td>
                   <td>{{item.indiceCompeticao}}</td>

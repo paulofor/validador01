@@ -1,3 +1,27 @@
-<p>
-  alocacao-palavra-chave works!
-</p>
+<h2 *ngIf="this.data" mat-dialog-title>Atributo - {{this.data.palavraEstatistica.palavraChaveGoogleId}}</h2>
+
+<form class="example-full-width" (ngSubmit)="onSubmit()">
+
+  <mat-dialog-content>
+
+    <mat-form-field class="example-full-width">
+
+      <input matInput maxlength="30" #nome [(ngModel)]="projeto.nome" name="nome" placeholder="Projeto" [matAutocomplete]="auto" />
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-autocomplete>
+
+
+    </mat-form-field>
+
+
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button mat-raised-button>Salvar</button>
+    <button mat-raised-button mat-dialog-close>Fechar</button>
+  </mat-dialog-actions>
+
+</form>

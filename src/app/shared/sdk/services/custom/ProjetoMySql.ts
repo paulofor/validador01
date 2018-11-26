@@ -811,6 +811,58 @@ export class ProjetoMySqlApi extends BaseLoopBackApi {
   }
 
   /**
+   * Pesquisa por trecho no nome do projeto
+   *
+   * @param {string} trecho 
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ProjetoMySql` object.)
+   * </em>
+   */
+  public PesquisaPorTrecho(trecho: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProjetoMySqls/pesquisaPorTrecho";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof trecho !== 'undefined' && trecho !== null) _urlParams.trecho = trecho;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Pesquisa retornando apenas strings
+   *
+   * @param {string} trecho 
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ProjetoMySql` object.)
+   * </em>
+   */
+  public PesquisaPorTrechoStr(trecho: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProjetoMySqls/pesquisaPorTrechoStr";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof trecho !== 'undefined' && trecho !== null) _urlParams.trecho = trecho;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Fetches belongsTo relation projeto.
    *
    * @param {any} id ProjetoMySql id

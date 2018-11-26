@@ -3,6 +3,7 @@ import { PalavraChaveEstatistica, PalavraChaveEstatisticaApi } from '../shared/s
 import { MatDialog } from '@angular/material';
 import { AlocacaoPalavraChaveComponent } from '../alocacao-palavra-chave/alocacao-palavra-chave.component';
 
+
 @Component({
   selector: 'app-melhores-palavras-lista-geral',
   templateUrl: './melhores-palavras-lista-geral.component.html',
@@ -13,7 +14,7 @@ export class MelhoresPalavrasListaGeralComponent implements OnInit {
   lista: PalavraChaveEstatistica[];
   errMess: string;
 
-  constructor(private srv: PalavraChaveEstatisticaApi, private dialog: MatDialog) {
+  constructor(private srv: PalavraChaveEstatisticaApi,  private dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -31,8 +32,6 @@ export class MelhoresPalavrasListaGeralComponent implements OnInit {
       );
   }
 
- 
-
   selecionouPalavra(itemSelecionado:PalavraChaveEstatistica) {
     this.dialog.afterAllClosed.subscribe(result => {
       this.atualizaLista();
@@ -40,10 +39,13 @@ export class MelhoresPalavrasListaGeralComponent implements OnInit {
     this.dialog.open(AlocacaoPalavraChaveComponent, {
       width: '800px',
       data: {
-        palavraEstatistica: itemSelecionado
+        itemSelecionado: itemSelecionado
       }
     });
   }
+
+ 
+
 
 
 

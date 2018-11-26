@@ -15,7 +15,7 @@ export class AlocacaoPalavraChaveComponent implements OnInit {
   myControl = new FormControl();
   options: string[] = ['Aplicativos', 'Teste 0001', 'Teste 002', 'novo teste'];
   filteredOptions: Observable<string[]>;
-
+  palavra : string;
 
   projeto : ProjetoMySql;
 
@@ -24,6 +24,8 @@ export class AlocacaoPalavraChaveComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log('Data: ', JSON.stringify(this.data));
+    console.log('Palavra:' , this.data.itemSelecionado.palavraChaveGoogleId);
     this.projeto = new ProjetoMySql();
     this.filteredOptions = this.myControl.valueChanges
       .pipe(

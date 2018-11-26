@@ -1,8 +1,8 @@
-<div class="main-content">
+<div *ngIf="lista" class="main-content">
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
-        <div *ngIf="lista" class="card">
+        <div  class="card">
           <div class="header">
             <h4 class="title">Melhores Palavras Chave Total - {{lista.length}} itens</h4>
           </div>

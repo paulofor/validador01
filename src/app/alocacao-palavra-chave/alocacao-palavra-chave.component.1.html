@@ -1,16 +1,22 @@
 <h2 *ngIf="data" mat-dialog-title>Atributo - {{palavra}}</h2>
 
-<form class="example-form">
+<form class="example-full-width" (ngSubmit)="onSubmit()">
 
   <mat-dialog-content>
-    <mat-form-field class="example-full-width" (ngSubmit)="onSubmit()">
-      <input type="text" placeholder="Projeto"  #nome [(ngModel)]="projeto.nome" name="nome" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+
+    <mat-form-field class="example-full-width">
+
+      <input [formControl]="myControl" placeholder="Projeto" [matAutocomplete]="auto" matInput type="text" aria-label="Number" />
       <mat-autocomplete #auto="matAutocomplete">
         <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
           {{option}}
         </mat-option>
       </mat-autocomplete>
+
+
     </mat-form-field>
+
+
   </mat-dialog-content>
 
   <mat-dialog-actions>

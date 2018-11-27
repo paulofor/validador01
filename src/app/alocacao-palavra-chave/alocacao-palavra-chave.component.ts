@@ -13,11 +13,11 @@ import { ProjetoMySql, ProjetoMySqlApi } from '../shared/sdk';
 export class AlocacaoPalavraChaveComponent implements OnInit {
 
   myControl = new FormControl();
-  options: string[] = ['Aplicativos', 'Teste 0001', 'Teste 002', 'novo teste'];
+  //options: string[] = ['Aplicativos', 'Teste 0001', 'Teste 002', 'novo teste'];
   filteredOptions: Observable<string[]>;
-  palavra : string;
+  palavra: string;
 
-  projeto : ProjetoMySql;
+  projeto: ProjetoMySql;
 
   constructor(public dialogRef: MatDialogRef<AlocacaoPalavraChaveComponent>
     , @Inject(MAT_DIALOG_DATA) public data: any, private servico: ProjetoMySqlApi) {
@@ -44,14 +44,19 @@ export class AlocacaoPalavraChaveComponent implements OnInit {
   }
   */
 
- ngOnInit() {
-  this.filteredOptions = this.myControl.valueChanges
-  .pipe(
-    startWith(''),
-    switchMap(value => this.servico.PesquisaPorTrechoStr(value))
-  );
-}
+  ngOnInit() {
+    this.palavra = this.data.itemSelecionado.palavraChaveGoogleId;
+    this.projeto = new ProjetoMySql();
+    this.filteredOptions = this.myControl.valueChanges
+       .pipe(
+       startWith(' '),
+       switchMap(value => this.servico.PesquisaPorTrechoStr(value))
+       );
+  }
 
-
+  onSubmit() {
+    console.log('Projeto: ' + JSON.stringify(this.projeto));
+    
+  }
 
 }

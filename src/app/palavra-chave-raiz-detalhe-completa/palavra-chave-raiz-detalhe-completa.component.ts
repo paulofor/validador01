@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { PalavraChaveRaiz, PalavraChaveRaizApi } from '../shared/sdk';
+import { PalavraChaveRaiz, PalavraChaveRaizApi, PalavraChaveEstatistica } from '../shared/sdk';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
+import { AlocacaoPalavraChaveComponent } from '../alocacao-palavra-chave/alocacao-palavra-chave.component';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-palavra-chave-raiz-detalhe-completa',
@@ -19,7 +21,7 @@ export class PalavraChaveRaizDetalheCompletaComponent implements OnInit {
      }
   }
 
-  constructor(private route: ActivatedRoute, private servico: PalavraChaveRaizApi) { }
+  constructor(private route: ActivatedRoute, private servico: PalavraChaveRaizApi,  private dialog: MatDialog) { }
 
   ngOnInit() {
     this.carregaRaiz();
@@ -37,6 +39,17 @@ export class PalavraChaveRaizDetalheCompletaComponent implements OnInit {
       })
 
   }
-
+  
+  selecionouPalavra(itemSelecionado:PalavraChaveEstatistica) {
+    this.dialog.afterAllClosed.subscribe(result => {
+      this.carregaRaiz();
+    });
+    this.dialog.open(AlocacaoPalavraChaveComponent, {
+      width: '800px',
+      data: {
+        itemSelecionado: itemSelecionado
+      }
+    });
+  }
 
 }

@@ -32,6 +32,7 @@ import { PalavraChaveEstatistica } from '../../models/PalavraChaveEstatistica';
 import { PalavraGoogleProjeto } from '../../models/PalavraGoogleProjeto';
 import { EtapaProjeto } from '../../models/EtapaProjeto';
 import { MudancaEtapa } from '../../models/MudancaEtapa';
+import { ProcessoNegocio } from '../../models/ProcessoNegocio';
 
 export interface Models { [name: string]: any }
 
@@ -71,6 +72,7 @@ export class SDKModels {
     PalavraGoogleProjeto: PalavraGoogleProjeto,
     EtapaProjeto: EtapaProjeto,
     MudancaEtapa: MudancaEtapa,
+    ProcessoNegocio: ProcessoNegocio,
     
   };
 

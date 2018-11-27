@@ -45,7 +45,7 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CookieBrowser } from './storage/cookie.browser';
 import { StorageBrowser } from './storage/storage.browser';
 import { SocketBrowser } from './sockets/socket.browser';
-
+import { SocketDriver } from './sockets/socket.driver';
 import { SocketConnection } from './sockets/socket.connections';
 import { RealTime } from './services/core/real.time';
 import { UserApi } from './services/custom/User';
@@ -80,6 +80,7 @@ import { PalavraChaveEstatisticaApi } from './services/custom/PalavraChaveEstati
 import { PalavraGoogleProjetoApi } from './services/custom/PalavraGoogleProjeto';
 import { EtapaProjetoApi } from './services/custom/EtapaProjeto';
 import { MudancaEtapaApi } from './services/custom/MudancaEtapa';
+import { ProcessoNegocioApi } from './services/custom/ProcessoNegocio';
 /**
 * @module SDKBrowserModule
 * @description
@@ -142,9 +143,10 @@ export class SDKBrowserModule {
         PalavraGoogleProjetoApi,
         EtapaProjetoApi,
         MudancaEtapaApi,
+        ProcessoNegocioApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser },
-
+        { provide: SocketDriver, useClass: SocketBrowser }
       ]
     };
   }

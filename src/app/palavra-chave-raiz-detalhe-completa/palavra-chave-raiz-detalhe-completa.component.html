@@ -22,7 +22,7 @@
               </thead>
               <tbody>
                 <tr *ngFor="let item of raiz.palavraChaveEstatisticas">
-                  <td>{{item.palavraChaveGoogleId}}</td>
+                  <td><span style="cursor: pointer" (click)="selecionouPalavra(item)">{{item.palavraChaveGoogleId}}</span></td>
                   <td>{{item.mediaCpc}}</td>
                   <td align="right">{{item.volumePesquisa}}</td>
                   <td>{{item.indiceCompeticao}}</td>

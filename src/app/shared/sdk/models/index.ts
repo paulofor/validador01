@@ -31,5 +31,6 @@ export * from './PalavraChaveEstatistica';
 export * from './PalavraGoogleProjeto';
 export * from './EtapaProjeto';
 export * from './MudancaEtapa';
+export * from './ProcessoNegocio';
 export * from './BaseModels';
 export * from './FireLoopRef';

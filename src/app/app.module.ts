@@ -108,6 +108,10 @@ import { PalavraChaveRaizDetalheComponent } from './palavra-chave-raiz-detalhe/p
 import { PalavraChaveRaizDetalheCompletaComponent } from './palavra-chave-raiz-detalhe-completa/palavra-chave-raiz-detalhe-completa.component';
 import { AlocacaoPalavraChaveComponent } from './alocacao-palavra-chave/alocacao-palavra-chave.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ProcessoNegocioListaComponent } from './processo-negocio-lista/processo-negocio-lista.component';
+import { ProcessoNegocioEditaComponent } from './processo-negocio-edita/processo-negocio-edita.component';
+import { EtapaProjetoListaComponent } from './etapa-projeto-lista/etapa-projeto-lista.component';
+import { EtapaProjetoEditaComponent } from './etapa-projeto-edita/etapa-projeto-edita.component';
 
 
 
@@ -176,6 +180,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     PalavraChaveRaizDetalheComponent,
     PalavraChaveRaizDetalheCompletaComponent,
     AlocacaoPalavraChaveComponent,
+    ProcessoNegocioListaComponent,
+    ProcessoNegocioEditaComponent,
+    EtapaProjetoListaComponent,
+    EtapaProjetoEditaComponent,
 
   ],
   entryComponents: [

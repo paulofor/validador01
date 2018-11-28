@@ -50,7 +50,7 @@ export class AlocacaoPalavraChaveComponent implements OnInit {
     this.filteredOptions = this.myControl.valueChanges
        .pipe(
        startWith(' '),
-       switchMap(value => this.servico.PesquisaPorTrechoStr(value))
+       switchMap(value => this.servico.PesquisaPorTrecho(value))
        );
   }
 

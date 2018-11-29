@@ -154,6 +154,31 @@ export class PalavraGoogleProjetoApi extends BaseLoopBackApi {
   }
 
   /**
+   * se receber um projeto com id 0 cria o projeto e o relacionamento senão cria somente o relacionamento
+   *
+   * @param {object} data Request data.
+   *
+   *  - `relacionamentoComProjeto` – `{object}` - 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public InsereProjetoRelacionamento(relacionamentoComProjeto: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/PalavraGoogleProjetos/insereProjetoRelacionamento";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof relacionamentoComProjeto !== 'undefined' && relacionamentoComProjeto !== null) _urlParams.relacionamentoComProjeto = relacionamentoComProjeto;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * The name of the model represented by this $resource,
    * i.e. `PalavraGoogleProjeto`.
    */

@@ -3,7 +3,8 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { startWith, map, switchMap } from 'rxjs/operators';
-import { ProjetoMySql, ProjetoMySqlApi } from '../shared/sdk';
+import { ProjetoMySql, ProjetoMySqlApi, PalavraGoogleProjeto } from '../shared/sdk';
+import { PalavraGoogleProjetoApi } from '../shared/sdk/services';
 
 @Component({
   selector: 'app-alocacao-palavra-chave',
@@ -18,9 +19,13 @@ export class AlocacaoPalavraChaveComponent implements OnInit {
   palavra: string;
 
   projeto: ProjetoMySql;
+  palavraProjeto: PalavraGoogleProjeto;
+
+  projetoSelecionado: ProjetoMySql;
 
   constructor(public dialogRef: MatDialogRef<AlocacaoPalavraChaveComponent>
-    , @Inject(MAT_DIALOG_DATA) public data: any, private servico: ProjetoMySqlApi) {
+    , @Inject(MAT_DIALOG_DATA) public data: any, private servico: ProjetoMySqlApi,
+    private srvPalavra: PalavraGoogleProjetoApi) {
   }
 
   /* Original 
@@ -45,18 +50,28 @@ export class AlocacaoPalavraChaveComponent implements OnInit {
   */
 
   ngOnInit() {
+    this.palavraProjeto = new PalavraGoogleProjeto();
     this.palavra = this.data.itemSelecionado.palavraChaveGoogleId;
     this.projeto = new ProjetoMySql();
     this.filteredOptions = this.myControl.valueChanges
-       .pipe(
-       startWith(' '),
-       switchMap(value => this.servico.PesquisaPorTrecho(value))
-       );
+      .pipe(
+      startWith(' '),
+      switchMap(value => this.servico.PesquisaPorTrecho(value))
+      );
   }
 
   onSubmit() {
     console.log('Projeto: ' + JSON.stringify(this.projeto));
-    
+    this.palavraProjeto.palavraChaveGoogleId = this.data.itemSelecionado.palavraChaveGoogleId;
+  }
+
+  mostraNome(projeto: ProjetoMySql): string {
+    return (projeto?projeto.nome:'');
+  }
+
+  setProjeto(projeto: ProjetoMySql) {
+    this.projetoSelecionado = projeto;
+    console.log('Projeto Sel:' , projeto);
   }
 
 }

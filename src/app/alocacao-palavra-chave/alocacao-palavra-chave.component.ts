@@ -28,31 +28,10 @@ export class AlocacaoPalavraChaveComponent implements OnInit {
     private srvPalavra: PalavraGoogleProjetoApi) {
   }
 
-  /* Original 
-  ngOnInit() {
-    console.log('Data: ', JSON.stringify(this.data));
-    console.log('Palavra:' , this.data.itemSelecionado.palavraChaveGoogleId);
-    this.projeto = new ProjetoMySql();
-    this.filteredOptions = this.myControl.valueChanges
-      .pipe(
-        startWith(''),
-        map(value => this._filter(value))
-      );
-
-  }
-  // função de retorna a lista
-  private _filter(value: string): string[] {
-    let saida: string[];
-    const filterValue = value.toLowerCase();
-    saida = this.options.filter(option => option.toLowerCase().includes(filterValue));
-    return saida;
-  }
-  */
-
+ 
   ngOnInit() {
     this.palavraProjeto = new PalavraGoogleProjeto();
     this.palavra = this.data.itemSelecionado.palavraChaveGoogleId;
-    this.projeto = new ProjetoMySql();
     this.filteredOptions = this.myControl.valueChanges
       .pipe(
       startWith(' '),
@@ -61,17 +40,17 @@ export class AlocacaoPalavraChaveComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('Projeto: ' + JSON.stringify(this.projeto));
     this.palavraProjeto.palavraChaveGoogleId = this.data.itemSelecionado.palavraChaveGoogleId;
+    this.palavraProjeto.projetoMySql = this.projeto;
+    
   }
 
   mostraNome(projeto: ProjetoMySql): string {
     return (projeto?projeto.nome:'');
   }
 
-  setProjeto(projeto: ProjetoMySql) {
-    this.projetoSelecionado = projeto;
-    console.log('Projeto Sel:' , projeto);
+  setProjeto(objeto) {
+    this.projeto.id = (objeto.id?objeto.id:0);
   }
 
 }

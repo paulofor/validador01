@@ -30,6 +30,10 @@ import { PalavraChaveRaizComponent } from '../palavra-chave-raiz/palavra-chave-r
 import { PalavraChaveRaizDetalheComponent } from '../palavra-chave-raiz-detalhe/palavra-chave-raiz-detalhe.component';
 import { MelhoresPalavrasListaGeralComponent } from '../melhores-palavras-lista-geral/melhores-palavras-lista-geral.component';
 import { PalavraChaveRaizDetalheCompletaComponent } from '../palavra-chave-raiz-detalhe-completa/palavra-chave-raiz-detalhe-completa.component';
+import { EtapaProjetoEditaComponent } from '../etapa-projeto-edita/etapa-projeto-edita.component';
+import { EtapaProjetoListaComponent } from '../etapa-projeto-lista/etapa-projeto-lista.component';
+import { ProcessoNegocioEditaComponent } from '../processo-negocio-edita/processo-negocio-edita.component';
+import { ProcessoNegocioListaComponent } from '../processo-negocio-lista/processo-negocio-lista.component';
 
 
 export const routes : Routes = [
@@ -70,5 +74,11 @@ export const routes : Routes = [
     { path: 'palavraChaveRaiz/:id' , component : PalavraChaveRaizDetalheComponent },
     { path: 'palavraChaveRaizCompleta/:id' , component : PalavraChaveRaizDetalheCompletaComponent },
     { path: 'palavraMelhores' , component: MelhoresPalavrasListaGeralComponent },
+
+    { path: 'etapaProjeto' , component: EtapaProjetoListaComponent },
+    { path: 'etapaProjeto/:id' , component: EtapaProjetoEditaComponent },
+    { path: 'processoNegocio' , component: ProcessoNegocioListaComponent },
+    { path: 'processoNegocio/:id' , component: ProcessoNegocioEditaComponent },
+
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

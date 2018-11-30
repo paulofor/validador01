@@ -35,6 +35,8 @@ import { EtapaProjetoListaComponent } from '../etapa-projeto-lista/etapa-projeto
 import { ProcessoNegocioEditaComponent } from '../processo-negocio-edita/processo-negocio-edita.component';
 import { ProcessoNegocioListaComponent } from '../processo-negocio-lista/processo-negocio-lista.component';
 import { NavegadorPalavrasComponent } from '../navegador-palavras/navegador-palavras.component';
+import { TipoComponenteWebListaComponent } from '../tipo-componente-web-lista/tipo-componente-web-lista.component';
+import { TipoComponenteWebEditaComponent } from '../tipo-componente-web-edita/tipo-componente-web-edita.component';
 
 
 export const routes : Routes = [
@@ -79,8 +81,13 @@ export const routes : Routes = [
 
     { path: 'etapaProjeto' , component: EtapaProjetoListaComponent },
     { path: 'etapaProjeto/:id' , component: EtapaProjetoEditaComponent },
+    
     { path: 'processoNegocio' , component: ProcessoNegocioListaComponent },
     { path: 'processoNegocio/:id' , component: ProcessoNegocioEditaComponent },
+
+    { path: 'tipoComponenteWeb' , component: TipoComponenteWebListaComponent },
+    { path: 'tipoComponenteWeb/:id' , component: TipoComponenteWebEditaComponent },
+
 
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

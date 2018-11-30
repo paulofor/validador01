@@ -114,6 +114,8 @@ import { EtapaProjetoListaComponent } from './etapa-projeto-lista/etapa-projeto-
 import { EtapaProjetoEditaComponent } from './etapa-projeto-edita/etapa-projeto-edita.component';
 import { NavegadorPalavrasComponent } from './navegador-palavras/navegador-palavras.component';
 import { AgrupadorPalavrasComponent } from './agrupador-palavras/agrupador-palavras.component';
+import { TipoComponenteWebListaComponent } from './tipo-componente-web-lista/tipo-componente-web-lista.component';
+import { TipoComponenteWebEditaComponent } from './tipo-componente-web-edita/tipo-componente-web-edita.component';
 
 
 
@@ -188,6 +190,8 @@ import { AgrupadorPalavrasComponent } from './agrupador-palavras/agrupador-palav
     EtapaProjetoEditaComponent,
     NavegadorPalavrasComponent,
     AgrupadorPalavrasComponent,
+    TipoComponenteWebListaComponent,
+    TipoComponenteWebEditaComponent,
 
   ],
   entryComponents: [

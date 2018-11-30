@@ -1,6 +1,7 @@
 /* tslint:disable */
 import {
-  Aplicacao
+  Aplicacao,
+  TelaComponenteWeb
 } from '../index';
 
 declare var Object: any;
@@ -11,6 +12,7 @@ export interface TelaWebInterface {
   "nomeMenu"?: string;
   "aplicacaoId"?: number;
   aplicacao?: Aplicacao;
+  telaComponenteWebs?: TelaComponenteWeb[];
 }
 
 export class TelaWeb implements TelaWebInterface {
@@ -20,6 +22,7 @@ export class TelaWeb implements TelaWebInterface {
   "nomeMenu": string;
   "aplicacaoId": number;
   aplicacao: Aplicacao;
+  telaComponenteWebs: TelaComponenteWeb[];
   constructor(data?: TelaWebInterface) {
     Object.assign(this, data);
   }
@@ -82,6 +85,14 @@ export class TelaWeb implements TelaWebInterface {
           relationType: 'belongsTo',
                   keyFrom: 'aplicacaoId',
           keyTo: 'id_aplicacao'
+        },
+        telaComponenteWebs: {
+          name: 'telaComponenteWebs',
+          type: 'TelaComponenteWeb[]',
+          model: 'TelaComponenteWeb',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'telaWebId'
         },
       }
     }

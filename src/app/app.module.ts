@@ -112,6 +112,8 @@ import { ProcessoNegocioListaComponent } from './processo-negocio-lista/processo
 import { ProcessoNegocioEditaComponent } from './processo-negocio-edita/processo-negocio-edita.component';
 import { EtapaProjetoListaComponent } from './etapa-projeto-lista/etapa-projeto-lista.component';
 import { EtapaProjetoEditaComponent } from './etapa-projeto-edita/etapa-projeto-edita.component';
+import { NavegadorPalavrasComponent } from './navegador-palavras/navegador-palavras.component';
+import { AgrupadorPalavrasComponent } from './agrupador-palavras/agrupador-palavras.component';
 
 
 
@@ -184,6 +186,8 @@ import { EtapaProjetoEditaComponent } from './etapa-projeto-edita/etapa-projeto-
     ProcessoNegocioEditaComponent,
     EtapaProjetoListaComponent,
     EtapaProjetoEditaComponent,
+    NavegadorPalavrasComponent,
+    AgrupadorPalavrasComponent,
 
   ],
   entryComponents: [

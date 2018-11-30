@@ -32,5 +32,8 @@ export * from './PalavraGoogleProjeto';
 export * from './EtapaProjeto';
 export * from './MudancaEtapa';
 export * from './ProcessoNegocio';
+export * from './ComponenteWeb';
+export * from './TelaComponenteWeb';
+export * from './TipoComponenteWeb';
 export * from './SDKModels';
 export * from './logger.service';

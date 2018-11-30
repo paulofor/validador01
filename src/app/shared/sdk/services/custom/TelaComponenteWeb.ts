@@ -9,17 +9,16 @@ import { LoopBackFilter,  } from '../../models/BaseModels';
 import { ErrorHandler } from '../core/error.service';
 import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { PalavraGoogleProjeto } from '../../models/PalavraGoogleProjeto';
+import { TelaComponenteWeb } from '../../models/TelaComponenteWeb';
 import { SocketConnection } from '../../sockets/socket.connections';
-import { PalavraChaveGoogle } from '../../models/PalavraChaveGoogle';
-import { ProjetoMySql } from '../../models/ProjetoMySql';
+import { ComponenteWeb } from '../../models/ComponenteWeb';
 
 
 /**
- * Api services for the `PalavraGoogleProjeto` model.
+ * Api services for the `TelaComponenteWeb` model.
  */
 @Injectable()
-export class PalavraGoogleProjetoApi extends BaseLoopBackApi {
+export class TelaComponenteWebApi extends BaseLoopBackApi {
 
   constructor(
     @Inject(HttpClient) protected http: HttpClient,
@@ -32,39 +31,9 @@ export class PalavraGoogleProjetoApi extends BaseLoopBackApi {
   }
 
   /**
-   * Fetches belongsTo relation palavraChaveGoogle.
+   * Fetches belongsTo relation componenteWeb.
    *
-   * @param {any} id PalavraGoogleProjeto id
-   *
-   * @param {boolean} refresh 
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `PalavraGoogleProjeto` object.)
-   * </em>
-   */
-  public getPalavraChaveGoogle(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "GET";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/PalavraGoogleProjetos/:id/palavraChaveGoogle";
-    let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    if (typeof refresh !== 'undefined' && refresh !== null) _urlParams.refresh = refresh;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
-  }
-
-  /**
-   * Fetches belongsTo relation projetoMySql.
-   *
-   * @param {any} id PalavraGoogleProjeto id
+   * @param {any} id TelaComponenteWeb id
    *
    * @param {boolean} refresh 
    *
@@ -74,13 +43,13 @@ export class PalavraGoogleProjetoApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `PalavraGoogleProjeto` object.)
+   * This usually means the response is a `TelaComponenteWeb` object.)
    * </em>
    */
-  public getProjetoMySql(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
+  public getComponenteWeb(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/PalavraGoogleProjetos/:id/projetoMySql";
+    "/TelaComponenteWebs/:id/componenteWeb";
     let _routeParams: any = {
       id: id
     };
@@ -104,13 +73,13 @@ export class PalavraGoogleProjetoApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `PalavraGoogleProjeto` object.)
+   * This usually means the response is a `TelaComponenteWeb` object.)
    * </em>
    */
   public patchOrCreate(data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/PalavraGoogleProjetos";
+    "/TelaComponenteWebs";
     let _routeParams: any = {};
     let _postBody: any = {
       data: data
@@ -123,7 +92,7 @@ export class PalavraGoogleProjetoApi extends BaseLoopBackApi {
   /**
    * Patch attributes for a model instance and persist it into the data source.
    *
-   * @param {any} id PalavraGoogleProjeto id
+   * @param {any} id TelaComponenteWeb id
    *
    * @param {object} data Request data.
    *
@@ -135,13 +104,13 @@ export class PalavraGoogleProjetoApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `PalavraGoogleProjeto` object.)
+   * This usually means the response is a `TelaComponenteWeb` object.)
    * </em>
    */
   public patchAttributes(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/PalavraGoogleProjetos/:id";
+    "/TelaComponenteWebs/:id";
     let _routeParams: any = {
       id: id
     };
@@ -154,38 +123,10 @@ export class PalavraGoogleProjetoApi extends BaseLoopBackApi {
   }
 
   /**
-   * se receber um projeto com id 0 cria o projeto e o relacionamento senão cria somente o relacionamento
-   *
-   * @param {object} data Request data.
-   *
-   *  - `relacionamento` – `{object}` - 
-   *
-   *  - `projeto` – `{object}` - 
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * This method returns no data.
-   */
-  public InsereProjetoRelacionamento(relacionamento: any, projeto: any, customHeaders?: Function): Observable<any> {
-    let _method: string = "POST";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/PalavraGoogleProjetos/insereProjetoRelacionamento";
-    let _routeParams: any = {};
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    if (typeof relacionamento !== 'undefined' && relacionamento !== null) _urlParams.relacionamento = relacionamento;
-    if (typeof projeto !== 'undefined' && projeto !== null) _urlParams.projeto = projeto;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
-  }
-
-  /**
    * The name of the model represented by this $resource,
-   * i.e. `PalavraGoogleProjeto`.
+   * i.e. `TelaComponenteWeb`.
    */
   public getModelName() {
-    return "PalavraGoogleProjeto";
+    return "TelaComponenteWeb";
   }
 }

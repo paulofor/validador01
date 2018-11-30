@@ -34,6 +34,7 @@ import { EtapaProjetoEditaComponent } from '../etapa-projeto-edita/etapa-projeto
 import { EtapaProjetoListaComponent } from '../etapa-projeto-lista/etapa-projeto-lista.component';
 import { ProcessoNegocioEditaComponent } from '../processo-negocio-edita/processo-negocio-edita.component';
 import { ProcessoNegocioListaComponent } from '../processo-negocio-lista/processo-negocio-lista.component';
+import { NavegadorPalavrasComponent } from '../navegador-palavras/navegador-palavras.component';
 
 
 export const routes : Routes = [
@@ -73,7 +74,8 @@ export const routes : Routes = [
     { path: 'palavraChaveRaiz' , component : PalavraChaveRaizComponent },
     { path: 'palavraChaveRaiz/:id' , component : PalavraChaveRaizDetalheComponent },
     { path: 'palavraChaveRaizCompleta/:id' , component : PalavraChaveRaizDetalheCompletaComponent },
-    { path: 'palavraMelhores' , component: MelhoresPalavrasListaGeralComponent },
+    //{ path: 'palavraMelhores' , component: MelhoresPalavrasListaGeralComponent },
+    { path: 'palavraMelhores' , component: NavegadorPalavrasComponent },
 
     { path: 'etapaProjeto' , component: EtapaProjetoListaComponent },
     { path: 'etapaProjeto/:id' , component: EtapaProjetoEditaComponent },

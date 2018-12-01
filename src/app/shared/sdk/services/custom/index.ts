@@ -35,5 +35,6 @@ export * from './ProcessoNegocio';
 export * from './ComponenteWeb';
 export * from './TelaComponenteWeb';
 export * from './TipoComponenteWeb';
+export * from './TipoExperiencia';
 export * from './SDKModels';
 export * from './logger.service';

@@ -37,6 +37,8 @@ import { ProcessoNegocioListaComponent } from '../processo-negocio-lista/process
 import { NavegadorPalavrasComponent } from '../navegador-palavras/navegador-palavras.component';
 import { TipoComponenteWebListaComponent } from '../tipo-componente-web-lista/tipo-componente-web-lista.component';
 import { TipoComponenteWebEditaComponent } from '../tipo-componente-web-edita/tipo-componente-web-edita.component';
+import { TipoExperienciaListaComponent } from '../tipo-experiencia-lista/tipo-experiencia-lista.component';
+import { TipoExperienciaEditaComponent } from '../tipo-experiencia-edita/tipo-experiencia-edita.component';
 
 
 export const routes : Routes = [
@@ -88,6 +90,8 @@ export const routes : Routes = [
     { path: 'tipoComponenteWeb' , component: TipoComponenteWebListaComponent },
     { path: 'tipoComponenteWeb/:id' , component: TipoComponenteWebEditaComponent },
 
+    { path: 'tipoExperiencia' , component: TipoExperienciaListaComponent },
+    { path: 'tipoExperiencia/:id' , component: TipoExperienciaEditaComponent },
 
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

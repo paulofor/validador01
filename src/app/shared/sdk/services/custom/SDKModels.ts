@@ -36,6 +36,7 @@ import { ProcessoNegocio } from '../../models/ProcessoNegocio';
 import { ComponenteWeb } from '../../models/ComponenteWeb';
 import { TelaComponenteWeb } from '../../models/TelaComponenteWeb';
 import { TipoComponenteWeb } from '../../models/TipoComponenteWeb';
+import { TipoExperiencia } from '../../models/TipoExperiencia';
 
 export interface Models { [name: string]: any }
 
@@ -79,6 +80,7 @@ export class SDKModels {
     ComponenteWeb: ComponenteWeb,
     TelaComponenteWeb: TelaComponenteWeb,
     TipoComponenteWeb: TipoComponenteWeb,
+    TipoExperiencia: TipoExperiencia,
     
   };
 

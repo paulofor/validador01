@@ -116,6 +116,8 @@ import { NavegadorPalavrasComponent } from './navegador-palavras/navegador-palav
 import { AgrupadorPalavrasComponent } from './agrupador-palavras/agrupador-palavras.component';
 import { TipoComponenteWebListaComponent } from './tipo-componente-web-lista/tipo-componente-web-lista.component';
 import { TipoComponenteWebEditaComponent } from './tipo-componente-web-edita/tipo-componente-web-edita.component';
+import { TipoExperienciaEditaComponent } from './tipo-experiencia-edita/tipo-experiencia-edita.component';
+import { TipoExperienciaListaComponent } from './tipo-experiencia-lista/tipo-experiencia-lista.component';
 
 
 
@@ -192,6 +194,8 @@ import { TipoComponenteWebEditaComponent } from './tipo-componente-web-edita/tip
     AgrupadorPalavrasComponent,
     TipoComponenteWebListaComponent,
     TipoComponenteWebEditaComponent,
+    TipoExperienciaEditaComponent,
+    TipoExperienciaListaComponent,
 
   ],
   entryComponents: [

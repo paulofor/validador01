@@ -30,7 +30,6 @@ export class PalavraChaveRaizComponent implements OnInit {
 
 
   openDialog() {
-    //console.log('aplicacao:', aplicacao);
     this.dialog.afterAllClosed.subscribe(result => {
       console.log('Dialog result: ${result}');
       this.atualizaLista();

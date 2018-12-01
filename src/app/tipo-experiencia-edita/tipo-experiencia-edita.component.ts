@@ -1,30 +1,31 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { PalavraChaveRaizApi, PalavraChaveRaiz } from '../shared/sdk';
+import { TipoExperiencia, TipoExperienciaApi } from '../shared/sdk';
 
 @Component({
-  selector: 'app-palavra-chave-raiz-cria-edita',
-  templateUrl: './palavra-chave-raiz-cria-edita.component.html',
-  styleUrls: ['./palavra-chave-raiz-cria-edita.component.scss']
+  selector: 'app-tipo-experiencia-edita',
+  templateUrl: './tipo-experiencia-edita.component.html',
+  styleUrls: ['./tipo-experiencia-edita.component.scss']
 })
-export class PalavraChaveRaizCriaEditaComponent implements OnInit {
+export class TipoExperienciaEditaComponent implements OnInit {
 
-  item: PalavraChaveRaiz;
+  item: TipoExperiencia;
 
 
-  constructor(public dialogRef: MatDialogRef<PalavraChaveRaizCriaEditaComponent>
-    , @Inject(MAT_DIALOG_DATA) public data: any,
-    private servico: PalavraChaveRaizApi) {
+  constructor(public dialogRef: MatDialogRef<TipoExperienciaEditaComponent>
+    , @Inject(MAT_DIALOG_DATA) public data: any, private servico: TipoExperienciaApi) {
+
   }
 
+  
   ngOnInit() {
     console.log("Parametro entrada", this.data);
-    if (!this.data.palavra) {
-      console.log("fluxo nova palavra raiz");
-      this.item = new PalavraChaveRaiz();
+    if (!this.data.item) {
+      console.log("fluxo nova");
+      this.item = new TipoExperiencia();
     } else {
-      console.log('fluxo altera palavra');
-      this.item = this.data.palavra;
+      console.log('fluxo altera');
+      this.item = this.data.item;
       console.log('Item:' , JSON.stringify(this.item));
     }
 
@@ -34,7 +35,6 @@ export class PalavraChaveRaizCriaEditaComponent implements OnInit {
   onSubmit() {
     console.log('Model: ' + JSON.stringify(this.item));
     if (!this.item.id) {
-      this.item.ativo = 1;
       this.servico.create(this.item, (err, obj) => {
         console.log("Erro:" + err.message);
       }).subscribe((e: any) => {
@@ -55,6 +55,4 @@ export class PalavraChaveRaizCriaEditaComponent implements OnInit {
   closeDialog() {
     this.dialogRef.close('Pizza!');
   }
-
-
 }

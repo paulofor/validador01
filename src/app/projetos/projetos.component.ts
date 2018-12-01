@@ -30,7 +30,6 @@ export class ProjetosComponent implements OnInit {
       .subscribe((projetos: ProjetoMySql[]) => 
         this.projetos = projetos
        );
-    
   }
 
   goCanvas(id: number){        

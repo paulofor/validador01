@@ -12,4 +12,6 @@ export class NavegadorPalavrasComponent implements OnInit {
   ngOnInit() {
   }
 
+
+
 }

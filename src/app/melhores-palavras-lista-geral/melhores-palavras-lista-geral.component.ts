@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter  } from '@angular/core';
 import { PalavraChaveEstatistica, PalavraChaveEstatisticaApi } from '../shared/sdk';
 import { MatDialog } from '@angular/material';
 import { AlocacaoPalavraChaveComponent } from '../alocacao-palavra-chave/alocacao-palavra-chave.component';
+import { Output } from '@angular/core';
+
 
 
 @Component({
@@ -13,6 +15,9 @@ export class MelhoresPalavrasListaGeralComponent implements OnInit {
 
   lista: PalavraChaveEstatistica[];
   errMess: string;
+
+  @Output() onEscolhePalavra:EventEmitter<PalavraChaveEstatistica> = new EventEmitter<PalavraChaveEstatistica>();
+
 
   constructor(private srv: PalavraChaveEstatisticaApi,  private dialog: MatDialog) {
   }
@@ -33,6 +38,8 @@ export class MelhoresPalavrasListaGeralComponent implements OnInit {
   }
 
   selecionouPalavra(itemSelecionado:PalavraChaveEstatistica) {
+    this.onEscolhePalavra.emit(itemSelecionado);
+    /*
     this.dialog.afterAllClosed.subscribe(result => {
       this.atualizaLista();
     });
@@ -42,6 +49,7 @@ export class MelhoresPalavrasListaGeralComponent implements OnInit {
         itemSelecionado: itemSelecionado
       }
     });
+    */
   }
 
  

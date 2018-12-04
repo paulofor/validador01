@@ -1,71 +1,32 @@
-<div>
+<h2 *ngIf="projeto" mat-dialog-title>Projeto</h2>
 
-  <ul >
-    <li>
-      <a routerLink="/projetos">
-        <i class="fa fa-search"></i>
-        <p>Projetos</p>
-      </a>
-    </li>
-    <li>
-      <a routerLink="/projetosValor">
-        <i class="fa fa-search"></i>
-        <p>Proposta de Valor</p>
-      </a>
-    </li>
-    <li>
-      <a routerLink="/projetoAplicacao">
-        <i class="fa fa-search"></i>
-        <p>Aplicações</p>
-      </a>
-    </li>
-    <li>
-      <a routerLink="/palavraChaveRaiz">
-        <i class="fa fa-search"></i>
-        <p>Palavras Chaves Raiz</p>
-      </a>
-    </li>
-    <li>
-      <a routerLink="/palavraMelhores">
-        <i class="fa fa-search"></i>
-        <p>Melhores Palavras</p>
-      </a>
-    </li>
+<form class="example-form" (ngSubmit)="onSubmit()">
 
-    <li>
-      <a routerLink="/etapaProjeto">
-        <i class="fa fa-search"></i>
-        <p>Etapa Projeto</p>
-      </a>
-    </li>
+  <mat-dialog-content>
+    <mat-form-field class="example-full-width">
+      <input type="text" placeholder="Projeto" #nome [(ngModel)]="projeto.nome" name="nome" aria-label="Number" matInput [formControl]="myControl"
+        [matAutocomplete]="auto" (ngModelChange)="setProjeto($event)">
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="mostraNome">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+          {{option.nome}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </mat-dialog-content>
 
-    <li>
-      <a routerLink="/processoNegocio">
-        <i class="fa fa-search"></i>
-        <p>Processo Negocio</p>
-      </a>
-    </li>
+</form>
 
-    <li>
-      <a routerLink="/tipoExperiencia">
-        <i class="fa fa-search"></i>
-        <p>Tipo de Experiência</p>
-      </a>
-    </li>
-
-
-    <li>
-      <a routerLink="/tipoComponenteWeb">
-        <i class="fa fa-search"></i>
-        <p>Tipo Componente Web</p>
-      </a>
-    </li>
-
-    <li>
-      <a routerLink="/propostaValor">
-        <i class="fa fa-search"></i>
-        <p>Proposta de Valor (antiga)</p>
-      </a>
-    </li>
-  </ul>
+<div *ngIf="projetoSelecionado" class="content table-responsive table-full-width">
+  <table class="table table-hover table-striped">
+    <thead>
+      <tr>
+        <th>Titulo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of lista">
+        <td>{{item.nome}}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>

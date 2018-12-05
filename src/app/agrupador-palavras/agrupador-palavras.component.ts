@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ProjetoMySql, ProjetoMySqlApi, PalavraGoogleProjetoApi } from '../shared/sdk';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { PalavraGoogleProjeto } from '../shared/sdk/models';
+import { PalavraGoogleProjeto, PalavraChaveEstatistica } from '../shared/sdk/models';
 import { startWith, switchMap } from 'rxjs/operators';
 
 @Component({
@@ -11,6 +11,7 @@ import { startWith, switchMap } from 'rxjs/operators';
   styleUrls: ['./agrupador-palavras.component.scss']
 })
 export class AgrupadorPalavrasComponent implements OnInit {
+
 
 
   myControl = new FormControl();
@@ -29,6 +30,11 @@ export class AgrupadorPalavrasComponent implements OnInit {
     private srvPalavra: PalavraGoogleProjetoApi) {
   }
 
+
+  @Input()
+  set palavraNova(item: PalavraChaveEstatistica) {
+    console.log('Mudou=' , item);
+  }
  
   ngOnInit() {
     this.projeto = new ProjetoMySql();

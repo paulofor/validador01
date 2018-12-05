@@ -16,7 +16,7 @@ export class MelhoresPalavrasListaGeralComponent implements OnInit {
   lista: PalavraChaveEstatistica[];
   errMess: string;
 
-  @Output() onEscolhePalavra:EventEmitter<PalavraChaveEstatistica> = new EventEmitter<PalavraChaveEstatistica>();
+  @Output() escolhePalavra:EventEmitter<PalavraChaveEstatistica> = new EventEmitter<PalavraChaveEstatistica>();
 
 
   constructor(private srv: PalavraChaveEstatisticaApi,  private dialog: MatDialog) {
@@ -38,7 +38,8 @@ export class MelhoresPalavrasListaGeralComponent implements OnInit {
   }
 
   selecionouPalavra(itemSelecionado:PalavraChaveEstatistica) {
-    this.onEscolhePalavra.emit(itemSelecionado);
+    console.log('selecionoutPalavra');
+    this.escolhePalavra.emit(itemSelecionado);
     /*
     this.dialog.afterAllClosed.subscribe(result => {
       this.atualizaLista();
@@ -53,7 +54,9 @@ export class MelhoresPalavrasListaGeralComponent implements OnInit {
   }
 
  
-
+  onEscolhePalavra(item) {
+    console.log('onEscolhePalavra1: ' , item);
+  }
 
 
 

@@ -2,11 +2,11 @@
 <div class="row">
 
   <div class="col-md-9" >
-    <app-melhores-palavras-lista-geral></app-melhores-palavras-lista-geral>
+    <app-melhores-palavras-lista-geral (escolhePalavra)="onEscolhePalavra($event)"></app-melhores-palavras-lista-geral>
   </div>
 
   <div class="col-md-3" >
-    <app-agrupador-palavras (onEscolhePalavra)="setPalavra($event)"></app-agrupador-palavras>
+    <app-agrupador-palavras [palavraNova]="palavra" ></app-agrupador-palavras>
   </div>
 
 

@@ -9,17 +9,16 @@ import { LoopBackFilter,  } from '../../models/BaseModels';
 import { ErrorHandler } from '../core/error.service';
 import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { ComponenteWeb } from '../../models/ComponenteWeb';
+import { MedidaIndicadorProcesso } from '../../models/MedidaIndicadorProcesso';
 import { SocketConnection } from '../../sockets/socket.connections';
-import { Entidade } from '../../models/Entidade';
-import { TipoComponenteWeb } from '../../models/TipoComponenteWeb';
+import { IndicadorPerformanceProcesso } from '../../models/IndicadorPerformanceProcesso';
 
 
 /**
- * Api services for the `ComponenteWeb` model.
+ * Api services for the `MedidaIndicadorProcesso` model.
  */
 @Injectable()
-export class ComponenteWebApi extends BaseLoopBackApi {
+export class MedidaIndicadorProcessoApi extends BaseLoopBackApi {
 
   constructor(
     @Inject(HttpClient) protected http: HttpClient,
@@ -32,39 +31,9 @@ export class ComponenteWebApi extends BaseLoopBackApi {
   }
 
   /**
-   * Fetches belongsTo relation entidade.
+   * Fetches belongsTo relation indicadorPerformanceProcesso.
    *
-   * @param {any} id ComponenteWeb id
-   *
-   * @param {boolean} refresh 
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `ComponenteWeb` object.)
-   * </em>
-   */
-  public getEntidade(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "GET";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/ComponenteWebs/:id/entidade";
-    let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    if (typeof refresh !== 'undefined' && refresh !== null) _urlParams.refresh = refresh;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
-  }
-
-  /**
-   * Fetches belongsTo relation tipoComponenteWeb.
-   *
-   * @param {any} id ComponenteWeb id
+   * @param {any} id MedidaIndicadorProcesso id
    *
    * @param {boolean} refresh 
    *
@@ -74,13 +43,13 @@ export class ComponenteWebApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `ComponenteWeb` object.)
+   * This usually means the response is a `MedidaIndicadorProcesso` object.)
    * </em>
    */
-  public getTipoComponenteWeb(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
+  public getIndicadorPerformanceProcesso(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/ComponenteWebs/:id/tipoComponenteWeb";
+    "/MedidaIndicadorProcessos/:id/indicadorPerformanceProcesso";
     let _routeParams: any = {
       id: id
     };
@@ -104,13 +73,13 @@ export class ComponenteWebApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `ComponenteWeb` object.)
+   * This usually means the response is a `MedidaIndicadorProcesso` object.)
    * </em>
    */
   public patchOrCreate(data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/ComponenteWebs";
+    "/MedidaIndicadorProcessos";
     let _routeParams: any = {};
     let _postBody: any = {
       data: data
@@ -123,7 +92,7 @@ export class ComponenteWebApi extends BaseLoopBackApi {
   /**
    * Patch attributes for a model instance and persist it into the data source.
    *
-   * @param {any} id ComponenteWeb id
+   * @param {any} id MedidaIndicadorProcesso id
    *
    * @param {object} data Request data.
    *
@@ -135,13 +104,13 @@ export class ComponenteWebApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `ComponenteWeb` object.)
+   * This usually means the response is a `MedidaIndicadorProcesso` object.)
    * </em>
    */
   public patchAttributes(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/ComponenteWebs/:id";
+    "/MedidaIndicadorProcessos/:id";
     let _routeParams: any = {
       id: id
     };
@@ -155,9 +124,9 @@ export class ComponenteWebApi extends BaseLoopBackApi {
 
   /**
    * The name of the model represented by this $resource,
-   * i.e. `ComponenteWeb`.
+   * i.e. `MedidaIndicadorProcesso`.
    */
   public getModelName() {
-    return "ComponenteWeb";
+    return "MedidaIndicadorProcesso";
   }
 }

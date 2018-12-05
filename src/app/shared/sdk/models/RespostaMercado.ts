@@ -1,32 +1,34 @@
 /* tslint:disable */
 
 declare var Object: any;
-export interface TipoComponenteWebInterface {
-  "nome"?: string;
+export interface RespostaMercadoInterface {
+  "nome": string;
+  "ordenacao": number;
   "id"?: number;
 }
 
-export class TipoComponenteWeb implements TipoComponenteWebInterface {
+export class RespostaMercado implements RespostaMercadoInterface {
   "nome": string;
+  "ordenacao": number;
   "id": number;
-  constructor(data?: TipoComponenteWebInterface) {
+  constructor(data?: RespostaMercadoInterface) {
     Object.assign(this, data);
   }
   /**
    * The name of the model represented by this $resource,
-   * i.e. `TipoComponenteWeb`.
+   * i.e. `RespostaMercado`.
    */
   public static getModelName() {
-    return "TipoComponenteWeb";
+    return "RespostaMercado";
   }
   /**
   * @method factory
   * @author Jonathan Casarrubias
   * @license MIT
-  * This method creates an instance of TipoComponenteWeb for dynamic purposes.
+  * This method creates an instance of RespostaMercado for dynamic purposes.
   **/
-  public static factory(data: TipoComponenteWebInterface): TipoComponenteWeb{
-    return new TipoComponenteWeb(data);
+  public static factory(data: RespostaMercadoInterface): RespostaMercado{
+    return new RespostaMercado(data);
   }
   /**
   * @method getModelDefinition
@@ -37,14 +39,18 @@ export class TipoComponenteWeb implements TipoComponenteWebInterface {
   **/
   public static getModelDefinition() {
     return {
-      name: 'TipoComponenteWeb',
-      plural: 'TipoComponenteWebs',
-      path: 'TipoComponenteWebs',
+      name: 'RespostaMercado',
+      plural: 'RespostaMercados',
+      path: 'RespostaMercados',
       idName: 'id',
       properties: {
         "nome": {
           name: 'nome',
           type: 'string'
+        },
+        "ordenacao": {
+          name: 'ordenacao',
+          type: 'number'
         },
         "id": {
           name: 'id',

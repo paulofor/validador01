@@ -1,5 +1,6 @@
 /* tslint:disable */
 import {
+  Entidade,
   TipoComponenteWeb
 } from '../index';
 
@@ -7,15 +8,21 @@ declare var Object: any;
 export interface ComponenteWebInterface {
   "nome"?: string;
   "id"?: number;
+  "entidadeId"?: number;
   "aplicacaoId"?: number;
-  tipoComponenteWebs?: TipoComponenteWeb;
+  "tipoComponenteWebId"?: number;
+  entidade?: Entidade;
+  tipoComponenteWeb?: TipoComponenteWeb;
 }
 
 export class ComponenteWeb implements ComponenteWebInterface {
   "nome": string;
   "id": number;
+  "entidadeId": number;
   "aplicacaoId": number;
-  tipoComponenteWebs: TipoComponenteWeb;
+  "tipoComponenteWebId": number;
+  entidade: Entidade;
+  tipoComponenteWeb: TipoComponenteWeb;
   constructor(data?: ComponenteWebInterface) {
     Object.assign(this, data);
   }
@@ -57,19 +64,35 @@ export class ComponenteWeb implements ComponenteWebInterface {
           name: 'id',
           type: 'number'
         },
+        "entidadeId": {
+          name: 'entidadeId',
+          type: 'number'
+        },
         "aplicacaoId": {
           name: 'aplicacaoId',
           type: 'number'
         },
+        "tipoComponenteWebId": {
+          name: 'tipoComponenteWebId',
+          type: 'number'
+        },
       },
       relations: {
-        tipoComponenteWebs: {
-          name: 'tipoComponenteWebs',
+        entidade: {
+          name: 'entidade',
+          type: 'Entidade',
+          model: 'Entidade',
+          relationType: 'belongsTo',
+                  keyFrom: 'entidadeId',
+          keyTo: 'id_entidade'
+        },
+        tipoComponenteWeb: {
+          name: 'tipoComponenteWeb',
           type: 'TipoComponenteWeb',
           model: 'TipoComponenteWeb',
-          relationType: 'hasOne',
-                  keyFrom: 'id',
-          keyTo: 'componenteWebId'
+          relationType: 'belongsTo',
+                  keyFrom: 'tipoComponenteWebId',
+          keyTo: 'id'
         },
       }
     }

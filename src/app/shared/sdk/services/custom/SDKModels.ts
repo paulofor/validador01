@@ -37,6 +37,9 @@ import { ComponenteWeb } from '../../models/ComponenteWeb';
 import { TelaComponenteWeb } from '../../models/TelaComponenteWeb';
 import { TipoComponenteWeb } from '../../models/TipoComponenteWeb';
 import { TipoExperiencia } from '../../models/TipoExperiencia';
+import { IndicadorPerformanceProcesso } from '../../models/IndicadorPerformanceProcesso';
+import { MedidaIndicadorProcesso } from '../../models/MedidaIndicadorProcesso';
+import { RespostaMercado } from '../../models/RespostaMercado';
 
 export interface Models { [name: string]: any }
 
@@ -81,6 +84,9 @@ export class SDKModels {
     TelaComponenteWeb: TelaComponenteWeb,
     TipoComponenteWeb: TipoComponenteWeb,
     TipoExperiencia: TipoExperiencia,
+    IndicadorPerformanceProcesso: IndicadorPerformanceProcesso,
+    MedidaIndicadorProcesso: MedidaIndicadorProcesso,
+    RespostaMercado: RespostaMercado,
     
   };
 

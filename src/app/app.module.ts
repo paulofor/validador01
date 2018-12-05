@@ -118,6 +118,8 @@ import { TipoComponenteWebListaComponent } from './tipo-componente-web-lista/tip
 import { TipoComponenteWebEditaComponent } from './tipo-componente-web-edita/tipo-componente-web-edita.component';
 import { TipoExperienciaEditaComponent } from './tipo-experiencia-edita/tipo-experiencia-edita.component';
 import { TipoExperienciaListaComponent } from './tipo-experiencia-lista/tipo-experiencia-lista.component';
+import { RespostaMercadoListaComponent } from './resposta-mercado-lista/resposta-mercado-lista.component';
+import { RespostaMercadoEditaComponent } from './resposta-mercado-edita/resposta-mercado-edita.component';
 
 
 
@@ -196,6 +198,8 @@ import { TipoExperienciaListaComponent } from './tipo-experiencia-lista/tipo-exp
     TipoComponenteWebEditaComponent,
     TipoExperienciaEditaComponent,
     TipoExperienciaListaComponent,
+    RespostaMercadoListaComponent,
+    RespostaMercadoEditaComponent,
 
   ],
   entryComponents: [

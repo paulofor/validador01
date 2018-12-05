@@ -36,5 +36,8 @@ export * from './ComponenteWeb';
 export * from './TelaComponenteWeb';
 export * from './TipoComponenteWeb';
 export * from './TipoExperiencia';
+export * from './IndicadorPerformanceProcesso';
+export * from './MedidaIndicadorProcesso';
+export * from './RespostaMercado';
 export * from './SDKModels';
 export * from './logger.service';

@@ -45,6 +45,7 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CookieBrowser } from './storage/cookie.browser';
 import { StorageBrowser } from './storage/storage.browser';
 import { SocketBrowser } from './sockets/socket.browser';
+
 import { SocketConnection } from './sockets/socket.connections';
 import { RealTime } from './services/core/real.time';
 import { UserApi } from './services/custom/User';
@@ -84,6 +85,9 @@ import { ComponenteWebApi } from './services/custom/ComponenteWeb';
 import { TelaComponenteWebApi } from './services/custom/TelaComponenteWeb';
 import { TipoComponenteWebApi } from './services/custom/TipoComponenteWeb';
 import { TipoExperienciaApi } from './services/custom/TipoExperiencia';
+import { IndicadorPerformanceProcessoApi } from './services/custom/IndicadorPerformanceProcesso';
+import { MedidaIndicadorProcessoApi } from './services/custom/MedidaIndicadorProcesso';
+import { RespostaMercadoApi } from './services/custom/RespostaMercado';
 /**
 * @module SDKBrowserModule
 * @description
@@ -151,6 +155,9 @@ export class SDKBrowserModule {
         TelaComponenteWebApi,
         TipoComponenteWebApi,
         TipoExperienciaApi,
+        IndicadorPerformanceProcessoApi,
+        MedidaIndicadorProcessoApi,
+        RespostaMercadoApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
       ]

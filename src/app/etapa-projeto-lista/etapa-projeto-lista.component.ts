@@ -23,7 +23,7 @@ export class EtapaProjetoListaComponent implements OnInit {
   }
 
   atualizaLista() {
-    this.servico.find()
+    this.servico.find({"order" : "ordenacao"})
     .subscribe((resultado: EtapaProjeto[]) => 
       this.lista = resultado
      );

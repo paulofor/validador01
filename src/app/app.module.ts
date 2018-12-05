@@ -121,6 +121,7 @@ import { TipoExperienciaListaComponent } from './tipo-experiencia-lista/tipo-exp
 import { RespostaMercadoListaComponent } from './resposta-mercado-lista/resposta-mercado-lista.component';
 import { RespostaMercadoEditaComponent } from './resposta-mercado-edita/resposta-mercado-edita.component';
 import { TelaDetalheComponent } from './tela-detalhe/tela-detalhe.component';
+import { EscolhaComponenteTelaWebComponent } from './escolha-componente-tela-web/escolha-componente-tela-web.component';
 
 
 
@@ -202,6 +203,7 @@ import { TelaDetalheComponent } from './tela-detalhe/tela-detalhe.component';
     RespostaMercadoListaComponent,
     RespostaMercadoEditaComponent,
     TelaDetalheComponent,
+    EscolhaComponenteTelaWebComponent,
 
   ],
   entryComponents: [

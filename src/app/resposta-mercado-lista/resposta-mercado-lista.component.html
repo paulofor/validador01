@@ -1,3 +1,36 @@
-<p>
-  resposta-mercado-lista works!
-</p>
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">Resposta do Mercado</h4>
+            <button class="btn btn-primary btn-sm " (click)="openDialog()">Novo</button>
+          </div>
+          <div class="content table-responsive table-full-width">
+            <table class="table table-hover table-striped">
+              <thead>
+                <tr>
+                  <th width="60%">Nome</th>
+                  <th width="10%">Ordenação</th>
+                  <th width="10%"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of lista">
+                  <td>{{item.nome}}</td>
+                  <td>{{item.ordenacao}}</td>
+                  <td align="right">
+                    <button class="btn btn-primary btn-sm " (click)="openDialog(item)">Alterar</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

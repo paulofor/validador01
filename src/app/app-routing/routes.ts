@@ -39,7 +39,9 @@ import { TipoComponenteWebListaComponent } from '../tipo-componente-web-lista/ti
 import { TipoComponenteWebEditaComponent } from '../tipo-componente-web-edita/tipo-componente-web-edita.component';
 import { TipoExperienciaListaComponent } from '../tipo-experiencia-lista/tipo-experiencia-lista.component';
 import { TipoExperienciaEditaComponent } from '../tipo-experiencia-edita/tipo-experiencia-edita.component';
-import { TelaDetalheComponent } from 'src/app/tela-detalhe/tela-detalhe.component';
+import { TelaDetalheComponent } from '../tela-detalhe/tela-detalhe.component';
+import { RespostaMercadoEditaComponent } from '../resposta-mercado-edita/resposta-mercado-edita.component';
+import { RespostaMercadoListaComponent } from '../resposta-mercado-lista/resposta-mercado-lista.component';
 
 
 export const routes : Routes = [
@@ -93,6 +95,9 @@ export const routes : Routes = [
 
     { path: 'tipoExperiencia' , component: TipoExperienciaListaComponent },
     { path: 'tipoExperiencia/:id' , component: TipoExperienciaEditaComponent },
+
+    { path: 'respostaMercado' , component: RespostaMercadoListaComponent },
+    { path: 'respostaMercado/:id' , component: RespostaMercadoEditaComponent },
 
     { path: 'telaWebResumo/:id' , component: TelaDetalheComponent },
 

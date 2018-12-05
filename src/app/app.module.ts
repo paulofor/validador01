@@ -120,6 +120,7 @@ import { TipoExperienciaEditaComponent } from './tipo-experiencia-edita/tipo-exp
 import { TipoExperienciaListaComponent } from './tipo-experiencia-lista/tipo-experiencia-lista.component';
 import { RespostaMercadoListaComponent } from './resposta-mercado-lista/resposta-mercado-lista.component';
 import { RespostaMercadoEditaComponent } from './resposta-mercado-edita/resposta-mercado-edita.component';
+import { TelaDetalheComponent } from './tela-detalhe/tela-detalhe.component';
 
 
 
@@ -200,6 +201,7 @@ import { RespostaMercadoEditaComponent } from './resposta-mercado-edita/resposta
     TipoExperienciaListaComponent,
     RespostaMercadoListaComponent,
     RespostaMercadoEditaComponent,
+    TelaDetalheComponent,
 
   ],
   entryComponents: [

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { TelaWeb, TelaWebApi } from '../shared/sdk';
+import { MatDialog } from '@angular/material';
+import { EscolhaComponenteTelaWebComponent } from '../escolha-componente-tela-web/escolha-componente-tela-web.component';
 
 @Component({
   selector: 'app-tela-detalhe',
@@ -14,7 +16,7 @@ export class TelaDetalheComponent implements OnInit {
 
   consulta = {"include" : "telaComponenteWebs"};
 
-  constructor(private route: ActivatedRoute, private srv: TelaWebApi) { }
+  constructor(private route: ActivatedRoute, private srv: TelaWebApi, private dialog: MatDialog) { }
 
   ngOnInit() {
     this.carregaObjeto();
@@ -32,7 +34,18 @@ export class TelaDetalheComponent implements OnInit {
     });
   }
 
-
+  openDialog(item?) {
+    this.dialog.afterAllClosed.subscribe(result => {
+      console.log('Dialog result: ${result}');
+      this.carregaObjeto();
+    });
+    this.dialog.open(EscolhaComponenteTelaWebComponent, {
+      width: '800px',
+      data: {
+        item: item
+      }
+    });
+  }
   
 
 }

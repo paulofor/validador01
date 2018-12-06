@@ -221,7 +221,8 @@ import { EscolhaComponenteTelaWebComponent } from './escolha-componente-tela-web
     EditaRelacionamentoEntidadeComponent,
     TelaWebEditaCriaComponent,
     PalavraChaveRaizCriaEditaComponent,
-    AlocacaoPalavraChaveComponent
+    AlocacaoPalavraChaveComponent,
+    EscolhaComponenteTelaWebComponent
     //ArquivosComponent
   ],
   imports: [

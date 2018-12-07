@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TelaWeb, ComponenteWeb, ComponenteWebApi } from '../shared/sdk';
+import { TelaWeb, ComponenteWeb, ComponenteWebApi, TelaComponenteWeb, TelaComponenteWebApi } from '../shared/sdk';
 import { Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 
@@ -13,15 +13,19 @@ export class EscolhaComponenteTelaWebComponent implements OnInit {
 
   item: TelaWeb;
   listaComponente: ComponenteWeb[];
-
+  selecionado = null;
+  rel: TelaComponenteWeb;
 
   constructor(public dialogRef: MatDialogRef<EscolhaComponenteTelaWebComponent>
-    , @Inject(MAT_DIALOG_DATA) public data: any, private servico: ComponenteWebApi) {
+    , @Inject(MAT_DIALOG_DATA) public data: any, private servico: ComponenteWebApi,
+      private srvRel: TelaComponenteWebApi) {
 
   }
 
 
+
   ngOnInit() {
+    this.rel = new TelaComponenteWeb();
     console.log("Parametro entrada", this.data);
     if (!this.data.item) {
       console.log("fluxo nova");
@@ -44,22 +48,14 @@ export class EscolhaComponenteTelaWebComponent implements OnInit {
 
 
   onSubmit() {
+    console.log('Item Atual:', this.selecionado);
     console.log('Model: ' + JSON.stringify(this.item));
-    if (!this.item.id) {
-      this.servico.create(this.item, (err, obj) => {
-        console.log("Erro:" + err.message);
-      }).subscribe((e: any) => {
-        console.log(JSON.stringify(e));
+    this.rel.telaWebId = this.item.id;
+    this.rel.componenteWebId = this.selecionado;
+    this.srvRel.create(this.rel)
+      .subscribe((item) => {
         this.closeDialog();
-      });
-    } else {
-      this.servico.updateAttributes(this.item.id, this.item, (err, obj) => {
-        console.log("Erro:" + err.message);
-      }).subscribe((e: any) => {
-        console.log(JSON.stringify(e));
-        this.closeDialog();
-      });
-    }
+      })
   }
 
 

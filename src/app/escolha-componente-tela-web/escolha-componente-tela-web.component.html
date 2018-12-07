@@ -6,7 +6,7 @@
   <mat-dialog-content>
 
     <mat-form-field>
-      <mat-select placeholder="Componente">
+      <mat-select placeholder="Componente" [(value)]="selecionado"> 
         <mat-option *ngFor="let item of listaComponente" [value]="item.id">
           {{item.nome}}
         </mat-option>

@@ -14,7 +14,7 @@ export class TelaDetalheComponent implements OnInit {
 
   item : TelaWeb;
 
-  consulta = {"include" : "telaComponenteWebs"};
+  consulta = { "relation" : "telaComponenteWebs" , "scope" : {"include" : ""}};
 
   constructor(private route: ActivatedRoute, private srv: TelaWebApi, private dialog: MatDialog) { }
 

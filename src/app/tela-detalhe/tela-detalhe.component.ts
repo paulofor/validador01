@@ -26,7 +26,7 @@ export class TelaDetalheComponent implements OnInit {
     this.route.params.subscribe((params: Params) => {
       let id  = params['id'];
       console.log('IdTela: ', id);
-      this.srv.findById(id,this.consulta)
+      this.srv.findById(id)
         .subscribe((valor: TelaWeb) => {
           console.log('Objeto: ' + JSON.stringify(valor));
           this.item = valor;

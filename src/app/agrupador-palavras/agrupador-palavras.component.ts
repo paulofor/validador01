@@ -12,7 +12,7 @@ import { startWith, switchMap } from 'rxjs/operators';
 })
 export class AgrupadorPalavrasComponent implements OnInit {
 
-
+  listaProjeto: ProjetoMySql[];
 
   myControl = new FormControl();
 
@@ -30,6 +30,17 @@ export class AgrupadorPalavrasComponent implements OnInit {
     private srvPalavra: PalavraGoogleProjetoApi) {
   }
 
+  carregaListaProjeto() {
+    this.servico.ListaIdeiaBaseComPalavras()
+      .subscribe((resultado:ProjetoMySql[]) => {
+        console.log('Lista de Projeto: ' , resultado);
+        this.listaProjeto = resultado;
+      })
+  }
+
+  selecionado(evento) {
+    console.log('Item Selecionado(Projeto):' , evento);
+  }
 
   @Input()
   set palavraNova(item: PalavraChaveEstatistica) {
@@ -37,6 +48,7 @@ export class AgrupadorPalavrasComponent implements OnInit {
   }
  
   ngOnInit() {
+    this.carregaListaProjeto();
     this.projeto = new ProjetoMySql();
     this.palavraProjeto = new PalavraGoogleProjeto();
 

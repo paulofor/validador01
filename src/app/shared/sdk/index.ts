@@ -159,7 +159,8 @@ export class SDKBrowserModule {
         MedidaIndicadorProcessoApi,
         RespostaMercadoApi,
         internalStorageProvider,
-        { provide: SDKStorage, useClass: StorageBrowser }
+        { provide: SDKStorage, useClass: StorageBrowser },
+
       ]
     };
   }

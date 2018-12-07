@@ -799,10 +799,10 @@ export class ProjetoMySqlApi extends BaseLoopBackApi {
    * This usually means the response is a `ProjetoMySql` object.)
    * </em>
    */
-  public ListaIdeiaBase(customHeaders?: Function): Observable<any> {
+  public ListaIdeiaBaseComPalavras(customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/ProjetoMySqls/listaIdeiaBase";
+    "/ProjetoMySqls/listaIdeiaBaseComPalavras";
     let _routeParams: any = {};
     let _postBody: any = {};
     let _urlParams: any = {};

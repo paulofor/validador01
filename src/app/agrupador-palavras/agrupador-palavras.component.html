@@ -1,32 +1,16 @@
-<h2 *ngIf="projeto" mat-dialog-title>Projeto</h2>
+<h2 *ngIf="listaProjeto" mat-dialog-title>Projeto</h2>
 
 <form class="example-form" >
 
   <mat-dialog-content>
-    <mat-form-field class="example-full-width">
-      <input type="text" placeholder="Projeto" #nome [(ngModel)]="projeto.nome" name="nome" aria-label="Number" matInput [formControl]="myControl"
-        [matAutocomplete]="auto" (ngModelChange)="setProjeto($event)">
-      <mat-autocomplete #auto="matAutocomplete" [displayWith]="mostraNome">
-        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-          {{option.nome}}
+    <mat-form-field>
+      <mat-select placeholder="Componente" (selectionChange)="selecionado($event)"> 
+        <mat-option *ngFor="let item of listaProjeto" [value]="item.id">
+          {{item.nome}}
         </mat-option>
-      </mat-autocomplete>
+      </mat-select>
     </mat-form-field>
   </mat-dialog-content>
 
 </form>
 
-<div *ngIf="projetoSelecionado" class="content table-responsive table-full-width">
-  <table class="table table-hover table-striped">
-    <thead>
-      <tr>
-        <th>Titulo</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of lista">
-        <td>{{item.nome}}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>

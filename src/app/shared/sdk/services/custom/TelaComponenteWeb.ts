@@ -123,6 +123,34 @@ export class TelaComponenteWebApi extends BaseLoopBackApi {
   }
 
   /**
+   * Remove a relacao com os ids
+   *
+   * @param {object} data Request data.
+   *
+   *  - `idTela` – `{number}` - 
+   *
+   *  - `idComponente` – `{number}` - 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public RemoveRelacao(idTela: any, idComponente: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "PUT";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/TelaComponenteWebs/removeRelacao";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof idTela !== 'undefined' && idTela !== null) _urlParams.idTela = idTela;
+    if (typeof idComponente !== 'undefined' && idComponente !== null) _urlParams.idComponente = idComponente;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * The name of the model represented by this $resource,
    * i.e. `TelaComponenteWeb`.
    */

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { TelaWeb, TelaWebApi } from '../shared/sdk';
+import { TelaWeb, TelaWebApi, TelaComponenteWebApi } from '../shared/sdk';
 import { MatDialog } from '@angular/material';
 import { EscolhaComponenteTelaWebComponent } from '../escolha-componente-tela-web/escolha-componente-tela-web.component';
 
@@ -17,7 +17,8 @@ export class TelaDetalheComponent implements OnInit {
   //consulta = { "relation" : "telaComponenteWebs" , "scope" : {"include" : ""}};
   filtro = { "include" : { "relation" : "telaComponenteWebs" , "scope" : {"include" : "componenteWeb" } }};
 
-  constructor(private route: ActivatedRoute, private srv: TelaWebApi, private dialog: MatDialog) { }
+  constructor(private route: ActivatedRoute, private srv: TelaWebApi, private dialog: MatDialog,
+              private srvRel: TelaComponenteWebApi) { }
 
   ngOnInit() {
     this.carregaObjeto();
@@ -34,6 +35,14 @@ export class TelaDetalheComponent implements OnInit {
         })
     });
   }
+
+  excluiRelacao(item) {
+    this.srvRel.deleteById(item.id)
+      .subscribe((result) => {
+        this.carregaObjeto();
+      })
+  }
+
 
   openDialog(item?) {
     this.dialog.afterAllClosed.subscribe(result => {

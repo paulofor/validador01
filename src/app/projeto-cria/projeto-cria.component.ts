@@ -23,6 +23,7 @@ export class ProjetoCriaComponent implements OnInit {
 
   onSubmit() {
     console.log("Projeto: ", this.model);
+    this.model.etapaProjetoId= 1;
     this.servico
       .create(this.model, (err,obj) => {
       console.log("Erro:" + err.message);

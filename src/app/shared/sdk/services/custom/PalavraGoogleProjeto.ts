@@ -182,6 +182,34 @@ export class PalavraGoogleProjetoApi extends BaseLoopBackApi {
   }
 
   /**
+   * Remove a relacao com os ids
+   *
+   * @param {object} data Request data.
+   *
+   *  - `idProjeto` – `{number}` - 
+   *
+   *  - `idPalavra` – `{string}` - 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public RemoveRelacao(idProjeto: any, idPalavra: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "PUT";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/PalavraGoogleProjetos/removeRelacao";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof idProjeto !== 'undefined' && idProjeto !== null) _urlParams.idProjeto = idProjeto;
+    if (typeof idPalavra !== 'undefined' && idPalavra !== null) _urlParams.idPalavra = idPalavra;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * The name of the model represented by this $resource,
    * i.e. `PalavraGoogleProjeto`.
    */

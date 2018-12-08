@@ -1,16 +1,47 @@
-<h2 *ngIf="listaProjeto" mat-dialog-title>Projeto</h2>
+<div class="main-content">
+  <div class="container-fluid">
+    <div *ngIf="listaProjeto" class="row">
+      <h2 mat-dialog-title>Projeto</h2>
 
-<form class="example-form" >
+      <form class="example-form">
 
-  <mat-dialog-content>
-    <mat-form-field>
-      <mat-select placeholder="Componente" (selectionChange)="selecionado($event)"> 
-        <mat-option *ngFor="let item of listaProjeto" [value]="item.id">
-          {{item.nome}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-  </mat-dialog-content>
+        <mat-dialog-content>
+          <mat-form-field>
+            <mat-select placeholder="Componente" (selectionChange)="selecionado($event.value)">
+              <mat-option *ngFor="let item of listaProjeto" [value]="item.id">
+                {{item.nome}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-dialog-content>
 
-</form>
+      </form>
+    </div>
 
+
+    <div *ngIf="listaPalavra" class="row">
+      <div class="col-md-12">
+        <div class="card">
+
+          <div class="content table-responsive table-full-width">
+            <table class="table table-hover table-striped">
+              <thead>
+                <tr>
+                  <th>Palavra</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of listaPalavra">
+                  <td>{{item.palavraChaveGoogleId}}</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>

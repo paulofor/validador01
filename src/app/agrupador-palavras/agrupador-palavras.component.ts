@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ProjetoMySql, ProjetoMySqlApi, PalavraGoogleProjetoApi } from '../shared/sdk';
+import { ProjetoMySql, ProjetoMySqlApi, PalavraGoogleProjetoApi, PalavraChaveEstatisticaApi } from '../shared/sdk';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { PalavraGoogleProjeto, PalavraChaveEstatistica } from '../shared/sdk/models';
@@ -17,12 +17,13 @@ export class AgrupadorPalavrasComponent implements OnInit {
   palavra: string;
   projeto: ProjetoMySql;
   palavraProjeto: PalavraGoogleProjeto;
-  projetoSelecionado: ProjetoMySql;
+  
+  idProjeto : number;
+  listaPalavra : PalavraChaveEstatistica[];
 
-
-
+  
   constructor(private servico: ProjetoMySqlApi,
-    private srvPalavra: PalavraGoogleProjetoApi) {
+    private srvPalavra: PalavraGoogleProjetoApi, private srvLista: PalavraChaveEstatisticaApi) {
   }
 
   carregaListaProjeto() {
@@ -34,8 +35,8 @@ export class AgrupadorPalavrasComponent implements OnInit {
   }
 
   selecionado(evento) {
-    console.log('Item Selecionado(Projeto):', evento.source.selected);
-    this.projetoSelecionado = evento.source.selected;
+    console.log('Item Selecionado(Projeto):', evento);
+    this.idProjeto = evento;
     this.carregaPalavras();
   }
 
@@ -47,13 +48,13 @@ export class AgrupadorPalavrasComponent implements OnInit {
   }
 
   criaRelacionamento(palavraStr) {
-    if (!this.projetoSelecionado) {
+    if (!this.idProjeto) {
       console.log('Nao tem projeto:');
       return;
     }
     let palavraNova = new PalavraGoogleProjeto();
     palavraNova.palavraChaveGoogleId = palavraStr;
-    palavraNova.projetoMySqlId = this.projetoSelecionado.id;
+    palavraNova.projetoMySqlId = this.idProjeto;
     console.log('Vai inserir relacionamento: ', palavraNova);
     this.srvPalavra.create(palavraNova)
       .subscribe((resultado) => {
@@ -63,9 +64,13 @@ export class AgrupadorPalavrasComponent implements OnInit {
   }
 
   carregaPalavras() {
+    this.srvLista.ListaPorIdProjeto(this.idProjeto)
+      .subscribe((resultado) => {
+        this.listaPalavra = resultado;
+        console.log('Lista Palavra: ' , this.listaPalavra);
+      })
 
   }
-
 
   ngOnInit() {
     this.carregaListaProjeto();
@@ -75,8 +80,5 @@ export class AgrupadorPalavrasComponent implements OnInit {
     return (projeto ? projeto.nome : '');
   }
 
-  setProjeto(objeto) {
-    this.projetoSelecionado = (objeto ? objeto : null);
-  }
-
+  
 }

@@ -48,6 +48,7 @@ export class EscolhaComponenteTelaWebComponent implements OnInit {
 
 
   onSubmit() {
+    console.log('Rel:' , this.rel);
     console.log('Item Atual:', this.selecionado);
     console.log('Model: ' + JSON.stringify(this.item));
     this.rel.telaWebId = this.item.id;

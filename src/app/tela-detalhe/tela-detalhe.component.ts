@@ -14,7 +14,8 @@ export class TelaDetalheComponent implements OnInit {
 
   item : TelaWeb;
 
-  consulta = { "relation" : "telaComponenteWebs" , "scope" : {"include" : ""}};
+  //consulta = { "relation" : "telaComponenteWebs" , "scope" : {"include" : ""}};
+  filtro = { "include" : { "relation" : "telaComponenteWebs" , "scope" : {"include" : "componenteWeb" } }};
 
   constructor(private route: ActivatedRoute, private srv: TelaWebApi, private dialog: MatDialog) { }
 
@@ -26,10 +27,10 @@ export class TelaDetalheComponent implements OnInit {
     this.route.params.subscribe((params: Params) => {
       let id  = params['id'];
       console.log('IdTela: ', id);
-      this.srv.findById(id)
+      this.srv.findById(id, this.filtro)
         .subscribe((valor: TelaWeb) => {
-          console.log('Objeto: ' + JSON.stringify(valor));
           this.item = valor;
+          console.log('item: ' +  JSON.stringify(this.item));
         })
     });
   }

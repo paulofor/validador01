@@ -4,6 +4,7 @@ import {
   MvpCanvasMySql,
   GanhoDorCanvasMySql,
   PaginaValidacaoWeb,
+  PalavraGoogleProjeto,
   EtapaProjeto
 } from '../index';
 
@@ -19,6 +20,7 @@ export interface ProjetoMySqlInterface {
   mvpCanvasMySqls?: MvpCanvasMySql[];
   ganhoDorCanvasMySqls?: GanhoDorCanvasMySql[];
   paginaValidacaoWebs?: PaginaValidacaoWeb[];
+  palavraGoogleProjetos?: PalavraGoogleProjeto[];
   etapaProjeto?: EtapaProjeto;
 }
 
@@ -33,6 +35,7 @@ export class ProjetoMySql implements ProjetoMySqlInterface {
   mvpCanvasMySqls: MvpCanvasMySql[];
   ganhoDorCanvasMySqls: GanhoDorCanvasMySql[];
   paginaValidacaoWebs: PaginaValidacaoWeb[];
+  palavraGoogleProjetos: PalavraGoogleProjeto[];
   etapaProjeto: EtapaProjeto;
   constructor(data?: ProjetoMySqlInterface) {
     Object.assign(this, data);
@@ -121,6 +124,14 @@ export class ProjetoMySql implements ProjetoMySqlInterface {
           name: 'paginaValidacaoWebs',
           type: 'PaginaValidacaoWeb[]',
           model: 'PaginaValidacaoWeb',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'projetoMySqlId'
+        },
+        palavraGoogleProjetos: {
+          name: 'palavraGoogleProjetos',
+          type: 'PalavraGoogleProjeto[]',
+          model: 'PalavraGoogleProjeto',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'projetoMySqlId'

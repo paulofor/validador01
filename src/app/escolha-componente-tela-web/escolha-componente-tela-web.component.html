@@ -1,16 +1,20 @@
-
-<h2 mat-dialog-title>Escolha de componente para tela</h2>
+<h2 mat-dialog-title>
+  Escolha de componente para tela</h2>
 
 <form *ngIf="item" class="example-full-width" (ngSubmit)="onSubmit()">
 
   <mat-dialog-content>
 
-    <mat-form-field>
-      <mat-select placeholder="Componente" [(value)]="selecionado"> 
+    <mat-form-field class="example-full-width">
+      <mat-select placeholder="Componente"  [(value)]="selecionado" [(ngModel)]="rel.componenteWebId" name="componenteWebId">
         <mat-option *ngFor="let item of listaComponente" [value]="item.id">
           {{item.nome}}
         </mat-option>
       </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput autocomplete="off" maxlength="10" #ordenacao [(ngModel)]="rel.ordenacao" name="ordenacao" placeholder="Ordenação" />
     </mat-form-field>
 
   </mat-dialog-content>
@@ -21,3 +25,5 @@
   </mat-dialog-actions>
 
 </form>
+
+

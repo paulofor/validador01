@@ -160,7 +160,6 @@ export class SDKBrowserModule {
         RespostaMercadoApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser },
-
       ]
     };
   }

@@ -13,61 +13,70 @@ import { startWith, switchMap } from 'rxjs/operators';
 export class AgrupadorPalavrasComponent implements OnInit {
 
   listaProjeto: ProjetoMySql[];
-
   myControl = new FormControl();
-
-  filteredOptions: Observable<string[]>;
   palavra: string;
-
   projeto: ProjetoMySql;
-
   palavraProjeto: PalavraGoogleProjeto;
-
-  lista = [{"nome" : "valor1" }, {"nome" : "valor2"}];
-
   projetoSelecionado: ProjetoMySql;
+
+
+
   constructor(private servico: ProjetoMySqlApi,
     private srvPalavra: PalavraGoogleProjetoApi) {
   }
 
   carregaListaProjeto() {
     this.servico.ListaIdeiaBaseComPalavras()
-      .subscribe((resultado:ProjetoMySql[]) => {
-        console.log('Lista de Projeto: ' , resultado);
+      .subscribe((resultado: ProjetoMySql[]) => {
+        console.log('Lista de Projeto: ', resultado);
         this.listaProjeto = resultado;
       })
   }
 
   selecionado(evento) {
-    console.log('Item Selecionado(Projeto):' , evento);
+    console.log('Item Selecionado(Projeto):', evento.source.selected);
+    this.projetoSelecionado = evento.source.selected;
+    this.carregaPalavras();
   }
 
   @Input()
   set palavraNova(item: PalavraChaveEstatistica) {
-    console.log('Mudou=' , item);
+    console.log('Recebeu palavra', item);
+    if (item)
+      this.criaRelacionamento(item.palavraChaveGoogleId);
   }
- 
+
+  criaRelacionamento(palavraStr) {
+    if (!this.projetoSelecionado) {
+      console.log('Nao tem projeto:');
+      return;
+    }
+    let palavraNova = new PalavraGoogleProjeto();
+    palavraNova.palavraChaveGoogleId = palavraStr;
+    palavraNova.projetoMySqlId = this.projetoSelecionado.id;
+    console.log('Vai inserir relacionamento: ', palavraNova);
+    this.srvPalavra.create(palavraNova)
+      .subscribe((resultado) => {
+        console.log('Resultado:', resultado);
+        this.carregaPalavras();
+      });
+  }
+
+  carregaPalavras() {
+
+  }
+
+
   ngOnInit() {
     this.carregaListaProjeto();
-    this.projeto = new ProjetoMySql();
-    this.palavraProjeto = new PalavraGoogleProjeto();
-
-    this.filteredOptions = this.myControl.valueChanges
-      .pipe(
-      startWith(' '),
-      switchMap(value => this.servico.PesquisaPorTrecho(value))
-      );
   }
 
   mostraNome(projeto: ProjetoMySql): string {
-    return (projeto?projeto.nome:'');
+    return (projeto ? projeto.nome : '');
   }
 
   setProjeto(objeto) {
-    this.projetoSelecionado = (objeto ? objeto:null );
+    this.projetoSelecionado = (objeto ? objeto : null);
   }
 
-  setPalavra(item) {
-    console.log('Evento palavra: ' , item);
-  }
 }

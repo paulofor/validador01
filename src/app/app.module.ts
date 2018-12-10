@@ -122,6 +122,7 @@ import { RespostaMercadoListaComponent } from './resposta-mercado-lista/resposta
 import { RespostaMercadoEditaComponent } from './resposta-mercado-edita/resposta-mercado-edita.component';
 import { TelaDetalheComponent } from './tela-detalhe/tela-detalhe.component';
 import { EscolhaComponenteTelaWebComponent } from './escolha-componente-tela-web/escolha-componente-tela-web.component';
+import { ProjetoEtapaValorComponent } from './projeto-etapa-valor/projeto-etapa-valor.component';
 
 
 
@@ -204,6 +205,7 @@ import { EscolhaComponenteTelaWebComponent } from './escolha-componente-tela-web
     RespostaMercadoEditaComponent,
     TelaDetalheComponent,
     EscolhaComponenteTelaWebComponent,
+    ProjetoEtapaValorComponent,
 
   ],
   entryComponents: [

@@ -42,6 +42,7 @@ import { TipoExperienciaEditaComponent } from '../tipo-experiencia-edita/tipo-ex
 import { TelaDetalheComponent } from '../tela-detalhe/tela-detalhe.component';
 import { RespostaMercadoEditaComponent } from '../resposta-mercado-edita/resposta-mercado-edita.component';
 import { RespostaMercadoListaComponent } from '../resposta-mercado-lista/resposta-mercado-lista.component';
+import { ProjetoEtapaValorComponent } from '../projeto-etapa-valor/projeto-etapa-valor.component';
 
 
 export const routes : Routes = [
@@ -100,6 +101,10 @@ export const routes : Routes = [
     { path: 'respostaMercado/:id' , component: RespostaMercadoEditaComponent },
 
     { path: 'telaWebResumo/:id' , component: TelaDetalheComponent },
+
+
+    { path: 'projetosFaseValor' , component: ProjetoEtapaValorComponent},
+  
 
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

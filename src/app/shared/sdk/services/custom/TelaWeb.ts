@@ -333,6 +333,32 @@ export class TelaWebApi extends BaseLoopBackApi {
   }
 
   /**
+   * Obtem todas as telas com elementos internos necessarios para o gerador de codigo
+   *
+   * @param {number} idAplicacao 
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `TelaWeb` object.)
+   * </em>
+   */
+  public ObtemPorIdAplicacaoParaGerador(idAplicacao: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/TelaWebs/obtemPorIdAplicacaoParaGerador";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof idAplicacao !== 'undefined' && idAplicacao !== null) _urlParams.idAplicacao = idAplicacao;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Creates a new instance in telaComponenteWebs of this model.
    *
    * @param {any} id TelaWeb id

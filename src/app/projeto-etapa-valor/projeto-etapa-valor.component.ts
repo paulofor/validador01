@@ -8,7 +8,6 @@ import { ProjetoMySql, ProjetoMySqlApi } from '../shared/sdk';
 })
 export class ProjetoEtapaValorComponent implements OnInit {
 
-  filtro = { "where" : {"etapaProjetoId" : 2}};
 
   projetos: ProjetoMySql[];
   errMess: string;
@@ -18,7 +17,7 @@ export class ProjetoEtapaValorComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.projetoService.find(this.filtro)
+    this.projetoService.ListaPorCodigoEtapa('IDVAL')
       .subscribe((projetos: ProjetoMySql[]) =>
         this.projetos = projetos
       );

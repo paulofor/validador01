@@ -39,5 +39,7 @@ export * from './TipoExperiencia';
 export * from './IndicadorPerformanceProcesso';
 export * from './MedidaIndicadorProcesso';
 export * from './RespostaMercado';
+export * from './ConceitoProduto';
+export * from './ValorConceito';
 export * from './BaseModels';
 export * from './FireLoopRef';

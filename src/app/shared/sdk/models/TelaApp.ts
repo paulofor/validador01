@@ -1,14 +1,19 @@
 /* tslint:disable */
+import {
+  Entidade
+} from '../index';
 
 declare var Object: any;
 export interface TelaAppInterface {
   "nome"?: string;
   "id"?: number;
+  entidades?: Entidade;
 }
 
 export class TelaApp implements TelaAppInterface {
   "nome": string;
   "id": number;
+  entidades: Entidade;
   constructor(data?: TelaAppInterface) {
     Object.assign(this, data);
   }
@@ -52,6 +57,14 @@ export class TelaApp implements TelaAppInterface {
         },
       },
       relations: {
+        entidades: {
+          name: 'entidades',
+          type: 'Entidade',
+          model: 'Entidade',
+          relationType: 'hasOne',
+                  keyFrom: 'id',
+          keyTo: 'telaAppId'
+        },
       }
     }
   }

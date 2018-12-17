@@ -15,6 +15,7 @@ export interface EntidadeInterface {
   "id_atributo_identificador"?: number;
   "id_entidade_pai"?: number;
   "id_aplicacao"?: number;
+  "telaAppId"?: number;
   atributoEntidades?: Atributo_entidade[];
   rel1?: Relacionamento_entidade[];
   rel2?: Relacionamento_entidade[];
@@ -30,6 +31,7 @@ export class Entidade implements EntidadeInterface {
   "id_atributo_identificador": number;
   "id_entidade_pai": number;
   "id_aplicacao": number;
+  "telaAppId": number;
   atributoEntidades: Atributo_entidade[];
   rel1: Relacionamento_entidade[];
   rel2: Relacionamento_entidade[];
@@ -100,6 +102,10 @@ export class Entidade implements EntidadeInterface {
         },
         "id_aplicacao": {
           name: 'id_aplicacao',
+          type: 'number'
+        },
+        "telaAppId": {
+          name: 'telaAppId',
           type: 'number'
         },
       },

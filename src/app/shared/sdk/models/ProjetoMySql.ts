@@ -4,7 +4,8 @@ import {
   MvpCanvasMySql,
   GanhoDorCanvasMySql,
   PaginaValidacaoWeb,
-  EtapaProjeto
+  EtapaProjeto,
+  ConceitoProduto
 } from '../index';
 
 declare var Object: any;
@@ -20,6 +21,7 @@ export interface ProjetoMySqlInterface {
   ganhoDorCanvasMySqls?: GanhoDorCanvasMySql[];
   paginaValidacaoWebs?: PaginaValidacaoWeb[];
   etapaProjeto?: EtapaProjeto;
+  conceitoProdutos?: ConceitoProduto[];
 }
 
 export class ProjetoMySql implements ProjetoMySqlInterface {
@@ -34,6 +36,7 @@ export class ProjetoMySql implements ProjetoMySqlInterface {
   ganhoDorCanvasMySqls: GanhoDorCanvasMySql[];
   paginaValidacaoWebs: PaginaValidacaoWeb[];
   etapaProjeto: EtapaProjeto;
+  conceitoProdutos: ConceitoProduto[];
   constructor(data?: ProjetoMySqlInterface) {
     Object.assign(this, data);
   }
@@ -132,6 +135,14 @@ export class ProjetoMySql implements ProjetoMySqlInterface {
           relationType: 'belongsTo',
                   keyFrom: 'etapaProjetoId',
           keyTo: 'id'
+        },
+        conceitoProdutos: {
+          name: 'conceitoProdutos',
+          type: 'ConceitoProduto[]',
+          model: 'ConceitoProduto',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'projetoMySqlId'
         },
       }
     }

@@ -123,6 +123,13 @@ import { RespostaMercadoEditaComponent } from './resposta-mercado-edita/resposta
 import { TelaDetalheComponent } from './tela-detalhe/tela-detalhe.component';
 import { EscolhaComponenteTelaWebComponent } from './escolha-componente-tela-web/escolha-componente-tela-web.component';
 import { ProjetoEtapaValorComponent } from './projeto-etapa-valor/projeto-etapa-valor.component';
+import { ListaPalavraChavePorProjetoComponent } from './lista-palavra-chave-por-projeto/lista-palavra-chave-por-projeto.component';
+import { ListaValorConceitoComponent } from './lista-valor-conceito/lista-valor-conceito.component';
+import { ListaTelaAppPorProjetoComponent } from './lista-tela-app-por-projeto/lista-tela-app-por-projeto.component';
+import { ListaValorConceitoPorProjetoComponent } from './lista-valor-conceito-por-projeto/lista-valor-conceito-por-projeto.component';
+import { EditaValorConceitoComponent } from './edita-valor-conceito/edita-valor-conceito.component';
+import { EditaTelaAppComponent } from './edita-tela-app/edita-tela-app.component';
+import { EditaConceitoProjetoComponent } from './edita-conceito-projeto/edita-conceito-projeto.component';
 
 
 
@@ -206,6 +213,13 @@ import { ProjetoEtapaValorComponent } from './projeto-etapa-valor/projeto-etapa-
     TelaDetalheComponent,
     EscolhaComponenteTelaWebComponent,
     ProjetoEtapaValorComponent,
+    ListaPalavraChavePorProjetoComponent,
+    ListaValorConceitoComponent,
+    ListaTelaAppPorProjetoComponent,
+    ListaValorConceitoPorProjetoComponent,
+    EditaValorConceitoComponent,
+    EditaTelaAppComponent,
+    EditaConceitoProjetoComponent,
 
   ],
   entryComponents: [

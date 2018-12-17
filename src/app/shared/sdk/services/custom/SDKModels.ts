@@ -40,6 +40,8 @@ import { TipoExperiencia } from '../../models/TipoExperiencia';
 import { IndicadorPerformanceProcesso } from '../../models/IndicadorPerformanceProcesso';
 import { MedidaIndicadorProcesso } from '../../models/MedidaIndicadorProcesso';
 import { RespostaMercado } from '../../models/RespostaMercado';
+import { ConceitoProduto } from '../../models/ConceitoProduto';
+import { ValorConceito } from '../../models/ValorConceito';
 
 export interface Models { [name: string]: any }
 
@@ -87,6 +89,8 @@ export class SDKModels {
     IndicadorPerformanceProcesso: IndicadorPerformanceProcesso,
     MedidaIndicadorProcesso: MedidaIndicadorProcesso,
     RespostaMercado: RespostaMercado,
+    ConceitoProduto: ConceitoProduto,
+    ValorConceito: ValorConceito,
     
   };
 

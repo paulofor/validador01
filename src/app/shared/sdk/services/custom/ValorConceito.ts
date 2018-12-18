@@ -9,16 +9,16 @@ import { LoopBackFilter,  } from '../../models/BaseModels';
 import { ErrorHandler } from '../core/error.service';
 import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { TelaApp } from '../../models/TelaApp';
+import { ValorConceito } from '../../models/ValorConceito';
 import { SocketConnection } from '../../sockets/socket.connections';
-import { Entidade } from '../../models/Entidade';
+import { AnuncioAds } from '../../models/AnuncioAds';
 
 
 /**
- * Api services for the `TelaApp` model.
+ * Api services for the `ValorConceito` model.
  */
 @Injectable()
-export class TelaAppApi extends BaseLoopBackApi {
+export class ValorConceitoApi extends BaseLoopBackApi {
 
   constructor(
     @Inject(HttpClient) protected http: HttpClient,
@@ -31,11 +31,11 @@ export class TelaAppApi extends BaseLoopBackApi {
   }
 
   /**
-   * Fetches hasOne relation entidades.
+   * Find a related item by id for anuncioAds.
    *
-   * @param {any} id TelaApp id
+   * @param {any} id ValorConceito id
    *
-   * @param {boolean} refresh 
+   * @param {any} fk Foreign key for anuncioAds
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -43,93 +43,29 @@ export class TelaAppApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `TelaApp` object.)
+   * This usually means the response is a `ValorConceito` object.)
    * </em>
    */
-  public getEntidades(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
+  public findByIdAnuncioAds(id: any, fk: any, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/TelaApps/:id/entidades";
+    "/ValorConceitos/:id/anuncioAds/:fk";
     let _routeParams: any = {
-      id: id
+      id: id,
+      fk: fk
     };
     let _postBody: any = {};
     let _urlParams: any = {};
-    if (typeof refresh !== 'undefined' && refresh !== null) _urlParams.refresh = refresh;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
 
   /**
-   * Creates a new instance in entidades of this model.
+   * Delete a related item by id for anuncioAds.
    *
-   * @param {any} id TelaApp id
+   * @param {any} id ValorConceito id
    *
-   * @param {object} data Request data.
-   *
-   * This method expects a subset of model properties as request parameters.
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `TelaApp` object.)
-   * </em>
-   */
-  public createEntidades(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "POST";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/TelaApps/:id/entidades";
-    let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {
-      data: data
-    };
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
-  }
-
-  /**
-   * Update entidades of this model.
-   *
-   * @param {any} id TelaApp id
-   *
-   * @param {object} data Request data.
-   *
-   * This method expects a subset of model properties as request parameters.
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `TelaApp` object.)
-   * </em>
-   */
-  public updateEntidades(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "PUT";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/TelaApps/:id/entidades";
-    let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {
-      data: data
-    };
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
-  }
-
-  /**
-   * Deletes entidades of this model.
-   *
-   * @param {any} id TelaApp id
+   * @param {any} fk Foreign key for anuncioAds
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -137,15 +73,168 @@ export class TelaAppApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public destroyEntidades(id: any, customHeaders?: Function): Observable<any> {
+  public destroyByIdAnuncioAds(id: any, fk: any, customHeaders?: Function): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/TelaApps/:id/entidades";
+    "/ValorConceitos/:id/anuncioAds/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Update a related item by id for anuncioAds.
+   *
+   * @param {any} id ValorConceito id
+   *
+   * @param {any} fk Foreign key for anuncioAds
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ValorConceito` object.)
+   * </em>
+   */
+  public updateByIdAnuncioAds(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "PUT";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ValorConceitos/:id/anuncioAds/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Queries anuncioAds of ValorConceito.
+   *
+   * @param {any} id ValorConceito id
+   *
+   * @param {object} filter 
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ValorConceito` object.)
+   * </em>
+   */
+  public getAnuncioAds(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ValorConceitos/:id/anuncioAds";
     let _routeParams: any = {
       id: id
     };
     let _postBody: any = {};
     let _urlParams: any = {};
+    if (typeof filter !== 'undefined' && filter !== null) _urlParams.filter = filter;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Creates a new instance in anuncioAds of this model.
+   *
+   * @param {any} id ValorConceito id
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ValorConceito` object.)
+   * </em>
+   */
+  public createAnuncioAds(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ValorConceitos/:id/anuncioAds";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Deletes all anuncioAds of this model.
+   *
+   * @param {any} id ValorConceito id
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public deleteAnuncioAds(id: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "DELETE";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ValorConceitos/:id/anuncioAds";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Counts anuncioAds of ValorConceito.
+   *
+   * @param {any} id ValorConceito id
+   *
+   * @param {object} where Criteria to match model instances
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * Data properties:
+   *
+   *  - `count` – `{number}` - 
+   */
+  public countAnuncioAds(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ValorConceitos/:id/anuncioAds/count";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof where !== 'undefined' && where !== null) _urlParams.where = where;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
@@ -163,13 +252,13 @@ export class TelaAppApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `TelaApp` object.)
+   * This usually means the response is a `ValorConceito` object.)
    * </em>
    */
   public patchOrCreate(data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/TelaApps";
+    "/ValorConceitos";
     let _routeParams: any = {};
     let _postBody: any = {
       data: data
@@ -182,7 +271,7 @@ export class TelaAppApi extends BaseLoopBackApi {
   /**
    * Patch attributes for a model instance and persist it into the data source.
    *
-   * @param {any} id TelaApp id
+   * @param {any} id ValorConceito id
    *
    * @param {object} data Request data.
    *
@@ -194,13 +283,13 @@ export class TelaAppApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `TelaApp` object.)
+   * This usually means the response is a `ValorConceito` object.)
    * </em>
    */
   public patchAttributes(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/TelaApps/:id";
+    "/ValorConceitos/:id";
     let _routeParams: any = {
       id: id
     };
@@ -213,38 +302,9 @@ export class TelaAppApi extends BaseLoopBackApi {
   }
 
   /**
-   * Retorna as telas de um projeto, pode ser pelo idProjeto ( conceito ativo ) ou pelo idConceito
+   * Creates a new instance in anuncioAds of this model.
    *
-   * @param {number} idProjeto 
-   *
-   * @param {number} idConceito 
-   *
-   * @returns {object[]} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `TelaApp` object.)
-   * </em>
-   */
-  public ListaTelaAppProjeto(idProjeto: any = {}, idConceito: any = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "GET";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/TelaApps/listaTelaAppProjeto";
-    let _routeParams: any = {};
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    if (typeof idProjeto !== 'undefined' && idProjeto !== null) _urlParams.idProjeto = idProjeto;
-    if (typeof idConceito !== 'undefined' && idConceito !== null) _urlParams.idConceito = idConceito;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
-  }
-
-  /**
-   * Creates a new instance in entidades of this model.
-   *
-   * @param {any} id TelaApp id
+   * @param {any} id ValorConceito id
    *
    * @param {object} data Request data.
    *
@@ -256,13 +316,13 @@ export class TelaAppApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `TelaApp` object.)
+   * This usually means the response is a `ValorConceito` object.)
    * </em>
    */
-  public createManyEntidades(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
+  public createManyAnuncioAds(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/TelaApps/:id/entidades";
+    "/ValorConceitos/:id/anuncioAds";
     let _routeParams: any = {
       id: id
     };
@@ -276,9 +336,9 @@ export class TelaAppApi extends BaseLoopBackApi {
 
   /**
    * The name of the model represented by this $resource,
-   * i.e. `TelaApp`.
+   * i.e. `ValorConceito`.
    */
   public getModelName() {
-    return "TelaApp";
+    return "ValorConceito";
   }
 }

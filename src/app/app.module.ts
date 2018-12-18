@@ -123,6 +123,8 @@ import { RespostaMercadoEditaComponent } from './resposta-mercado-edita/resposta
 import { TelaDetalheComponent } from './tela-detalhe/tela-detalhe.component';
 import { EscolhaComponenteTelaWebComponent } from './escolha-componente-tela-web/escolha-componente-tela-web.component';
 import { ProjetoEtapaValorComponent } from './projeto-etapa-valor/projeto-etapa-valor.component';
+import { ProjetoConceitoProdutoComponent } from './projeto-conceito-produto/projeto-conceito-produto.component';
+import { ProjetoValorTelaComponent } from './projeto-valor-tela/projeto-valor-tela.component';
 
 
 
@@ -206,6 +208,8 @@ import { ProjetoEtapaValorComponent } from './projeto-etapa-valor/projeto-etapa-
     TelaDetalheComponent,
     EscolhaComponenteTelaWebComponent,
     ProjetoEtapaValorComponent,
+    ProjetoConceitoProdutoComponent,
+    ProjetoValorTelaComponent,
 
   ],
   entryComponents: [

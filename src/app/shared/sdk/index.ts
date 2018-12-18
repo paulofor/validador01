@@ -88,6 +88,8 @@ import { TipoExperienciaApi } from './services/custom/TipoExperiencia';
 import { IndicadorPerformanceProcessoApi } from './services/custom/IndicadorPerformanceProcesso';
 import { MedidaIndicadorProcessoApi } from './services/custom/MedidaIndicadorProcesso';
 import { RespostaMercadoApi } from './services/custom/RespostaMercado';
+import { ConceitoProdutoApi } from './services/custom/ConceitoProduto';
+import { ValorConceitoApi } from './services/custom/ValorConceito';
 /**
 * @module SDKBrowserModule
 * @description
@@ -158,6 +160,8 @@ export class SDKBrowserModule {
         IndicadorPerformanceProcessoApi,
         MedidaIndicadorProcessoApi,
         RespostaMercadoApi,
+        ConceitoProdutoApi,
+        ValorConceitoApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser },
 

@@ -137,10 +137,10 @@ export class TelaComponenteWebApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public RemoveRelacao(idTela: any, idComponente: any, customHeaders?: Function): Observable<any> {
+  public RemoveRelacaoTela(idTela: any, idComponente: any, customHeaders?: Function): Observable<any> {
     let _method: string = "PUT";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/TelaComponenteWebs/removeRelacao";
+    "/TelaComponenteWebs/removeRelacaoTela";
     let _routeParams: any = {};
     let _postBody: any = {};
     let _urlParams: any = {};

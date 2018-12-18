@@ -12,6 +12,7 @@ export interface AnuncioAdsInterface {
   "descricao1"?: string;
   "descricao2"?: string;
   "projetoCanvasMySqlId"?: number;
+  "valorConceitoId"?: number;
   projetoCanvasMySql?: ProjetoCanvasMySql;
 }
 
@@ -23,6 +24,7 @@ export class AnuncioAds implements AnuncioAdsInterface {
   "descricao1": string;
   "descricao2": string;
   "projetoCanvasMySqlId": number;
+  "valorConceitoId": number;
   projetoCanvasMySql: ProjetoCanvasMySql;
   constructor(data?: AnuncioAdsInterface) {
     Object.assign(this, data);
@@ -83,6 +85,10 @@ export class AnuncioAds implements AnuncioAdsInterface {
         },
         "projetoCanvasMySqlId": {
           name: 'projetoCanvasMySqlId',
+          type: 'number'
+        },
+        "valorConceitoId": {
+          name: 'valorConceitoId',
           type: 'number'
         },
       },

@@ -160,7 +160,7 @@ export class PalavraGoogleProjetoApi extends BaseLoopBackApi {
    *
    *  - `idProjeto` – `{number}` - 
    *
-   *  - `idPalavra` – `{string}` - 
+   *  - `idPalavra` – `{number}` - 
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -168,10 +168,10 @@ export class PalavraGoogleProjetoApi extends BaseLoopBackApi {
    *
    * This method returns no data.
    */
-  public RemoveRelacao(idProjeto: any, idPalavra: any, customHeaders?: Function): Observable<any> {
+  public RemoveRelacaoPalavra(idProjeto: any, idPalavra: any, customHeaders?: Function): Observable<any> {
     let _method: string = "PUT";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/PalavraGoogleProjetos/removeRelacao";
+    "/PalavraGoogleProjetos/removeRelacaoPalavra";
     let _routeParams: any = {};
     let _postBody: any = {};
     let _urlParams: any = {};

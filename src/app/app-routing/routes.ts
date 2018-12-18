@@ -43,6 +43,8 @@ import { TelaDetalheComponent } from '../tela-detalhe/tela-detalhe.component';
 import { RespostaMercadoEditaComponent } from '../resposta-mercado-edita/resposta-mercado-edita.component';
 import { RespostaMercadoListaComponent } from '../resposta-mercado-lista/resposta-mercado-lista.component';
 import { ProjetoEtapaValorComponent } from '../projeto-etapa-valor/projeto-etapa-valor.component';
+import { ProjetoValorTelaComponent } from '../projeto-valor-tela/projeto-valor-tela.component';
+import { ProjetoConceitoProdutoComponent } from '../projeto-conceito-produto/projeto-conceito-produto.component';
 
 
 export const routes : Routes = [
@@ -105,6 +107,9 @@ export const routes : Routes = [
 
     { path: 'projetosFaseValor' , component: ProjetoEtapaValorComponent},
   
+
+    { path: 'projetoConceitoProduto/:id' , component: ProjetoConceitoProdutoComponent},
+    { path: 'projetoValorTela/:id' , component: ProjetoValorTelaComponent},
 
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

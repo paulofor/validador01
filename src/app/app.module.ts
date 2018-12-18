@@ -132,6 +132,8 @@ import { ListaValorConceitoPorProjetoComponent } from './lista-valor-conceito-po
 import { EditaValorConceitoComponent } from './edita-valor-conceito/edita-valor-conceito.component';
 import { EditaTelaAppComponent } from './edita-tela-app/edita-tela-app.component';
 import { EditaConceitoProjetoComponent } from './edita-conceito-projeto/edita-conceito-projeto.component';
+import { ConceitoProdutoListaComponent } from './conceito-produto-lista/conceito-produto-lista.component';
+import { ConceitoProdutoEditaComponent } from './conceito-produto-edita/conceito-produto-edita.component';
 
 
 
@@ -224,6 +226,8 @@ import { EditaConceitoProjetoComponent } from './edita-conceito-projeto/edita-co
     EditaValorConceitoComponent,
     EditaTelaAppComponent,
     EditaConceitoProjetoComponent,
+    ConceitoProdutoListaComponent,
+    ConceitoProdutoEditaComponent,
 
   ],
   entryComponents: [
@@ -242,7 +246,8 @@ import { EditaConceitoProjetoComponent } from './edita-conceito-projeto/edita-co
     TelaWebEditaCriaComponent,
     PalavraChaveRaizCriaEditaComponent,
     AlocacaoPalavraChaveComponent,
-    EscolhaComponenteTelaWebComponent
+    EscolhaComponenteTelaWebComponent,
+    ConceitoProdutoEditaComponent
     //ArquivosComponent
   ],
   imports: [

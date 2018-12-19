@@ -1,18 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { ConceitoProduto, ValorConceito, ConceitoProdutoApi } from '../shared/sdk';
+import { TelaWeb, ConceitoProdutoApi, ConceitoProduto } from '../shared/sdk';
 import { Input } from '@angular/core';
 import { MatDialog } from '@angular/material';
-import { EditaValorConceitoComponent } from '../edita-valor-conceito/edita-valor-conceito.component';
 
 @Component({
-  selector: 'app-lista-valor-conceito',
-  templateUrl: './lista-valor-conceito.component.html',
-  styleUrls: ['./lista-valor-conceito.component.scss']
+  selector: 'app-lista-tela-web',
+  templateUrl: './lista-tela-web.component.html',
+  styleUrls: ['./lista-tela-web.component.scss']
 })
-export class ListaValorConceitoComponent implements OnInit {
+export class ListaTelaWebComponent implements OnInit {
 
   @Input() conceito: ConceitoProduto;
-  lista: ValorConceito[];
+  lista: TelaWeb[];
 
   constructor(private srv: ConceitoProdutoApi, private dialog: MatDialog) { }
 
@@ -21,8 +20,8 @@ export class ListaValorConceitoComponent implements OnInit {
   }
 
   carregaLista() {
-    this.srv.getValorConceitos(this.conceito.id)
-      .subscribe((result:ValorConceito[]) => {
+    this.srv.getTelaApps(this.conceito.id)
+      .subscribe((result:TelaWeb[]) => {
         this.lista = result;
       });
   }
@@ -32,7 +31,7 @@ export class ListaValorConceitoComponent implements OnInit {
       console.log('Dialog result: ${result}');
       this.carregaLista();
     });
-    this.dialog.open(EditaValorConceitoComponent, {
+    this.dialog.open(EditaTelaWebComponent, {
       width: '800px',
       data: {
         conceito: this.conceito,

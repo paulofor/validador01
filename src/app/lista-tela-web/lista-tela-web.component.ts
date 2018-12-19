@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TelaWeb, ConceitoProdutoApi, ConceitoProduto } from '../shared/sdk';
 import { Input } from '@angular/core';
 import { MatDialog } from '@angular/material';
+import { EditaTelaWebComponent } from '../edita-tela-web/edita-tela-web.component';
 
 @Component({
   selector: 'app-lista-tela-web',
@@ -20,7 +21,7 @@ export class ListaTelaWebComponent implements OnInit {
   }
 
   carregaLista() {
-    this.srv.getTelaApps(this.conceito.id)
+    this.srv.getTelaWebs(this.conceito.id)
       .subscribe((result:TelaWeb[]) => {
         this.lista = result;
       });

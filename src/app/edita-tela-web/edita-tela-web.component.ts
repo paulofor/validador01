@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TelaWeb, ConceitoProduto, TelaWebApi } from 'src/app/shared/sdk';
+import { TelaWeb, ConceitoProduto, TelaWebApi } from '../shared/sdk';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { Inject } from '@angular/core';
 

@@ -91,10 +91,7 @@ import { RespostaMercadoApi } from './services/custom/RespostaMercado';
 import { ConceitoProdutoApi } from './services/custom/ConceitoProduto';
 import { ValorConceitoApi } from './services/custom/ValorConceito';
 import { RecursoConceitoProdutoApi } from './services/custom/RecursoConceitoProduto';
-<<<<<<< HEAD
 import { PublicoApi } from './services/custom/Publico';
-=======
->>>>>>> fe84ea5c17e21be7fde414fa45fd87785a1368e5
 /**
 * @module SDKBrowserModule
 * @description

@@ -94,10 +94,7 @@ export class SDKModels {
     ConceitoProduto: ConceitoProduto,
     ValorConceito: ValorConceito,
     RecursoConceitoProduto: RecursoConceitoProduto,
-<<<<<<< HEAD
     Publico: Publico,
-=======
->>>>>>> fe84ea5c17e21be7fde414fa45fd87785a1368e5
     
   };
 

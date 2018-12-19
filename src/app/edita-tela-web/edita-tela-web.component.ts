@@ -1,27 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { TelaWeb, ConceitoProduto, TelaWebApi } from 'src/app/shared/sdk';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { Inject } from '@angular/core';
-import { TelaApp, TelaAppApi, ConceitoProduto } from '../shared/sdk';
 
 @Component({
-  selector: 'app-edita-tela-app',
-  templateUrl: './edita-tela-app.component.html',
-  styleUrls: ['./edita-tela-app.component.scss']
+  selector: 'app-edita-tela-web',
+  templateUrl: './edita-tela-web.component.html',
+  styleUrls: ['./edita-tela-web.component.scss']
 })
-export class EditaTelaAppComponent implements OnInit {
+export class EditaTelaWebComponent implements OnInit {
 
-  item: TelaApp;
+  item: TelaWeb;
   conceito: ConceitoProduto;
 
-  constructor(public dialogRef: MatDialogRef<EditaTelaAppComponent>
-    , @Inject(MAT_DIALOG_DATA) public data: any, private servico: TelaAppApi) { }
+  constructor(public dialogRef: MatDialogRef<EditaTelaWebComponent>
+    , @Inject(MAT_DIALOG_DATA) public data: any, private servico: TelaWebApi) { }
 
   ngOnInit() {
     console.log("Parametro entrada", this.data);
     this.conceito = this.data.conceito;
     if (!this.data.item) {
       console.log("fluxo nova");
-      this.item = new TelaApp();
+      this.item = new TelaWeb();
     } else {
       console.log('fluxo altera');
       this.item = this.data.item;
@@ -52,4 +52,5 @@ export class EditaTelaAppComponent implements OnInit {
   closeDialog() {
     this.dialogRef.close('Pizza!');
   }
+
 }

@@ -1,18 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { ConceitoProduto, ValorConceito, ConceitoProdutoApi } from '../shared/sdk';
 import { Input } from '@angular/core';
+import { ConceitoProduto, ConceitoProdutoApi, TelaApp } from '../shared/sdk';
 import { MatDialog } from '@angular/material';
-import { EditaValorConceitoComponent } from '../edita-valor-conceito/edita-valor-conceito.component';
+import { EditaTelaAppComponent } from '../edita-tela-app/edita-tela-app.component';
+
 
 @Component({
-  selector: 'app-lista-valor-conceito',
-  templateUrl: './lista-valor-conceito.component.html',
-  styleUrls: ['./lista-valor-conceito.component.scss']
+  selector: 'app-lista-tela-app',
+  templateUrl: './lista-tela-app.component.html',
+  styleUrls: ['./lista-tela-app.component.scss']
 })
-export class ListaValorConceitoComponent implements OnInit {
+export class ListaTelaAppComponent implements OnInit {
 
   @Input() conceito: ConceitoProduto;
-  lista: ValorConceito[];
+  lista: TelaApp[];
 
   constructor(private srv: ConceitoProdutoApi, private dialog: MatDialog) { }
 
@@ -21,8 +22,8 @@ export class ListaValorConceitoComponent implements OnInit {
   }
 
   carregaLista() {
-    this.srv.getValorConceitos(this.conceito.id)
-      .subscribe((result:ValorConceito[]) => {
+    this.srv.getTelaApps(this.conceito.id)
+      .subscribe((result:TelaApp[]) => {
         this.lista = result;
       });
   }
@@ -32,7 +33,7 @@ export class ListaValorConceitoComponent implements OnInit {
       console.log('Dialog result: ${result}');
       this.carregaLista();
     });
-    this.dialog.open(EditaValorConceitoComponent, {
+    this.dialog.open(EditaTelaAppComponent, {
       width: '800px',
       data: {
         conceito: this.conceito,

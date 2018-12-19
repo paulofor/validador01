@@ -1,5 +1,7 @@
 /* tslint:disable */
 import {
+  TelaApp,
+  TelaWeb,
   ValorConceito
 } from '../index';
 
@@ -11,6 +13,8 @@ export interface ConceitoProdutoInterface {
   "dataCriacao"?: Date;
   "id"?: number;
   "projetoMySqlId"?: number;
+  telaApps?: TelaApp[];
+  telaWebs?: TelaWeb[];
   valorConceitos?: ValorConceito[];
 }
 
@@ -21,6 +25,8 @@ export class ConceitoProduto implements ConceitoProdutoInterface {
   "dataCriacao": Date;
   "id": number;
   "projetoMySqlId": number;
+  telaApps: TelaApp[];
+  telaWebs: TelaWeb[];
   valorConceitos: ValorConceito[];
   constructor(data?: ConceitoProdutoInterface) {
     Object.assign(this, data);
@@ -81,6 +87,22 @@ export class ConceitoProduto implements ConceitoProdutoInterface {
         },
       },
       relations: {
+        telaApps: {
+          name: 'telaApps',
+          type: 'TelaApp[]',
+          model: 'TelaApp',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'conceitoProdutoId'
+        },
+        telaWebs: {
+          name: 'telaWebs',
+          type: 'TelaWeb[]',
+          model: 'TelaWeb',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'conceitoProdutoId'
+        },
         valorConceitos: {
           name: 'valorConceitos',
           type: 'ValorConceito[]',

@@ -127,13 +127,14 @@ import { ProjetoConceitoProdutoComponent } from './projeto-conceito-produto/proj
 import { ProjetoValorTelaComponent } from './projeto-valor-tela/projeto-valor-tela.component';
 import { ListaPalavraChavePorProjetoComponent } from './lista-palavra-chave-por-projeto/lista-palavra-chave-por-projeto.component';
 import { ListaValorConceitoComponent } from './lista-valor-conceito/lista-valor-conceito.component';
-import { ListaTelaAppPorProjetoComponent } from './lista-tela-app-por-projeto/lista-tela-app-por-projeto.component';
-import { ListaValorConceitoPorProjetoComponent } from './lista-valor-conceito-por-projeto/lista-valor-conceito-por-projeto.component';
 import { EditaValorConceitoComponent } from './edita-valor-conceito/edita-valor-conceito.component';
 import { EditaTelaAppComponent } from './edita-tela-app/edita-tela-app.component';
 import { EditaConceitoProjetoComponent } from './edita-conceito-projeto/edita-conceito-projeto.component';
 import { ConceitoProdutoListaComponent } from './conceito-produto-lista/conceito-produto-lista.component';
 import { ConceitoProdutoEditaComponent } from './conceito-produto-edita/conceito-produto-edita.component';
+import { ListaTelaAppComponent } from './lista-tela-app/lista-tela-app.component';
+import { ListaTelaWebComponent } from './lista-tela-web/lista-tela-web.component';
+import { EditaTelaWebComponent } from './edita-tela-web/edita-tela-web.component';
 
 
 
@@ -221,13 +222,14 @@ import { ConceitoProdutoEditaComponent } from './conceito-produto-edita/conceito
     ProjetoValorTelaComponent,
     ListaPalavraChavePorProjetoComponent,
     ListaValorConceitoComponent,
-    ListaTelaAppPorProjetoComponent,
-    ListaValorConceitoPorProjetoComponent,
     EditaValorConceitoComponent,
     EditaTelaAppComponent,
     EditaConceitoProjetoComponent,
     ConceitoProdutoListaComponent,
     ConceitoProdutoEditaComponent,
+    ListaTelaAppComponent,
+    ListaTelaWebComponent,
+    EditaTelaWebComponent,
 
   ],
   entryComponents: [
@@ -247,7 +249,10 @@ import { ConceitoProdutoEditaComponent } from './conceito-produto-edita/conceito
     PalavraChaveRaizCriaEditaComponent,
     AlocacaoPalavraChaveComponent,
     EscolhaComponenteTelaWebComponent,
-    ConceitoProdutoEditaComponent
+    ConceitoProdutoEditaComponent,
+    EditaValorConceitoComponent,
+    EditaTelaAppComponent,
+    EditaTelaWebComponent
     //ArquivosComponent
   ],
   imports: [

@@ -11,6 +11,7 @@ export interface TelaWebInterface {
   "nome"?: string;
   "nomeMenu"?: string;
   "aplicacaoId"?: number;
+  "conceitoProdutoId"?: number;
   aplicacao?: Aplicacao;
   telaComponenteWebs?: TelaComponenteWeb[];
 }
@@ -21,6 +22,7 @@ export class TelaWeb implements TelaWebInterface {
   "nome": string;
   "nomeMenu": string;
   "aplicacaoId": number;
+  "conceitoProdutoId": number;
   aplicacao: Aplicacao;
   telaComponenteWebs: TelaComponenteWeb[];
   constructor(data?: TelaWebInterface) {
@@ -74,6 +76,10 @@ export class TelaWeb implements TelaWebInterface {
         },
         "aplicacaoId": {
           name: 'aplicacaoId',
+          type: 'number'
+        },
+        "conceitoProdutoId": {
+          name: 'conceitoProdutoId',
           type: 'number'
         },
       },

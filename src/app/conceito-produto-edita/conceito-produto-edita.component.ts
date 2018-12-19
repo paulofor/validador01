@@ -34,7 +34,7 @@ export class ConceitoProdutoEditaComponent implements OnInit {
     console.log('Model: ' + JSON.stringify(this.item));
     if (!this.item.id) {
       this.item.projetoMySqlId = this.projeto.id;
-      this.servico.create(this.item, (err, obj) => {
+      this.servico.CriaConceitoProduto(this.item, (err, obj) => {
         console.log("Erro:" + err.message);
       }).subscribe((e: any) => {
         console.log(JSON.stringify(e));

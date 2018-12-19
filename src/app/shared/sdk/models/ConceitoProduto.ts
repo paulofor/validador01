@@ -7,6 +7,8 @@ declare var Object: any;
 export interface ConceitoProdutoInterface {
   "descricao"?: string;
   "titulo"?: string;
+  "ativo"?: number;
+  "dataCriacao"?: Date;
   "id"?: number;
   "projetoMySqlId"?: number;
   valorConceitos?: ValorConceito[];
@@ -15,6 +17,8 @@ export interface ConceitoProdutoInterface {
 export class ConceitoProduto implements ConceitoProdutoInterface {
   "descricao": string;
   "titulo": string;
+  "ativo": number;
+  "dataCriacao": Date;
   "id": number;
   "projetoMySqlId": number;
   valorConceitos: ValorConceito[];
@@ -58,6 +62,14 @@ export class ConceitoProduto implements ConceitoProdutoInterface {
         "titulo": {
           name: 'titulo',
           type: 'string'
+        },
+        "ativo": {
+          name: 'ativo',
+          type: 'number'
+        },
+        "dataCriacao": {
+          name: 'dataCriacao',
+          type: 'Date'
         },
         "id": {
           name: 'id',

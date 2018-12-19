@@ -154,34 +154,6 @@ export class PalavraGoogleProjetoApi extends BaseLoopBackApi {
   }
 
   /**
-   * Remove a relacao com os ids
-   *
-   * @param {object} data Request data.
-   *
-   *  - `idProjeto` – `{number}` - 
-   *
-   *  - `idPalavra` – `{number}` - 
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * This method returns no data.
-   */
-  public RemoveRelacaoPalavra(idProjeto: any, idPalavra: any, customHeaders?: Function): Observable<any> {
-    let _method: string = "PUT";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/PalavraGoogleProjetos/removeRelacaoPalavra";
-    let _routeParams: any = {};
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    if (typeof idProjeto !== 'undefined' && idProjeto !== null) _urlParams.idProjeto = idProjeto;
-    if (typeof idPalavra !== 'undefined' && idPalavra !== null) _urlParams.idPalavra = idPalavra;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
-  }
-
-  /**
    * se receber um projeto com id 0 cria o projeto e o relacionamento senão cria somente o relacionamento
    *
    * @param {object} data Request data.
@@ -205,6 +177,36 @@ export class PalavraGoogleProjetoApi extends BaseLoopBackApi {
     let _urlParams: any = {};
     if (typeof relacionamento !== 'undefined' && relacionamento !== null) _urlParams.relacionamento = relacionamento;
     if (typeof projeto !== 'undefined' && projeto !== null) _urlParams.projeto = projeto;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * <em>
+         * (The remote method definition does not provide any description.)
+         * </em>
+   *
+   * @param {object} data Request data.
+   *
+   *  - `idProjeto` – `{number}` - 
+   *
+   *  - `idPalavra` – `{string}` - 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public RemoveRelacaoPalavra(idProjeto: any, idPalavra: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/PalavraGoogleProjetos/removeRelacaoPalavra";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof idProjeto !== 'undefined' && idProjeto !== null) _urlParams.idProjeto = idProjeto;
+    if (typeof idPalavra !== 'undefined' && idPalavra !== null) _urlParams.idPalavra = idPalavra;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }

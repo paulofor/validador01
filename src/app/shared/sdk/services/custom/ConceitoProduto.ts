@@ -302,6 +302,61 @@ export class ConceitoProdutoApi extends BaseLoopBackApi {
   }
 
   /**
+   * Retorna o conceito de produto ativo e a lista de todos de um projeto
+   *
+   * @param {number} idProjeto 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * Data properties:
+   *
+   *  - `ativo` – `{object}` - 
+   *
+   *  - `listaConceito` – `{any}` - 
+   */
+  public AtivoComListaPorProjeto(idProjeto: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ConceitoProdutos/ativoComListaPorProjeto";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof idProjeto !== 'undefined' && idProjeto !== null) _urlParams.idProjeto = idProjeto;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Criando um novo, colocando como ativo e alterando os demais.
+   *
+   * @param {object} data Request data.
+   *
+   *  - `conceitoProduto` – `{object}` - 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ConceitoProduto` object.)
+   * </em>
+   */
+  public CriaConceitoProduto(conceitoProduto: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ConceitoProdutos/criaConceitoProduto";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof conceitoProduto !== 'undefined' && conceitoProduto !== null) _urlParams.conceitoProduto = conceitoProduto;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Creates a new instance in valorConceitos of this model.
    *
    * @param {any} id ConceitoProduto id

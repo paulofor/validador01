@@ -42,6 +42,8 @@ import { MedidaIndicadorProcesso } from '../../models/MedidaIndicadorProcesso';
 import { RespostaMercado } from '../../models/RespostaMercado';
 import { ConceitoProduto } from '../../models/ConceitoProduto';
 import { ValorConceito } from '../../models/ValorConceito';
+import { RecursoConceitoProduto } from '../../models/RecursoConceitoProduto';
+import { Publico } from '../../models/Publico';
 
 export interface Models { [name: string]: any }
 
@@ -91,6 +93,8 @@ export class SDKModels {
     RespostaMercado: RespostaMercado,
     ConceitoProduto: ConceitoProduto,
     ValorConceito: ValorConceito,
+    RecursoConceitoProduto: RecursoConceitoProduto,
+    Publico: Publico,
     
   };
 

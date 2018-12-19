@@ -41,5 +41,7 @@ export * from './MedidaIndicadorProcesso';
 export * from './RespostaMercado';
 export * from './ConceitoProduto';
 export * from './ValorConceito';
+export * from './RecursoConceitoProduto';
+export * from './Publico';
 export * from './SDKModels';
 export * from './logger.service';

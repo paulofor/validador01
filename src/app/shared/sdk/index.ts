@@ -90,6 +90,8 @@ import { MedidaIndicadorProcessoApi } from './services/custom/MedidaIndicadorPro
 import { RespostaMercadoApi } from './services/custom/RespostaMercado';
 import { ConceitoProdutoApi } from './services/custom/ConceitoProduto';
 import { ValorConceitoApi } from './services/custom/ValorConceito';
+import { RecursoConceitoProdutoApi } from './services/custom/RecursoConceitoProduto';
+import { PublicoApi } from './services/custom/Publico';
 /**
 * @module SDKBrowserModule
 * @description
@@ -162,6 +164,8 @@ export class SDKBrowserModule {
         RespostaMercadoApi,
         ConceitoProdutoApi,
         ValorConceitoApi,
+        RecursoConceitoProdutoApi,
+        PublicoApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser },
         { provide: SocketDriver, useClass: SocketBrowser }

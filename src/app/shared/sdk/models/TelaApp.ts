@@ -7,12 +7,14 @@ declare var Object: any;
 export interface TelaAppInterface {
   "nome"?: string;
   "id"?: number;
+  "conceitoProdutoId"?: number;
   entidades?: Entidade;
 }
 
 export class TelaApp implements TelaAppInterface {
   "nome": string;
   "id": number;
+  "conceitoProdutoId": number;
   entidades: Entidade;
   constructor(data?: TelaAppInterface) {
     Object.assign(this, data);
@@ -53,6 +55,10 @@ export class TelaApp implements TelaAppInterface {
         },
         "id": {
           name: 'id',
+          type: 'number'
+        },
+        "conceitoProdutoId": {
+          name: 'conceitoProdutoId',
           type: 'number'
         },
       },

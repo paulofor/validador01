@@ -136,6 +136,10 @@ import { ListaTelaAppComponent } from './lista-tela-app/lista-tela-app.component
 import { ListaTelaWebComponent } from './lista-tela-web/lista-tela-web.component';
 import { EditaTelaWebComponent } from './edita-tela-web/edita-tela-web.component';
 
+import { ProjetosFaseAnuncioComponent } from './projetos-fase-anuncio/projetos-fase-anuncio.component';
+import { ProjetoGerenciaAnuncioComponent } from './projeto-gerencia-anuncio/projeto-gerencia-anuncio.component';
+import { ListaValorAnuncioComponent } from './lista-valor-anuncio/lista-valor-anuncio.component';
+
 
 
 @NgModule({
@@ -230,6 +234,10 @@ import { EditaTelaWebComponent } from './edita-tela-web/edita-tela-web.component
     ListaTelaAppComponent,
     ListaTelaWebComponent,
     EditaTelaWebComponent,
+
+    ProjetosFaseAnuncioComponent,
+    ProjetoGerenciaAnuncioComponent,
+    ListaValorAnuncioComponent,
 
   ],
   entryComponents: [

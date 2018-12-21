@@ -22,7 +22,7 @@ export class PalavraChaveRaizComponent implements OnInit {
   }
 
   atualizaLista() {
-    this.srv.find()
+    this.srv.find({"order" : "palavra"})
       .subscribe((result: PalavraChaveRaiz[]) =>
         this.lista = result
       );

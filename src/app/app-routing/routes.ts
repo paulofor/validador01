@@ -47,6 +47,7 @@ import { ProjetoValorTelaComponent } from '../projeto-valor-tela/projeto-valor-t
 import { ProjetoConceitoProdutoComponent } from '../projeto-conceito-produto/projeto-conceito-produto.component';
 import { ProjetosFaseAnuncioComponent } from '../projetos-fase-anuncio/projetos-fase-anuncio.component';
 import { ProjetoGerenciaAnuncioComponent } from '../projeto-gerencia-anuncio/projeto-gerencia-anuncio.component';
+import { PaginaValidacaoGerenciadorComponent } from '../pagina-validacao-gerenciador/pagina-validacao-gerenciador.component';
 
 
 export const routes : Routes = [
@@ -115,6 +116,7 @@ export const routes : Routes = [
     { path: 'projetoValorTela/:id' , component: ProjetoValorTelaComponent},
 
     { path: 'projetoGerenciaAnuncio/:id', component: ProjetoGerenciaAnuncioComponent},
+    { path: 'paginaValidacaoGerenciador/:id', component: PaginaValidacaoGerenciadorComponent},
 
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

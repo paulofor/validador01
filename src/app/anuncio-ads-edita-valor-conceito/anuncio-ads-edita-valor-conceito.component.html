@@ -1,0 +1,31 @@
+<h2 mat-dialog-title>{{valor.titulo}}</h2>
+<div class="container">
+
+  <form class="example-full-width" (ngSubmit)="onSubmit()">
+
+    <mat-dialog-content>
+      <mat-form-field class="example-full-width">
+        <input matInput maxlength="30" #titulo1 [(ngModel)]="item.titulo1" name="titulo1" placeholder="Titulo1" />
+        <mat-hint align="end">{{titulo1.value?.length || 0}}/30</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput maxlength="30" [(ngModel)]="item.titulo2" #titulo2 name="titulo2" placeholder="Titulo2" />
+        <mat-hint align="end">{{titulo2.value?.length || 0}}/30</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput maxlength="90" [(ngModel)]="item.descricao1" #descricao1 name="descricao1" placeholder="Descricao1" />
+        <mat-hint align="end">{{descricao1.value?.length || 0}}/90</mat-hint>
+      </mat-form-field>
+
+
+    </mat-dialog-content>
+
+    <mat-dialog-actions>
+      <button mat-button>Enviar</button>
+      <button mat-button mat-dialog-close>Cancelar</button>
+    </mat-dialog-actions>
+
+  </form>
+</div>

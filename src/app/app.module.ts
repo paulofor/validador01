@@ -138,7 +138,9 @@ import { EditaTelaWebComponent } from './edita-tela-web/edita-tela-web.component
 
 import { ProjetosFaseAnuncioComponent } from './projetos-fase-anuncio/projetos-fase-anuncio.component';
 import { ProjetoGerenciaAnuncioComponent } from './projeto-gerencia-anuncio/projeto-gerencia-anuncio.component';
-import { ListaValorAnuncioComponent } from './lista-valor-anuncio/lista-valor-anuncio.component';
+import { AnuncioAdsEditaValorConceitoComponent } from './anuncio-ads-edita-valor-conceito/anuncio-ads-edita-valor-conceito.component';
+import { PaginaValidacaoGerenciadorComponent } from './pagina-validacao-gerenciador/pagina-validacao-gerenciador.component';
+
 
 
 
@@ -237,7 +239,9 @@ import { ListaValorAnuncioComponent } from './lista-valor-anuncio/lista-valor-an
 
     ProjetosFaseAnuncioComponent,
     ProjetoGerenciaAnuncioComponent,
-    ListaValorAnuncioComponent,
+    AnuncioAdsEditaValorConceitoComponent,
+    PaginaValidacaoGerenciadorComponent,
+
 
   ],
   entryComponents: [
@@ -260,7 +264,8 @@ import { ListaValorAnuncioComponent } from './lista-valor-anuncio/lista-valor-an
     ConceitoProdutoEditaComponent,
     EditaValorConceitoComponent,
     EditaTelaAppComponent,
-    EditaTelaWebComponent
+    EditaTelaWebComponent,
+    AnuncioAdsEditaValorConceitoComponent
     //ArquivosComponent
   ],
   imports: [

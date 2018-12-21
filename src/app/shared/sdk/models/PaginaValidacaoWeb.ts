@@ -17,6 +17,7 @@ export interface PaginaValidacaoWebInterface {
   "marcaLogo"?: string;
   "codigoHash"?: string;
   "projetoMySqlId"?: number;
+  "conceitoProdutoId"?: number;
   projeto?: ProjetoMySql;
   itemValidacaoPaginas?: ItemValidacaoPagina[];
   registroInteresses?: RegistroInteresse[];
@@ -33,6 +34,7 @@ export class PaginaValidacaoWeb implements PaginaValidacaoWebInterface {
   "marcaLogo": string;
   "codigoHash": string;
   "projetoMySqlId": number;
+  "conceitoProdutoId": number;
   projeto: ProjetoMySql;
   itemValidacaoPaginas: ItemValidacaoPagina[];
   registroInteresses: RegistroInteresse[];
@@ -104,6 +106,10 @@ export class PaginaValidacaoWeb implements PaginaValidacaoWebInterface {
         },
         "projetoMySqlId": {
           name: 'projetoMySqlId',
+          type: 'number'
+        },
+        "conceitoProdutoId": {
+          name: 'conceitoProdutoId',
           type: 'number'
         },
       },

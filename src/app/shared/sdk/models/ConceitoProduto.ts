@@ -2,6 +2,7 @@
 import {
   TelaApp,
   TelaWeb,
+  PaginaValidacaoWeb,
   ValorConceito
 } from '../index';
 
@@ -15,6 +16,7 @@ export interface ConceitoProdutoInterface {
   "projetoMySqlId"?: number;
   telaApps?: TelaApp[];
   telaWebs?: TelaWeb[];
+  paginaValidacaoWebs?: PaginaValidacaoWeb[];
   valorConceitos?: ValorConceito[];
 }
 
@@ -27,6 +29,7 @@ export class ConceitoProduto implements ConceitoProdutoInterface {
   "projetoMySqlId": number;
   telaApps: TelaApp[];
   telaWebs: TelaWeb[];
+  paginaValidacaoWebs: PaginaValidacaoWeb[];
   valorConceitos: ValorConceito[];
   constructor(data?: ConceitoProdutoInterface) {
     Object.assign(this, data);
@@ -99,6 +102,14 @@ export class ConceitoProduto implements ConceitoProdutoInterface {
           name: 'telaWebs',
           type: 'TelaWeb[]',
           model: 'TelaWeb',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'conceitoProdutoId'
+        },
+        paginaValidacaoWebs: {
+          name: 'paginaValidacaoWebs',
+          type: 'PaginaValidacaoWeb[]',
+          model: 'PaginaValidacaoWeb',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'conceitoProdutoId'

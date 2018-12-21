@@ -1287,6 +1287,64 @@ export class ProjetoMySqlApi extends BaseLoopBackApi {
   }
 
   /**
+   * Retorna o conceito ativo e mais uma lista de valor com os anuncios associados.
+   *
+   * @param {number} idProjeto 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * Data properties:
+   *
+   *  - `conceito` – `{object}` - 
+   *
+   *  - `listaValorAnuncio` – `{any}` - 
+   *
+   *  - `projeto` – `{object}` - 
+   */
+  public ConceitoValorAnuncioPorProjeto(idProjeto: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProjetoMySqls/conceitoValorAnuncioPorProjeto";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof idProjeto !== 'undefined' && idProjeto !== null) _urlParams.idProjeto = idProjeto;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Retorna projeto, conceito ativo e paginas de validacao
+   *
+   * @param {number} idProjeto 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * Data properties:
+   *
+   *  - `projeto` – `{object}` - 
+   *
+   *  - `conceito` – `{object}` - 
+   *
+   *  - `listaPagina` – `{any}` - 
+   */
+  public ProjetoConceitoPaginaValidacao(idProjeto: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProjetoMySqls/projetoConceitoPaginaValidacao";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof idProjeto !== 'undefined' && idProjeto !== null) _urlParams.idProjeto = idProjeto;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Fetches belongsTo relation projeto.
    *
    * @param {any} id ProjetoMySql id

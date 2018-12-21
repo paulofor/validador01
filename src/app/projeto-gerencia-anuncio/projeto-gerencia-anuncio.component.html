@@ -16,12 +16,8 @@
     <div class="row">
       <div class="col-md-12">
         <div class="card">
-          <div class="header">
-            <h4 class="title">Valor</h4>
-            <button class="btn btn-primary btn-sm"  (click)="openDialog()">Novo</button>
-          </div>
           <div class="content table-responsive table-full-width">
-            <table *ngIf="lista" class="table table-hover table-striped">
+            <table class="table table-hover table-striped">
               <thead>
                 <tr>
                   <th width="90%">Valores</th>
@@ -29,15 +25,36 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let item of listaValor">
-                  <td>{{item.titulo}}</td>
-                  <td align="right">
-                    <button class="btn btn-primary btn-sm " (click)="openDialog(item)">Alterar</button>
-                  </td>
-                </tr>
+                <ng-container *ngFor="let item of listaValor">
+                  <tr>
+                    <td>{{item.titulo}}</td>
+                    <td align="right">
+                      <button class="btn btn-primary btn-sm "  (click)="editaAnuncio(item)">Adicionar</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <mat-list>
+                        <ng-container *ngFor="let ads of item.anuncioAds">
+                          <mat-card>
+                            <mat-card-subtitle>
+                              {{ads.titulo1}} - {{ads.titulo2}}
+                            </mat-card-subtitle>
+                            <mat-card-content>
+                              {{ads.descricao1}}
+                            </mat-card-content>
+                            <mat-card-actions>
+                                <button (click)="editaAnuncio(item,ads)" mat-raised-button color="primary">Alterar</button>
+                            </mat-card-actions>
+                          </mat-card>
+                        </ng-container>
+                      </mat-list>
+                    </td>
+                  </tr>
+                </ng-container>
               </tbody>
             </table>
-        
+
           </div>
         </div>
 
@@ -46,4 +63,3 @@
 
   </div>
 </div>
-

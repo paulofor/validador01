@@ -140,6 +140,8 @@ import { ProjetosFaseAnuncioComponent } from './projetos-fase-anuncio/projetos-f
 import { ProjetoGerenciaAnuncioComponent } from './projeto-gerencia-anuncio/projeto-gerencia-anuncio.component';
 import { AnuncioAdsEditaValorConceitoComponent } from './anuncio-ads-edita-valor-conceito/anuncio-ads-edita-valor-conceito.component';
 import { PaginaValidacaoGerenciadorComponent } from './pagina-validacao-gerenciador/pagina-validacao-gerenciador.component';
+import { GerenciadorPaginaValidacaoComponent } from './gerenciador-pagina-validacao/gerenciador-pagina-validacao.component';
+import { EditaPaginaValidacaoWebComponent } from './edita-pagina-validacao-web/edita-pagina-validacao-web.component';
 
 
 
@@ -241,6 +243,8 @@ import { PaginaValidacaoGerenciadorComponent } from './pagina-validacao-gerencia
     ProjetoGerenciaAnuncioComponent,
     AnuncioAdsEditaValorConceitoComponent,
     PaginaValidacaoGerenciadorComponent,
+    GerenciadorPaginaValidacaoComponent,
+    EditaPaginaValidacaoWebComponent,
 
 
   ],
@@ -265,7 +269,8 @@ import { PaginaValidacaoGerenciadorComponent } from './pagina-validacao-gerencia
     EditaValorConceitoComponent,
     EditaTelaAppComponent,
     EditaTelaWebComponent,
-    AnuncioAdsEditaValorConceitoComponent
+    AnuncioAdsEditaValorConceitoComponent,
+    EditaPaginaValidacaoWebComponent
     //ArquivosComponent
   ],
   imports: [

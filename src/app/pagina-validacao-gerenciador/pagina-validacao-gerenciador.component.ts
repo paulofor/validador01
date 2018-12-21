@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PaginaValidacaoWeb, ProjetoMySql, ConceitoProduto, ProjetoMySqlApi } from '../shared/sdk';
+import { ActivatedRoute } from '@angular/router';
+import { Params } from '@angular/router';
 
 @Component({
   selector: 'app-pagina-validacao-gerenciador',
@@ -7,9 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaginaValidacaoGerenciadorComponent implements OnInit {
 
-  constructor() { }
+  projeto : ProjetoMySql;
+  listaPagina: PaginaValidacaoWeb[];
+  conceito: ConceitoProduto;
+
+  constructor(private route: ActivatedRoute, private srv: ProjetoMySqlApi ) { }
 
   ngOnInit() {
+    this.carregaDados();
   }
 
+  carregaDados() {
+    this.route.params.subscribe((params: Params) => {
+      let id = params['id'];
+      this.srv.ProjetoConceitoPaginaValidacao(id)
+        .subscribe((result) => {
+          console.log('Item: ' + JSON.stringify(result));
+          this.projeto = result.projeto;
+          this.listaPagina = result.listaPagina;
+          this.conceito = result.conceito;
+        })
+    });
+  }
 }

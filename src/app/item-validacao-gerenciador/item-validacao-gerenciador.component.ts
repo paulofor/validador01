@@ -32,6 +32,7 @@ export class ItemValidacaoGerenciadorComponent implements OnInit {
           this.projeto = result.projeto;
           this.listaTelaApp = result.listaTelaApp;
           this.listaTelaWeb = result.listaTelaWeb;
+          console.log('listaTelaApp:' , this.listaTelaApp);
         })
     })
   }

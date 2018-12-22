@@ -3,7 +3,7 @@
     <h4 class="title">Projeto: {{projeto.nome}}</h4>
     <h4 class="title">Conceito: {{conceito.titulo}}</h4>
   </div>
-  
+
   <div class="content table-responsive table-full-width">
     <table *ngIf="listaTelaApp" class="table table-hover table-striped">
       <thead>
@@ -13,10 +13,25 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of listaTelaApp">
-          <td>{{item.nome}}</td>
-          <td><button mat-raised-button color="primary" (click)="openTelaApp(item)">Incluir</button></td>
-        </tr>
+        <ng-container *ngFor="let item of listaTelaApp">
+          <tr>
+            <td>{{item.nome}}</td>
+            <td><button mat-raised-button color="primary" (click)="openTelaApp(item)">Incluir</button></td>
+          </tr>
+          <tr *ngFor="let validador of item.itemValidacaoPaginas">
+            <td colspan="2">
+              <mat-card>
+                <mat-card-title>{{validador.titulo}}</mat-card-title>
+                <mat-card-subtitle>{{validador.bullet1}}</mat-card-subtitle>
+                <mat-card-subtitle>{{validador.bullet2}}</mat-card-subtitle>
+                <mat-card-subtitle>{{validador.bullet3}}</mat-card-subtitle>
+                <mat-card-actions>
+                    <button mat-stroked-button color="primary" (click)="openTelaApp(item, validador)">Alterar</button>
+                </mat-card-actions>
+              </mat-card>
+            </td>
+          </tr>
+        </ng-container>
       </tbody>
     </table>
   </div>
@@ -30,10 +45,22 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of listaTelaWeb">
-          <td>{{item.nome}}</td>
-          <td><button mat-raised-button color="primary" (click)="openTelaWeb(item)">Incluir</button></td>
-        </tr>
+        <ng-container *ngFor="let item of listaTelaWeb">
+          <tr>
+            <td>{{item.nome}} ({{item.itemValidacaoPaginas.lenght}})</td>
+            <td><button mat-raised-button color="primary" (click)="openTelaWeb(item)">Incluir</button></td>
+          </tr>
+          <tr *ngFor="let validador of item.itemValidacaoPaginas">
+            <td colspan="2">
+              <mat-card>
+                <mat-card-title>{{validador.titulo}}</mat-card-title>
+                <mat-card-subtitle>{{validador.bullet1}}</mat-card-subtitle>
+                <mat-card-subtitle>{{validador.bullet2}}</mat-card-subtitle>
+                <mat-card-subtitle>{{validador.bullet3}}</mat-card-subtitle>
+              </mat-card>
+            </td>
+          </tr>
+        </ng-container>
       </tbody>
     </table>
   </div>

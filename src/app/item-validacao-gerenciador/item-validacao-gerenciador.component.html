@@ -1,0 +1,40 @@
+<div *ngIf="listaTelaWeb" class="card">
+  <div class="header">
+    <h4 class="title">Projeto: {{projeto.nome}}</h4>
+    <h4 class="title">Conceito: {{conceito.titulo}}</h4>
+  </div>
+  
+  <div class="content table-responsive table-full-width">
+    <table *ngIf="listaTelaApp" class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th width="90%">Telas App</th>
+          <th width="10%"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of listaTelaApp">
+          <td>{{item.nome}}</td>
+          <td><button mat-raised-button color="primary" (click)="openTelaApp(item)">Incluir</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="content table-responsive table-full-width">
+    <table *ngIf="listaTelaWeb" class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th width="90%">Telas Web</th>
+          <th width="10%"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of listaTelaWeb">
+          <td>{{item.nome}}</td>
+          <td><button mat-raised-button color="primary" (click)="openTelaWeb(item)">Incluir</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

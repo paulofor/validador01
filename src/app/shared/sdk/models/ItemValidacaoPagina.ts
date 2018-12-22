@@ -16,6 +16,8 @@ export interface ItemValidacaoPaginaInterface {
   "mensagemImagem"?: string;
   "projetoCanvasMySqlId"?: number;
   "paginaValidacaoWebId"?: number;
+  "telaWebId"?: number;
+  "telaAppId"?: number;
   projetoCanvasMySql?: ProjetoCanvasMySql;
 }
 
@@ -31,6 +33,8 @@ export class ItemValidacaoPagina implements ItemValidacaoPaginaInterface {
   "mensagemImagem": string;
   "projetoCanvasMySqlId": number;
   "paginaValidacaoWebId": number;
+  "telaWebId": number;
+  "telaAppId": number;
   projetoCanvasMySql: ProjetoCanvasMySql;
   constructor(data?: ItemValidacaoPaginaInterface) {
     Object.assign(this, data);
@@ -107,6 +111,14 @@ export class ItemValidacaoPagina implements ItemValidacaoPaginaInterface {
         },
         "paginaValidacaoWebId": {
           name: 'paginaValidacaoWebId',
+          type: 'number'
+        },
+        "telaWebId": {
+          name: 'telaWebId',
+          type: 'number'
+        },
+        "telaAppId": {
+          name: 'telaAppId',
           type: 'number'
         },
       },

@@ -1,6 +1,7 @@
 /* tslint:disable */
 import {
   Aplicacao,
+  ItemValidacaoPagina,
   TelaComponenteWeb
 } from '../index';
 
@@ -13,6 +14,7 @@ export interface TelaWebInterface {
   "aplicacaoId"?: number;
   "conceitoProdutoId"?: number;
   aplicacao?: Aplicacao;
+  itemValidacaoPaginas?: ItemValidacaoPagina[];
   telaComponenteWebs?: TelaComponenteWeb[];
 }
 
@@ -24,6 +26,7 @@ export class TelaWeb implements TelaWebInterface {
   "aplicacaoId": number;
   "conceitoProdutoId": number;
   aplicacao: Aplicacao;
+  itemValidacaoPaginas: ItemValidacaoPagina[];
   telaComponenteWebs: TelaComponenteWeb[];
   constructor(data?: TelaWebInterface) {
     Object.assign(this, data);
@@ -91,6 +94,14 @@ export class TelaWeb implements TelaWebInterface {
           relationType: 'belongsTo',
                   keyFrom: 'aplicacaoId',
           keyTo: 'id_aplicacao'
+        },
+        itemValidacaoPaginas: {
+          name: 'itemValidacaoPaginas',
+          type: 'ItemValidacaoPagina[]',
+          model: 'ItemValidacaoPagina',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'telaWebId'
         },
         telaComponenteWebs: {
           name: 'telaComponenteWebs',

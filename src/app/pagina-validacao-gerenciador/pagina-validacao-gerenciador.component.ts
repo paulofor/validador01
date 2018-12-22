@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { PaginaValidacaoWeb, ProjetoMySql, ConceitoProduto, ProjetoMySqlApi } from '../shared/sdk';
 import { ActivatedRoute } from '@angular/router';
 import { Params } from '@angular/router';
+import { MatDialog } from '@angular/material';
+import { EditaItemValidacaoTelaComponent } from '../edita-item-validacao-tela/edita-item-validacao-tela.component';
 
 @Component({
   selector: 'app-pagina-validacao-gerenciador',
@@ -32,4 +34,6 @@ export class PaginaValidacaoGerenciadorComponent implements OnInit {
         })
     });
   }
+
+ 
 }

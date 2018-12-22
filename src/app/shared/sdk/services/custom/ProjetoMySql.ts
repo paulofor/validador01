@@ -1345,6 +1345,37 @@ export class ProjetoMySqlApi extends BaseLoopBackApi {
   }
 
   /**
+   * Retorna projeto, conceito ativo e lista de item de validacao do idProjeto
+   *
+   * @param {number} idProjeto 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * Data properties:
+   *
+   *  - `projeto` – `{object}` - 
+   *
+   *  - `conceito` – `{object}` - 
+   *
+   *  - `listaTelaApp` – `{any}` - 
+   *
+   *  - `listaTelaWeb` – `{any}` - 
+   */
+  public ProjetoConceitoTelaItemValidacao(idProjeto: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProjetoMySqls/projetoConceitoItemValidacao";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof idProjeto !== 'undefined' && idProjeto !== null) _urlParams.idProjeto = idProjeto;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Fetches belongsTo relation projeto.
    *
    * @param {any} id ProjetoMySql id

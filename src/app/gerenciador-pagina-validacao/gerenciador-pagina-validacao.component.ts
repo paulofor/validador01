@@ -37,7 +37,8 @@ export class GerenciadorPaginaValidacaoComponent implements OnInit {
     this.dialog.open(EditaPaginaValidacaoWebComponent, {
       width: '800px',
       data: {
-        item: item
+        item: item,
+        conceito : this.conceito
       }
     });
   }

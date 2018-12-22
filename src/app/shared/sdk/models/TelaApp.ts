@@ -1,6 +1,7 @@
 /* tslint:disable */
 import {
-  Entidade
+  Entidade,
+  ItemValidacaoPagina
 } from '../index';
 
 declare var Object: any;
@@ -9,6 +10,7 @@ export interface TelaAppInterface {
   "id"?: number;
   "conceitoProdutoId"?: number;
   entidades?: Entidade;
+  itemValidacaoPaginas?: ItemValidacaoPagina[];
 }
 
 export class TelaApp implements TelaAppInterface {
@@ -16,6 +18,7 @@ export class TelaApp implements TelaAppInterface {
   "id": number;
   "conceitoProdutoId": number;
   entidades: Entidade;
+  itemValidacaoPaginas: ItemValidacaoPagina[];
   constructor(data?: TelaAppInterface) {
     Object.assign(this, data);
   }
@@ -68,6 +71,14 @@ export class TelaApp implements TelaAppInterface {
           type: 'Entidade',
           model: 'Entidade',
           relationType: 'hasOne',
+                  keyFrom: 'id',
+          keyTo: 'telaAppId'
+        },
+        itemValidacaoPaginas: {
+          name: 'itemValidacaoPaginas',
+          type: 'ItemValidacaoPagina[]',
+          model: 'ItemValidacaoPagina',
+          relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'telaAppId'
         },

@@ -1,21 +1,26 @@
 <div *ngIf="listaPagina" class="card">
   <div class="header">
-    <h4 class="title">Processo de Negócio</h4>
+    <h4 class="title">Páginas Validação</h4>
     <button class="btn btn-primary btn-sm " (click)="openDialog()">Novo</button>
   </div>
   <div class="content table-responsive table-full-width">
     <table class="table table-hover table-striped">
       <thead>
         <tr>
-          <th width="90%">Nome</th>
-          <th width="10%"></th>
+          <th>Páginas Validação</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let item of listaPagina">
-          <td>{{item.nome}}</td>
-          <td align="right">
-            <button class="btn btn-primary btn-sm " (click)="openDialog(item)">Alterar</button>
+          <td>
+            <mat-card>
+              <mat-card-title>{{item.mensagemPrincipal}}</mat-card-title>
+              <mat-card-subtitle>{{item.mensagemSecundaria}}</mat-card-subtitle>
+              <mat-card-subtitle>{{item.botaoAcao}}</mat-card-subtitle>
+              <mat-card-actions>
+                <button mat-raised-button color="primary" (click)="openDialog(item)">Alterar</button>
+              </mat-card-actions>
+            </mat-card>
           </td>
         </tr>
       </tbody>

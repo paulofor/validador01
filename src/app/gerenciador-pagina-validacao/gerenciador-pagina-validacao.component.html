@@ -19,6 +19,7 @@
               <mat-card-subtitle>{{item.botaoAcao}}</mat-card-subtitle>
               <mat-card-actions>
                 <button mat-raised-button color="primary" (click)="openDialog(item)">Alterar</button>
+                <button mat-raised-button color="primary" routerLink="/editaPaginaValidacaoWeb/{{item.id}}">Detalhe</button>
               </mat-card-actions>
             </mat-card>
           </td>

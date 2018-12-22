@@ -33,6 +33,7 @@ export class EditaPaginaValidacaoWebComponent implements OnInit {
     console.log('Model: ' + JSON.stringify(this.item));
     if (!this.item.id) {
       this.item.conceitoProdutoId = this.conceito.id;
+      this.item.projetoMySqlId = this.conceito.projetoMySqlId;
       this.servico.create(this.item, (err, obj) => {
         console.log("Erro:" + err.message);
       }).subscribe((e: any) => {

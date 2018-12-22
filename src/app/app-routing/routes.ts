@@ -49,6 +49,7 @@ import { ProjetosFaseAnuncioComponent } from '../projetos-fase-anuncio/projetos-
 import { ProjetoGerenciaAnuncioComponent } from '../projeto-gerencia-anuncio/projeto-gerencia-anuncio.component';
 import { PaginaValidacaoGerenciadorComponent } from '../pagina-validacao-gerenciador/pagina-validacao-gerenciador.component';
 import { ItemValidacaoGerenciadorComponent } from '../item-validacao-gerenciador/item-validacao-gerenciador.component';
+import { ProjetoFaseValidacaoComponent } from '../projeto-fase-validacao/projeto-fase-validacao.component';
 
 
 export const routes : Routes = [
@@ -120,6 +121,8 @@ export const routes : Routes = [
     { path: 'paginaValidacaoGerenciador/:id', component: PaginaValidacaoGerenciadorComponent},
 
     { path: 'itemValidacaoGerenciador/:id' , component : ItemValidacaoGerenciadorComponent },
+
+    { path: 'projetosFaseValidacao' , component: ProjetoFaseValidacaoComponent },
 
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

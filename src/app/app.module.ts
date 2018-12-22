@@ -144,6 +144,7 @@ import { GerenciadorPaginaValidacaoComponent } from './gerenciador-pagina-valida
 import { EditaPaginaValidacaoWebComponent } from './edita-pagina-validacao-web/edita-pagina-validacao-web.component';
 import { ItemValidacaoGerenciadorComponent } from './item-validacao-gerenciador/item-validacao-gerenciador.component';
 import { EditaItemValidacaoTelaComponent } from './edita-item-validacao-tela/edita-item-validacao-tela.component';
+import { ProjetoFaseValidacaoComponent } from './projeto-fase-validacao/projeto-fase-validacao.component';
 
 
 
@@ -249,6 +250,7 @@ import { EditaItemValidacaoTelaComponent } from './edita-item-validacao-tela/edi
     EditaPaginaValidacaoWebComponent,
     ItemValidacaoGerenciadorComponent,
     EditaItemValidacaoTelaComponent,
+    ProjetoFaseValidacaoComponent,
 
 
   ],

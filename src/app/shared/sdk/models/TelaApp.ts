@@ -7,18 +7,24 @@ import {
 declare var Object: any;
 export interface TelaAppInterface {
   "nome"?: string;
+  "tipo"?: string;
   "id"?: number;
+  "entidadeId"?: number;
   "conceitoProdutoId"?: number;
   entidades?: Entidade;
   itemValidacaoPaginas?: ItemValidacaoPagina[];
+  entidade?: Entidade;
 }
 
 export class TelaApp implements TelaAppInterface {
   "nome": string;
+  "tipo": string;
   "id": number;
+  "entidadeId": number;
   "conceitoProdutoId": number;
   entidades: Entidade;
   itemValidacaoPaginas: ItemValidacaoPagina[];
+  entidade: Entidade;
   constructor(data?: TelaAppInterface) {
     Object.assign(this, data);
   }
@@ -56,8 +62,16 @@ export class TelaApp implements TelaAppInterface {
           name: 'nome',
           type: 'string'
         },
+        "tipo": {
+          name: 'tipo',
+          type: 'string'
+        },
         "id": {
           name: 'id',
+          type: 'number'
+        },
+        "entidadeId": {
+          name: 'entidadeId',
           type: 'number'
         },
         "conceitoProdutoId": {
@@ -81,6 +95,14 @@ export class TelaApp implements TelaAppInterface {
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'telaAppId'
+        },
+        entidade: {
+          name: 'entidade',
+          type: 'Entidade',
+          model: 'Entidade',
+          relationType: 'belongsTo',
+                  keyFrom: 'entidadeId',
+          keyTo: 'id_entidade'
         },
       }
     }

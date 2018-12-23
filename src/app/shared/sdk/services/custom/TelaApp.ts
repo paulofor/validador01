@@ -245,6 +245,36 @@ export class TelaAppApi extends BaseLoopBackApi {
   }
 
   /**
+   * Fetches belongsTo relation entidade.
+   *
+   * @param {any} id TelaApp id
+   *
+   * @param {boolean} refresh 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `TelaApp` object.)
+   * </em>
+   */
+  public getEntidade(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/TelaApps/:id/entidade";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof refresh !== 'undefined' && refresh !== null) _urlParams.refresh = refresh;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Queries itemValidacaoPaginas of TelaApp.
    *
    * @param {any} id TelaApp id

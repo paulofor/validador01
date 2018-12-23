@@ -50,6 +50,7 @@ import { ProjetoGerenciaAnuncioComponent } from '../projeto-gerencia-anuncio/pro
 import { PaginaValidacaoGerenciadorComponent } from '../pagina-validacao-gerenciador/pagina-validacao-gerenciador.component';
 import { ItemValidacaoGerenciadorComponent } from '../item-validacao-gerenciador/item-validacao-gerenciador.component';
 import { ProjetoFaseValidacaoComponent } from '../projeto-fase-validacao/projeto-fase-validacao.component';
+import { TelaAppDetalheComponent } from '../tela-app-detalhe/tela-app-detalhe.component';
 
 
 export const routes : Routes = [
@@ -123,6 +124,7 @@ export const routes : Routes = [
     { path: 'itemValidacaoGerenciador/:id' , component : ItemValidacaoGerenciadorComponent },
 
     { path: 'projetosFaseValidacao' , component: ProjetoFaseValidacaoComponent },
+    { path: 'detalheTelaApp/:id' , component: TelaAppDetalheComponent },
 
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

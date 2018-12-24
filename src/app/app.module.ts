@@ -146,6 +146,7 @@ import { ItemValidacaoGerenciadorComponent } from './item-validacao-gerenciador/
 import { EditaItemValidacaoTelaComponent } from './edita-item-validacao-tela/edita-item-validacao-tela.component';
 import { ProjetoFaseValidacaoComponent } from './projeto-fase-validacao/projeto-fase-validacao.component';
 import { TelaAppDetalheComponent } from './tela-app-detalhe/tela-app-detalhe.component';
+import { EntidadePorProjetoComponent } from './entidade-por-projeto/entidade-por-projeto.component';
 
 
 
@@ -253,6 +254,7 @@ import { TelaAppDetalheComponent } from './tela-app-detalhe/tela-app-detalhe.com
     EditaItemValidacaoTelaComponent,
     ProjetoFaseValidacaoComponent,
     TelaAppDetalheComponent,
+    EntidadePorProjetoComponent,
 
 
   ],

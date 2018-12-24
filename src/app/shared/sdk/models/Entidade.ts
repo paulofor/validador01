@@ -1,6 +1,7 @@
 /* tslint:disable */
 import {
   Atributo_entidade,
+  ProjetoMySql,
   Relacionamento_entidade
 } from '../index';
 
@@ -14,9 +15,10 @@ export interface EntidadeInterface {
   "associativa"?: boolean;
   "id_atributo_identificador"?: number;
   "id_entidade_pai"?: number;
+  "projetoMySqlId"?: number;
   "id_aplicacao"?: number;
-  "telaAppId"?: number;
   atributoEntidades?: Atributo_entidade[];
+  projetoMySql?: ProjetoMySql;
   rel1?: Relacionamento_entidade[];
   rel2?: Relacionamento_entidade[];
 }
@@ -30,9 +32,10 @@ export class Entidade implements EntidadeInterface {
   "associativa": boolean;
   "id_atributo_identificador": number;
   "id_entidade_pai": number;
+  "projetoMySqlId": number;
   "id_aplicacao": number;
-  "telaAppId": number;
   atributoEntidades: Atributo_entidade[];
+  projetoMySql: ProjetoMySql;
   rel1: Relacionamento_entidade[];
   rel2: Relacionamento_entidade[];
   constructor(data?: EntidadeInterface) {
@@ -100,12 +103,12 @@ export class Entidade implements EntidadeInterface {
           name: 'id_entidade_pai',
           type: 'number'
         },
-        "id_aplicacao": {
-          name: 'id_aplicacao',
+        "projetoMySqlId": {
+          name: 'projetoMySqlId',
           type: 'number'
         },
-        "telaAppId": {
-          name: 'telaAppId',
+        "id_aplicacao": {
+          name: 'id_aplicacao',
           type: 'number'
         },
       },
@@ -117,6 +120,14 @@ export class Entidade implements EntidadeInterface {
           relationType: 'hasMany',
                   keyFrom: 'id_entidade',
           keyTo: 'id_entidade'
+        },
+        projetoMySql: {
+          name: 'projetoMySql',
+          type: 'ProjetoMySql',
+          model: 'ProjetoMySql',
+          relationType: 'belongsTo',
+                  keyFrom: 'projetoMySqlId',
+          keyTo: 'id'
         },
         rel1: {
           name: 'rel1',

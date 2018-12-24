@@ -1,39 +1,41 @@
-<div *ngIf="item" class="main-content">
+<div *ngIf="listaEntidade" class="main-content">
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
-
-        <h2 mat-dialog-title>{{item.nome}}</h2>
-
-        <form *ngIf="item" class="example-full-width" (ngSubmit)="onSubmit()">
-        
-          <mat-dialog-content>
-
-            <mat-form-field class="example-full-width">
-              <mat-select placeholder="Entidade" #entidadeId [(ngModel)]="item.entidadeId" name="entidadeId">
-                <mat-option *ngFor="let entidade of listaEntidade" [value]="entidade.id_entidade">
-                  {{ entidade.nome }}
-                </mat-option>
-              </mat-select>
-            </mat-form-field>
-        
-            <mat-form-field class="example-full-width">
-                <mat-select placeholder="Tipo" #tipo [(ngModel)]="item.tipo" name="tipo" >
+        <mat-card>
+        <mat-card-title>{{item.nome}}</mat-card-title>
+        <mat-card-content>
+          <form *ngIf="item" class="example-full-width" (ngSubmit)="onSubmit()">
+            <mat-dialog-content>
+              <mat-form-field class="example-full-width">
+                <mat-select placeholder="Entidade" #entidadeId [(ngModel)]="item.entidadeId" name="entidadeId">
+                  <mat-option *ngFor="let entidade of listaEntidade" [value]="entidade.id_entidade">
+                    {{ entidade.nome }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <mat-select placeholder="Tipo" #tipo [(ngModel)]="item.tipo" name="tipo">
                   <mat-option value="LISTA">Lista</mat-option>
                   <mat-option value="DETALHE">Detalhe</mat-option>
                   <mat-option value="EDITA">Edita</mat-option>
                 </mat-select>
               </mat-form-field>
-        
-          </mat-dialog-content>
-        
-          <mat-dialog-actions>
-            <button mat-raised-button>Confirma</button>
-          </mat-dialog-actions>
-        
-        </form>
-
+            </mat-dialog-content>
+            <mat-dialog-actions>
+              <button mat-raised-button>Confirma</button>
+            </mat-dialog-actions>
+          </form>
+        </mat-card-content>
+        </mat-card>
       </div>
     </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <app-entidade-por-projeto [conceito]="item.conceitoProduto"></app-entidade-por-projeto>
+      </div>
+    </div>
+
   </div>
 </div>

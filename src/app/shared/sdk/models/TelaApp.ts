@@ -1,7 +1,8 @@
 /* tslint:disable */
 import {
+  ItemValidacaoPagina,
   Entidade,
-  ItemValidacaoPagina
+  ConceitoProduto
 } from '../index';
 
 declare var Object: any;
@@ -11,9 +12,9 @@ export interface TelaAppInterface {
   "id"?: number;
   "entidadeId"?: number;
   "conceitoProdutoId"?: number;
-  entidades?: Entidade;
   itemValidacaoPaginas?: ItemValidacaoPagina[];
   entidade?: Entidade;
+  conceitoProduto?: ConceitoProduto;
 }
 
 export class TelaApp implements TelaAppInterface {
@@ -22,9 +23,9 @@ export class TelaApp implements TelaAppInterface {
   "id": number;
   "entidadeId": number;
   "conceitoProdutoId": number;
-  entidades: Entidade;
   itemValidacaoPaginas: ItemValidacaoPagina[];
   entidade: Entidade;
+  conceitoProduto: ConceitoProduto;
   constructor(data?: TelaAppInterface) {
     Object.assign(this, data);
   }
@@ -80,14 +81,6 @@ export class TelaApp implements TelaAppInterface {
         },
       },
       relations: {
-        entidades: {
-          name: 'entidades',
-          type: 'Entidade',
-          model: 'Entidade',
-          relationType: 'hasOne',
-                  keyFrom: 'id',
-          keyTo: 'telaAppId'
-        },
         itemValidacaoPaginas: {
           name: 'itemValidacaoPaginas',
           type: 'ItemValidacaoPagina[]',
@@ -103,6 +96,14 @@ export class TelaApp implements TelaAppInterface {
           relationType: 'belongsTo',
                   keyFrom: 'entidadeId',
           keyTo: 'id_entidade'
+        },
+        conceitoProduto: {
+          name: 'conceitoProduto',
+          type: 'ConceitoProduto',
+          model: 'ConceitoProduto',
+          relationType: 'belongsTo',
+                  keyFrom: 'conceitoProdutoId',
+          keyTo: 'id'
         },
       }
     }

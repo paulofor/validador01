@@ -168,7 +168,7 @@ export class SDKBrowserModule {
         PublicoApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
-      ]
+       ]
     };
   }
 }

@@ -1545,6 +1545,72 @@ export class AplicacaoApi extends BaseLoopBackApi {
   }
 
   /**
+   * Fetches belongsTo relation atributoChave.
+   *
+   * @param {any} id aplicacao id
+   *
+   * @param {any} nk Foreign key for entidades.
+   *
+   * @param {boolean} refresh 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `Aplicacao` object.)
+   * </em>
+   */
+  public getEntidadesAtributoChave(id: any, nk: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/aplicacaos/:id/entidades/:nk/atributoChave";
+    let _routeParams: any = {
+      id: id,
+      nk: nk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof refresh !== 'undefined' && refresh !== null) _urlParams.refresh = refresh;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Fetches belongsTo relation atributoIdentificador.
+   *
+   * @param {any} id aplicacao id
+   *
+   * @param {any} nk Foreign key for entidades.
+   *
+   * @param {boolean} refresh 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `Aplicacao` object.)
+   * </em>
+   */
+  public getEntidadesAtributoIdentificador(id: any, nk: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/aplicacaos/:id/entidades/:nk/atributoIdentificador";
+    let _routeParams: any = {
+      id: id,
+      nk: nk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof refresh !== 'undefined' && refresh !== null) _urlParams.refresh = refresh;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Queries atributoEntidades of entidade.
    *
    * @param {any} id aplicacao id

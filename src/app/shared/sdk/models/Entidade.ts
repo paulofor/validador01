@@ -19,6 +19,8 @@ export interface EntidadeInterface {
   "id_aplicacao"?: number;
   atributoEntidades?: Atributo_entidade[];
   projetoMySql?: ProjetoMySql;
+  atributoChave?: Atributo_entidade;
+  atributoIdentificador?: Atributo_entidade;
   rel1?: Relacionamento_entidade[];
   rel2?: Relacionamento_entidade[];
 }
@@ -36,6 +38,8 @@ export class Entidade implements EntidadeInterface {
   "id_aplicacao": number;
   atributoEntidades: Atributo_entidade[];
   projetoMySql: ProjetoMySql;
+  atributoChave: Atributo_entidade;
+  atributoIdentificador: Atributo_entidade;
   rel1: Relacionamento_entidade[];
   rel2: Relacionamento_entidade[];
   constructor(data?: EntidadeInterface) {
@@ -128,6 +132,22 @@ export class Entidade implements EntidadeInterface {
           relationType: 'belongsTo',
                   keyFrom: 'projetoMySqlId',
           keyTo: 'id'
+        },
+        atributoChave: {
+          name: 'atributoChave',
+          type: 'Atributo_entidade',
+          model: 'Atributo_entidade',
+          relationType: 'belongsTo',
+                  keyFrom: 'id_chave',
+          keyTo: 'id_atributo_entidade'
+        },
+        atributoIdentificador: {
+          name: 'atributoIdentificador',
+          type: 'Atributo_entidade',
+          model: 'Atributo_entidade',
+          relationType: 'belongsTo',
+                  keyFrom: 'id_atributo_identificador',
+          keyTo: 'id_atributo_entidade'
         },
         rel1: {
           name: 'rel1',

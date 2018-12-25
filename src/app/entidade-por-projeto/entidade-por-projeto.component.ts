@@ -23,11 +23,14 @@ export class EntidadePorProjetoComponent implements OnInit {
   }
 
   atualizaLista() {
-    let filtro = {'where' : {'projetoMySqlId' : this.conceito.projetoMySqlId} };
+    let filtro =  { 
+                    'where' : {'projetoMySqlId' : this.conceito.projetoMySqlId} , 
+                    'include' : ['atributoChave', 'atributoIdentificador' ]
+                  };
     this.servico.find(filtro)
       .subscribe((result: Entidade[]) => {
         this.listaEntidade = result;
-      })
+      });
   }
 
  

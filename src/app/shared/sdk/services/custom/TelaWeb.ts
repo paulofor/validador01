@@ -543,7 +543,7 @@ export class TelaWebApi extends BaseLoopBackApi {
   }
 
   /**
-   * Obtem todas as telas com elementos internos necessarios para o gerador de codigo
+   * Retorna as telas web para o gerador de uma aplicacao
    *
    * @param {number} idAplicacao 
    *
@@ -556,10 +556,10 @@ export class TelaWebApi extends BaseLoopBackApi {
    * This usually means the response is a `TelaWeb` object.)
    * </em>
    */
-  public ObtemPorIdAplicacaoParaGerador(idAplicacao: any, customHeaders?: Function): Observable<any> {
+  public TelasWebPorIdAplicacaoParaGerador(idAplicacao: any, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/TelaWebs/obtemPorIdAplicacaoParaGerador";
+    "/TelaWebs/telasWebPorIdAplicacaoParaGerador";
     let _routeParams: any = {};
     let _postBody: any = {};
     let _urlParams: any = {};

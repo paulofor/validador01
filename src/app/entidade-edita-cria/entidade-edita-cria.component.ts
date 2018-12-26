@@ -40,6 +40,7 @@ export class EntidadeEditaCriaComponent implements OnInit {
     console.log('Model: ' + JSON.stringify(this.item));
     if (!this.item.id_entidade) {
       this.item.id_aplicacao = this.aplicacao.id_aplicacao;
+      this.item.projetoMySqlId = this.aplicacao.projetoMySqlId;
       this.entidadaSrv.create(this.item, (err, obj) => {
         console.log("Erro:" + err.message);
       }).subscribe((e: any) => {

@@ -42,7 +42,11 @@ export class EditaRelacionamentoEntidadeComponent implements OnInit {
         this.closeDialog();
       });
     } else {
+      this.item.entidade1 = null;
+      this.item.entidade2 = null;
+      console.log('Objeto alteracao: ' , this.item);
       this.relacSrv.updateAttributes(this.item.id_relacionamento_entidade, this.item, (err, obj) => {
+        console.log('Resultado alteracao: ' , JSON.stringify(obj));
         console.log("Erro:" + err.message);
       }).subscribe((e: any) => {
         console.log(JSON.stringify(e));

@@ -147,6 +147,11 @@ import { EditaItemValidacaoTelaComponent } from './edita-item-validacao-tela/edi
 import { ProjetoFaseValidacaoComponent } from './projeto-fase-validacao/projeto-fase-validacao.component';
 import { TelaAppDetalheComponent } from './tela-app-detalhe/tela-app-detalhe.component';
 import { EntidadePorProjetoComponent } from './entidade-por-projeto/entidade-por-projeto.component';
+import { ListaCampanhaPorProjetoComponent } from './lista-campanha-por-projeto/lista-campanha-por-projeto.component';
+import { ListaCampanhaConceitoAtivoPorProjetoComponent } from './lista-campanha-conceito-ativo-por-projeto/lista-campanha-conceito-ativo-por-projeto.component';
+import { DetalheCampanhaComponent } from './detalhe-campanha/detalhe-campanha.component';
+import { ResultadoCampanhaAnuncioComponent } from './resultado-campanha-anuncio/resultado-campanha-anuncio.component';
+import { ResultadoCampanhaPalavraChaveComponent } from './resultado-campanha-palavra-chave/resultado-campanha-palavra-chave.component';
 
 
 
@@ -255,6 +260,11 @@ import { EntidadePorProjetoComponent } from './entidade-por-projeto/entidade-por
     ProjetoFaseValidacaoComponent,
     TelaAppDetalheComponent,
     EntidadePorProjetoComponent,
+    ListaCampanhaPorProjetoComponent,
+    ListaCampanhaConceitoAtivoPorProjetoComponent,
+    DetalheCampanhaComponent,
+    ResultadoCampanhaAnuncioComponent,
+    ResultadoCampanhaPalavraChaveComponent,
 
 
   ],

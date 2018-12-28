@@ -12,6 +12,7 @@ import { map } from 'rxjs/operators';
 import { CampanhaAds } from '../../models/CampanhaAds';
 import { SocketConnection } from '../../sockets/socket.connections';
 import { AnuncioAds } from '../../models/AnuncioAds';
+import { PaginaValidacaoWeb } from '../../models/PaginaValidacaoWeb';
 import { PalavraChaveAds } from '../../models/PalavraChaveAds';
 import { ModeloCampanhaAds } from '../../models/ModeloCampanhaAds';
 import { CampanhaAnuncioResultado } from '../../models/CampanhaAnuncioResultado';
@@ -216,6 +217,36 @@ export class CampanhaAdsApi extends BaseLoopBackApi {
     };
     let _postBody: any = {};
     let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Fetches belongsTo relation paginaValidacaoWeb.
+   *
+   * @param {any} id CampanhaAds id
+   *
+   * @param {boolean} refresh 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `CampanhaAds` object.)
+   * </em>
+   */
+  public getPaginaValidacaoWeb(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/CampanhaAds/:id/paginaValidacaoWeb";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof refresh !== 'undefined' && refresh !== null) _urlParams.refresh = refresh;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
@@ -1294,6 +1325,58 @@ export class CampanhaAdsApi extends BaseLoopBackApi {
     let _postBody: any = {};
     let _urlParams: any = {};
     if (typeof idCampanha !== 'undefined' && idCampanha !== null) _urlParams.idCampanha = idCampanha;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Lista das campanhas de um projeto
+   *
+   * @param {number} idProjeto 
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `CampanhaAds` object.)
+   * </em>
+   */
+  public GeralPorProjeto(idProjeto: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/CampanhaAds/geralPorProjeto";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof idProjeto !== 'undefined' && idProjeto !== null) _urlParams.idProjeto = idProjeto;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Retorna as campanhas do conceito atual de projetoId
+   *
+   * @param {number} idProjeto 
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `CampanhaAds` object.)
+   * </em>
+   */
+  public ConceitoAtivoPorProjeto(idProjeto: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/CampanhaAds/conceitoAtivoPorProjeto";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof idProjeto !== 'undefined' && idProjeto !== null) _urlParams.idProjeto = idProjeto;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }

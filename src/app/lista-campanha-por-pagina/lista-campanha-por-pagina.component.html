@@ -30,8 +30,8 @@
                     <td>{{campanha.quantidadeImpressao}}</td>
                     <td>{{campanha.quantidadeClique}}</td>
                     <td>{{campanha.orcamentoTotalExecutado}}</td>
-                    <td align="right">
-                      <button class="btn btn-primary btn-sm " (click)="alteraCampanha(campanha)">Alterar</button>
+                    <td>
+                      <button class="btn btn-primary btn-sm " routerLink="detalheCampanha/{{campanha.id}}">Detalhe</button>
                     </td>
                   </tr>
                   

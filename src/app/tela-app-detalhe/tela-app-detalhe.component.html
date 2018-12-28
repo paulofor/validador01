@@ -1,8 +1,8 @@
 <div *ngIf="listaEntidade" class="main-content">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-12">
-        <mat-card>
+
+  <div class="row">
+    <div class="col-md-12">
+      <mat-card>
         <mat-card-title>{{item.nome}}</mat-card-title>
         <mat-card-content>
           <form *ngIf="item" class="example-full-width" (ngSubmit)="onSubmit()">
@@ -27,15 +27,14 @@
             </mat-dialog-actions>
           </form>
         </mat-card-content>
-        </mat-card>
-      </div>
+      </mat-card>
     </div>
-
-    <div class="row">
-      <div class="col-md-12">
-        <app-entidade-por-projeto [conceito]="item.conceitoProduto"></app-entidade-por-projeto>
-      </div>
-    </div>
-
   </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <app-entidade-por-projeto [conceito]="item.conceitoProduto"></app-entidade-por-projeto>
+    </div>
+  </div>
+
 </div>

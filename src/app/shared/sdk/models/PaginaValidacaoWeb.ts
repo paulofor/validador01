@@ -3,7 +3,8 @@ import {
   ProjetoMySql,
   ItemValidacaoPagina,
   RegistroInteresse,
-  CampanhaAds
+  CampanhaAds,
+  ConceitoProduto
 } from '../index';
 
 declare var Object: any;
@@ -22,6 +23,7 @@ export interface PaginaValidacaoWebInterface {
   itemValidacaoPaginas?: ItemValidacaoPagina[];
   registroInteresses?: RegistroInteresse[];
   campanhaAds?: CampanhaAds[];
+  conceitoProduto?: ConceitoProduto;
 }
 
 export class PaginaValidacaoWeb implements PaginaValidacaoWebInterface {
@@ -39,6 +41,7 @@ export class PaginaValidacaoWeb implements PaginaValidacaoWebInterface {
   itemValidacaoPaginas: ItemValidacaoPagina[];
   registroInteresses: RegistroInteresse[];
   campanhaAds: CampanhaAds[];
+  conceitoProduto: ConceitoProduto;
   constructor(data?: PaginaValidacaoWebInterface) {
     Object.assign(this, data);
   }
@@ -145,6 +148,14 @@ export class PaginaValidacaoWeb implements PaginaValidacaoWebInterface {
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'paginaValidacaoWebId'
+        },
+        conceitoProduto: {
+          name: 'conceitoProduto',
+          type: 'ConceitoProduto',
+          model: 'ConceitoProduto',
+          relationType: 'belongsTo',
+                  keyFrom: 'conceitoProdutoId',
+          keyTo: 'id'
         },
       }
     }

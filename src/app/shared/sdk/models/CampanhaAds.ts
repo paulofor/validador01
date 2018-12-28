@@ -1,6 +1,7 @@
 /* tslint:disable */
 import {
   AnuncioAds,
+  PaginaValidacaoWeb,
   PalavraChaveAds,
   ModeloCampanhaAds,
   CampanhaAnuncioResultado,
@@ -28,6 +29,7 @@ export interface CampanhaAdsInterface {
   "paginaValidacaoWebId"?: number;
   "modeloCampanhaAdsId"?: number;
   anuncioAds?: AnuncioAds[];
+  paginaValidacaoWeb?: PaginaValidacaoWeb;
   palavraChaveAds?: PalavraChaveAds[];
   modeloCampanhaAds?: ModeloCampanhaAds;
   campanhaAnuncioResultados?: CampanhaAnuncioResultado[];
@@ -54,6 +56,7 @@ export class CampanhaAds implements CampanhaAdsInterface {
   "paginaValidacaoWebId": number;
   "modeloCampanhaAdsId": number;
   anuncioAds: AnuncioAds[];
+  paginaValidacaoWeb: PaginaValidacaoWeb;
   palavraChaveAds: PalavraChaveAds[];
   modeloCampanhaAds: ModeloCampanhaAds;
   campanhaAnuncioResultados: CampanhaAnuncioResultado[];
@@ -174,6 +177,14 @@ export class CampanhaAds implements CampanhaAdsInterface {
           keyThrough: 'anuncioAdsId',
           keyFrom: 'id',
           keyTo: 'campanhaAdsId'
+        },
+        paginaValidacaoWeb: {
+          name: 'paginaValidacaoWeb',
+          type: 'PaginaValidacaoWeb',
+          model: 'PaginaValidacaoWeb',
+          relationType: 'belongsTo',
+                  keyFrom: 'paginaValidacaoWebId',
+          keyTo: 'id'
         },
         palavraChaveAds: {
           name: 'palavraChaveAds',

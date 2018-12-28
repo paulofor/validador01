@@ -15,6 +15,7 @@ import { ProjetoMySql } from '../../models/ProjetoMySql';
 import { ItemValidacaoPagina } from '../../models/ItemValidacaoPagina';
 import { RegistroInteresse } from '../../models/RegistroInteresse';
 import { CampanhaAds } from '../../models/CampanhaAds';
+import { ConceitoProduto } from '../../models/ConceitoProduto';
 
 
 /**
@@ -338,6 +339,36 @@ export class PaginaValidacaoWebApi extends BaseLoopBackApi {
       data: data
     };
     let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Fetches belongsTo relation conceitoProduto.
+   *
+   * @param {any} id PaginaValidacaoWeb id
+   *
+   * @param {boolean} refresh 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `PaginaValidacaoWeb` object.)
+   * </em>
+   */
+  public getConceitoProduto(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/PaginaValidacaoWebs/:id/conceitoProduto";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof refresh !== 'undefined' && refresh !== null) _urlParams.refresh = refresh;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
@@ -1668,6 +1699,39 @@ export class PaginaValidacaoWebApi extends BaseLoopBackApi {
     };
     let _postBody: any = {};
     let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Fetches belongsTo relation paginaValidacaoWeb.
+   *
+   * @param {any} id PaginaValidacaoWeb id
+   *
+   * @param {any} nk Foreign key for campanhaAds.
+   *
+   * @param {boolean} refresh 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `PaginaValidacaoWeb` object.)
+   * </em>
+   */
+  public getCampanhaAdsPaginaValidacaoWeb(id: any, nk: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/PaginaValidacaoWebs/:id/campanhaAds/:nk/paginaValidacaoWeb";
+    let _routeParams: any = {
+      id: id,
+      nk: nk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof refresh !== 'undefined' && refresh !== null) _urlParams.refresh = refresh;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }

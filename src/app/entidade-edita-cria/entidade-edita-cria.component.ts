@@ -48,6 +48,8 @@ export class EntidadeEditaCriaComponent implements OnInit {
         this.closeDialog();
       });
     } else {
+      this.item.atributoChave = null;
+      this.item.atributoIdentificador = null;
       this.entidadaSrv.updateAttributes(this.item.id_entidade, this.item, (err, obj) => {
         console.log("Erro:" + err.message);
       }).subscribe((e: any) => {

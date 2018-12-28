@@ -1,22 +1,5 @@
 <div *ngIf="entidade" class="main-content">
 
-  <div class="container-fluid">
-    <div class="row">
-
-      <div class="col-md-12">
-        <div class="card">
-          <div class="header">
-            <h4 class="title">{{entidade.nome}}</h4>
-            <button mat-raised-button (click)="alteraEntidade(entidade)">Alterar</button>
-          </div>
-          <div class="content"></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-
   <div class="row">
       <div class="col-md-12">
       <app-lista-atributo-por-entidade [entidade]="entidade"></app-lista-atributo-por-entidade>

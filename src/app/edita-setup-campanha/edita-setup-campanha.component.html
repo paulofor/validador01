@@ -1,0 +1,63 @@
+<h2 mat-dialog-title>Edição Setup de Campanha</h2>
+
+<form *ngIf="item" class="example-full-width" (ngSubmit)="onSubmit()">
+
+  <mat-dialog-content>
+
+    <mat-form-field class="example-full-width">
+      <input matInput maxlength="200" #nome [(ngModel)]="item.nome" name="nome" placeholder="Nome" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput maxlength="20" #budgetDiario [(ngModel)]="item.budgetDiario" name="budgetDiario" placeholder="Orçamento diário" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-select #estrategia [(ngModel)]="item.estrategia" name="estrategia" placeholder="Estrategia de lances">
+        <mat-option value="MANUAL_CPC">CPC Manual</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-select #diaSemanaInicio [(ngModel)]="item.diaSemanaInicio" name="diaSemanaInicio" placeholder="Dia semana inicial">
+        <mat-option value="SUNDAY">Domingo</mat-option>
+        <mat-option value="MONDAY">Segunda</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-select #diaSemanaFinal [(ngModel)]="item.diaSemanaFinal" name="diaSemanaFinal" placeholder="Dia semana final">
+        <mat-option value="FRIDAY">Sexta</mat-option>
+        <mat-option value="SATURDAY">Sábado</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-select #plataforma [(ngModel)]="item.plataforma" name="plataforma" placeholder="Plataforma"> 
+        <mat-option value="Desktop">Desktop</mat-option>
+        <mat-option value="DesktopMobile">Desktop + Mobile</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-select #matchPalavra [(ngModel)]="item.matchPalavra" name="matchPalavra" placeholder="Match de palavra-chave">
+        <mat-option value="EXACT">Exata</mat-option>
+        <mat-option value="PHRASE">Frase</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-select #rotacaoAnuncio [(ngModel)]="item.rotacaoAnuncio" name="rotacaoAnuncio" placeholder="Rotação de anúncios">
+        <mat-option value="ROTATE_FOREVER">Rotação pra sempre</mat-option>
+        <mat-option value="OPTIMIZE">Otimizada</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button mat-raised-button>Salvar</button>
+    <button mat-raised-button mat-dialog-close>Fechar</button>
+  </mat-dialog-actions>
+
+</form>

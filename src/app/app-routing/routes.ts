@@ -54,6 +54,7 @@ import { TelaAppDetalheComponent } from '../tela-app-detalhe/tela-app-detalhe.co
 import { ListaCampanhaPorProjetoComponent } from '../lista-campanha-por-projeto/lista-campanha-por-projeto.component';
 import { ListaCampanhaConceitoAtivoPorProjetoComponent } from '../lista-campanha-conceito-ativo-por-projeto/lista-campanha-conceito-ativo-por-projeto.component';
 import { DetalheCampanhaComponent } from '../detalhe-campanha/detalhe-campanha.component';
+import { ListaSetupCampanhaComponent } from '../lista-setup-campanha/lista-setup-campanha.component';
 
 
 export const routes : Routes = [
@@ -133,6 +134,8 @@ export const routes : Routes = [
     { path: 'listaCampanhaConceitoAtivoPorProjeto/:id' , component: ListaCampanhaConceitoAtivoPorProjetoComponent},
 
     { path: 'detalheCampanha/:id' , component: DetalheCampanhaComponent },
+
+    { path: 'listaSetupCampanha', component: ListaSetupCampanhaComponent },
 
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

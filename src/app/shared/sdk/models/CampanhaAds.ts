@@ -5,7 +5,8 @@ import {
   PalavraChaveAds,
   ModeloCampanhaAds,
   CampanhaAnuncioResultado,
-  CampanhaPalavraChaveResultado
+  CampanhaPalavraChaveResultado,
+  SetupCampanha
 } from '../index';
 
 declare var Object: any;
@@ -28,12 +29,14 @@ export interface CampanhaAdsInterface {
   "finalizadaProducao"?: boolean;
   "paginaValidacaoWebId"?: number;
   "modeloCampanhaAdsId"?: number;
+  "setupCampanhaId"?: number;
   anuncioAds?: AnuncioAds[];
   paginaValidacaoWeb?: PaginaValidacaoWeb;
   palavraChaveAds?: PalavraChaveAds[];
   modeloCampanhaAds?: ModeloCampanhaAds;
   campanhaAnuncioResultados?: CampanhaAnuncioResultado[];
   campanhaPalavraChaveResultados?: CampanhaPalavraChaveResultado[];
+  setupCampanha?: SetupCampanha;
 }
 
 export class CampanhaAds implements CampanhaAdsInterface {
@@ -55,12 +58,14 @@ export class CampanhaAds implements CampanhaAdsInterface {
   "finalizadaProducao": boolean;
   "paginaValidacaoWebId": number;
   "modeloCampanhaAdsId": number;
+  "setupCampanhaId": number;
   anuncioAds: AnuncioAds[];
   paginaValidacaoWeb: PaginaValidacaoWeb;
   palavraChaveAds: PalavraChaveAds[];
   modeloCampanhaAds: ModeloCampanhaAds;
   campanhaAnuncioResultados: CampanhaAnuncioResultado[];
   campanhaPalavraChaveResultados: CampanhaPalavraChaveResultado[];
+  setupCampanha: SetupCampanha;
   constructor(data?: CampanhaAdsInterface) {
     Object.assign(this, data);
   }
@@ -166,6 +171,10 @@ export class CampanhaAds implements CampanhaAdsInterface {
           name: 'modeloCampanhaAdsId',
           type: 'number'
         },
+        "setupCampanhaId": {
+          name: 'setupCampanhaId',
+          type: 'number'
+        },
       },
       relations: {
         anuncioAds: {
@@ -219,6 +228,14 @@ export class CampanhaAds implements CampanhaAdsInterface {
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'campanhaAdsId'
+        },
+        setupCampanha: {
+          name: 'setupCampanha',
+          type: 'SetupCampanha',
+          model: 'SetupCampanha',
+          relationType: 'belongsTo',
+                  keyFrom: 'setupCampanhaId',
+          keyTo: 'id'
         },
       }
     }

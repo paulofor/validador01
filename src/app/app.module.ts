@@ -154,6 +154,7 @@ import { ResultadoCampanhaAnuncioComponent } from './resultado-campanha-anuncio/
 import { ResultadoCampanhaPalavraChaveComponent } from './resultado-campanha-palavra-chave/resultado-campanha-palavra-chave.component';
 import { EditaSetupCampanhaComponent } from './edita-setup-campanha/edita-setup-campanha.component';
 import { ListaSetupCampanhaComponent } from './lista-setup-campanha/lista-setup-campanha.component';
+import { CampanhaEditaCriaV2Component } from './campanha-edita-cria-v2/campanha-edita-cria-v2.component';
 
 
 
@@ -269,6 +270,7 @@ import { ListaSetupCampanhaComponent } from './lista-setup-campanha/lista-setup-
     ResultadoCampanhaPalavraChaveComponent,
     EditaSetupCampanhaComponent,
     ListaSetupCampanhaComponent,
+    CampanhaEditaCriaV2Component,
 
 
   ],
@@ -296,7 +298,8 @@ import { ListaSetupCampanhaComponent } from './lista-setup-campanha/lista-setup-
     AnuncioAdsEditaValorConceitoComponent,
     EditaPaginaValidacaoWebComponent,
     EditaItemValidacaoTelaComponent,
-    EditaSetupCampanhaComponent
+    EditaSetupCampanhaComponent,
+    CampanhaEditaCriaV2Component
     //ArquivosComponent
   ],
   imports: [

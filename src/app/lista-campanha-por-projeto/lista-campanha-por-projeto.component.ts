@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CampanhaAds, CampanhaAdsApi } from '../shared/sdk';
 import { Params, ActivatedRoute } from '@angular/router';
+import { CampanhaEditaCriaV2Component } from '../campanha-edita-cria-v2/campanha-edita-cria-v2.component';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-lista-campanha-por-projeto',
@@ -10,28 +12,41 @@ import { Params, ActivatedRoute } from '@angular/router';
 export class ListaCampanhaPorProjetoComponent implements OnInit {
 
   listaCampanha: CampanhaAds[];
+  idProjeto : number;
 
-  constructor(private route:ActivatedRoute, private srv:CampanhaAdsApi) { }
+  constructor(private route: ActivatedRoute, private srv: CampanhaAdsApi,  private dialog: MatDialog) { }
 
   ngOnInit() {
     this.carregaLista();
   }
 
   carregaLista() {
-    this.route.params.subscribe((param:Params)=> {
-      let idProjeto = param['id'];
-      this.srv.GeralPorProjeto(idProjeto)
-        .subscribe((resultado:CampanhaAds[]) => {
+    this.route.params.subscribe((param: Params) => {
+      this.idProjeto = param['id'];
+      this.srv.GeralPorProjeto(this.idProjeto)
+        .subscribe((resultado: CampanhaAds[]) => {
           this.listaCampanha = resultado;
         })
     })
   }
 
 
-  getCtr(campanha:CampanhaAds) {
-    return (campanha.quantidadeClique>0?((campanha.quantidadeClique/ campanha.quantidadeImpressao) * 100 ):0);;
+  getCtr(campanha: CampanhaAds) {
+    return (campanha.quantidadeClique > 0 ? ((campanha.quantidadeClique / campanha.quantidadeImpressao) * 100) : 0);;
   }
-  getCpc(campanha:CampanhaAds) {
-    return (campanha.quantidadeClique>0?(campanha.orcamentoTotalExecutado / campanha.quantidadeClique):0);
+  getCpc(campanha: CampanhaAds) {
+    return (campanha.quantidadeClique > 0 ? (campanha.orcamentoTotalExecutado / campanha.quantidadeClique) : 0);
+  }
+
+  openDialog(campanha) {
+    this.dialog.afterAllClosed.subscribe(result => {
+      this.carregaLista();
+    });
+    this.dialog.open(CampanhaEditaCriaV2Component, {
+      width: '800px',
+      data: {
+        idProjeto: this.idProjeto
+      }
+    });
   }
 }

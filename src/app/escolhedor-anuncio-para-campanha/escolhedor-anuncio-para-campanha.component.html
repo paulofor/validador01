@@ -1,0 +1,40 @@
+<h2 mat-dialog-title>Anúncios para campanha</h2>
+<mat-dialog-content *ngIf="listaItemDisponivel">
+
+    <div class="row">
+    <div class="col-sm-6">
+        <div class="card card-outline-primary mb-3">
+            <div class="card-header card-inverse card-primary">Disponíveis</div>
+            <div class="card-block scroll-list">
+                <ul class="list-group">
+                    <li draggable *ngFor="let item of listaItemDisponivel" 
+                        [dragScope]="'default-css'" 
+                        [dragData]="item" class="list-group-item">
+                        {{item.titulo1}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6">
+        <div class="card card-outline-primary mb-3" droppable [dropScope]="'default-css'"
+             (onDrop)="onDrop($event)">
+            <div class="card-header card-inverse card-primary">Na página</div>
+            <div class="card-block scroll-list">
+                <ul class="list-group">
+                    <li *ngFor="let item of campanha.campanhaAnuncioResultados" class="list-group-item">
+                        {{item.anuncioAds.titulo1}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Fechar</button>
+</mat-dialog-actions>

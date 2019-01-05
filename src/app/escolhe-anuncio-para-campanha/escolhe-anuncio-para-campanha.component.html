@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="header">
+    <h4 class="title">Anúncios da Campanha</h4>
+    <button class="btn btn-primary btn-sm " (click)="openDialog(campanha)">Escolher</button>
+  </div>
+
+  <div class="content table-responsive table-full-width">
+    <table class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th>Anúncios</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of campanha.campanhaAnuncioResultados">
+          <td><app-display-anuncio [item]="item.anuncioAds"></app-display-anuncio></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>

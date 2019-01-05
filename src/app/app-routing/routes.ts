@@ -55,6 +55,8 @@ import { ListaCampanhaPorProjetoComponent } from '../lista-campanha-por-projeto/
 import { ListaCampanhaConceitoAtivoPorProjetoComponent } from '../lista-campanha-conceito-ativo-por-projeto/lista-campanha-conceito-ativo-por-projeto.component';
 import { DetalheCampanhaComponent } from '../detalhe-campanha/detalhe-campanha.component';
 import { ListaSetupCampanhaComponent } from '../lista-setup-campanha/lista-setup-campanha.component';
+import { DetalheCampanhaParaFechamentoComponent } from '../detalhe-campanha-para-fechamento/detalhe-campanha-para-fechamento.component';
+import { ListaCadProjetoComponent } from '../lista-cad-projeto/lista-cad-projeto.component';
 
 
 export const routes : Routes = [
@@ -136,6 +138,10 @@ export const routes : Routes = [
     { path: 'detalheCampanha/:id' , component: DetalheCampanhaComponent },
 
     { path: 'listaSetupCampanha', component: ListaSetupCampanhaComponent },
+
+    { path: 'detalheCampanhaParaFechamento/:id' , component: DetalheCampanhaParaFechamentoComponent }, 
+
+    { path: 'projetosCadastro' , component: ListaCadProjetoComponent },
 
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

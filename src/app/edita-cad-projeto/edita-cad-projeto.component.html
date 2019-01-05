@@ -1,0 +1,26 @@
+<h2 mat-dialog-title>Projeto</h2>
+
+<form class="example-full-width" (ngSubmit)="onSubmit()">
+
+  <mat-dialog-content *ngIf="listaEtapa">
+
+    <mat-form-field class="example-full-width">
+      <input matInput maxlength="30" #codigo [(ngModel)]="item.codigo" name="codigo" placeholder="Código" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-select placeholder="Etapa" #etapaProjetoId [(ngModel)]="item.etapaProjetoId" name="etapaProjetoId">
+        <mat-option *ngFor="let etapa of listaEtapa" [value]="etapa.id">
+          {{ etapa.nome }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button mat-raised-button>Salvar</button>
+    <button mat-raised-button mat-dialog-close>Fechar</button>
+  </mat-dialog-actions>
+
+</form>

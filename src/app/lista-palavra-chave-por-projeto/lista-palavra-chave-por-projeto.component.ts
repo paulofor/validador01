@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ProjetoMySql, PalavraChaveEstatistica, PalavraChaveEstatisticaApi } from '../shared/sdk';
 
 @Component({
   selector: 'app-lista-palavra-chave-por-projeto',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaPalavraChavePorProjetoComponent implements OnInit {
 
-  constructor() { }
+
+  @Input() projeto: ProjetoMySql;
+  lista:PalavraChaveEstatistica[];
+  
+  constructor(private srvPalavraChave: PalavraChaveEstatisticaApi) { }
 
   ngOnInit() {
+
+    this.carregaPalavraChave()
+  }
+
+  carregaPalavraChave() {
+    this.srvPalavraChave.ListaPorIdProjeto(this.projeto.id)
+      .subscribe((result:PalavraChaveEstatistica[]) => {
+        this.lista = result;
+      })
   }
 
 }

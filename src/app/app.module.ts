@@ -155,6 +155,13 @@ import { ResultadoCampanhaPalavraChaveComponent } from './resultado-campanha-pal
 import { EditaSetupCampanhaComponent } from './edita-setup-campanha/edita-setup-campanha.component';
 import { ListaSetupCampanhaComponent } from './lista-setup-campanha/lista-setup-campanha.component';
 import { CampanhaEditaCriaV2Component } from './campanha-edita-cria-v2/campanha-edita-cria-v2.component';
+import { DetalheCampanhaParaFechamentoComponent } from './detalhe-campanha-para-fechamento/detalhe-campanha-para-fechamento.component';
+import { ListaCadProjetoComponent } from './lista-cad-projeto/lista-cad-projeto.component';
+import { EditaCadProjetoComponent } from './edita-cad-projeto/edita-cad-projeto.component';
+import { DisplayPaginaValidacaoWebComponent } from './display-pagina-validacao-web/display-pagina-validacao-web.component';
+import { EscolheAnuncioParaCampanhaComponent } from './escolhe-anuncio-para-campanha/escolhe-anuncio-para-campanha.component';
+import { EscolhedorAnuncioParaCampanhaComponent } from './escolhedor-anuncio-para-campanha/escolhedor-anuncio-para-campanha.component';
+import { DisplayAnuncioComponent } from './display-anuncio/display-anuncio.component';
 
 
 
@@ -271,6 +278,13 @@ import { CampanhaEditaCriaV2Component } from './campanha-edita-cria-v2/campanha-
     EditaSetupCampanhaComponent,
     ListaSetupCampanhaComponent,
     CampanhaEditaCriaV2Component,
+    DetalheCampanhaParaFechamentoComponent,
+    ListaCadProjetoComponent,
+    EditaCadProjetoComponent,
+    DisplayPaginaValidacaoWebComponent,
+    EscolheAnuncioParaCampanhaComponent,
+    EscolhedorAnuncioParaCampanhaComponent,
+    DisplayAnuncioComponent,
 
 
   ],
@@ -299,7 +313,9 @@ import { CampanhaEditaCriaV2Component } from './campanha-edita-cria-v2/campanha-
     EditaPaginaValidacaoWebComponent,
     EditaItemValidacaoTelaComponent,
     EditaSetupCampanhaComponent,
-    CampanhaEditaCriaV2Component
+    CampanhaEditaCriaV2Component,
+    EscolhedorAnuncioParaCampanhaComponent,
+    EditaCadProjetoComponent
     //ArquivosComponent
   ],
   imports: [

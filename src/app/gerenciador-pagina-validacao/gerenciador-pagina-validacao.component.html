@@ -13,15 +13,7 @@
       <tbody>
         <tr *ngFor="let item of listaPagina">
           <td>
-            <mat-card>
-              <mat-card-title>{{item.mensagemPrincipal}}</mat-card-title>
-              <mat-card-subtitle>{{item.mensagemSecundaria}}</mat-card-subtitle>
-              <mat-card-subtitle>{{item.botaoAcao}}</mat-card-subtitle>
-              <mat-card-actions>
-                <button mat-raised-button color="primary" (click)="openDialog(item)">Alterar</button>
-                <button mat-raised-button color="primary" routerLink="/editaPaginaValidacaoWeb/{{item.id}}">Detalhe</button>
-              </mat-card-actions>
-            </mat-card>
+            <app-display-pagina-validacao-web [item]="item"></app-display-pagina-validacao-web>
           </td>
         </tr>
       </tbody>

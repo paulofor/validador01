@@ -14,6 +14,7 @@ export interface ItemValidacaoPaginaInterface {
   "bullet2"?: string;
   "bullet3"?: string;
   "mensagemImagem"?: string;
+  "permiteEdicao"?: number;
   "projetoCanvasMySqlId"?: number;
   "paginaValidacaoWebId"?: number;
   "telaWebId"?: number;
@@ -31,6 +32,7 @@ export class ItemValidacaoPagina implements ItemValidacaoPaginaInterface {
   "bullet2": string;
   "bullet3": string;
   "mensagemImagem": string;
+  "permiteEdicao": number;
   "projetoCanvasMySqlId": number;
   "paginaValidacaoWebId": number;
   "telaWebId": number;
@@ -104,6 +106,10 @@ export class ItemValidacaoPagina implements ItemValidacaoPaginaInterface {
         "mensagemImagem": {
           name: 'mensagemImagem',
           type: 'string'
+        },
+        "permiteEdicao": {
+          name: 'permiteEdicao',
+          type: 'number'
         },
         "projetoCanvasMySqlId": {
           name: 'projetoCanvasMySqlId',

@@ -15,6 +15,7 @@ export interface ProjetoMySqlInterface {
   "valor"?: string;
   "mercado"?: string;
   "dor"?: string;
+  "codigo"?: string;
   "etapaProjetoId"?: number;
   projetoCanvasMySqls?: ProjetoCanvasMySql[];
   mvpCanvasMySqls?: MvpCanvasMySql[];
@@ -30,6 +31,7 @@ export class ProjetoMySql implements ProjetoMySqlInterface {
   "valor": string;
   "mercado": string;
   "dor": string;
+  "codigo": string;
   "etapaProjetoId": number;
   projetoCanvasMySqls: ProjetoCanvasMySql[];
   mvpCanvasMySqls: MvpCanvasMySql[];
@@ -88,6 +90,10 @@ export class ProjetoMySql implements ProjetoMySqlInterface {
         },
         "dor": {
           name: 'dor',
+          type: 'string'
+        },
+        "codigo": {
+          name: 'codigo',
           type: 'string'
         },
         "etapaProjetoId": {

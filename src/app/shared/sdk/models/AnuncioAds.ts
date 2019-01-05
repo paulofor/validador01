@@ -11,6 +11,7 @@ export interface AnuncioAdsInterface {
   "titulo3"?: string;
   "descricao1"?: string;
   "descricao2"?: string;
+  "permiteEdicao"?: number;
   "projetoCanvasMySqlId"?: number;
   "valorConceitoId"?: number;
   projetoCanvasMySql?: ProjetoCanvasMySql;
@@ -23,6 +24,7 @@ export class AnuncioAds implements AnuncioAdsInterface {
   "titulo3": string;
   "descricao1": string;
   "descricao2": string;
+  "permiteEdicao": number;
   "projetoCanvasMySqlId": number;
   "valorConceitoId": number;
   projetoCanvasMySql: ProjetoCanvasMySql;
@@ -82,6 +84,10 @@ export class AnuncioAds implements AnuncioAdsInterface {
         "descricao2": {
           name: 'descricao2',
           type: 'string'
+        },
+        "permiteEdicao": {
+          name: 'permiteEdicao',
+          type: 'number'
         },
         "projetoCanvasMySqlId": {
           name: 'projetoCanvasMySqlId',

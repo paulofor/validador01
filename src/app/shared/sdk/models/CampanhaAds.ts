@@ -16,6 +16,7 @@ export interface CampanhaAdsInterface {
   "nome"?: string;
   "dataInicial"?: Date;
   "dataFinal"?: Date;
+  "dataCriacao"?: Date;
   "dataPublicacao"?: Date;
   "dataResultado"?: Date;
   "dataFechamento"?: Date;
@@ -27,6 +28,7 @@ export interface CampanhaAdsInterface {
   "orcamentoTotalExecutado"?: number;
   "urlAlvo"?: string;
   "finalizadaProducao"?: boolean;
+  "permiteEdicao"?: number;
   "paginaValidacaoWebId"?: number;
   "modeloCampanhaAdsId"?: number;
   "setupCampanhaId"?: number;
@@ -45,6 +47,7 @@ export class CampanhaAds implements CampanhaAdsInterface {
   "nome": string;
   "dataInicial": Date;
   "dataFinal": Date;
+  "dataCriacao": Date;
   "dataPublicacao": Date;
   "dataResultado": Date;
   "dataFechamento": Date;
@@ -56,6 +59,7 @@ export class CampanhaAds implements CampanhaAdsInterface {
   "orcamentoTotalExecutado": number;
   "urlAlvo": string;
   "finalizadaProducao": boolean;
+  "permiteEdicao": number;
   "paginaValidacaoWebId": number;
   "modeloCampanhaAdsId": number;
   "setupCampanhaId": number;
@@ -119,6 +123,10 @@ export class CampanhaAds implements CampanhaAdsInterface {
           name: 'dataFinal',
           type: 'Date'
         },
+        "dataCriacao": {
+          name: 'dataCriacao',
+          type: 'Date'
+        },
         "dataPublicacao": {
           name: 'dataPublicacao',
           type: 'Date'
@@ -162,6 +170,10 @@ export class CampanhaAds implements CampanhaAdsInterface {
         "finalizadaProducao": {
           name: 'finalizadaProducao',
           type: 'boolean'
+        },
+        "permiteEdicao": {
+          name: 'permiteEdicao',
+          type: 'number'
         },
         "paginaValidacaoWebId": {
           name: 'paginaValidacaoWebId',

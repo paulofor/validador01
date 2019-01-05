@@ -17,6 +17,7 @@ export interface PaginaValidacaoWebInterface {
   "corBase"?: string;
   "marcaLogo"?: string;
   "codigoHash"?: string;
+  "permiteEdicao"?: number;
   "projetoMySqlId"?: number;
   "conceitoProdutoId"?: number;
   projeto?: ProjetoMySql;
@@ -35,6 +36,7 @@ export class PaginaValidacaoWeb implements PaginaValidacaoWebInterface {
   "corBase": string;
   "marcaLogo": string;
   "codigoHash": string;
+  "permiteEdicao": number;
   "projetoMySqlId": number;
   "conceitoProdutoId": number;
   projeto: ProjetoMySql;
@@ -106,6 +108,10 @@ export class PaginaValidacaoWeb implements PaginaValidacaoWebInterface {
         "codigoHash": {
           name: 'codigoHash',
           type: 'string'
+        },
+        "permiteEdicao": {
+          name: 'permiteEdicao',
+          type: 'number'
         },
         "projetoMySqlId": {
           name: 'projetoMySqlId',

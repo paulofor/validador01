@@ -15,7 +15,6 @@ export class ListaPalavraChavePorProjetoComponent implements OnInit {
   constructor(private srvPalavraChave: PalavraChaveEstatisticaApi) { }
 
   ngOnInit() {
-
     this.carregaPalavraChave()
   }
 

@@ -162,6 +162,7 @@ import { DisplayPaginaValidacaoWebComponent } from './display-pagina-validacao-w
 import { EscolheAnuncioParaCampanhaComponent } from './escolhe-anuncio-para-campanha/escolhe-anuncio-para-campanha.component';
 import { EscolhedorAnuncioParaCampanhaComponent } from './escolhedor-anuncio-para-campanha/escolhedor-anuncio-para-campanha.component';
 import { DisplayAnuncioComponent } from './display-anuncio/display-anuncio.component';
+import { EditaPalavraChaveEmCampanhaComponent } from './edita-palavra-chave-em-campanha/edita-palavra-chave-em-campanha.component';
 
 
 
@@ -285,6 +286,7 @@ import { DisplayAnuncioComponent } from './display-anuncio/display-anuncio.compo
     EscolheAnuncioParaCampanhaComponent,
     EscolhedorAnuncioParaCampanhaComponent,
     DisplayAnuncioComponent,
+    EditaPalavraChaveEmCampanhaComponent,
 
 
   ],

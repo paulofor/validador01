@@ -1,7 +1,8 @@
 /* tslint:disable */
 import {
   PalavraChaveAds,
-  CampanhaAds
+  CampanhaAds,
+  PalavraChaveGoogle
 } from '../index';
 
 declare var Object: any;
@@ -13,8 +14,10 @@ export interface CampanhaPalavraChaveResultadoInterface {
   "id"?: number;
   "palavraChaveAdsId"?: number;
   "campanhaAdsId"?: number;
+  "palavraChaveGoogleId"?: string;
   palavraChaveAds?: PalavraChaveAds;
   campanhaAds?: CampanhaAds;
+  palavraChaveGoogle?: PalavraChaveGoogle;
 }
 
 export class CampanhaPalavraChaveResultado implements CampanhaPalavraChaveResultadoInterface {
@@ -25,8 +28,10 @@ export class CampanhaPalavraChaveResultado implements CampanhaPalavraChaveResult
   "id": number;
   "palavraChaveAdsId": number;
   "campanhaAdsId": number;
+  "palavraChaveGoogleId": string;
   palavraChaveAds: PalavraChaveAds;
   campanhaAds: CampanhaAds;
+  palavraChaveGoogle: PalavraChaveGoogle;
   constructor(data?: CampanhaPalavraChaveResultadoInterface) {
     Object.assign(this, data);
   }
@@ -88,6 +93,10 @@ export class CampanhaPalavraChaveResultado implements CampanhaPalavraChaveResult
           name: 'campanhaAdsId',
           type: 'number'
         },
+        "palavraChaveGoogleId": {
+          name: 'palavraChaveGoogleId',
+          type: 'string'
+        },
       },
       relations: {
         palavraChaveAds: {
@@ -105,6 +114,14 @@ export class CampanhaPalavraChaveResultado implements CampanhaPalavraChaveResult
           relationType: 'belongsTo',
                   keyFrom: 'campanhaAdsId',
           keyTo: 'id'
+        },
+        palavraChaveGoogle: {
+          name: 'palavraChaveGoogle',
+          type: 'PalavraChaveGoogle',
+          model: 'PalavraChaveGoogle',
+          relationType: 'belongsTo',
+                  keyFrom: 'palavraChaveGoogleId',
+          keyTo: 'palavra'
         },
       }
     }

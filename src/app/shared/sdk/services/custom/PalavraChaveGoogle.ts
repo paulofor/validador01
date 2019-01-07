@@ -92,6 +92,32 @@ export class PalavraChaveGoogleApi extends BaseLoopBackApi {
   }
 
   /**
+   * Lista das palavras chaves do projeto da campanha
+   *
+   * @param {number} idCampanha 
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `PalavraChaveGoogle` object.)
+   * </em>
+   */
+  public ListaDisponivelParaCampanha(idCampanha: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/PalavraChaveGoogles/listaDisponivelParaCampanha";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof idCampanha !== 'undefined' && idCampanha !== null) _urlParams.idCampanha = idCampanha;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * The name of the model represented by this $resource,
    * i.e. `PalavraChaveGoogle`.
    */

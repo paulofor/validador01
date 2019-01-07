@@ -31,8 +31,9 @@ export class CampanhaEditaCriaComponent implements OnInit {
   onSubmit() {
     console.log('Model: ' + JSON.stringify(this.item));
     if (!this.item.id) {
-      this.item.paginaValidacaoWebId = this.pagina.id;
-      this.campanhaSrv.create(this.item, (err, obj) => {
+       this.item.paginaValidacaoWebId = this.pagina.id;
+       this.item.dataCriacao = new Date();      
+       this.campanhaSrv.create(this.item, (err, obj) => {
         console.log("Erro:" + err.message);
       }).subscribe((e: any) => {
         console.log(JSON.stringify(e));

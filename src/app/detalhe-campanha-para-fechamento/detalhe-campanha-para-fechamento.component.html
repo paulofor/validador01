@@ -1,27 +1,36 @@
 <div *ngIf="campanha" class="main-content">
-  
-  <div class="row">
-    <div class="col-md-12">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
 
+      </div>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="col-md-12">
-      <app-lista-palavra-chave-por-projeto [projeto]="campanha.paginaValidacaoWeb.projeto"></app-lista-palavra-chave-por-projeto>
+    <div class="row">
+      <div class="col-md-12">
+        <app-lista-palavra-chave-por-projeto [projeto]="campanha.paginaValidacaoWeb.projeto"></app-lista-palavra-chave-por-projeto>
+      </div>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="col-md-12">
-      <app-escolhe-anuncio-para-campanha [campanha]="campanha"></app-escolhe-anuncio-para-campanha>
+    <div class="row">
+      <div class="col-md-12">
+        <app-escolhe-anuncio-para-campanha [campanha]="campanha"></app-escolhe-anuncio-para-campanha>
+      </div>
     </div>
-  </div>
 
 
-  <div class="row">
-    <div class="col-md-12">
-      <app-display-pagina-validacao-web [item]="campanha.paginaValidacaoWeb"></app-display-pagina-validacao-web>
+    <div class="row">
+      <div class="col-md-12">
+        <app-display-pagina-validacao-web [item]="campanha.paginaValidacaoWeb"></app-display-pagina-validacao-web>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <mat-card >
+          <button mat-raised-button color="accent"  (click)="fecharCampanha()">Fechar Campanha</button>
+        </mat-card>
+      </div>
     </div>
   </div>
 </div>

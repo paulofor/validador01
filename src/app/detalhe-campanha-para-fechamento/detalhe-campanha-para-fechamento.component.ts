@@ -31,6 +31,10 @@ export class DetalheCampanhaParaFechamentoComponent implements OnInit {
     })
   }
 
+  fecharCampanha() {
+    
+  }
+
   /*
   carregaProjeto() {
     this.router.params.subscribe((params:Params) => {

@@ -27,6 +27,7 @@ export interface CampanhaAdsInterface {
   "orcamentoTotalPlanejado"?: number;
   "orcamentoTotalExecutado"?: number;
   "urlAlvo"?: string;
+  "urlAlvoMobile"?: string;
   "finalizadaProducao"?: boolean;
   "permiteEdicao"?: number;
   "paginaValidacaoWebId"?: number;
@@ -58,6 +59,7 @@ export class CampanhaAds implements CampanhaAdsInterface {
   "orcamentoTotalPlanejado": number;
   "orcamentoTotalExecutado": number;
   "urlAlvo": string;
+  "urlAlvoMobile": string;
   "finalizadaProducao": boolean;
   "permiteEdicao": number;
   "paginaValidacaoWebId": number;
@@ -165,6 +167,10 @@ export class CampanhaAds implements CampanhaAdsInterface {
         },
         "urlAlvo": {
           name: 'urlAlvo',
+          type: 'string'
+        },
+        "urlAlvoMobile": {
+          name: 'urlAlvoMobile',
           type: 'string'
         },
         "finalizadaProducao": {

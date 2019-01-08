@@ -1,6 +1,7 @@
-<div class="card">
+<div *ngIf="listaPalavra" class="card">
   <div class="header">
-    <h4 class="title">Projeto:</h4>
+    <h4 class="title">{{listaPalavra.length}} palavras</h4>
+    <button class="btn btn-primary btn-sm " (click)="criaListaNova()">Recriar</button>
   </div>
   <div class="content table-responsive table-full-width">
     <table class="table table-hover table-striped">
@@ -12,8 +13,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of lista">
-          <td>{{item.palavraChaveGoogleId}}</td>
+        <tr *ngFor="let item of listaPalavra">
+          <td>{{item.palavraChaveGoogle.palavra}}</td>
           <td></td>
           <td></td>
         </tr>

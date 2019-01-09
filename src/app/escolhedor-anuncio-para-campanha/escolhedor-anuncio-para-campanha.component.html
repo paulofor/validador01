@@ -10,7 +10,7 @@
                     <li draggable *ngFor="let item of listaItemDisponivel" 
                         [dragScope]="'default-css'" 
                         [dragData]="item" class="list-group-item">
-                        {{item.titulo1}}
+                        {{item.titulo2}}
                     </li>
                 </ul>
             </div>
@@ -24,7 +24,7 @@
             <div class="card-block scroll-list">
                 <ul class="list-group">
                     <li *ngFor="let item of campanha.campanhaAnuncioResultados" class="list-group-item">
-                        {{item.anuncioAds.titulo1}}
+                        {{item.anuncioAds.titulo2}}
                     </li>
                 </ul>
             </div>

@@ -39,7 +39,18 @@
           dropBoxMessage="ou arraste aqui"
           ></image-upload>
         </div>
-      </mat-dialog-content>
+
+
+      <div class="content table-responsive table-full-width">
+        <img width="100%" *ngIf="item.urlImagem2" src="{{item.urlImagem2}}" >
+
+        <image-upload url="{{urlUpload}}" 
+        (uploadFinished)="onUploadFinished($event)"
+        buttonCaption="Escolha a imagem2"
+        dropBoxMessage="ou arraste aqui"
+        ></image-upload>
+      </div>
+    </mat-dialog-content>
 
       <mat-dialog-actions>
         <button mat-button>Enviar</button>

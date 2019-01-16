@@ -45,6 +45,7 @@ import { ValorConceito } from '../../models/ValorConceito';
 import { RecursoConceitoProduto } from '../../models/RecursoConceitoProduto';
 import { Publico } from '../../models/Publico';
 import { SetupCampanha } from '../../models/SetupCampanha';
+import { EstatisticaMes } from '../../models/EstatisticaMes';
 
 export interface Models { [name: string]: any }
 
@@ -97,6 +98,7 @@ export class SDKModels {
     RecursoConceitoProduto: RecursoConceitoProduto,
     Publico: Publico,
     SetupCampanha: SetupCampanha,
+    EstatisticaMes: EstatisticaMes,
     
   };
 

@@ -57,6 +57,7 @@ import { DetalheCampanhaComponent } from '../detalhe-campanha/detalhe-campanha.c
 import { ListaSetupCampanhaComponent } from '../lista-setup-campanha/lista-setup-campanha.component';
 import { DetalheCampanhaParaFechamentoComponent } from '../detalhe-campanha-para-fechamento/detalhe-campanha-para-fechamento.component';
 import { ListaCadProjetoComponent } from '../lista-cad-projeto/lista-cad-projeto.component';
+import { MelhoresPalavrasBaixoCustoComponent } from '../melhores-palavras-baixo-custo/melhores-palavras-baixo-custo.component';
 
 
 export const routes : Routes = [
@@ -142,6 +143,8 @@ export const routes : Routes = [
     { path: 'detalheCampanhaParaFechamento/:id' , component: DetalheCampanhaParaFechamentoComponent }, 
 
     { path: 'projetosCadastro' , component: ListaCadProjetoComponent },
+
+    { path : 'melhoresPalavrasBaixoCusto' , component: MelhoresPalavrasBaixoCustoComponent},
 
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

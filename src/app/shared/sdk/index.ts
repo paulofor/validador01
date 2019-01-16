@@ -93,6 +93,7 @@ import { ValorConceitoApi } from './services/custom/ValorConceito';
 import { RecursoConceitoProdutoApi } from './services/custom/RecursoConceitoProduto';
 import { PublicoApi } from './services/custom/Publico';
 import { SetupCampanhaApi } from './services/custom/SetupCampanha';
+import { EstatisticaMesApi } from './services/custom/EstatisticaMes';
 /**
 * @module SDKBrowserModule
 * @description
@@ -168,8 +169,10 @@ export class SDKBrowserModule {
         RecursoConceitoProdutoApi,
         PublicoApi,
         SetupCampanhaApi,
+        EstatisticaMesApi,
         internalStorageProvider,
-        { provide: SDKStorage, useClass: StorageBrowser }
+        { provide: SDKStorage, useClass: StorageBrowser },
+
       ]
     };
   }

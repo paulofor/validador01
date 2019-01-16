@@ -163,6 +163,7 @@ import { EscolheAnuncioParaCampanhaComponent } from './escolhe-anuncio-para-camp
 import { EscolhedorAnuncioParaCampanhaComponent } from './escolhedor-anuncio-para-campanha/escolhedor-anuncio-para-campanha.component';
 import { DisplayAnuncioComponent } from './display-anuncio/display-anuncio.component';
 import { EditaPalavraChaveEmCampanhaComponent } from './edita-palavra-chave-em-campanha/edita-palavra-chave-em-campanha.component';
+import { MelhoresPalavrasBaixoCustoComponent } from './melhores-palavras-baixo-custo/melhores-palavras-baixo-custo.component';
 
 
 
@@ -287,6 +288,7 @@ import { EditaPalavraChaveEmCampanhaComponent } from './edita-palavra-chave-em-c
     EscolhedorAnuncioParaCampanhaComponent,
     DisplayAnuncioComponent,
     EditaPalavraChaveEmCampanhaComponent,
+    MelhoresPalavrasBaixoCustoComponent,
 
 
   ],

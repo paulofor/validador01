@@ -85,6 +85,7 @@ export class EditaItemValidacaoTelaComponent implements OnInit {
     console.log('Imagem:', this.arquivoSelecionado);
   }
 
+  /*
   carregaNomeImagemNova() {
     this.servico.proximoNomeImagem()
       .subscribe((result) => {
@@ -92,6 +93,7 @@ export class EditaItemValidacaoTelaComponent implements OnInit {
         console.log('Imagem Nova: ', this.nomeImagemNova);
       })
   }
+  */
 
 
 
@@ -102,6 +104,11 @@ export class EditaItemValidacaoTelaComponent implements OnInit {
   onUploadFinished(item: FileHolder) {
     console.log('onUploadFinished', item.file.name);
     this.item.urlImagem = URL_IMAGEM + '/' + item.file.name;
+  }
+
+  onUploadFinished2(item: FileHolder) {
+    console.log('onUploadFinished2', item.file.name);
+    this.item.urlImagem2 = URL_IMAGEM + '/' + item.file.name;
   }
 
 }

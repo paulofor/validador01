@@ -31,7 +31,7 @@
         </mat-form-field>
 
         <div class="content table-responsive table-full-width">
-          <img width="100%" *ngIf="item.urlImagem" src="{{item.urlImagem}}" >
+          <img height="300"  *ngIf="item.urlImagem" src="{{item.urlImagem}}" >
 
           <image-upload url="{{urlUpload}}" 
           (uploadFinished)="onUploadFinished($event)"
@@ -42,10 +42,10 @@
 
 
       <div class="content table-responsive table-full-width">
-        <img width="100%" *ngIf="item.urlImagem2" src="{{item.urlImagem2}}" >
+        <img height="300" *ngIf="item.urlImagem2" src="{{item.urlImagem2}}" >
 
         <image-upload url="{{urlUpload}}" 
-        (uploadFinished)="onUploadFinished($event)"
+        (uploadFinished)="onUploadFinished2($event)"
         buttonCaption="Escolha a imagem2"
         dropBoxMessage="ou arraste aqui"
         ></image-upload>

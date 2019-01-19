@@ -30,6 +30,11 @@ export interface CampanhaAdsInterface {
   "urlAlvoMobile"?: string;
   "finalizadaProducao"?: boolean;
   "permiteEdicao"?: number;
+  "ctr"?: number;
+  "cpcMedio"?: number;
+  "conversao"?: number;
+  "custoConversao"?: number;
+  "taxaConversao"?: number;
   "paginaValidacaoWebId"?: number;
   "modeloCampanhaAdsId"?: number;
   "setupCampanhaId"?: number;
@@ -62,6 +67,11 @@ export class CampanhaAds implements CampanhaAdsInterface {
   "urlAlvoMobile": string;
   "finalizadaProducao": boolean;
   "permiteEdicao": number;
+  "ctr": number;
+  "cpcMedio": number;
+  "conversao": number;
+  "custoConversao": number;
+  "taxaConversao": number;
   "paginaValidacaoWebId": number;
   "modeloCampanhaAdsId": number;
   "setupCampanhaId": number;
@@ -179,6 +189,26 @@ export class CampanhaAds implements CampanhaAdsInterface {
         },
         "permiteEdicao": {
           name: 'permiteEdicao',
+          type: 'number'
+        },
+        "ctr": {
+          name: 'ctr',
+          type: 'number'
+        },
+        "cpcMedio": {
+          name: 'cpcMedio',
+          type: 'number'
+        },
+        "conversao": {
+          name: 'conversao',
+          type: 'number'
+        },
+        "custoConversao": {
+          name: 'custoConversao',
+          type: 'number'
+        },
+        "taxaConversao": {
+          name: 'taxaConversao',
           type: 'number'
         },
         "paginaValidacaoWebId": {

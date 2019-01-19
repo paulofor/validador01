@@ -24,9 +24,9 @@
             <td>{{item.anuncioAds.titulo2}}</td>
             <td>{{item.quantidadeImpressao}}</td>
             <td>{{item.quantidadeClique}}</td>
-            <td>{{getCtr(item)| number : '1.2-2' }}</td>
+            <td>{{item.ctr | number : '1.2-2' }}</td>
             <td>{{item.custo}}</td>
-            <td>{{getCpc(item)| number : '1.2-2' }}</td>
+            <td>{{item.cpcMedio | number : '1.2-2' }}</td>
           </tr>
         </ng-container>
       </tbody>

@@ -11,6 +11,7 @@ export interface SetupCampanhaInterface {
   "matchPalavra"?: string;
   "rotacaoAnuncio"?: string;
   "permiteEdicao"?: number;
+  "maxCpcGrupoAnuncio"?: number;
   "id"?: number;
 }
 
@@ -24,6 +25,7 @@ export class SetupCampanha implements SetupCampanhaInterface {
   "matchPalavra": string;
   "rotacaoAnuncio": string;
   "permiteEdicao": number;
+  "maxCpcGrupoAnuncio": number;
   "id": number;
   constructor(data?: SetupCampanhaInterface) {
     Object.assign(this, data);
@@ -92,6 +94,10 @@ export class SetupCampanha implements SetupCampanhaInterface {
         },
         "permiteEdicao": {
           name: 'permiteEdicao',
+          type: 'number'
+        },
+        "maxCpcGrupoAnuncio": {
+          name: 'maxCpcGrupoAnuncio',
           type: 'number'
         },
         "id": {

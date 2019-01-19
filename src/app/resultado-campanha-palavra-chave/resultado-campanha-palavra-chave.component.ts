@@ -9,7 +9,8 @@ import { CampanhaAds, CampanhaPalavraChaveResultado, CampanhaAdsApi } from '../s
 export class ResultadoCampanhaPalavraChaveComponent implements OnInit {
 
   @Input() campanha: CampanhaAds;
-  filtro = {'order' : 'quantidadeClique DESC' , 'include' : 'palavraChaveAds'}
+  listaResultado: CampanhaPalavraChaveResultado[];
+  filtro = {'order' : 'quantidadeClique DESC' }
 
   constructor(private srv: CampanhaAdsApi) { }
 
@@ -21,14 +22,9 @@ export class ResultadoCampanhaPalavraChaveComponent implements OnInit {
   carregaResultados() {
     this.srv.getCampanhaPalavraChaveResultados(this.campanha.id, this.filtro)
       .subscribe((result:CampanhaPalavraChaveResultado[])=> {
-        this.campanha.campanhaPalavraChaveResultados = result;
+        this.listaResultado = result;
       })
   }
 
-  getCtr(item:CampanhaPalavraChaveResultado) {
-    return (item.quantidadeClique>0?((item.quantidadeClique/ item.quantidadeImpressao) * 100 ):0);;
-  }
-  getCpc(item:CampanhaPalavraChaveResultado) {
-    return (item.quantidadeClique>0?(item.custo / item.quantidadeClique):0);
-  }
+ 
 }

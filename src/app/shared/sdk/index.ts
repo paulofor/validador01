@@ -171,7 +171,7 @@ export class SDKBrowserModule {
         SetupCampanhaApi,
         EstatisticaMesApi,
         internalStorageProvider,
-        { provide: SDKStorage, useClass: StorageBrowser },
+        { provide: SDKStorage, useClass: StorageBrowser }
 
       ]
     };

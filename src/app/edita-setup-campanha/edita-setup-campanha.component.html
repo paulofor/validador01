@@ -13,6 +13,10 @@
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
+      <input matInput maxlength="20" #maxCpcGrupoAnuncio [(ngModel)]="item.maxCpcGrupoAnuncio" name="maxCpcGrupoAnuncio" placeholder="Máx CPC Grupo" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
       <mat-select #estrategia [(ngModel)]="item.estrategia" name="estrategia" placeholder="Estrategia de lances">
         <mat-option value="MANUAL_CPC">CPC Manual</mat-option>
         <mat-option value="TARGET_SPEND">Maximizar Cliques</mat-option>

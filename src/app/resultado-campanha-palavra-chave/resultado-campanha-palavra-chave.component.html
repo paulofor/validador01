@@ -1,4 +1,4 @@
-<div *ngIf="campanha.campanhaPalavraChaveResultados" class="card">
+<div *ngIf="listaResultado" class="card">
 
     <div class="header">
       <h4 class="title">Resultado Palavra-Chaves</h4>
@@ -17,14 +17,14 @@
            </tr>
         </thead>
         <tbody>
-          <ng-container *ngFor="let item of campanha.campanhaPalavraChaveResultados">
+          <ng-container *ngFor="let item of listaResultado">
             <tr>
-              <td>{{item.palavraChaveAds.palavra}}</td>
+              <td>{{item.palavraChaveGoogleId}}</td>
               <td>{{item.quantidadeImpressao}}</td>
               <td>{{item.quantidadeClique}}</td>
-              <td>{{getCtr(item)| number : '1.2-2' }}</td>
+              <td>{{item.ctr | number : '1.2-2' }}</td>
               <td>{{item.custo}}</td>
-              <td>{{getCpc(item)| number : '1.2-2' }}</td>
+              <td>{{item.cpcMedio | number : '1.2-2' }}</td>
             </tr>
           </ng-container>
         </tbody>

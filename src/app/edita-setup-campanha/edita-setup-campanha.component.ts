@@ -29,7 +29,8 @@ export class EditaSetupCampanhaComponent implements OnInit {
   }
 
   onSubmit() {
-
+    this.item.custoTotal = this.getCustoTotal();
+    this.item.cliqueTotal = this.getTotalClique();
     console.log('Model: ' + JSON.stringify(this.item));
     if (!this.item.id) {
       this.servico.create(this.item, (err, obj) => {
@@ -52,6 +53,37 @@ export class EditaSetupCampanhaComponent implements OnInit {
     this.dialogRef.close('Pizza!');
   }
 
+  getTotalClique() {
+    var saida = 0;
+    let tamanho = this.getTamanho();
+    if (this.item.budgetDiario>0 && this.item.maxCpcGrupoAnuncio > 0 && tamanho> 0) {
+      saida = tamanho * (this.item.budgetDiario / this.item.maxCpcGrupoAnuncio);
+    }
+    return saida;
+  }
+
+  getCustoTotal() {
+    var saida = 0;
+    let tamanho = this.getTamanho();
+    if (this.item.budgetDiario>0 && tamanho > 0) {
+      saida = tamanho * this.item.budgetDiario;
+    }
+    return saida;
+  }
+
+  getTamanho() {
+    if (this.item.diaSemanaInicio && this.item.diaSemanaFinal)
+      return this.getDia(this.item.diaSemanaFinal) - this.getDia(this.item.diaSemanaInicio) + 1;
+    else
+      return 0;
+  }
+
+  getDia(dia : string) {
+    if (dia == 'SUNDAY') return 1;
+    if (dia == 'MONDAY') return 2;
+    if (dia == 'FRIDAY') return 6;
+    if (dia == 'SATURDAY') return 7;
+  }
 
 
 }

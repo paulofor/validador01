@@ -45,5 +45,6 @@ export * from './RecursoConceitoProduto';
 export * from './Publico';
 export * from './SetupCampanha';
 export * from './EstatisticaMes';
+export * from './Semana';
 export * from './BaseModels';
 export * from './FireLoopRef';

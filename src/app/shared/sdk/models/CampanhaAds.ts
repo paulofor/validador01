@@ -35,6 +35,7 @@ export interface CampanhaAdsInterface {
   "conversao"?: number;
   "custoConversao"?: number;
   "taxaConversao"?: number;
+  "cliquePlanejado"?: number;
   "paginaValidacaoWebId"?: number;
   "modeloCampanhaAdsId"?: number;
   "setupCampanhaId"?: number;
@@ -72,6 +73,7 @@ export class CampanhaAds implements CampanhaAdsInterface {
   "conversao": number;
   "custoConversao": number;
   "taxaConversao": number;
+  "cliquePlanejado": number;
   "paginaValidacaoWebId": number;
   "modeloCampanhaAdsId": number;
   "setupCampanhaId": number;
@@ -209,6 +211,10 @@ export class CampanhaAds implements CampanhaAdsInterface {
         },
         "taxaConversao": {
           name: 'taxaConversao',
+          type: 'number'
+        },
+        "cliquePlanejado": {
+          name: 'cliquePlanejado',
           type: 'number'
         },
         "paginaValidacaoWebId": {

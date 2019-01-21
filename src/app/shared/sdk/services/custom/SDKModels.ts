@@ -46,6 +46,7 @@ import { RecursoConceitoProduto } from '../../models/RecursoConceitoProduto';
 import { Publico } from '../../models/Publico';
 import { SetupCampanha } from '../../models/SetupCampanha';
 import { EstatisticaMes } from '../../models/EstatisticaMes';
+import { Semana } from '../../models/Semana';
 
 export interface Models { [name: string]: any }
 
@@ -99,6 +100,7 @@ export class SDKModels {
     Publico: Publico,
     SetupCampanha: SetupCampanha,
     EstatisticaMes: EstatisticaMes,
+    Semana: Semana,
     
   };
 

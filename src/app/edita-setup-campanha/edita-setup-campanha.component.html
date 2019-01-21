@@ -1,4 +1,6 @@
 <h2 mat-dialog-title>Edição Setup de Campanha</h2>
+<h4 mat-dialog-title>Total Cliques:{{getTotalClique() | number : '1.2-2' }}</h4>
+<h4 mat-dialog-title>Custo Total:{{getCustoTotal() | number : '1.2-2' }}</h4>
 
 <form *ngIf="item" class="example-full-width" (ngSubmit)="onSubmit()">
 

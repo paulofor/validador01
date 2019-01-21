@@ -94,6 +94,7 @@ import { RecursoConceitoProdutoApi } from './services/custom/RecursoConceitoProd
 import { PublicoApi } from './services/custom/Publico';
 import { SetupCampanhaApi } from './services/custom/SetupCampanha';
 import { EstatisticaMesApi } from './services/custom/EstatisticaMes';
+import { SemanaApi } from './services/custom/Semana';
 /**
 * @module SDKBrowserModule
 * @description
@@ -170,6 +171,7 @@ export class SDKBrowserModule {
         PublicoApi,
         SetupCampanhaApi,
         EstatisticaMesApi,
+        SemanaApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
 

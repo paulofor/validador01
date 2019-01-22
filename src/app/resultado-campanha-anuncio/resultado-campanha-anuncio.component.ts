@@ -25,11 +25,5 @@ export class ResultadoCampanhaAnuncioComponent implements OnInit {
       })
   }
 
-  getCtr(item:CampanhaAnuncioResultado) {
-    return (item.quantidadeClique>0?((item.quantidadeClique/ item.quantidadeImpressao) * 100 ):0);;
-  }
-  getCpc(item:CampanhaAnuncioResultado) {
-    return (item.quantidadeClique>0?(item.custo / item.quantidadeClique):0);
-  }
 
 }

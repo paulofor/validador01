@@ -1,4 +1,6 @@
 <h2 mat-dialog-title>Edição Setup de Campanha</h2>
+<h4 mat-dialog-title>Total Cliques:{{getTotalClique() | number : '1.2-2' }}</h4>
+<h4 mat-dialog-title>Custo Total:{{getCustoTotal() | number : '1.2-2' }}</h4>
 
 <form *ngIf="item" class="example-full-width" (ngSubmit)="onSubmit()">
 
@@ -10,6 +12,10 @@
 
     <mat-form-field class="example-full-width">
       <input matInput maxlength="20" #budgetDiario [(ngModel)]="item.budgetDiario" name="budgetDiario" placeholder="Orçamento diário" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput maxlength="20" #maxCpcGrupoAnuncio [(ngModel)]="item.maxCpcGrupoAnuncio" name="maxCpcGrupoAnuncio" placeholder="Máx CPC Grupo" />
     </mat-form-field>
 
     <mat-form-field class="example-full-width">

@@ -21,7 +21,7 @@
                   <th width="10%">Custo</th>
                   <th width="10%">Cpc</th>
                   <th width="5%"></th>
-                  <th width="5%"></th>
+                  <th width="5%"></th> 
                 </tr>
               </thead>
               <tbody>
@@ -31,9 +31,9 @@
                   <td>{{campanha.dataFinal | date: 'dd/MM/yyyy'}}</td>
                   <td>{{campanha.quantidadeImpressao}}</td>
                   <td>{{campanha.quantidadeClique}}</td>
-                  <td>{{getCtr(campanha)| number : '1.2-2' }}</td>
+                  <td>{{campanha.ctr | number : '1.2-2' }}</td>
                   <td>{{campanha.orcamentoTotalExecutado}}</td>
-                  <td>{{getCpc(campanha)| number : '1.2-2' }}</td>
+                  <td>{{campanha.cpcMedio | number : '1.2-2' }}</td>
                   <td><button mat-raised-button color="primary" routerLink="/detalheCampanhaParaFechamento/{{campanha.id}}">Resumo</button></td>
                   <td><button mat-raised-button color="primary" routerLink="/detalheCampanha/{{campanha.id}}">Detalhe</button></td>
              

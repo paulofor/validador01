@@ -35,8 +35,10 @@
                   <td>{{campanha.orcamentoTotalExecutado}}</td>
                   <td>{{campanha.cpcMedio | number : '1.2-2' }}</td>
                   <td><button mat-raised-button color="primary" routerLink="/detalheCampanhaParaFechamento/{{campanha.id}}">Resumo</button></td>
-                  <td><button mat-raised-button color="primary" routerLink="/detalheCampanha/{{campanha.id}}">Resultados</button></td>
-             
+                  <td>
+                    <button *ngIf="campanha.permiteEdicao==0" mat-raised-button color="primary" routerLink="/detalheCampanha/{{campanha.id}}">Resultados</button>
+                    <button *ngIf="campanha.permiteEdicao==1" mat-raised-button color="primary" (click)="openDialog(campanha)">Editar</button>
+                  </td>
                 </tr>
               </tbody>
 

@@ -31,12 +31,7 @@ export class ListaCampanhaPorProjetoComponent implements OnInit {
   }
 
 
-  getCtr(campanha: CampanhaAds) {
-    return (campanha.quantidadeClique > 0 ? ((campanha.quantidadeClique / campanha.quantidadeImpressao) * 100) : 0);;
-  }
-  getCpc(campanha: CampanhaAds) {
-    return (campanha.quantidadeClique > 0 ? (campanha.orcamentoTotalExecutado / campanha.quantidadeClique) : 0);
-  }
+
 
   openDialog(campanha) {
     this.dialog.afterAllClosed.subscribe(result => {
@@ -45,7 +40,8 @@ export class ListaCampanhaPorProjetoComponent implements OnInit {
     this.dialog.open(CampanhaEditaCriaV2Component, {
       width: '800px',
       data: {
-        idProjeto: this.idProjeto
+        idProjeto: this.idProjeto,
+        campanha: campanha
       }
     });
   }

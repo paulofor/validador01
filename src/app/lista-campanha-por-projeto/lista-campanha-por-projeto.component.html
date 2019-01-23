@@ -1,10 +1,10 @@
-<div *ngIf="listaCampanha" class="main-content">
+<div *ngIf="listaCampanha && projeto" class="main-content">
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
         <div class="card">
           <div class="header">
-            <h4 class="title">Campanhas - Geral</h4>
+            <h4 class="title">{{projeto.nome}} - Campanhas - Geral</h4>
             <button mat-raised-button (click)="openDialog()">Nova</button>
           </div>
           <div class="content table-responsive table-full-width">
@@ -34,7 +34,9 @@
                   <td>{{campanha.ctr | number : '1.2-2' }}</td>
                   <td>{{campanha.orcamentoTotalExecutado}}</td>
                   <td>{{campanha.cpcMedio | number : '1.2-2' }}</td>
-                  <td><button mat-raised-button color="primary" routerLink="/detalheCampanhaParaFechamento/{{campanha.id}}">Resumo</button></td>
+                  <td>
+                    <button mat-raised-button color="primary" routerLink="/detalheCampanhaParaFechamento/{{campanha.id}}">Configurar</button>
+                  </td>
                   <td>
                     <button *ngIf="campanha.permiteEdicao==0" mat-raised-button color="primary" routerLink="/detalheCampanha/{{campanha.id}}">Resultados</button>
                     <button *ngIf="campanha.permiteEdicao==1" mat-raised-button color="primary" (click)="openDialog(campanha)">Editar</button>

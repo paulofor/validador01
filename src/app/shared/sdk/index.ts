@@ -173,8 +173,8 @@ export class SDKBrowserModule {
         EstatisticaMesApi,
         SemanaApi,
         internalStorageProvider,
-        { provide: SDKStorage, useClass: StorageBrowser },
-
+        { provide: SDKStorage, useClass: StorageBrowser }
+ 
       ]
     };
   }

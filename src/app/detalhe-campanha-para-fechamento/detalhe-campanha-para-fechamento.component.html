@@ -1,8 +1,11 @@
 <div *ngIf="campanha" class="main-content">
   <div class="container-fluid">
+    
     <div class="row">
       <div class="col-md-12">
-
+        <mat-card>
+          <mat-card-title>{{campanha.paginaValidacaoWeb.projeto.nome}}</mat-card-title>
+        </mat-card>
       </div>
     </div>
 
@@ -27,8 +30,8 @@
 
     <div class="row">
       <div class="col-md-12">
-        <mat-card >
-          <button mat-raised-button color="accent"  (click)="fecharCampanha()">Fechar Campanha</button>
+        <mat-card>
+          <button mat-raised-button color="accent" (click)="fecharCampanha()">Fechar Campanha</button>
         </mat-card>
       </div>
     </div>

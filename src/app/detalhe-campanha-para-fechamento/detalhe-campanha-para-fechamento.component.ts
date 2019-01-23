@@ -12,6 +12,7 @@ export class DetalheCampanhaParaFechamentoComponent implements OnInit {
 
 
   campanha : CampanhaAds;
+  projeto : ProjetoMySql;
 
   filtro = {"include" : {"relation" : "paginaValidacaoWeb" , "scope" : {"include" : "projeto" }  } };
 
@@ -24,8 +25,9 @@ export class DetalheCampanhaParaFechamentoComponent implements OnInit {
   carregaCampanha() {
     this.router.params.subscribe((params:Params) => {
         let idCampanha = params['id'];
-        this.srv.findById(idCampanha, this. filtro)
+        this.srv.findById(idCampanha, this.filtro)
           .subscribe((resultado:CampanhaAds) => {
+            console.log('Campanha: ', resultado);
             this.campanha = resultado;
           })
     })

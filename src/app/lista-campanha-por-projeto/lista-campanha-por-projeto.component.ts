@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CampanhaAds, CampanhaAdsApi } from '../shared/sdk';
+import { CampanhaAds, CampanhaAdsApi, ProjetoMySql, ProjetoMySqlApi } from '../shared/sdk';
 import { Params, ActivatedRoute } from '@angular/router';
 import { CampanhaEditaCriaV2Component } from '../campanha-edita-cria-v2/campanha-edita-cria-v2.component';
 import { MatDialog } from '@angular/material';
@@ -13,8 +13,10 @@ export class ListaCampanhaPorProjetoComponent implements OnInit {
 
   listaCampanha: CampanhaAds[];
   idProjeto : number;
+  projeto : ProjetoMySql;
 
-  constructor(private route: ActivatedRoute, private srv: CampanhaAdsApi,  private dialog: MatDialog) { }
+  constructor(private route: ActivatedRoute, private srv: CampanhaAdsApi,  
+              private srvProjeto: ProjetoMySqlApi, private dialog: MatDialog) { }
 
   ngOnInit() {
     this.carregaLista();
@@ -26,6 +28,10 @@ export class ListaCampanhaPorProjetoComponent implements OnInit {
       this.srv.GeralPorProjeto(this.idProjeto)
         .subscribe((resultado: CampanhaAds[]) => {
           this.listaCampanha = resultado;
+        });
+      this.srvProjeto.findById(this.idProjeto)
+        .subscribe((resultado: ProjetoMySql) => {
+          this.projeto = resultado;
         })
     })
   }

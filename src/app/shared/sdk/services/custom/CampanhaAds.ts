@@ -1441,6 +1441,37 @@ export class CampanhaAdsApi extends BaseLoopBackApi {
   }
 
   /**
+   * Altera todos os permite editar relacionados
+   *
+   * @param {object} data Request data.
+   *
+   *  - `idCampanha` – `{number}` - 
+   *
+   *  - `permite` – `{number}` - 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `CampanhaAds` object.)
+   * </em>
+   */
+  public PermiteEditar(idCampanha: any, permite: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/CampanhaAds/permiteEditar";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof idCampanha !== 'undefined' && idCampanha !== null) _urlParams.idCampanha = idCampanha;
+    if (typeof permite !== 'undefined' && permite !== null) _urlParams.permite = permite;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Creates a new instance in anuncioAds of this model.
    *
    * @param {any} id CampanhaAds id

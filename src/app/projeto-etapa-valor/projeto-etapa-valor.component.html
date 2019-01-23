@@ -4,13 +4,14 @@
       <div class="col-md-12">
         <div class="card">
           <div class="header">
-            <h4 class="title">Validação de Hipóteses de Valor</h4>
+            <h4 class="title">Valor / Anúncio</h4>
           </div>
           <div class="content table-responsive table-full-width">
             <table class="table table-hover table-striped">
               <thead>
                 <tr>
-                  <th width="80%">Projeto</th>
+                  <th width="70%">Projeto</th>
+                  <th width="10%"></th>
                   <th width="10%"></th>
                   <th width="10%"></th>
                 </tr>
@@ -20,6 +21,7 @@
                   <td>{{projeto.nome}}</td>
                   <td><a routerLink="/projetoConceitoProduto/{{projeto.id}}">conceito</a></td>
                   <td><a routerLink="/projetoValorTela/{{projeto.id}}">valor/tela</a></td>
+                  <td><a routerLink="/projetoGerenciaAnuncio/{{projeto.id}}">anúncio</a></td>
                 </tr>
               </tbody>
             </table>

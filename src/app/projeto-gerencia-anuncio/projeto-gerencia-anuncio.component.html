@@ -37,12 +37,12 @@
                       <mat-list>
                         <ng-container *ngFor="let ads of item.anuncioAds">
                           <mat-card>
-                            <mat-card-subtitle>
+                            <mat-card-title>
                               {{ads.titulo1}} - {{ads.titulo2}}
-                            </mat-card-subtitle>
-                            <mat-card-content>
+                            </mat-card-title>
+                            <mat-card-subtitle>
                               {{ads.descricao1}}
-                            </mat-card-content>
+                            </mat-card-subtitle>
                             <mat-card-actions>
                                 <button (click)="editaAnuncio(item,ads)" mat-raised-button color="primary">Alterar</button>
                             </mat-card-actions>

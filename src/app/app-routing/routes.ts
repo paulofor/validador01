@@ -59,6 +59,8 @@ import { DetalheCampanhaParaFechamentoComponent } from '../detalhe-campanha-para
 import { ListaCadProjetoComponent } from '../lista-cad-projeto/lista-cad-projeto.component';
 import { MelhoresPalavrasBaixoCustoComponent } from '../melhores-palavras-baixo-custo/melhores-palavras-baixo-custo.component';
 import { PlanejamentoExecucaoComponent } from '../planejamento-execucao/planejamento-execucao.component';
+import { ExecucaoDiariaComponent } from '../execucao-diaria/execucao-diaria.component';
+
 
 
 export const routes : Routes = [
@@ -148,6 +150,8 @@ export const routes : Routes = [
     { path : 'melhoresPalavrasBaixoCusto' , component: MelhoresPalavrasBaixoCustoComponent},
 
     { path : 'planejamentoExecucao' , component: PlanejamentoExecucaoComponent },
+
+    { path : 'execucaoDiaria' , component: ExecucaoDiariaComponent },
 
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

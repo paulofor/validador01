@@ -47,6 +47,9 @@ import { Publico } from '../../models/Publico';
 import { SetupCampanha } from '../../models/SetupCampanha';
 import { EstatisticaMes } from '../../models/EstatisticaMes';
 import { Semana } from '../../models/Semana';
+import { TempoExecucao } from '../../models/TempoExecucao';
+import { PlanoExecucao } from '../../models/PlanoExecucao';
+import { DiaSemana } from '../../models/DiaSemana';
 
 export interface Models { [name: string]: any }
 
@@ -101,6 +104,9 @@ export class SDKModels {
     SetupCampanha: SetupCampanha,
     EstatisticaMes: EstatisticaMes,
     Semana: Semana,
+    TempoExecucao: TempoExecucao,
+    PlanoExecucao: PlanoExecucao,
+    DiaSemana: DiaSemana,
     
   };
 

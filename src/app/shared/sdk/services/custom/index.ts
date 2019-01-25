@@ -46,5 +46,8 @@ export * from './Publico';
 export * from './SetupCampanha';
 export * from './EstatisticaMes';
 export * from './Semana';
+export * from './TempoExecucao';
+export * from './PlanoExecucao';
+export * from './DiaSemana';
 export * from './SDKModels';
 export * from './logger.service';

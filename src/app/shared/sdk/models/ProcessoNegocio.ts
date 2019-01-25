@@ -5,6 +5,8 @@ export interface ProcessoNegocioInterface {
   "nome"?: string;
   "descricao"?: string;
   "url"?: string;
+  "permiteEditar"?: number;
+  "ativo"?: number;
   "id"?: number;
 }
 
@@ -12,6 +14,8 @@ export class ProcessoNegocio implements ProcessoNegocioInterface {
   "nome": string;
   "descricao": string;
   "url": string;
+  "permiteEditar": number;
+  "ativo": number;
   "id": number;
   constructor(data?: ProcessoNegocioInterface) {
     Object.assign(this, data);
@@ -57,6 +61,14 @@ export class ProcessoNegocio implements ProcessoNegocioInterface {
         "url": {
           name: 'url',
           type: 'string'
+        },
+        "permiteEditar": {
+          name: 'permiteEditar',
+          type: 'number'
+        },
+        "ativo": {
+          name: 'ativo',
+          type: 'number'
         },
         "id": {
           name: 'id',

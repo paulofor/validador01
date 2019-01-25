@@ -95,6 +95,9 @@ import { PublicoApi } from './services/custom/Publico';
 import { SetupCampanhaApi } from './services/custom/SetupCampanha';
 import { EstatisticaMesApi } from './services/custom/EstatisticaMes';
 import { SemanaApi } from './services/custom/Semana';
+import { TempoExecucaoApi } from './services/custom/TempoExecucao';
+import { PlanoExecucaoApi } from './services/custom/PlanoExecucao';
+import { DiaSemanaApi } from './services/custom/DiaSemana';
 /**
 * @module SDKBrowserModule
 * @description
@@ -172,9 +175,12 @@ export class SDKBrowserModule {
         SetupCampanhaApi,
         EstatisticaMesApi,
         SemanaApi,
+        TempoExecucaoApi,
+        PlanoExecucaoApi,
+        DiaSemanaApi,
         internalStorageProvider,
-        { provide: SDKStorage, useClass: StorageBrowser }
- 
+        { provide: SDKStorage, useClass: StorageBrowser },
+
       ]
     };
   }

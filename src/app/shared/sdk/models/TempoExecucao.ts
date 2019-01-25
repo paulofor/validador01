@@ -4,7 +4,8 @@ import {
   ProcessoNegocio,
   ConceitoProduto,
   Semana,
-  DiaSemana
+  DiaSemana,
+  Contexto
 } from '../index';
 
 declare var Object: any;
@@ -12,36 +13,38 @@ export interface TempoExecucaoInterface {
   "dataReferencia": Date;
   "horaInicio": Date;
   "horaTermino"?: Date;
-  "contexto"?: string;
   "id"?: number;
   "projetoMySqlId"?: number;
   "processoNegocioId"?: number;
   "conceitoProdutoId"?: number;
   "semanaId"?: number;
   "diaSemanaId"?: number;
+  "contextoId"?: number;
   projetoMySql?: ProjetoMySql;
   processoNegocio?: ProcessoNegocio;
   conceitoProduto?: ConceitoProduto;
   semana?: Semana;
   diaSemana?: DiaSemana;
+  contexto?: Contexto;
 }
 
 export class TempoExecucao implements TempoExecucaoInterface {
   "dataReferencia": Date;
   "horaInicio": Date;
   "horaTermino": Date;
-  "contexto": string;
   "id": number;
   "projetoMySqlId": number;
   "processoNegocioId": number;
   "conceitoProdutoId": number;
   "semanaId": number;
   "diaSemanaId": number;
+  "contextoId": number;
   projetoMySql: ProjetoMySql;
   processoNegocio: ProcessoNegocio;
   conceitoProduto: ConceitoProduto;
   semana: Semana;
   diaSemana: DiaSemana;
+  contexto: Contexto;
   constructor(data?: TempoExecucaoInterface) {
     Object.assign(this, data);
   }
@@ -87,10 +90,6 @@ export class TempoExecucao implements TempoExecucaoInterface {
           name: 'horaTermino',
           type: 'Date'
         },
-        "contexto": {
-          name: 'contexto',
-          type: 'string'
-        },
         "id": {
           name: 'id',
           type: 'number'
@@ -113,6 +112,10 @@ export class TempoExecucao implements TempoExecucaoInterface {
         },
         "diaSemanaId": {
           name: 'diaSemanaId',
+          type: 'number'
+        },
+        "contextoId": {
+          name: 'contextoId',
           type: 'number'
         },
       },
@@ -155,6 +158,14 @@ export class TempoExecucao implements TempoExecucaoInterface {
           model: 'DiaSemana',
           relationType: 'belongsTo',
                   keyFrom: 'diaSemanaId',
+          keyTo: 'id'
+        },
+        contexto: {
+          name: 'contexto',
+          type: 'Contexto',
+          model: 'Contexto',
+          relationType: 'belongsTo',
+                  keyFrom: 'contextoId',
           keyTo: 'id'
         },
       }

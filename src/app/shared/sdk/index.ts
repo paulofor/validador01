@@ -98,6 +98,7 @@ import { SemanaApi } from './services/custom/Semana';
 import { TempoExecucaoApi } from './services/custom/TempoExecucao';
 import { PlanoExecucaoApi } from './services/custom/PlanoExecucao';
 import { DiaSemanaApi } from './services/custom/DiaSemana';
+import { ContextoApi } from './services/custom/Contexto';
 /**
 * @module SDKBrowserModule
 * @description
@@ -178,6 +179,7 @@ export class SDKBrowserModule {
         TempoExecucaoApi,
         PlanoExecucaoApi,
         DiaSemanaApi,
+        ContextoApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser },
 

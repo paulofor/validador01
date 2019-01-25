@@ -1,28 +1,31 @@
 /* tslint:disable */
 import {
   ProcessoNegocio,
-  DiaSemana
+  DiaSemana,
+  Contexto
 } from '../index';
 
 declare var Object: any;
 export interface PlanoExecucaoInterface {
   "tempoEstimado": Date;
-  "contexto"?: string;
   "id"?: number;
   "processoNegocioId"?: number;
   "diaSemanaId"?: number;
+  "contextoId"?: number;
   processoNegocio?: ProcessoNegocio;
   diaSemana?: DiaSemana;
+  contexto?: Contexto;
 }
 
 export class PlanoExecucao implements PlanoExecucaoInterface {
   "tempoEstimado": Date;
-  "contexto": string;
   "id": number;
   "processoNegocioId": number;
   "diaSemanaId": number;
+  "contextoId": number;
   processoNegocio: ProcessoNegocio;
   diaSemana: DiaSemana;
+  contexto: Contexto;
   constructor(data?: PlanoExecucaoInterface) {
     Object.assign(this, data);
   }
@@ -60,10 +63,6 @@ export class PlanoExecucao implements PlanoExecucaoInterface {
           name: 'tempoEstimado',
           type: 'Date'
         },
-        "contexto": {
-          name: 'contexto',
-          type: 'string'
-        },
         "id": {
           name: 'id',
           type: 'number'
@@ -74,6 +73,10 @@ export class PlanoExecucao implements PlanoExecucaoInterface {
         },
         "diaSemanaId": {
           name: 'diaSemanaId',
+          type: 'number'
+        },
+        "contextoId": {
+          name: 'contextoId',
           type: 'number'
         },
       },
@@ -92,6 +95,14 @@ export class PlanoExecucao implements PlanoExecucaoInterface {
           model: 'DiaSemana',
           relationType: 'belongsTo',
                   keyFrom: 'diaSemanaId',
+          keyTo: 'id'
+        },
+        contexto: {
+          name: 'contexto',
+          type: 'Contexto',
+          model: 'Contexto',
+          relationType: 'belongsTo',
+                  keyFrom: 'contextoId',
           keyTo: 'id'
         },
       }

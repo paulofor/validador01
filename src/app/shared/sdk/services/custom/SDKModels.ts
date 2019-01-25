@@ -50,6 +50,7 @@ import { Semana } from '../../models/Semana';
 import { TempoExecucao } from '../../models/TempoExecucao';
 import { PlanoExecucao } from '../../models/PlanoExecucao';
 import { DiaSemana } from '../../models/DiaSemana';
+import { Contexto } from '../../models/Contexto';
 
 export interface Models { [name: string]: any }
 
@@ -107,6 +108,7 @@ export class SDKModels {
     TempoExecucao: TempoExecucao,
     PlanoExecucao: PlanoExecucao,
     DiaSemana: DiaSemana,
+    Contexto: Contexto,
     
   };
 

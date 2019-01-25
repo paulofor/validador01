@@ -49,5 +49,6 @@ export * from './Semana';
 export * from './TempoExecucao';
 export * from './PlanoExecucao';
 export * from './DiaSemana';
+export * from './Contexto';
 export * from './SDKModels';
 export * from './logger.service';

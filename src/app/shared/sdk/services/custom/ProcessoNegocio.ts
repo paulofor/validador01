@@ -306,7 +306,7 @@ export class ProcessoNegocioApi extends BaseLoopBackApi {
    *
    * @param {number} idSemana 
    *
-   * @param {string} contexto 
+   * @param {number} idContexto 
    *
    * @returns {object[]} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -317,7 +317,7 @@ export class ProcessoNegocioApi extends BaseLoopBackApi {
    * This usually means the response is a `ProcessoNegocio` object.)
    * </em>
    */
-  public ObtemComPlanoPorSemana(idSemana: any = {}, contexto: any, customHeaders?: Function): Observable<any> {
+  public ObtemComPlanoPorSemana(idSemana: any = {}, idContexto: any, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/ProcessoNegocios/obtemComPlanoPorSemana";
@@ -325,7 +325,7 @@ export class ProcessoNegocioApi extends BaseLoopBackApi {
     let _postBody: any = {};
     let _urlParams: any = {};
     if (typeof idSemana !== 'undefined' && idSemana !== null) _urlParams.idSemana = idSemana;
-    if (typeof contexto !== 'undefined' && contexto !== null) _urlParams.contexto = contexto;
+    if (typeof idContexto !== 'undefined' && idContexto !== null) _urlParams.idContexto = idContexto;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }

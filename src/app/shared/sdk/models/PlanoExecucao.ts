@@ -1,6 +1,7 @@
 /* tslint:disable */
 import {
   ProcessoNegocio,
+  Semana,
   DiaSemana,
   Contexto
 } from '../index';
@@ -10,9 +11,11 @@ export interface PlanoExecucaoInterface {
   "tempoEstimado": Date;
   "id"?: number;
   "processoNegocioId"?: number;
+  "semanaId"?: number;
   "diaSemanaId"?: number;
   "contextoId"?: number;
   processoNegocio?: ProcessoNegocio;
+  semana?: Semana;
   diaSemana?: DiaSemana;
   contexto?: Contexto;
 }
@@ -21,9 +24,11 @@ export class PlanoExecucao implements PlanoExecucaoInterface {
   "tempoEstimado": Date;
   "id": number;
   "processoNegocioId": number;
+  "semanaId": number;
   "diaSemanaId": number;
   "contextoId": number;
   processoNegocio: ProcessoNegocio;
+  semana: Semana;
   diaSemana: DiaSemana;
   contexto: Contexto;
   constructor(data?: PlanoExecucaoInterface) {
@@ -71,6 +76,10 @@ export class PlanoExecucao implements PlanoExecucaoInterface {
           name: 'processoNegocioId',
           type: 'number'
         },
+        "semanaId": {
+          name: 'semanaId',
+          type: 'number'
+        },
         "diaSemanaId": {
           name: 'diaSemanaId',
           type: 'number'
@@ -87,6 +96,14 @@ export class PlanoExecucao implements PlanoExecucaoInterface {
           model: 'ProcessoNegocio',
           relationType: 'belongsTo',
                   keyFrom: 'processoNegocioId',
+          keyTo: 'id'
+        },
+        semana: {
+          name: 'semana',
+          type: 'Semana',
+          model: 'Semana',
+          relationType: 'belongsTo',
+                  keyFrom: 'semanaId',
           keyTo: 'id'
         },
         diaSemana: {

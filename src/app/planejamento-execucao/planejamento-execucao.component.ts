@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlanejamentoExecucaoComponent implements OnInit {
 
-  constructor() { }
+  semana : Semana;
+
+  constructor(private srv: SemanaApi) { }
 
   ngOnInit() {
   }
 
+
+  carregaSemana() {
+
+  }
 }

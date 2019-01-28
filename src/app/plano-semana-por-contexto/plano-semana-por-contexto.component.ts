@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DiaSemana, ProcessoNegocio, Semana } from 'src/app/shared/sdk';
+import { DiaSemana, ProcessoNegocio, Semana } from '../shared/sdk';
 import { Input } from '@angular/core';
 
 @Component({

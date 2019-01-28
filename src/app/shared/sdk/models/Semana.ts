@@ -1,4 +1,7 @@
 /* tslint:disable */
+import {
+  PlanoExecucao
+} from '../index';
 
 declare var Object: any;
 export interface SemanaInterface {
@@ -7,6 +10,7 @@ export interface SemanaInterface {
   "Mes"?: number;
   "Ano"?: number;
   "id"?: number;
+  planoExecucaos?: PlanoExecucao[];
 }
 
 export class Semana implements SemanaInterface {
@@ -15,6 +19,7 @@ export class Semana implements SemanaInterface {
   "Mes": number;
   "Ano": number;
   "id": number;
+  planoExecucaos: PlanoExecucao[];
   constructor(data?: SemanaInterface) {
     Object.assign(this, data);
   }
@@ -70,6 +75,14 @@ export class Semana implements SemanaInterface {
         },
       },
       relations: {
+        planoExecucaos: {
+          name: 'planoExecucaos',
+          type: 'PlanoExecucao[]',
+          model: 'PlanoExecucao',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'semanaId'
+        },
       }
     }
   }

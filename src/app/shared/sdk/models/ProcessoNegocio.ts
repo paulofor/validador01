@@ -1,4 +1,7 @@
 /* tslint:disable */
+import {
+  PlanoExecucao
+} from '../index';
 
 declare var Object: any;
 export interface ProcessoNegocioInterface {
@@ -8,6 +11,7 @@ export interface ProcessoNegocioInterface {
   "permiteEditar"?: number;
   "ativo"?: number;
   "id"?: number;
+  planoExecucaos?: PlanoExecucao[];
 }
 
 export class ProcessoNegocio implements ProcessoNegocioInterface {
@@ -17,6 +21,7 @@ export class ProcessoNegocio implements ProcessoNegocioInterface {
   "permiteEditar": number;
   "ativo": number;
   "id": number;
+  planoExecucaos: PlanoExecucao[];
   constructor(data?: ProcessoNegocioInterface) {
     Object.assign(this, data);
   }
@@ -76,6 +81,14 @@ export class ProcessoNegocio implements ProcessoNegocioInterface {
         },
       },
       relations: {
+        planoExecucaos: {
+          name: 'planoExecucaos',
+          type: 'PlanoExecucao[]',
+          model: 'PlanoExecucao',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'processoNegocioId'
+        },
       }
     }
   }

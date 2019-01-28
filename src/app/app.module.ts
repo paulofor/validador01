@@ -166,6 +166,8 @@ import { EditaPalavraChaveEmCampanhaComponent } from './edita-palavra-chave-em-c
 import { MelhoresPalavrasBaixoCustoComponent } from './melhores-palavras-baixo-custo/melhores-palavras-baixo-custo.component';
 import { PlanejamentoExecucaoComponent } from './planejamento-execucao/planejamento-execucao.component';
 import { ExecucaoDiariaComponent } from './execucao-diaria/execucao-diaria.component';
+import { PlanoSemanaComponent } from './plano-semana/plano-semana.component';
+import { PlanoSemanaPorContextoComponent } from './plano-semana-por-contexto/plano-semana-por-contexto.component';
 
 
 
@@ -293,6 +295,8 @@ import { ExecucaoDiariaComponent } from './execucao-diaria/execucao-diaria.compo
     MelhoresPalavrasBaixoCustoComponent,
     PlanejamentoExecucaoComponent,
     ExecucaoDiariaComponent,
+    PlanoSemanaComponent,
+    PlanoSemanaPorContextoComponent,
 
 
   ],

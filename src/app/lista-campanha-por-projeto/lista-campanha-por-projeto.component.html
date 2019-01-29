@@ -27,8 +27,8 @@
               <tbody>
                 <tr *ngFor="let campanha of listaCampanha">
                   <td>{{campanha.nome}}</td>
-                  <td>{{campanha.dataInicial | date: 'dd/MM/yyyy'}}</td>
-                  <td>{{campanha.dataFinal | date: 'dd/MM/yyyy'}}</td>
+                  <td>{{campanha.dataInicial | date: 'dd/MM/yyyy' : 'UTC'}}</td>
+                  <td>{{campanha.dataFinal | date: 'dd/MM/yyyy' : 'UTC'}}</td>
                   <td>{{campanha.quantidadeImpressao}}</td>
                   <td>{{campanha.quantidadeClique}}</td>
                   <td>{{campanha.ctr | number : '1.2-2' }}</td>

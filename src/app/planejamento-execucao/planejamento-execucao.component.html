@@ -1,7 +1,15 @@
 <div *ngIf="semana" class="main-content">
+
   <div class="row">
-      <div class="col-md-12">
-        <p>Semana: {{}} até {{}} </p>
-      </div>
+    <div class="col-md-12">
+      <p>Semana: {{semana.PrimeiroDia | date: 'dd/MM/yyyy' : 'UTC'}} até {{semana.UltimoDia | date: 'dd/MM/yyyy' : 'UTC'}} </p>
+    </div>
   </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <app-plano-semana-por-contexto [semana]="semana"></app-plano-semana-por-contexto>
+    </div>
+  </div>
+
 </div>

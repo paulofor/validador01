@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Semana, SemanaApi } from '../shared/sdk';
 
 @Component({
   selector: 'app-planejamento-execucao',
@@ -12,10 +13,15 @@ export class PlanejamentoExecucaoComponent implements OnInit {
   constructor(private srv: SemanaApi) { }
 
   ngOnInit() {
+    this.carregaSemana();
   }
 
 
   carregaSemana() {
-
+    this.srv.ObtemDeslocada(1)
+      .subscribe((resultado) => {
+        this.semana = resultado[0];
+        console.log('Resultado: ' , resultado);
+      })
   }
 }

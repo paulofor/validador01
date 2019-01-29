@@ -1,30 +1,39 @@
-<div *ngIf="processoComPlano" class="card">
+<form (ngSubmit)="onSubmit()">
+  <div *ngIf="processoComPlano" class="card">
     <div class="header">
       <h4 class="title"></h4>
     </div>
+
     <div class="content table-responsive table-full-width">
       <table *ngIf="processoComPlano" class="table table-hover table-striped">
         <thead>
           <tr>
             <th width="25%">Processo</th>
-            <th width="5%">Segunda</th>
-            <th width="5%">Terça</th>
-            <th width="5%">Quarta</th>
-            <th width="5%">Quinta</th>
-            <th width="5%">Sexta</th>
-            <th width="5%">Sábado</th>
-            <th width="5%">Domingo</th>
+            <th width="7%">Segunda</th>
+            <th width="7%">Terça</th>
+            <th width="7%">Quarta</th>
+            <th width="7%">Quinta</th>
+            <th width="7%">Sexta</th>
+            <th width="7%">Sábado</th>
+            <th width="7%">Domingo</th>
           </tr>
         </thead>
+
         <tbody>
           <tr *ngFor="let item of processoComPlano">
             <td>{{item.nome}}</td>
             <td *ngFor="let coluna of item.planoExecucaos">
-              {{coluna.tempoEstimado}}
+              <mat-form-field style="width: 50px;">
+                <input   [formControl]="myControl" [(ngModel)]="coluna.tempoEstimado" matInput maxlength="5" value="{{coluna.tempoEstimado | date: 'HH:mm' : 'UTC'}}">
+              </mat-form-field>
             </td>
           </tr>
         </tbody>
+
       </table>
-  
+
     </div>
+
   </div>
+  <button mat-raised-button color="primary" >Salvar</button>
+</form>

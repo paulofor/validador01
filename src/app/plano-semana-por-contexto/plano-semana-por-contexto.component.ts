@@ -29,13 +29,13 @@ export class PlanoSemanaPorContextoComponent implements OnInit {
         this.processoComPlano = resultado;
         this.processoComPlano.map((processo: ProcessoNegocio) => {
           if (processo.planoExecucaos.length == 0) {
-            processo.planoExecucaos.push(new PlanoExecucao({ "processoNegocioId": processo.id, "tempoEstimadoStr": "00:00", "diaSemanaId": 1 })); // segunda
-            processo.planoExecucaos.push(new PlanoExecucao({ "processoNegocioId": processo.id, "tempoEstimado": new Date(0), "diaSemanaId": 2 })); // terca
-            processo.planoExecucaos.push(new PlanoExecucao({ "processoNegocioId": processo.id, "tempoEstimado": new Date(0), "diaSemanaId": 3 })); // quarta
-            processo.planoExecucaos.push(new PlanoExecucao({ "processoNegocioId": processo.id, "tempoEstimado": new Date(0), "diaSemanaId": 4 })); // quinta
-            processo.planoExecucaos.push(new PlanoExecucao({ "processoNegocioId": processo.id, "tempoEstimado": new Date(0), "diaSemanaId": 5 })); // sexta
-            processo.planoExecucaos.push(new PlanoExecucao({ "processoNegocioId": processo.id, "tempoEstimado": new Date(0), "diaSemanaId": 6 })); // sabado
-            processo.planoExecucaos.push(new PlanoExecucao({ "processoNegocioId": processo.id, "tempoEstimado": new Date(0), "diaSemanaId": 7 })); // domingo
+            processo.planoExecucaos.push(new PlanoExecucao({ "processoNegocioId": processo.id, "tempoEstimadoStr": "00:00", "tempoEstimado": new Date(0), "diaSemanaId": 1 })); // segunda
+            processo.planoExecucaos.push(new PlanoExecucao({ "processoNegocioId": processo.id, "tempoEstimadoStr": "00:00", "tempoEstimado": new Date(0), "diaSemanaId": 2 })); // terca
+            processo.planoExecucaos.push(new PlanoExecucao({ "processoNegocioId": processo.id, "tempoEstimadoStr": "00:00", "tempoEstimado": new Date(0), "diaSemanaId": 3 })); // quarta
+            processo.planoExecucaos.push(new PlanoExecucao({ "processoNegocioId": processo.id, "tempoEstimadoStr": "00:00" ,"tempoEstimado": new Date(0), "diaSemanaId": 4 })); // quinta
+            processo.planoExecucaos.push(new PlanoExecucao({ "processoNegocioId": processo.id, "tempoEstimadoStr": "00:00" ,"tempoEstimado": new Date(0), "diaSemanaId": 5 })); // sexta
+            processo.planoExecucaos.push(new PlanoExecucao({ "processoNegocioId": processo.id, "tempoEstimadoStr": "00:00", "tempoEstimado": new Date(0), "diaSemanaId": 6 })); // sabado
+            processo.planoExecucaos.push(new PlanoExecucao({ "processoNegocioId": processo.id, "tempoEstimadoStr": "00:00", "tempoEstimado": new Date(0), "diaSemanaId": 7 })); // domingo
 
           }
         })

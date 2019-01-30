@@ -14,6 +14,7 @@ export interface PlanoExecucaoInterface {
   "semanaId"?: number;
   "diaSemanaId"?: number;
   "contextoId"?: number;
+  "tempoEstimadoStr"? : string;
   processoNegocio?: ProcessoNegocio;
   semana?: Semana;
   diaSemana?: DiaSemana;
@@ -27,6 +28,7 @@ export class PlanoExecucao implements PlanoExecucaoInterface {
   "semanaId": number;
   "diaSemanaId": number;
   "contextoId": number;
+  "tempoEstimadoStr":string;
   processoNegocio: ProcessoNegocio;
   semana: Semana;
   diaSemana: DiaSemana;
@@ -67,6 +69,10 @@ export class PlanoExecucao implements PlanoExecucaoInterface {
         "tempoEstimado": {
           name: 'tempoEstimado',
           type: 'Date'
+        },
+        "tempoEstimadoStr": {
+          name: 'tempoEstimadoStr',
+          type: 'string'
         },
         "id": {
           name: 'id',

@@ -24,7 +24,8 @@
             <td>{{item.nome}}</td>
             <td *ngFor="let coluna of item.planoExecucaos">
               <mat-form-field style="width: 50px;">
-                <input   [formControl]="myControl" [(ngModel)]="coluna.tempoEstimado" matInput maxlength="5" value="{{coluna.tempoEstimado | date: 'HH:mm' : 'UTC'}}">
+                <input   [formControl]="myControl" [ngModel]="coluna.tempoEstimado | date: 'HH:mm' : 'UTC'" 
+                (ngModelChange)="updateDate($event,coluna)" matInput maxlength="500" />
               </mat-form-field>
             </td>
           </tr>

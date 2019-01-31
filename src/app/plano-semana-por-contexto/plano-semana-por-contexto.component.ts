@@ -29,7 +29,7 @@ export class PlanoSemanaPorContextoComponent implements OnInit {
         this.processoComPlano = resultado;
         this.processoComPlano.map((processo: ProcessoNegocio) => {
           if (processo.planoExecucaos.length == 0) {
-            processo.planoExecucaos.push(new PlanoExecucao({ "processoNegocioId": processo.id, "tempoEstimadoStr": "00:00", "diaSemanaId": 1 })); // segunda
+            processo.planoExecucaos.push(new PlanoExecucao({ "processoNegocioId": processo.id, "tempoEstimado": new Date(0), "diaSemanaId": 1 })); // segunda
             processo.planoExecucaos.push(new PlanoExecucao({ "processoNegocioId": processo.id, "tempoEstimado": new Date(0), "diaSemanaId": 2 })); // terca
             processo.planoExecucaos.push(new PlanoExecucao({ "processoNegocioId": processo.id, "tempoEstimado": new Date(0), "diaSemanaId": 3 })); // quarta
             processo.planoExecucaos.push(new PlanoExecucao({ "processoNegocioId": processo.id, "tempoEstimado": new Date(0), "diaSemanaId": 4 })); // quinta
@@ -44,10 +44,21 @@ export class PlanoSemanaPorContextoComponent implements OnInit {
 
   onSubmit() {
     console.log("Lista:" , this.processoComPlano);
+    this.ajustaTempos();
   }
 
   updateDate(evento, coluna : PlanoExecucao) {
     console.log('Evento:' , evento);
     coluna.tempoEstimado = evento;
+  }
+
+  ajustaTempos() {
+    this.processoComPlano.map((processo:ProcessoNegocio) => {
+      processo.planoExecucaos.map((plano:PlanoExecucao) => {
+        var tempo = plano.tempoEstimadoStr.split(":");
+        plano.tempoEstimado = new Date(0,0,0,Number(tempo[0]), Number(tempo[1]) ,0,0); 
+      })
+    });
+    console.log('Objeto Processado:' ,  this.processoComPlano);
   }
 }

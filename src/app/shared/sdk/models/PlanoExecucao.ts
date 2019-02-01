@@ -9,12 +9,12 @@ import {
 declare var Object: any;
 export interface PlanoExecucaoInterface {
   "tempoEstimado": Date;
+  "tempoEstimadoStr"?: string;
   "id"?: number;
   "processoNegocioId"?: number;
   "semanaId"?: number;
   "diaSemanaId"?: number;
   "contextoId"?: number;
-  "tempoEstimadoStr"? : string;
   processoNegocio?: ProcessoNegocio;
   semana?: Semana;
   diaSemana?: DiaSemana;
@@ -23,12 +23,12 @@ export interface PlanoExecucaoInterface {
 
 export class PlanoExecucao implements PlanoExecucaoInterface {
   "tempoEstimado": Date;
+  "tempoEstimadoStr": string;
   "id": number;
   "processoNegocioId": number;
   "semanaId": number;
   "diaSemanaId": number;
   "contextoId": number;
-  "tempoEstimadoStr":string;
   processoNegocio: ProcessoNegocio;
   semana: Semana;
   diaSemana: DiaSemana;

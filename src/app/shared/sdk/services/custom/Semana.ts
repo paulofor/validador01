@@ -330,6 +330,31 @@ export class SemanaApi extends BaseLoopBackApi {
   }
 
   /**
+   * Cria todas as semanas de um ano
+   *
+   * @param {object} data Request data.
+   *
+   *  - `ano` – `{number}` - 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public CriaParaAno(ano: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/Semanas/criaParaAno";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof ano !== 'undefined' && ano !== null) _urlParams.ano = ano;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Creates a new instance in planoExecucaos of this model.
    *
    * @param {any} id Semana id

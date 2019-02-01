@@ -5,19 +5,21 @@ import {
 
 declare var Object: any;
 export interface SemanaInterface {
-  "PrimeiroDia": Date;
-  "UltimoDia": Date;
-  "Mes"?: number;
-  "Ano"?: number;
+  "primeiroDia": Date;
+  "ultimoDia": Date;
+  "mes"?: number;
+  "ano"?: number;
+  "seqAno"?: number;
   "id"?: number;
   planoExecucaos?: PlanoExecucao[];
 }
 
 export class Semana implements SemanaInterface {
-  "PrimeiroDia": Date;
-  "UltimoDia": Date;
-  "Mes": number;
-  "Ano": number;
+  "primeiroDia": Date;
+  "ultimoDia": Date;
+  "mes": number;
+  "ano": number;
+  "seqAno": number;
   "id": number;
   planoExecucaos: PlanoExecucao[];
   constructor(data?: SemanaInterface) {
@@ -53,20 +55,24 @@ export class Semana implements SemanaInterface {
       path: 'Semanas',
       idName: 'id',
       properties: {
-        "PrimeiroDia": {
-          name: 'PrimeiroDia',
+        "primeiroDia": {
+          name: 'primeiroDia',
           type: 'Date'
         },
-        "UltimoDia": {
-          name: 'UltimoDia',
+        "ultimoDia": {
+          name: 'ultimoDia',
           type: 'Date'
         },
-        "Mes": {
-          name: 'Mes',
+        "mes": {
+          name: 'mes',
           type: 'number'
         },
-        "Ano": {
-          name: 'Ano',
+        "ano": {
+          name: 'ano',
+          type: 'number'
+        },
+        "seqAno": {
+          name: 'seqAno',
           type: 'number'
         },
         "id": {

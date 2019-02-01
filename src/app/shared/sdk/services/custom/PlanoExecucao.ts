@@ -216,6 +216,34 @@ export class PlanoExecucaoApi extends BaseLoopBackApi {
   }
 
   /**
+   * Cria por um processo todas as semanas existentes
+   *
+   * @param {object} data Request data.
+   *
+   *  - `idProcessoNegocio` – `{number}` - 
+   *
+   *  - `idContexto` – `{number}` - 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public CriaPorProcesso(idProcessoNegocio: any, idContexto: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/PlanoExecucaos/criaPorProcesso";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof idProcessoNegocio !== 'undefined' && idProcessoNegocio !== null) _urlParams.idProcessoNegocio = idProcessoNegocio;
+    if (typeof idContexto !== 'undefined' && idContexto !== null) _urlParams.idContexto = idContexto;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * The name of the model represented by this $resource,
    * i.e. `PlanoExecucao`.
    */

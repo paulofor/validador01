@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProcessoNegocio, ProcessoNegocioApi } from '../shared/sdk';
+import { ProcessoNegocio, ProcessoNegocioApi, PlanoExecucaoApi } from '../shared/sdk';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material';
 import { ProcessoNegocioEditaComponent } from '../processo-negocio-edita/processo-negocio-edita.component';
@@ -14,7 +14,7 @@ export class ProcessoNegocioListaComponent implements OnInit {
   lista: ProcessoNegocio[];
   errMess: string;
 
-  constructor(private servico: ProcessoNegocioApi,
+  constructor(private servico: ProcessoNegocioApi, private srvPlano: PlanoExecucaoApi,
               private router: Router, private dialog: MatDialog) { 
   }
 
@@ -28,6 +28,12 @@ export class ProcessoNegocioListaComponent implements OnInit {
       this.lista = resultado
      );
   }
+
+  criaPlano(item) {
+    this.srvPlano.CriaPorProcesso(item.id,1);
+    this.srvPlano.CriaPorProcesso(item.id,2);
+  }
+
 
   openDialog(item?) {
     this.dialog.afterAllClosed.subscribe(result => {

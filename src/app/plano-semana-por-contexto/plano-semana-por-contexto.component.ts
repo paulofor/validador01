@@ -13,6 +13,9 @@ export class PlanoSemanaPorContextoComponent implements OnInit {
   listaDiaSemana: DiaSemana[];
   processoComPlano: ProcessoNegocio[];
 
+  somaDias: PlanoExecucao[];
+  somaProcesso: PlanoExecucao[];
+
   @Input() contexto: string;
   @Input() semana: Semana;
   myControl = new FormControl();
@@ -24,22 +27,24 @@ export class PlanoSemanaPorContextoComponent implements OnInit {
   }
 
   carregaProcesso() {
+    console.log('IdSemana: ' , this.semana.id);
     this.srv.ObtemComPlanoPorSemana(this.semana.id, 1)
       .subscribe((resultado) => {
         this.processoComPlano = resultado;
-        this.processoComPlano.map((processo: ProcessoNegocio) => {
-          if (processo.planoExecucaos.length == 0) {
-            processo.planoExecucaos.push(new PlanoExecucao({ "processoNegocioId": processo.id, "tempoEstimadoStr": "00:00", "tempoEstimado": new Date(0), "diaSemanaId": 1 })); // segunda
-            processo.planoExecucaos.push(new PlanoExecucao({ "processoNegocioId": processo.id, "tempoEstimadoStr": "00:00", "tempoEstimado": new Date(0), "diaSemanaId": 2 })); // terca
-            processo.planoExecucaos.push(new PlanoExecucao({ "processoNegocioId": processo.id, "tempoEstimadoStr": "00:00", "tempoEstimado": new Date(0), "diaSemanaId": 3 })); // quarta
-            processo.planoExecucaos.push(new PlanoExecucao({ "processoNegocioId": processo.id, "tempoEstimadoStr": "00:00" ,"tempoEstimado": new Date(0), "diaSemanaId": 4 })); // quinta
-            processo.planoExecucaos.push(new PlanoExecucao({ "processoNegocioId": processo.id, "tempoEstimadoStr": "00:00" ,"tempoEstimado": new Date(0), "diaSemanaId": 5 })); // sexta
-            processo.planoExecucaos.push(new PlanoExecucao({ "processoNegocioId": processo.id, "tempoEstimadoStr": "00:00", "tempoEstimado": new Date(0), "diaSemanaId": 6 })); // sabado
-            processo.planoExecucaos.push(new PlanoExecucao({ "processoNegocioId": processo.id, "tempoEstimadoStr": "00:00", "tempoEstimado": new Date(0), "diaSemanaId": 7 })); // domingo
-
-          }
-        })
+        console.log('Objeto Carregado:' ,  this.processoComPlano);
       });
+  }
+
+  calculaSoma() {
+    this.processoComPlano.forEach((valor:ProcessoNegocio) => {
+      var planoSoma: PlanoExecucao = new PlanoExecucao();
+      valor.planoExecucaos.forEach((plano:PlanoExecucao) => {
+        planoSoma.tempoEstimado.setDate(planoSoma.tempoEstimado.getDate() + plano.tempoEstimado.getDate());
+      });
+      this.somaProcesso.push(planoSoma);
+      console.log('Processso: ', valor);
+      console.log('Soma: ' , planoSoma);
+    })
   }
 
   onSubmit() {
@@ -56,9 +61,10 @@ export class PlanoSemanaPorContextoComponent implements OnInit {
     this.processoComPlano.map((processo:ProcessoNegocio) => {
       processo.planoExecucaos.map((plano:PlanoExecucao) => {
         var tempo = plano.tempoEstimadoStr.split(":");
-        plano.tempoEstimado = new Date(0,0,0,Number(tempo[0]), Number(tempo[1]) ,0,0); 
+        plano.tempoEstimado = new Date(1970,0,1,Number(tempo[0]), Number(tempo[1]) ,0,0); 
       })
     });
+    this.calculaSoma();
     console.log('Objeto Processado:' ,  this.processoComPlano);
   }
 }

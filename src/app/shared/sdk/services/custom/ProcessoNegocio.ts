@@ -331,6 +331,31 @@ export class ProcessoNegocioApi extends BaseLoopBackApi {
   }
 
   /**
+   * Atualiza uma lista com os dados de plano para semana
+   *
+   * @param {object} data Request data.
+   *
+   *  - `listaProcesso` – `{any}` - 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public AtualizaListaComPlano(listaProcesso: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProcessoNegocios/autalizaListaComPlano";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof listaProcesso !== 'undefined' && listaProcesso !== null) _urlParams.listaProcesso = listaProcesso;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Creates a new instance in planoExecucaos of this model.
    *
    * @param {any} id ProcessoNegocio id

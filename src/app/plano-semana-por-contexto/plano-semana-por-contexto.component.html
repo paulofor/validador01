@@ -1,4 +1,4 @@
-<form  *ngIf="processoComPlano" (ngSubmit)="onSubmit()">
+<form  *ngIf="processoComPlano" (ngSubmit)="onSubmit()" >
   <div class="card">
     <div class="header">
       <h4 class="title"></h4>
@@ -38,7 +38,7 @@
             <td style='font-weight:bold;'>{{getPercentProcesso(item) | number : '2.2-2' }} %</td>
             <td *ngFor="let coluna of item.planoExecucaos">
               <mat-form-field style="width: 50px; ">
-                <input [formControl]="myControl" [(ngModel)]="coluna.tempoEstimadoStr" matInput maxlength="5" />
+                <input [(ngModel)]="coluna.tempoEstimadoStr" matInput maxlength="5" [ngModelOptions]="{standalone: true}" />
               </mat-form-field>
             </td>
 
@@ -51,6 +51,6 @@
     </div>
 
   </div>
-  <button mat-raised-button color="primary">Salvar</button>
-  <button mat-raised-button color="primary" (click)="ajustaTempos()">Calcular</button>
+  <button mat-raised-button color="primary" type="submit">Salvar</button>
+  <button mat-raised-button color="primary" type="button" (click)="ajustaTempos()">Calcular</button>
 </form>

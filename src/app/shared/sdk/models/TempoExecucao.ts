@@ -1,9 +1,9 @@
 /* tslint:disable */
 import {
   ProjetoMySql,
-  ProcessoNegocio,
-  ConceitoProduto,
   Semana,
+  ProcessoNegocio,
+  PlanoExecucao,
   DiaSemana,
   Contexto
 } from '../index';
@@ -13,17 +13,18 @@ export interface TempoExecucaoInterface {
   "dataReferencia": Date;
   "horaInicio": Date;
   "horaTermino"?: Date;
+  "tempo"?: Date;
   "id"?: number;
   "projetoMySqlId"?: number;
-  "processoNegocioId"?: number;
-  "conceitoProdutoId"?: number;
   "semanaId"?: number;
+  "processoNegocioId"?: number;
+  "planoExecucaoId"?: number;
   "diaSemanaId"?: number;
   "contextoId"?: number;
   projetoMySql?: ProjetoMySql;
-  processoNegocio?: ProcessoNegocio;
-  conceitoProduto?: ConceitoProduto;
   semana?: Semana;
+  processoNegocio?: ProcessoNegocio;
+  planoExecucao?: PlanoExecucao;
   diaSemana?: DiaSemana;
   contexto?: Contexto;
 }
@@ -32,17 +33,18 @@ export class TempoExecucao implements TempoExecucaoInterface {
   "dataReferencia": Date;
   "horaInicio": Date;
   "horaTermino": Date;
+  "tempo": Date;
   "id": number;
   "projetoMySqlId": number;
-  "processoNegocioId": number;
-  "conceitoProdutoId": number;
   "semanaId": number;
+  "processoNegocioId": number;
+  "planoExecucaoId": number;
   "diaSemanaId": number;
   "contextoId": number;
   projetoMySql: ProjetoMySql;
-  processoNegocio: ProcessoNegocio;
-  conceitoProduto: ConceitoProduto;
   semana: Semana;
+  processoNegocio: ProcessoNegocio;
+  planoExecucao: PlanoExecucao;
   diaSemana: DiaSemana;
   contexto: Contexto;
   constructor(data?: TempoExecucaoInterface) {
@@ -90,6 +92,10 @@ export class TempoExecucao implements TempoExecucaoInterface {
           name: 'horaTermino',
           type: 'Date'
         },
+        "tempo": {
+          name: 'tempo',
+          type: 'Date'
+        },
         "id": {
           name: 'id',
           type: 'number'
@@ -98,16 +104,16 @@ export class TempoExecucao implements TempoExecucaoInterface {
           name: 'projetoMySqlId',
           type: 'number'
         },
+        "semanaId": {
+          name: 'semanaId',
+          type: 'number'
+        },
         "processoNegocioId": {
           name: 'processoNegocioId',
           type: 'number'
         },
-        "conceitoProdutoId": {
-          name: 'conceitoProdutoId',
-          type: 'number'
-        },
-        "semanaId": {
-          name: 'semanaId',
+        "planoExecucaoId": {
+          name: 'planoExecucaoId',
           type: 'number'
         },
         "diaSemanaId": {
@@ -128,6 +134,14 @@ export class TempoExecucao implements TempoExecucaoInterface {
                   keyFrom: 'projetoMySqlId',
           keyTo: 'id'
         },
+        semana: {
+          name: 'semana',
+          type: 'Semana',
+          model: 'Semana',
+          relationType: 'belongsTo',
+                  keyFrom: 'semanaId',
+          keyTo: 'id'
+        },
         processoNegocio: {
           name: 'processoNegocio',
           type: 'ProcessoNegocio',
@@ -136,20 +150,12 @@ export class TempoExecucao implements TempoExecucaoInterface {
                   keyFrom: 'processoNegocioId',
           keyTo: 'id'
         },
-        conceitoProduto: {
-          name: 'conceitoProduto',
-          type: 'ConceitoProduto',
-          model: 'ConceitoProduto',
+        planoExecucao: {
+          name: 'planoExecucao',
+          type: 'PlanoExecucao',
+          model: 'PlanoExecucao',
           relationType: 'belongsTo',
-                  keyFrom: 'conceitoProdutoId',
-          keyTo: 'id'
-        },
-        semana: {
-          name: 'semana',
-          type: 'Semana',
-          model: 'Semana',
-          relationType: 'belongsTo',
-                  keyFrom: 'semanaId',
+                  keyFrom: 'planoExecucaoId',
           keyTo: 'id'
         },
         diaSemana: {

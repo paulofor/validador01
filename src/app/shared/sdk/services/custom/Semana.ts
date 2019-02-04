@@ -355,6 +355,32 @@ export class SemanaApi extends BaseLoopBackApi {
   }
 
   /**
+   * Obtem a semana da data de entrada
+   *
+   * @param {date} data 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `Semana` object.)
+   * </em>
+   */
+  public ObtemPorData(data: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/Semanas/obtemPorData";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof data !== 'undefined' && data !== null) _urlParams.data = data;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Creates a new instance in planoExecucaos of this model.
    *
    * @param {any} id Semana id

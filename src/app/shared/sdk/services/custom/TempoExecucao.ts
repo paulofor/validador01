@@ -12,9 +12,9 @@ import { map } from 'rxjs/operators';
 import { TempoExecucao } from '../../models/TempoExecucao';
 import { SocketConnection } from '../../sockets/socket.connections';
 import { ProjetoMySql } from '../../models/ProjetoMySql';
-import { ProcessoNegocio } from '../../models/ProcessoNegocio';
-import { ConceitoProduto } from '../../models/ConceitoProduto';
 import { Semana } from '../../models/Semana';
+import { ProcessoNegocio } from '../../models/ProcessoNegocio';
+import { PlanoExecucao } from '../../models/PlanoExecucao';
 import { DiaSemana } from '../../models/DiaSemana';
 import { Contexto } from '../../models/Contexto';
 
@@ -66,6 +66,36 @@ export class TempoExecucaoApi extends BaseLoopBackApi {
   }
 
   /**
+   * Fetches belongsTo relation semana.
+   *
+   * @param {any} id TempoExecucao id
+   *
+   * @param {boolean} refresh 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `TempoExecucao` object.)
+   * </em>
+   */
+  public getSemana(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/TempoExecucaos/:id/semana";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof refresh !== 'undefined' && refresh !== null) _urlParams.refresh = refresh;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Fetches belongsTo relation processoNegocio.
    *
    * @param {any} id TempoExecucao id
@@ -96,7 +126,7 @@ export class TempoExecucaoApi extends BaseLoopBackApi {
   }
 
   /**
-   * Fetches belongsTo relation conceitoProduto.
+   * Fetches belongsTo relation planoExecucao.
    *
    * @param {any} id TempoExecucao id
    *
@@ -111,40 +141,10 @@ export class TempoExecucaoApi extends BaseLoopBackApi {
    * This usually means the response is a `TempoExecucao` object.)
    * </em>
    */
-  public getConceitoProduto(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
+  public getPlanoExecucao(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/TempoExecucaos/:id/conceitoProduto";
-    let _routeParams: any = {
-      id: id
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    if (typeof refresh !== 'undefined' && refresh !== null) _urlParams.refresh = refresh;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
-  }
-
-  /**
-   * Fetches belongsTo relation semana.
-   *
-   * @param {any} id TempoExecucao id
-   *
-   * @param {boolean} refresh 
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `TempoExecucao` object.)
-   * </em>
-   */
-  public getSemana(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "GET";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/TempoExecucaos/:id/semana";
+    "/TempoExecucaos/:id/planoExecucao";
     let _routeParams: any = {
       id: id
     };

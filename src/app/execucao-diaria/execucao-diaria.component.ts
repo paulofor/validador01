@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProcessoNegocioApi, DiaSemana, Semana, PlanoExecucao, TempoExecucao } from '../shared/sdk';
 import { MatDialog } from '@angular/material';
 import { ActivatedRoute } from '@angular/router';
-import { EditaTempoExecucaoComponent } from 'src/app/edita-tempo-execucao/edita-tempo-execucao.component';
+import { EditaTempoExecucaoComponent } from '../edita-tempo-execucao/edita-tempo-execucao.component';
 
 @Component({
   selector: 'app-execucao-diaria',

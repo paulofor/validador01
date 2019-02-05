@@ -330,8 +330,8 @@ import { EditaTempoExecucaoComponent } from './edita-tempo-execucao/edita-tempo-
     EditaSetupCampanhaComponent,
     CampanhaEditaCriaV2Component,
     EscolhedorAnuncioParaCampanhaComponent,
-    EditaCadProjetoComponent
-    //ArquivosComponent
+    EditaCadProjetoComponent,
+    EditaTempoExecucaoComponent 
   ],
   imports: [
     BrowserModule,

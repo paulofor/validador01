@@ -20,7 +20,7 @@ export class PlanejamentoExecucaoComponent implements OnInit {
   carregaSemana() {
     this.srv.ObtemDeslocada(1)
       .subscribe((resultado) => {
-        this.semana = resultado[0];
+        this.semana = resultado;
         console.log('Resultado: ' , resultado);
       })
   }

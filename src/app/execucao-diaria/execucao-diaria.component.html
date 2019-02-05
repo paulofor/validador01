@@ -13,9 +13,9 @@
       </thead>
       <tbody>
         <tr *ngFor="let plano of listaPlano">
-          <td>{{plano.processoNegocioId}}</td>
-          <td align="right">
-            <button class="btn btn-primary btn-sm " (click)="criaExecucao(item)">Executar</button>
+          <td>{{plano.processoNegocio.nome}}</td>
+          <td>
+            <button class="btn btn-primary btn-sm " (click)="criaExecucao(plano)">Executar</button>
           </td>
         </tr>
       </tbody>
@@ -32,9 +32,9 @@
       </thead>
       <tbody>
         <tr *ngFor="let execucao of listaExecucao">
-          <td>{{execucao.processoNegocioId}}</td>
-          <td align="right">
-            <button class="btn btn-primary btn-sm " (click)="alteraExecucao(item)">Alterar</button>
+          <td>{{execucao.processoNegocio.nome}}</td>
+          <td>
+            <button class="btn btn-primary btn-sm " (click)="alteraExecucao(execucao)">Alterar</button>
           </td>
         </tr>
       </tbody>

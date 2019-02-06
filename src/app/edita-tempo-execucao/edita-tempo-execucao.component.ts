@@ -50,13 +50,26 @@ export class EditaTempoExecucaoComponent implements OnInit {
       this.tempo.contextoId = this.plano.contextoId;
       this.tempo.diaSemanaId = this.plano.diaSemanaId;
       this.tempo.semanaId = this.plano.semanaId;
+      this.tempo.tempo = new Date(0);
 
+      console.log("TempoExecucao: " ,JSON.stringify(this.tempo));   
+      /*
       this.servico.create(this.tempo, (err, obj) => {
-        console.log("Erro:" + err.message);
+        console.log("Erro:" + JSON.stringify(err));
+        console.log('Obj' + obj );
       }).subscribe((e: any) => {
-        console.log(JSON.stringify(e));
+        console.log('Resposta:' , JSON.stringify(e));
         this.closeDialog();
       });
+      */
+      this.servico.create(this.tempo)
+        .subscribe(
+          data => console.log('Data:' , JSON.stringify(data)),
+          err => {
+            console.log('Erro - :' , err.message);
+            console.log('SQL:' , err.sql);
+          }
+        );
     } else {
       this.servico.updateAttributes(this.tempo.id, this.tempo, (err, obj) => {
         console.log("Erro:" + err.message);

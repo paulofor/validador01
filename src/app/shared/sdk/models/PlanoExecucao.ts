@@ -10,6 +10,8 @@ declare var Object: any;
 export interface PlanoExecucaoInterface {
   "tempoEstimado": Date;
   "tempoEstimadoStr"?: string;
+  "tempoExecucao": Date;
+  "tempoExecucaoStr"?: string;
   "id"?: number;
   "processoNegocioId"?: number;
   "semanaId"?: number;
@@ -24,6 +26,8 @@ export interface PlanoExecucaoInterface {
 export class PlanoExecucao implements PlanoExecucaoInterface {
   "tempoEstimado": Date;
   "tempoEstimadoStr": string;
+  "tempoExecucao": Date;
+  "tempoExecucaoStr": string;
   "id": number;
   "processoNegocioId": number;
   "semanaId": number;
@@ -72,6 +76,14 @@ export class PlanoExecucao implements PlanoExecucaoInterface {
         },
         "tempoEstimadoStr": {
           name: 'tempoEstimadoStr',
+          type: 'string'
+        },
+        "tempoExecucao": {
+          name: 'tempoExecucao',
+          type: 'Date'
+        },
+        "tempoExecucaoStr": {
+          name: 'tempoExecucaoStr',
           type: 'string'
         },
         "id": {

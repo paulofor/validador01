@@ -182,7 +182,7 @@ export class SDKBrowserModule {
         ContextoApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser },
-        
+
       ]
     };
   }

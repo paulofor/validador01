@@ -278,6 +278,56 @@ export class TempoExecucaoApi extends BaseLoopBackApi {
   }
 
   /**
+   * Insere novo com os cálculos necessários
+   *
+   * @param {object} data Request data.
+   *
+   *  - `execucao` – `{object}` - 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public Insere(execucao: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/TempoExecucaos/insere";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof execucao !== 'undefined' && execucao !== null) _urlParams.execucao = execucao;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Alteracao com calculos
+   *
+   * @param {object} data Request data.
+   *
+   *  - `execucao` – `{object}` - 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public Altera(execucao: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/TempoExecucaos/altera";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof execucao !== 'undefined' && execucao !== null) _urlParams.execucao = execucao;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * The name of the model represented by this $resource,
    * i.e. `TempoExecucao`.
    */

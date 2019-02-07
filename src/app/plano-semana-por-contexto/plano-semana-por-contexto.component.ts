@@ -50,7 +50,7 @@ export class PlanoSemanaPorContextoComponent implements OnInit {
   }
 
   calculaSoma() {
-    console.log('ajustaTempos(ini):', this.processoComPlano);
+    //console.log('ajustaTempos(ini):', this.processoComPlano);
     this.totalTempo = new Date(0);
     this.somaProcesso = [];
     this.criaSomaDia();
@@ -66,20 +66,22 @@ export class PlanoSemanaPorContextoComponent implements OnInit {
       });
       this.somaProcesso.push(planoSoma);
     });
-    console.log('ajustaTempos(final):', this.processoComPlano);
-    //console.log('Soma Dias: ', this.somaDias);
   }
 
   onSubmit() {
     console.log('Chamou submit');
-
-    console.log("Objeto-Envio:", JSON.stringify(this.processoComPlano));
-    //this.ajustaTempos();
-
-    this.srv.AtualizaListaComPlano({"lista" : this.processoComPlano})
-      .subscribe((resultado) => {
-        this.carregaProcesso();
-      })
+    var lista = { "lista": this.processoComPlano };
+    console.log("Envio:", JSON.stringify(lista));
+    this.srv.AtualizaListaComPlano(lista)
+      .subscribe(
+        data => {
+          this.carregaProcesso();
+        },
+        err => {
+          console.log('Erro-Submit:', err.message);
+          console.log('Err:' , err);
+        }
+      );
   }
 
   getSoma(processo: ProcessoNegocio): Date {
@@ -128,13 +130,14 @@ export class PlanoSemanaPorContextoComponent implements OnInit {
   }
 
   ajustaTempos() {
-    console.log('ajustaTempos(ini):', this.processoComPlano);
+    //console.log('ajustaTempos(ini):', this.processoComPlano);
     this.processoComPlano.forEach((processo: ProcessoNegocio) => {
       processo.planoExecucaos.forEach((plano: PlanoExecucao) => {
         var tempo = plano.tempoEstimadoStr.split(":");
         plano.tempoEstimado = new Date(0);
         plano.tempoEstimado.setUTCHours(Number(tempo[0]));
         plano.tempoEstimado.setUTCMinutes(Number(tempo[1]));
+        plano.tempoExecucao = new Date(0);
       })
     });
     this.calculaSoma();

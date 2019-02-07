@@ -76,7 +76,7 @@ export class PlanoSemanaPorContextoComponent implements OnInit {
     console.log("Objeto-Envio:", JSON.stringify(this.processoComPlano));
     //this.ajustaTempos();
 
-    this.srv.AtualizaListaComPlano(this.processoComPlano)
+    this.srv.AtualizaListaComPlano({"lista" : this.processoComPlano})
       .subscribe((resultado) => {
         this.carregaProcesso();
       })

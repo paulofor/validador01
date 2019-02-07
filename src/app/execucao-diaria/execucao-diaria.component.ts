@@ -59,4 +59,17 @@ export class ExecucaoDiariaComponent implements OnInit {
       }
     });
   }
+
+  getHoraInicio(tempo: TempoExecucao) {
+    console.log('HoraInicio:' , tempo.horaInicio);
+    return new Date(tempo.horaInicio);
+  }
+  getHoraTermino(tempo: TempoExecucao) {
+    console.log('getHoraTermino:' , tempo.horaTermino);
+    return new Date(tempo.horaTermino);
+  }
+  getTempo(tempo: TempoExecucao) {
+    console.log('getTempo:' , tempo.tempo);
+    return new Date("1970-01-01 " + tempo.tempo);
+  }
 }

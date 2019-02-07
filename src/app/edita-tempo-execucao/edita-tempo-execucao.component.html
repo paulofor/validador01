@@ -1,6 +1,6 @@
-<h2 mat-dialog-title>Tempo Execução</h2>
+<h2 *ngIf="plano" mat-dialog-title>{{plano.processoNegocio.nome}}</h2>
 
-<form *ngIf="tempo && listaProjeto" class="example-full-width" (ngSubmit)="onSubmit()">
+<form *ngIf="tempoOk && listaProjeto" class="example-full-width" (ngSubmit)="onSubmit()">
 
 
   <mat-form-field class="example-full-width">
@@ -14,13 +14,13 @@
 
   <mat-dialog-content>
     <mat-form-field class="example-full-width">
-      <input matInput [(ngModel)]="tempo.horaInicio" name="horaInicio" />
+      <input matInput [ngModel]="tempo.horaInicio | date : 'dd/MM/yyy HH:mm:ss'" name="horaInicio" />
     </mat-form-field>
   </mat-dialog-content>
 
   <mat-dialog-content>
     <mat-form-field class="example-full-width">
-      <input matInput [(ngModel)]="tempo.horaTermino" name="horaTermino" />
+      <input matInput [ngModel]="tempo.horaTermino | date : 'dd/MM/yyy HH:mm:ss'" name="horaTermino" />
     </mat-form-field>
   </mat-dialog-content>
 

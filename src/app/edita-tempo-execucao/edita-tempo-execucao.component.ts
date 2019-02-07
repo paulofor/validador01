@@ -13,6 +13,7 @@ export class EditaTempoExecucaoComponent implements OnInit {
   tempo : TempoExecucao;
   plano : PlanoExecucao;
   listaProjeto: ProjetoMySql[];
+  tempoOk = false;
 
   constructor(public dialogRef: MatDialogRef<EditaTempoExecucaoComponent>,
     private servico : TempoExecucaoApi
@@ -28,16 +29,20 @@ export class EditaTempoExecucaoComponent implements OnInit {
       this.tempo.horaTermino = new Date();
       this.plano = this.data.plano;
       console.log('Plano: ' , this.plano);
-      this.srvProjeto.find()
-        .subscribe((res:ProjetoMySql[])=> {
-          this.listaProjeto = res;
-        })
+      this.tempoOk = true;
     } else {
       console.log('fluxo altera');
       this.tempo = this.data.tempo;
       this.tempo.horaTermino = new Date();
+      this.tempo.horaInicio = new Date(this.tempo.horaInicio);
       console.log('Tempo:', JSON.stringify(this.tempo));
+      this.tempoOk = true;
     }
+    this.srvProjeto.find()
+    .subscribe((res:ProjetoMySql[])=> {
+      this.listaProjeto = res;
+      
+    })
   }
 
   onSubmit() {
@@ -51,6 +56,7 @@ export class EditaTempoExecucaoComponent implements OnInit {
       this.tempo.diaSemanaId = this.plano.diaSemanaId;
       this.tempo.semanaId = this.plano.semanaId;
       this.tempo.tempo = new Date(0);
+      
 
       console.log("TempoExecucao: " ,JSON.stringify(this.tempo));   
       /*
@@ -64,13 +70,22 @@ export class EditaTempoExecucaoComponent implements OnInit {
       */
       this.servico.create(this.tempo)
         .subscribe(
-          data => console.log('Data:' , JSON.stringify(data)),
+          data => {
+            console.log('Data:' , JSON.stringify(data));
+            this.closeDialog();
+          },
           err => {
             console.log('Erro - :' , err.message);
             console.log('SQL:' , err.sql);
           }
         );
     } else {
+      console.log("TempoExecucao(alterar): " ,JSON.stringify(this.tempo));
+      var x = this.tempo.horaTermino.getTime();
+      console.log('Hora Inicio:' , this.tempo.horaInicio);
+      console.log('Hora Termino:' , this.tempo.horaTermino);
+      this.tempo.tempo = new Date(0);
+      this.tempo.tempo.setTime(this.tempo.horaTermino.getTime() - this.tempo.horaInicio.getTime());
       this.servico.updateAttributes(this.tempo.id, this.tempo, (err, obj) => {
         console.log("Erro:" + err.message);
       }).subscribe((e: any) => {

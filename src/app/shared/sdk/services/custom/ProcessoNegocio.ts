@@ -350,7 +350,11 @@ export class ProcessoNegocioApi extends BaseLoopBackApi {
     let _routeParams: any = {};
     let _postBody: any = {};
     let _urlParams: any = {};
-    if (typeof listaProcesso !== 'undefined' && listaProcesso !== null) _urlParams.listaProcesso = listaProcesso;
+    if (typeof listaProcesso !== 'undefined' && listaProcesso !== null) {
+      _postBody = {
+        listaProcesso: { 'listaProcesso' : listaProcesso }
+      };
+    }
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }

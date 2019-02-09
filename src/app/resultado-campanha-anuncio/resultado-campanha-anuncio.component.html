@@ -15,6 +15,7 @@
           <th width="10%">Ctr</th>
           <th width="10%">Custo</th>
           <th width="10%">Cpc</th>
+          <th width="10%">Conv.</th>
          </tr>
       </thead>
       <tbody>
@@ -25,8 +26,9 @@
             <td>{{item.quantidadeImpressao}}</td>
             <td>{{item.quantidadeClique}}</td>
             <td>{{item.ctr | number : '1.2-2' }}</td>
-            <td>{{item.custo}}</td>
+            <td>{{item.custo | number: '1.2-2'}}</td>
             <td>{{item.cpcMedio | number : '1.2-2' }}</td>
+            <td>{{item.conversao}}</td>
           </tr>
         </ng-container>
       </tbody>

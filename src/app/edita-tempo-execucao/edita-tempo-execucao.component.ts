@@ -68,7 +68,7 @@ export class EditaTempoExecucaoComponent implements OnInit {
         this.closeDialog();
       });
       */
-      this.servico.create(this.tempo)
+      this.servico.Insere(this.tempo)
         .subscribe(
           data => {
             console.log('Data:' , JSON.stringify(data));
@@ -86,12 +86,17 @@ export class EditaTempoExecucaoComponent implements OnInit {
       console.log('Hora Termino:' , this.tempo.horaTermino);
       this.tempo.tempo = new Date(0);
       this.tempo.tempo.setTime(this.tempo.horaTermino.getTime() - this.tempo.horaInicio.getTime());
-      this.servico.updateAttributes(this.tempo.id, this.tempo, (err, obj) => {
-        console.log("Erro:" + err.message);
-      }).subscribe((e: any) => {
-        console.log(JSON.stringify(e));
-        this.closeDialog();
-      });
+      this.servico.Altera(this.tempo)
+      .subscribe(
+        data => {
+          console.log('Data:' , JSON.stringify(data));
+          this.closeDialog();
+        },
+        err => {
+          console.log('Erro - :' , err.message);
+          console.log('SQL:' , err.sql);
+        }
+      );
     }
   }
 

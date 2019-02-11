@@ -1472,6 +1472,29 @@ export class CampanhaAdsApi extends BaseLoopBackApi {
   }
 
   /**
+   * Cria uma data de fechamento e altera as permisoes de edicao
+   *
+   * @param {number} idCampanha 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public FechaCampanha(idCampanha: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/CampanhaAds/fechaCampanha";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof idCampanha !== 'undefined' && idCampanha !== null) _urlParams.idCampanha = idCampanha;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Creates a new instance in anuncioAds of this model.
    *
    * @param {any} id CampanhaAds id

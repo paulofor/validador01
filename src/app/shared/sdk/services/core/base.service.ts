@@ -103,10 +103,8 @@ export abstract class BaseLoopBackApi {
       let postBodyKeys = typeof postBody === 'object' ? Object.keys(postBody) : []
       if (postBodyKeys.length === 1) {
         body = postBody[postBodyKeys.shift()];
-        console.log('Body(1):' , JSON.stringify(body));
       } else {
         body = postBody;
-        console.log('Body(2):' ,  JSON.stringify(body));
       }
       
       let queryString: string = '';

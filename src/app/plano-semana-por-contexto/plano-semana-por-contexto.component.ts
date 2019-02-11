@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { DiaSemana, ProcessoNegocio, Semana, ProcessoNegocioApi, PlanoExecucao } from '../shared/sdk';
 import { Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { ProcessoNegocioService } from '../comum/processo-negocio.service';
+
 
 @Component({
   selector: 'app-plano-semana-por-contexto',
@@ -21,7 +23,7 @@ export class PlanoSemanaPorContextoComponent implements OnInit {
   @Input() semana: Semana;
   myControl = new FormControl();
 
-  constructor(private srv: ProcessoNegocioApi) { }
+  constructor(private srv: ProcessoNegocioApi, private srvPost: ProcessoNegocioService) { }
 
   ngOnInit() {
     this.carregaProcesso();
@@ -72,7 +74,7 @@ export class PlanoSemanaPorContextoComponent implements OnInit {
     console.log('Chamou submit');
     var lista = { "lista": this.processoComPlano };
     console.log("Envio:", JSON.stringify(lista));
-    this.srv.AtualizaListaComPlano(lista)
+    this.srvPost.AtualizaListaComPlanoPost(lista)
       .subscribe(
         data => {
           this.carregaProcesso();

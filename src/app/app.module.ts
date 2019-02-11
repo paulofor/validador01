@@ -76,7 +76,7 @@ import { ListaValidacaoPorValorComponent } from './lista-validacao-por-valor/lis
 import { EdicaoItemValidacaoComponent } from './edicao-item-validacao/edicao-item-validacao.component';
 import { ListaPaginaValidacaoPorProjetoComponent } from './lista-pagina-validacao-por-projeto/lista-pagina-validacao-por-projeto.component';
 import { EdicaoPaginaValidacaoComponent } from './edicao-pagina-validacao/edicao-pagina-validacao.component';
-import { PaginaValidacaoWebApi, AnuncioAdsApi, SDKBrowserModule } from './shared/sdk';
+import { PaginaValidacaoWebApi, AnuncioAdsApi, SDKBrowserModule, ProcessoNegocioApi } from './shared/sdk';
 import { EscolheItemValidacaoComponent } from './escolhe-item-validacao/escolhe-item-validacao.component';
 import { EscolhedorItemVallidacaoComponent } from './escolhedor-item-vallidacao/escolhedor-item-vallidacao.component';
 import { NgDragDropModule } from 'ng-drag-drop';
@@ -169,6 +169,7 @@ import { ExecucaoDiariaComponent } from './execucao-diaria/execucao-diaria.compo
 
 import { PlanoSemanaPorContextoComponent } from './plano-semana-por-contexto/plano-semana-por-contexto.component';
 import { EditaTempoExecucaoComponent } from './edita-tempo-execucao/edita-tempo-execucao.component';
+
 
 
 
@@ -358,7 +359,8 @@ import { EditaTempoExecucaoComponent } from './edita-tempo-execucao/edita-tempo-
     MatSlideToggleModule,
     MatTableModule,
     MatAutocompleteModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
   ],
   providers: [
     HttpClient, 
@@ -366,7 +368,8 @@ import { EditaTempoExecucaoComponent } from './edita-tempo-execucao/edita-tempo-
     SocketDriver,
     SDKModels,
     LoopBackAuth,
-    InternalStorage
+    InternalStorage,
+    ProcessoNegocioApi
   ],
   bootstrap: [AppComponent]
 })

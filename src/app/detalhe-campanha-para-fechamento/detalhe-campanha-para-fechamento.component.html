@@ -31,7 +31,7 @@
     <div class="row">
       <div class="col-md-12">
         <mat-card>
-          <button mat-raised-button color="accent" (click)="fecharCampanha()">Fechar Campanha</button>
+          <button mat-raised-button color="accent" [disabled]="campanha.permiteEdicao" (click)="fecharCampanha()">Fechar Campanha</button>
         </mat-card>
       </div>
     </div>

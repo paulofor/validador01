@@ -1,7 +1,7 @@
 <div class="card">
   <div class="header">
     <h4 class="title">Itens de Validação</h4>
-    <button class="btn btn-primary btn-sm " (click)="openDialog(pagina)">Escolher</button>
+    <button class="btn btn-primary btn-sm " *ngIf="pagina.permiteEditar" (click)="openDialog(pagina)">Escolher</button>
   </div>
 
   <div class="content table-responsive table-full-width">

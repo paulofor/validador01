@@ -15,6 +15,7 @@ export class DisplayPaginaValidacaoWebComponent implements OnInit {
   constructor(private dialog:MatDialog) { }
 
   ngOnInit() {
+    console.log('Pagina:' , JSON.stringify(this.item));
   }
 
   openDialog(item?) {
@@ -31,6 +32,11 @@ export class DisplayPaginaValidacaoWebComponent implements OnInit {
 
   visitar(){
     window.open("http://validacao.kinghost.net/oferta/?id=" + this.item.codigoHash , "_blank");
+  }
+
+  permiteAlterar(item : PaginaValidacaoWeb) {
+    
+    return (item.permiteEdicao==1);
   }
 
 }

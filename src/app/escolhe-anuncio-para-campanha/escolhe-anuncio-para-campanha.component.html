@@ -1,7 +1,7 @@
-<div class="card">
+<div *ngIf="campanha" class="card">
   <div class="header">
-    <h4 class="title">Anúncios da Campanha</h4>
-    <button class="btn btn-primary btn-sm " (click)="openDialog(campanha)">Escolher</button>
+    <h4 class="title">Anúncios da Campanhas</h4>
+    <button class="btn btn-primary btn-sm " *ngIf="campanha.permiteEdicao" (click)="openDialog(campanha)">Escolher</button>
   </div>
 
   <div class="content table-responsive table-full-width">

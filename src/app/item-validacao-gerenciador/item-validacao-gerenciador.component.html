@@ -16,7 +16,7 @@
         <ng-container *ngFor="let item of listaTelaApp">
           <tr>
             <td>{{item.nome}}</td>
-            <td><button mat-raised-button color="primary" (click)="openTelaApp(item)">Incluir</button></td>
+            <td><button mat-raised-button color="primary" [disabled]="item.permiteEdicao" (click)="openTelaApp(item)">Incluir</button></td>
           </tr>
           <tr *ngFor="let validador of item.itemValidacaoPaginas">
             <td colspan="2">
@@ -26,7 +26,7 @@
                 <mat-card-subtitle>{{validador.bullet2}}</mat-card-subtitle>
                 <mat-card-subtitle>{{validador.bullet3}}</mat-card-subtitle>
                 <mat-card-actions>
-                  <button mat-stroked-button color="primary" (click)="openTelaApp(item, validador)">Alterar</button>
+                  <button mat-stroked-button color="primary" [disabled]="validador.permiteEdicao" (click)="openTelaApp(item, validador)">Alterar</button>
                 </mat-card-actions>
               </mat-card>
             </td>

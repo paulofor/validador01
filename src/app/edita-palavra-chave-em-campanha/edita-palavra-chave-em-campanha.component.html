@@ -1,7 +1,7 @@
 <div *ngIf="listaPalavra" class="card">
   <div class="header">
     <h4 class="title">{{listaPalavra.length}} palavras</h4>
-    <button class="btn btn-primary btn-sm " (click)="criaListaNova()">Recriar</button>
+    <button class="btn btn-primary btn-sm " *ngIf="campanha.permiteEdicao" (click)="criaListaNova()">Recriar</button>
   </div>
   <div class="content table-responsive table-full-width">
     <table class="table table-hover table-striped">

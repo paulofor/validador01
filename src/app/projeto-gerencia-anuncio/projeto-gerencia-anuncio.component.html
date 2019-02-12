@@ -44,7 +44,7 @@
                               {{ads.descricao1}}
                             </mat-card-subtitle>
                             <mat-card-actions>
-                                <button (click)="editaAnuncio(item,ads)" [disabled]="(ads.permiteEditar==0)" mat-raised-button color="primary">Alterar</button>
+                                <button (click)="editaAnuncio(item,ads)" [disabled]="ads.permiteEdicao" mat-raised-button color="primary">Alterar</button>
                             </mat-card-actions>
                           </mat-card>
                         </ng-container>

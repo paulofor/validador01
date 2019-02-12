@@ -25,21 +25,24 @@ export class EscolheAnuncioParaCampanhaComponent implements OnInit {
 
   ngOnInit() {
     this.atualizaCampanha();
+    
   }
 
   atualizaCampanha() {
+    
     this.route.paramMap.pipe(
       switchMap((params: ParamMap) =>
         this.srvCampanha.findById(this.campanha.id, this.consulta)
       )).subscribe((result: CampanhaAds) => {
         this.campanha = result;
+        console.log('Campanha: ' , this.campanha.permiteEdicao);
       })
   }
  
 
 
   openDialog(pagina) {
-    console.log('Pagina:', pagina);
+    //console.log('Pagina:', pagina);
     this.dialog.afterAllClosed.subscribe(result => {
       console.log('Dialog result: ${result}'); 
       this.atualizaCampanha();

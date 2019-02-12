@@ -6,7 +6,7 @@
 
   <div class="content table-responsive table-full-width">
     <img width="100%" *ngIf="pagina.imagemFundo" src="{{pagina.imagemFundo}}" >
-    <image-upload width="100%" url="{{urlUpload}}" 
+    <image-upload *ngIf="pagina.permiteEdicao" width="100%" url="{{urlUpload}}" 
     (uploadFinished)="onUploadFinished($event)"
     buttonCaption="Escolha a imagem"
     dropBoxMessage="ou arraste aqui"

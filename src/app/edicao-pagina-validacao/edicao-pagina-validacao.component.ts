@@ -44,6 +44,7 @@ export class EdicaoPaginaValidacaoComponent implements OnInit {
 
   insereItem() {
     this.pagina.projetoMySqlId = this.pagina.projeto.id;
+    this.pagina.permiteEdicao = 1;
     console.log("Pagina: ", this.pagina);
     this.srvPagina
       .create(this.pagina, (err, obj) => {

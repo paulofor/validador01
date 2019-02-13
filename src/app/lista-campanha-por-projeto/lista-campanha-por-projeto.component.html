@@ -12,7 +12,8 @@
 
               <thead>
                 <tr>
-                  <th width="20%">Titulo</th>
+                  <th width="10%">Titulo</th>
+                  <th width="10%">Cpc Grupo</th>
                   <th width="10%">Data Inicio</th>
                   <th width="10%">Data Final</th>
                   <th width="10%">Impressões</th>
@@ -28,6 +29,7 @@
               <tbody>
                 <tr *ngFor="let campanha of listaCampanha">
                   <td>{{campanha.nome}}</td>
+                  <td>{{campanha.setupCampanhaMaxCpcGrupoAnuncio | number : '1.2-2'}}</td>
                   <td>{{campanha.dataInicial | date: 'dd/MM/yyyy' : 'UTC'}}</td>
                   <td>{{campanha.dataFinal | date: 'dd/MM/yyyy' : 'UTC'}}</td>
                   <td>{{campanha.quantidadeImpressao}}</td>

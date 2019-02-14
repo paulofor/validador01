@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PalavraChaveEstatistica } from '../shared/sdk';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navegador-palavras',
@@ -10,9 +11,10 @@ export class NavegadorPalavrasComponent implements OnInit {
 
   palavra: PalavraChaveEstatistica;
 
-  constructor() { }
+  constructor(private router : Router) { }
 
   ngOnInit() {
+    console.log(this.router.url);
   }
 
   setPalavra(item) {
@@ -22,6 +24,14 @@ export class NavegadorPalavrasComponent implements OnInit {
   onEscolhePalavra(item) {
     console.log('onEscolhePalavra2: ' , item);
     this.palavra = item;
+  }
+
+  isMelhores() {
+    return (this.router.url=='/palavraMelhores');
+  }
+
+  isBaixoCusto() {
+    return (this.router.url=='/melhoresPalavrasBaixoCusto');
   }
 
 }

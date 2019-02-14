@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { PalavraChaveEstatisticaApi, PalavraChaveEstatistica } from '../shared/sdk';
+import { Output } from '@angular/core';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-melhores-palavras-baixo-custo',
@@ -11,6 +13,8 @@ export class MelhoresPalavrasBaixoCustoComponent implements OnInit {
 
   lista: PalavraChaveEstatistica[];
   errMess: string;
+
+  @Output() escolhePalavra:EventEmitter<PalavraChaveEstatistica> = new EventEmitter<PalavraChaveEstatistica>();
 
   constructor(private srv: PalavraChaveEstatisticaApi,  private dialog: MatDialog) { }
 
@@ -27,6 +31,10 @@ export class MelhoresPalavrasBaixoCustoComponent implements OnInit {
       }
         
       );
+  }
+
+  selecionouPalavra(itemSelecionado:PalavraChaveEstatistica) {
+    this.escolhePalavra.emit(itemSelecionado);
   }
 
 }

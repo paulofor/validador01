@@ -4,7 +4,7 @@
     <div class="col-md-12 outer">
       <div class="row">
         <div class="col-md-9 rightcol fixed">
-            <app-melhores-palavras-lista-geral (escolhePalavra)="onEscolhePalavra($event)"></app-melhores-palavras-lista-geral>
+            <app-melhores-palavras-lista-geral *ngIf="isMelhores()" (escolhePalavra)="onEscolhePalavra($event)"></app-melhores-palavras-lista-geral>
         </div>
         <div class="col-md-3  leftcol scrollit">
             <app-agrupador-palavras [palavraNova]="palavra"></app-agrupador-palavras>

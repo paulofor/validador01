@@ -1,4 +1,4 @@
-<h2 mat-dialog-title>Edição Conceito de Produto</h2>
+<h2 *ngIf="projeto" mat-dialog-title>{{projeto.nome}} - Conceito</h2>
 
 <form *ngIf="item" class="example-full-width" (ngSubmit)="onSubmit()">
 

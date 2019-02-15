@@ -34,4 +34,8 @@ export class NavegadorPalavrasComponent implements OnInit {
     return (this.router.url=='/melhoresPalavrasBaixoCusto');
   }
 
+  isRaiz() {
+    return (this.router.url.search('/palavraChaveRaiz') != -1)
+  }
+
 }

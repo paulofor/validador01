@@ -98,7 +98,7 @@ export const routes : Routes = [
     { path: 'entidadeResumo/:id' , component : EntidadeResumoComponent },
 
     { path: 'palavraChaveRaiz' , component : PalavraChaveRaizComponent },
-    { path: 'palavraChaveRaiz/:id' , component : PalavraChaveRaizDetalheComponent },
+    { path: 'palavraChaveRaiz/:id' , component : NavegadorPalavrasComponent }, 
     { path: 'palavraChaveRaizCompleta/:id' , component : PalavraChaveRaizDetalheCompletaComponent },
     //{ path: 'palavraMelhores' , component: MelhoresPalavrasListaGeralComponent },
     { path: 'palavraMelhores' , component: NavegadorPalavrasComponent },

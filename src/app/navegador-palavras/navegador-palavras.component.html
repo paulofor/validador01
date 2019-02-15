@@ -4,6 +4,7 @@
     <div class="col-md-12 outer">
       <div class="row">
         <div class="col-md-9 rightcol fixed">
+            <app-palavra-chave-raiz-detalhe *ngIf="isRaiz()" (escolhePalavra)="onEscolhePalavra($event)"></app-palavra-chave-raiz-detalhe>
             <app-melhores-palavras-lista-geral *ngIf="isMelhores()" (escolhePalavra)="onEscolhePalavra($event)"></app-melhores-palavras-lista-geral>
             <app-melhores-palavras-baixo-custo *ngIf="isBaixoCusto()" (escolhePalavra)="onEscolhePalavra($event)"></app-melhores-palavras-baixo-custo>
         </div>

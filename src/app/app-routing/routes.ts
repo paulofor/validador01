@@ -147,7 +147,7 @@ export const routes : Routes = [
 
     { path: 'projetosCadastro' , component: ListaCadProjetoComponent },
 
-    { path : 'melhoresPalavrasBaixoCusto' , component: MelhoresPalavrasBaixoCustoComponent},
+    { path : 'melhoresPalavrasBaixoCusto' , component: NavegadorPalavrasComponent},
 
     { path : 'planejamentoExecucao' , component: PlanejamentoExecucaoComponent },
 

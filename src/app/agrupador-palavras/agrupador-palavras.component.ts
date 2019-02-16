@@ -81,9 +81,10 @@ export class AgrupadorPalavrasComponent implements OnInit {
   }
 
   excluiItem(item: PalavraChaveEstatistica) {
+    console.log('Remover: ' , this.idProjeto , ' - ' , item.palavraChaveGoogleId);
     this.srvPalavra.RemoveRelacaoPalavra(this.idProjeto, item.palavraChaveGoogleId)
       .subscribe((resultado) => {
-        this.carregaListaProjeto();
+        this.carregaPalavras();
       })
   }
 }

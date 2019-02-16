@@ -47,7 +47,7 @@
       <tbody>
         <ng-container *ngFor="let item of listaTelaWeb">
           <tr>
-            <td>{{item.nome}} ({{item.itemValidacaoPaginas.lenght}})</td>
+            <td>{{item.nome}} ({{item.itemValidacaoPaginas.length}})</td>
             <td><button mat-raised-button color="primary" (click)="openTelaWeb(item)">Incluir</button></td>
           </tr>
           <tr *ngFor="let validador of item.itemValidacaoPaginas">

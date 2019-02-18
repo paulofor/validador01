@@ -8,13 +8,15 @@
       <table class="table table-hover table-striped">
         <thead>
           <tr>
-            <th width="40%">Palavra</th>
+            <th width="20%">Palavra</th>
             <th width="10%">Impressões</th>
             <th width="10%">Cliques</th>
             <th width="10%">Ctr</th>
             <th width="10%">Custo</th>
             <th width="10%">Cpc</th>
             <th width="10%">Conv.</th>
+            <th widht="10%">CPC Palavra</th>
+            <th widht="10%">Vol Palavra</th>
            </tr>
         </thead>
         <tbody>
@@ -27,6 +29,8 @@
               <td>{{item.custo | number : '1.2-2'}}</td>
               <td>{{item.cpcMedio | number : '1.2-2' }}</td>
               <td>{{item.conversao}}</td>
+              <td>{{item.palavraChaveGoogle.palavraChaveEstatisticas[0].mediaCpc | number : '1.3-3'}}</td>
+              <td>{{item.palavraChaveGoogle.palavraChaveEstatisticas[0].volumePesquisa }}</td>
             </tr>
           </ng-container>
         </tbody>

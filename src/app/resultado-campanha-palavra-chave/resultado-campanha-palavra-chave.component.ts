@@ -10,7 +10,19 @@ export class ResultadoCampanhaPalavraChaveComponent implements OnInit {
 
   @Input() campanha: CampanhaAds;
   listaResultado: CampanhaPalavraChaveResultado[];
-  filtro = {'order' : 'quantidadeClique DESC' }
+  //filtro = {'order' : 'quantidadeClique DESC' }
+  filtro = { 
+    "order" : "quantidadeClique DESC" , 
+    "include" : 
+      {   "relation" : "palavraChaveGoogle" , 
+          "scope" : 
+            { "include" : 
+              { "relation" : "palavraChaveEstatisticas" , 
+                "scope" : {"where" : {"maisRecente" : 1 } }
+              }
+            }
+      }
+  }
 
   constructor(private srv: CampanhaAdsApi) { }
 

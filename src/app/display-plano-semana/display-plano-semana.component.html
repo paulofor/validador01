@@ -1,0 +1,51 @@
+<div *ngIf="processoComPlano" class="card">
+  <div class="header">
+    <h4 class="title">Semana: {{semana.primeiroDia | date: 'dd/MM/yyyy' : 'UTC'}} até {{semana.ultimoDia | date:
+      'dd/MM/yyyy' : 'UTC'}} </h4>
+  </div>
+
+  <div class="content table-responsive table-full-width">
+    <table class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th width="25%">Processo</th>
+          <th width="7%">Total Tempo</th>
+          <th width="7%">Segunda</th>
+          <th width="7%">Terça</th>
+          <th width="7%">Quarta</th>
+          <th width="7%">Quinta</th>
+          <th width="7%">Sexta</th>
+          <th width="7%">Sábado</th>
+          <th width="7%">Domingo</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td></td>
+          <td></td>
+          <td style='font-weight:bold;'>{{getDataItemSoma(1) | date : 'HH:mm' : 'UTC'}}</td>
+          <td style='font-weight:bold;'>{{getDataItemSoma(2) | date : 'HH:mm' : 'UTC'}}</td>
+          <td style='font-weight:bold;'>{{getDataItemSoma(3) | date : 'HH:mm' : 'UTC'}}</td>
+          <td style='font-weight:bold;'>{{getDataItemSoma(4) | date : 'HH:mm' : 'UTC'}}</td>
+          <td style='font-weight:bold;'>{{getDataItemSoma(5) | date : 'HH:mm' : 'UTC'}}</td>
+          <td style='font-weight:bold;'>{{getDataItemSoma(6) | date : 'HH:mm' : 'UTC'}}</td>
+          <td style='font-weight:bold;'>{{getDataItemSoma(7) | date : 'HH:mm' : 'UTC'}}</td>
+
+        </tr>
+        <tr *ngFor="let item of processoComPlano">
+          <td>{{item.nome}}</td>
+          <td style='font-weight:bold;'>{{getSoma(item) | date : 'HH:mm' : 'UTC' }}</td>
+          <td *ngFor="let coluna of item.planoExecucaos">
+            {{coluna.tempoEstimado | date : 'HH:mm' : 'UTC'}}
+          </td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>

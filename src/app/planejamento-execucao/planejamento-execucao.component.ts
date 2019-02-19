@@ -9,6 +9,7 @@ import { Semana, SemanaApi } from '../shared/sdk';
 export class PlanejamentoExecucaoComponent implements OnInit {
 
   semana : Semana;
+  semanaAtual : Semana;
 
   constructor(private srv: SemanaApi) { }
 
@@ -21,7 +22,12 @@ export class PlanejamentoExecucaoComponent implements OnInit {
     this.srv.ObtemDeslocada(1)
       .subscribe((resultado) => {
         this.semana = resultado;
-        console.log('Resultado: ' , resultado);
-      })
+        console.log('Proxima: ' , resultado);
+      });
+    this.srv.ObtemDeslocada(0)
+      .subscribe((resultado) => {
+        this.semanaAtual = resultado;
+        console.log('Atual: ' , resultado);
+      });
   }
 }

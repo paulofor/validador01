@@ -1,10 +1,6 @@
-<div *ngIf="semana" class="main-content">
+<div *ngIf="semana && semanaAtual" class="main-content">
 
-  <div class="row">
-    <div class="col-md-12">
-      <p>Semana: {{semana.primeiroDia | date: 'dd/MM/yyyy' : 'UTC'}} até {{semana.ultimoDia | date: 'dd/MM/yyyy' : 'UTC'}} </p>
-    </div>
-  </div>
+
 
   <div class="row">
     <div class="col-md-12">
@@ -12,4 +8,11 @@
     </div>
   </div>
 
+
+  <div class="row">
+    <div class="col-md-12">
+      <app-display-plano-semana [semana]="semanaAtual"></app-display-plano-semana>
+    </div>
+  </div>
+  
 </div>

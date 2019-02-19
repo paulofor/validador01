@@ -169,6 +169,7 @@ import { ExecucaoDiariaComponent } from './execucao-diaria/execucao-diaria.compo
 
 import { PlanoSemanaPorContextoComponent } from './plano-semana-por-contexto/plano-semana-por-contexto.component';
 import { EditaTempoExecucaoComponent } from './edita-tempo-execucao/edita-tempo-execucao.component';
+import { DisplayPlanoSemanaComponent } from './display-plano-semana/display-plano-semana.component';
 
 
 
@@ -301,6 +302,8 @@ import { EditaTempoExecucaoComponent } from './edita-tempo-execucao/edita-tempo-
     PlanoSemanaPorContextoComponent,
  
     EditaTempoExecucaoComponent,
+ 
+    DisplayPlanoSemanaComponent,
 
 
   ],

@@ -39,8 +39,7 @@ export class DisplayPlanoSemanaComponent implements OnInit {
   }
 
   carregaProcesso() {
-    //console.log('IdSemana: ', this.semana.id);
-    //this.criaSomaDia();
+
     this.srv.ObtemComPlanoPorSemana(this.semana.id, 1)
       .subscribe((resultado) => {
         this.processoComPlano = resultado;
@@ -130,16 +129,18 @@ export class DisplayPlanoSemanaComponent implements OnInit {
   }
 
   ajustaTempos() {
-    //console.log('ajustaTempos(ini):', this.processoComPlano);
+    
     this.processoComPlano.forEach((processo: ProcessoNegocio) => {
       processo.planoExecucaos.forEach((plano: PlanoExecucao) => {
-        var tempo = plano.tempoEstimadoStr.split(":");
+        var tempo = plano.tempoEstimado.toString().split(":");
         plano.tempoEstimado = new Date(0);
         plano.tempoEstimado.setUTCHours(Number(tempo[0]));
         plano.tempoEstimado.setUTCMinutes(Number(tempo[1]));
-        plano.tempoExecucao = new Date(0);
+        //plano.tempoExecucao = new Date(0);
+        //plano.tempoEstimado = new Date("1970-01-01 " + plano.tempoEstimado);
       })
     });
+    
     this.calculaSoma();
   }
 

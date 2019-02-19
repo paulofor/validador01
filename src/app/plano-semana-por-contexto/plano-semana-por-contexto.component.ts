@@ -71,6 +71,7 @@ export class PlanoSemanaPorContextoComponent implements OnInit {
   }
 
   onSubmit() {
+    this.ajustaTempos();
     console.log('Chamou submit');
     var lista = { "lista": this.processoComPlano };
     console.log("Envio:", JSON.stringify(lista));

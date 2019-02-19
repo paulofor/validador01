@@ -37,7 +37,7 @@
           <td>{{item.nome}}</td>
           <td style='font-weight:bold;'>{{getSoma(item) | date : 'HH:mm' : 'UTC' }}</td>
           <td *ngFor="let coluna of item.planoExecucaos">
-            {{coluna.tempoEstimado | date : 'HH:mm' : 'UTC'}}
+            {{coluna.tempoEstimado | date : 'HH:mm' : 'UTC' }}
           </td>
 
         </tr>

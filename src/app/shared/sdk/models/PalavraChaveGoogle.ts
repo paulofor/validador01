@@ -1,12 +1,17 @@
 /* tslint:disable */
+import {
+  PalavraChaveEstatistica
+} from '../index';
 
 declare var Object: any;
 export interface PalavraChaveGoogleInterface {
   "palavra": string;
+  palavraChaveEstatisticas?: PalavraChaveEstatistica[];
 }
 
 export class PalavraChaveGoogle implements PalavraChaveGoogleInterface {
   "palavra": string;
+  palavraChaveEstatisticas: PalavraChaveEstatistica[];
   constructor(data?: PalavraChaveGoogleInterface) {
     Object.assign(this, data);
   }
@@ -46,6 +51,14 @@ export class PalavraChaveGoogle implements PalavraChaveGoogleInterface {
         },
       },
       relations: {
+        palavraChaveEstatisticas: {
+          name: 'palavraChaveEstatisticas',
+          type: 'PalavraChaveEstatistica[]',
+          model: 'PalavraChaveEstatistica',
+          relationType: 'hasMany',
+                  keyFrom: 'palavra',
+          keyTo: 'palavraChaveGoogleId'
+        },
       }
     }
   }

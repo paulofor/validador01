@@ -358,6 +358,8 @@ export class ProcessoNegocioApi extends BaseLoopBackApi {
   /**
    * Obtem todas as informações para o dia
    *
+   * @param {number} idContexto 
+   *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
    *   from the server.
@@ -372,13 +374,14 @@ export class ProcessoNegocioApi extends BaseLoopBackApi {
    *
    *  - `listaTempoExecucao` – `{any}` - 
    */
-  public ObtemPlanoDia(customHeaders?: Function): Observable<any> {
+  public ObtemPlanoDia(idContexto: any, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/ProcessoNegocios/obtemPlanoDia";
     let _routeParams: any = {};
     let _postBody: any = {};
     let _urlParams: any = {};
+    if (typeof idContexto !== 'undefined' && idContexto !== null) _urlParams.idContexto = idContexto;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }

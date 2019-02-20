@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ProcessoNegocioApi, DiaSemana, Semana, PlanoExecucao, TempoExecucao } from '../shared/sdk';
+import { ProcessoNegocioApi, DiaSemana, Semana, PlanoExecucao, TempoExecucao, Contexto } from '../shared/sdk';
 import { MatDialog } from '@angular/material';
 import { ActivatedRoute } from '@angular/router';
 import { EditaTempoExecucaoComponent } from '../edita-tempo-execucao/edita-tempo-execucao.component';
+import { Params } from '@angular/router';
 
 @Component({
   selector: 'app-execucao-diaria',
@@ -16,6 +17,8 @@ export class ExecucaoDiariaComponent implements OnInit {
   listaPlano: PlanoExecucao[];
   listaExecucao: TempoExecucao[];
 
+  //contexto: Contexto;
+
 
   constructor(private srv: ProcessoNegocioApi, private route: ActivatedRoute, private dialog: MatDialog) { }
 
@@ -24,7 +27,9 @@ export class ExecucaoDiariaComponent implements OnInit {
   }
 
   carregaDados() {
-    this.srv.ObtemPlanoDia()
+    this.route.params.subscribe((params: Params) => {
+      let id  = params['id'];
+      this.srv.ObtemPlanoDia(id)
       .subscribe((result) => {
         console.log('Result: ', result);
         this.semana = result.semana;
@@ -33,6 +38,8 @@ export class ExecucaoDiariaComponent implements OnInit {
         this.listaExecucao = result.listaTempoExecucao;
         console.log('ListaPlano', this.listaPlano);
       })
+    });
+   
   }
 
 

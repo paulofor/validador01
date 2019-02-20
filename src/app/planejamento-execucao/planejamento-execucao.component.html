@@ -1,18 +1,25 @@
-<div *ngIf="semana && semanaAtual" class="main-content">
+<div *ngIf="semana && semanaAtual && semanaAnterior && contexto" class="main-content">
 
 
 
   <div class="row">
     <div class="col-md-12">
-      <app-plano-semana-por-contexto [semana]="semana"></app-plano-semana-por-contexto>
+      <app-plano-semana-por-contexto [semana]="semana" [contexto]="contexto"></app-plano-semana-por-contexto>
     </div>
   </div>
 
 
   <div class="row">
     <div class="col-md-12">
-      <app-display-plano-semana [semana]="semanaAtual"></app-display-plano-semana>
+      <app-display-plano-semana [semana]="semanaAtual" [contexto]="contexto"></app-display-plano-semana>
     </div>
   </div>
-  
+
+
+  <div class="row">
+    <div class="col-md-12">
+      <app-display-plano-semana [semana]="semanaAnterior" [contexto]="contexto"></app-display-plano-semana>
+    </div>
+  </div>
+
 </div>

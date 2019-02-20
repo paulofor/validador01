@@ -1,7 +1,8 @@
 <form  *ngIf="processoComPlano" (ngSubmit)="onSubmit()" >
   <div class="card">
     <div class="header">
-      <h4 class="title">Semana: {{semana.primeiroDia | date: 'dd/MM/yyyy' : 'UTC'}} até {{semana.ultimoDia | date: 'dd/MM/yyyy' : 'UTC'}} </h4>
+      <h4 class="title">Semana: {{semana.primeiroDia | date: 'dd/MM/yyyy' : 'UTC'}} 
+        até {{semana.ultimoDia | date: 'dd/MM/yyyy' : 'UTC'}} ({{semana.seqAno}}) - {{contexto.nome}}</h4>
     </div>
 
     <div class="content table-responsive table-full-width">

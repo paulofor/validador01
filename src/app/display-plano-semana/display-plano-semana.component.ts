@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Semana, PlanoExecucao, ProcessoNegocio, ProcessoNegocioApi, DiaSemana } from '../shared/sdk';
 import { ProcessoNegocioService } from '../comum/processo-negocio.service';
+import { Contexto } from '../shared/sdk/models';
 
 @Component({
   selector: 'app-display-plano-semana',
@@ -17,7 +18,7 @@ export class DisplayPlanoSemanaComponent implements OnInit {
   somaProcesso: PlanoExecucao[];
   totalTempo: Date;
 
-  @Input() contexto: string;
+  @Input() contexto: Contexto;
   @Input() semana: Semana;
   
 
@@ -40,7 +41,7 @@ export class DisplayPlanoSemanaComponent implements OnInit {
 
   carregaProcesso() {
 
-    this.srv.ObtemComPlanoPorSemana(this.semana.id, 1)
+    this.srv.ObtemComPlanoPorSemana(this.semana.id, this.contexto.id)
       .subscribe((resultado) => {
         this.processoComPlano = resultado;
         console.log('carregaProcesso:', this.processoComPlano);

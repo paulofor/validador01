@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { DiaSemana, ProcessoNegocio, Semana, ProcessoNegocioApi, PlanoExecucao } from '../shared/sdk';
+import { DiaSemana, ProcessoNegocio, Semana, ProcessoNegocioApi, PlanoExecucao, Contexto } from '../shared/sdk';
 import { Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ProcessoNegocioService } from '../comum/processo-negocio.service';
+
 
 
 @Component({
@@ -19,7 +20,7 @@ export class PlanoSemanaPorContextoComponent implements OnInit {
   somaProcesso: PlanoExecucao[];
   totalTempo: Date;
 
-  @Input() contexto: string;
+  @Input() contexto: Contexto;
   @Input() semana: Semana;
   myControl = new FormControl();
 
@@ -43,7 +44,7 @@ export class PlanoSemanaPorContextoComponent implements OnInit {
   carregaProcesso() {
     //console.log('IdSemana: ', this.semana.id);
     //this.criaSomaDia();
-    this.srv.ObtemComPlanoPorSemana(this.semana.id, 1)
+    this.srv.ObtemComPlanoPorSemana(this.semana.id, this.contexto.id)
       .subscribe((resultado) => {
         this.processoComPlano = resultado;
         console.log('carregaProcesso:', this.processoComPlano);

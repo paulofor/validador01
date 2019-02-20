@@ -149,9 +149,9 @@ export const routes : Routes = [
 
     { path : 'melhoresPalavrasBaixoCusto' , component: NavegadorPalavrasComponent},
 
-    { path : 'planejamentoExecucao' , component: PlanejamentoExecucaoComponent },
+    { path : 'planejamentoExecucao/:id' , component: PlanejamentoExecucaoComponent },
 
-    { path : 'execucaoDiaria' , component: ExecucaoDiariaComponent },
+    { path : 'execucaoDiaria/:id' , component: ExecucaoDiariaComponent },
 
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

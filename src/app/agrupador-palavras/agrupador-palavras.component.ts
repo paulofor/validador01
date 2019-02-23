@@ -56,7 +56,7 @@ export class AgrupadorPalavrasComponent implements OnInit {
     palavraNova.palavraChaveGoogleId = palavraStr;
     palavraNova.projetoMySqlId = this.idProjeto;
     console.log('Vai inserir relacionamento: ', palavraNova);
-    this.srvPalavra.create(palavraNova)
+    this.srvPalavra.CriaRelacionamento(palavraNova)
       .subscribe((resultado) => {
         console.log('Resultado:', resultado);
         this.carregaPalavras();

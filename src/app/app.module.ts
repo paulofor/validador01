@@ -171,9 +171,11 @@ import { PlanoSemanaPorContextoComponent } from './plano-semana-por-contexto/pla
 import { EditaTempoExecucaoComponent } from './edita-tempo-execucao/edita-tempo-execucao.component';
 import { DisplayPlanoSemanaComponent } from './display-plano-semana/display-plano-semana.component';
 
+import { LOCALE_ID } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
 
-
-
+registerLocaleData(localePt, 'pt-BR');
 
 @NgModule({
   declarations: [
@@ -372,7 +374,8 @@ import { DisplayPlanoSemanaComponent } from './display-plano-semana/display-plan
     SDKModels,
     LoopBackAuth,
     InternalStorage,
-    ProcessoNegocioApi
+    ProcessoNegocioApi,
+    { provide: LOCALE_ID, useValue: 'pt-BR' }
   ],
   bootstrap: [AppComponent]
 })

@@ -27,7 +27,7 @@
     </mat-form-field>
   </mat-dialog-content>
 
-  <mat-dialog-actions>
+  <mat-dialog-actions *ngIf="(pagina.permiteEdicao==1)">
     <button mat-button>Enviar</button>
     <button mat-button mat-dialog-close>Cancelar</button>
   </mat-dialog-actions>

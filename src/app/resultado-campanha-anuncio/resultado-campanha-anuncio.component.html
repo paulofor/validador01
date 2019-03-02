@@ -23,9 +23,9 @@
           <tr>
             <td>{{item.anuncioAds.titulo1}}</td>
             <td>{{item.anuncioAds.titulo2}}</td>
-            <td>{{item.quantidadeImpressao}}</td>
+            <td>{{item.quantidadeImpressao}}  ({{item.anuncioAds.mediaImpressao | number: '1.1-1' }})</td>
             <td>{{item.quantidadeClique}}</td>
-            <td>{{item.ctr | number : '1.2-2' }}</td>
+            <td>{{item.ctr | number : '1.2-2' }} ({{item.anuncioAds.mediaCtr | number: '1.1-1' }})</td>
             <td>{{item.custo | number: '1.2-2'}}</td>
             <td>{{item.cpcMedio | number : '1.2-2' }}</td>
             <td>{{item.conversao}}</td>

@@ -22,6 +22,8 @@ export class EditaPaginaValidacaoWebComponent implements OnInit {
     if (!this.data.item) {
       console.log("fluxo nova");
       this.item = new PaginaValidacaoWeb();
+      this.item.permiteEdicao = 1;
+      console.log('Item: ' , JSON.stringify(this.item));
     } else {
       console.log('fluxo altera');
       this.item = this.data.item;

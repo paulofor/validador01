@@ -4,6 +4,7 @@ import {
   MvpCanvasMySql,
   GanhoDorCanvasMySql,
   PaginaValidacaoWeb,
+  ItemValidacaoPagina,
   EtapaProjeto,
   ConceitoProduto
 } from '../index';
@@ -16,11 +17,15 @@ export interface ProjetoMySqlInterface {
   "mercado"?: string;
   "dor"?: string;
   "codigo"?: string;
+  "custoCampanha"?: number;
+  "quantidadeCampanha"?: number;
+  "tempoTotal"?: Date;
   "etapaProjetoId"?: number;
   projetoCanvasMySqls?: ProjetoCanvasMySql[];
   mvpCanvasMySqls?: MvpCanvasMySql[];
   ganhoDorCanvasMySqls?: GanhoDorCanvasMySql[];
   paginaValidacaoWebs?: PaginaValidacaoWeb[];
+  itemValidacaoPaginas?: ItemValidacaoPagina[];
   etapaProjeto?: EtapaProjeto;
   conceitoProdutos?: ConceitoProduto[];
 }
@@ -32,11 +37,15 @@ export class ProjetoMySql implements ProjetoMySqlInterface {
   "mercado": string;
   "dor": string;
   "codigo": string;
+  "custoCampanha": number;
+  "quantidadeCampanha": number;
+  "tempoTotal": Date;
   "etapaProjetoId": number;
   projetoCanvasMySqls: ProjetoCanvasMySql[];
   mvpCanvasMySqls: MvpCanvasMySql[];
   ganhoDorCanvasMySqls: GanhoDorCanvasMySql[];
   paginaValidacaoWebs: PaginaValidacaoWeb[];
+  itemValidacaoPaginas: ItemValidacaoPagina[];
   etapaProjeto: EtapaProjeto;
   conceitoProdutos: ConceitoProduto[];
   constructor(data?: ProjetoMySqlInterface) {
@@ -96,6 +105,18 @@ export class ProjetoMySql implements ProjetoMySqlInterface {
           name: 'codigo',
           type: 'string'
         },
+        "custoCampanha": {
+          name: 'custoCampanha',
+          type: 'number'
+        },
+        "quantidadeCampanha": {
+          name: 'quantidadeCampanha',
+          type: 'number'
+        },
+        "tempoTotal": {
+          name: 'tempoTotal',
+          type: 'Date'
+        },
         "etapaProjetoId": {
           name: 'etapaProjetoId',
           type: 'number'
@@ -130,6 +151,14 @@ export class ProjetoMySql implements ProjetoMySqlInterface {
           name: 'paginaValidacaoWebs',
           type: 'PaginaValidacaoWeb[]',
           model: 'PaginaValidacaoWeb',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'projetoMySqlId'
+        },
+        itemValidacaoPaginas: {
+          name: 'itemValidacaoPaginas',
+          type: 'ItemValidacaoPagina[]',
+          model: 'ItemValidacaoPagina',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'projetoMySqlId'

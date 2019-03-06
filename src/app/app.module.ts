@@ -174,6 +174,8 @@ import { DisplayPlanoSemanaComponent } from './display-plano-semana/display-plan
 import { LOCALE_ID } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
+import { ListaItemValidacaoProjetoComponent } from './lista-item-validacao-projeto/lista-item-validacao-projeto.component';
+import { EditaCriaItemValidacaoProjetoComponent } from './edita-cria-item-validacao-projeto/edita-cria-item-validacao-projeto.component';
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -306,6 +308,10 @@ registerLocaleData(localePt, 'pt-BR');
     EditaTempoExecucaoComponent,
  
     DisplayPlanoSemanaComponent,
+ 
+    ListaItemValidacaoProjetoComponent,
+ 
+    EditaCriaItemValidacaoProjetoComponent,
 
 
   ],
@@ -337,7 +343,8 @@ registerLocaleData(localePt, 'pt-BR');
     CampanhaEditaCriaV2Component,
     EscolhedorAnuncioParaCampanhaComponent,
     EditaCadProjetoComponent,
-    EditaTempoExecucaoComponent 
+    EditaTempoExecucaoComponent ,
+    EditaCriaItemValidacaoProjetoComponent
   ],
   imports: [
     BrowserModule,

@@ -154,6 +154,32 @@ export class CampanhaAnuncioResultadoApi extends BaseLoopBackApi {
   }
 
   /**
+   * Lista de resultados por idAnuncio, campanhas com resultados
+   *
+   * @param {number} idAnuncio 
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `CampanhaAnuncioResultado` object.)
+   * </em>
+   */
+  public ListaComResultadoPorIdAnuncio(idAnuncio: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/CampanhaAnuncioResultados/listaComResultadoPorIdAnuncio";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof idAnuncio !== 'undefined' && idAnuncio !== null) _urlParams.idAnuncio = idAnuncio;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * The name of the model represented by this $resource,
    * i.e. `CampanhaAnuncioResultado`.
    */

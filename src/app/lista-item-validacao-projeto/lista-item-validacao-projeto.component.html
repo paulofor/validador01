@@ -1,0 +1,38 @@
+<div class="card" *ngIf="listaItemValidacao">
+  <div class="header">
+    <h4 class="title">Projeto: {{projeto.nome}}</h4>
+    <h4 class="subtitle">Conceito: {{conceito.titulo}}</h4>
+    <td><button mat-raised-button color="primary" (click)="openDialog()">Novo</button></td>
+
+  </div>
+
+  <div class="content table-responsive table-full-width">
+    <table class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th width="90%">Telas App</th>
+          <th width="10%"></th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr *ngFor="let validador of listaItemValidacao">
+          <td colspan="2">
+            <mat-card>
+              <mat-card-title>{{validador.titulo}}</mat-card-title>
+              <mat-card-subtitle>{{validador.bullet1}}</mat-card-subtitle>
+              <mat-card-subtitle>{{validador.bullet2}}</mat-card-subtitle>
+              <mat-card-subtitle>{{validador.bullet3}}</mat-card-subtitle>
+              <mat-card-actions>
+                <button mat-stroked-button color="primary" [disabled]="validador.permiteEdicao==0"
+                  (click)="openDialog(validador)">Alterar</button>
+              </mat-card-actions>
+            </mat-card>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+</div>

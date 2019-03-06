@@ -181,8 +181,8 @@ export class SDKBrowserModule {
         DiaSemanaApi,
         ContextoApi,
         internalStorageProvider,
-        { provide: SDKStorage, useClass: StorageBrowser },
- 
+        { provide: SDKStorage, useClass: StorageBrowser }
+
       ]
     };
   }

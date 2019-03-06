@@ -60,6 +60,7 @@ import { ListaCadProjetoComponent } from '../lista-cad-projeto/lista-cad-projeto
 import { MelhoresPalavrasBaixoCustoComponent } from '../melhores-palavras-baixo-custo/melhores-palavras-baixo-custo.component';
 import { PlanejamentoExecucaoComponent } from '../planejamento-execucao/planejamento-execucao.component';
 import { ExecucaoDiariaComponent } from '../execucao-diaria/execucao-diaria.component';
+import { ListaItemValidacaoProjetoComponent } from '../lista-item-validacao-projeto/lista-item-validacao-projeto.component';
 
 
 
@@ -132,6 +133,7 @@ export const routes : Routes = [
     { path: 'paginaValidacaoGerenciador/:id', component: PaginaValidacaoGerenciadorComponent},
 
     { path: 'itemValidacaoGerenciador/:id' , component : ItemValidacaoGerenciadorComponent },
+    { path: 'itemValidacaoProjeto/:id' , component : ListaItemValidacaoProjetoComponent },
 
     { path: 'projetosFaseValidacao' , component: ProjetoFaseValidacaoComponent },
     { path: 'detalheTelaApp/:id' , component: TelaAppDetalheComponent },

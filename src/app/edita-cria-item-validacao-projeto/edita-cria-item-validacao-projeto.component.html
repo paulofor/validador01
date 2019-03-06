@@ -1,0 +1,64 @@
+<div *ngIf="item" class="home-page">
+
+  <div class="banner">
+    <div class="container">
+      <h3 class="logo-font">{{nomeTela}}</h3>
+      
+    </div>
+  </div>
+
+  <div  *ngIf="item" class="container">
+    <form class="example-full-width" (ngSubmit)="onSubmit()">
+
+      <mat-dialog-content >
+        <mat-form-field class="example-full-width">
+          <input matInput [(ngModel)]="item.titulo" name="titulo" placeholder="Titulo" />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <textarea matInput [(ngModel)]="item.descricaoSimples" name="descricaoSimples" placeholder="Descrição" ></textarea>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput [(ngModel)]="item.bullet1" name="bullet1" placeholder="Bullet 1" />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput [(ngModel)]="item.bullet2" name="bullet2" placeholder="Bullet 2" />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput [(ngModel)]="item.bullet3" name="bullet3" placeholder="Bullet 3" />
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput [(ngModel)]="item.mensagemImagem" name="mensagemImagem" placeholder="Mensagem da imagem" />
+        </mat-form-field>
+
+        <div class="content table-responsive table-full-width">
+          <img height="300"  *ngIf="item.urlImagem" src="{{item.urlImagem}}" >
+
+          <image-upload url="{{urlUpload}}" 
+          (uploadFinished)="onUploadFinished($event)"
+          buttonCaption="Escolha a imagem"
+          dropBoxMessage="ou arraste aqui"
+          ></image-upload>
+        </div>
+
+
+      <div class="content table-responsive table-full-width">
+        <img height="300" *ngIf="item.urlImagem2" src="{{item.urlImagem2}}" >
+
+        <image-upload url="{{urlUpload}}" 
+        (uploadFinished)="onUploadFinished2($event)"
+        buttonCaption="Escolha a imagem2"
+        dropBoxMessage="ou arraste aqui"
+        ></image-upload>
+      </div>
+    </mat-dialog-content>
+
+      <mat-dialog-actions>
+        <button mat-button>Enviar</button>
+        <button mat-button mat-dialog-close>Cancelar</button>
+      </mat-dialog-actions>
+
+    </form>
+  </div>
+
+</div>
+

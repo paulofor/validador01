@@ -1,7 +1,8 @@
 <div *ngIf="campanha" class="card">
   <div class="header">
     <h4 class="title">Anúncios da Campanhas</h4>
-    <button class="btn btn-primary btn-sm " *ngIf="campanha.permiteEdicao==1" (click)="openDialog(campanha)">Escolher</button>
+    <button class="btn btn-primary btn-sm " *ngIf="campanha.permiteEdicao==1"
+      (click)="openDialog(campanha)">Escolher</button>
   </div>
 
   <div class="content table-responsive table-full-width">
@@ -12,9 +13,16 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of campanha.campanhaAnuncioResultados">
-          <td><app-display-anuncio [item]="item.anuncioAds"></app-display-anuncio></td>
-        </tr>
+        <ng-container *ngFor="let item of campanha.campanhaAnuncioResultados">
+          <tr>
+            <td>{{item.idAds}}</td>
+          </tr>
+          <tr>
+            <td>
+              <app-display-anuncio [item]="item.anuncioAds"></app-display-anuncio>
+            </td>
+          </tr>
+        </ng-container>
       </tbody>
     </table>
 

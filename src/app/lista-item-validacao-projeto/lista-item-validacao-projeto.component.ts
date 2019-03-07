@@ -26,10 +26,13 @@ export class ListaItemValidacaoProjetoComponent implements OnInit {
       let id = params['id'];
       this.servico.ProjetoConceitoItemValidacao(id)
         .subscribe((result) => {
-          //console.log("ProjetoConceitoTelaItemValidacao: " , JSON.stringify(result));
+          console.log("Result - ProjetoConceitoTelaItemValidacao: " , JSON.stringify(result));
           this.conceito = result.conceito;
           this.projeto = result.projeto;
           this.listaItemValidacao = result.listaItemValidacao;
+          console.log('projeto:' , this.projeto);
+          console.log('conceito:' , this.conceito);
+          console.log('listaItemValidacao:' , this.listaItemValidacao);
           //console.log('listaTelaApp:' , this.listaTelaApp);
         })
     })

@@ -16,10 +16,12 @@ export class ResultadoCampanhaPalavraChaveComponent implements OnInit {
     "include" : 
       {   "relation" : "palavraChaveGoogle" , 
           "scope" : 
-            { "include" : 
+            { "include" : [
               { "relation" : "palavraChaveEstatisticas" , 
                 "scope" : {"where" : {"maisRecente" : 1 } }
-              }
+              },
+              { "relation" : "palavraGoogleProjetos" }
+              ]
             }
       }
   }

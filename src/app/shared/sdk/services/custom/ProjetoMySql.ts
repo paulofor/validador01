@@ -1576,7 +1576,7 @@ export class ProjetoMySqlApi extends BaseLoopBackApi {
   public ProjetoConceitoTelaItemValidacao(idProjeto: any, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/ProjetoMySqls/projetoConceitoItemValidacao";
+    "/ProjetoMySqls/projetoConceitoTelaItemValidacao";
     let _routeParams: any = {};
     let _postBody: any = {};
     let _urlParams: any = {};

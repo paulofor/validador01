@@ -34,6 +34,7 @@ export class ResultadoCampanhaPalavraChaveComponent implements OnInit {
 
 
   carregaResultados() {
+    console.log('filtro' , this.filtro);
     this.srv.getCampanhaPalavraChaveResultados(this.campanha.id, this.filtro)
       .subscribe((result:CampanhaPalavraChaveResultado[])=> {
         this.listaResultado = result;

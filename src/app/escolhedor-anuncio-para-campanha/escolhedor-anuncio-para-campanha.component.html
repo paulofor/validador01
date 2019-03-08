@@ -10,7 +10,9 @@
                     <li draggable *ngFor="let item of listaItemDisponivel" 
                         [dragScope]="'default-css'" 
                         [dragData]="item" class="list-group-item">
-                        {{item.titulo2}}
+                        <p>{{item.titulo1}}</p>
+                        <p>{{item.titulo2}}</p> 
+                        <p>( Conv:{{item.mediaConversao | number : '1.1-1'}}, Ctr:{{item.mediaCtr | number : '1.1-1'}}% )</p>
                     </li>
                 </ul>
             </div>

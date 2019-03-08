@@ -1,6 +1,6 @@
 <div *ngIf="campanha" class="card">
   <div class="header">
-    <h4 class="title">Anúncios da Campanhas</h4>
+    <h4 class="title">Anúncios da Campanhas ({{campanha.campanhaAnuncioResultados.length}})</h4>
     <button class="btn btn-primary btn-sm " *ngIf="campanha.permiteEdicao==1"
       (click)="openDialog(campanha)">Escolher</button>
   </div>
@@ -9,7 +9,7 @@
     <table class="table table-hover table-striped">
       <thead>
         <tr>
-          <th>Anúncios</th>
+          <th>Anúncios </th>
         </tr>
       </thead>
       <tbody>

@@ -27,7 +27,7 @@
               <td>{{item.quantidadeClique}}</td>
               <td>
                 {{item.ctr | number : '1.2-2' }}
-                ({{(item.palavraChaveGoogle.palavraGoogleProjeto.length>0?:item.palavraChaveGoogle.palavraGoogleProjeto[0].mediaCtr:'-')}})
+                ({{item.palavraChaveGoogle.palavraGoogleProjetos.length>0?item.palavraChaveGoogle.palavraGoogleProjetos[0].mediaCtr:'-'}})
               </td>
               <td>{{item.custo | number : '1.2-2'}}</td>
               <td>{{item.cpcMedio | number : '1.2-2' }}</td>

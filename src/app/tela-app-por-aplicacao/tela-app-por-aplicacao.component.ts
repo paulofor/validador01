@@ -24,7 +24,7 @@ export class TelaAppPorAplicacaoComponent implements OnInit {
   atualizaLista() {
     this.route.paramMap.pipe(
       switchMap((params: ParamMap) =>
-        this.servico.getTelaWebs(this.aplicacao.id_aplicacao)
+        this.servico.getTelaApps(this.aplicacao.id_aplicacao)
       )).subscribe((listaTelaApp : TelaApp[]) => {
         this.listaTelaApp = listaTelaApp;
       })

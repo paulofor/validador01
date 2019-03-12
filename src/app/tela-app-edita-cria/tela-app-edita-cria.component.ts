@@ -22,17 +22,14 @@ export class TelaAppEditaCriaComponent implements OnInit {
 
   ngOnInit() {
     console.log("Parametro entrada", this.data);
+    this.aplicacao = this.data.aplicacao;
     this.carregaListaEntidade();
     if (!this.data.telaApp) {
       console.log("fluxo nova telaWeb");
       this.item = new TelaApp();
-      //this.listaAtributo = [];
-      this.aplicacao = this.data.aplicacao;
-      //this.carregaAtributoEntidade();
     } else {
       console.log('fluxo altera telaWeb');
       this.item = this.data.telaWeb;
-      //this.carregaAtributoEntidade();
       console.log('Item:' , JSON.stringify(this.item));
     }
   }

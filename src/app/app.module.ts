@@ -176,6 +176,8 @@ import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 import { ListaItemValidacaoProjetoComponent } from './lista-item-validacao-projeto/lista-item-validacao-projeto.component';
 import { EditaCriaItemValidacaoProjetoComponent } from './edita-cria-item-validacao-projeto/edita-cria-item-validacao-projeto.component';
+import { TelaAppPorAplicacaoComponent } from './tela-app-por-aplicacao/tela-app-por-aplicacao.component';
+import { TelaAppEditaCriaComponent } from './tela-app-edita-cria/tela-app-edita-cria.component';
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -312,6 +314,10 @@ registerLocaleData(localePt, 'pt-BR');
     ListaItemValidacaoProjetoComponent,
  
     EditaCriaItemValidacaoProjetoComponent,
+ 
+    TelaAppPorAplicacaoComponent,
+ 
+    TelaAppEditaCriaComponent,
 
 
   ],

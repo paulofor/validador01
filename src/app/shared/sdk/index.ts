@@ -99,6 +99,7 @@ import { TempoExecucaoApi } from './services/custom/TempoExecucao';
 import { PlanoExecucaoApi } from './services/custom/PlanoExecucao';
 import { DiaSemanaApi } from './services/custom/DiaSemana';
 import { ContextoApi } from './services/custom/Contexto';
+import { ModeloTelaAppApi } from './services/custom/ModeloTelaApp';
 /**
 * @module SDKBrowserModule
 * @description
@@ -180,6 +181,7 @@ export class SDKBrowserModule {
         PlanoExecucaoApi,
         DiaSemanaApi,
         ContextoApi,
+        ModeloTelaAppApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser },
 

@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { TelaApp, Aplicacao, TelaAppApi } from '../shared/sdk';
+import { TelaApp, Aplicacao, TelaAppApi, ModeloTelaApp, Entidade, EntidadeApi, ModeloTelaAppApi } from '../shared/sdk';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
@@ -11,15 +11,18 @@ export class TelaAppEditaCriaComponent implements OnInit {
 
   item: TelaApp;
   aplicacao: Aplicacao;
+  listaModeloTela : ModeloTelaApp[];
+  listaEntidade : Entidade[];
   //listaAtributo: Atributo_entidade[];
 
   constructor(public dialogRef: MatDialogRef<TelaAppEditaCriaComponent>
     , @Inject(MAT_DIALOG_DATA) public data: any,
-    private telaAppSrv: TelaAppApi) {
+    private telaAppSrv: TelaAppApi, private entidadeSrv: EntidadeApi, private modeloTelaSrv: ModeloTelaAppApi) {
   }
 
   ngOnInit() {
     console.log("Parametro entrada", this.data);
+    this.carregaListaEntidade();
     if (!this.data.telaApp) {
       console.log("fluxo nova telaWeb");
       this.item = new TelaApp();
@@ -32,9 +35,17 @@ export class TelaAppEditaCriaComponent implements OnInit {
       //this.carregaAtributoEntidade();
       console.log('Item:' , JSON.stringify(this.item));
     }
-
-
   }
+
+  carregaListaEntidade() {
+    var filtro = { 'where' : {'id_aplicacao' : this.aplicacao.id_aplicacao }};
+    this.entidadeSrv.find(filtro)
+      .subscribe((result:Entidade[]) => {
+        this.listaEntidade = result;
+      })
+  }
+
+
 
   onSubmit() {
     console.log('Model: ' + JSON.stringify(this.item));

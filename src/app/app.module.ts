@@ -350,7 +350,8 @@ registerLocaleData(localePt, 'pt-BR');
     EscolhedorAnuncioParaCampanhaComponent,
     EditaCadProjetoComponent,
     EditaTempoExecucaoComponent ,
-    EditaCriaItemValidacaoProjetoComponent
+    EditaCriaItemValidacaoProjetoComponent,
+    TelaAppEditaCriaComponent
   ],
   imports: [
     BrowserModule,

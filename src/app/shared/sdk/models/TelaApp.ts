@@ -2,7 +2,8 @@
 import {
   ItemValidacaoPagina,
   Entidade,
-  ConceitoProduto
+  ConceitoProduto,
+  ModeloTelaApp
 } from '../index';
 
 declare var Object: any;
@@ -11,10 +12,13 @@ export interface TelaAppInterface {
   "tipo"?: string;
   "id"?: number;
   "entidadeId"?: number;
+  "aplicacaoId"?: number;
   "conceitoProdutoId"?: number;
+  "modeloTelaAppId"?: number;
   itemValidacaoPaginas?: ItemValidacaoPagina[];
   entidade?: Entidade;
   conceitoProduto?: ConceitoProduto;
+  modeloTelaApp?: ModeloTelaApp;
 }
 
 export class TelaApp implements TelaAppInterface {
@@ -22,10 +26,13 @@ export class TelaApp implements TelaAppInterface {
   "tipo": string;
   "id": number;
   "entidadeId": number;
+  "aplicacaoId": number;
   "conceitoProdutoId": number;
+  "modeloTelaAppId": number;
   itemValidacaoPaginas: ItemValidacaoPagina[];
   entidade: Entidade;
   conceitoProduto: ConceitoProduto;
+  modeloTelaApp: ModeloTelaApp;
   constructor(data?: TelaAppInterface) {
     Object.assign(this, data);
   }
@@ -75,8 +82,16 @@ export class TelaApp implements TelaAppInterface {
           name: 'entidadeId',
           type: 'number'
         },
+        "aplicacaoId": {
+          name: 'aplicacaoId',
+          type: 'number'
+        },
         "conceitoProdutoId": {
           name: 'conceitoProdutoId',
+          type: 'number'
+        },
+        "modeloTelaAppId": {
+          name: 'modeloTelaAppId',
           type: 'number'
         },
       },
@@ -103,6 +118,14 @@ export class TelaApp implements TelaAppInterface {
           model: 'ConceitoProduto',
           relationType: 'belongsTo',
                   keyFrom: 'conceitoProdutoId',
+          keyTo: 'id'
+        },
+        modeloTelaApp: {
+          name: 'modeloTelaApp',
+          type: 'ModeloTelaApp',
+          model: 'ModeloTelaApp',
+          relationType: 'belongsTo',
+                  keyFrom: 'modeloTelaAppId',
           keyTo: 'id'
         },
       }

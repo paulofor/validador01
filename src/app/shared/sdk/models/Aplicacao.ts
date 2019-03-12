@@ -3,6 +3,7 @@ import {
   ProjetoMySql,
   Entidade,
   TelaWeb,
+  TelaApp,
   ComponenteWeb
 } from '../index';
 
@@ -17,6 +18,7 @@ export interface AplicacaoInterface {
   projetoMySql?: ProjetoMySql;
   entidades?: Entidade[];
   telaWebs?: TelaWeb[];
+  telaApps?: TelaApp[];
   componenteWebs?: ComponenteWeb[];
 }
 
@@ -30,6 +32,7 @@ export class Aplicacao implements AplicacaoInterface {
   projetoMySql: ProjetoMySql;
   entidades: Entidade[];
   telaWebs: TelaWeb[];
+  telaApps: TelaApp[];
   componenteWebs: ComponenteWeb[];
   constructor(data?: AplicacaoInterface) {
     Object.assign(this, data);
@@ -110,6 +113,14 @@ export class Aplicacao implements AplicacaoInterface {
           name: 'telaWebs',
           type: 'TelaWeb[]',
           model: 'TelaWeb',
+          relationType: 'hasMany',
+                  keyFrom: 'id_aplicacao',
+          keyTo: 'aplicacaoId'
+        },
+        telaApps: {
+          name: 'telaApps',
+          type: 'TelaApp[]',
+          model: 'TelaApp',
           relationType: 'hasMany',
                   keyFrom: 'id_aplicacao',
           keyTo: 'aplicacaoId'

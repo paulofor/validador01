@@ -19,7 +19,10 @@
                 <tr *ngFor="let projeto of projetos">
                   <td>{{projeto.nome}}</td>
                   <td>{{projeto.mercado}}</td>
-                  <td><a routerLink="/projetoAplicacao/{{projeto.id}}">Detalhe</a></td>
+                  <td>
+                    <a href="javascript:void(0);" (click)="openDialog(projeto)">Edita</a>&nbsp;
+                    <a routerLink="/projetoAplicacao/{{projeto.id}}">Detalhe</a>
+                  </td>
                 </tr>
               </tbody>
             </table>

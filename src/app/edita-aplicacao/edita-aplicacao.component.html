@@ -1,0 +1,22 @@
+<h2 mat-dialog-title>Aplicacao - {{aplicacao.nome}}</h2>
+
+<form class="example-full-width" (ngSubmit)="onSubmit()">
+
+  <mat-dialog-content>
+
+    <mat-form-field class="example-full-width">
+      <input matInput maxlength="30" #nome [(ngModel)]="atributo.nome" name="nome" placeholder="Nome" />
+    </mat-form-field>
+
+
+
+
+
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button mat-raised-button>Salvar</button>
+    <button mat-raised-button mat-dialog-close>Fechar</button>
+  </mat-dialog-actions>
+
+</form>

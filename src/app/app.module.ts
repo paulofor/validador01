@@ -178,6 +178,7 @@ import { ListaItemValidacaoProjetoComponent } from './lista-item-validacao-proje
 import { EditaCriaItemValidacaoProjetoComponent } from './edita-cria-item-validacao-projeto/edita-cria-item-validacao-projeto.component';
 import { TelaAppPorAplicacaoComponent } from './tela-app-por-aplicacao/tela-app-por-aplicacao.component';
 import { TelaAppEditaCriaComponent } from './tela-app-edita-cria/tela-app-edita-cria.component';
+import { EditaAplicacaoComponent } from './edita-aplicacao/edita-aplicacao.component';
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -318,6 +319,8 @@ registerLocaleData(localePt, 'pt-BR');
     TelaAppPorAplicacaoComponent,
  
     TelaAppEditaCriaComponent,
+ 
+    EditaAplicacaoComponent,
 
 
   ],
@@ -351,7 +354,8 @@ registerLocaleData(localePt, 'pt-BR');
     EditaCadProjetoComponent,
     EditaTempoExecucaoComponent ,
     EditaCriaItemValidacaoProjetoComponent,
-    TelaAppEditaCriaComponent
+    TelaAppEditaCriaComponent,
+    EditaAplicacaoComponent
   ],
   imports: [
     BrowserModule,

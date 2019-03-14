@@ -13,6 +13,7 @@
                   <th>Projeto</th>
                   <th>Mercado</th>
                   <th></th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
@@ -20,9 +21,12 @@
                   <td>{{projeto.nome}}</td>
                   <td>{{projeto.mercado}}</td>
                   <td>
-                    <a href="javascript:void(0);" (click)="openDialog(projeto)">Edita</a>&nbsp;
+                    <a *ngIf="(projeto.aplicacaos.length>0)" href="javascript:void(0);" (click)="openDialog(projeto.aplicacaos[0])">Edita</a>
+                  </td>
+                  <td>
                     <a routerLink="/projetoAplicacao/{{projeto.id}}">Detalhe</a>
                   </td>
+
                 </tr>
               </tbody>
             </table>

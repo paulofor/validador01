@@ -5,6 +5,7 @@ import {
   GanhoDorCanvasMySql,
   PaginaValidacaoWeb,
   ItemValidacaoPagina,
+  Aplicacao,
   EtapaProjeto,
   ConceitoProduto
 } from '../index';
@@ -26,6 +27,7 @@ export interface ProjetoMySqlInterface {
   ganhoDorCanvasMySqls?: GanhoDorCanvasMySql[];
   paginaValidacaoWebs?: PaginaValidacaoWeb[];
   itemValidacaoPaginas?: ItemValidacaoPagina[];
+  aplicacaos?: Aplicacao[];
   etapaProjeto?: EtapaProjeto;
   conceitoProdutos?: ConceitoProduto[];
 }
@@ -46,6 +48,7 @@ export class ProjetoMySql implements ProjetoMySqlInterface {
   ganhoDorCanvasMySqls: GanhoDorCanvasMySql[];
   paginaValidacaoWebs: PaginaValidacaoWeb[];
   itemValidacaoPaginas: ItemValidacaoPagina[];
+  aplicacaos: Aplicacao[];
   etapaProjeto: EtapaProjeto;
   conceitoProdutos: ConceitoProduto[];
   constructor(data?: ProjetoMySqlInterface) {
@@ -159,6 +162,14 @@ export class ProjetoMySql implements ProjetoMySqlInterface {
           name: 'itemValidacaoPaginas',
           type: 'ItemValidacaoPagina[]',
           model: 'ItemValidacaoPagina',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'projetoMySqlId'
+        },
+        aplicacaos: {
+          name: 'aplicacaos',
+          type: 'Aplicacao[]',
+          model: 'Aplicacao',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'projetoMySqlId'

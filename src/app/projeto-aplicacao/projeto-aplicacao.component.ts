@@ -22,8 +22,7 @@ export class ProjetoAplicacaoComponent implements OnInit {
   }
 
   atualizaLista() {
-    var filtro = {'include' : 'aplicacao'};
-    this.projetoService.find()
+    this.projetoService.ListaComAplicacaoAtiva()
       .subscribe((projetos: ProjetoMySql[]) =>
         this.projetos = projetos
       );
@@ -36,7 +35,7 @@ export class ProjetoAplicacaoComponent implements OnInit {
     this.dialog.open(EditaAplicacaoComponent, {
       width: '800px',
       data: {
-        aplicacao: aplicacao
+        item: aplicacao
       }
     });
   }

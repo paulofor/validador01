@@ -17,6 +17,14 @@
     </mat-form-field>
 
 
+    <mat-form-field class="example-full-width">
+      <mat-select placeholder="Tipo" #tipo [(ngModel)]="item.tipo" name="tipo">
+        <mat-option value="LISTA">Lista</mat-option>
+        <mat-option value="DETALHE">Detalhe</mat-option>
+        <mat-option value="EDITA">Edita</mat-option>
+      </mat-select>
+    </mat-form-field>
+
   </mat-dialog-content>
 
   <mat-dialog-actions>

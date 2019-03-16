@@ -24,12 +24,12 @@ export class TelaAppEditaCriaComponent implements OnInit {
     console.log("Parametro entrada", this.data);
     this.aplicacao = this.data.aplicacao;
     this.carregaListaEntidade();
-    if (!this.data.telaApp) {
-      console.log("fluxo nova telaWeb");
+    if (!this.data.item) {
+      console.log("fluxo nova telaApp");
       this.item = new TelaApp();
     } else {
-      console.log('fluxo altera telaWeb');
-      this.item = this.data.telaWeb;
+      console.log('fluxo altera telaApp');
+      this.item = this.data.item;
       console.log('Item:' , JSON.stringify(this.item));
     }
   }

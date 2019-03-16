@@ -14,6 +14,7 @@ export class TelaAppPorAplicacaoComponent implements OnInit {
 
   @Input() aplicacao: Aplicacao;
   listaTelaApp : TelaApp[];
+  filtro = { 'include' : 'entidade' };
 
   constructor(private route: ActivatedRoute, private servico: AplicacaoApi, private dialog: MatDialog) { }
 
@@ -24,14 +25,14 @@ export class TelaAppPorAplicacaoComponent implements OnInit {
   atualizaLista() {
     this.route.paramMap.pipe(
       switchMap((params: ParamMap) =>
-        this.servico.getTelaApps(this.aplicacao.id_aplicacao)
+        this.servico.getTelaApps(this.aplicacao.id_aplicacao, this.filtro)
       )).subscribe((listaTelaApp : TelaApp[]) => {
         this.listaTelaApp = listaTelaApp;
       })
   }
 
  
-  openDialog(aplicacao: any,telaWeb?: any) {
+  openDialog(aplicacao: any,tela?: any) {
     console.log('aplicacao:', aplicacao);
     this.dialog.afterAllClosed.subscribe(result => {
       console.log('Dialog result: ${result}'); 
@@ -41,7 +42,7 @@ export class TelaAppPorAplicacaoComponent implements OnInit {
       width: '800px',
       data: {
         aplicacao: this.aplicacao,
-        telaWeb : telaWeb
+        item : tela
       }
     });
   }

@@ -10,12 +10,15 @@
             <table class="table table-hover table-striped">
               <thead>
                 <tr>
-                  <th width="40%">Projeto</th>
+                  <th width="30%">Projeto</th>
                   <th width="10%">Código</th>
                   <th width="10%">Custo Total</th>
+                  <th width="10%">Palavras</th>
+                  <th width="10%">Anúncios</th>
                   <th width="10%">Fechadas</th>
-                  <th width="10%"></th>
-                  <th width="10%"></th>
+                  <th width="10%">Abertas</th>
+                  <th width="5%"></th>
+                  <th width="5%"></th>
                 </tr>
               </thead>
               <tbody>
@@ -23,7 +26,10 @@
                   <td>{{projeto.nome}}</td>
                   <td>{{projeto.codigo}}</td>
                   <td>{{projeto.custoCampanha | number : '1.2-2'}}</td>
+                  <td>{{projeto.quantidadePalavraChave}}</td>
+                  <td>{{projeto.quantidadeAnuncio}}</td>
                   <td>{{projeto.quantidadeCampanha}}</td>
+                  <td>{{projeto.quantidadeCampanhaAberta}}</td>
                   <td><a routerLink="/listaCampanhaConceitoAtivoPorProjeto/{{projeto.id}}">conceito</a></td>
                   <td><a routerLink="/listaCampanhaPorProjeto/{{projeto.id}}">geral</a></td>
                 </tr>

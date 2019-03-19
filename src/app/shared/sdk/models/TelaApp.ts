@@ -10,6 +10,7 @@ declare var Object: any;
 export interface TelaAppInterface {
   "nome"?: string;
   "tipo"?: string;
+  "sobrescreveHtml"?: number;
   "id"?: number;
   "entidadeId"?: number;
   "aplicacaoId"?: number;
@@ -24,6 +25,7 @@ export interface TelaAppInterface {
 export class TelaApp implements TelaAppInterface {
   "nome": string;
   "tipo": string;
+  "sobrescreveHtml": number;
   "id": number;
   "entidadeId": number;
   "aplicacaoId": number;
@@ -73,6 +75,10 @@ export class TelaApp implements TelaAppInterface {
         "tipo": {
           name: 'tipo',
           type: 'string'
+        },
+        "sobrescreveHtml": {
+          name: 'sobrescreveHtml',
+          type: 'number'
         },
         "id": {
           name: 'id',

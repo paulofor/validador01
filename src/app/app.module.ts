@@ -43,7 +43,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatTableModule} from '@angular/material/table';
 
-import { MatFormFieldModule, MatInputModule, MatButtonModule, MatAutocompleteModule } from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatButtonModule, MatAutocompleteModule, MatCheckbox, MatCheckboxModule } from '@angular/material';
 import { ProjetoCanvasEditaComponent } from './projeto-canvas-edita/projeto-canvas-edita.component';
 import { CanvasMvpComponent } from './canvas-mvp/canvas-mvp.component';
 import { MvpCanvasCriaComponent } from './mvp-canvas-cria/mvp-canvas-cria.component';
@@ -383,6 +383,7 @@ registerLocaleData(localePt, 'pt-BR');
     MatTableModule,
     MatAutocompleteModule,
     ReactiveFormsModule,
+    MatCheckboxModule
 
   ],
   providers: [

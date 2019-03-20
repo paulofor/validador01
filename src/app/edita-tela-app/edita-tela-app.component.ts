@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { Inject } from '@angular/core';
-import { TelaApp, TelaAppApi, ConceitoProduto } from '../shared/sdk';
+import { TelaApp, TelaAppApi, ConceitoProduto, Entidade } from '../shared/sdk';
 
 @Component({
   selector: 'app-edita-tela-app',
@@ -25,6 +25,7 @@ export class EditaTelaAppComponent implements OnInit {
     } else {
       console.log('fluxo altera');
       this.item = this.data.item;
+      this.item.entidade = new Entidade();
       console.log('Item:', JSON.stringify(this.item));
     }
   }

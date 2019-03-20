@@ -1,6 +1,6 @@
 <div *ngIf="aplicacao" class="main-content">
     <div class="container-fluid">
-
+        {{ aplicacao.projetoMySql.nome }}  ({{aplicacao.projetoMySql.codigo}})
         <div class="row">
             <div class="col-md-12">
                 <app-itens-canvas-para-entidades [aplicacao]="aplicacao"></app-itens-canvas-para-entidades>

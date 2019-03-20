@@ -23,7 +23,7 @@ export class ResumoAplicacaoComponent implements OnInit {
   carregaAplicacao() {
     this.route.paramMap.pipe(
       switchMap((params: ParamMap) =>
-        this.aplicacaoSrv.findOne({ "where" : { "projetoMySqlId" : params.get('id') } })))
+        this.aplicacaoSrv.findOne({ "include":"projetoMySql" , "where" : { "projetoMySqlId" : params.get('id') } })))
         .subscribe((result: Aplicacao) => {
         console.log('Aplicacao: ' + JSON.stringify(result));
         this.aplicacao = result;

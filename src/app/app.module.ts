@@ -179,6 +179,8 @@ import { EditaCriaItemValidacaoProjetoComponent } from './edita-cria-item-valida
 import { TelaAppPorAplicacaoComponent } from './tela-app-por-aplicacao/tela-app-por-aplicacao.component';
 import { TelaAppEditaCriaComponent } from './tela-app-edita-cria/tela-app-edita-cria.component';
 import { EditaAplicacaoComponent } from './edita-aplicacao/edita-aplicacao.component';
+import { ListaPaletaCorComponent } from './lista-paleta-cor/lista-paleta-cor.component';
+import { EditaPaletaCorComponent } from './edita-paleta-cor/edita-paleta-cor.component';
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -321,6 +323,10 @@ registerLocaleData(localePt, 'pt-BR');
     TelaAppEditaCriaComponent,
  
     EditaAplicacaoComponent,
+ 
+    ListaPaletaCorComponent,
+ 
+    EditaPaletaCorComponent,
 
 
   ],

@@ -4,7 +4,8 @@ import {
   Entidade,
   TelaWeb,
   TelaApp,
-  ComponenteWeb
+  ComponenteWeb,
+  PaletaAplicacao
 } from '../index';
 
 declare var Object: any;
@@ -20,6 +21,7 @@ export interface AplicacaoInterface {
   telaWebs?: TelaWeb[];
   telaApps?: TelaApp[];
   componenteWebs?: ComponenteWeb[];
+  paletaAplicacaos?: PaletaAplicacao[];
 }
 
 export class Aplicacao implements AplicacaoInterface {
@@ -34,6 +36,7 @@ export class Aplicacao implements AplicacaoInterface {
   telaWebs: TelaWeb[];
   telaApps: TelaApp[];
   componenteWebs: ComponenteWeb[];
+  paletaAplicacaos: PaletaAplicacao[];
   constructor(data?: AplicacaoInterface) {
     Object.assign(this, data);
   }
@@ -129,6 +132,14 @@ export class Aplicacao implements AplicacaoInterface {
           name: 'componenteWebs',
           type: 'ComponenteWeb[]',
           model: 'ComponenteWeb',
+          relationType: 'hasMany',
+                  keyFrom: 'id_aplicacao',
+          keyTo: 'aplicacaoId'
+        },
+        paletaAplicacaos: {
+          name: 'paletaAplicacaos',
+          type: 'PaletaAplicacao[]',
+          model: 'PaletaAplicacao',
           relationType: 'hasMany',
                   keyFrom: 'id_aplicacao',
           keyTo: 'aplicacaoId'

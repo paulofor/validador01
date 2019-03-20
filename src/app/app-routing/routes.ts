@@ -61,6 +61,7 @@ import { MelhoresPalavrasBaixoCustoComponent } from '../melhores-palavras-baixo-
 import { PlanejamentoExecucaoComponent } from '../planejamento-execucao/planejamento-execucao.component';
 import { ExecucaoDiariaComponent } from '../execucao-diaria/execucao-diaria.component';
 import { ListaItemValidacaoProjetoComponent } from '../lista-item-validacao-projeto/lista-item-validacao-projeto.component';
+import { ListaPaletaCorComponent } from '../lista-paleta-cor/lista-paleta-cor.component';
 
 
 
@@ -154,6 +155,8 @@ export const routes : Routes = [
     { path : 'planejamentoExecucao/:id' , component: PlanejamentoExecucaoComponent },
 
     { path : 'execucaoDiaria/:id' , component: ExecucaoDiariaComponent },
+
+    { path : 'listaPaletaCor' , component : ListaPaletaCorComponent} ,
 
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

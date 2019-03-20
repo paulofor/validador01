@@ -52,6 +52,8 @@ import { PlanoExecucao } from '../../models/PlanoExecucao';
 import { DiaSemana } from '../../models/DiaSemana';
 import { Contexto } from '../../models/Contexto';
 import { ModeloTelaApp } from '../../models/ModeloTelaApp';
+import { PaletaCor } from '../../models/PaletaCor';
+import { PaletaAplicacao } from '../../models/PaletaAplicacao';
 
 export interface Models { [name: string]: any }
 
@@ -111,6 +113,8 @@ export class SDKModels {
     DiaSemana: DiaSemana,
     Contexto: Contexto,
     ModeloTelaApp: ModeloTelaApp,
+    PaletaCor: PaletaCor,
+    PaletaAplicacao: PaletaAplicacao,
     
   };
 

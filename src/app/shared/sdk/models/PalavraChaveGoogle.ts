@@ -1,5 +1,6 @@
 /* tslint:disable */
 import {
+  CampanhaPalavraChaveResultado,
   PalavraChaveEstatistica,
   PalavraGoogleProjeto
 } from '../index';
@@ -7,12 +8,14 @@ import {
 declare var Object: any;
 export interface PalavraChaveGoogleInterface {
   "palavra": string;
+  campanhaPalavraChaveResultados?: CampanhaPalavraChaveResultado[];
   palavraChaveEstatisticas?: PalavraChaveEstatistica[];
   palavraGoogleProjetos?: PalavraGoogleProjeto[];
 }
 
 export class PalavraChaveGoogle implements PalavraChaveGoogleInterface {
   "palavra": string;
+  campanhaPalavraChaveResultados: CampanhaPalavraChaveResultado[];
   palavraChaveEstatisticas: PalavraChaveEstatistica[];
   palavraGoogleProjetos: PalavraGoogleProjeto[];
   constructor(data?: PalavraChaveGoogleInterface) {
@@ -54,6 +57,14 @@ export class PalavraChaveGoogle implements PalavraChaveGoogleInterface {
         },
       },
       relations: {
+        campanhaPalavraChaveResultados: {
+          name: 'campanhaPalavraChaveResultados',
+          type: 'CampanhaPalavraChaveResultado[]',
+          model: 'CampanhaPalavraChaveResultado',
+          relationType: 'hasMany',
+                  keyFrom: 'palavra',
+          keyTo: 'palavraChaveGoogleId'
+        },
         palavraChaveEstatisticas: {
           name: 'palavraChaveEstatisticas',
           type: 'PalavraChaveEstatistica[]',

@@ -1,3 +1,37 @@
-<p>
-  lista-paleta-cor works!
-</p>
+<div class="main-content" *ngIf="listaPaleta">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="header">
+          <h4 class="title">Paletas</h4>
+          <button class="btn btn-primary btn-sm " (click)="openDialog()">Novo</button>
+        </div>
+        <div class="content table-responsive table-full-width">
+            <table class="table table-hover table-striped">
+              <thead>
+                <tr>
+                  <th width="15%">Cor1</th>
+                  <th widht="15%">Cor2</th>
+                  <th width="15%">Cor3</th>
+                  <th width="15%">Cor4</th>
+                  <th width="15%">Cor5</th>
+                  <th width="25%"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of listaPaleta">
+                  <td>{{item.cor1}}</td>
+                  <td>{{item.cor2}}</td>
+                  <td>{{item.cor3}}</td>
+                  <td>{{item.cor4}}</td>
+                  <td>{{item.cor5}}</td>
+                  <td><button class="btn btn-primary btn-sm "  (click)="openDialog(item)">Alterar</button></td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+      </div>
+    </div>
+  </div>
+  </div>

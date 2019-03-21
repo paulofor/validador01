@@ -1,3 +1,36 @@
-<p>
-  edita-paleta-cor works!
-</p>
+<h2 mat-dialog-title>Paleta de Cor</h2>
+
+<form class="example-full-width" (ngSubmit)="onSubmit()">
+
+  <mat-dialog-content>
+
+    <mat-form-field class="example-full-width">
+      <input matInput maxlength="10" #cor1 [(ngModel)]="item.cor1" name="cor1" placeholder="Cor 1" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput maxlength="10" #cor2 [(ngModel)]="item.cor2" name="cor2" placeholder="Cor 2" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput maxlength="10" #cor3 [(ngModel)]="item.cor3" name="cor3" placeholder="Cor 3" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput maxlength="10" #cor4 [(ngModel)]="item.cor4" name="cor4" placeholder="Cor 4" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput maxlength="10" #cor5 [(ngModel)]="item.cor5" name="cor5" placeholder="Cor 5" />
+    </mat-form-field>
+
+
+
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button mat-raised-button>Salvar</button>
+    <button mat-raised-button mat-dialog-close>Fechar</button>
+  </mat-dialog-actions>
+
+</form>

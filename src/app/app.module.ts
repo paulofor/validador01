@@ -361,7 +361,8 @@ registerLocaleData(localePt, 'pt-BR');
     EditaTempoExecucaoComponent ,
     EditaCriaItemValidacaoProjetoComponent,
     TelaAppEditaCriaComponent,
-    EditaAplicacaoComponent
+    EditaAplicacaoComponent,
+    EditaPaletaCorComponent
   ],
   imports: [
     BrowserModule,

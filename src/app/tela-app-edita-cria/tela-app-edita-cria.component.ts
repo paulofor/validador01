@@ -30,6 +30,7 @@ export class TelaAppEditaCriaComponent implements OnInit {
     } else {
       console.log('fluxo altera telaApp');
       this.item = this.data.item;
+
       console.log('Item:' , JSON.stringify(this.item));
     }
   }
@@ -55,6 +56,7 @@ export class TelaAppEditaCriaComponent implements OnInit {
         this.closeDialog();
       });
     } else {
+      this.item.entidade = null;
       this.telaAppSrv.updateAttributes(this.item.id, this.item, (err, obj) => {
         console.log("Erro:" + err.message);
       }).subscribe((e: any) => {

@@ -7,7 +7,9 @@
     <table class="table table-hover table-striped">
       <thead>
         <tr>
-          <th>Nome</th>
+          <th width="50%">Nome</th>
+          <th width="15%">Chave</th>
+          <th width="15%">Identificador</th>
           <th></th>
         </tr>
       </thead>
@@ -17,7 +19,12 @@
             <td>
               {{item.nome}}
             </td>
-
+            <td>
+              {{(item.atributoChave?item.atributoChave.nome:'-')}}
+            </td>
+            <td>
+              {{(item.atributoIdentificador?item.atributoIdentificador.nome:'-')}}
+            </td>
             <td align="right">
               <a routerLink="/entidadeResumo/{{item.id_entidade}}">Detalhe</a>&nbsp;&nbsp;
               <button class="btn btn-primary btn-sm " (click)="alteraEntidade(item)">Alterar</button>

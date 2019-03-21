@@ -16,6 +16,10 @@ export class EntidadePorAplicacaoV2Component implements OnInit {
 
   @Input() aplicacao: Aplicacao;
   listaEntidade : Entidade[];
+  filtro = { 
+    'include' : ['atributoChave', 'atributoIdentificador' ] , 
+    'order' : 'nome'
+  }
 
 
   constructor(private route: ActivatedRoute, private servico: AplicacaoApi, private dialog: MatDialog) { }
@@ -27,7 +31,7 @@ export class EntidadePorAplicacaoV2Component implements OnInit {
   atualizaLista() {
     this.route.paramMap.pipe(
       switchMap((params: ParamMap) =>
-        this.servico.getEntidades(this.aplicacao.id_aplicacao)
+        this.servico.getEntidades(this.aplicacao.id_aplicacao, this.filtro)
       )).subscribe((listaEntidade : Entidade[]) => {
         this.listaEntidade = listaEntidade;
       })

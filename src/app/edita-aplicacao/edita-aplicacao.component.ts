@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { Inject } from '@angular/core';
-import { Aplicacao, AplicacaoApi } from '../shared/sdk';
+import { Aplicacao, AplicacaoApi, PaletaCorApi, PaletaCor } from '../shared/sdk';
 
 @Component({
   selector: 'app-edita-aplicacao',
@@ -11,12 +11,21 @@ import { Aplicacao, AplicacaoApi } from '../shared/sdk';
 export class EditaAplicacaoComponent implements OnInit {
 
   item: Aplicacao;
+  listaPaleta : PaletaCor[];
 
   constructor(public dialogRef: MatDialogRef<EditaAplicacaoComponent>, @Inject(MAT_DIALOG_DATA) public data: any,
-    private servico: AplicacaoApi) {
+    private servico: AplicacaoApi, private srvPaleta: PaletaCorApi) {
+  }
+
+  carregaPaleta() {
+    this.srvPaleta.find()
+      .subscribe((result: PaletaCor[]) => {
+        this.listaPaleta = result;
+      })
   }
 
   ngOnInit() {
+    this.carregaPaleta();
     console.log("Parametro entrada", this.data);
     if (!this.data.item) {
       console.log("fluxo nova");
@@ -26,6 +35,7 @@ export class EditaAplicacaoComponent implements OnInit {
       this.item = this.data.item;
       console.log('Item:', JSON.stringify(this.item));
     }
+
   }
 
   onSubmit() {

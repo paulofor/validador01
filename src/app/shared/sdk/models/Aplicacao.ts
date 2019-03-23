@@ -5,6 +5,7 @@ import {
   TelaWeb,
   TelaApp,
   ComponenteWeb,
+  PaletaCor,
   PaletaAplicacao
 } from '../index';
 
@@ -16,11 +17,13 @@ export interface AplicacaoInterface {
   "namespace"?: string;
   "diretorio_java"?: string;
   "projetoMySqlId"?: number;
+  "paletaCorsId"?: number;
   projetoMySql?: ProjetoMySql;
   entidades?: Entidade[];
   telaWebs?: TelaWeb[];
   telaApps?: TelaApp[];
   componenteWebs?: ComponenteWeb[];
+  paletaCors?: PaletaCor;
   paletaAplicacaos?: PaletaAplicacao[];
 }
 
@@ -31,11 +34,13 @@ export class Aplicacao implements AplicacaoInterface {
   "namespace": string;
   "diretorio_java": string;
   "projetoMySqlId": number;
+  "paletaCorsId": number;
   projetoMySql: ProjetoMySql;
   entidades: Entidade[];
   telaWebs: TelaWeb[];
   telaApps: TelaApp[];
   componenteWebs: ComponenteWeb[];
+  paletaCors: PaletaCor;
   paletaAplicacaos: PaletaAplicacao[];
   constructor(data?: AplicacaoInterface) {
     Object.assign(this, data);
@@ -94,6 +99,10 @@ export class Aplicacao implements AplicacaoInterface {
           name: 'projetoMySqlId',
           type: 'number'
         },
+        "paletaCorsId": {
+          name: 'paletaCorsId',
+          type: 'number'
+        },
       },
       relations: {
         projetoMySql: {
@@ -135,6 +144,14 @@ export class Aplicacao implements AplicacaoInterface {
           relationType: 'hasMany',
                   keyFrom: 'id_aplicacao',
           keyTo: 'aplicacaoId'
+        },
+        paletaCors: {
+          name: 'paletaCors',
+          type: 'PaletaCor',
+          model: 'PaletaCor',
+          relationType: 'belongsTo',
+                  keyFrom: 'paletaCorsId',
+          keyTo: 'id'
         },
         paletaAplicacaos: {
           name: 'paletaAplicacaos',

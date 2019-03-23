@@ -5,14 +5,12 @@ export interface PaletaAplicacaoInterface {
   "ativo"?: number;
   "id"?: number;
   "aplicacaoId"?: number;
-  "paletaCorId"?: number;
 }
 
 export class PaletaAplicacao implements PaletaAplicacaoInterface {
   "ativo": number;
   "id": number;
   "aplicacaoId": number;
-  "paletaCorId": number;
   constructor(data?: PaletaAplicacaoInterface) {
     Object.assign(this, data);
   }
@@ -56,10 +54,6 @@ export class PaletaAplicacao implements PaletaAplicacaoInterface {
         },
         "aplicacaoId": {
           name: 'aplicacaoId',
-          type: 'number'
-        },
-        "paletaCorId": {
-          name: 'paletaCorId',
           type: 'number'
         },
       },

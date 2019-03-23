@@ -181,6 +181,7 @@ import { TelaAppEditaCriaComponent } from './tela-app-edita-cria/tela-app-edita-
 import { EditaAplicacaoComponent } from './edita-aplicacao/edita-aplicacao.component';
 import { ListaPaletaCorComponent } from './lista-paleta-cor/lista-paleta-cor.component';
 import { EditaPaletaCorComponent } from './edita-paleta-cor/edita-paleta-cor.component';
+import { DisplayPaletaCorComponent } from './display-paleta-cor/display-paleta-cor.component';
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -327,6 +328,8 @@ registerLocaleData(localePt, 'pt-BR');
     ListaPaletaCorComponent,
  
     EditaPaletaCorComponent,
+ 
+    DisplayPaletaCorComponent,
 
 
   ],

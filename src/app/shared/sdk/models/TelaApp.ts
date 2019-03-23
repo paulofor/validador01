@@ -3,7 +3,8 @@ import {
   ItemValidacaoPagina,
   Entidade,
   ConceitoProduto,
-  ModeloTelaApp
+  ModeloTelaApp,
+  ComponenteApp
 } from '../index';
 
 declare var Object: any;
@@ -20,6 +21,7 @@ export interface TelaAppInterface {
   entidade?: Entidade;
   conceitoProduto?: ConceitoProduto;
   modeloTelaApp?: ModeloTelaApp;
+  componenteApps?: ComponenteApp[];
 }
 
 export class TelaApp implements TelaAppInterface {
@@ -35,6 +37,7 @@ export class TelaApp implements TelaAppInterface {
   entidade: Entidade;
   conceitoProduto: ConceitoProduto;
   modeloTelaApp: ModeloTelaApp;
+  componenteApps: ComponenteApp[];
   constructor(data?: TelaAppInterface) {
     Object.assign(this, data);
   }
@@ -133,6 +136,14 @@ export class TelaApp implements TelaAppInterface {
           relationType: 'belongsTo',
                   keyFrom: 'modeloTelaAppId',
           keyTo: 'id'
+        },
+        componenteApps: {
+          name: 'componenteApps',
+          type: 'ComponenteApp[]',
+          model: 'ComponenteApp',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'telaAppId'
         },
       }
     }

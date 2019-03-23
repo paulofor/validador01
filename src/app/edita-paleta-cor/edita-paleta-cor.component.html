@@ -4,6 +4,11 @@
 
   <mat-dialog-content>
 
+
+    <mat-form-field class="example-full-width">
+      <input matInput maxlength="30" #nome [(ngModel)]="item.nome" name="nome" placeholder="Nome" />
+    </mat-form-field>
+
     <mat-form-field class="example-full-width">
       <input matInput maxlength="10" #cor1 [(ngModel)]="item.cor1" name="cor1" placeholder="Cor 1" />
     </mat-form-field>

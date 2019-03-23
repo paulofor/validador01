@@ -53,5 +53,6 @@ export * from './Contexto';
 export * from './ModeloTelaApp';
 export * from './PaletaCor';
 export * from './PaletaAplicacao';
+export * from './ComponenteApp';
 export * from './SDKModels';
 export * from './logger.service';

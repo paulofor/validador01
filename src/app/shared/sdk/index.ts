@@ -102,6 +102,7 @@ import { ContextoApi } from './services/custom/Contexto';
 import { ModeloTelaAppApi } from './services/custom/ModeloTelaApp';
 import { PaletaCorApi } from './services/custom/PaletaCor';
 import { PaletaAplicacaoApi } from './services/custom/PaletaAplicacao';
+import { ComponenteAppApi } from './services/custom/ComponenteApp';
 /**
 * @module SDKBrowserModule
 * @description
@@ -186,6 +187,7 @@ export class SDKBrowserModule {
         ModeloTelaAppApi,
         PaletaCorApi,
         PaletaAplicacaoApi,
+        ComponenteAppApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser },
 

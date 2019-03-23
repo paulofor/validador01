@@ -1,7 +1,4 @@
 /* tslint:disable */
-import {
-  PaletaAplicacao
-} from '../index';
 
 declare var Object: any;
 export interface PaletaCorInterface {
@@ -10,8 +7,8 @@ export interface PaletaCorInterface {
   "cor3"?: string;
   "cor4"?: string;
   "cor5"?: string;
+  "nome"?: string;
   "id"?: number;
-  paletaAplicacaos?: PaletaAplicacao[];
 }
 
 export class PaletaCor implements PaletaCorInterface {
@@ -20,8 +17,8 @@ export class PaletaCor implements PaletaCorInterface {
   "cor3": string;
   "cor4": string;
   "cor5": string;
+  "nome": string;
   "id": number;
-  paletaAplicacaos: PaletaAplicacao[];
   constructor(data?: PaletaCorInterface) {
     Object.assign(this, data);
   }
@@ -75,20 +72,16 @@ export class PaletaCor implements PaletaCorInterface {
           name: 'cor5',
           type: 'string'
         },
+        "nome": {
+          name: 'nome',
+          type: 'string'
+        },
         "id": {
           name: 'id',
           type: 'number'
         },
       },
       relations: {
-        paletaAplicacaos: {
-          name: 'paletaAplicacaos',
-          type: 'PaletaAplicacao[]',
-          model: 'PaletaAplicacao',
-          relationType: 'hasMany',
-                  keyFrom: 'id',
-          keyTo: 'paletaCorId'
-        },
       }
     }
   }

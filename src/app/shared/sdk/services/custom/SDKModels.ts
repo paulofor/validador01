@@ -54,6 +54,7 @@ import { Contexto } from '../../models/Contexto';
 import { ModeloTelaApp } from '../../models/ModeloTelaApp';
 import { PaletaCor } from '../../models/PaletaCor';
 import { PaletaAplicacao } from '../../models/PaletaAplicacao';
+import { ComponenteApp } from '../../models/ComponenteApp';
 
 export interface Models { [name: string]: any }
 
@@ -115,6 +116,7 @@ export class SDKModels {
     ModeloTelaApp: ModeloTelaApp,
     PaletaCor: PaletaCor,
     PaletaAplicacao: PaletaAplicacao,
+    ComponenteApp: ComponenteApp,
     
   };
 

@@ -12,6 +12,13 @@
       <input matInput maxlength="30" #namespace [(ngModel)]="item.namespace" name="namespace" placeholder="Namespace" />
     </mat-form-field>
 
+    <mat-form-field class="example-full-width">
+      <mat-select placeholder="Paleta de cor" #paletaCorsId [(ngModel)]="item.paletaCorsId" name="paletaCorsId">
+        <mat-option *ngFor="let paleta of listaPaleta" [value]="paleta.id">
+          {{ paleta.nome }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
 
 
   </mat-dialog-content>

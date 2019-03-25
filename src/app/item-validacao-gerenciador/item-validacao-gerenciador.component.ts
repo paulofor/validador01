@@ -3,6 +3,7 @@ import { ConceitoProduto, ProjetoMySql, TelaWeb, TelaApp, ProjetoMySqlApi } from
 import { ActivatedRoute, Params } from '@angular/router';
 import { EditaItemValidacaoTelaComponent } from '../edita-item-validacao-tela/edita-item-validacao-tela.component';
 import { MatDialog } from '@angular/material';
+import { GerenciaTelaAppComponent } from '../gerencia-tela-app/gerencia-tela-app.component';
 
 @Component({
   selector: 'app-item-validacao-gerenciador',
@@ -36,6 +37,21 @@ export class ItemValidacaoGerenciadorComponent implements OnInit {
         })
     })
   }
+
+  openGerenciaTelaApp(tela, item?) {
+    this.dialog.afterAllClosed.subscribe(result => {
+      console.log('Dialog result: ${result}');
+      this.carregaItens();
+    });
+    this.dialog.open(GerenciaTelaAppComponent, {
+      width: '800px',
+      data: {
+        item: item,
+        telaApp : tela
+      }
+    });
+  }
+
   openTelaApp(tela, item?) {
     this.dialog.afterAllClosed.subscribe(result => {
       console.log('Dialog result: ${result}');

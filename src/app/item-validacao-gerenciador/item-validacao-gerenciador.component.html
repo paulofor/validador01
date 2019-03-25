@@ -27,6 +27,7 @@
                 <mat-card-subtitle>{{validador.bullet3}}</mat-card-subtitle>
                 <mat-card-actions>
                   <button mat-stroked-button color="primary" [disabled]="validador.permiteEdicao==0" (click)="openTelaApp(item, validador)">Alterar</button>
+                  <button mat-stroked-button color="secundary" [disabled]="validador.permiteEdicao==0" (click)="openGerenciaTelaApp(item, validador)">TelasApp</button>
                 </mat-card-actions>
               </mat-card>
             </td>

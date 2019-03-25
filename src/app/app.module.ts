@@ -182,6 +182,7 @@ import { EditaAplicacaoComponent } from './edita-aplicacao/edita-aplicacao.compo
 import { ListaPaletaCorComponent } from './lista-paleta-cor/lista-paleta-cor.component';
 import { EditaPaletaCorComponent } from './edita-paleta-cor/edita-paleta-cor.component';
 import { DisplayPaletaCorComponent } from './display-paleta-cor/display-paleta-cor.component';
+import { GerenciaTelaAppComponent } from './gerencia-tela-app/gerencia-tela-app.component';
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -330,6 +331,8 @@ registerLocaleData(localePt, 'pt-BR');
     EditaPaletaCorComponent,
  
     DisplayPaletaCorComponent,
+ 
+    GerenciaTelaAppComponent,
 
 
   ],
@@ -365,7 +368,8 @@ registerLocaleData(localePt, 'pt-BR');
     EditaCriaItemValidacaoProjetoComponent,
     TelaAppEditaCriaComponent,
     EditaAplicacaoComponent,
-    EditaPaletaCorComponent
+    EditaPaletaCorComponent,
+    GerenciaTelaAppComponent
   ],
   imports: [
     BrowserModule,

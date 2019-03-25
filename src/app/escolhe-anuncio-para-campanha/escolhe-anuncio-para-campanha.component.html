@@ -1,6 +1,6 @@
 <div *ngIf="campanha" class="card">
   <div class="header">
-    <h4 class="title">Anúncios da Campanhas ({{campanha.campanhaAnuncioResultados.length}})</h4>
+    <h4  *ngIf="campanha" class="title">Anúncios da Campanhas ({{campanha.campanhaAnuncioResultados.length}})</h4>
     <button class="btn btn-primary btn-sm " *ngIf="campanha.permiteEdicao==1"
       (click)="openDialog(campanha)">Escolher</button>
   </div>

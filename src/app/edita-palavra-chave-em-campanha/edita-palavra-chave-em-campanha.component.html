@@ -8,17 +8,23 @@
       <thead>
         <tr>
           <th width="30%">Palavra-Chave</th>
-          <th width="10%"></th>
-          <th width="15%">Media Cpc</th>
-          <th width="15%">Volume</th>
+          <th width="10%">IdAds</th>
+          <th width="15%">Media Impressao</th>
+          <th width="15%">Media Ctr</th>
+          <th width="15%">Média Conv</th>
+          <th width="10%">Campanha</th>
+          <th width="10%">Ativo</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let item of listaPalavra">
           <td>{{item.palavraChaveGoogle.palavra}}</td>
           <td>{{item.idAds}}</td>
-          <td></td>
-          <td></td>
+          <td>{{item.mediaImpressao}}</td>
+          <td>{{item.mediaCtr}}</td>
+          <td>{{item.mediaConversao}}</td>
+          <td>{{item.palavraChaveGoogle.campanhaPalavraChaveResultados.length > 0}}</td>
+          <td>{{item.ativo}}</td>
         </tr>
       </tbody>
     </table>

@@ -19,7 +19,9 @@
       <tbody>
         <tr *ngFor="let item of listaPalavra">
           <td>{{item.palavraChaveGoogle.palavra}}</td>
-          <td>{{item.idAds}}</td>
+          <td>
+            {{(item.palavraChaveGoogle.campanhaPalavraChaveResultados.length > 0)?item.palavraChaveGoogle.campanhaPalavraChaveResultados[0].idAds:'-'}}
+          </td>
           <td>{{item.mediaImpressao}}</td>
           <td>{{item.mediaCtr}}</td>
           <td>{{item.mediaConversao}}</td>

@@ -1931,6 +1931,34 @@ export class ProjetoMySqlApi extends BaseLoopBackApi {
   }
 
   /**
+   * Alteracao da etapa
+   *
+   * @param {object} data Request data.
+   *
+   *  - `projeto` – `{object}` - 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ProjetoMySql` object.)
+   * </em>
+   */
+  public AlteraEtapa(projeto: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProjetoMySqls/alteraEtapa";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof projeto !== 'undefined' && projeto !== null) _urlParams.projeto = projeto;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Fetches belongsTo relation projeto.
    *
    * @param {any} id ProjetoMySql id

@@ -190,6 +190,7 @@ export class SDKBrowserModule {
         ComponenteAppApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser },
+
       ]
     };
   }

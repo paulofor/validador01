@@ -42,7 +42,7 @@ export class EditaCadProjetoComponent implements OnInit {
         this.closeDialog();
       });
     } else {
-      this.servico.updateAttributes(this.item.id, this.item, (err, obj) => {
+      this.servico.AlteraEtapa(this.item, (err, obj) => {
         console.log("Erro:" + err.message);
       }).subscribe((e: any) => {
         console.log(JSON.stringify(e));

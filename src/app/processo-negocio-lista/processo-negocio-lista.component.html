@@ -11,13 +11,15 @@
             <table class="table table-hover table-striped">
               <thead>
                 <tr>
-                  <th width="80%">Nome</th>
+                  <th width="5%">ID</th>
+                  <th width="75%">Nome</th>
                   <th width="20%"></th>
                   <th width="10%"></th>
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let item of lista">
+                  <td>{{item.id}}</td>
                   <td>{{item.nome}}</td>
                   <td>
                     <button class="btn btn-primary btn-sm " (click)="criaPlano(item)">Planos</button>

@@ -10,8 +10,9 @@
             <table class="table table-hover table-striped">
               <thead>
                 <tr>
-                  <th width="40%">Projeto</th>
-                  <th width="40%">Codigo</th>
+                  <th width="30%">Projeto</th>
+                  <th width="30%">Codigo</th>
+                  <th width="20%">Namespace</th>
                   <th width="10%"></th>
                   <th width="10%"></th>
                 </tr>
@@ -20,6 +21,7 @@
                 <tr *ngFor="let projeto of projetos">
                   <td>{{projeto.nome}}</td>
                   <td>{{projeto.codigo}}</td>
+                  <td>{{projeto.aplicacaos[0].namespace}}</td>
                   <td>
                     <a *ngIf="(projeto.aplicacaos.length>0)" href="javascript:void(0);" (click)="openDialog(projeto.aplicacaos[0])">Edita</a>
                   </td>

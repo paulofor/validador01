@@ -16,6 +16,8 @@
       <input matInput maxlength="200" #url [(ngModel)]="item.url" name="url" placeholder="Url" />
     </mat-form-field>
 
+    <mat-checkbox  #ativo [(ngModel)]="item.ativo" name="ativo">Ativo</mat-checkbox>
+
   </mat-dialog-content>
 
   <mat-dialog-actions>

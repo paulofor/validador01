@@ -12,6 +12,7 @@ export interface TelaAppInterface {
   "nome"?: string;
   "tipo"?: string;
   "sobrescreveHtml"?: number;
+  "sobrescreveTs"?: number;
   "id"?: number;
   "entidadeId"?: number;
   "aplicacaoId"?: number;
@@ -28,6 +29,7 @@ export class TelaApp implements TelaAppInterface {
   "nome": string;
   "tipo": string;
   "sobrescreveHtml": number;
+  "sobrescreveTs": number;
   "id": number;
   "entidadeId": number;
   "aplicacaoId": number;
@@ -81,6 +83,10 @@ export class TelaApp implements TelaAppInterface {
         },
         "sobrescreveHtml": {
           name: 'sobrescreveHtml',
+          type: 'number'
+        },
+        "sobrescreveTs": {
+          name: 'sobrescreveTs',
           type: 'number'
         },
         "id": {

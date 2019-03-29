@@ -11,6 +11,7 @@
           <th width="20%">Entidade</th>
           <th width="20%">Tipo</th>
           <th width="10%">Sobrescreve html</th>
+          <th width="10%">Sobrescreve ts</th>
           <th width="20%"></th>
         </tr>
       </thead>
@@ -28,6 +29,9 @@
             </td>
             <td>
               {{item.sobrescreveHtml}}
+            </td>
+            <td>
+              {{item.sobrescreveTs}}
             </td>
             <td align="right">
               <button class="btn btn-primary btn-sm " (click)="openDialog(aplicacao,item)">Alterar</button>

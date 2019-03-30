@@ -21,7 +21,9 @@
               {{getNumeros(item)}}
             </td>
             <td>
-              {{getEntidadeOposta(item)}}
+              <a routerLink="/entidadeResumo/{{getEntidadeOposta(item).id_entidade}}">
+              {{getEntidadeOposta(item).nome}}
+              </a>
             </td>
             <td>
               {{getNome(item)}}

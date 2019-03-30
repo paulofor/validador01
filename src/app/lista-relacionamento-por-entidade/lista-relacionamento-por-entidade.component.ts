@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { Input } from '@angular/core';
 import { Entidade, EntidadeApi, Relacionamento_entidade, AplicacaoApi, Relacionamento_entidadeApi } from '../shared/sdk';
 import { MatDialog } from '@angular/material';
@@ -10,7 +10,12 @@ import { EditaAtributoEntidadeComponent } from '../edita-atributo-entidade/edita
   templateUrl: './lista-relacionamento-por-entidade.component.html',
   styleUrls: ['./lista-relacionamento-por-entidade.component.scss']
 })
-export class ListaRelacionamentoPorEntidadeComponent implements OnInit {
+export class ListaRelacionamentoPorEntidadeComponent implements OnChanges, OnInit {
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('Mudou Entrada');
+    this.carregaRelacionamentos();
+  }
 
   @Input() entidade: Entidade;
 
@@ -31,11 +36,13 @@ export class ListaRelacionamentoPorEntidadeComponent implements OnInit {
     }
   }
 
-  getEntidadeOposta(item: Relacionamento_entidade) {
+
+
+  getEntidadeOposta(item: Relacionamento_entidade) : Entidade{
     if (this.entidade.id_entidade == item.id_entidade1) {
-      return item.entidade2.nome;
+      return item.entidade2;
     } else {
-      return item.entidade1.nome;
+      return item.entidade1;
     }
   }
 

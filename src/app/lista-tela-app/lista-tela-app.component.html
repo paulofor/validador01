@@ -1,7 +1,7 @@
 <div *ngIf="lista" class="card">
   <div class="header">
     <h4 class="title">Tela App</h4>
-    <button class="btn btn-primary btn-sm"  (click)="openDialog()">Novo</button>
+    <button class="btn btn-primary btn-sm" (click)="openDialog()">Novo</button>
   </div>
   <div class="content table-responsive table-full-width">
     <table *ngIf="lista" class="table table-hover table-striped">
@@ -17,7 +17,11 @@
       <tbody>
         <tr *ngFor="let item of lista">
           <td>{{item.nome}}</td>
-          <td>{{(item.entidade?item.entidade.nome:'-')}}</td>
+          <td>
+            <a *ngIf="item.entidade" routerLink="/entidadeResumo/{{item.entidade.id_entidade}}">
+              {{(item.entidade?item.entidade.nome:'-')}}
+            </a>
+          </td>
           <td>{{item.tipo}}</td>
           <td>
             <button class="btn btn-primary btn-sm" routerLink="/detalheTelaApp/{{item.id}}">Detalhe</button>

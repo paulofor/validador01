@@ -18,7 +18,12 @@ export class EntidadeResumoComponent implements OnInit {
   constructor(private route: ActivatedRoute, private servico: EntidadeApi, private dialog: MatDialog) { }
 
   ngOnInit() {
+    console.log('Entrou ngOnInit');
     this.carregaEntidade();
+  }
+
+  ngOnChanges() {
+    console.log('Entrou ngOnChanges');
   }
 
   carregaEntidade() {

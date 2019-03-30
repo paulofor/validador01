@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges, OnChanges } from '@angular/core';
 import { Entidade, EntidadeApi, Atributo_entidade } from '../shared/sdk';
 import { EditaAtributoEntidadeComponent } from '../edita-atributo-entidade/edita-atributo-entidade.component';
 import { MatDialog } from '@angular/material';
@@ -8,13 +8,19 @@ import { MatDialog } from '@angular/material';
   templateUrl: './lista-atributo-por-entidade.component.html',
   styleUrls: ['./lista-atributo-por-entidade.component.scss']
 })
-export class ListaAtributoPorEntidadeComponent implements OnInit {
+export class ListaAtributoPorEntidadeComponent implements OnChanges, OnInit {
+
 
   columnsToDisplay = ['nome'];
 
   @Input() entidade: Entidade; 
 
   constructor(private srv:EntidadeApi, private dialog: MatDialog) { }
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log('Mudou Atributos');
+    this.carregaAtributos();
+  }
 
   ngOnInit() {
     this.carregaAtributos();

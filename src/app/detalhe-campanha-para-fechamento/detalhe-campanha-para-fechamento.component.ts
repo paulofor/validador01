@@ -34,7 +34,10 @@ export class DetalheCampanhaParaFechamentoComponent implements OnInit {
   }
 
   fecharCampanha() {
-    
+    this.srv.FechaCampanha(this.campanha.id)
+      .subscribe((result) => {
+        this.carregaCampanha();
+      })
   }
 
   /*

@@ -17,7 +17,7 @@
         <ng-container *ngFor="let item of listaEntidade">
           <tr>
             <td>
-              {{item.nome}}
+              <a routerLink="/entidadeResumo/{{item.id_entidade}}">{{item.nome}}</a>
             </td>
             <td>
               {{(item.atributoChave?item.atributoChave.nome:'-')}}
@@ -26,7 +26,6 @@
               {{(item.atributoIdentificador?item.atributoIdentificador.nome:'-')}}
             </td>
             <td align="right">
-              <a routerLink="/entidadeResumo/{{item.id_entidade}}">Detalhe</a>&nbsp;&nbsp;
               <button class="btn btn-primary btn-sm " (click)="alteraEntidade(item)">Alterar</button>
             </td>
           </tr>

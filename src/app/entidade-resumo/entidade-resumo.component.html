@@ -1,5 +1,5 @@
 <div *ngIf="entidade" class="main-content">
-
+  <p><a routerLink="/projetoAplicacao/{{entidade.id_aplicacao}}">Aplicação</a>\{{entidade.nome}}</p>
   <div class="row">
       <div class="col-md-12">
       <app-lista-atributo-por-entidade [entidade]="entidade"></app-lista-atributo-por-entidade>

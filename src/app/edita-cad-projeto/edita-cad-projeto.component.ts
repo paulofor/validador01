@@ -27,7 +27,6 @@ export class EditaCadProjetoComponent implements OnInit {
     } else {
       console.log('fluxo altera');
       this.item = this.data.item;
-      this.item.etapaProjeto = null;
       console.log('Item:', JSON.stringify(this.item));
     }
   }

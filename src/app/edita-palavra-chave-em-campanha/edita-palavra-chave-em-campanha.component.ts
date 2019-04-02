@@ -27,8 +27,9 @@ export class EditaPalavraChaveEmCampanhaComponent implements OnInit {
     })
   }
 
-  getClass() {
-    return '';
+  getClasse(item) {
+    if (item.palavraChaveGoogle.campanhaPalavraChaveResultados.length > 0) return 'colunaAtivo';
+    else return 'colunaInativo'
   }
 
   /*

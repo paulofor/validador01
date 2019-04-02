@@ -8,6 +8,7 @@ export interface EtapaProjetoInterface {
   "nome"?: string;
   "codigo"?: string;
   "ordenacao"?: number;
+  "ativo"?: number;
   "id"?: number;
   projetoMySqls?: ProjetoMySql[];
 }
@@ -16,6 +17,7 @@ export class EtapaProjeto implements EtapaProjetoInterface {
   "nome": string;
   "codigo": string;
   "ordenacao": number;
+  "ativo": number;
   "id": number;
   projetoMySqls: ProjetoMySql[];
   constructor(data?: EtapaProjetoInterface) {
@@ -61,6 +63,10 @@ export class EtapaProjeto implements EtapaProjetoInterface {
         },
         "ordenacao": {
           name: 'ordenacao',
+          type: 'number'
+        },
+        "ativo": {
+          name: 'ativo',
           type: 'number'
         },
         "id": {

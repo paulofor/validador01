@@ -48,4 +48,9 @@ export class ProcessoNegocioListaComponent implements OnInit {
     });
   }
 
+
+  getAtivoClasse(item) {
+    if (item.ativo==1) return "colunaAtivo";
+    else return "colunaInativo";
+  }
 }

@@ -42,4 +42,9 @@ export class EtapaProjetoListaComponent implements OnInit {
     });
   }
 
+  getAtivoClasse(item) {
+    if (item.ativo==1) return "colunaAtivo";
+    else return "colunaInativo";
+  }
+
 }

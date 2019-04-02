@@ -27,6 +27,10 @@ export class EditaPalavraChaveEmCampanhaComponent implements OnInit {
     })
   }
 
+  getClass() {
+    return '';
+  }
+
   /*
   carregaLista() {
     this.srvCampanha.getCampanhaPalavraChaveResultados(this.campanha.id,{'include' : 'palavraChaveGoogle'})

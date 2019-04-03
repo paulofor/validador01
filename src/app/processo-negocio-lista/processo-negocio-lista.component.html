@@ -13,7 +13,8 @@
                 <tr>
                   <th width="15%">ID</th>
                   <th width="65%">Nome</th>
-                  <th width="20%"></th>
+                  <th width="10%"></th>
+                  <th width="10%"></th>
                   <th width="10%"></th>
                 </tr>
               </thead>
@@ -22,7 +23,10 @@
                   <td [ngClass]="getAtivoClasse(item)">{{item.id}}</td>
                   <td [ngClass]="getAtivoClasse(item)">{{item.nome}}</td>
                   <td>
-                    <button class="btn btn-primary btn-sm " (click)="criaPlano(item)">Planos</button>
+                    <button class="btn btn-primary btn-sm " (click)="editaEtapa(item)">Etapas</button>
+                  </td>
+                  <td>
+                    <button class="btn btn-primary btn-sm " (click)="criaPlano(item)">CriaHorario</button>
                   </td>
                   <td>
                     <button class="btn btn-primary btn-sm " (click)="openDialog(item)">Alterar</button>

@@ -3,6 +3,7 @@ import { ProcessoNegocio, ProcessoNegocioApi, PlanoExecucaoApi } from '../shared
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material';
 import { ProcessoNegocioEditaComponent } from '../processo-negocio-edita/processo-negocio-edita.component';
+import { AssociaEtapaProcessoComponent } from '../associa-etapa-processo/associa-etapa-processo.component';
 
 @Component({
   selector: 'app-processo-negocio-lista',
@@ -41,6 +42,19 @@ export class ProcessoNegocioListaComponent implements OnInit {
       this.atualizaLista();
     });
     this.dialog.open(ProcessoNegocioEditaComponent, {
+      width: '800px',
+      data: {
+        item: item
+      }
+    });
+  }
+
+  editaEtapa(item?) {
+    this.dialog.afterAllClosed.subscribe(result => {
+      console.log('Dialog result: ${result}');
+      this.atualizaLista();
+    });
+    this.dialog.open(AssociaEtapaProcessoComponent, {
       width: '800px',
       data: {
         item: item

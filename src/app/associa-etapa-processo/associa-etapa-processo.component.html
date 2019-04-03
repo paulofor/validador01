@@ -4,9 +4,11 @@
 
   <mat-dialog-content>
 
-    <mat-form-field class="example-full-width" *ngFor="let etapa of listaEtapa">
-        <input matInput maxlength="100" #nome [(ngModel)]="etapa.nome" name="nome" placeholder="Nome" />
-    </mat-form-field>
+    <div *ngFor="let item of listaEtapa; let i = index;">
+      <mat-checkbox  [checked]="getCheck(item)"  (change)="onChange($event, i, item)">
+        {{item.nome}}
+      </mat-checkbox>
+    </div>
 
 
   </mat-dialog-content>

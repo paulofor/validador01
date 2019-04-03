@@ -185,6 +185,8 @@ import { DisplayPaletaCorComponent } from './display-paleta-cor/display-paleta-c
 import { GerenciaTelaAppComponent } from './gerencia-tela-app/gerencia-tela-app.component';
 import { AssociaEtapaProcessoComponent } from './associa-etapa-processo/associa-etapa-processo.component';
 
+
+
 registerLocaleData(localePt, 'pt-BR');
 
 @NgModule({
@@ -401,7 +403,9 @@ registerLocaleData(localePt, 'pt-BR');
     MatTableModule,
     MatAutocompleteModule,
     ReactiveFormsModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    FormsModule
+
 
   ],
   providers: [

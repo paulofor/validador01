@@ -9,8 +9,15 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 })
 export class AssociaEtapaProcessoComponent implements OnInit {
 
+
   item: ProcessoNegocio;
   listaEtapa: EtapaProjeto[];
+
+  listaItem = [
+    { "nome": "Valor 1", "conteudo": false },
+    { "nome": "Valor 2", "conteudo": true },
+    { "nome": "Valor 3", "conteudo": false }
+  ]
 
   constructor(public dialogRef: MatDialogRef<AssociaEtapaProcessoComponent>
     , @Inject(MAT_DIALOG_DATA) public data: any, private srvEtapa: EtapaProjetoApi) { }
@@ -28,10 +35,10 @@ export class AssociaEtapaProcessoComponent implements OnInit {
   }
 
   carregaEtapas() {
-    this.srvEtapa.find({'where': {'ativo' : '1'}})
-      .subscribe((result:EtapaProjeto[]) => {
+    this.srvEtapa.find({ 'where': { 'ativo': '1' } })
+      .subscribe((result: EtapaProjeto[]) => {
         this.listaEtapa = result;
-        console.log('lista' , this.listaEtapa);
+        console.log('lista', this.listaEtapa);
       })
   }
 
@@ -39,8 +46,18 @@ export class AssociaEtapaProcessoComponent implements OnInit {
   onSubmit() {
   }
 
+
+  getCheck(item) {
+    return item.conteudo;
+  }
+
   closeDialog() {
     this.dialogRef.close('Pizza!');
   }
 
+  onChange(event, index, item) {
+    item.conteudo = !item.conteudo;
+    console.log(this.listaItem);
+  }
+  
 }

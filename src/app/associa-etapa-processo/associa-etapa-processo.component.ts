@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { ProcessoNegocio, EtapaProjetoApi, EtapaProjeto } from '../shared/sdk';
+import { ProcessoNegocio, EtapaProjetoApi, EtapaProjeto, ProcessoNegocioEtapaProjeto } from '../shared/sdk';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
@@ -13,17 +13,13 @@ export class AssociaEtapaProcessoComponent implements OnInit {
   item: ProcessoNegocio;
   listaEtapa: EtapaProjeto[];
 
-  listaItem = [
-    { "nome": "Valor 1", "conteudo": false },
-    { "nome": "Valor 2", "conteudo": true },
-    { "nome": "Valor 3", "conteudo": false }
-  ]
+  
 
   constructor(public dialogRef: MatDialogRef<AssociaEtapaProcessoComponent>
     , @Inject(MAT_DIALOG_DATA) public data: any, private srvEtapa: EtapaProjetoApi) { }
 
   ngOnInit() {
-    this.carregaEtapas();
+   
     console.log("Parametro entrada", this.data);
     if (!this.data.item) {
       console.log("fluxo nova");
@@ -32,10 +28,11 @@ export class AssociaEtapaProcessoComponent implements OnInit {
       this.item = this.data.item;
       console.log('Item:', JSON.stringify(this.item));
     }
+    this.carregaEtapas();
   }
 
   carregaEtapas() {
-    this.srvEtapa.find({ 'where': { 'ativo': '1' } })
+    this.srvEtapa.ObtemAtivaComProcessoPorId(this.item.id)
       .subscribe((result: EtapaProjeto[]) => {
         this.listaEtapa = result;
         console.log('lista', this.listaEtapa);
@@ -44,20 +41,26 @@ export class AssociaEtapaProcessoComponent implements OnInit {
 
 
   onSubmit() {
+    console.log(this.listaEtapa);
   }
 
 
-  getCheck(item) {
-    return item.conteudo;
+  getCheck(item:EtapaProjeto) : boolean {
+    return (item.processoNegocioEtapaProjetos!=null);
   }
 
   closeDialog() {
     this.dialogRef.close('Pizza!');
   }
 
-  onChange(event, index, item) {
-    item.conteudo = !item.conteudo;
-    console.log(this.listaItem);
+  onChange(event, index, etapa : EtapaProjeto) {
+    if (etapa.processoNegocioEtapaProjetos==null) {
+      etapa.processoNegocioEtapaProjetos = new ProcessoNegocioEtapaProjeto();
+      etapa.processoNegocioEtapaProjetos.processoNegocioId = this.item.id;
+      etapa.processoNegocioEtapaProjetos.etapaProjetoId = etapa.id;
+    } else {
+      etapa.processoNegocioEtapaProjetos = null;
+    }
   }
   
 }

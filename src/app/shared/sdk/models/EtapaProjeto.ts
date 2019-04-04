@@ -1,6 +1,7 @@
 /* tslint:disable */
 import {
-  ProjetoMySql
+  ProjetoMySql,
+  ProcessoNegocioEtapaProjeto
 } from '../index';
 
 declare var Object: any;
@@ -11,6 +12,7 @@ export interface EtapaProjetoInterface {
   "ativo"?: number;
   "id"?: number;
   projetoMySqls?: ProjetoMySql[];
+  processoNegocioEtapaProjetos?: ProcessoNegocioEtapaProjeto;
 }
 
 export class EtapaProjeto implements EtapaProjetoInterface {
@@ -20,6 +22,7 @@ export class EtapaProjeto implements EtapaProjetoInterface {
   "ativo": number;
   "id": number;
   projetoMySqls: ProjetoMySql[];
+  processoNegocioEtapaProjetos: ProcessoNegocioEtapaProjeto;
   constructor(data?: EtapaProjetoInterface) {
     Object.assign(this, data);
   }
@@ -80,6 +83,14 @@ export class EtapaProjeto implements EtapaProjetoInterface {
           type: 'ProjetoMySql[]',
           model: 'ProjetoMySql',
           relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'etapaProjetoId'
+        },
+        processoNegocioEtapaProjetos: {
+          name: 'processoNegocioEtapaProjetos',
+          type: 'ProcessoNegocioEtapaProjeto',
+          model: 'ProcessoNegocioEtapaProjeto',
+          relationType: 'hasOne',
                   keyFrom: 'id',
           keyTo: 'etapaProjetoId'
         },

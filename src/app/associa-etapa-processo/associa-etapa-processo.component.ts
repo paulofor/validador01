@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { ProcessoNegocio, EtapaProjetoApi, EtapaProjeto, ProcessoNegocioEtapaProjeto } from '../shared/sdk';
+import { ProcessoNegocio, EtapaProjetoApi, EtapaProjeto, ProcessoNegocioEtapaProjeto, ProcessoNegocioEtapaProjetoApi } from '../shared/sdk';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
@@ -16,7 +16,8 @@ export class AssociaEtapaProcessoComponent implements OnInit {
   
 
   constructor(public dialogRef: MatDialogRef<AssociaEtapaProcessoComponent>
-    , @Inject(MAT_DIALOG_DATA) public data: any, private srvEtapa: EtapaProjetoApi) { }
+    , @Inject(MAT_DIALOG_DATA) public data: any, private srvEtapa: EtapaProjetoApi, 
+      private srvProcessoEtapa : ProcessoNegocioEtapaProjetoApi) { }
 
   ngOnInit() {
    
@@ -42,6 +43,10 @@ export class AssociaEtapaProcessoComponent implements OnInit {
 
   onSubmit() {
     console.log(this.listaEtapa);
+    this.srvProcessoEtapa.AtualizaPorProcesso(this.item.id, this.listaEtapa)
+      .subscribe((result) => {
+        this.dialogRef.close('Pizza!');
+      })
   }
 
 

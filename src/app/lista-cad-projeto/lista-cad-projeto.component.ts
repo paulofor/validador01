@@ -39,4 +39,9 @@ export class ListaCadProjetoComponent implements OnInit {
     });
   }
 
+
+  getAtivoClasse(item) {
+    if (item!=null && item.ativo==1) return "colunaAtivo";
+    else return "colunaInativo";
+  }
 }

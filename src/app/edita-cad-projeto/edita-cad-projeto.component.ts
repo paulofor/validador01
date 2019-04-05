@@ -55,7 +55,7 @@ export class EditaCadProjetoComponent implements OnInit {
   }
 
   carregaEtapaProjeto() {
-    this.srvEtapa.find({'order' : 'ordenacao'})
+    this.srvEtapa.find({'order' : 'ordenacao', 'where' : {'ativo' : 1}})
       .subscribe((result:EtapaProjeto[])=> {
         this.listaEtapa = result;
       })

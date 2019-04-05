@@ -14,6 +14,7 @@ export class EditaTempoExecucaoComponent implements OnInit {
   plano : PlanoExecucao;
   listaProjeto: ProjetoMySql[];
   tempoOk = false;
+  idProcesso : number;
 
   constructor(public dialogRef: MatDialogRef<EditaTempoExecucaoComponent>,
     private servico : TempoExecucaoApi
@@ -30,6 +31,7 @@ export class EditaTempoExecucaoComponent implements OnInit {
       this.plano = this.data.plano;
       console.log('Plano: ' , this.plano);
       this.tempoOk = true;
+      this.idProcesso = this.plano.processoNegocioId;
     } else {
       console.log('fluxo altera');
       this.tempo = this.data.tempo;
@@ -37,8 +39,10 @@ export class EditaTempoExecucaoComponent implements OnInit {
       this.tempo.horaInicio = new Date(this.tempo.horaInicio);
       console.log('Tempo:', JSON.stringify(this.tempo));
       this.tempoOk = true;
+      this.idProcesso = this.tempo.processoNegocioId;
     }
-    this.srvProjeto.find()
+    console.log('IdProcesso: ' , this.idProcesso );
+    this.srvProjeto.ObtemPorIdProcesso(this.idProcesso)
     .subscribe((res:ProjetoMySql[])=> {
       this.listaProjeto = res;
       

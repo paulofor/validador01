@@ -184,6 +184,7 @@ import { EditaPaletaCorComponent } from './edita-paleta-cor/edita-paleta-cor.com
 import { DisplayPaletaCorComponent } from './display-paleta-cor/display-paleta-cor.component';
 import { GerenciaTelaAppComponent } from './gerencia-tela-app/gerencia-tela-app.component';
 import { AssociaEtapaProcessoComponent } from './associa-etapa-processo/associa-etapa-processo.component';
+import { AssociaProcessoEtapaComponent } from './associa-processo-etapa/associa-processo-etapa.component';
 
 
 
@@ -338,6 +339,8 @@ registerLocaleData(localePt, 'pt-BR');
     GerenciaTelaAppComponent,
  
     AssociaEtapaProcessoComponent,
+ 
+    AssociaProcessoEtapaComponent,
 
 
   ],
@@ -375,7 +378,8 @@ registerLocaleData(localePt, 'pt-BR');
     EditaAplicacaoComponent,
     EditaPaletaCorComponent,
     GerenciaTelaAppComponent,
-    AssociaEtapaProcessoComponent
+    AssociaEtapaProcessoComponent,
+    AssociaProcessoEtapaComponent
   ],
   imports: [
     BrowserModule,

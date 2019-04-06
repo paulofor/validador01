@@ -13,7 +13,7 @@
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
-      <input matInput maxlength="200" #url [(ngModel)]="item.url" name="url" placeholder="Url" />
+      <input autocomplete="off" matInput maxlength="10" #codigo [(ngModel)]="item.codigo" name="codigo" placeholder="Código" />
     </mat-form-field>
 
     <mat-checkbox  #ativo [(ngModel)]="item.ativo" name="ativo">Ativo</mat-checkbox>

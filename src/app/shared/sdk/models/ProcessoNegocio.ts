@@ -11,6 +11,7 @@ export interface ProcessoNegocioInterface {
   "url"?: string;
   "permiteEditar"?: number;
   "ativo"?: number;
+  "codigo"?: string;
   "id"?: number;
   planoExecucaos?: PlanoExecucao[];
   processoNegocioEtapaProjetos?: ProcessoNegocioEtapaProjeto;
@@ -22,6 +23,7 @@ export class ProcessoNegocio implements ProcessoNegocioInterface {
   "url": string;
   "permiteEditar": number;
   "ativo": number;
+  "codigo": string;
   "id": number;
   planoExecucaos: PlanoExecucao[];
   processoNegocioEtapaProjetos: ProcessoNegocioEtapaProjeto;
@@ -77,6 +79,10 @@ export class ProcessoNegocio implements ProcessoNegocioInterface {
         "ativo": {
           name: 'ativo',
           type: 'number'
+        },
+        "codigo": {
+          name: 'codigo',
+          type: 'string'
         },
         "id": {
           name: 'id',

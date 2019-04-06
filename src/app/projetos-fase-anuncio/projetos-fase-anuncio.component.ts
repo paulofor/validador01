@@ -16,7 +16,7 @@ export class ProjetosFaseAnuncioComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.projetoService.ListaPorCodigoEtapa('IDVAL')
+    this.projetoService.ListaPorCodigoProcesso('IDVAL')
       .subscribe((projetos: ProjetoMySql[]) =>
         this.projetos = projetos
       );

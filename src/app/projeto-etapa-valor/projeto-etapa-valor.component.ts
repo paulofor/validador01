@@ -17,7 +17,7 @@ export class ProjetoEtapaValorComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.projetoService.ListaPorCodigoEtapa('IDVAL')
+    this.projetoService.ListaPorCodigoProcesso('IDANN')
       .subscribe((projetos: ProjetoMySql[]) =>
         this.projetos = projetos
       );

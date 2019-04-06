@@ -1600,9 +1600,9 @@ export class ProjetoMySqlApi extends BaseLoopBackApi {
   }
 
   /**
-   * Lista de projetos que atualmente estao em um tipo de etapa
+   * Lista de projetos que atualmente estao em um tipo de processo
    *
-   * @param {string} codigoEtapa 
+   * @param {string} codigoProcesso 
    *
    * @returns {object[]} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -1613,14 +1613,14 @@ export class ProjetoMySqlApi extends BaseLoopBackApi {
    * This usually means the response is a `ProjetoMySql` object.)
    * </em>
    */
-  public ListaPorCodigoEtapa(codigoEtapa: any, customHeaders?: Function): Observable<any> {
+  public ListaPorCodigoProcesso(codigoProcesso: any, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/ProjetoMySqls/listaPorCodigoEtapa";
+    "/ProjetoMySqls/listaPorCodigoProcesso";
     let _routeParams: any = {};
     let _postBody: any = {};
     let _urlParams: any = {};
-    if (typeof codigoEtapa !== 'undefined' && codigoEtapa !== null) _urlParams.codigoEtapa = codigoEtapa;
+    if (typeof codigoProcesso !== 'undefined' && codigoProcesso !== null) _urlParams.codigoProcesso = codigoProcesso;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }

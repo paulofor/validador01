@@ -17,7 +17,7 @@ export class ProjetoFaseValidacaoComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.projetoService.ListaPorCodigoEtapa('IDVAL')
+    this.projetoService.ListaPorCodigoProcesso('CMPNHA')
       .subscribe((projetos: ProjetoMySql[]) =>
         this.projetos = projetos
       );

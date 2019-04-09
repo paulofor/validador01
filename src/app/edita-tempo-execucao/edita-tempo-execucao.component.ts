@@ -44,6 +44,7 @@ export class EditaTempoExecucaoComponent implements OnInit {
     console.log('IdProcesso: ' , this.idProcesso );
     this.srvProjeto.ObtemPorIdProcesso(this.idProcesso)
     .subscribe((res:ProjetoMySql[])=> {
+      console.log('Lista Projeto: ' , res);
       this.listaProjeto = res;
       
     })

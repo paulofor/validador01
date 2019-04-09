@@ -43,7 +43,7 @@ export class AssociaProcessoEtapaComponent implements OnInit {
 
 
   onSubmit() {
-    console.log('Vai atualizar etapa ' , this.item.id, this.listaProcesso);
+    console.log('Enviando lista: ' , this.item.id, this.listaProcesso);
     this.srvProcessoEtapa.AtualizaPorEtapa(this.item.id, this.listaProcesso)
       .subscribe((result) => {
         this.dialogRef.close('Pizza!');

@@ -31,7 +31,7 @@ export class DisplayPaginaValidacaoWebComponent implements OnInit {
   }
 
   visitar(){
-    window.open("http://validacao.kinghost.net/oferta/?id=" + this.item.codigoHash , "_blank");
+    window.open("http://validacao..net/oferta/?id=" + this.item.codigoHash , "_blank");
   }
 
   permiteAlterar(item : PaginaValidacaoWeb) {

@@ -13,6 +13,7 @@ export class TelaAppEditaCriaComponent implements OnInit {
   aplicacao: Aplicacao;
   listaModeloTela : ModeloTelaApp[];
   listaEntidade : Entidade[];
+  listaTelaApp : TelaApp[];
   //listaAtributo: Atributo_entidade[];
 
   constructor(public dialogRef: MatDialogRef<TelaAppEditaCriaComponent>
@@ -24,6 +25,7 @@ export class TelaAppEditaCriaComponent implements OnInit {
     console.log("Parametro entrada", this.data);
     this.aplicacao = this.data.aplicacao;
     this.carregaListaEntidade();
+    this.carregaTelaApp();
     if (!this.data.item) {
       console.log("fluxo nova telaApp");
       this.item = new TelaApp();
@@ -40,6 +42,14 @@ export class TelaAppEditaCriaComponent implements OnInit {
     this.entidadeSrv.find(filtro)
       .subscribe((result:Entidade[]) => {
         this.listaEntidade = result;
+      })
+  }
+
+  carregaTelaApp() {
+    var filtro = { 'where' : {'aplicacaoId' : this.aplicacao.id_aplicacao }};
+    this.telaAppSrv.find(filtro)
+      .subscribe((result:TelaApp[]) => {
+        this.listaTelaApp = result;
       })
   }
 

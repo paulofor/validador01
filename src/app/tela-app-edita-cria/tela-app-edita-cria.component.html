@@ -1,6 +1,6 @@
 <h2 mat-dialog-title>Edição TelaApp</h2>
 
-<form *ngIf="item && listaEntidade" class="example-full-width" (ngSubmit)="onSubmit()">
+<form *ngIf="item && listaEntidade && listaTelaApp" class="example-full-width" (ngSubmit)="onSubmit()">
 
   <mat-dialog-content>
 
@@ -36,6 +36,14 @@
     &nbsp;&nbsp;&nbsp;
     <mat-checkbox  #sobrescreveTs [(ngModel)]="item.sobrescreveTs" name="sobrescreveTs">Sobescreve ts</mat-checkbox>
 
+
+    <mat-form-field class="example-full-width">
+      <mat-select placeholder="Tela Edição" #telaAppEdicaoId [(ngModel)]="item.telaAppEdicaoId" name="telaAppEdicaoId">
+        <mat-option *ngFor="let tela of listaTelaApp" [value]="tela.id">
+          {{ tela.nome }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
     
   </mat-dialog-content>
 

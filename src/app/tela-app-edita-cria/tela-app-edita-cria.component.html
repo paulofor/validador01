@@ -9,6 +9,10 @@
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
+      <input matInput maxlength="15" #nomeMenu [(ngModel)]="item.nomeMenu" name="nomeMenu" placeholder="Menu" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
       <mat-select placeholder="Entidade" #entidadeId [(ngModel)]="item.entidadeId" name="entidadeId">
         <mat-option *ngFor="let entidade of listaEntidade" [value]="entidade.id_entidade">
           {{ entidade.nome }}

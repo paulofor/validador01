@@ -13,13 +13,19 @@ export interface TelaAppInterface {
   "tipo"?: string;
   "sobrescreveHtml"?: number;
   "sobrescreveTs"?: number;
+  "nomeMenu"?: string;
+  "posicaoMenu"?: number;
   "id"?: number;
   "entidadeId"?: number;
+  "telaAppEdicaoId"?: number;
+  "telaAppDisplayId"?: number;
   "aplicacaoId"?: number;
   "conceitoProdutoId"?: number;
   "modeloTelaAppId"?: number;
   itemValidacaoPaginas?: ItemValidacaoPagina[];
   entidade?: Entidade;
+  telaEdicao?: TelaApp;
+  telaDisplay?: TelaApp;
   conceitoProduto?: ConceitoProduto;
   modeloTelaApp?: ModeloTelaApp;
   componenteApps?: ComponenteApp[];
@@ -30,13 +36,19 @@ export class TelaApp implements TelaAppInterface {
   "tipo": string;
   "sobrescreveHtml": number;
   "sobrescreveTs": number;
+  "nomeMenu": string;
+  "posicaoMenu": number;
   "id": number;
   "entidadeId": number;
+  "telaAppEdicaoId": number;
+  "telaAppDisplayId": number;
   "aplicacaoId": number;
   "conceitoProdutoId": number;
   "modeloTelaAppId": number;
   itemValidacaoPaginas: ItemValidacaoPagina[];
   entidade: Entidade;
+  telaEdicao: TelaApp;
+  telaDisplay: TelaApp;
   conceitoProduto: ConceitoProduto;
   modeloTelaApp: ModeloTelaApp;
   componenteApps: ComponenteApp[];
@@ -89,12 +101,28 @@ export class TelaApp implements TelaAppInterface {
           name: 'sobrescreveTs',
           type: 'number'
         },
+        "nomeMenu": {
+          name: 'nomeMenu',
+          type: 'string'
+        },
+        "posicaoMenu": {
+          name: 'posicaoMenu',
+          type: 'number'
+        },
         "id": {
           name: 'id',
           type: 'number'
         },
         "entidadeId": {
           name: 'entidadeId',
+          type: 'number'
+        },
+        "telaAppEdicaoId": {
+          name: 'telaAppEdicaoId',
+          type: 'number'
+        },
+        "telaAppDisplayId": {
+          name: 'telaAppDisplayId',
           type: 'number'
         },
         "aplicacaoId": {
@@ -126,6 +154,22 @@ export class TelaApp implements TelaAppInterface {
           relationType: 'belongsTo',
                   keyFrom: 'entidadeId',
           keyTo: 'id_entidade'
+        },
+        telaEdicao: {
+          name: 'telaEdicao',
+          type: 'TelaApp',
+          model: 'TelaApp',
+          relationType: 'hasOne',
+                  keyFrom: 'id',
+          keyTo: 'telaAppEdicaoId'
+        },
+        telaDisplay: {
+          name: 'telaDisplay',
+          type: 'TelaApp',
+          model: 'TelaApp',
+          relationType: 'hasOne',
+                  keyFrom: 'id',
+          keyTo: 'telaAppDisplayId'
         },
         conceitoProduto: {
           name: 'conceitoProduto',

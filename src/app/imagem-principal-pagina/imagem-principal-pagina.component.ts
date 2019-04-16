@@ -18,6 +18,7 @@ export class ImagemPrincipalPaginaComponent implements OnInit {
 
   ngOnInit() {
     this.urlUpload = URL_UPLOAD;
+    console.log('url-upload: ' , this.urlUpload);
   }
 
 

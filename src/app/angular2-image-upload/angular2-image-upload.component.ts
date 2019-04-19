@@ -12,8 +12,8 @@ export class Angular2ImageUploadComponent implements OnInit {
 
 
   //url = 'http://localhost:21101/api/containers/container1/upload';
-  //url = 'http://validacao.kinghost.net:21101/api/containers/container1/upload'
-  url = URL_UPLOAD;
+  url = 'http://validacao.kinghost.net:21101/api/containers/container1/upload'
+  //url = URL_UPLOAD;
 
   constructor() { }
 

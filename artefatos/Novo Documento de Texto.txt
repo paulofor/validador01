@@ -1,0 +1,73 @@
+Testes - SerieTreino/ItemSerie
+
+
+Criar GrupoMuscular
+
+
+
+1- Novo item serie ( sem exercicio, sem serie )
+
+
+CriaSeriePageBase:Submit-Item: 
+
+{
+"serieTreinoId":23,
+"exercicio":{"titulo":"teste", "grupoMuscularId":"2"},
+"listaCargaPlanejada":[
+{"ordemRepeticao":1,"valorCarga":"20","quantidadeRepeticao":"10"},
+{"ordemRepeticao":2,"valorCarga":"21","quantidadeRepeticao":"11"},
+{"ordemRepeticao":3,"valorCarga":"22","quantidadeRepeticao":"12"}]
+}
+
+
+{"serieTreinoId":0,"exercicio":{"titulo":"teste", "grupoMuscularId":"1"},"listaCargaPlanejada":[{"ordemRepeticao":1,"valorCarga":"20","quantidadeRepeticao":"10"},{"ordemRepeticao":2,"valorCarga":"21","quantidadeRepeticao":"11"},{"ordemRepeticao":3,"valorCarga":"22","quantidadeRepeticao":"12"}]}
+
+
+
+
+2- Novo item serie ( sem exercicio, com serie )
+
+{
+"serieTreinoId":23,
+"exercicio":{"titulo":"teste", "grupoMuscularId":"2"},
+"listaCargaPlanejada":[
+{"ordemRepeticao":1,"valorCarga":"20","quantidadeRepeticao":"10"},
+{"ordemRepeticao":2,"valorCarga":"21","quantidadeRepeticao":"11"},
+{"ordemRepeticao":3,"valorCarga":"22","quantidadeRepeticao":"12"}]
+}
+
+
+{"serieTreinoId":1,"exercicio":{"titulo":"teste", "grupoMuscularId":"1"}, "listaCargaPlanejada":[{"ordemRepeticao":1,"valorCarga":"20","quantidadeRepeticao":"10"},{"ordemRepeticao":2,"valorCarga":"21","quantidadeRepeticao":"11"},{"ordemRepeticao":3,"valorCarga":"22","quantidadeRepeticao":"12"}]}
+
+
+
+
+
+3- Novo item serie ( com exercicio, com serie )
+
+{"serieTreinoId":1, "exercicioId" : "1" , "listaCargaPlanejada":[{"ordemRepeticao":1,"valorCarga":"20","quantidadeRepeticao":"10"},{"ordemRepeticao":2,"valorCarga":"21","quantidadeRepeticao":"11"},{"ordemRepeticao":3,"valorCarga":"22","quantidadeRepeticao":"12"}]}
+
+
+
+
+4- Consulta com a serie toda:
+
+ {
+      'include':
+      {
+        'relation': 'listaItemSerie', scope: {
+          'include': [
+            'exercicio',
+            { 'relation': 'listaCargaPlanejada', 'order': 'ordemRepeticao' }
+          ]
+        }
+      }
+    };
+
+ {"include":{"relation": "listaItemSerie", scope: {"include": ["exercicio",{ "relation": "listaCargaPlanejada", "order": "ordemRepeticao" }]}}};
+ 
+{"include" :  {"relation" : "listaItemSerie" , "scope" : {"include" : ["exercicio" , {"relation" : "listaCargaPlanejada" , "order": "ordemRepeticao" } ] }}}
+
+
+
+

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FileHolder } from 'angular2-image-upload';
+import { FileHolder, UploadMetadata } from 'angular2-image-upload';
 import { URL_UPLOAD } from '../constantes/base.url';
 import { Inject } from '@angular/core';
 
@@ -14,6 +14,8 @@ export class Angular2ImageUploadComponent implements OnInit {
   //url = 'http://localhost:21101/api/containers/container1/upload';
   url = 'http://validacao.kinghost.net:21101/api/containers/container1/upload'
   //url = URL_UPLOAD;
+
+  private fileCounter = 0;
 
   constructor() { }
 
@@ -31,5 +33,14 @@ export class Angular2ImageUploadComponent implements OnInit {
   onUploadStateChanged(state: boolean) {
     console.log(state);
   }
+
+  onBeforeUpload = (metadata: UploadMetadata) => {
+    console.log('Metadata: ' , metadata);
+    metadata.formData.name = '';
+
+  
+    this.fileCounter++;
+    return metadata;
+  };
 
 }

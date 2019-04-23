@@ -11,8 +11,8 @@ import { Inject } from '@angular/core';
 export class Angular2ImageUploadComponent implements OnInit {
 
 
-  //url = 'http://localhost:21101/api/containers/container1/upload';
-  url = 'http://validacao.kinghost.net:21101/api/containers/container1/upload'
+  url = 'http://localhost:21101/api/containers/container1/upload?id=215';
+  //url = 'http://validacao.kinghost.net:21101/api/containers/container1/upload'
   //url = URL_UPLOAD;
 
   private fileCounter = 0;
@@ -22,8 +22,8 @@ export class Angular2ImageUploadComponent implements OnInit {
   ngOnInit() {
   }
 
-  onUploadFinished(file: FileHolder) {
-    console.log(file);
+  onUploadFinished(item: FileHolder) {
+    console.log('onUploadFinished', item.serverResponse.response.body.result.files.image[0].name);
   }
   
   onRemoved(file: FileHolder) {
@@ -36,10 +36,10 @@ export class Angular2ImageUploadComponent implements OnInit {
 
   onBeforeUpload = (metadata: UploadMetadata) => {
     console.log('Metadata: ' , metadata);
-    metadata.formData.name = '';
+    //metadata.formData.name = '';
 
   
-    this.fileCounter++;
+    //this.fileCounter++;
     return metadata;
   };
 

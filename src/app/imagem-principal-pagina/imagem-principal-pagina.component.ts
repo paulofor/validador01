@@ -17,14 +17,14 @@ export class ImagemPrincipalPaginaComponent implements OnInit {
   constructor(private srvPagina: PaginaValidacaoWebApi) { }
 
   ngOnInit() {
-    this.urlUpload = URL_UPLOAD;
+    this.urlUpload = URL_UPLOAD + 'nome=pag' + this.pagina.id;
     console.log('url-upload: ' , this.urlUpload);
   }
 
 
   onUploadFinished(item: FileHolder) {
-    console.log('onUploadFinished', item.file.name);
-    this.pagina.imagemFundo = URL_IMAGEM + '/' + item.file.name;
+    console.log('onUploadFinished',  item.serverResponse.response.body.result.files.image[0].name);
+    this.pagina.imagemFundo = URL_IMAGEM + '/' +  item.serverResponse.response.body.result.files.image[0].name;
     this.srvPagina.updateAttributes(this.pagina.id, this.pagina)
       .subscribe((result: any) => {
         console.log('Resultado: ' , result);

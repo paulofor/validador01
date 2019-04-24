@@ -17,7 +17,7 @@ export class ImagemPrincipalPaginaComponent implements OnInit {
   constructor(private srvPagina: PaginaValidacaoWebApi) { }
 
   ngOnInit() {
-    this.urlUpload = URL_UPLOAD + 'nome=pag' + this.pagina.id;
+    this.urlUpload = URL_UPLOAD + '?nome=pag' + this.pagina.id;
     console.log('url-upload: ' , this.urlUpload);
   }
 

@@ -22,8 +22,9 @@ export class ListaTelaAppComponent implements OnInit {
   }
 
   carregaLista() {
-    this.srv.getTelaApps(this.conceito.id, {'include' : 'entidade'})
+    this.srv.getTelaApps(this.conceito.id, {'include' : ['entidade','entidadePut']})
       .subscribe((result:TelaApp[]) => {
+        console.log('Lista de TelaApp: ' , result);
         this.lista = result;
       });
   }

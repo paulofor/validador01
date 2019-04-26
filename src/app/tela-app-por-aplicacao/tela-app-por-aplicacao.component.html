@@ -7,13 +7,15 @@
     <table class="table table-hover table-striped">
       <thead>
         <tr>
-          <th width="20%">Nome</th>
-          <th width="10%">Menu</th>
-          <th width="20%">Entidade</th>
-          <th width="20%">Tipo</th>
-          <th width="10%">Sobrescreve html</th>
-          <th width="10%">Sobrescreve ts</th>
-          <th width="20%"></th>
+          <th width="15%">Nome</th>
+          <th width="15%">Menu</th>
+          <th width="10%">Entidade</th>
+          <th width="10%">EntidadePut</th>
+          <th width="10%">Tela Edição</th>
+          <th width="10%">Tipo</th>
+          <th width="5%">html</th>
+          <th width="5%">ts</th>
+          <th width="5%"></th>
         </tr>
       </thead>
       <tbody>
@@ -28,6 +30,11 @@
             <td>
               <a *ngIf="item.entidade" routerLink="/entidadeResumo/{{item.entidade.id_entidade}}">
               {{(item.entidade?item.entidade.nome:'')}}
+              </a>
+            </td>
+            <td>
+              <a *ngIf="item.entidadePut" routerLink="/entidadeResumo/{{item.entidade.id_entidade}}">
+              {{(item.entidadePut?item.entidadePut.nome:'')}}
               </a>
             </td>
             <td>

@@ -10,6 +10,7 @@
           <th width="30%">Tela</th>
           <th width="20%">Menu</th>
           <th width="20%">Objeto</th>
+          <th width="20%">Objeto Put</th>
           <th width="20%">Tipo</th>
           <th width="5%"></th>
           <th width="5%"></th>
@@ -22,6 +23,11 @@
           <td>
             <a *ngIf="item.entidade" routerLink="/entidadeResumo/{{item.entidade.id_entidade}}">
               {{(item.entidade?item.entidade.nome:'-')}}
+            </a>
+          </td>
+          <td>
+            <a *ngIf="item.entidadePut" routerLink="/entidadeResumo/{{item.entidadePut.id_entidade}}">
+              {{(item.entidadePut?item.entidadePut.nome:'-')}}
             </a>
           </td>
           <td>{{item.tipo}}</td>

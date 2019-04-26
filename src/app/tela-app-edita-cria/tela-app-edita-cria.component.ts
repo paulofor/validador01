@@ -67,6 +67,7 @@ export class TelaAppEditaCriaComponent implements OnInit {
       });
     } else {
       this.item.entidade = null;
+      this.item.entidadePut = null;
       this.item.telaEdicao = null;
       this.item.telaDisplay = null;
       this.telaAppSrv.updateAttributes(this.item.id, this.item, (err, obj) => {

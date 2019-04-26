@@ -17,6 +17,7 @@ export interface TelaAppInterface {
   "posicaoMenu"?: number;
   "id"?: number;
   "entidadeId"?: number;
+  "entidadePutId"?: number;
   "telaAppEdicaoId"?: number;
   "telaAppDisplayId"?: number;
   "aplicacaoId"?: number;
@@ -24,6 +25,7 @@ export interface TelaAppInterface {
   "modeloTelaAppId"?: number;
   itemValidacaoPaginas?: ItemValidacaoPagina[];
   entidade?: Entidade;
+  entidadePut?: Entidade;
   telaEdicao?: TelaApp;
   telaDisplay?: TelaApp;
   conceitoProduto?: ConceitoProduto;
@@ -40,6 +42,7 @@ export class TelaApp implements TelaAppInterface {
   "posicaoMenu": number;
   "id": number;
   "entidadeId": number;
+  "entidadePutId": number;
   "telaAppEdicaoId": number;
   "telaAppDisplayId": number;
   "aplicacaoId": number;
@@ -47,6 +50,7 @@ export class TelaApp implements TelaAppInterface {
   "modeloTelaAppId": number;
   itemValidacaoPaginas: ItemValidacaoPagina[];
   entidade: Entidade;
+  entidadePut: Entidade;
   telaEdicao: TelaApp;
   telaDisplay: TelaApp;
   conceitoProduto: ConceitoProduto;
@@ -117,6 +121,10 @@ export class TelaApp implements TelaAppInterface {
           name: 'entidadeId',
           type: 'number'
         },
+        "entidadePutId": {
+          name: 'entidadePutId',
+          type: 'number'
+        },
         "telaAppEdicaoId": {
           name: 'telaAppEdicaoId',
           type: 'number'
@@ -155,21 +163,29 @@ export class TelaApp implements TelaAppInterface {
                   keyFrom: 'entidadeId',
           keyTo: 'id_entidade'
         },
+        entidadePut: {
+          name: 'entidadePut',
+          type: 'Entidade',
+          model: 'Entidade',
+          relationType: 'belongsTo',
+                  keyFrom: 'entidadePutId',
+          keyTo: 'id_entidade'
+        },
         telaEdicao: {
           name: 'telaEdicao',
           type: 'TelaApp',
           model: 'TelaApp',
-          relationType: 'hasOne',
-                  keyFrom: 'id',
-          keyTo: 'telaAppEdicaoId'
+          relationType: 'belongsTo',
+                  keyFrom: 'telaAppEdicaoId',
+          keyTo: 'id'
         },
         telaDisplay: {
           name: 'telaDisplay',
           type: 'TelaApp',
           model: 'TelaApp',
-          relationType: 'hasOne',
-                  keyFrom: 'id',
-          keyTo: 'telaAppDisplayId'
+          relationType: 'belongsTo',
+                  keyFrom: 'telaAppDisplayId',
+          keyTo: 'id'
         },
         conceitoProduto: {
           name: 'conceitoProduto',

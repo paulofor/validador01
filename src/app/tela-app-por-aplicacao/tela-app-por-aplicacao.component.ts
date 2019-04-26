@@ -14,7 +14,7 @@ export class TelaAppPorAplicacaoComponent implements OnInit {
 
   @Input() aplicacao: Aplicacao;
   listaTelaApp : TelaApp[];
-  filtro = { 'include' : ['entidade' , 'telaEdicao'] };
+  filtro = { 'include' : ['entidade' , 'telaEdicao' , 'entidadePut'] };
 
   constructor(private route: ActivatedRoute, private servico: AplicacaoApi, private dialog: MatDialog) { }
 

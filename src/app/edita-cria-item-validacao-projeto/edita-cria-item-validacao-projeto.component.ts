@@ -30,6 +30,9 @@ export class EditaCriaItemValidacaoProjetoComponent implements OnInit {
     private containerSrv: ContainerApi) { }
 
 
+  getUrlUpload() {
+    return URL_UPLOAD + '?nome=itemValidacao' + this.item.id;
+  }
 
   ngOnInit() {
     console.log("Parametro entrada", this.data);
@@ -95,11 +98,11 @@ export class EditaCriaItemValidacaoProjetoComponent implements OnInit {
 
   onUploadFinished(item: FileHolder) {
     console.log('onUploadFinished', item.file.name);
-    this.item.urlImagem = URL_IMAGEM + '/' + item.file.name;
+    this.item.urlImagem = URL_IMAGEM + '/' + item.serverResponse.response.body.result.files.image[0].name;;
   }
 
   onUploadFinished2(item: FileHolder) {
     console.log('onUploadFinished2', item.file.name);
-    this.item.urlImagem2 = URL_IMAGEM + '/' + item.file.name;
+    this.item.urlImagem2 = URL_IMAGEM + '/' + item.serverResponse.response.body.result.files.image[0].name;;
   }
 }

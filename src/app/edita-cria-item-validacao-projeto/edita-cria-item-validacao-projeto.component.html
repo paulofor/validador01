@@ -33,7 +33,7 @@
         <div class="content table-responsive table-full-width">
           <img height="300"  *ngIf="item.urlImagem" src="{{item.urlImagem}}" >
 
-          <image-upload url="{{urlUpload}}" 
+          <image-upload url="{{getUrlUpload()}}" 
           (uploadFinished)="onUploadFinished($event)"
           buttonCaption="Escolha a imagem"
           dropBoxMessage="ou arraste aqui"
@@ -44,7 +44,7 @@
       <div class="content table-responsive table-full-width">
         <img height="300" *ngIf="item.urlImagem2" src="{{item.urlImagem2}}" >
 
-        <image-upload url="{{urlUpload}}" 
+        <image-upload url="{{getUrlUpload()}}" 
         (uploadFinished)="onUploadFinished2($event)"
         buttonCaption="Escolha a imagem2"
         dropBoxMessage="ou arraste aqui"
@@ -54,7 +54,7 @@
 
       <mat-dialog-actions>
         <button mat-button>Enviar</button>
-        <button mat-button mat-dialog-close>Cancelar</button>
+        <button mat-button mat-dialog-close>Cancelar**</button>
       </mat-dialog-actions>
 
     </form>

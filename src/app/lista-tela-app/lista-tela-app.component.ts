@@ -10,6 +10,9 @@ import { EditaTelaAppComponent } from '../edita-tela-app/edita-tela-app.componen
   templateUrl: './lista-tela-app.component.html',
   styleUrls: ['./lista-tela-app.component.scss']
 })
+
+// NAO É ESSE !!!!
+
 export class ListaTelaAppComponent implements OnInit {
 
   @Input() conceito: ConceitoProduto;
@@ -22,9 +25,13 @@ export class ListaTelaAppComponent implements OnInit {
   }
 
   carregaLista() {
-    this.srv.getTelaApps(this.conceito.id, {'include' : ['entidade','entidadePut']})
-      .subscribe((result:TelaApp[]) => {
-        console.log('Lista de TelaApp: ' , result);
+    this.srv.getTelaApps(this.conceito.id,
+      {
+        'include': ['entidade', 'entidadePut'],
+        'order' : 'nome asc'
+      })
+      .subscribe((result: TelaApp[]) => {
+        console.log('Lista de TelaApp: ', result);
         this.lista = result;
       });
   }
@@ -41,6 +48,11 @@ export class ListaTelaAppComponent implements OnInit {
         item: item
       }
     });
+  }
+
+  getClasse(item) {
+    if (item.ativo == 1) return "colunaAtivo"
+    else return "colunaInativo";
   }
 
 }

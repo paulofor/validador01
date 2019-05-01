@@ -59,6 +59,7 @@ export class TelaAppEditaCriaComponent implements OnInit {
     console.log('Model: ' + JSON.stringify(this.item));
     if (!this.item.id) {
       this.item.aplicacaoId = this.aplicacao.id_aplicacao;
+      this.item.ativo = 1;
       this.telaAppSrv.create(this.item, (err, obj) => {
         console.log("Erro:" + err.message);
       }).subscribe((e: any) => {

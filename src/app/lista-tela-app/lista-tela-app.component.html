@@ -11,14 +11,14 @@
           <th width="20%">Menu</th>
           <th width="20%">Objeto</th>
           <th width="20%">Objeto Put</th>
-          <th width="20%">Tipo</th>
+          <th width="20%">Tipo*</th>
           <th width="5%"></th>
           <th width="5%"></th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let item of lista">
-          <td>{{item.nome}}</td>
+          <td [ngClass]="getClasse(item)">{{item.nome}}</td>
           <td>{{item.nomeMenu}}</td>
           <td>
             <a *ngIf="item.entidade" routerLink="/entidadeResumo/{{item.entidade.id_entidade}}">

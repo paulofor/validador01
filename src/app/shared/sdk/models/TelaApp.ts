@@ -15,6 +15,7 @@ export interface TelaAppInterface {
   "sobrescreveTs"?: number;
   "nomeMenu"?: string;
   "posicaoMenu"?: number;
+  "ativo"?: number;
   "id"?: number;
   "entidadeId"?: number;
   "entidadePutId"?: number;
@@ -40,6 +41,7 @@ export class TelaApp implements TelaAppInterface {
   "sobrescreveTs": number;
   "nomeMenu": string;
   "posicaoMenu": number;
+  "ativo": number;
   "id": number;
   "entidadeId": number;
   "entidadePutId": number;
@@ -111,6 +113,10 @@ export class TelaApp implements TelaAppInterface {
         },
         "posicaoMenu": {
           name: 'posicaoMenu',
+          type: 'number'
+        },
+        "ativo": {
+          name: 'ativo',
           type: 'number'
         },
         "id": {

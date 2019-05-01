@@ -4,6 +4,8 @@
 
   <mat-dialog-content>
 
+    <mat-checkbox  #ativo [(ngModel)]="item.ativo" name="ativo">Ativo</mat-checkbox>
+
     <mat-form-field class="example-full-width">
       <input matInput maxlength="30" #nome [(ngModel)]="item.nome" name="nome" placeholder="Nome" />
     </mat-form-field>

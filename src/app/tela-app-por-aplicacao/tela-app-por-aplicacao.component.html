@@ -21,7 +21,7 @@
       <tbody>
         <ng-container *ngFor="let item of listaTelaApp">
           <tr>
-            <td>
+            <td [ngClass]="getClasse(item)">
               {{item.nome}}
             </td>
             <td>

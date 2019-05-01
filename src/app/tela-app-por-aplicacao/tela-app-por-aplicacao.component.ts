@@ -10,11 +10,17 @@ import { TelaAppEditaCriaComponent } from '../tela-app-edita-cria/tela-app-edita
   templateUrl: './tela-app-por-aplicacao.component.html',
   styleUrls: ['./tela-app-por-aplicacao.component.scss']
 })
+
+// ESSE LISTA DE TELAS APP
+
 export class TelaAppPorAplicacaoComponent implements OnInit {
 
   @Input() aplicacao: Aplicacao;
   listaTelaApp : TelaApp[];
-  filtro = { 'include' : ['entidade' , 'telaEdicao' , 'entidadePut'] };
+  filtro = { 
+    'include' : ['entidade' , 'telaEdicao' , 'entidadePut'],
+    'order' : 'nome' 
+  };
 
   constructor(private route: ActivatedRoute, private servico: AplicacaoApi, private dialog: MatDialog) { }
 
@@ -47,7 +53,10 @@ export class TelaAppPorAplicacaoComponent implements OnInit {
     });
   }
 
-
+  getClasse(item) {
+    if (item.ativo==1) return "colunaAtivo"
+    else return "colunaInativo";
+  }
 
 
 }

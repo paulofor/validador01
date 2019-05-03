@@ -96,7 +96,7 @@ import { EditaAtributoEntidadeComponent } from './edita-atributo-entidade/edita-
 import { EntidadeResumoComponent } from './entidade-resumo/entidade-resumo.component';
 import { EntidadePorAplicacaoV2Component } from './entidade-por-aplicacao-v2/entidade-por-aplicacao-v2.component';
 import { ListaAtributoPorEntidadeComponent } from './lista-atributo-por-entidade/lista-atributo-por-entidade.component';
-import { ListaRelacionamentoPorEntidadeComponent } from './lista-relacionamento-por-entidade/lista-relacionamento-por-entidade.component';
+import { ListaRelacionamentoPorEntidadeComponent, DialogoConfirmacao } from './lista-relacionamento-por-entidade/lista-relacionamento-por-entidade.component';
 import { EditaRelacionamentoEntidadeComponent } from './edita-relacionamento-entidade/edita-relacionamento-entidade.component';
 import { ListaItemValidacaoPorProjetoComponent } from './lista-item-validacao-por-projeto/lista-item-validacao-por-projeto.component';
 import { TelaWebPorAplicacaoComponent } from './tela-web-por-aplicacao/tela-web-por-aplicacao.component';
@@ -341,7 +341,7 @@ registerLocaleData(localePt, 'pt-BR');
     AssociaEtapaProcessoComponent,
  
     AssociaProcessoEtapaComponent,
-
+    DialogoConfirmacao
 
   ],
   entryComponents: [
@@ -379,7 +379,8 @@ registerLocaleData(localePt, 'pt-BR');
     EditaPaletaCorComponent,
     GerenciaTelaAppComponent,
     AssociaEtapaProcessoComponent,
-    AssociaProcessoEtapaComponent
+    AssociaProcessoEtapaComponent,
+    DialogoConfirmacao
   ],
   imports: [
     BrowserModule,

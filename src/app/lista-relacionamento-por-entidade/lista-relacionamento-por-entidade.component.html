@@ -11,7 +11,8 @@
           <th width="10%">Relação</th>
           <th width="40%">Entidade</th>
           <th width="40%">Nome</th>
-          <th width="10%"></th>
+          <th width="5%"></th>
+          <th width="5%"></th>
         </tr>
       </thead>
       <tbody>
@@ -28,7 +29,9 @@
             <td>
               {{getNome(item)}}
             </td>
-            
+            <td>
+              <button class="btn btn-primary btn-sm " (click)="excluiRel(item)">Excluir</button>
+            </td>
             <td>
               <button class="btn btn-primary btn-sm " (click)="alteraRel(item)">Alterar</button>
             </td>

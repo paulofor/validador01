@@ -1,7 +1,7 @@
-import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges, Inject } from '@angular/core';
 import { Input } from '@angular/core';
 import { Entidade, EntidadeApi, Relacionamento_entidade, AplicacaoApi, Relacionamento_entidadeApi } from '../shared/sdk';
-import { MatDialog } from '@angular/material';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { EditaRelacionamentoEntidadeComponent } from '../edita-relacionamento-entidade/edita-relacionamento-entidade.component';
 import { EditaAtributoEntidadeComponent } from '../edita-atributo-entidade/edita-atributo-entidade.component';
 
@@ -26,7 +26,7 @@ export class ListaRelacionamentoPorEntidadeComponent implements OnChanges, OnIni
     this.carregaRelacionamentos();
   }
 
-  
+
 
   getNumeros(item: Relacionamento_entidade) {
     if (this.entidade.id_entidade == item.id_entidade1) {
@@ -38,7 +38,7 @@ export class ListaRelacionamentoPorEntidadeComponent implements OnChanges, OnIni
 
 
 
-  getEntidadeOposta(item: Relacionamento_entidade) : Entidade{
+  getEntidadeOposta(item: Relacionamento_entidade): Entidade {
     if (this.entidade.id_entidade == item.id_entidade1) {
       return item.entidade2;
     } else {
@@ -90,6 +90,45 @@ export class ListaRelacionamentoPorEntidadeComponent implements OnChanges, OnIni
         item: item
       }
     });
+  }
+
+  excluiRel(item: Relacionamento_entidade) {
+    const dialogRef = this.dialog.open(DialogoConfirmacao, {
+      width: '250px',
+      data: item
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('Result:', result);
+      if (result) {
+        this.srv.deleteById(item.id_relacionamento_entidade)
+          .subscribe((result) => {
+          this.carregaRelacionamentos();
+        });
+      }
+    });
+
+
+    //this.srv.deleteById(item.id_relacionamento_entidade)
+    //  .subscribe((result) => {
+    //    this.carregaRelacionamentos();
+    //});
+  }
+
+}
+
+@Component({
+  selector: 'dialogo-confirmacao',
+  templateUrl: 'dialogo-confirmacao.html',
+})
+export class DialogoConfirmacao {
+
+  constructor(
+    public dialogRef: MatDialogRef<DialogoConfirmacao>,
+    @Inject(MAT_DIALOG_DATA) public data: Relacionamento_entidade) { }
+
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 
 }

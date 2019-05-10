@@ -27,7 +27,7 @@ export class AgrupadorPalavrasComponent implements OnInit {
   }
 
   carregaListaProjeto() {
-    this.servico.ListaIdeiaBaseComPalavras()
+    this.servico.ListaPorCodigoProcesso('IDEAB')
       .subscribe((resultado: ProjetoMySql[]) => {
         console.log('Lista de Projeto: ', resultado);
         this.listaProjeto = resultado;

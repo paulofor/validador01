@@ -15,13 +15,14 @@ export class PalavraChaveRaizDetalheCompletaComponent implements OnInit {
   raiz: PalavraChaveRaiz;
   filtro = {
     "include": {
-        "relation": "palavraChaveEstatisticas", "scope": {
-        "order": "volumePesquisa DESC"
-        }
-     }
+      "relation": "palavraChaveEstatisticas", "scope": {
+        "order": "volumePesquisa DESC",
+        "where": { "maisRecente": 1 }
+      }
+    }
   }
 
-  constructor(private route: ActivatedRoute, private servico: PalavraChaveRaizApi,  private dialog: MatDialog) { }
+  constructor(private route: ActivatedRoute, private servico: PalavraChaveRaizApi, private dialog: MatDialog) { }
 
   ngOnInit() {
     this.carregaRaiz();
@@ -39,8 +40,8 @@ export class PalavraChaveRaizDetalheCompletaComponent implements OnInit {
       })
 
   }
-  
-  selecionouPalavra(itemSelecionado:PalavraChaveEstatistica) {
+
+  selecionouPalavra(itemSelecionado: PalavraChaveEstatistica) {
     this.dialog.afterAllClosed.subscribe(result => {
       this.carregaRaiz();
     });

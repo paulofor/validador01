@@ -185,6 +185,8 @@ import { DisplayPaletaCorComponent } from './display-paleta-cor/display-paleta-c
 import { GerenciaTelaAppComponent } from './gerencia-tela-app/gerencia-tela-app.component';
 import { AssociaEtapaProcessoComponent } from './associa-etapa-processo/associa-etapa-processo.component';
 import { AssociaProcessoEtapaComponent } from './associa-processo-etapa/associa-processo-etapa.component';
+import { ProjetoPalavraChaveComponent } from './projeto-palavra-chave/projeto-palavra-chave.component';
+import { ProjetoPalavraChaveDetalheComponent } from './projeto-palavra-chave-detalhe/projeto-palavra-chave-detalhe.component';
 
 
 
@@ -341,7 +343,9 @@ registerLocaleData(localePt, 'pt-BR');
     AssociaEtapaProcessoComponent,
  
     AssociaProcessoEtapaComponent,
-    DialogoConfirmacao
+    DialogoConfirmacao,
+    ProjetoPalavraChaveComponent,
+    ProjetoPalavraChaveDetalheComponent
 
   ],
   entryComponents: [

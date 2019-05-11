@@ -62,6 +62,8 @@ import { PlanejamentoExecucaoComponent } from '../planejamento-execucao/planejam
 import { ExecucaoDiariaComponent } from '../execucao-diaria/execucao-diaria.component';
 import { ListaItemValidacaoProjetoComponent } from '../lista-item-validacao-projeto/lista-item-validacao-projeto.component';
 import { ListaPaletaCorComponent } from '../lista-paleta-cor/lista-paleta-cor.component';
+import { ProjetoPalavraChaveComponent } from '../projeto-palavra-chave/projeto-palavra-chave.component';
+import { ProjetoPalavraChaveDetalheComponent } from '../projeto-palavra-chave-detalhe/projeto-palavra-chave-detalhe.component';
 
 
 
@@ -157,6 +159,9 @@ export const routes : Routes = [
     { path : 'execucaoDiaria/:id' , component: ExecucaoDiariaComponent },
 
     { path : 'listaPaletaCor' , component : ListaPaletaCorComponent} ,
+
+    { path: 'projetoPalavraChave' , component : ProjetoPalavraChaveComponent },
+    { path: 'projetoPalavraChave/:id' , component : ProjetoPalavraChaveDetalheComponent },
 
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

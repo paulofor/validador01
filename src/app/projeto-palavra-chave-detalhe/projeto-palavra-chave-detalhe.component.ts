@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { ProjetoMySqlApi, ProjetoMySql, PalavraChaveEstatisticaApi, PalavraChaveEstatistica } from '../shared/sdk';
+import { ProjetoMySqlApi, ProjetoMySql, PalavraChaveEstatisticaApi, PalavraChaveEstatistica, PalavraGoogleProjetoApi, PalavraChaveGoogle, PalavraGoogleProjeto } from '../shared/sdk';
 
 @Component({
   selector: 'app-projeto-palavra-chave-detalhe',
@@ -10,10 +10,10 @@ import { ProjetoMySqlApi, ProjetoMySql, PalavraChaveEstatisticaApi, PalavraChave
 export class ProjetoPalavraChaveDetalheComponent implements OnInit {
 
   projeto: ProjetoMySql;
-  lista:PalavraChaveEstatistica[];
+  lista:PalavraGoogleProjeto[];
 
   constructor(private route: ActivatedRoute, private srv: ProjetoMySqlApi,
-    private srvPalavraChave:PalavraChaveEstatisticaApi) { }
+    private srvPalavraChave:PalavraGoogleProjetoApi) { }
 
   ngOnInit() {
     this.carregaDados();
@@ -32,8 +32,14 @@ export class ProjetoPalavraChaveDetalheComponent implements OnInit {
   }
 
   carregaPalavraChave() {
-    this.srvPalavraChave.ListaPorIdProjeto(this.projeto.id)
-      .subscribe((result:PalavraChaveEstatistica[]) => {
+
+    this.srvPalavraChave.find(
+      {
+        'where' : { 'projetoMySqlId' : this.projeto.id }
+        
+      })
+      .subscribe((result:PalavraGoogleProjeto[]) => {
+        console.log('Lista: ' , result);
         this.lista = result;
       })
   }

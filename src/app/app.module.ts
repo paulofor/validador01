@@ -187,6 +187,7 @@ import { AssociaEtapaProcessoComponent } from './associa-etapa-processo/associa-
 import { AssociaProcessoEtapaComponent } from './associa-processo-etapa/associa-processo-etapa.component';
 import { ProjetoPalavraChaveComponent } from './projeto-palavra-chave/projeto-palavra-chave.component';
 import { ProjetoPalavraChaveDetalheComponent } from './projeto-palavra-chave-detalhe/projeto-palavra-chave-detalhe.component';
+import { PalavraChaveAddProjetoComponent } from './palavra-chave-add-projeto/palavra-chave-add-projeto.component';
 
 
 
@@ -345,7 +346,8 @@ registerLocaleData(localePt, 'pt-BR');
     AssociaProcessoEtapaComponent,
     DialogoConfirmacao,
     ProjetoPalavraChaveComponent,
-    ProjetoPalavraChaveDetalheComponent
+    ProjetoPalavraChaveDetalheComponent,
+    PalavraChaveAddProjetoComponent
 
   ],
   entryComponents: [
@@ -384,7 +386,8 @@ registerLocaleData(localePt, 'pt-BR');
     GerenciaTelaAppComponent,
     AssociaEtapaProcessoComponent,
     AssociaProcessoEtapaComponent,
-    DialogoConfirmacao
+    DialogoConfirmacao,
+    PalavraChaveAddProjetoComponent
   ],
   imports: [
     BrowserModule,

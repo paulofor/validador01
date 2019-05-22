@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { Inject } from '@angular/core';
+import { PalavraGoogleProjeto, PalavraGoogleProjetoApi }  from '../shared/sdk';
+
 
 @Component({
   selector: 'app-palavra-chave-add-projeto',
@@ -10,26 +12,24 @@ import { Inject } from '@angular/core';
 export class PalavraChaveAddProjetoComponent implements OnInit {
 
 
-  palavra : string;
+  palavra : PalavraGoogleProjeto;
 
 
   constructor(public dialogRef: MatDialogRef<PalavraChaveAddProjetoComponent>
-    , @Inject(MAT_DIALOG_DATA) public data: any, private srv : PalavraChaveAdsApi) {
+    , @Inject(MAT_DIALOG_DATA) public data: any, private srv : PalavraGoogleProjetoApi) {
   } 
 
   ngOnInit() {
     console.log("Parametro entrada" , this.data);
-    this.palavra = new PalavraChaveAds();
-    this.itemCanvas = this.data.itemValor;
+    if (this.data.item) {
+      this.palavra.projetoMySqlId = this.data.item.id;
+    }
   }
 
 
   onSubmit() {
-    this.palavra.ganhoDorCanvasMySqlId = this.itemCanvas.id;
-    this.srv.create(this.palavra, (err, obj) => {
-        console.log("Erro:" + err.message);
-      }).subscribe((e: any) => {
-        console.log(JSON.stringify(e));
+    this.srv.CriaPalavra(this.palavra)
+      .subscribe((result) => {
         this.closeDialog();
       });
   }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjetoMySql, ProjetoMySqlApi } from '../shared/sdk';
 import { MatDialog } from '@angular/material';
-import { PalavraChaveAddProjetoComponent } from 'src/app/palavra-chave-add-projeto/palavra-chave-add-projeto.component';
+import { PalavraChaveAddProjetoComponent } from '../palavra-chave-add-projeto/palavra-chave-add-projeto.component';
 
 @Component({
   selector: 'app-projeto-palavra-chave',

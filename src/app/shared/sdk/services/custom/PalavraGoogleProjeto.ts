@@ -266,6 +266,34 @@ export class PalavraGoogleProjetoApi extends BaseLoopBackApi {
   }
 
   /**
+   * Cria uma palavra-chave para um projeto que ainda não existe
+   *
+   * @param {object} data Request data.
+   *
+   *  - `palavraProjeto` – `{object}` - 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `PalavraGoogleProjeto` object.)
+   * </em>
+   */
+  public CriaPalavra(palavraProjeto: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/PalavraGoogleProjetos/criaPalavra";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof palavraProjeto !== 'undefined' && palavraProjeto !== null) _urlParams.palavraProjeto = palavraProjeto;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * The name of the model represented by this $resource,
    * i.e. `PalavraGoogleProjeto`.
    */

@@ -22,12 +22,14 @@ export class PalavraChaveAddProjetoComponent implements OnInit {
   ngOnInit() {
     console.log("Parametro entrada" , this.data);
     if (this.data.item) {
+      this.palavra = new PalavraGoogleProjeto();
       this.palavra.projetoMySqlId = this.data.item.id;
     }
   }
 
 
   onSubmit() {
+    console.log('CriaPalavra - param: ' , JSON.stringify(this.palavra));
     this.srv.CriaPalavra(this.palavra)
       .subscribe((result) => {
         this.closeDialog();

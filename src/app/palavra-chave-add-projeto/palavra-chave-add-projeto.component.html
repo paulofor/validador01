@@ -4,14 +4,14 @@
 
     <mat-dialog-content>
       <mat-form-field class="example-full-width">
-        <input matInput maxlength="30" #nome [(ngModel)]="palavra.palavra" name="palavra" placeholder="Palavra Chave" />
+        <input matInput maxlength="30" #nome [(ngModel)]="palavra.palavraChaveGoogleId" name="palavra" placeholder="Palavra Chave" />
       </mat-form-field>
 
     </mat-dialog-content>
 
     <mat-dialog-actions>
-      <button mat-button>Salvar</button>
-      <button mat-dialog-close>Fechar</button>
+      <button mat-raised-button>Salvar</button>
+      <button mat-raised-button mat-dialog-close>Fechar</button>
     </mat-dialog-actions>
 
   </form>

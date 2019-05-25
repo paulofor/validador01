@@ -56,6 +56,7 @@ import { PaletaCor } from '../../models/PaletaCor';
 import { PaletaAplicacao } from '../../models/PaletaAplicacao';
 import { ComponenteApp } from '../../models/ComponenteApp';
 import { ProcessoNegocioEtapaProjeto } from '../../models/ProcessoNegocioEtapaProjeto';
+import { PaginaInstalacaoApp } from '../../models/PaginaInstalacaoApp';
 
 export interface Models { [name: string]: any }
 
@@ -119,6 +120,7 @@ export class SDKModels {
     PaletaAplicacao: PaletaAplicacao,
     ComponenteApp: ComponenteApp,
     ProcessoNegocioEtapaProjeto: ProcessoNegocioEtapaProjeto,
+    PaginaInstalacaoApp: PaginaInstalacaoApp,
     
   };
 

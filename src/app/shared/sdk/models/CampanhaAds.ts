@@ -40,6 +40,7 @@ export interface CampanhaAdsInterface {
   "paginaValidacaoWebId"?: number;
   "modeloCampanhaAdsId"?: number;
   "setupCampanhaId"?: number;
+  "paginaInstalacaoAppId"?: number;
   anuncioAds?: AnuncioAds[];
   paginaValidacaoWeb?: PaginaValidacaoWeb;
   palavraChaveAds?: PalavraChaveAds[];
@@ -79,6 +80,7 @@ export class CampanhaAds implements CampanhaAdsInterface {
   "paginaValidacaoWebId": number;
   "modeloCampanhaAdsId": number;
   "setupCampanhaId": number;
+  "paginaInstalacaoAppId": number;
   anuncioAds: AnuncioAds[];
   paginaValidacaoWeb: PaginaValidacaoWeb;
   palavraChaveAds: PalavraChaveAds[];
@@ -233,6 +235,10 @@ export class CampanhaAds implements CampanhaAdsInterface {
         },
         "setupCampanhaId": {
           name: 'setupCampanhaId',
+          type: 'number'
+        },
+        "paginaInstalacaoAppId": {
+          name: 'paginaInstalacaoAppId',
           type: 'number'
         },
       },

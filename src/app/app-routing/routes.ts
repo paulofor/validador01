@@ -64,6 +64,8 @@ import { ListaItemValidacaoProjetoComponent } from '../lista-item-validacao-proj
 import { ListaPaletaCorComponent } from '../lista-paleta-cor/lista-paleta-cor.component';
 import { ProjetoPalavraChaveComponent } from '../projeto-palavra-chave/projeto-palavra-chave.component';
 import { ProjetoPalavraChaveDetalheComponent } from '../projeto-palavra-chave-detalhe/projeto-palavra-chave-detalhe.component';
+import { ProjetoFaseInstalacaoComponent } from '../projeto-fase-instalacao/projeto-fase-instalacao.component';
+import { PaginaInstalacaoGerenciadorComponent } from '../pagina-instalacao-gerenciador/pagina-instalacao-gerenciador.component';
 
 
 
@@ -127,6 +129,7 @@ export const routes : Routes = [
 
     { path: 'projetosFaseValor' , component: ProjetoEtapaValorComponent},
     { path: 'projetosFaseAnuncio' , component: ProjetosFaseAnuncioComponent},
+    { path: 'projetosFaseInstalacao' , component: ProjetoFaseInstalacaoComponent},
   
 
     { path: 'projetoConceitoProduto/:id' , component: ProjetoConceitoProdutoComponent},
@@ -134,11 +137,14 @@ export const routes : Routes = [
 
     { path: 'projetoGerenciaAnuncio/:id', component: ProjetoGerenciaAnuncioComponent},
     { path: 'paginaValidacaoGerenciador/:id', component: PaginaValidacaoGerenciadorComponent},
+    { path: 'paginaInstalacaoGerenciador/:id', component: PaginaInstalacaoGerenciadorComponent},
 
     { path: 'itemValidacaoGerenciador/:id' , component : ItemValidacaoGerenciadorComponent },
     { path: 'itemValidacaoProjeto/:id' , component : ListaItemValidacaoProjetoComponent },
 
     { path: 'projetosFaseValidacao' , component: ProjetoFaseValidacaoComponent },
+    { path: 'projetosFaseInstalacao' , component: ProjetoFaseInstalacaoComponent },
+
     { path: 'detalheTelaApp/:id' , component: TelaAppDetalheComponent },
 
     { path: 'listaCampanhaPorProjeto/:id' , component: ListaCampanhaPorProjetoComponent},

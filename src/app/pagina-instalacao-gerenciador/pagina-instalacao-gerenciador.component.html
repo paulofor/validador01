@@ -1,0 +1,30 @@
+
+
+
+<div *ngIf="projeto" class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">Projeto: {{projeto.nome}}</h4>
+          </div>
+          <div *ngIf="conceito" class="header">
+            <h4 class="title">Conceito: {{conceito.titulo}}</h4>
+          </div>
+          <div *ngIf="!conceito" class="header">
+            <h4 class="title">Não Existe Conceito</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="conceito" class="row">
+      <div class="col-md-12">
+        <app-gerenciador-pagina-validacao [projeto]="projeto" [conceito]="conceito" >
+        </app-gerenciador-pagina-validacao>
+      </div>
+    </div>
+    
+  </div>
+</div>

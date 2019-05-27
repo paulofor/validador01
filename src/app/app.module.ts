@@ -188,6 +188,8 @@ import { AssociaProcessoEtapaComponent } from './associa-processo-etapa/associa-
 import { ProjetoPalavraChaveComponent } from './projeto-palavra-chave/projeto-palavra-chave.component';
 import { ProjetoPalavraChaveDetalheComponent } from './projeto-palavra-chave-detalhe/projeto-palavra-chave-detalhe.component';
 import { PalavraChaveAddProjetoComponent } from './palavra-chave-add-projeto/palavra-chave-add-projeto.component';
+import { ProjetoFaseInstalacaoComponent } from './projeto-fase-instalacao/projeto-fase-instalacao.component';
+import { PaginaInstalacaoGerenciadorComponent } from './pagina-instalacao-gerenciador/pagina-instalacao-gerenciador.component';
 
 
 
@@ -347,7 +349,9 @@ registerLocaleData(localePt, 'pt-BR');
     DialogoConfirmacao,
     ProjetoPalavraChaveComponent,
     ProjetoPalavraChaveDetalheComponent,
-    PalavraChaveAddProjetoComponent
+    PalavraChaveAddProjetoComponent,
+    ProjetoFaseInstalacaoComponent,
+    PaginaInstalacaoGerenciadorComponent
 
   ],
   entryComponents: [
@@ -387,7 +391,8 @@ registerLocaleData(localePt, 'pt-BR');
     AssociaEtapaProcessoComponent,
     AssociaProcessoEtapaComponent,
     DialogoConfirmacao,
-    PalavraChaveAddProjetoComponent
+    PalavraChaveAddProjetoComponent,
+    ProjetoFaseInstalacaoComponent
   ],
   imports: [
     BrowserModule,

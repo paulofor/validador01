@@ -1,0 +1,32 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">Campanhas Instalação</h4>
+          </div>
+          <div class="content table-responsive table-full-width">
+            <table class="table table-hover table-striped">
+              <thead>
+                <tr>
+                  <th width="90%">Projeto</th>
+                  <th width="5%"></th>
+                  <th width="5%"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let projeto of projetos">
+                  <td>{{projeto.nome}}</td>
+                  <td><a routerLink="/listaCampanhaConceitoAtivoPorProjeto/{{projeto.id}}">pagina</a></td>
+                  <td><a routerLink="/listaCampanhaPorProjeto/{{projeto.id}}">campanhas</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

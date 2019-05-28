@@ -1,6 +1,3 @@
-
-
-
 <div *ngIf="projeto" class="main-content">
   <div class="container-fluid">
     <div class="row">
@@ -9,22 +6,46 @@
           <div class="header">
             <h4 class="title">Projeto: {{projeto.nome}}</h4>
           </div>
-          <div *ngIf="conceito" class="header">
-            <h4 class="title">Conceito: {{conceito.titulo}}</h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div *ngIf="projeto" class="card">
+          <div class="header">
+            <h4 class="title">Páginas Instalações</h4>
+            <button class="btn btn-primary btn-sm " (click)="openDialog()">Novo</button>
           </div>
-          <div *ngIf="!conceito" class="header">
-            <h4 class="title">Não Existe Conceito</h4>
+          <div class="content table-responsive table-full-width">
+            <table class="table table-hover table-striped">
+              <thead>
+                <tr>
+                  <th>Páginas Instalação</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of projeto.paginaInstalacaoApps">
+                  <td>
+                    <mat-card *ngIf="item">
+                      <mat-card-title>{{item.mensagemPrincipal}}</mat-card-title>
+                      <mat-card-subtitle>{{item.mensagemSecundaria}}</mat-card-subtitle>
+                      <mat-card-subtitle>{{item.botaoAcao}}</mat-card-subtitle>
+                      <mat-card-actions>
+                        <button mat-raised-button color="primary" [disabled]="item.permiteEdicao==0" (click)="openDialog(item)">Alterar</button>
+                        <button mat-raised-button color="primary" routerLink="/editaPaginaValidacaoWeb/{{item.id}}">Detalhe</button>
+                        <button mat-raised-button color="primary" (click)="visitar()">Visitar</button>
+                      </mat-card-actions>
+                    </mat-card>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
           </div>
         </div>
       </div>
     </div>
 
-    <div *ngIf="conceito" class="row">
-      <div class="col-md-12">
-        <app-gerenciador-pagina-instalacao [projeto]="projeto" >
-        </app-gerenciador-pagina-instalacao>
-      </div>
-    </div>
-    
   </div>
 </div>

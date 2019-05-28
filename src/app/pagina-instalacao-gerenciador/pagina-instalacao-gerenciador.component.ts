@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ProjetoMySql, PaginaValidacaoWeb, ConceitoProduto, ProjetoMySqlApi, PaginaInstalacaoApp } from '../shared/sdk';
 import { ActivatedRoute } from '@angular/router';
 import { Params } from '@angular/router';
+import { MatDialog } from '@angular/material';
+import { EditaPaginaInstalacaoAppComponent } from '../edita-pagina-instalacao-app/edita-pagina-instalacao-app.component';
 
 @Component({
   selector: 'app-pagina-instalacao-gerenciador',
@@ -16,7 +18,7 @@ export class PaginaInstalacaoGerenciadorComponent implements OnInit {
 
   filtro = { "include": "paginaInstalacaoApps" };
 
-  constructor(private route: ActivatedRoute, private srv: ProjetoMySqlApi) { }
+  constructor(private route: ActivatedRoute, private srv: ProjetoMySqlApi, private dialog: MatDialog) { }
 
   ngOnInit() {
     this.carregaDados();
@@ -31,5 +33,22 @@ export class PaginaInstalacaoGerenciadorComponent implements OnInit {
           this.projeto = result;
         });
     })
+  }
+
+  openDialog(item?) {
+    if (!item) {
+      item = new PaginaInstalacaoApp();
+      item.permiteEdicao = true;
+    }
+    this.dialog.afterAllClosed.subscribe(result => {
+      console.log('Dialog result: ${result}');
+      this.carregaDados();
+    });
+    this.dialog.open(EditaPaginaInstalacaoAppComponent, {
+      width: '800px',
+      data: {
+        item: item
+      }
+    });
   }
 }

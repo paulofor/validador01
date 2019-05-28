@@ -18,8 +18,15 @@ export interface PaginaValidacaoWebInterface {
   "marcaLogo"?: string;
   "codigoHash"?: string;
   "permiteEdicao"?: number;
+  "totalVisualizacao"?: number;
+  "totalInteresse"?: number;
+  "quantidadeCampanha"?: number;
+  "taxaConversao"?: number;
+  "mediaVisualizacaoCampanha"?: number;
+  "mediaInteresseCampanha"?: number;
   "projetoMySqlId"?: number;
   "conceitoProdutoId"?: number;
+  "paginaInstalacaoAppId"?: number;
   projeto?: ProjetoMySql;
   itemValidacaoPaginas?: ItemValidacaoPagina[];
   registroInteresses?: RegistroInteresse[];
@@ -37,8 +44,15 @@ export class PaginaValidacaoWeb implements PaginaValidacaoWebInterface {
   "marcaLogo": string;
   "codigoHash": string;
   "permiteEdicao": number;
+  "totalVisualizacao": number;
+  "totalInteresse": number;
+  "quantidadeCampanha": number;
+  "taxaConversao": number;
+  "mediaVisualizacaoCampanha": number;
+  "mediaInteresseCampanha": number;
   "projetoMySqlId": number;
   "conceitoProdutoId": number;
+  "paginaInstalacaoAppId": number;
   projeto: ProjetoMySql;
   itemValidacaoPaginas: ItemValidacaoPagina[];
   registroInteresses: RegistroInteresse[];
@@ -113,12 +127,40 @@ export class PaginaValidacaoWeb implements PaginaValidacaoWebInterface {
           name: 'permiteEdicao',
           type: 'number'
         },
+        "totalVisualizacao": {
+          name: 'totalVisualizacao',
+          type: 'number'
+        },
+        "totalInteresse": {
+          name: 'totalInteresse',
+          type: 'number'
+        },
+        "quantidadeCampanha": {
+          name: 'quantidadeCampanha',
+          type: 'number'
+        },
+        "taxaConversao": {
+          name: 'taxaConversao',
+          type: 'number'
+        },
+        "mediaVisualizacaoCampanha": {
+          name: 'mediaVisualizacaoCampanha',
+          type: 'number'
+        },
+        "mediaInteresseCampanha": {
+          name: 'mediaInteresseCampanha',
+          type: 'number'
+        },
         "projetoMySqlId": {
           name: 'projetoMySqlId',
           type: 'number'
         },
         "conceitoProdutoId": {
           name: 'conceitoProdutoId',
+          type: 'number'
+        },
+        "paginaInstalacaoAppId": {
+          name: 'paginaInstalacaoAppId',
           type: 'number'
         },
       },

@@ -2,7 +2,8 @@
 import {
   ItemValidacaoPagina,
   CampanhaAds,
-  ProjetoMySql
+  ProjetoMySql,
+  PaginaValidacaoWeb
 } from '../index';
 
 declare var Object: any;
@@ -20,6 +21,7 @@ export interface PaginaInstalacaoAppInterface {
   itemValidacaoPaginas?: ItemValidacaoPagina[];
   campanhaAds?: CampanhaAds[];
   projeto?: ProjetoMySql;
+  paginaValidacaoWebs?: PaginaValidacaoWeb;
 }
 
 export class PaginaInstalacaoApp implements PaginaInstalacaoAppInterface {
@@ -36,6 +38,7 @@ export class PaginaInstalacaoApp implements PaginaInstalacaoAppInterface {
   itemValidacaoPaginas: ItemValidacaoPagina[];
   campanhaAds: CampanhaAds[];
   projeto: ProjetoMySql;
+  paginaValidacaoWebs: PaginaValidacaoWeb;
   constructor(data?: PaginaInstalacaoAppInterface) {
     Object.assign(this, data);
   }
@@ -134,6 +137,14 @@ export class PaginaInstalacaoApp implements PaginaInstalacaoAppInterface {
           relationType: 'belongsTo',
                   keyFrom: 'projetoMySqlId',
           keyTo: 'id'
+        },
+        paginaValidacaoWebs: {
+          name: 'paginaValidacaoWebs',
+          type: 'PaginaValidacaoWeb',
+          model: 'PaginaValidacaoWeb',
+          relationType: 'hasOne',
+                  keyFrom: 'id',
+          keyTo: 'paginaInstalacaoAppId'
         },
       }
     }

@@ -190,7 +190,6 @@ import { ProjetoPalavraChaveDetalheComponent } from './projeto-palavra-chave-det
 import { PalavraChaveAddProjetoComponent } from './palavra-chave-add-projeto/palavra-chave-add-projeto.component';
 import { ProjetoFaseInstalacaoComponent } from './projeto-fase-instalacao/projeto-fase-instalacao.component';
 import { PaginaInstalacaoGerenciadorComponent } from './pagina-instalacao-gerenciador/pagina-instalacao-gerenciador.component';
-import { GerenciadorPaginaInstalacaoComponent } from './gerenciador-pagina-instalacao/gerenciador-pagina-instalacao.component';
 import { EditaPaginaInstalacaoAppComponent } from './edita-pagina-instalacao-app/edita-pagina-instalacao-app.component';
 
 
@@ -354,7 +353,7 @@ registerLocaleData(localePt, 'pt-BR');
     PalavraChaveAddProjetoComponent,
     ProjetoFaseInstalacaoComponent,
     PaginaInstalacaoGerenciadorComponent,
-    GerenciadorPaginaInstalacaoComponent,
+
     EditaPaginaInstalacaoAppComponent
 
   ],
@@ -396,7 +395,8 @@ registerLocaleData(localePt, 'pt-BR');
     AssociaProcessoEtapaComponent,
     DialogoConfirmacao,
     PalavraChaveAddProjetoComponent,
-    ProjetoFaseInstalacaoComponent
+    ProjetoFaseInstalacaoComponent,
+    EditaPaginaInstalacaoAppComponent
   ],
   imports: [
     BrowserModule,

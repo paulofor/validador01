@@ -1,0 +1,35 @@
+
+<h2 mat-dialog-title>Página Validação</h2>
+
+<form *ngIf="item" class="example-full-width" (ngSubmit)="onSubmit()">
+
+  <mat-dialog-content>
+    <mat-form-field class="example-full-width">
+      <input matInput [(ngModel)]="item.mensagemPrincipal" name="mensagemPrincipal" placeholder="Mensagem Principal" />
+    </mat-form-field>
+  </mat-dialog-content>
+
+  <mat-dialog-content>
+    <mat-form-field class="example-full-width">
+      <input matInput [(ngModel)]="item.mensagemSecundaria" name="mensagemSecundaria" placeholder="Mensagem Secundária" />
+    </mat-form-field>
+  </mat-dialog-content>
+
+  <mat-dialog-content>
+    <mat-form-field class="example-full-width">
+      <input matInput [(ngModel)]="item.botaoAcao" name="botaoAcao" placeholder="Botão de Ação" />
+    </mat-form-field>
+  </mat-dialog-content>
+
+  <mat-dialog-content>
+    <mat-form-field class="example-full-width">
+      <input matInput [(ngModel)]="item.marcaLogo" name="marcaLogo" placeholder="Marca / Logo" />
+    </mat-form-field>
+  </mat-dialog-content>
+
+  <mat-dialog-actions *ngIf="(item.permiteEdicao==1)">
+    <button mat-button>Enviar</button>
+    <button mat-button mat-dialog-close>Cancelar</button>
+  </mat-dialog-actions>
+
+</form>

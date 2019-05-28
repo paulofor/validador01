@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProjetoMySql, PaginaValidacaoWeb, ConceitoProduto, ProjetoMySqlApi } from 'src/app/shared/sdk';
+import { ProjetoMySql, PaginaValidacaoWeb, ConceitoProduto, ProjetoMySqlApi, PaginaInstalacaoApp } from '../shared/sdk';
 import { ActivatedRoute } from '@angular/router';
 import { Params } from '@angular/router';
 
@@ -10,11 +10,13 @@ import { Params } from '@angular/router';
 })
 export class PaginaInstalacaoGerenciadorComponent implements OnInit {
 
-  projeto : ProjetoMySql;
-  listaPagina: PaginaInstacaoApp[];
+  projeto: ProjetoMySql;
+  listaPagina: PaginaInstalacaoApp[];
   conceito: ConceitoProduto;
 
-  constructor(private route: ActivatedRoute, private srv: ProjetoMySqlApi ) { }
+  filtro = { "include": "paginaInstalacaoApps" };
+
+  constructor(private route: ActivatedRoute, private srv: ProjetoMySqlApi) { }
 
   ngOnInit() {
     this.carregaDados();
@@ -23,14 +25,11 @@ export class PaginaInstalacaoGerenciadorComponent implements OnInit {
   carregaDados() {
     this.route.params.subscribe((params: Params) => {
       let id = params['id'];
-      this.srv.ProjetoConceitoPaginaInstalacao(id)
-        .subscribe((result) => {
+      this.srv.findById(id, this.filtro)
+        .subscribe((result: ProjetoMySql) => {
           console.log('Item: ' + JSON.stringify(result));
-          this.projeto = result.projeto;
-          this.listaPagina = result.listaPagina;
-          this.conceito = result.conceito;
-        })
-    });
+          this.projeto = result;
+        });
+    })
   }
-
 }

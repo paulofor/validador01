@@ -18,10 +18,11 @@ export interface PaginaInstalacaoAppInterface {
   "codigoHash"?: string;
   "permiteEdicao"?: number;
   "projetoMySqlId"?: number;
+  "paginaValidacaoWebId"?: number;
   itemValidacaoPaginas?: ItemValidacaoPagina[];
   campanhaAds?: CampanhaAds[];
   projeto?: ProjetoMySql;
-  paginaValidacaoWebs?: PaginaValidacaoWeb;
+  paginaValidacaoWeb?: PaginaValidacaoWeb;
 }
 
 export class PaginaInstalacaoApp implements PaginaInstalacaoAppInterface {
@@ -35,10 +36,11 @@ export class PaginaInstalacaoApp implements PaginaInstalacaoAppInterface {
   "codigoHash": string;
   "permiteEdicao": number;
   "projetoMySqlId": number;
+  "paginaValidacaoWebId": number;
   itemValidacaoPaginas: ItemValidacaoPagina[];
   campanhaAds: CampanhaAds[];
   projeto: ProjetoMySql;
-  paginaValidacaoWebs: PaginaValidacaoWeb;
+  paginaValidacaoWeb: PaginaValidacaoWeb;
   constructor(data?: PaginaInstalacaoAppInterface) {
     Object.assign(this, data);
   }
@@ -112,6 +114,10 @@ export class PaginaInstalacaoApp implements PaginaInstalacaoAppInterface {
           name: 'projetoMySqlId',
           type: 'number'
         },
+        "paginaValidacaoWebId": {
+          name: 'paginaValidacaoWebId',
+          type: 'number'
+        },
       },
       relations: {
         itemValidacaoPaginas: {
@@ -138,13 +144,13 @@ export class PaginaInstalacaoApp implements PaginaInstalacaoAppInterface {
                   keyFrom: 'projetoMySqlId',
           keyTo: 'id'
         },
-        paginaValidacaoWebs: {
-          name: 'paginaValidacaoWebs',
+        paginaValidacaoWeb: {
+          name: 'paginaValidacaoWeb',
           type: 'PaginaValidacaoWeb',
           model: 'PaginaValidacaoWeb',
-          relationType: 'hasOne',
-                  keyFrom: 'id',
-          keyTo: 'paginaInstalacaoAppId'
+          relationType: 'belongsTo',
+                  keyFrom: 'paginaValidacaoWebId',
+          keyTo: 'id'
         },
       }
     }

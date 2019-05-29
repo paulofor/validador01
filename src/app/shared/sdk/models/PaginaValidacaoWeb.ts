@@ -26,7 +26,6 @@ export interface PaginaValidacaoWebInterface {
   "mediaInteresseCampanha"?: number;
   "projetoMySqlId"?: number;
   "conceitoProdutoId"?: number;
-  "paginaInstalacaoAppId"?: number;
   projeto?: ProjetoMySql;
   itemValidacaoPaginas?: ItemValidacaoPagina[];
   registroInteresses?: RegistroInteresse[];
@@ -52,7 +51,6 @@ export class PaginaValidacaoWeb implements PaginaValidacaoWebInterface {
   "mediaInteresseCampanha": number;
   "projetoMySqlId": number;
   "conceitoProdutoId": number;
-  "paginaInstalacaoAppId": number;
   projeto: ProjetoMySql;
   itemValidacaoPaginas: ItemValidacaoPagina[];
   registroInteresses: RegistroInteresse[];
@@ -157,10 +155,6 @@ export class PaginaValidacaoWeb implements PaginaValidacaoWebInterface {
         },
         "conceitoProdutoId": {
           name: 'conceitoProdutoId',
-          type: 'number'
-        },
-        "paginaInstalacaoAppId": {
-          name: 'paginaInstalacaoAppId',
           type: 'number'
         },
       },

@@ -2467,7 +2467,7 @@ export class ProjetoMySqlApi extends BaseLoopBackApi {
   }
 
   /**
-   * Fetches hasOne relation paginaValidacaoWebs.
+   * Fetches belongsTo relation paginaValidacaoWeb.
    *
    * @param {any} id ProjetoMySql id
    *
@@ -2484,10 +2484,10 @@ export class ProjetoMySqlApi extends BaseLoopBackApi {
    * This usually means the response is a `ProjetoMySql` object.)
    * </em>
    */
-  public getPaginaInstalacaoAppsPaginaValidacaoWebs(id: any, nk: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
+  public getPaginaInstalacaoAppsPaginaValidacaoWeb(id: any, nk: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/ProjetoMySqls/:id/paginaInstalacaoApps/:nk/paginaValidacaoWebs";
+    "/ProjetoMySqls/:id/paginaInstalacaoApps/:nk/paginaValidacaoWeb";
     let _routeParams: any = {
       id: id,
       nk: nk
@@ -2495,105 +2495,6 @@ export class ProjetoMySqlApi extends BaseLoopBackApi {
     let _postBody: any = {};
     let _urlParams: any = {};
     if (typeof refresh !== 'undefined' && refresh !== null) _urlParams.refresh = refresh;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
-  }
-
-  /**
-   * Creates a new instance in paginaValidacaoWebs of this model.
-   *
-   * @param {any} id ProjetoMySql id
-   *
-   * @param {any} nk Foreign key for paginaInstalacaoApps.
-   *
-   * @param {object} data Request data.
-   *
-   * This method expects a subset of model properties as request parameters.
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `ProjetoMySql` object.)
-   * </em>
-   */
-  public createPaginaInstalacaoAppsPaginaValidacaoWebs(id: any, nk: any, data: any = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "POST";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/ProjetoMySqls/:id/paginaInstalacaoApps/:nk/paginaValidacaoWebs";
-    let _routeParams: any = {
-      id: id,
-      nk: nk
-    };
-    let _postBody: any = {
-      data: data
-    };
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
-  }
-
-  /**
-   * Update paginaValidacaoWebs of this model.
-   *
-   * @param {any} id ProjetoMySql id
-   *
-   * @param {any} nk Foreign key for paginaInstalacaoApps.
-   *
-   * @param {object} data Request data.
-   *
-   * This method expects a subset of model properties as request parameters.
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `ProjetoMySql` object.)
-   * </em>
-   */
-  public updatePaginaInstalacaoAppsPaginaValidacaoWebs(id: any, nk: any, data: any = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "PUT";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/ProjetoMySqls/:id/paginaInstalacaoApps/:nk/paginaValidacaoWebs";
-    let _routeParams: any = {
-      id: id,
-      nk: nk
-    };
-    let _postBody: any = {
-      data: data
-    };
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
-  }
-
-  /**
-   * Deletes paginaValidacaoWebs of this model.
-   *
-   * @param {any} id ProjetoMySql id
-   *
-   * @param {any} nk Foreign key for paginaInstalacaoApps.
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * This method returns no data.
-   */
-  public destroyPaginaInstalacaoAppsPaginaValidacaoWebs(id: any, nk: any, customHeaders?: Function): Observable<any> {
-    let _method: string = "DELETE";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/ProjetoMySqls/:id/paginaInstalacaoApps/:nk/paginaValidacaoWebs";
-    let _routeParams: any = {
-      id: id,
-      nk: nk
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
@@ -3109,42 +3010,6 @@ export class ProjetoMySqlApi extends BaseLoopBackApi {
     "/ProjetoMySqls/:id/paginaInstalacaoApps";
     let _routeParams: any = {
       id: id
-    };
-    let _postBody: any = {
-      data: data
-    };
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
-  }
-
-  /**
-   * Creates a new instance in paginaValidacaoWebs of this model.
-   *
-   * @param {any} id ProjetoMySql id
-   *
-   * @param {any} nk Foreign key for paginaInstalacaoApps.
-   *
-   * @param {object} data Request data.
-   *
-   * This method expects a subset of model properties as request parameters.
-   *
-   * @returns {object[]} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `ProjetoMySql` object.)
-   * </em>
-   */
-  public createManyPaginaInstalacaoAppsPaginaValidacaoWebs(id: any, nk: any, data: any[] = [], customHeaders?: Function): Observable<any> {
-    let _method: string = "POST";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/ProjetoMySqls/:id/paginaInstalacaoApps/:nk/paginaValidacaoWebs";
-    let _routeParams: any = {
-      id: id,
-      nk: nk
     };
     let _postBody: any = {
       data: data

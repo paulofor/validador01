@@ -6,6 +6,7 @@
     <button mat-raised-button color="primary" [disabled]="item.permiteEdicao==0" (click)="openDialog(item)">Alterar</button>
     <button mat-raised-button color="primary" routerLink="/editaPaginaValidacaoWeb/{{item.id}}">Detalhe</button>
     <button mat-raised-button color="primary" (click)="visitar()">Visitar</button>
+    <button mat-raised-button color="primary" (click)="mobile()">Mobile</button>
   </mat-card-actions>
   <mat-card-subtitle>
     Campanhas: {{item.quantidadeCampanha}}, 

@@ -1,5 +1,5 @@
-
-<h2 mat-dialog-title>Página Validação</h2>
+<h2 mat-dialog-title>
+  Página Instalação</h2>
 
 <form *ngIf="item" class="example-full-width" (ngSubmit)="onSubmit()">
 
@@ -33,3 +33,26 @@
   </mat-dialog-actions>
 
 </form>
+
+<div class="tabela content table-responsive table-full-width">
+    <table  class="table table-hover table-striped">
+      <thead>
+        <th width="40%">Mensagem Principal</th>
+        <th width="15%">camps</th>
+        <th width="15%">visu</th>
+        <th width="15%">inte</th>
+        <th width="15%">conv</th>
+        <th width="5%"></th>
+      </thead>
+      <tr *ngFor="let pagina of listaPaginaValidacao">
+        <td>{{pagina.mensagemPrincipal}}</td>
+        <td>{{pagina.quantidadeCampanha}}</td> 
+        <td>{{pagina.totalVisualizacao}}</td>
+        <td>{{pagina.totalInteresse}}</td> 
+        <td>{{pagina.taxaConversao | percent:'1.2-2' }}</td>
+        <td>
+            <button mat-raised-button outline color="primary" (click)="copiaItem(pagina)">usar</button>
+        </td>
+      </tr>
+    </table>
+  </div>

@@ -1,6 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { PaginaInstalacaoApp, PaginaInstalacaoAppApi } from '../shared/sdk';
+import { PaginaInstalacaoApp, PaginaInstalacaoAppApi, PaginaValidacaoWebApi } from '../shared/sdk';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
+import { PaginaValidacaoWeb } from '../shared/sdk/models';
+import { ProjetoMySqlApi } from '../shared/sdk/services';
 
 @Component({
   selector: 'app-edita-pagina-instalacao-app',
@@ -11,10 +13,12 @@ export class EditaPaginaInstalacaoAppComponent implements OnInit {
 
 
   item: PaginaInstalacaoApp;
+  listaPaginaValidacao : PaginaValidacaoWeb[];
 
 
   constructor(public dialogRef: MatDialogRef<EditaPaginaInstalacaoAppComponent>
-    , @Inject(MAT_DIALOG_DATA) public data: any, private servico: PaginaInstalacaoAppApi) { }
+    , @Inject(MAT_DIALOG_DATA) public data: any, private servico: PaginaInstalacaoAppApi,
+      private srvProjeto : ProjetoMySqlApi) { }
 
   ngOnInit() {
     console.log("Parametro entrada", this.data);
@@ -26,8 +30,25 @@ export class EditaPaginaInstalacaoAppComponent implements OnInit {
     } else {
       console.log('fluxo altera');
       this.item = this.data.item;
+      this.carregaPaginaValidacaoProjeto();
       console.log('Item:', JSON.stringify(this.item));
     }
+   
+  }
+
+  copiaItem(paginaValidacao) {
+      this.item.mensagemPrincipal = paginaValidacao.mensagemPrincipal;
+      this.item.mensagemSecundaria = paginaValidacao.mensagemSecundaria;
+      this.item.marcaLogo = paginaValidacao.marcaLogo;
+      this.item.botaoAcao = paginaValidacao.botaoAcao;
+  }
+
+  carregaPaginaValidacaoProjeto() {
+    this.srvProjeto.ProjetoConceitoPaginaValidacao(this.item.projetoMySqlId) 
+      .subscribe((result) => {
+        this.listaPaginaValidacao = result.listaPagina;
+        console.log('Lista Pagina: ' , this.listaPaginaValidacao);
+      })
   }
 
   onSubmit() {

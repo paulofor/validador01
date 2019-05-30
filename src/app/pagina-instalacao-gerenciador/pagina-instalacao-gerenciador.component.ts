@@ -39,13 +39,14 @@ export class PaginaInstalacaoGerenciadorComponent implements OnInit {
     if (!item) {
       item = new PaginaInstalacaoApp();
       item.permiteEdicao = true;
+      item.projetoMySqlId = this.projeto.id;
     }
     this.dialog.afterAllClosed.subscribe(result => {
       console.log('Dialog result: ${result}');
       this.carregaDados();
     });
     this.dialog.open(EditaPaginaInstalacaoAppComponent, {
-      width: '800px',
+      width: '1400px',
       data: {
         item: item
       }

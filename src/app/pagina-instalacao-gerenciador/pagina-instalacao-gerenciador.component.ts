@@ -35,20 +35,20 @@ export class PaginaInstalacaoGerenciadorComponent implements OnInit {
     })
   }
 
-  openDialog(item?) {
-    if (!item) {
-      item = new PaginaInstalacaoApp();
-      item.permiteEdicao = true;
-      item.projetoMySqlId = this.projeto.id;
+  openDialog(pagina?) {
+    if (!pagina) {
+      pagina = new PaginaInstalacaoApp();
+      pagina.permiteEdicao = true;
+      pagina.projetoMySqlId = this.projeto.id;
+      console.log('Pagina:' , pagina);
     }
     this.dialog.afterAllClosed.subscribe(result => {
-      console.log('Dialog result: ${result}');
       this.carregaDados();
     });
     this.dialog.open(EditaPaginaInstalacaoAppComponent, {
       width: '1400px',
       data: {
-        item: item
+        item: pagina
       }
     });
   }

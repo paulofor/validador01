@@ -13,48 +13,39 @@ export class EditaPaginaInstalacaoAppComponent implements OnInit {
 
 
   item: PaginaInstalacaoApp;
-  listaPaginaValidacao : PaginaValidacaoWeb[];
+  listaPaginaValidacao: PaginaValidacaoWeb[];
 
 
   constructor(public dialogRef: MatDialogRef<EditaPaginaInstalacaoAppComponent>
     , @Inject(MAT_DIALOG_DATA) public data: any, private servico: PaginaInstalacaoAppApi,
-      private srvProjeto : ProjetoMySqlApi) { }
+    private srvProjeto: ProjetoMySqlApi) { }
 
   ngOnInit() {
-    console.log("Parametro entrada", this.data);
-    if (!this.data.item) {
-      console.log("fluxo nova");
-      this.item = new PaginaInstalacaoApp();
-      this.item.permiteEdicao = 1;
-      console.log('Item: ' , JSON.stringify(this.item));
-    } else {
-      console.log('fluxo altera');
-      this.item = this.data.item;
-      this.carregaPaginaValidacaoProjeto();
-      console.log('Item:', JSON.stringify(this.item));
-    }
-   
+    this.item = this.data.item;
+    console.log("Item:", this.item);
+    this.carregaPaginaValidacaoProjeto();
   }
+  
 
   copiaItem(paginaValidacao) {
-      this.item.mensagemPrincipal = paginaValidacao.mensagemPrincipal;
-      this.item.mensagemSecundaria = paginaValidacao.mensagemSecundaria;
-      this.item.marcaLogo = paginaValidacao.marcaLogo;
-      this.item.botaoAcao = paginaValidacao.botaoAcao;
+    this.item.mensagemPrincipal = paginaValidacao.mensagemPrincipal;
+    this.item.mensagemSecundaria = paginaValidacao.mensagemSecundaria;
+    this.item.marcaLogo = paginaValidacao.marcaLogo;
+    this.item.botaoAcao = paginaValidacao.botaoAcao;
   }
 
   carregaPaginaValidacaoProjeto() {
-    this.srvProjeto.ProjetoConceitoPaginaValidacao(this.item.projetoMySqlId) 
+    console.log('ProjetoId:' , this.item.projetoMySqlId);
+    this.srvProjeto.ProjetoConceitoPaginaValidacao(this.item.projetoMySqlId)
       .subscribe((result) => {
         this.listaPaginaValidacao = result.listaPagina;
-        console.log('Lista Pagina: ' , this.listaPaginaValidacao);
+        console.log('Lista Pagina: ', this.listaPaginaValidacao);
       })
   }
 
   onSubmit() {
     console.log('Model: ' + JSON.stringify(this.item));
     if (!this.item.id) {
-      //this.item.projetoMySqlId = this.conceito.projetoMySqlId;
       this.servico.create(this.item, (err, obj) => {
         console.log("Erro:" + err.message);
       }).subscribe((e: any) => {

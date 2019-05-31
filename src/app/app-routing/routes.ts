@@ -129,8 +129,7 @@ export const routes : Routes = [
 
     { path: 'projetosFaseValor' , component: ProjetoEtapaValorComponent},
     { path: 'projetosFaseAnuncio' , component: ProjetosFaseAnuncioComponent},
-    { path: 'projetosFaseInstalacao' , component: ProjetoFaseInstalacaoComponent},
-  
+     
 
     { path: 'projetoConceitoProduto/:id' , component: ProjetoConceitoProdutoComponent},
     { path: 'projetoValorTela/:id' , component: ProjetoValorTelaComponent},

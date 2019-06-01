@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { ProjetoMySqlApi, ProjetoCanvasMySql, ItemValidacaoPagina, PaginaValidacaoWeb, ItemValidacaoPaginaApi } from '../shared/sdk';
+import { ProjetoMySqlApi, ProjetoCanvasMySql, ItemValidacaoPagina, PaginaValidacaoWeb, ItemValidacaoPaginaApi, PaginaInstalacaoApp } from '../shared/sdk';
 import { DropEvent } from 'ng-drag-drop';
 
 @Component({
@@ -10,11 +10,13 @@ import { DropEvent } from 'ng-drag-drop';
 })
 export class EscolhedorItemVallidacaoComponent implements OnInit {
 
-  consulta = { "where": { "tipo": "VALOR" }, "include": { "relation": "itemValidacaoPaginas" } };
+  //consulta = { "where": { "tipo": "VALOR" }, "include": { "relation": "itemValidacaoPaginas" } };
   listaItemDisponivel: ItemValidacaoPagina[] = new Array(0);
 
   //droppedItems: ItemValidacaoPagina[] = new Array(0);
   pagina: PaginaValidacaoWeb;
+  paginaInstalacao: PaginaInstalacaoApp;
+
 
   constructor(public dialogRef: MatDialogRef<EscolhedorItemVallidacaoComponent>
     , @Inject(MAT_DIALOG_DATA) public data: any,
@@ -26,31 +28,45 @@ export class EscolhedorItemVallidacaoComponent implements OnInit {
   }
 
   carregaListaValor() {
-    
-    this.pagina = this.data.pagina;
-    this.itemValidacaoSrv.disponiveisPorProjeto(this.pagina.projeto.id)
-      .subscribe((listaItens: any) => {
-        console.log("ListaItens" , listaItens);
-        this.listaItemDisponivel = listaItens.listaItens;
-      })
+    if (this.data.pagina) {
+      this.pagina = this.data.pagina;
+      this.itemValidacaoSrv.disponiveisPorProjeto(this.pagina.projeto.id)
+        .subscribe((listaItens: any) => {
+          console.log("ListaItens", listaItens);
+          this.listaItemDisponivel = listaItens.listaItens;
+        })
+    }
+    if (this.data.paginaInstalacao) {
+      this.paginaInstalacao = this.data.paginaInstalacao;
+      this.itemValidacaoSrv.disponiveisPorProjeto(this.paginaInstalacao.projeto.id)
+        .subscribe((listaItens: any) => {
+          console.log("ListaItens", listaItens);
+          this.listaItemDisponivel = listaItens.listaItens;
+        })
+    }
   }
 
 
- 
+
 
   onDrop(e: DropEvent) {
-    console.log('onDrop:', e.dragData);
     let item = <ItemValidacaoPagina>e.dragData;
-    console.log('Data:', this.data);
-    item.paginaValidacaoWebId = this.pagina.id;
-    console.log('Pagina:', this.pagina);
-    console.log('Item', item);
-    this.itemValidacaoSrv.updateAttributes(item.id, item)
-      .subscribe((result: any) => {
-        console.log('Resultado: ', result);
-        this.pagina.itemValidacaoPaginas.push(e.dragData);
-        this.removeItem(e.dragData, this.listaItemDisponivel)
-      })
+    if (this.pagina) {
+      item.paginaValidacaoWebId = this.pagina.id;
+      this.itemValidacaoSrv.updateAttributes(item.id, item)
+        .subscribe((result: any) => {
+          this.pagina.itemValidacaoPaginas.push(e.dragData);
+          this.removeItem(e.dragData, this.listaItemDisponivel)
+        })
+    }
+    if (this.paginaInstalacao) {
+      item.paginaInstalacaoAppId = this.paginaInstalacao.id;
+      this.itemValidacaoSrv.updateAttributes(item.id, item)
+        .subscribe((result: any) => {
+          this.paginaInstalacao.itemValidacaoPaginas.push(e.dragData);
+          this.removeItem(e.dragData, this.listaItemDisponivel)
+        })
+    }
 
   }
 

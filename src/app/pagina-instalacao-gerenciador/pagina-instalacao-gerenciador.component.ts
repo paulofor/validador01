@@ -40,7 +40,7 @@ export class PaginaInstalacaoGerenciadorComponent implements OnInit {
       pagina = new PaginaInstalacaoApp();
       pagina.permiteEdicao = true;
       pagina.projetoMySqlId = this.projeto.id;
-      console.log('Pagina:' , pagina);
+      console.log('Pagina Nova:' , pagina);
     }
     this.dialog.afterAllClosed.subscribe(result => {
       this.carregaDados();
@@ -51,5 +51,15 @@ export class PaginaInstalacaoGerenciadorComponent implements OnInit {
         item: pagina
       }
     });
+  }
+
+
+  visitar(item){
+    window.open("http://validacao.kinghost.net/oferta/?inst=" + item.codigoHash , "_blank");
+  }
+ 
+
+  permiteAlterar(item : PaginaInstalacaoApp) {
+    return (item.permiteEdicao==1);
   }
 }

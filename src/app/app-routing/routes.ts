@@ -66,6 +66,7 @@ import { ProjetoPalavraChaveComponent } from '../projeto-palavra-chave/projeto-p
 import { ProjetoPalavraChaveDetalheComponent } from '../projeto-palavra-chave-detalhe/projeto-palavra-chave-detalhe.component';
 import { ProjetoFaseInstalacaoComponent } from '../projeto-fase-instalacao/projeto-fase-instalacao.component';
 import { PaginaInstalacaoGerenciadorComponent } from '../pagina-instalacao-gerenciador/pagina-instalacao-gerenciador.component';
+import { EdicaoPaginaInstalacaoAppComponent } from '../edicao-pagina-instalacao-app/edicao-pagina-instalacao-app.component';
 
 
 
@@ -94,6 +95,7 @@ export const routes : Routes = [
 
     { path: 'paginaValidacaoPorProjeto/:id' , component: ListaPaginaValidacaoPorProjetoComponent },
     { path: 'editaPaginaValidacaoWeb/:id' , component: EdicaoPaginaValidacaoComponent},
+    { path: 'editaPaginaInstalacaoApp/:id' , component: EdicaoPaginaInstalacaoAppComponent},
     { path: 'adicionaPaginaValidacaoWebParaProjeto/:id', component: EdicaoPaginaValidacaoComponent  },
 
     { path: 'projetoAplicacao' , component: ProjetoAplicacaoComponent },

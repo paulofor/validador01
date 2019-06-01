@@ -33,8 +33,8 @@
                       <mat-card-subtitle>{{item.botaoAcao}}</mat-card-subtitle>
                       <mat-card-actions>
                         <button mat-raised-button color="primary" [disabled]="item.permiteEdicao==0" (click)="openDialog(item)">Alterar</button>
-                        <button mat-raised-button color="primary" routerLink="/editaPaginaValidacaoWeb/{{item.id}}">Detalhe</button>
-                        <button mat-raised-button color="primary" (click)="visitar()">Visitar</button>
+                        <button mat-raised-button color="primary" routerLink="/editaPaginaInstalacaoApp/{{item.id}}">Detalhe</button>
+                        <button mat-raised-button color="primary" (click)="visitar(item)">Visitar</button>
                       </mat-card-actions>
 
                     </mat-card>

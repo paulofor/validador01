@@ -191,6 +191,7 @@ import { PalavraChaveAddProjetoComponent } from './palavra-chave-add-projeto/pal
 import { ProjetoFaseInstalacaoComponent } from './projeto-fase-instalacao/projeto-fase-instalacao.component';
 import { PaginaInstalacaoGerenciadorComponent } from './pagina-instalacao-gerenciador/pagina-instalacao-gerenciador.component';
 import { EditaPaginaInstalacaoAppComponent } from './edita-pagina-instalacao-app/edita-pagina-instalacao-app.component';
+import { EdicaoPaginaInstalacaoAppComponent } from './edicao-pagina-instalacao-app/edicao-pagina-instalacao-app.component';
 
 
 
@@ -354,7 +355,9 @@ registerLocaleData(localePt, 'pt-BR');
     ProjetoFaseInstalacaoComponent,
     PaginaInstalacaoGerenciadorComponent,
 
-    EditaPaginaInstalacaoAppComponent
+    EditaPaginaInstalacaoAppComponent,
+
+    EdicaoPaginaInstalacaoAppComponent
 
   ],
   entryComponents: [

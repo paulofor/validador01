@@ -51,6 +51,8 @@ export class EscolhedorItemVallidacaoComponent implements OnInit {
 
   onDrop(e: DropEvent) {
     let item = <ItemValidacaoPagina>e.dragData;
+    console.log('Pagina: ' , this.pagina);
+    console.log('Pagina Instalacao:' , this.paginaInstalacao);
     if (this.pagina) {
       item.paginaValidacaoWebId = this.pagina.id;
       this.itemValidacaoSrv.updateAttributes(item.id, item)

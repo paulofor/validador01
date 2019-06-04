@@ -27,15 +27,17 @@ export class EscolheItemValidacaoComponent implements OnInit {
     private srvPagina: PaginaValidacaoWebApi, private srvPaginaInstalacao: PaginaInstalacaoAppApi, private router: Router) { }
 
   ngOnInit() {
-
+    this.atualizaPagina();
   }
 
   atualizaPagina() {
+    //console.log('')
     if (this.pagina) {
       this.route.paramMap.pipe(
         switchMap((params: ParamMap) =>
           this.srvPagina.findById(this.pagina.id, this.consulta)
         )).subscribe((paginaResult: PaginaValidacaoWeb) => {
+          console.log('paginaResult(PaginaValidacaoWeb): ' , paginaResult);
           this.pagina = paginaResult;
         })
     }
@@ -44,6 +46,7 @@ export class EscolheItemValidacaoComponent implements OnInit {
         switchMap((params: ParamMap) =>
           this.srvPaginaInstalacao.findById(this.paginaInstalacao.id, this.consulta)
         )).subscribe((paginaResult: PaginaInstalacaoApp) => {
+          console.log('paginaResult(PaginaInstalacaoApp): ' , paginaResult);
           this.paginaInstalacao = paginaResult;
         })
     }
@@ -52,9 +55,12 @@ export class EscolheItemValidacaoComponent implements OnInit {
 
 
   openDialog(pagina) {
-    console.log('Pagina:', pagina);
+    
+    console.log('this.pagina:', this.pagina);
+    console.log('this.paginaInstalacao:', this.paginaInstalacao);
+  
     this.dialog.afterAllClosed.subscribe(result => {
-      console.log('Dialog result: ${result}');
+      //console.log('Dialog result: ${result}');
       this.atualizaPagina();
     });
     if (this.pagina) {

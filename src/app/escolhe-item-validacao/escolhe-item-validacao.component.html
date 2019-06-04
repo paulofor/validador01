@@ -1,9 +1,8 @@
 <div *ngIf="pagina" class="card">
   <div class="header">
-    <h4 class="title">Itens de Validaçãos</h4>
+    <h4 class="title">Itens de Validação - Página Validação</h4>
     <button class="btn btn-primary btn-sm " *ngIf="pagina.permiteEdicao==1" (click)="openDialog(pagina)">Escolher</button>
   </div>
-
   <div class="content table-responsive table-full-width">
     <table class="table table-hover table-striped">
       <thead>
@@ -21,7 +20,31 @@
         </tr>
       </tbody>
     </table>
-
   </div>
+</div>
 
+
+<div *ngIf="paginaInstalacao" class="card">
+  <div class="header">
+    <h4 class="title">Itens de Validação - Página Instalação</h4>
+    <button class="btn btn-primary btn-sm " *ngIf="paginaInstalacao.permiteEdicao==1" (click)="openDialog(paginaInstalacao)">Escolher</button>
+  </div>
+  <div class="content table-responsive table-full-width">
+    <table class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th width="10%">Ordem</th>
+          <th width="80%">Item Validação</th>
+          <th widht="10%"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of paginaInstalacao.itemValidacaoPaginas">
+          <td>{{item.ordenacao}}</td>
+          <td>{{item.titulo}}</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

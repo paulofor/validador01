@@ -1,6 +1,6 @@
 <h2 mat-dialog-title>Campanha</h2>
 
-<form class="example-full-width" (ngSubmit)="onSubmit()">
+<form *ngIf="listaPagina && listaPaginaInstalacao && listaSetup" class="example-full-width" (ngSubmit)="onSubmit()">
 
 
   <mat-dialog-content>
@@ -16,8 +16,15 @@
   </mat-dialog-content>
 
   <mat-form-field class="example-full-width">
-    <mat-select placeholder="Página" #paginaValidacaoWebId [(ngModel)]="item.paginaValidacaoWebId" name="paginaValidacaoWebId">
+    <mat-select placeholder="Página Validação" #paginaValidacaoWebId [(ngModel)]="item.paginaValidacaoWebId" name="paginaValidacaoWebId">
       <mat-option *ngFor="let pagina of listaPagina" [value]="pagina.id">
+        {{ pagina.mensagemPrincipal }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <mat-select placeholder="Página Instalação" #paginaInstalacaoAppId [(ngModel)]="item.paginaInstalacaoAppId" name="paginaInstalacaoAppId">
+      <mat-option *ngFor="let pagina of listaPaginaInstalacao" [value]="pagina.id">
         {{ pagina.mensagemPrincipal }}
       </mat-option>
     </mat-select>

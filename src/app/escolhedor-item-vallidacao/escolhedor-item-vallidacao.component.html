@@ -18,7 +18,7 @@
         </div>
     </div>
 
-    <div class="col-sm-6">
+    <div *ngIf="pagina" class="col-sm-6">
         <div class="card card-outline-primary mb-3" droppable [dropScope]="'default-css'"
              (onDrop)="onDrop($event)">
             <div class="card-header card-inverse card-primary">Na página</div>
@@ -32,6 +32,20 @@
         </div>
     </div>
 
+
+    <div *ngIf="paginaInstalacao" class="col-sm-6">
+        <div class="card card-outline-primary mb-3" droppable [dropScope]="'default-css'"
+             (onDrop)="onDrop($event)">
+            <div class="card-header card-inverse card-primary">Na página</div>
+            <div class="card-block scroll-list">
+                <ul class="list-group">
+                    <li *ngFor="let item of paginaInstalacao.itemValidacaoPaginas" class="list-group-item">
+                        {{item.titulo}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
 
 

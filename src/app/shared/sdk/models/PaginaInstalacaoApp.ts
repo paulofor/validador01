@@ -17,6 +17,7 @@ export interface PaginaInstalacaoAppInterface {
   "marcaLogo"?: string;
   "codigoHash"?: string;
   "permiteEdicao"?: number;
+  "urlInstalacao"?: string;
   "projetoMySqlId"?: number;
   "paginaValidacaoWebId"?: number;
   itemValidacaoPaginas?: ItemValidacaoPagina[];
@@ -35,6 +36,7 @@ export class PaginaInstalacaoApp implements PaginaInstalacaoAppInterface {
   "marcaLogo": string;
   "codigoHash": string;
   "permiteEdicao": number;
+  "urlInstalacao": string;
   "projetoMySqlId": number;
   "paginaValidacaoWebId": number;
   itemValidacaoPaginas: ItemValidacaoPagina[];
@@ -109,6 +111,10 @@ export class PaginaInstalacaoApp implements PaginaInstalacaoAppInterface {
         "permiteEdicao": {
           name: 'permiteEdicao',
           type: 'number'
+        },
+        "urlInstalacao": {
+          name: 'urlInstalacao',
+          type: 'string'
         },
         "projetoMySqlId": {
           name: 'projetoMySqlId',

@@ -18,13 +18,27 @@
         </div>
     </div>
 
-    <div class="col-sm-6">
+    <div class="col-sm-6" *ngIf="pagina">
         <div class="card card-outline-primary mb-3" droppable [dropScope]="'default-css'"
              (onDrop)="onDrop($event)">
-            <div class="card-header card-inverse card-primary">Na página</div>
+            <div class="card-header card-inverse card-primary">Na página Validação</div>
             <div class="card-block scroll-list">
                 <ul class="list-group">
                     <li *ngFor="let item of pagina.itemValidacaoPaginas" class="list-group-item">
+                        {{item.titulo}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6" *ngIf="paginaInstalacao">
+        <div class="card card-outline-primary mb-3" droppable [dropScope]="'default-css'"
+             (onDrop)="onDrop($event)">
+            <div class="card-header card-inverse card-primary">Na página Instalação</div>
+            <div class="card-block scroll-list">
+                <ul class="list-group">
+                    <li *ngFor="let item of paginaInstalacao.itemValidacaoPaginas" class="list-group-item">
                         {{item.titulo}}
                     </li>
                 </ul>

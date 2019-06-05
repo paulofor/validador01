@@ -38,7 +38,7 @@ export class EscolhedorItemVallidacaoComponent implements OnInit {
     }
     if (this.data.paginaInstalacao) {
       this.paginaInstalacao = this.data.paginaInstalacao;
-      this.itemValidacaoSrv.disponiveisPorProjeto(this.paginaInstalacao.projeto.id)
+      this.itemValidacaoSrv.disponiveisPorProjeto(this.paginaInstalacao.projetoMySqlId)
         .subscribe((listaItens: any) => {
           console.log("ListaItens", listaItens);
           this.listaItemDisponivel = listaItens.listaItens;

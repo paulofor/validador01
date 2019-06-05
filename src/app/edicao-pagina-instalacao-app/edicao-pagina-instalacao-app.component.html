@@ -37,6 +37,12 @@
                 </mat-form-field>
               </mat-dialog-content>
 
+              <mat-dialog-content>
+                <mat-form-field class="example-full-width">
+                  <input matInput [(ngModel)]="pagina.urlInstalacao" name="urlInstalacao" placeholder="Url Instalação" />
+                </mat-form-field>
+              </mat-dialog-content>
+
               <mat-dialog-actions *ngIf="(pagina.permiteEdicao==1)">
                 <button mat-button>Enviar</button>
                 <button mat-button mat-dialog-close>Cancelar</button>

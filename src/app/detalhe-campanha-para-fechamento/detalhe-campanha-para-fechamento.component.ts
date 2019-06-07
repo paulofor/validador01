@@ -11,25 +11,31 @@ import { Params, ActivatedRoute } from '@angular/router';
 export class DetalheCampanhaParaFechamentoComponent implements OnInit {
 
 
-  campanha : CampanhaAds;
-  projeto : ProjetoMySql;
+  campanha: CampanhaAds;
+  projeto: ProjetoMySql;
 
-  filtro = {"include" : {"relation" : "paginaValidacaoWeb" , "scope" : {"include" : "projeto" }  } };
+  filtro = {
+    "include":
+      [
+        { "relation": "paginaValidacaoWeb", "scope": { "include": "projeto" } },
+        { "relation": "paginaInstalacaoApp", "scope": { "include": "projeto" } }
+      ]
+  };
 
-  constructor(private router: ActivatedRoute, private srv : CampanhaAdsApi) { }
+  constructor(private router: ActivatedRoute, private srv: CampanhaAdsApi) { }
 
   ngOnInit() {
     this.carregaCampanha();
   }
 
   carregaCampanha() {
-    this.router.params.subscribe((params:Params) => {
-        let idCampanha = params['id'];
-        this.srv.findById(idCampanha, this.filtro)
-          .subscribe((resultado:CampanhaAds) => {
-            console.log('Campanha: ', resultado);
-            this.campanha = resultado;
-          })
+    this.router.params.subscribe((params: Params) => {
+      let idCampanha = params['id'];
+      this.srv.findById(idCampanha, this.filtro)
+        .subscribe((resultado: CampanhaAds) => {
+          console.log('Campanha: ', resultado);
+          this.campanha = resultado;
+        })
     })
   }
 

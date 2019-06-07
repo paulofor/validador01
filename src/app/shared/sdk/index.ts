@@ -194,6 +194,7 @@ export class SDKBrowserModule {
         PaginaInstalacaoAppApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
+
       ]
     };
   }

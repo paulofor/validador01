@@ -15,6 +15,7 @@ import { ItemValidacaoPagina } from '../../models/ItemValidacaoPagina';
 import { CampanhaAds } from '../../models/CampanhaAds';
 import { ProjetoMySql } from '../../models/ProjetoMySql';
 import { PaginaValidacaoWeb } from '../../models/PaginaValidacaoWeb';
+import { ConceitoProduto } from '../../models/ConceitoProduto';
 
 
 /**
@@ -269,6 +270,36 @@ export class PaginaInstalacaoAppApi extends BaseLoopBackApi {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/PaginaInstalacaoApps/:id/paginaValidacaoWeb";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof refresh !== 'undefined' && refresh !== null) _urlParams.refresh = refresh;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Fetches belongsTo relation conceitoProduto.
+   *
+   * @param {any} id PaginaInstalacaoApp id
+   *
+   * @param {boolean} refresh 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `PaginaInstalacaoApp` object.)
+   * </em>
+   */
+  public getConceitoProduto(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/PaginaInstalacaoApps/:id/conceitoProduto";
     let _routeParams: any = {
       id: id
     };
@@ -1306,39 +1337,6 @@ export class PaginaInstalacaoAppApi extends BaseLoopBackApi {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/PaginaInstalacaoApps/:id/campanhaAds/:nk/setupCampanha";
-    let _routeParams: any = {
-      id: id,
-      nk: nk
-    };
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    if (typeof refresh !== 'undefined' && refresh !== null) _urlParams.refresh = refresh;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
-  }
-
-  /**
-   * Fetches belongsTo relation paginaInstalacaoApp.
-   *
-   * @param {any} id PaginaInstalacaoApp id
-   *
-   * @param {any} nk Foreign key for campanhaAds.
-   *
-   * @param {boolean} refresh 
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `PaginaInstalacaoApp` object.)
-   * </em>
-   */
-  public getCampanhaAdsPaginaInstalacaoApp(id: any, nk: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "GET";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/PaginaInstalacaoApps/:id/campanhaAds/:nk/paginaInstalacaoApp";
     let _routeParams: any = {
       id: id,
       nk: nk

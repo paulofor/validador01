@@ -3,7 +3,8 @@ import {
   ItemValidacaoPagina,
   CampanhaAds,
   ProjetoMySql,
-  PaginaValidacaoWeb
+  PaginaValidacaoWeb,
+  ConceitoProduto
 } from '../index';
 
 declare var Object: any;
@@ -20,10 +21,12 @@ export interface PaginaInstalacaoAppInterface {
   "urlInstalacao"?: string;
   "projetoMySqlId"?: number;
   "paginaValidacaoWebId"?: number;
+  "conceitoProdutoId"?: number;
   itemValidacaoPaginas?: ItemValidacaoPagina[];
   campanhaAds?: CampanhaAds[];
   projeto?: ProjetoMySql;
   paginaValidacaoWeb?: PaginaValidacaoWeb;
+  conceitoProduto?: ConceitoProduto;
 }
 
 export class PaginaInstalacaoApp implements PaginaInstalacaoAppInterface {
@@ -39,10 +42,12 @@ export class PaginaInstalacaoApp implements PaginaInstalacaoAppInterface {
   "urlInstalacao": string;
   "projetoMySqlId": number;
   "paginaValidacaoWebId": number;
+  "conceitoProdutoId": number;
   itemValidacaoPaginas: ItemValidacaoPagina[];
   campanhaAds: CampanhaAds[];
   projeto: ProjetoMySql;
   paginaValidacaoWeb: PaginaValidacaoWeb;
+  conceitoProduto: ConceitoProduto;
   constructor(data?: PaginaInstalacaoAppInterface) {
     Object.assign(this, data);
   }
@@ -124,6 +129,10 @@ export class PaginaInstalacaoApp implements PaginaInstalacaoAppInterface {
           name: 'paginaValidacaoWebId',
           type: 'number'
         },
+        "conceitoProdutoId": {
+          name: 'conceitoProdutoId',
+          type: 'number'
+        },
       },
       relations: {
         itemValidacaoPaginas: {
@@ -156,6 +165,14 @@ export class PaginaInstalacaoApp implements PaginaInstalacaoAppInterface {
           model: 'PaginaValidacaoWeb',
           relationType: 'belongsTo',
                   keyFrom: 'paginaValidacaoWebId',
+          keyTo: 'id'
+        },
+        conceitoProduto: {
+          name: 'conceitoProduto',
+          type: 'ConceitoProduto',
+          model: 'ConceitoProduto',
+          relationType: 'belongsTo',
+                  keyFrom: 'conceitoProdutoId',
           keyTo: 'id'
         },
       }

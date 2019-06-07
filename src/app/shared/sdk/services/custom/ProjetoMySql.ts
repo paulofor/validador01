@@ -2500,6 +2500,39 @@ export class ProjetoMySqlApi extends BaseLoopBackApi {
   }
 
   /**
+   * Fetches belongsTo relation conceitoProduto.
+   *
+   * @param {any} id ProjetoMySql id
+   *
+   * @param {any} nk Foreign key for paginaInstalacaoApps.
+   *
+   * @param {boolean} refresh 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ProjetoMySql` object.)
+   * </em>
+   */
+  public getPaginaInstalacaoAppsConceitoProduto(id: any, nk: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProjetoMySqls/:id/paginaInstalacaoApps/:nk/conceitoProduto";
+    let _routeParams: any = {
+      id: id,
+      nk: nk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof refresh !== 'undefined' && refresh !== null) _urlParams.refresh = refresh;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Queries itemValidacaoPaginas of PaginaInstalacaoApp.
    *
    * @param {any} id ProjetoMySql id

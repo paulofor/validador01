@@ -171,9 +171,7 @@ import { PlanoSemanaPorContextoComponent } from './plano-semana-por-contexto/pla
 import { EditaTempoExecucaoComponent } from './edita-tempo-execucao/edita-tempo-execucao.component';
 import { DisplayPlanoSemanaComponent } from './display-plano-semana/display-plano-semana.component';
 
-import { LOCALE_ID } from '@angular/core';
-import { registerLocaleData } from '@angular/common';
-import localePt from '@angular/common/locales/pt';
+
 import { ListaItemValidacaoProjetoComponent } from './lista-item-validacao-projeto/lista-item-validacao-projeto.component';
 import { EditaCriaItemValidacaoProjetoComponent } from './edita-cria-item-validacao-projeto/edita-cria-item-validacao-projeto.component';
 import { TelaAppPorAplicacaoComponent } from './tela-app-por-aplicacao/tela-app-por-aplicacao.component';
@@ -192,8 +190,12 @@ import { ProjetoFaseInstalacaoComponent } from './projeto-fase-instalacao/projet
 import { PaginaInstalacaoGerenciadorComponent } from './pagina-instalacao-gerenciador/pagina-instalacao-gerenciador.component';
 import { EditaPaginaInstalacaoAppComponent } from './edita-pagina-instalacao-app/edita-pagina-instalacao-app.component';
 import { EdicaoPaginaInstalacaoAppComponent } from './edicao-pagina-instalacao-app/edicao-pagina-instalacao-app.component';
+import { VisitantesPorPaginaInstalacaoAppComponent } from './visitantes-por-pagina-instalacao-app/visitantes-por-pagina-instalacao-app.component';
+import { VisitantesPorPaginaValidacaoWebComponent } from './visitantes-por-pagina-validacao-web/visitantes-por-pagina-validacao-web.component';
 
-
+import { LOCALE_ID } from '@angular/core';
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -357,7 +359,11 @@ registerLocaleData(localePt, 'pt-BR');
 
     EditaPaginaInstalacaoAppComponent,
 
-    EdicaoPaginaInstalacaoAppComponent
+    EdicaoPaginaInstalacaoAppComponent,
+
+    VisitantesPorPaginaInstalacaoAppComponent,
+
+    VisitantesPorPaginaValidacaoWebComponent
 
   ],
   entryComponents: [
@@ -440,7 +446,7 @@ registerLocaleData(localePt, 'pt-BR');
     LoopBackAuth,
     InternalStorage,
     ProcessoNegocioApi,
-    { provide: LOCALE_ID, useValue: 'pt-BR' }
+    { provide: LOCALE_ID, useValue: 'pt-BR' } 
   ],
   bootstrap: [AppComponent]
 })

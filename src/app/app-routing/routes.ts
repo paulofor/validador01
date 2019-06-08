@@ -67,6 +67,8 @@ import { ProjetoPalavraChaveDetalheComponent } from '../projeto-palavra-chave-de
 import { ProjetoFaseInstalacaoComponent } from '../projeto-fase-instalacao/projeto-fase-instalacao.component';
 import { PaginaInstalacaoGerenciadorComponent } from '../pagina-instalacao-gerenciador/pagina-instalacao-gerenciador.component';
 import { EdicaoPaginaInstalacaoAppComponent } from '../edicao-pagina-instalacao-app/edicao-pagina-instalacao-app.component';
+import { VisitantesPorPaginaValidacaoWebComponent } from '../visitantes-por-pagina-validacao-web/visitantes-por-pagina-validacao-web.component';
+import { VisitantesPorPaginaInstalacaoAppComponent } from '../visitantes-por-pagina-instalacao-app/visitantes-por-pagina-instalacao-app.component';
 
 
 
@@ -169,6 +171,9 @@ export const routes : Routes = [
 
     { path: 'projetoPalavraChave' , component : ProjetoPalavraChaveComponent },
     { path: 'projetoPalavraChave/:id' , component : ProjetoPalavraChaveDetalheComponent },
+
+    { path: 'visitantesPorPaginaInstalacao/:id' , component: VisitantesPorPaginaInstalacaoAppComponent } ,
+    { path: 'visitantesPorPaginaValidacao/:id' , component: VisitantesPorPaginaValidacaoWebComponent } ,
 
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

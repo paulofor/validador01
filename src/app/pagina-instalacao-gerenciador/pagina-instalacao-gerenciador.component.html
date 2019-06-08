@@ -35,6 +35,7 @@
                         <button mat-raised-button color="primary" [disabled]="item.permiteEdicao==0" (click)="openDialog(item)">Alterar</button>
                         <button mat-raised-button color="primary" routerLink="/editaPaginaInstalacaoApp/{{item.id}}">Detalhe</button>
                         <button mat-raised-button color="primary" (click)="visitar(item)">Visitar</button>
+                        <button mat-raised-button color="primary" routerLink="/visitantesPorPaginaInstalacao/{{item.id}}">Visitantes</button>
                       </mat-card-actions>
 
                     </mat-card>

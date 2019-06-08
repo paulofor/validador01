@@ -4,7 +4,8 @@ import {
   CampanhaAds,
   ProjetoMySql,
   PaginaValidacaoWeb,
-  ConceitoProduto
+  ConceitoProduto,
+  Visitante
 } from '../index';
 
 declare var Object: any;
@@ -27,6 +28,7 @@ export interface PaginaInstalacaoAppInterface {
   projeto?: ProjetoMySql;
   paginaValidacaoWeb?: PaginaValidacaoWeb;
   conceitoProduto?: ConceitoProduto;
+  visitantes?: Visitante[];
 }
 
 export class PaginaInstalacaoApp implements PaginaInstalacaoAppInterface {
@@ -48,6 +50,7 @@ export class PaginaInstalacaoApp implements PaginaInstalacaoAppInterface {
   projeto: ProjetoMySql;
   paginaValidacaoWeb: PaginaValidacaoWeb;
   conceitoProduto: ConceitoProduto;
+  visitantes: Visitante[];
   constructor(data?: PaginaInstalacaoAppInterface) {
     Object.assign(this, data);
   }
@@ -174,6 +177,14 @@ export class PaginaInstalacaoApp implements PaginaInstalacaoAppInterface {
           relationType: 'belongsTo',
                   keyFrom: 'conceitoProdutoId',
           keyTo: 'id'
+        },
+        visitantes: {
+          name: 'visitantes',
+          type: 'Visitante[]',
+          model: 'Visitante',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'paginaInstalacaoAppId'
         },
       }
     }

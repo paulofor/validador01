@@ -196,6 +196,9 @@ import { VisitantesPorPaginaValidacaoWebComponent } from './visitantes-por-pagin
 import { LOCALE_ID } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
+import { EditaSetupCampanhaAppComponent } from './edita-setup-campanha-app/edita-setup-campanha-app.component';
+import { AnuncioAppGerenciadorComponent } from './anuncio-app-gerenciador/anuncio-app-gerenciador.component';
+import { EditaAnuncioAppComponent } from './edita-anuncio-app/edita-anuncio-app.component';
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -363,7 +366,13 @@ registerLocaleData(localePt, 'pt-BR');
 
     VisitantesPorPaginaInstalacaoAppComponent,
 
-    VisitantesPorPaginaValidacaoWebComponent
+    VisitantesPorPaginaValidacaoWebComponent,
+
+    EditaSetupCampanhaAppComponent,
+
+    AnuncioAppGerenciadorComponent,
+
+    EditaAnuncioAppComponent
 
   ],
   entryComponents: [
@@ -405,7 +414,9 @@ registerLocaleData(localePt, 'pt-BR');
     DialogoConfirmacao,
     PalavraChaveAddProjetoComponent,
     ProjetoFaseInstalacaoComponent,
-    EditaPaginaInstalacaoAppComponent
+    EditaPaginaInstalacaoAppComponent,
+    EditaSetupCampanhaAppComponent,
+    EditaAnuncioAppComponent
   ],
   imports: [
     BrowserModule,
@@ -434,7 +445,8 @@ registerLocaleData(localePt, 'pt-BR');
     MatAutocompleteModule,
     ReactiveFormsModule,
     MatCheckboxModule,
-    FormsModule
+    FormsModule,
+    MatButtonModule
 
 
   ],

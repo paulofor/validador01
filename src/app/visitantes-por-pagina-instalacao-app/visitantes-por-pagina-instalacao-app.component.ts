@@ -44,6 +44,7 @@ export class VisitantesPorPaginaInstalacaoAppComponent implements OnInit {
       || item.codigoCookie == '1fa33fcbdd83d61dc6925c6a1bc4a97ac9855036' 
       || item.codigoCookie == '2a4c7a4bf23a6a330c02302eb8daff4f72296a81' 
       || item.codigoCookie == '2bcdaaed44c19ba164408473cb3bdeac4c56e6d4' 
+      || item.codigoCookie == '1b39f0f260909e7ad6a27ff13e62df9809e35175' 
       ) {
       return 'colunaInativo'
     } else {

@@ -8,7 +8,8 @@ import {
   Aplicacao,
   EtapaProjeto,
   ConceitoProduto,
-  PaginaInstalacaoApp
+  PaginaInstalacaoApp,
+  AnuncioAplicativo
 } from '../index';
 
 declare var Object: any;
@@ -35,6 +36,7 @@ export interface ProjetoMySqlInterface {
   etapaProjeto?: EtapaProjeto;
   conceitoProdutos?: ConceitoProduto[];
   paginaInstalacaoApps?: PaginaInstalacaoApp[];
+  anuncioAplicativos?: AnuncioAplicativo[];
 }
 
 export class ProjetoMySql implements ProjetoMySqlInterface {
@@ -60,6 +62,7 @@ export class ProjetoMySql implements ProjetoMySqlInterface {
   etapaProjeto: EtapaProjeto;
   conceitoProdutos: ConceitoProduto[];
   paginaInstalacaoApps: PaginaInstalacaoApp[];
+  anuncioAplicativos: AnuncioAplicativo[];
   constructor(data?: ProjetoMySqlInterface) {
     Object.assign(this, data);
   }
@@ -215,6 +218,14 @@ export class ProjetoMySql implements ProjetoMySqlInterface {
           name: 'paginaInstalacaoApps',
           type: 'PaginaInstalacaoApp[]',
           model: 'PaginaInstalacaoApp',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'projetoMySqlId'
+        },
+        anuncioAplicativos: {
+          name: 'anuncioAplicativos',
+          type: 'AnuncioAplicativo[]',
+          model: 'AnuncioAplicativo',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'projetoMySqlId'

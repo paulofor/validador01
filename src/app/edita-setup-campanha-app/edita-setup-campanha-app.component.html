@@ -1,0 +1,44 @@
+<h2 mat-dialog-title>Edição Setup de Campanha</h2>
+<h4 mat-dialog-title>Total Instalação:{{getTotalInstalacao() | number : '1.2-2' }}</h4>
+<h4 mat-dialog-title>Custo Total:{{getCustoTotal() | number : '1.2-2' }}</h4>
+
+<form *ngIf="item" class="example-full-width" (ngSubmit)="onSubmit()">
+
+  <mat-dialog-content>
+
+    <mat-form-field class="example-full-width">
+      <input matInput maxlength="200" #nome [(ngModel)]="item.nome" name="nome" placeholder="Nome" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput maxlength="20" #custoInstalacao [(ngModel)]="item.custoInstalacao" name="custoInstalacao" placeholder="Custo de Instalação" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput maxlength="20" #budgetDiario [(ngModel)]="item.budgetDiario" name="budgetDiario" placeholder="Orçamento diário" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-select #diaSemanaInicio [(ngModel)]="item.diaSemanaInicio" name="diaSemanaInicio" placeholder="Dia semana inicial">
+        <mat-option value="SUNDAY">Domingo</mat-option>
+        <mat-option value="MONDAY">Segunda</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-select #diaSemanaFinal [(ngModel)]="item.diaSemanaFinal" name="diaSemanaFinal" placeholder="Dia semana final">
+        <mat-option value="FRIDAY">Sexta</mat-option>
+        <mat-option value="SATURDAY">Sábado</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button mat-raised-button>Salvar</button>
+    <button mat-raised-button mat-dialog-close>Fechar</button>
+  </mat-dialog-actions>
+
+</form>

@@ -105,6 +105,7 @@ import { PaletaAplicacaoApi } from './services/custom/PaletaAplicacao';
 import { ComponenteAppApi } from './services/custom/ComponenteApp';
 import { ProcessoNegocioEtapaProjetoApi } from './services/custom/ProcessoNegocioEtapaProjeto';
 import { PaginaInstalacaoAppApi } from './services/custom/PaginaInstalacaoApp';
+import { AnuncioAplicativoApi } from './services/custom/AnuncioAplicativo';
 /**
 * @module SDKBrowserModule
 * @description
@@ -192,6 +193,7 @@ export class SDKBrowserModule {
         ComponenteAppApi,
         ProcessoNegocioEtapaProjetoApi,
         PaginaInstalacaoAppApi,
+        AnuncioAplicativoApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
 

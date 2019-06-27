@@ -4,7 +4,8 @@ import {
   TelaWeb,
   PaginaValidacaoWeb,
   ItemValidacaoPagina,
-  ValorConceito
+  ValorConceito,
+  AnuncioAplicativo
 } from '../index';
 
 declare var Object: any;
@@ -23,6 +24,7 @@ export interface ConceitoProdutoInterface {
   paginaValidacaoWebs?: PaginaValidacaoWeb[];
   itemValidacaoPaginas?: ItemValidacaoPagina[];
   valorConceitos?: ValorConceito[];
+  anuncioAplicativos?: AnuncioAplicativo[];
 }
 
 export class ConceitoProduto implements ConceitoProdutoInterface {
@@ -40,6 +42,7 @@ export class ConceitoProduto implements ConceitoProdutoInterface {
   paginaValidacaoWebs: PaginaValidacaoWeb[];
   itemValidacaoPaginas: ItemValidacaoPagina[];
   valorConceitos: ValorConceito[];
+  anuncioAplicativos: AnuncioAplicativo[];
   constructor(data?: ConceitoProdutoInterface) {
     Object.assign(this, data);
   }
@@ -147,6 +150,14 @@ export class ConceitoProduto implements ConceitoProdutoInterface {
           name: 'valorConceitos',
           type: 'ValorConceito[]',
           model: 'ValorConceito',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'conceitoProdutoId'
+        },
+        anuncioAplicativos: {
+          name: 'anuncioAplicativos',
+          type: 'AnuncioAplicativo[]',
+          model: 'AnuncioAplicativo',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'conceitoProdutoId'

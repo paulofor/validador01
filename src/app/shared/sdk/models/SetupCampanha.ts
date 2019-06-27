@@ -4,7 +4,7 @@ declare var Object: any;
 export interface SetupCampanhaInterface {
   "nome": string;
   "budgetDiario": number;
-  "estrategia": string;
+  "estrategia"?: string;
   "diaSemanaInicio"?: string;
   "diaSemanaFinal"?: string;
   "plataforma"?: string;
@@ -14,6 +14,9 @@ export interface SetupCampanhaInterface {
   "maxCpcGrupoAnuncio"?: number;
   "custoTotal"?: number;
   "cliqueTotal"?: number;
+  "tipoCampanha"?: string;
+  "custoInstalacao"?: number;
+  "totalInstalacao"?: number;
   "id"?: number;
 }
 
@@ -30,6 +33,9 @@ export class SetupCampanha implements SetupCampanhaInterface {
   "maxCpcGrupoAnuncio": number;
   "custoTotal": number;
   "cliqueTotal": number;
+  "tipoCampanha": string;
+  "custoInstalacao": number;
+  "totalInstalacao": number;
   "id": number;
   constructor(data?: SetupCampanhaInterface) {
     Object.assign(this, data);
@@ -110,6 +116,18 @@ export class SetupCampanha implements SetupCampanhaInterface {
         },
         "cliqueTotal": {
           name: 'cliqueTotal',
+          type: 'number'
+        },
+        "tipoCampanha": {
+          name: 'tipoCampanha',
+          type: 'string'
+        },
+        "custoInstalacao": {
+          name: 'custoInstalacao',
+          type: 'number'
+        },
+        "totalInstalacao": {
+          name: 'totalInstalacao',
           type: 'number'
         },
         "id": {

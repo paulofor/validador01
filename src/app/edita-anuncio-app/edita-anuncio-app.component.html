@@ -1,0 +1,38 @@
+<div  class="container">
+
+  <form class="example-full-width" (ngSubmit)="onSubmit()">
+
+    <mat-dialog-content>
+      <mat-form-field class="example-full-width">
+        <input matInput maxlength="25" #titulo1 [(ngModel)]="item.titulo1" name="titulo1" placeholder="Titulo1" />
+        <mat-hint align="end">{{titulo1.value?.length || 0}}/25</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput maxlength="25" [(ngModel)]="item.titulo2" #titulo2 name="titulo2" placeholder="Titulo2" />
+        <mat-hint align="end">{{titulo2.value?.length || 0}}/25</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput maxlength="25" #titulo3 [(ngModel)]="item.titulo3" name="titulo3" placeholder="Titulo3" />
+        <mat-hint align="end">{{titulo3.value?.length || 0}}/25</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput maxlength="25" #titulo4 [(ngModel)]="item.titulo4" name="titulo4" placeholder="Titulo4" />
+        <mat-hint align="end">{{titulo4.value?.length || 0}}/25</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="item.pacoteApp" #pacoteApp name="pacoteApp" placeholder="Pacote do Aplicativo" />
+      </mat-form-field>
+
+    </mat-dialog-content>
+
+    <mat-dialog-actions>
+      <button mat-raised-button>Salvar</button>
+      <button mat-raised-button mat-dialog-close>Fechar</button>
+    </mat-dialog-actions>
+
+  </form>
+</div>

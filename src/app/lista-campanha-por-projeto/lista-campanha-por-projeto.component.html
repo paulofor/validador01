@@ -8,7 +8,7 @@
             <button mat-raised-button (click)="openDialog()">Nova</button>
           </div>
           <div class="content table-responsive table-full-width">
-            <table class="table table-hover table-striped">
+            <table class="table table-hover table-striped" style="font-size: 12px !important">
 
               <thead>
                 <tr>
@@ -22,6 +22,7 @@
                   <th width="10%">Custo</th>
                   <th width="10%">Cpc</th>
                   <th width="10%">Conv.</th>
+                  <th width="10%">Tx. Conv.</th>
                   <th width="5%"></th>
                   <th width="5%"></th> 
                 </tr>
@@ -38,12 +39,17 @@
                   <td>{{campanha.orcamentoTotalExecutado | number : '1.2-2'}}</td>
                   <td>{{campanha.cpcMedio | number : '1.2-2' }}</td>
                   <td>{{campanha.conversao | number : '1.0-0' }}</td>
+                  <td>{{campanha.custoConversao | number : '1.2-2' }}</td>
                   <td>
-                    <button mat-raised-button color="primary" routerLink="/detalheCampanhaParaFechamento/{{campanha.id}}">Configuração</button>
+                    <button color="primary"  matTooltip="Configurações" mat-icon-button aria-label="Configurações" routerLink="/detalheCampanhaParaFechamento/{{campanha.id}}">
+                      <mat-icon>settings</mat-icon>
+                    </button>
                   </td>
                   <td>
-                    <button *ngIf="campanha.permiteEdicao==0" mat-raised-button color="primary" routerLink="/detalheCampanha/{{campanha.id}}">Resultados</button>
-                    <button *ngIf="campanha.permiteEdicao==1" mat-raised-button color="primary" (click)="openDialog(campanha)">Editar</button>
+                    <button color="primary" mat-icon-button aria-label="Resultados" routerLink="/detalheCampanha/{{campanha.id}}">
+                      <mat-icon matTooltip="Resultados" >visibility</mat-icon>
+                    </button>
+                    <button width="30px" *ngIf="campanha.permiteEdicao==1" style="font-size: 10px !important" mat-raised-button color="primary" (click)="openDialog(campanha)">Editar</button>
                   </td>
                 </tr>
               </tbody>

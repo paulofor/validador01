@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CampanhaAds, PaginaValidacaoWeb, CampanhaAdsApi, ProjetoMySqlApi, SetupCampanha, SetupCampanhaApi, PaginaInstalacaoApp } from '../shared/sdk';
+import { CampanhaAds, PaginaValidacaoWeb, CampanhaAdsApi, ProjetoMySqlApi, SetupCampanha, SetupCampanhaApi, PaginaInstalacaoApp, AnuncioAplicativo, AnuncioAplicativoApi } from '../shared/sdk';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { CampanhaEditaCriaComponent } from '../campanha-edita-cria/campanha-edita-cria.component';
 import { Inject } from '@angular/core';
@@ -15,13 +15,15 @@ export class CampanhaEditaCriaV2Component implements OnInit {
   private item: CampanhaAds;
   private listaPagina: PaginaValidacaoWeb[];
   private listaPaginaInstalacao: PaginaInstalacaoApp[];
+  private listaAnuncioApp: AnuncioAplicativo[];
 
   private listaSetup: SetupCampanha[];
   private idProjeto: number;
 
   constructor(public dialogRef: MatDialogRef<CampanhaEditaCriaComponent>
     , @Inject(MAT_DIALOG_DATA) public data: any, private campanhaSrv: CampanhaAdsApi,
-    private projetoSrv: ProjetoMySqlApi, private setupCampanhaSrv: SetupCampanhaApi) { }
+    private projetoSrv: ProjetoMySqlApi, private setupCampanhaSrv: SetupCampanhaApi,
+    private anuncioAppSrv: AnuncioAplicativoApi) { }
 
 
   carregaListaPaginaInstalacao() {
@@ -35,6 +37,18 @@ export class CampanhaEditaCriaV2Component implements OnInit {
     this.projetoSrv.getPaginaValidacaoWebs(this.idProjeto)
       .subscribe((resultado: PaginaValidacaoWeb[]) => {
         this.listaPagina = resultado;
+      })
+  }
+
+  carregaListaAnuncioAplicativo() {
+    console.log('ProjetoId:' , this.idProjeto)
+    
+    let filtro = { 'where': { 'projetoMySqlId': this.idProjeto } };
+    console.log('Filtro:' , filtro);
+    this.anuncioAppSrv.find(filtro)
+      .subscribe((resultado: AnuncioAplicativo[]) => {
+        console.log('ListaAnuncio:' , resultado);
+        this.listaAnuncioApp = resultado;
       })
   }
 
@@ -56,6 +70,7 @@ export class CampanhaEditaCriaV2Component implements OnInit {
     this.carregaListaPagina();
     this.carregaListaPaginaInstalacao();
     this.carregaListaSetup();
+    this.carregaListaAnuncioAplicativo();
   }
 
   onSubmit() {

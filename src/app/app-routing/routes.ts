@@ -69,6 +69,7 @@ import { PaginaInstalacaoGerenciadorComponent } from '../pagina-instalacao-geren
 import { EdicaoPaginaInstalacaoAppComponent } from '../edicao-pagina-instalacao-app/edicao-pagina-instalacao-app.component';
 import { VisitantesPorPaginaValidacaoWebComponent } from '../visitantes-por-pagina-validacao-web/visitantes-por-pagina-validacao-web.component';
 import { VisitantesPorPaginaInstalacaoAppComponent } from '../visitantes-por-pagina-instalacao-app/visitantes-por-pagina-instalacao-app.component';
+import { AnuncioAppGerenciadorComponent } from '../anuncio-app-gerenciador/anuncio-app-gerenciador.component';
 
 
 
@@ -174,6 +175,8 @@ export const routes : Routes = [
 
     { path: 'visitantesPorPaginaInstalacao/:id' , component: VisitantesPorPaginaInstalacaoAppComponent } ,
     { path: 'visitantesPorPaginaValidacao/:id' , component: VisitantesPorPaginaValidacaoWebComponent } ,
+
+    { path: 'anuncioAppGerenciador/:id' , component: AnuncioAppGerenciadorComponent },
 
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

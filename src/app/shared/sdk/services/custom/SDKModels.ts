@@ -57,6 +57,7 @@ import { PaletaAplicacao } from '../../models/PaletaAplicacao';
 import { ComponenteApp } from '../../models/ComponenteApp';
 import { ProcessoNegocioEtapaProjeto } from '../../models/ProcessoNegocioEtapaProjeto';
 import { PaginaInstalacaoApp } from '../../models/PaginaInstalacaoApp';
+import { AnuncioAplicativo } from '../../models/AnuncioAplicativo';
 
 export interface Models { [name: string]: any }
 
@@ -121,6 +122,7 @@ export class SDKModels {
     ComponenteApp: ComponenteApp,
     ProcessoNegocioEtapaProjeto: ProcessoNegocioEtapaProjeto,
     PaginaInstalacaoApp: PaginaInstalacaoApp,
+    AnuncioAplicativo: AnuncioAplicativo,
     
   };
 

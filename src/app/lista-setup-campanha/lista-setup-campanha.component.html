@@ -4,42 +4,77 @@
       <div class="card">
         <div class="header">
           <h4 class="title">Setup Campanha</h4>
-          <button class="btn btn-primary btn-sm " (click)="openDialog()">Novo</button>
+          <button class="btn btn-primary btn-sm " style="margin: 8px" (click)="openDialog()">Novo Geral</button>
+          <button class="btn btn-primary btn-sm " style="margin: 8px" (click)="openDialogApp()">Novo App</button>
         </div>
+        <!--Geral -->
         <div class="content table-responsive table-full-width">
-            <table class="table table-hover table-striped">
-              <thead>
-                <tr>
-                  <th width="15%">Nome</th>
-                  <th width="10%">Cliques</th>
-                  <th widht="10%">Custo Total</th>
-                  <th width="10%">Início</th>
-                  <th width="10%">Final</th>
-                  <th width="10%">Custo Dia</th>
-                  <th width="10%">Cpc Max</th>
-                  <th width="10%">Estratégia</th>
-                  <th width="10%">Plataforma</th>
-                  <th width="5%"></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let item of lista">
-                  <td>{{item.nome}}</td>
-                  <td>{{item.cliqueTotal | number : '1.2-2'}}</td>
-                  <td>{{item.custoTotal | number : '1.2-2'}}</td>
-                  <td>{{item.diaSemanaInicio}}</td>
-                  <td>{{item.diaSemanaFinal}}</td>
-                  <td>{{item.budgetDiario  | number : '1.2-2'}}</td>
-                  <td>{{item.maxCpcGrupoAnuncio}}</td>
-                  <td>{{item.estrategia}}</td>
-                  <td>{{item.plataforma}}</td>
-                  <td><button *ngIf="permiteEdicao(item)" class="btn btn-primary btn-sm "  (click)="openDialog(item)">Alterar</button></td>
-                </tr>
-              </tbody>
-            </table>
+          <table class="table table-hover table-striped">
+            <thead>
+              <tr>
+                <th width="15%">Nome</th>
+                <th width="10%">Cliques</th>
+                <th widht="10%">Custo Total</th>
+                <th width="10%">Início</th>
+                <th width="10%">Final</th>
+                <th width="10%">Custo Dia</th>
+                <th width="10%">Cpc Max</th>
+                <th width="10%">Estratégia</th>
+                <th width="10%">Plataforma</th>
+                <th width="5%"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of lista">
+                <td>{{item.nome}}</td>
+                <td>{{item.cliqueTotal | number : '1.2-2'}}</td>
+                <td>{{item.custoTotal | number : '1.2-2'}}</td>
+                <td>{{item.diaSemanaInicio}}</td>
+                <td>{{item.diaSemanaFinal}}</td>
+                <td>{{item.budgetDiario  | number : '1.2-2'}}</td>
+                <td>{{item.maxCpcGrupoAnuncio}}</td>
+                <td>{{item.estrategia}}</td>
+                <td>{{item.plataforma}}</td>
+                <td><button *ngIf="permiteEdicao(item)" class="btn btn-primary btn-sm "
+                    (click)="openDialog(item)">Alterar</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-          </div>
+        <!-- Instalacao -->
+        <div class="content table-responsive table-full-width">
+          <table class="table table-hover table-striped">
+            <thead>
+              <tr>
+                <th width="15%">Nome</th>
+                <th width="10%">Instalação</th>
+                <th widht="10%">Custo Total</th>
+                <th width="10%">Início</th>
+                <th width="10%">Final</th>
+                <th width="10%">Custo Dia</th>
+                <th width="10%">Instalações</th>
+                <th width="20%"></th>
+                <th width="5%"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of listaApp">
+                <td>{{item.nome}}</td>
+                <td>{{item.custoInstalacao | number : '1.2-2'}}</td>
+                <td>{{item.totalInstalacao}}</td>
+                <td>{{item.diaSemanaInicio}}</td>
+                <td>{{item.diaSemanaFinal}}</td>
+                <td>{{item.budgetDiario  | number : '1.2-2'}}</td>
+                <td>{{item.custoTotal | number : '1.2-2'}}</td>
+                <td></td>
+                <td><button *ngIf="permiteEdicao(item)" class="btn btn-primary btn-sm "
+                    (click)="openDialogApp(item)">Alterar</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
-  </div>
+</div>

@@ -16,16 +16,28 @@
   </mat-dialog-content>
 
   <mat-form-field class="example-full-width">
-    <mat-select placeholder="Página Validação" #paginaValidacaoWebId [(ngModel)]="item.paginaValidacaoWebId" name="paginaValidacaoWebId">
+    <mat-select placeholder="Página Validação" #paginaValidacaoWebId [(ngModel)]="item.paginaValidacaoWebId"
+      name="paginaValidacaoWebId">
       <mat-option *ngFor="let pagina of listaPagina" [value]="pagina.id">
         {{ pagina.mensagemPrincipal }}
       </mat-option>
     </mat-select>
   </mat-form-field>
+
   <mat-form-field class="example-full-width">
-    <mat-select placeholder="Página Instalação" #paginaInstalacaoAppId [(ngModel)]="item.paginaInstalacaoAppId" name="paginaInstalacaoAppId">
+    <mat-select placeholder="Página Instalação" #paginaInstalacaoAppId [(ngModel)]="item.paginaInstalacaoAppId"
+      name="paginaInstalacaoAppId">
       <mat-option *ngFor="let pagina of listaPaginaInstalacao" [value]="pagina.id">
         {{ pagina.mensagemPrincipal }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-select placeholder="Anúncio Aplicação" #anuncioAplicativoId [(ngModel)]="item.anuncioAplicativoId"
+      name="anuncioAplicativoId">
+      <mat-option *ngFor="let anuncio of listaAnuncioApp" [value]="anuncio.id">
+        {{ anuncio.titulo1 }} / {{ anuncio.titulo2 }}
       </mat-option>
     </mat-select>
   </mat-form-field>

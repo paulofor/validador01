@@ -57,5 +57,7 @@ export * from './ComponenteApp';
 export * from './ProcessoNegocioEtapaProjeto';
 export * from './PaginaInstalacaoApp';
 export * from './AnuncioAplicativo';
+export * from './VersaoApp';
+export * from './RespostaVersao';
 export * from './BaseModels';
 export * from './FireLoopRef';

@@ -43,7 +43,7 @@ export interface CampanhaAdsInterface {
   "modeloCampanhaAdsId"?: number;
   "setupCampanhaId"?: number;
   "paginaInstalacaoAppId"?: number;
-  "anuncioAplicativosId"?: number;
+  "anuncioAplicativoId"?: number;
   anuncioAds?: AnuncioAds[];
   paginaValidacaoWeb?: PaginaValidacaoWeb;
   palavraChaveAds?: PalavraChaveAds[];
@@ -52,7 +52,7 @@ export interface CampanhaAdsInterface {
   campanhaPalavraChaveResultados?: CampanhaPalavraChaveResultado[];
   setupCampanha?: SetupCampanha;
   paginaInstalacaoApp?: PaginaInstalacaoApp;
-  anuncioAplicativos?: AnuncioAplicativo;
+  anuncioAplicativo?: AnuncioAplicativo;
 }
 
 export class CampanhaAds implements CampanhaAdsInterface {
@@ -86,7 +86,7 @@ export class CampanhaAds implements CampanhaAdsInterface {
   "modeloCampanhaAdsId": number;
   "setupCampanhaId": number;
   "paginaInstalacaoAppId": number;
-  "anuncioAplicativosId": number;
+  "anuncioAplicativoId": number;
   anuncioAds: AnuncioAds[];
   paginaValidacaoWeb: PaginaValidacaoWeb;
   palavraChaveAds: PalavraChaveAds[];
@@ -95,7 +95,7 @@ export class CampanhaAds implements CampanhaAdsInterface {
   campanhaPalavraChaveResultados: CampanhaPalavraChaveResultado[];
   setupCampanha: SetupCampanha;
   paginaInstalacaoApp: PaginaInstalacaoApp;
-  anuncioAplicativos: AnuncioAplicativo;
+  anuncioAplicativo: AnuncioAplicativo;
   constructor(data?: CampanhaAdsInterface) {
     Object.assign(this, data);
   }
@@ -249,8 +249,8 @@ export class CampanhaAds implements CampanhaAdsInterface {
           name: 'paginaInstalacaoAppId',
           type: 'number'
         },
-        "anuncioAplicativosId": {
-          name: 'anuncioAplicativosId',
+        "anuncioAplicativoId": {
+          name: 'anuncioAplicativoId',
           type: 'number'
         },
       },
@@ -323,12 +323,12 @@ export class CampanhaAds implements CampanhaAdsInterface {
                   keyFrom: 'paginaInstalacaoAppId',
           keyTo: 'id'
         },
-        anuncioAplicativos: {
-          name: 'anuncioAplicativos',
+        anuncioAplicativo: {
+          name: 'anuncioAplicativo',
           type: 'AnuncioAplicativo',
           model: 'AnuncioAplicativo',
           relationType: 'belongsTo',
-                  keyFrom: 'anuncioAplicativosId',
+                  keyFrom: 'anuncioAplicativoId',
           keyTo: 'id'
         },
       }

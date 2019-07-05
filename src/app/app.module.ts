@@ -199,6 +199,8 @@ import localePt from '@angular/common/locales/pt';
 import { EditaSetupCampanhaAppComponent } from './edita-setup-campanha-app/edita-setup-campanha-app.component';
 import { AnuncioAppGerenciadorComponent } from './anuncio-app-gerenciador/anuncio-app-gerenciador.component';
 import { EditaAnuncioAppComponent } from './edita-anuncio-app/edita-anuncio-app.component';
+import { VersaoAppListaComponent } from './versao-app-lista/versao-app-lista.component';
+import { VersaoAppEditaComponent } from './versao-app-edita/versao-app-edita.component';
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -372,7 +374,11 @@ registerLocaleData(localePt, 'pt-BR');
 
     AnuncioAppGerenciadorComponent,
 
-    EditaAnuncioAppComponent
+    EditaAnuncioAppComponent,
+
+    VersaoAppListaComponent,
+
+    VersaoAppEditaComponent
 
   ],
   entryComponents: [

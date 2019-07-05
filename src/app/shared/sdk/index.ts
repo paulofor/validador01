@@ -106,6 +106,8 @@ import { ComponenteAppApi } from './services/custom/ComponenteApp';
 import { ProcessoNegocioEtapaProjetoApi } from './services/custom/ProcessoNegocioEtapaProjeto';
 import { PaginaInstalacaoAppApi } from './services/custom/PaginaInstalacaoApp';
 import { AnuncioAplicativoApi } from './services/custom/AnuncioAplicativo';
+import { VersaoAppApi } from './services/custom/VersaoApp';
+import { RespostaVersaoApi } from './services/custom/RespostaVersao';
 /**
 * @module SDKBrowserModule
 * @description
@@ -194,9 +196,11 @@ export class SDKBrowserModule {
         ProcessoNegocioEtapaProjetoApi,
         PaginaInstalacaoAppApi,
         AnuncioAplicativoApi,
+        VersaoAppApi,
+        RespostaVersaoApi,
         internalStorageProvider,
-        { provide: SDKStorage, useClass: StorageBrowser }
-
+        { provide: SDKStorage, useClass: StorageBrowser },
+        { provide: SocketDriver, useClass: SocketBrowser }
       ]
     };
   }

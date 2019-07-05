@@ -9,18 +9,18 @@ import { LoopBackFilter,  } from '../../models/BaseModels';
 import { ErrorHandler } from '../core/error.service';
 import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Visitante } from '../../models/Visitante';
+import { VersaoApp } from '../../models/VersaoApp';
 import { SocketConnection } from '../../sockets/socket.connections';
-import { PaginaValidacaoWeb } from '../../models/PaginaValidacaoWeb';
-import { PaginaInstalacaoApp } from '../../models/PaginaInstalacaoApp';
+import { ConceitoProduto } from '../../models/ConceitoProduto';
+import { ProjetoMySql } from '../../models/ProjetoMySql';
 import { RespostaVersao } from '../../models/RespostaVersao';
 
 
 /**
- * Api services for the `Visitante` model.
+ * Api services for the `VersaoApp` model.
  */
 @Injectable()
-export class VisitanteApi extends BaseLoopBackApi {
+export class VersaoAppApi extends BaseLoopBackApi {
 
   constructor(
     @Inject(HttpClient) protected http: HttpClient,
@@ -33,9 +33,9 @@ export class VisitanteApi extends BaseLoopBackApi {
   }
 
   /**
-   * Fetches belongsTo relation paginaValidacaoWeb.
+   * Fetches belongsTo relation conceitoProduto.
    *
-   * @param {any} id Visitante id
+   * @param {any} id VersaoApp id
    *
    * @param {boolean} refresh 
    *
@@ -45,13 +45,13 @@ export class VisitanteApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Visitante` object.)
+   * This usually means the response is a `VersaoApp` object.)
    * </em>
    */
-  public getPaginaValidacaoWeb(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
+  public getConceitoProduto(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Visitantes/:id/paginaValidacaoWeb";
+    "/VersaoApps/:id/conceitoProduto";
     let _routeParams: any = {
       id: id
     };
@@ -63,9 +63,9 @@ export class VisitanteApi extends BaseLoopBackApi {
   }
 
   /**
-   * Fetches belongsTo relation paginaInstalacaoApp.
+   * Fetches belongsTo relation projetoMySql.
    *
-   * @param {any} id Visitante id
+   * @param {any} id VersaoApp id
    *
    * @param {boolean} refresh 
    *
@@ -75,13 +75,13 @@ export class VisitanteApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Visitante` object.)
+   * This usually means the response is a `VersaoApp` object.)
    * </em>
    */
-  public getPaginaInstalacaoApp(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
+  public getProjetoMySql(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Visitantes/:id/paginaInstalacaoApp";
+    "/VersaoApps/:id/projetoMySql";
     let _routeParams: any = {
       id: id
     };
@@ -95,7 +95,7 @@ export class VisitanteApi extends BaseLoopBackApi {
   /**
    * Find a related item by id for respostaVersaos.
    *
-   * @param {any} id Visitante id
+   * @param {any} id VersaoApp id
    *
    * @param {any} fk Foreign key for respostaVersaos
    *
@@ -105,13 +105,13 @@ export class VisitanteApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Visitante` object.)
+   * This usually means the response is a `VersaoApp` object.)
    * </em>
    */
   public findByIdRespostaVersaos(id: any, fk: any, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Visitantes/:id/respostaVersaos/:fk";
+    "/VersaoApps/:id/respostaVersaos/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -125,7 +125,7 @@ export class VisitanteApi extends BaseLoopBackApi {
   /**
    * Delete a related item by id for respostaVersaos.
    *
-   * @param {any} id Visitante id
+   * @param {any} id VersaoApp id
    *
    * @param {any} fk Foreign key for respostaVersaos
    *
@@ -138,7 +138,7 @@ export class VisitanteApi extends BaseLoopBackApi {
   public destroyByIdRespostaVersaos(id: any, fk: any, customHeaders?: Function): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Visitantes/:id/respostaVersaos/:fk";
+    "/VersaoApps/:id/respostaVersaos/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -152,7 +152,7 @@ export class VisitanteApi extends BaseLoopBackApi {
   /**
    * Update a related item by id for respostaVersaos.
    *
-   * @param {any} id Visitante id
+   * @param {any} id VersaoApp id
    *
    * @param {any} fk Foreign key for respostaVersaos
    *
@@ -166,13 +166,13 @@ export class VisitanteApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Visitante` object.)
+   * This usually means the response is a `VersaoApp` object.)
    * </em>
    */
   public updateByIdRespostaVersaos(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PUT";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Visitantes/:id/respostaVersaos/:fk";
+    "/VersaoApps/:id/respostaVersaos/:fk";
     let _routeParams: any = {
       id: id,
       fk: fk
@@ -186,9 +186,9 @@ export class VisitanteApi extends BaseLoopBackApi {
   }
 
   /**
-   * Queries respostaVersaos of Visitante.
+   * Queries respostaVersaos of VersaoApp.
    *
-   * @param {any} id Visitante id
+   * @param {any} id VersaoApp id
    *
    * @param {object} filter 
    *
@@ -198,13 +198,13 @@ export class VisitanteApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Visitante` object.)
+   * This usually means the response is a `VersaoApp` object.)
    * </em>
    */
   public getRespostaVersaos(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Visitantes/:id/respostaVersaos";
+    "/VersaoApps/:id/respostaVersaos";
     let _routeParams: any = {
       id: id
     };
@@ -218,7 +218,7 @@ export class VisitanteApi extends BaseLoopBackApi {
   /**
    * Creates a new instance in respostaVersaos of this model.
    *
-   * @param {any} id Visitante id
+   * @param {any} id VersaoApp id
    *
    * @param {object} data Request data.
    *
@@ -230,13 +230,13 @@ export class VisitanteApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Visitante` object.)
+   * This usually means the response is a `VersaoApp` object.)
    * </em>
    */
   public createRespostaVersaos(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Visitantes/:id/respostaVersaos";
+    "/VersaoApps/:id/respostaVersaos";
     let _routeParams: any = {
       id: id
     };
@@ -251,7 +251,7 @@ export class VisitanteApi extends BaseLoopBackApi {
   /**
    * Deletes all respostaVersaos of this model.
    *
-   * @param {any} id Visitante id
+   * @param {any} id VersaoApp id
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -262,7 +262,7 @@ export class VisitanteApi extends BaseLoopBackApi {
   public deleteRespostaVersaos(id: any, customHeaders?: Function): Observable<any> {
     let _method: string = "DELETE";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Visitantes/:id/respostaVersaos";
+    "/VersaoApps/:id/respostaVersaos";
     let _routeParams: any = {
       id: id
     };
@@ -273,9 +273,9 @@ export class VisitanteApi extends BaseLoopBackApi {
   }
 
   /**
-   * Counts respostaVersaos of Visitante.
+   * Counts respostaVersaos of VersaoApp.
    *
-   * @param {any} id Visitante id
+   * @param {any} id VersaoApp id
    *
    * @param {object} where Criteria to match model instances
    *
@@ -290,7 +290,7 @@ export class VisitanteApi extends BaseLoopBackApi {
   public countRespostaVersaos(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Visitantes/:id/respostaVersaos/count";
+    "/VersaoApps/:id/respostaVersaos/count";
     let _routeParams: any = {
       id: id
     };
@@ -314,13 +314,13 @@ export class VisitanteApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Visitante` object.)
+   * This usually means the response is a `VersaoApp` object.)
    * </em>
    */
   public patchOrCreate(data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Visitantes";
+    "/VersaoApps";
     let _routeParams: any = {};
     let _postBody: any = {
       data: data
@@ -333,7 +333,7 @@ export class VisitanteApi extends BaseLoopBackApi {
   /**
    * Patch attributes for a model instance and persist it into the data source.
    *
-   * @param {any} id Visitante id
+   * @param {any} id VersaoApp id
    *
    * @param {object} data Request data.
    *
@@ -345,13 +345,13 @@ export class VisitanteApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Visitante` object.)
+   * This usually means the response is a `VersaoApp` object.)
    * </em>
    */
   public patchAttributes(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "PATCH";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Visitantes/:id";
+    "/VersaoApps/:id";
     let _routeParams: any = {
       id: id
     };
@@ -364,31 +364,9 @@ export class VisitanteApi extends BaseLoopBackApi {
   }
 
   /**
-   * retorna o proximo cookie
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * Data properties:
-   *
-   *  - `codigoCookie` – `{string}` - proximo cookie
-   */
-  public proximoCookie(customHeaders?: Function): Observable<any> {
-    let _method: string = "GET";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Visitantes/proximoCookie";
-    let _routeParams: any = {};
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
-  }
-
-  /**
    * Creates a new instance in respostaVersaos of this model.
    *
-   * @param {any} id Visitante id
+   * @param {any} id VersaoApp id
    *
    * @param {object} data Request data.
    *
@@ -400,13 +378,13 @@ export class VisitanteApi extends BaseLoopBackApi {
    *
    * <em>
    * (The remote method definition does not provide any description.
-   * This usually means the response is a `Visitante` object.)
+   * This usually means the response is a `VersaoApp` object.)
    * </em>
    */
   public createManyRespostaVersaos(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Visitantes/:id/respostaVersaos";
+    "/VersaoApps/:id/respostaVersaos";
     let _routeParams: any = {
       id: id
     };
@@ -420,9 +398,9 @@ export class VisitanteApi extends BaseLoopBackApi {
 
   /**
    * The name of the model represented by this $resource,
-   * i.e. `Visitante`.
+   * i.e. `VersaoApp`.
    */
   public getModelName() {
-    return "Visitante";
+    return "VersaoApp";
   }
 }

@@ -1,7 +1,8 @@
 /* tslint:disable */
 import {
   PaginaValidacaoWeb,
-  PaginaInstalacaoApp
+  PaginaInstalacaoApp,
+  RespostaVersao
 } from '../index';
 
 declare var Object: any;
@@ -14,6 +15,7 @@ export interface VisitanteInterface {
   "paginaInstalacaoAppId"?: number;
   paginaValidacaoWeb?: PaginaValidacaoWeb;
   paginaInstalacaoApp?: PaginaInstalacaoApp;
+  respostaVersaos?: RespostaVersao[];
 }
 
 export class Visitante implements VisitanteInterface {
@@ -25,6 +27,7 @@ export class Visitante implements VisitanteInterface {
   "paginaInstalacaoAppId": number;
   paginaValidacaoWeb: PaginaValidacaoWeb;
   paginaInstalacaoApp: PaginaInstalacaoApp;
+  respostaVersaos: RespostaVersao[];
   constructor(data?: VisitanteInterface) {
     Object.assign(this, data);
   }
@@ -99,6 +102,14 @@ export class Visitante implements VisitanteInterface {
           relationType: 'belongsTo',
                   keyFrom: 'paginaInstalacaoAppId',
           keyTo: 'id'
+        },
+        respostaVersaos: {
+          name: 'respostaVersaos',
+          type: 'RespostaVersao[]',
+          model: 'RespostaVersao',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'visitanteId'
         },
       }
     }

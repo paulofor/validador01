@@ -717,7 +717,7 @@ export class CampanhaAdsApi extends BaseLoopBackApi {
   }
 
   /**
-   * Fetches belongsTo relation anuncioAplicativos.
+   * Fetches belongsTo relation anuncioAplicativo.
    *
    * @param {any} id CampanhaAds id
    *
@@ -732,10 +732,10 @@ export class CampanhaAdsApi extends BaseLoopBackApi {
    * This usually means the response is a `CampanhaAds` object.)
    * </em>
    */
-  public getAnuncioAplicativos(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
+  public getAnuncioAplicativo(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/CampanhaAds/:id/anuncioAplicativos";
+    "/CampanhaAds/:id/anuncioAplicativo";
     let _routeParams: any = {
       id: id
     };

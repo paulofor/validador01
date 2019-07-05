@@ -70,6 +70,7 @@ import { EdicaoPaginaInstalacaoAppComponent } from '../edicao-pagina-instalacao-
 import { VisitantesPorPaginaValidacaoWebComponent } from '../visitantes-por-pagina-validacao-web/visitantes-por-pagina-validacao-web.component';
 import { VisitantesPorPaginaInstalacaoAppComponent } from '../visitantes-por-pagina-instalacao-app/visitantes-por-pagina-instalacao-app.component';
 import { AnuncioAppGerenciadorComponent } from '../anuncio-app-gerenciador/anuncio-app-gerenciador.component';
+import { VersaoAppListaComponent } from '../versao-app-lista/versao-app-lista.component';
 
 
 
@@ -177,6 +178,8 @@ export const routes : Routes = [
     { path: 'visitantesPorPaginaValidacao/:id' , component: VisitantesPorPaginaValidacaoWebComponent } ,
 
     { path: 'anuncioAppGerenciador/:id' , component: AnuncioAppGerenciadorComponent },
+
+    { path : 'versaoAppLista/:id' , component : VersaoAppListaComponent }
 
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

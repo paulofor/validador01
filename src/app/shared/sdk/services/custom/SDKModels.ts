@@ -58,6 +58,8 @@ import { ComponenteApp } from '../../models/ComponenteApp';
 import { ProcessoNegocioEtapaProjeto } from '../../models/ProcessoNegocioEtapaProjeto';
 import { PaginaInstalacaoApp } from '../../models/PaginaInstalacaoApp';
 import { AnuncioAplicativo } from '../../models/AnuncioAplicativo';
+import { VersaoApp } from '../../models/VersaoApp';
+import { RespostaVersao } from '../../models/RespostaVersao';
 
 export interface Models { [name: string]: any }
 
@@ -123,6 +125,8 @@ export class SDKModels {
     ProcessoNegocioEtapaProjeto: ProcessoNegocioEtapaProjeto,
     PaginaInstalacaoApp: PaginaInstalacaoApp,
     AnuncioAplicativo: AnuncioAplicativo,
+    VersaoApp: VersaoApp,
+    RespostaVersao: RespostaVersao,
     
   };
 

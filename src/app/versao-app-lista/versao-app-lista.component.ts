@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { VersaoApp, VersaoAppApi } from '../shared/sdk';
+import { VersaoApp, VersaoAppApi, ProjetoMySqlApi, ProjetoMySql } from '../shared/sdk';
 import { ActivatedRoute, Params } from '@angular/router';
 import { MatDialog } from '@angular/material';
 import { VersaoAppEditaComponent } from '../versao-app-edita/versao-app-edita.component';
@@ -14,7 +14,10 @@ export class VersaoAppListaComponent implements OnInit {
   lista:VersaoApp[];
   idProjeto: number;
 
-  constructor(private route: ActivatedRoute, private srv:VersaoAppApi, private dialog: MatDialog) { }
+  projeto:ProjetoMySql;
+
+  constructor(private route: ActivatedRoute, private srv:VersaoAppApi, 
+              private dialog: MatDialog, private srvProjeto:ProjetoMySqlApi) { }
 
   ngOnInit() {
     this.carregaAnuncios();
@@ -23,10 +26,14 @@ export class VersaoAppListaComponent implements OnInit {
   carregaAnuncios(){
     this.route.params.subscribe((params: Params) => {
       this.idProjeto = params['id'];
-      this.srv.find({'where' : {'projetoMySqlId' : this.idProjeto }})
-        .subscribe((result: VersaoApp[]) => {
-          this.lista = result;
-        });
+      this.srvProjeto.findById(this.idProjeto, {'include' : 'versaoApps'})
+        .subscribe((resultado:ProjetoMySql) => {
+          this.projeto = resultado;
+        })
+      //this.srv.find({'where' : {'projetoMySqlId' : this.idProjeto }})
+      //  .subscribe((result: VersaoApp[]) => {
+      //    this.lista = result;
+      //  });
     })
   }
 

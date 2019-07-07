@@ -8,7 +8,8 @@ import {
   CampanhaPalavraChaveResultado,
   SetupCampanha,
   PaginaInstalacaoApp,
-  AnuncioAplicativo
+  AnuncioAplicativo,
+  VersaoApp
 } from '../index';
 
 declare var Object: any;
@@ -44,6 +45,7 @@ export interface CampanhaAdsInterface {
   "setupCampanhaId"?: number;
   "paginaInstalacaoAppId"?: number;
   "anuncioAplicativoId"?: number;
+  "versaoAppId"?: number;
   anuncioAds?: AnuncioAds[];
   paginaValidacaoWeb?: PaginaValidacaoWeb;
   palavraChaveAds?: PalavraChaveAds[];
@@ -53,6 +55,7 @@ export interface CampanhaAdsInterface {
   setupCampanha?: SetupCampanha;
   paginaInstalacaoApp?: PaginaInstalacaoApp;
   anuncioAplicativo?: AnuncioAplicativo;
+  versaoApp?: VersaoApp;
 }
 
 export class CampanhaAds implements CampanhaAdsInterface {
@@ -87,6 +90,7 @@ export class CampanhaAds implements CampanhaAdsInterface {
   "setupCampanhaId": number;
   "paginaInstalacaoAppId": number;
   "anuncioAplicativoId": number;
+  "versaoAppId": number;
   anuncioAds: AnuncioAds[];
   paginaValidacaoWeb: PaginaValidacaoWeb;
   palavraChaveAds: PalavraChaveAds[];
@@ -96,6 +100,7 @@ export class CampanhaAds implements CampanhaAdsInterface {
   setupCampanha: SetupCampanha;
   paginaInstalacaoApp: PaginaInstalacaoApp;
   anuncioAplicativo: AnuncioAplicativo;
+  versaoApp: VersaoApp;
   constructor(data?: CampanhaAdsInterface) {
     Object.assign(this, data);
   }
@@ -253,6 +258,10 @@ export class CampanhaAds implements CampanhaAdsInterface {
           name: 'anuncioAplicativoId',
           type: 'number'
         },
+        "versaoAppId": {
+          name: 'versaoAppId',
+          type: 'number'
+        },
       },
       relations: {
         anuncioAds: {
@@ -329,6 +338,14 @@ export class CampanhaAds implements CampanhaAdsInterface {
           model: 'AnuncioAplicativo',
           relationType: 'belongsTo',
                   keyFrom: 'anuncioAplicativoId',
+          keyTo: 'id'
+        },
+        versaoApp: {
+          name: 'versaoApp',
+          type: 'VersaoApp',
+          model: 'VersaoApp',
+          relationType: 'belongsTo',
+                  keyFrom: 'versaoAppId',
           keyTo: 'id'
         },
       }

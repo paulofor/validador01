@@ -1,3 +1,31 @@
-<p>
-  versao-app-edita works!
-</p>
+<div  class="container">
+
+  <form class="example-full-width" (ngSubmit)="onSubmit()">
+
+    <mat-dialog-content>
+      <mat-form-field class="example-full-width">
+        <input matInput maxlength="50" #nome [(ngModel)]="item.nome" name="nome" placeholder="Nome" />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput maxlength="50" [(ngModel)]="item.codigoVersao" #codigoVersao name="codigoVersao" placeholder="Código para versão" />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput maxlength="50" #objetivo [(ngModel)]="item.objetivo" name="objetivo" placeholder="Objetivo" />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput maxlength="50" #pacoteApp [(ngModel)]="item.pacoteApp" name="pacoteApp" placeholder="Nome do Pacote" />
+      </mat-form-field>
+
+
+    </mat-dialog-content>
+
+    <mat-dialog-actions>
+      <button mat-raised-button>Salvar</button>
+      <button mat-raised-button mat-dialog-close>Fechar</button>
+    </mat-dialog-actions>
+
+  </form>
+</div>

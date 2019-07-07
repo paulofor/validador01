@@ -2,6 +2,7 @@
 import {
   ConceitoProduto,
   ProjetoMySql,
+  Visitante,
   RespostaVersao
 } from '../index';
 
@@ -11,11 +12,13 @@ export interface VersaoAppInterface {
   "objetivo"?: string;
   "codigoVersao"?: string;
   "permiteEdicao"?: number;
+  "pacoteApp"?: string;
   "id"?: number;
   "conceitoProdutoId"?: number;
   "projetoMySqlId"?: number;
   conceitoProduto?: ConceitoProduto;
   projetoMySql?: ProjetoMySql;
+  visitantes?: Visitante[];
   respostaVersaos?: RespostaVersao[];
 }
 
@@ -24,11 +27,13 @@ export class VersaoApp implements VersaoAppInterface {
   "objetivo": string;
   "codigoVersao": string;
   "permiteEdicao": number;
+  "pacoteApp": string;
   "id": number;
   "conceitoProdutoId": number;
   "projetoMySqlId": number;
   conceitoProduto: ConceitoProduto;
   projetoMySql: ProjetoMySql;
+  visitantes: Visitante[];
   respostaVersaos: RespostaVersao[];
   constructor(data?: VersaoAppInterface) {
     Object.assign(this, data);
@@ -79,6 +84,10 @@ export class VersaoApp implements VersaoAppInterface {
           name: 'permiteEdicao',
           type: 'number'
         },
+        "pacoteApp": {
+          name: 'pacoteApp',
+          type: 'string'
+        },
         "id": {
           name: 'id',
           type: 'number'
@@ -108,6 +117,14 @@ export class VersaoApp implements VersaoAppInterface {
           relationType: 'belongsTo',
                   keyFrom: 'projetoMySqlId',
           keyTo: 'id'
+        },
+        visitantes: {
+          name: 'visitantes',
+          type: 'Visitante[]',
+          model: 'Visitante',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'versaoAppId'
         },
         respostaVersaos: {
           name: 'respostaVersaos',

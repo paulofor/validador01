@@ -201,6 +201,8 @@ import { AnuncioAppGerenciadorComponent } from './anuncio-app-gerenciador/anunci
 import { EditaAnuncioAppComponent } from './edita-anuncio-app/edita-anuncio-app.component';
 import { VersaoAppListaComponent } from './versao-app-lista/versao-app-lista.component';
 import { VersaoAppEditaComponent } from './versao-app-edita/versao-app-edita.component';
+import { VisitantePorVersaoAppComponent } from './visitante-por-versao-app/visitante-por-versao-app.component';
+import { DetalheRespostaVisitanteComponent } from './detalhe-resposta-visitante/detalhe-resposta-visitante.component';
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -378,7 +380,11 @@ registerLocaleData(localePt, 'pt-BR');
 
     VersaoAppListaComponent,
 
-    VersaoAppEditaComponent
+    VersaoAppEditaComponent,
+
+    VisitantePorVersaoAppComponent,
+
+    DetalheRespostaVisitanteComponent
 
   ],
   entryComponents: [
@@ -422,7 +428,9 @@ registerLocaleData(localePt, 'pt-BR');
     ProjetoFaseInstalacaoComponent,
     EditaPaginaInstalacaoAppComponent,
     EditaSetupCampanhaAppComponent,
-    EditaAnuncioAppComponent
+    EditaAnuncioAppComponent,
+    VersaoAppEditaComponent,
+    DetalheRespostaVisitanteComponent
   ],
   imports: [
     BrowserModule,

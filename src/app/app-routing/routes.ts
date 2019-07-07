@@ -71,7 +71,7 @@ import { VisitantesPorPaginaValidacaoWebComponent } from '../visitantes-por-pagi
 import { VisitantesPorPaginaInstalacaoAppComponent } from '../visitantes-por-pagina-instalacao-app/visitantes-por-pagina-instalacao-app.component';
 import { AnuncioAppGerenciadorComponent } from '../anuncio-app-gerenciador/anuncio-app-gerenciador.component';
 import { VersaoAppListaComponent } from '../versao-app-lista/versao-app-lista.component';
-
+import { VisitantePorVersaoAppComponent } from '../visitante-por-versao-app/visitante-por-versao-app.component';
 
 
 export const routes : Routes = [
@@ -179,7 +179,9 @@ export const routes : Routes = [
 
     { path: 'anuncioAppGerenciador/:id' , component: AnuncioAppGerenciadorComponent },
 
-    { path : 'versaoAppLista/:id' , component : VersaoAppListaComponent }
+    { path : 'versaoAppLista/:id' , component : VersaoAppListaComponent },
+    { path: 'visitantePorVersaoApp/:id' , component: VisitantePorVersaoAppComponent},
 
+  
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

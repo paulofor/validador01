@@ -1,4 +1,4 @@
-<h2 mat-dialog-title>Campanha</h2>
+<h2 mat-dialog-title>Edita Campanha</h2>
 
 <form *ngIf="listaPagina && listaPaginaInstalacao && listaSetup" class="example-full-width" (ngSubmit)="onSubmit()">
 
@@ -38,6 +38,14 @@
       name="anuncioAplicativoId">
       <mat-option *ngFor="let anuncio of listaAnuncioApp" [value]="anuncio.id">
         {{ anuncio.titulo1 }} / {{ anuncio.titulo2 }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-select placeholder="Versão de Aplicativo" #versaoAppId [(ngModel)]="item.versaoAppId" name="versaoAppId">
+      <mat-option *ngFor="let versao of listaVersaoApp" [value]="versao.id">
+        {{ versao.nome }}
       </mat-option>
     </mat-select>
   </mat-form-field>

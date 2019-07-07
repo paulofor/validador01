@@ -1,0 +1,32 @@
+<div class="main-content" *ngIf="versaoApp"> 
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="header">
+              <h4 class="title">Visitantes</h4>
+            </div>
+            <div class="content table-responsive table-full-width">
+              <table class="table table-hover table-striped">
+                <thead>
+                  <tr>
+                    <th width="5%">Id</th>
+                    <th width="20%">Data</th>
+                    <th width="20"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of versaoApp.visitantes">
+                    <td>{{item.codigoCookie}}</td>
+                    <td>{{item.dataHora  |  date : 'dd/MM/yyyy HH:mm:ss '}}</td>
+                    <td><button class="btn btn-primary btn-sm " (click)="openDialog(item)">Detalhe</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>

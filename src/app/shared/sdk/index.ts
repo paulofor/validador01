@@ -199,8 +199,8 @@ export class SDKBrowserModule {
         VersaoAppApi,
         RespostaVersaoApi,
         internalStorageProvider,
-        { provide: SDKStorage, useClass: StorageBrowser },
-        { provide: SocketDriver, useClass: SocketBrowser }
+        { provide: SDKStorage, useClass: StorageBrowser }
+
       ]
     };
   }

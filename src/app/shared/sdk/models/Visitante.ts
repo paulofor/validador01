@@ -2,6 +2,7 @@
 import {
   PaginaValidacaoWeb,
   PaginaInstalacaoApp,
+  VersaoApp,
   RespostaVersao
 } from '../index';
 
@@ -13,8 +14,10 @@ export interface VisitanteInterface {
   "dispositivo"?: string;
   "paginaValidacaoWebId"?: number;
   "paginaInstalacaoAppId"?: number;
+  "versaoAppId"?: number;
   paginaValidacaoWeb?: PaginaValidacaoWeb;
   paginaInstalacaoApp?: PaginaInstalacaoApp;
+  versaoApp?: VersaoApp;
   respostaVersaos?: RespostaVersao[];
 }
 
@@ -25,8 +28,10 @@ export class Visitante implements VisitanteInterface {
   "dispositivo": string;
   "paginaValidacaoWebId": number;
   "paginaInstalacaoAppId": number;
+  "versaoAppId": number;
   paginaValidacaoWeb: PaginaValidacaoWeb;
   paginaInstalacaoApp: PaginaInstalacaoApp;
+  versaoApp: VersaoApp;
   respostaVersaos: RespostaVersao[];
   constructor(data?: VisitanteInterface) {
     Object.assign(this, data);
@@ -85,6 +90,10 @@ export class Visitante implements VisitanteInterface {
           name: 'paginaInstalacaoAppId',
           type: 'number'
         },
+        "versaoAppId": {
+          name: 'versaoAppId',
+          type: 'number'
+        },
       },
       relations: {
         paginaValidacaoWeb: {
@@ -101,6 +110,14 @@ export class Visitante implements VisitanteInterface {
           model: 'PaginaInstalacaoApp',
           relationType: 'belongsTo',
                   keyFrom: 'paginaInstalacaoAppId',
+          keyTo: 'id'
+        },
+        versaoApp: {
+          name: 'versaoApp',
+          type: 'VersaoApp',
+          model: 'VersaoApp',
+          relationType: 'belongsTo',
+                  keyFrom: 'versaoAppId',
           keyTo: 'id'
         },
         respostaVersaos: {

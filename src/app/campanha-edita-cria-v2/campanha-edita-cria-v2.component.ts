@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CampanhaAds, PaginaValidacaoWeb, CampanhaAdsApi, ProjetoMySqlApi, SetupCampanha, SetupCampanhaApi, PaginaInstalacaoApp, AnuncioAplicativo, AnuncioAplicativoApi } from '../shared/sdk';
+import { CampanhaAds, PaginaValidacaoWeb, CampanhaAdsApi, ProjetoMySqlApi, SetupCampanha, SetupCampanhaApi, PaginaInstalacaoApp, AnuncioAplicativo, AnuncioAplicativoApi, VersaoApp, VersaoAppApi } from '../shared/sdk';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { CampanhaEditaCriaComponent } from '../campanha-edita-cria/campanha-edita-cria.component';
 import { Inject } from '@angular/core';
@@ -16,13 +16,14 @@ export class CampanhaEditaCriaV2Component implements OnInit {
   private listaPagina: PaginaValidacaoWeb[];
   private listaPaginaInstalacao: PaginaInstalacaoApp[];
   private listaAnuncioApp: AnuncioAplicativo[];
+  private listaVersaoApp: VersaoApp[];
 
   private listaSetup: SetupCampanha[];
   private idProjeto: number;
 
   constructor(public dialogRef: MatDialogRef<CampanhaEditaCriaComponent>
     , @Inject(MAT_DIALOG_DATA) public data: any, private campanhaSrv: CampanhaAdsApi,
-    private projetoSrv: ProjetoMySqlApi, private setupCampanhaSrv: SetupCampanhaApi,
+    private projetoSrv: ProjetoMySqlApi, private setupCampanhaSrv: SetupCampanhaApi, private versaoAppSrv: VersaoAppApi,
     private anuncioAppSrv: AnuncioAplicativoApi) { }
 
 
@@ -37,6 +38,13 @@ export class CampanhaEditaCriaV2Component implements OnInit {
     this.projetoSrv.getPaginaValidacaoWebs(this.idProjeto)
       .subscribe((resultado: PaginaValidacaoWeb[]) => {
         this.listaPagina = resultado;
+      })
+  }
+
+  carregaVersaoApp() {
+    this.projetoSrv.getVersaoApps(this.idProjeto)
+      .subscribe((resultado: VersaoApp[]) => {
+        this.listaVersaoApp = resultado;
       })
   }
 
@@ -71,6 +79,7 @@ export class CampanhaEditaCriaV2Component implements OnInit {
     this.carregaListaPaginaInstalacao();
     this.carregaListaSetup();
     this.carregaListaAnuncioAplicativo();
+    this.carregaVersaoApp();
   }
 
   onSubmit() {

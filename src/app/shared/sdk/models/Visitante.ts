@@ -12,6 +12,8 @@ export interface VisitanteInterface {
   "dataHora"?: Date;
   "id"?: number;
   "dispositivo"?: string;
+  "fcmToken"?: string;
+  "dataHoraNotificacao"?: Date;
   "paginaValidacaoWebId"?: number;
   "paginaInstalacaoAppId"?: number;
   "versaoAppId"?: number;
@@ -26,6 +28,8 @@ export class Visitante implements VisitanteInterface {
   "dataHora": Date;
   "id": number;
   "dispositivo": string;
+  "fcmToken": string;
+  "dataHoraNotificacao": Date;
   "paginaValidacaoWebId": number;
   "paginaInstalacaoAppId": number;
   "versaoAppId": number;
@@ -81,6 +85,14 @@ export class Visitante implements VisitanteInterface {
         "dispositivo": {
           name: 'dispositivo',
           type: 'string'
+        },
+        "fcmToken": {
+          name: 'fcmToken',
+          type: 'string'
+        },
+        "dataHoraNotificacao": {
+          name: 'dataHoraNotificacao',
+          type: 'Date'
         },
         "paginaValidacaoWebId": {
           name: 'paginaValidacaoWebId',

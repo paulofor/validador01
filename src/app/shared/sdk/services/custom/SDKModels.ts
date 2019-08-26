@@ -60,6 +60,7 @@ import { PaginaInstalacaoApp } from '../../models/PaginaInstalacaoApp';
 import { AnuncioAplicativo } from '../../models/AnuncioAplicativo';
 import { VersaoApp } from '../../models/VersaoApp';
 import { RespostaVersao } from '../../models/RespostaVersao';
+import { PresencaLoja } from '../../models/PresencaLoja';
 
 export interface Models { [name: string]: any }
 
@@ -127,6 +128,7 @@ export class SDKModels {
     AnuncioAplicativo: AnuncioAplicativo,
     VersaoApp: VersaoApp,
     RespostaVersao: RespostaVersao,
+    PresencaLoja: PresencaLoja,
     
   };
 

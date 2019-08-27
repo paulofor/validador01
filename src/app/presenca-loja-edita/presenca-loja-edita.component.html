@@ -1,3 +1,70 @@
-<p>
-  presenca-loja-edita works!
-</p>
+<h2 mat-dialog-title>Presença Loja</h2>
+
+<form *ngIf="item" class="example-full-width" (ngSubmit)="onSubmit()">
+
+  <mat-dialog-content>
+    <mat-form-field class="example-full-width">
+      <input matInput [(ngModel)]="item.descricaoBreve" name="descricaoBreve" placeholder="Descrição Breve" />
+    </mat-form-field>
+  </mat-dialog-content>
+
+  <mat-dialog-content>
+    <mat-form-field class="example-full-width">
+      <textarea [(ngModel)]="item.descricaoCompleta" name="descricaoCompleta" matInput rows="6"
+        placeholder="Descrição Completa">
+      </textarea>
+    </mat-form-field>
+
+
+    <div *ngIf="urlUpload" class="content table-responsive table-full-width">
+      <img height="300" *ngIf="item.tela1" src="{{item.tela1}}">
+      <image-upload url="{{urlUpload}}" (uploadFinished)="onUploadFinished1($event)" buttonCaption="Tela 1"
+        dropBoxMessage="ou arraste aqui"></image-upload>
+    </div>
+
+    <div *ngIf="urlUpload" class="content table-responsive table-full-width">
+      <img height="300" *ngIf="item.tela2" src="{{item.tela2}}">
+      <image-upload url="{{urlUpload}}" (uploadFinished)="onUploadFinished2($event)" buttonCaption="Tela 2"
+        dropBoxMessage="ou arraste aqui"></image-upload>
+    </div>
+
+    <div *ngIf="urlUpload" class="content table-responsive table-full-width">
+      <img height="300" *ngIf="item.tela3" src="{{item.tela3}}">
+      <image-upload url="{{urlUpload}}" (uploadFinished)="onUploadFinished3($event)" buttonCaption="Tela 3"
+        dropBoxMessage="ou arraste aqui"></image-upload>
+    </div>
+
+    <div *ngIf="urlUpload" class="content table-responsive table-full-width">
+      <img height="300" *ngIf="item.tela4" src="{{item.tela4}}">
+      <image-upload url="{{urlUpload}}" (uploadFinished)="onUploadFinished4($event)" buttonCaption="Tela 4"
+        dropBoxMessage="ou arraste aqui"></image-upload>
+    </div>
+
+    <div *ngIf="urlUpload" class="content table-responsive table-full-width">
+      <img height="100" *ngIf="item.icone512x512" src="{{item.icone512x512}}">
+      <image-upload url="{{urlUpload}}" (uploadFinished)="onUploadFinishedIcone($event)" buttonCaption="Ícone 512x512"
+        dropBoxMessage="ou arraste aqui"></image-upload>
+    </div>
+
+    <div *ngIf="urlUpload" class="content table-responsive table-full-width">
+      <img height="150" *ngIf="item.imagem1024x500" src="{{item.imagem1024x500}}">
+      <image-upload url="{{urlUpload}}" (uploadFinished)="onUploadFinishedImagemRet($event)" buttonCaption="Imagem 1024x500"
+        dropBoxMessage="ou arraste aqui"></image-upload>
+    </div>
+
+    <div *ngIf="urlUpload" class="content table-responsive table-full-width">
+      <img height="300" *ngIf="item.printLoja" src="{{item.printLoja}}">
+      <image-upload url="{{urlUpload}}" (uploadFinished)="onUploadFinishedPrintLoja($event)" buttonCaption="Print Loja"
+        dropBoxMessage="ou arraste aqui"></image-upload>
+    </div>
+
+
+  </mat-dialog-content>
+
+
+  <mat-dialog-actions>
+    <button mat-button>Enviar</button>
+    <button mat-button mat-dialog-close>Cancelar</button>
+  </mat-dialog-actions>
+
+</form>

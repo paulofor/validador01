@@ -203,8 +203,9 @@ import { VersaoAppListaComponent } from './versao-app-lista/versao-app-lista.com
 import { VersaoAppEditaComponent } from './versao-app-edita/versao-app-edita.component';
 import { VisitantePorVersaoAppComponent } from './visitante-por-versao-app/visitante-por-versao-app.component';
 import { DetalheRespostaVisitanteComponent } from './detalhe-resposta-visitante/detalhe-resposta-visitante.component';
-import { PresencaLojaEditaComponent } from './presenca-loja-edita/presenca-loja-edita.component';
+import { PresencaLojaEditaComponent} from './presenca-loja-edita/presenca-loja-edita.component';
 import { PresencaLojaListaComponent } from './presenca-loja-lista/presenca-loja-lista.component';
+import { PresencaLojaDetalheComponent } from './presenca-loja-detalhe/presenca-loja-detalhe.component';
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -390,7 +391,9 @@ registerLocaleData(localePt, 'pt-BR');
 
     PresencaLojaEditaComponent,
 
-    PresencaLojaListaComponent
+    PresencaLojaListaComponent,
+
+    PresencaLojaDetalheComponent
 
   ],
   entryComponents: [
@@ -436,7 +439,8 @@ registerLocaleData(localePt, 'pt-BR');
     EditaSetupCampanhaAppComponent,
     EditaAnuncioAppComponent,
     VersaoAppEditaComponent,
-    DetalheRespostaVisitanteComponent
+    DetalheRespostaVisitanteComponent,
+    PresencaLojaEditaComponent
   ],
   imports: [
     BrowserModule,

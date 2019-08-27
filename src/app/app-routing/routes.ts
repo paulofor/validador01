@@ -72,6 +72,8 @@ import { VisitantesPorPaginaInstalacaoAppComponent } from '../visitantes-por-pag
 import { AnuncioAppGerenciadorComponent } from '../anuncio-app-gerenciador/anuncio-app-gerenciador.component';
 import { VersaoAppListaComponent } from '../versao-app-lista/versao-app-lista.component';
 import { VisitantePorVersaoAppComponent } from '../visitante-por-versao-app/visitante-por-versao-app.component';
+import { PresencaLojaListaComponent } from '../presenca-loja-lista/presenca-loja-lista.component';
+import { PresencaLojaDetalheComponent } from '../presenca-loja-detalhe/presenca-loja-detalhe.component';
 
 
 export const routes : Routes = [
@@ -183,5 +185,9 @@ export const routes : Routes = [
     { path: 'visitantePorVersaoApp/:id' , component: VisitantePorVersaoAppComponent},
 
   
+    { path: 'presencaLojaDetalhe/:id' , component : PresencaLojaDetalheComponent },
+    { path: 'presencaLojaProjeto/:id' , component : PresencaLojaListaComponent },
+
+
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

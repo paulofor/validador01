@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CampanhaAds, PresencaLoja, PresencaLojaApi } from '../shared/sdk';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-display-presenca-loja',
@@ -9,18 +10,30 @@ import { CampanhaAds, PresencaLoja, PresencaLojaApi } from '../shared/sdk';
 export class DisplayPresencaLojaComponent implements OnInit {
 
   @Input() campanha: CampanhaAds;
+  @Input() id: number;
 
   presenca: PresencaLoja;
 
-  constructor(private srv: PresencaLojaApi) { }
+  constructor(private srv: PresencaLojaApi, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    if (this.campanha.presencaLojaId!=0)
-      this.carregaItem();
+    if (this.campanha && this.campanha.presencaLojaId != 0) {
+      this.carregaItem(this.campanha.presencaLojaId);
+    }
+    if (this.id && this.id != 0) {
+      this.carregaItem(this.id);
+    } else {
+      this.route.params.subscribe((params: Params) => {
+        let id = params['id'];
+        if (id) {
+          this.carregaItem(id);
+        }
+      })
+    }
   }
 
-  carregaItem() {
-    this.srv.findById(this.campanha.presencaLojaId)
+  carregaItem(idPresenca: number) {
+    this.srv.findById(idPresenca)
       .subscribe((result: PresencaLoja) => {
         this.presenca = result;
       })

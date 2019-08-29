@@ -60,5 +60,7 @@ export * from './AnuncioAplicativo';
 export * from './VersaoApp';
 export * from './RespostaVersao';
 export * from './PresencaLoja';
+export * from './IdeiaMelhoria';
+export * from './Recurso';
 export * from './SDKModels';
 export * from './logger.service';

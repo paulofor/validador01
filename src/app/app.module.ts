@@ -209,6 +209,8 @@ import { PresencaLojaDetalheComponent } from './presenca-loja-detalhe/presenca-l
 import { DisplayPresencaLojaComponent } from './display-presenca-loja/display-presenca-loja.component';
 import { DisplaySetupCampanhaComponent } from './display-setup-campanha/display-setup-campanha.component';
 import { DisplayAnuncioAplicacaoComponent } from './display-anuncio-aplicacao/display-anuncio-aplicacao.component';
+import { IdeiaMelhoriaCampanhaOrigemComponent } from './ideia-melhoria-campanha-origem/ideia-melhoria-campanha-origem.component';
+import { IdeiaMelhoriaEditaComponent } from './ideia-melhoria-edita/ideia-melhoria-edita.component';
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -402,7 +404,11 @@ registerLocaleData(localePt, 'pt-BR');
 
     DisplaySetupCampanhaComponent,
 
-    DisplayAnuncioAplicacaoComponent
+    DisplayAnuncioAplicacaoComponent,
+
+    IdeiaMelhoriaCampanhaOrigemComponent,
+
+    IdeiaMelhoriaEditaComponent
 
   ],
   entryComponents: [
@@ -449,7 +455,8 @@ registerLocaleData(localePt, 'pt-BR');
     EditaAnuncioAppComponent,
     VersaoAppEditaComponent,
     DetalheRespostaVisitanteComponent,
-    PresencaLojaEditaComponent
+    PresencaLojaEditaComponent,
+    IdeiaMelhoriaEditaComponent
   ],
   imports: [
     BrowserModule,

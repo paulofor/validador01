@@ -44,7 +44,6 @@ export class PresencaLojaEditaComponent implements OnInit {
 
 
   ngOnInit() {
-    
     console.log("Parametro entrada", this.data);
     if (!this.data.item.id) {
       console.log("fluxo nova");

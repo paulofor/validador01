@@ -56,7 +56,18 @@
         {{ setup.nome }}
       </mat-option>
     </mat-select>
+  </mat-form-field>  
+  
+  
+  <mat-form-field class="example-full-width">
+    <mat-select placeholder="Presença Loja" #presencaLojaId [(ngModel)]="item.presencaLojaId" name="presencaLojaId">
+      <mat-option *ngFor="let presenca of listaPresencaLoja" [value]="presenca.id">
+        {{ presenca.descricaoBreve }}
+      </mat-option>
+    </mat-select>
   </mat-form-field>
+
+
 
   <mat-dialog-actions>
     <button mat-raised-button>Salvar</button>

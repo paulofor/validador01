@@ -202,7 +202,7 @@ export class SDKBrowserModule {
         PresencaLojaApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser },
- 
+
       ]
     };
   }

@@ -9,7 +9,8 @@ import {
   SetupCampanha,
   PaginaInstalacaoApp,
   AnuncioAplicativo,
-  VersaoApp
+  VersaoApp,
+  PresencaLoja
 } from '../index';
 
 declare var Object: any;
@@ -46,6 +47,7 @@ export interface CampanhaAdsInterface {
   "paginaInstalacaoAppId"?: number;
   "anuncioAplicativoId"?: number;
   "versaoAppId"?: number;
+  "presencaLojaId"?: number;
   anuncioAds?: AnuncioAds[];
   paginaValidacaoWeb?: PaginaValidacaoWeb;
   palavraChaveAds?: PalavraChaveAds[];
@@ -56,6 +58,7 @@ export interface CampanhaAdsInterface {
   paginaInstalacaoApp?: PaginaInstalacaoApp;
   anuncioAplicativo?: AnuncioAplicativo;
   versaoApp?: VersaoApp;
+  presencaLoja?: PresencaLoja;
 }
 
 export class CampanhaAds implements CampanhaAdsInterface {
@@ -91,6 +94,7 @@ export class CampanhaAds implements CampanhaAdsInterface {
   "paginaInstalacaoAppId": number;
   "anuncioAplicativoId": number;
   "versaoAppId": number;
+  "presencaLojaId": number;
   anuncioAds: AnuncioAds[];
   paginaValidacaoWeb: PaginaValidacaoWeb;
   palavraChaveAds: PalavraChaveAds[];
@@ -101,6 +105,7 @@ export class CampanhaAds implements CampanhaAdsInterface {
   paginaInstalacaoApp: PaginaInstalacaoApp;
   anuncioAplicativo: AnuncioAplicativo;
   versaoApp: VersaoApp;
+  presencaLoja: PresencaLoja;
   constructor(data?: CampanhaAdsInterface) {
     Object.assign(this, data);
   }
@@ -262,6 +267,10 @@ export class CampanhaAds implements CampanhaAdsInterface {
           name: 'versaoAppId',
           type: 'number'
         },
+        "presencaLojaId": {
+          name: 'presencaLojaId',
+          type: 'number'
+        },
       },
       relations: {
         anuncioAds: {
@@ -346,6 +355,14 @@ export class CampanhaAds implements CampanhaAdsInterface {
           model: 'VersaoApp',
           relationType: 'belongsTo',
                   keyFrom: 'versaoAppId',
+          keyTo: 'id'
+        },
+        presencaLoja: {
+          name: 'presencaLoja',
+          type: 'PresencaLoja',
+          model: 'PresencaLoja',
+          relationType: 'belongsTo',
+                  keyFrom: 'presencaLojaId',
           keyTo: 'id'
         },
       }

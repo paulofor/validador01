@@ -1,0 +1,27 @@
+<div *ngIf="setupCampanha" class="card">
+
+  <div class="header">
+    <h4 class="title">Setup Campanha</h4>
+  </div>
+
+  <div class="content table-responsive table-full-width">
+    <table class="table table-hover table-striped">
+      <tbody>
+        <tr>
+          <td>Nome</td>
+          <td>{{setupCampanha.nome}}</td>
+        </tr>
+        <tr>
+          <td>Orçamento Diário</td>
+          <td>{{setupCampanha.budgetDiario}}</td>
+        </tr>
+        <tr>
+          <td>Custo Instalação</td>
+          <td>{{setupCampanha.custoInstalacao}}</td>
+        </tr>
+      
+      </tbody>
+    </table>
+  </div>
+
+</div>

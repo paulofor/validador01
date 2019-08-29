@@ -16,7 +16,7 @@
         <tr *ngFor="let item of listaPresenca">
           <td>{{item.descricaoBreve}}</td>
           <td align="right">
-            <a routerLink="/presencaLojaDetalhe/{{projeto.id}}">Detalhe</a>
+            <a routerLink="/presencaLojaDetalhe/{{item.id}}">Detalhe</a>
           </td>
           <td align="right">
             <button class="btn btn-primary btn-sm " (click)="openDialog(item)">Alterar</button>

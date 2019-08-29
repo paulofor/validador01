@@ -1,0 +1,48 @@
+<div *ngIf="presenca" class="card">
+
+  <div class="header">
+    <h4 class="title">Presença Loja</h4>
+  </div>
+
+  <div class="content table-responsive table-full-width">
+    <table class="table table-hover table-striped">
+      <tbody>
+        <tr>
+          <td style="text-align: center;font-weight: 500;" colspan="2">{{presenca.descricaoBreve}}</td>
+        </tr>
+ 
+        <tr *ngIf="presenca.tela1 || presenca.tela2">
+          <td class="celulaTela"><img *ngIf="presenca.tela1" class="imagemTela" src="{{presenca.tela1}}"/></td>
+          <td class="celulaTela"><img *ngIf="presenca.tela2" class="imagemTela" src="{{presenca.tela2}}"/></td>
+        </tr>
+
+        <tr *ngIf="presenca.tela3 || presenca.tela4">
+          <td class="celulaTela"><img *ngIf="presenca.tela3" class="imagemTela" src="{{presenca.tela3}}"/></td>
+          <td class="celulaTela"><img *ngIf="presenca.tela4" class="imagemTela" src="{{presenca.tela4}}"/></td>
+        </tr>
+
+        <tr *ngIf="presenca.tela5 || presenca.tela6">
+          <td class="celulaTela"><img *ngIf="presenca.tela5" class="imagemTela" src="{{presenca.tela5}}"/></td>
+          <td class="celulaTela"><img *ngIf="presenca.tela6" class="imagemTela" src="{{presenca.tela6}}"/></td>
+        </tr>
+
+        <tr *ngIf="presenca.tela7 || presenca.tela8">
+          <td class="celulaTela"><img *ngIf="presenca.tela7" class="imagemTela" src="{{presenca.tela7}}"/></td>
+          <td class="celulaTela"><img *ngIf="presenca.tela8" class="imagemTela" src="{{presenca.tela8}}"/></td>
+        </tr>
+
+        <tr>
+          <td class="celulaTextoImportante" colspan="2">{{presenca.descricaoCompleta}}</td>
+        </tr>
+
+        <tr>
+          <td colspan="2" style="text-align: center">
+            <img  style="height: 600px" *ngIf="presenca.printLoja"  src="{{presenca.printLoja}}"/>
+          </td>
+        </tr>
+      
+      </tbody>
+    </table>
+  </div>
+
+</div>

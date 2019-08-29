@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CampanhaAds, PaginaValidacaoWeb, CampanhaAdsApi, ProjetoMySqlApi, SetupCampanha, SetupCampanhaApi, PaginaInstalacaoApp, AnuncioAplicativo, AnuncioAplicativoApi, VersaoApp, VersaoAppApi } from '../shared/sdk';
+import { CampanhaAds, PaginaValidacaoWeb, CampanhaAdsApi, ProjetoMySqlApi, SetupCampanha, SetupCampanhaApi, PaginaInstalacaoApp, AnuncioAplicativo, AnuncioAplicativoApi, VersaoApp, VersaoAppApi, PresencaLojaApi, PresencaLoja } from '../shared/sdk';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { CampanhaEditaCriaComponent } from '../campanha-edita-cria/campanha-edita-cria.component';
 import { Inject } from '@angular/core';
@@ -17,6 +17,7 @@ export class CampanhaEditaCriaV2Component implements OnInit {
   private listaPaginaInstalacao: PaginaInstalacaoApp[];
   private listaAnuncioApp: AnuncioAplicativo[];
   private listaVersaoApp: VersaoApp[];
+  private listaPresencaLoja: PresencaLoja[];
 
   private listaSetup: SetupCampanha[];
   private idProjeto: number;
@@ -24,7 +25,7 @@ export class CampanhaEditaCriaV2Component implements OnInit {
   constructor(public dialogRef: MatDialogRef<CampanhaEditaCriaComponent>
     , @Inject(MAT_DIALOG_DATA) public data: any, private campanhaSrv: CampanhaAdsApi,
     private projetoSrv: ProjetoMySqlApi, private setupCampanhaSrv: SetupCampanhaApi, private versaoAppSrv: VersaoAppApi,
-    private anuncioAppSrv: AnuncioAplicativoApi) { }
+    private anuncioAppSrv: AnuncioAplicativoApi, private presencaLojaSrv:PresencaLojaApi) { }
 
 
   carregaListaPaginaInstalacao() {
@@ -67,6 +68,14 @@ export class CampanhaEditaCriaV2Component implements OnInit {
       })
   }
 
+
+  carregaListaPresencaLoja() {
+    this.projetoSrv.getPresencaLojas(this.idProjeto)
+      .subscribe((resultado: PresencaLoja[]) => {
+        this.listaPresencaLoja = resultado;
+      })
+  }
+
   ngOnInit() {
     console.log("Parametro entrada", this.data);
     this.idProjeto = this.data.idProjeto;
@@ -80,6 +89,7 @@ export class CampanhaEditaCriaV2Component implements OnInit {
     this.carregaListaSetup();
     this.carregaListaAnuncioAplicativo();
     this.carregaVersaoApp();
+    this.carregaListaPresencaLoja();
   }
 
   onSubmit() {

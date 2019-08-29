@@ -206,6 +206,9 @@ import { DetalheRespostaVisitanteComponent } from './detalhe-resposta-visitante/
 import { PresencaLojaEditaComponent} from './presenca-loja-edita/presenca-loja-edita.component';
 import { PresencaLojaListaComponent } from './presenca-loja-lista/presenca-loja-lista.component';
 import { PresencaLojaDetalheComponent } from './presenca-loja-detalhe/presenca-loja-detalhe.component';
+import { DisplayPresencaLojaComponent } from './display-presenca-loja/display-presenca-loja.component';
+import { DisplaySetupCampanhaComponent } from './display-setup-campanha/display-setup-campanha.component';
+import { DisplayAnuncioAplicacaoComponent } from './display-anuncio-aplicacao/display-anuncio-aplicacao.component';
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -393,7 +396,13 @@ registerLocaleData(localePt, 'pt-BR');
 
     PresencaLojaListaComponent,
 
-    PresencaLojaDetalheComponent
+    PresencaLojaDetalheComponent,
+
+    DisplayPresencaLojaComponent,
+
+    DisplaySetupCampanhaComponent,
+
+    DisplayAnuncioAplicacaoComponent
 
   ],
   entryComponents: [

@@ -4,12 +4,21 @@
 
 
   <mat-form-field class="example-full-width">
-    <mat-select placeholder="Projeto" #projetoMySqlId [(ngModel)]="tempo.projetoMySqlId" name="projetoMySqlId">
+    <mat-select placeholder="Projeto" #projetoMySqlId [(ngModel)]="tempo.projetoMySqlId" name="projetoMySqlId" (selectionChange)="selecionado($event.value)">
       <mat-option *ngFor="let projeto of listaProjeto" [value]="projeto.id">
         {{ projeto.nome }} ({{projeto.codigo}})
       </mat-option>
     </mat-select>
   </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-select placeholder="Ideia Melhoria" #projetoMySqlId [(ngModel)]="tempo.ideiaMelhoriaId" name="ideiaMelhoriaId">
+      <mat-option *ngFor="let ideia of listaIdeia" [value]="ideia.id">
+        {{ ideia.descricaoBreve }} 
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
 
 
   <mat-dialog-content>

@@ -10,7 +10,8 @@ import {
   PaginaInstalacaoApp,
   AnuncioAplicativo,
   VersaoApp,
-  PresencaLoja
+  PresencaLoja,
+  IdeiaMelhoria
 } from '../index';
 
 declare var Object: any;
@@ -48,6 +49,7 @@ export interface CampanhaAdsInterface {
   "anuncioAplicativoId"?: number;
   "versaoAppId"?: number;
   "presencaLojaId"?: number;
+  "ideiaMelhoriaId"?: number;
   anuncioAds?: AnuncioAds[];
   paginaValidacaoWeb?: PaginaValidacaoWeb;
   palavraChaveAds?: PalavraChaveAds[];
@@ -59,6 +61,7 @@ export interface CampanhaAdsInterface {
   anuncioAplicativo?: AnuncioAplicativo;
   versaoApp?: VersaoApp;
   presencaLoja?: PresencaLoja;
+  ideiaMelhoria?: IdeiaMelhoria;
 }
 
 export class CampanhaAds implements CampanhaAdsInterface {
@@ -95,6 +98,7 @@ export class CampanhaAds implements CampanhaAdsInterface {
   "anuncioAplicativoId": number;
   "versaoAppId": number;
   "presencaLojaId": number;
+  "ideiaMelhoriaId": number;
   anuncioAds: AnuncioAds[];
   paginaValidacaoWeb: PaginaValidacaoWeb;
   palavraChaveAds: PalavraChaveAds[];
@@ -106,6 +110,7 @@ export class CampanhaAds implements CampanhaAdsInterface {
   anuncioAplicativo: AnuncioAplicativo;
   versaoApp: VersaoApp;
   presencaLoja: PresencaLoja;
+  ideiaMelhoria: IdeiaMelhoria;
   constructor(data?: CampanhaAdsInterface) {
     Object.assign(this, data);
   }
@@ -271,6 +276,10 @@ export class CampanhaAds implements CampanhaAdsInterface {
           name: 'presencaLojaId',
           type: 'number'
         },
+        "ideiaMelhoriaId": {
+          name: 'ideiaMelhoriaId',
+          type: 'number'
+        },
       },
       relations: {
         anuncioAds: {
@@ -363,6 +372,14 @@ export class CampanhaAds implements CampanhaAdsInterface {
           model: 'PresencaLoja',
           relationType: 'belongsTo',
                   keyFrom: 'presencaLojaId',
+          keyTo: 'id'
+        },
+        ideiaMelhoria: {
+          name: 'ideiaMelhoria',
+          type: 'IdeiaMelhoria',
+          model: 'IdeiaMelhoria',
+          relationType: 'belongsTo',
+                  keyFrom: 'ideiaMelhoriaId',
           keyTo: 'id'
         },
       }

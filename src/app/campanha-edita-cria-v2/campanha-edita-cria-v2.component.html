@@ -1,6 +1,6 @@
 <h2 mat-dialog-title>Edita Campanha</h2>
 
-<form *ngIf="listaPagina && listaPaginaInstalacao && listaSetup" class="example-full-width" (ngSubmit)="onSubmit()">
+<form *ngIf="listaPagina && listaPaginaInstalacao && listaSetup && listaIdeiaMelhoria" class="example-full-width" (ngSubmit)="onSubmit()">
 
 
   <mat-dialog-content>
@@ -14,6 +14,15 @@
       <textarea matInput #objetivo [(ngModel)]="item.objetivo" name="Objetivo" placeholder="Objetivo"></textarea>
     </mat-form-field>
   </mat-dialog-content>
+
+  <mat-form-field class="example-full-width">
+    <mat-select placeholder="Idéia Melhoria" #ideiaMelhoriaId [(ngModel)]="item.ideiaMelhoriaId"
+      name="ideiaMelhoriaId">
+      <mat-option *ngFor="let ideia of listaIdeiaMelhoria" [value]="ideia.id">
+        {{ ideia.descricaoBreve }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 
   <mat-form-field class="example-full-width">
     <mat-select placeholder="Página Validação" #paginaValidacaoWebId [(ngModel)]="item.paginaValidacaoWebId"

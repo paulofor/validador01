@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CampanhaAds, PaginaValidacaoWeb, CampanhaAdsApi, ProjetoMySqlApi, SetupCampanha, SetupCampanhaApi, PaginaInstalacaoApp, AnuncioAplicativo, AnuncioAplicativoApi, VersaoApp, VersaoAppApi, PresencaLojaApi, PresencaLoja } from '../shared/sdk';
+import { CampanhaAds, PaginaValidacaoWeb, CampanhaAdsApi, ProjetoMySqlApi, SetupCampanha, SetupCampanhaApi, PaginaInstalacaoApp, AnuncioAplicativo, AnuncioAplicativoApi, VersaoApp, VersaoAppApi, PresencaLojaApi, PresencaLoja, IdeiaMelhoria, IdeiaMelhoriaApi } from '../shared/sdk';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { CampanhaEditaCriaComponent } from '../campanha-edita-cria/campanha-edita-cria.component';
 import { Inject } from '@angular/core';
@@ -18,6 +18,7 @@ export class CampanhaEditaCriaV2Component implements OnInit {
   private listaAnuncioApp: AnuncioAplicativo[];
   private listaVersaoApp: VersaoApp[];
   private listaPresencaLoja: PresencaLoja[];
+  private listaIdeiaMelhoria: IdeiaMelhoria[];
 
   private listaSetup: SetupCampanha[];
   private idProjeto: number;
@@ -25,7 +26,8 @@ export class CampanhaEditaCriaV2Component implements OnInit {
   constructor(public dialogRef: MatDialogRef<CampanhaEditaCriaComponent>
     , @Inject(MAT_DIALOG_DATA) public data: any, private campanhaSrv: CampanhaAdsApi,
     private projetoSrv: ProjetoMySqlApi, private setupCampanhaSrv: SetupCampanhaApi, private versaoAppSrv: VersaoAppApi,
-    private anuncioAppSrv: AnuncioAplicativoApi, private presencaLojaSrv:PresencaLojaApi) { }
+    private anuncioAppSrv: AnuncioAplicativoApi, private presencaLojaSrv:PresencaLojaApi,
+    private ideiaMelhoriaSrv: IdeiaMelhoriaApi) { }
 
 
   carregaListaPaginaInstalacao() {
@@ -49,14 +51,18 @@ export class CampanhaEditaCriaV2Component implements OnInit {
       })
   }
 
-  carregaListaAnuncioAplicativo() {
-    console.log('ProjetoId:' , this.idProjeto)
-    
+  carregaIdeiaMelhoria() {
     let filtro = { 'where': { 'projetoMySqlId': this.idProjeto } };
-    console.log('Filtro:' , filtro);
+    this.ideiaMelhoriaSrv.find(filtro)
+      .subscribe((resultado: IdeiaMelhoria[]) => {
+        this.listaIdeiaMelhoria = resultado;
+      })
+  }
+
+  carregaListaAnuncioAplicativo() {
+    let filtro = { 'where': { 'projetoMySqlId': this.idProjeto } };
     this.anuncioAppSrv.find(filtro)
       .subscribe((resultado: AnuncioAplicativo[]) => {
-        console.log('ListaAnuncio:' , resultado);
         this.listaAnuncioApp = resultado;
       })
   }
@@ -90,6 +96,7 @@ export class CampanhaEditaCriaV2Component implements OnInit {
     this.carregaListaAnuncioAplicativo();
     this.carregaVersaoApp();
     this.carregaListaPresencaLoja();
+    this.carregaIdeiaMelhoria();
   }
 
   onSubmit() {

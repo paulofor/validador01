@@ -5,7 +5,8 @@ import {
   ProcessoNegocio,
   PlanoExecucao,
   DiaSemana,
-  Contexto
+  Contexto,
+  IdeiaMelhoria
 } from '../index';
 
 declare var Object: any;
@@ -21,12 +22,14 @@ export interface TempoExecucaoInterface {
   "planoExecucaoId"?: number;
   "diaSemanaId"?: number;
   "contextoId"?: number;
+  "ideiaMelhoriaId"?: number;
   projetoMySql?: ProjetoMySql;
   semana?: Semana;
   processoNegocio?: ProcessoNegocio;
   planoExecucao?: PlanoExecucao;
   diaSemana?: DiaSemana;
   contexto?: Contexto;
+  ideiaMelhoria?: IdeiaMelhoria;
 }
 
 export class TempoExecucao implements TempoExecucaoInterface {
@@ -41,12 +44,14 @@ export class TempoExecucao implements TempoExecucaoInterface {
   "planoExecucaoId": number;
   "diaSemanaId": number;
   "contextoId": number;
+  "ideiaMelhoriaId": number;
   projetoMySql: ProjetoMySql;
   semana: Semana;
   processoNegocio: ProcessoNegocio;
   planoExecucao: PlanoExecucao;
   diaSemana: DiaSemana;
   contexto: Contexto;
+  ideiaMelhoria: IdeiaMelhoria;
   constructor(data?: TempoExecucaoInterface) {
     Object.assign(this, data);
   }
@@ -124,6 +129,10 @@ export class TempoExecucao implements TempoExecucaoInterface {
           name: 'contextoId',
           type: 'number'
         },
+        "ideiaMelhoriaId": {
+          name: 'ideiaMelhoriaId',
+          type: 'number'
+        },
       },
       relations: {
         projetoMySql: {
@@ -172,6 +181,14 @@ export class TempoExecucao implements TempoExecucaoInterface {
           model: 'Contexto',
           relationType: 'belongsTo',
                   keyFrom: 'contextoId',
+          keyTo: 'id'
+        },
+        ideiaMelhoria: {
+          name: 'ideiaMelhoria',
+          type: 'IdeiaMelhoria',
+          model: 'IdeiaMelhoria',
+          relationType: 'belongsTo',
+                  keyFrom: 'ideiaMelhoriaId',
           keyTo: 'id'
         },
       }

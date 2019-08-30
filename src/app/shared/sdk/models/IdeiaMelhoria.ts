@@ -13,15 +13,14 @@ export interface IdeiaMelhoriaInterface {
   "dataPlanejadaImplementacao"?: Date;
   "dataImplementacao"?: Date;
   "tempoConsumido"?: Date;
+  "ativa"?: number;
   "id"?: number;
   "projetoMySqlId"?: number;
   "conceitoProdutoId"?: number;
   "campanhaAdsOrigemId"?: number;
-  "campanhaAdsAplicacaoId"?: number;
   projetoMySql?: ProjetoMySql;
   conceitoProduto?: ConceitoProduto;
   campanhaAdsOrigem?: CampanhaAds;
-  campanhaAdsAplicacao?: CampanhaAds;
 }
 
 export class IdeiaMelhoria implements IdeiaMelhoriaInterface {
@@ -31,15 +30,14 @@ export class IdeiaMelhoria implements IdeiaMelhoriaInterface {
   "dataPlanejadaImplementacao": Date;
   "dataImplementacao": Date;
   "tempoConsumido": Date;
+  "ativa": number;
   "id": number;
   "projetoMySqlId": number;
   "conceitoProdutoId": number;
   "campanhaAdsOrigemId": number;
-  "campanhaAdsAplicacaoId": number;
   projetoMySql: ProjetoMySql;
   conceitoProduto: ConceitoProduto;
   campanhaAdsOrigem: CampanhaAds;
-  campanhaAdsAplicacao: CampanhaAds;
   constructor(data?: IdeiaMelhoriaInterface) {
     Object.assign(this, data);
   }
@@ -97,6 +95,10 @@ export class IdeiaMelhoria implements IdeiaMelhoriaInterface {
           name: 'tempoConsumido',
           type: 'Date'
         },
+        "ativa": {
+          name: 'ativa',
+          type: 'number'
+        },
         "id": {
           name: 'id',
           type: 'number'
@@ -111,10 +113,6 @@ export class IdeiaMelhoria implements IdeiaMelhoriaInterface {
         },
         "campanhaAdsOrigemId": {
           name: 'campanhaAdsOrigemId',
-          type: 'number'
-        },
-        "campanhaAdsAplicacaoId": {
-          name: 'campanhaAdsAplicacaoId',
           type: 'number'
         },
       },
@@ -141,14 +139,6 @@ export class IdeiaMelhoria implements IdeiaMelhoriaInterface {
           model: 'CampanhaAds',
           relationType: 'belongsTo',
                   keyFrom: 'campanhaAdsOrigemId',
-          keyTo: 'id'
-        },
-        campanhaAdsAplicacao: {
-          name: 'campanhaAdsAplicacao',
-          type: 'CampanhaAds',
-          model: 'CampanhaAds',
-          relationType: 'belongsTo',
-                  keyFrom: 'campanhaAdsAplicacaoId',
           keyTo: 'id'
         },
       }

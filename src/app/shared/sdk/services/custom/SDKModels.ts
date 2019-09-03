@@ -63,6 +63,7 @@ import { RespostaVersao } from '../../models/RespostaVersao';
 import { PresencaLoja } from '../../models/PresencaLoja';
 import { IdeiaMelhoria } from '../../models/IdeiaMelhoria';
 import { Recurso } from '../../models/Recurso';
+import { GrupoAnuncioAplicativo } from '../../models/GrupoAnuncioAplicativo';
 
 export interface Models { [name: string]: any }
 
@@ -133,6 +134,7 @@ export class SDKModels {
     PresencaLoja: PresencaLoja,
     IdeiaMelhoria: IdeiaMelhoria,
     Recurso: Recurso,
+    GrupoAnuncioAplicativo: GrupoAnuncioAplicativo,
     
   };
 

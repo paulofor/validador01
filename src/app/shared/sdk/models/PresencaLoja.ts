@@ -23,6 +23,10 @@ export interface PresencaLojaInterface {
   "comentarioPos"?: string;
   "dataPre"?: Date;
   "dataPos"?: Date;
+  "quantidadeCampanha"?: number;
+  "mediaConversao"?: number;
+  "mediaTaxaConversao"?: number;
+  "mediaCustoConversao"?: number;
   "id"?: number;
   "projetoMySqlId"?: number;
   "conceitoProdutoId"?: number;
@@ -48,6 +52,10 @@ export class PresencaLoja implements PresencaLojaInterface {
   "comentarioPos": string;
   "dataPre": Date;
   "dataPos": Date;
+  "quantidadeCampanha": number;
+  "mediaConversao": number;
+  "mediaTaxaConversao": number;
+  "mediaCustoConversao": number;
   "id": number;
   "projetoMySqlId": number;
   "conceitoProdutoId": number;
@@ -153,6 +161,22 @@ export class PresencaLoja implements PresencaLojaInterface {
         "dataPos": {
           name: 'dataPos',
           type: 'Date'
+        },
+        "quantidadeCampanha": {
+          name: 'quantidadeCampanha',
+          type: 'number'
+        },
+        "mediaConversao": {
+          name: 'mediaConversao',
+          type: 'number'
+        },
+        "mediaTaxaConversao": {
+          name: 'mediaTaxaConversao',
+          type: 'number'
+        },
+        "mediaCustoConversao": {
+          name: 'mediaCustoConversao',
+          type: 'number'
         },
         "id": {
           name: 'id',

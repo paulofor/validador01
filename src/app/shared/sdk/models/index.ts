@@ -62,5 +62,6 @@ export * from './RespostaVersao';
 export * from './PresencaLoja';
 export * from './IdeiaMelhoria';
 export * from './Recurso';
+export * from './GrupoAnuncioAplicativo';
 export * from './BaseModels';
 export * from './FireLoopRef';

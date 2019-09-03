@@ -111,6 +111,7 @@ import { RespostaVersaoApi } from './services/custom/RespostaVersao';
 import { PresencaLojaApi } from './services/custom/PresencaLoja';
 import { IdeiaMelhoriaApi } from './services/custom/IdeiaMelhoria';
 import { RecursoApi } from './services/custom/Recurso';
+import { GrupoAnuncioAplicativoApi } from './services/custom/GrupoAnuncioAplicativo';
 /**
 * @module SDKBrowserModule
 * @description
@@ -204,8 +205,9 @@ export class SDKBrowserModule {
         PresencaLojaApi,
         IdeiaMelhoriaApi,
         RecursoApi,
+        GrupoAnuncioAplicativoApi,
         internalStorageProvider,
-        { provide: SDKStorage, useClass: StorageBrowser },
+        { provide: SDKStorage, useClass: StorageBrowser }
 
       ]
     };

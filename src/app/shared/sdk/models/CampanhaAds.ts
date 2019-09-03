@@ -11,7 +11,8 @@ import {
   AnuncioAplicativo,
   VersaoApp,
   PresencaLoja,
-  IdeiaMelhoria
+  IdeiaMelhoria,
+  GrupoAnuncioAplicativo
 } from '../index';
 
 declare var Object: any;
@@ -62,6 +63,7 @@ export interface CampanhaAdsInterface {
   versaoApp?: VersaoApp;
   presencaLoja?: PresencaLoja;
   ideiaMelhoria?: IdeiaMelhoria;
+  grupoAnuncioAplicativos?: GrupoAnuncioAplicativo[];
 }
 
 export class CampanhaAds implements CampanhaAdsInterface {
@@ -111,6 +113,7 @@ export class CampanhaAds implements CampanhaAdsInterface {
   versaoApp: VersaoApp;
   presencaLoja: PresencaLoja;
   ideiaMelhoria: IdeiaMelhoria;
+  grupoAnuncioAplicativos: GrupoAnuncioAplicativo[];
   constructor(data?: CampanhaAdsInterface) {
     Object.assign(this, data);
   }
@@ -381,6 +384,14 @@ export class CampanhaAds implements CampanhaAdsInterface {
           relationType: 'belongsTo',
                   keyFrom: 'ideiaMelhoriaId',
           keyTo: 'id'
+        },
+        grupoAnuncioAplicativos: {
+          name: 'grupoAnuncioAplicativos',
+          type: 'GrupoAnuncioAplicativo[]',
+          model: 'GrupoAnuncioAplicativo',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'campanhaAdsId'
         },
       }
     }

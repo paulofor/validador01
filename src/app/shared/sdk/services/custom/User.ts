@@ -30,11 +30,11 @@ export class UserApi extends BaseLoopBackApi {
   }
 
   /**
-   * Find a related item by id for accessTokens.
+   * Localize um item relacionado por ID para accessTokens.
    *
    * @param {any} id User id
    *
-   * @param {any} fk Foreign key for accessTokens
+   * @param {any} fk Chave estrangeira para accessTokens
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -60,11 +60,11 @@ export class UserApi extends BaseLoopBackApi {
   }
 
   /**
-   * Delete a related item by id for accessTokens.
+   * Excluir um item relacionado por ID para accessTokens.
    *
    * @param {any} id User id
    *
-   * @param {any} fk Foreign key for accessTokens
+   * @param {any} fk Chave estrangeira para accessTokens
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -87,11 +87,11 @@ export class UserApi extends BaseLoopBackApi {
   }
 
   /**
-   * Update a related item by id for accessTokens.
+   * Atualizar um item relacionado por ID para accessTokens.
    *
    * @param {any} id User id
    *
-   * @param {any} fk Foreign key for accessTokens
+   * @param {any} fk Chave estrangeira para accessTokens
    *
    * @param {object} data Request data.
    *
@@ -123,7 +123,7 @@ export class UserApi extends BaseLoopBackApi {
   }
 
   /**
-   * Queries accessTokens of User.
+   * accessTokens consultas de User.
    *
    * @param {any} id User id
    *
@@ -153,7 +153,7 @@ export class UserApi extends BaseLoopBackApi {
   }
 
   /**
-   * Creates a new instance in accessTokens of this model.
+   * Cria uma nova instância no accessTokens deste modelo.
    *
    * @param {any} id User id
    *
@@ -186,7 +186,7 @@ export class UserApi extends BaseLoopBackApi {
   }
 
   /**
-   * Deletes all accessTokens of this model.
+   * Exclui todos os accessTokens deste modelo.
    *
    * @param {any} id User id
    *
@@ -210,7 +210,7 @@ export class UserApi extends BaseLoopBackApi {
   }
 
   /**
-   * Counts accessTokens of User.
+   * accessTokens contagens de User.
    *
    * @param {any} id User id
    *
@@ -519,7 +519,7 @@ export class UserApi extends BaseLoopBackApi {
   }
 
   /**
-   * Creates a new instance in accessTokens of this model.
+   * Cria uma nova instância no accessTokens deste modelo.
    *
    * @param {any} id User id
    *

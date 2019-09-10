@@ -1,24 +1,70 @@
 /* tslint:disable */
 import { Injectable } from '@angular/core';
 import { User } from '../../models/User';
-import { ExemploModelo } from '../../models/ExemploModelo';
-import { TreinoAcademia_GrupoMuscular } from '../../models/TreinoAcademia_GrupoMuscular';
-import { TreinoAcademia_SerieTreino } from '../../models/TreinoAcademia_SerieTreino';
-import { TreinoAcademia_Exercicio } from '../../models/TreinoAcademia_Exercicio';
-import { TreinoAcademia_ExecucaoItemSerie } from '../../models/TreinoAcademia_ExecucaoItemSerie';
-import { TreinoAcademia_CargaPlanejada } from '../../models/TreinoAcademia_CargaPlanejada';
-import { TreinoAcademia_DiaTreino } from '../../models/TreinoAcademia_DiaTreino';
-import { TreinoAcademia_ItemSerie } from '../../models/TreinoAcademia_ItemSerie';
-import { TreinoAcademia_RegistroPeso } from '../../models/TreinoAcademia_RegistroPeso';
-import { TreinoAcademia_Usuario } from '../../models/TreinoAcademia_Usuario';
-import { TesteBase } from '../../models/TesteBase';
-import { TreinoAcademia_ExecucaoCarga } from '../../models/TreinoAcademia_ExecucaoCarga';
-import { PagSeguro } from '../../models/PagSeguro';
-import { TreinoAcademia_Acao } from '../../models/TreinoAcademia_Acao';
-import { Cosmetic_OportunidadeDia } from '../../models/Cosmetic_OportunidadeDia';
-import { Cosmetic_Usuario } from '../../models/Cosmetic_Usuario';
-import { Cosmetic_Acao } from '../../models/Cosmetic_Acao';
-import { Cosmetic_Visitante } from '../../models/Cosmetic_Visitante';
+import { Projeto } from '../../models/Projeto';
+import { ProjetoCanvas } from '../../models/ProjetoCanvas';
+import { ProjetoMySql } from '../../models/ProjetoMySql';
+import { ProjetoCanvasMySql } from '../../models/ProjetoCanvasMySql';
+import { MvpCanvasMySql } from '../../models/MvpCanvasMySql';
+import { GanhoDorCanvasMySql } from '../../models/GanhoDorCanvasMySql';
+import { PaginaValidacaoWeb } from '../../models/PaginaValidacaoWeb';
+import { ItemValidacaoPagina } from '../../models/ItemValidacaoPagina';
+import { RegistroInteresse } from '../../models/RegistroInteresse';
+import { ProjetoExemplo } from '../../models/ProjetoExemplo';
+import { Receita } from '../../models/Receita';
+import { Container } from '../../models/Container';
+import { Visitante } from '../../models/Visitante';
+import { AnuncioAds } from '../../models/AnuncioAds';
+import { CampanhaAds } from '../../models/CampanhaAds';
+import { PalavraChaveAds } from '../../models/PalavraChaveAds';
+import { Aplicacao } from '../../models/Aplicacao';
+import { Atributo_entidade } from '../../models/Atributo_entidade';
+import { Entidade } from '../../models/Entidade';
+import { ModeloCampanhaAds } from '../../models/ModeloCampanhaAds';
+import { Relacionamento_entidade } from '../../models/Relacionamento_entidade';
+import { CampanhaAnuncioResultado } from '../../models/CampanhaAnuncioResultado';
+import { CampanhaPalavraChaveResultado } from '../../models/CampanhaPalavraChaveResultado';
+import { TelaWeb } from '../../models/TelaWeb';
+import { TelaApp } from '../../models/TelaApp';
+import { PalavraChaveRaiz } from '../../models/PalavraChaveRaiz';
+import { PalavraChaveGoogle } from '../../models/PalavraChaveGoogle';
+import { PalavraChaveEstatistica } from '../../models/PalavraChaveEstatistica';
+import { PalavraGoogleProjeto } from '../../models/PalavraGoogleProjeto';
+import { EtapaProjeto } from '../../models/EtapaProjeto';
+import { MudancaEtapa } from '../../models/MudancaEtapa';
+import { ProcessoNegocio } from '../../models/ProcessoNegocio';
+import { ComponenteWeb } from '../../models/ComponenteWeb';
+import { TelaComponenteWeb } from '../../models/TelaComponenteWeb';
+import { TipoComponenteWeb } from '../../models/TipoComponenteWeb';
+import { TipoExperiencia } from '../../models/TipoExperiencia';
+import { IndicadorPerformanceProcesso } from '../../models/IndicadorPerformanceProcesso';
+import { MedidaIndicadorProcesso } from '../../models/MedidaIndicadorProcesso';
+import { RespostaMercado } from '../../models/RespostaMercado';
+import { ConceitoProduto } from '../../models/ConceitoProduto';
+import { ValorConceito } from '../../models/ValorConceito';
+import { RecursoConceitoProduto } from '../../models/RecursoConceitoProduto';
+import { Publico } from '../../models/Publico';
+import { SetupCampanha } from '../../models/SetupCampanha';
+import { EstatisticaMes } from '../../models/EstatisticaMes';
+import { Semana } from '../../models/Semana';
+import { TempoExecucao } from '../../models/TempoExecucao';
+import { PlanoExecucao } from '../../models/PlanoExecucao';
+import { DiaSemana } from '../../models/DiaSemana';
+import { Contexto } from '../../models/Contexto';
+import { ModeloTelaApp } from '../../models/ModeloTelaApp';
+import { PaletaCor } from '../../models/PaletaCor';
+import { PaletaAplicacao } from '../../models/PaletaAplicacao';
+import { ComponenteApp } from '../../models/ComponenteApp';
+import { ProcessoNegocioEtapaProjeto } from '../../models/ProcessoNegocioEtapaProjeto';
+import { PaginaInstalacaoApp } from '../../models/PaginaInstalacaoApp';
+import { AnuncioAplicativo } from '../../models/AnuncioAplicativo';
+import { VersaoApp } from '../../models/VersaoApp';
+import { RespostaVersao } from '../../models/RespostaVersao';
+import { PresencaLoja } from '../../models/PresencaLoja';
+import { IdeiaMelhoria } from '../../models/IdeiaMelhoria';
+import { Recurso } from '../../models/Recurso';
+import { GrupoAnuncioAplicativo } from '../../models/GrupoAnuncioAplicativo';
+import { ClienteExperimental } from '../../models/ClienteExperimental';
 
 export interface Models { [name: string]: any }
 
@@ -27,24 +73,70 @@ export class SDKModels {
 
   private models: Models = {
     User: User,
-    ExemploModelo: ExemploModelo,
-    TreinoAcademia_GrupoMuscular: TreinoAcademia_GrupoMuscular,
-    TreinoAcademia_SerieTreino: TreinoAcademia_SerieTreino,
-    TreinoAcademia_Exercicio: TreinoAcademia_Exercicio,
-    TreinoAcademia_ExecucaoItemSerie: TreinoAcademia_ExecucaoItemSerie,
-    TreinoAcademia_CargaPlanejada: TreinoAcademia_CargaPlanejada,
-    TreinoAcademia_DiaTreino: TreinoAcademia_DiaTreino,
-    TreinoAcademia_ItemSerie: TreinoAcademia_ItemSerie,
-    TreinoAcademia_RegistroPeso: TreinoAcademia_RegistroPeso,
-    TreinoAcademia_Usuario: TreinoAcademia_Usuario,
-    TesteBase: TesteBase,
-    TreinoAcademia_ExecucaoCarga: TreinoAcademia_ExecucaoCarga,
-    PagSeguro: PagSeguro,
-    TreinoAcademia_Acao: TreinoAcademia_Acao,
-    Cosmetic_OportunidadeDia: Cosmetic_OportunidadeDia,
-    Cosmetic_Usuario: Cosmetic_Usuario,
-    Cosmetic_Acao: Cosmetic_Acao,
-    Cosmetic_Visitante: Cosmetic_Visitante,
+    Projeto: Projeto,
+    ProjetoCanvas: ProjetoCanvas,
+    ProjetoMySql: ProjetoMySql,
+    ProjetoCanvasMySql: ProjetoCanvasMySql,
+    MvpCanvasMySql: MvpCanvasMySql,
+    GanhoDorCanvasMySql: GanhoDorCanvasMySql,
+    PaginaValidacaoWeb: PaginaValidacaoWeb,
+    ItemValidacaoPagina: ItemValidacaoPagina,
+    RegistroInteresse: RegistroInteresse,
+    ProjetoExemplo: ProjetoExemplo,
+    Receita: Receita,
+    Container: Container,
+    Visitante: Visitante,
+    AnuncioAds: AnuncioAds,
+    CampanhaAds: CampanhaAds,
+    PalavraChaveAds: PalavraChaveAds,
+    Aplicacao: Aplicacao,
+    Atributo_entidade: Atributo_entidade,
+    Entidade: Entidade,
+    ModeloCampanhaAds: ModeloCampanhaAds,
+    Relacionamento_entidade: Relacionamento_entidade,
+    CampanhaAnuncioResultado: CampanhaAnuncioResultado,
+    CampanhaPalavraChaveResultado: CampanhaPalavraChaveResultado,
+    TelaWeb: TelaWeb,
+    TelaApp: TelaApp,
+    PalavraChaveRaiz: PalavraChaveRaiz,
+    PalavraChaveGoogle: PalavraChaveGoogle,
+    PalavraChaveEstatistica: PalavraChaveEstatistica,
+    PalavraGoogleProjeto: PalavraGoogleProjeto,
+    EtapaProjeto: EtapaProjeto,
+    MudancaEtapa: MudancaEtapa,
+    ProcessoNegocio: ProcessoNegocio,
+    ComponenteWeb: ComponenteWeb,
+    TelaComponenteWeb: TelaComponenteWeb,
+    TipoComponenteWeb: TipoComponenteWeb,
+    TipoExperiencia: TipoExperiencia,
+    IndicadorPerformanceProcesso: IndicadorPerformanceProcesso,
+    MedidaIndicadorProcesso: MedidaIndicadorProcesso,
+    RespostaMercado: RespostaMercado,
+    ConceitoProduto: ConceitoProduto,
+    ValorConceito: ValorConceito,
+    RecursoConceitoProduto: RecursoConceitoProduto,
+    Publico: Publico,
+    SetupCampanha: SetupCampanha,
+    EstatisticaMes: EstatisticaMes,
+    Semana: Semana,
+    TempoExecucao: TempoExecucao,
+    PlanoExecucao: PlanoExecucao,
+    DiaSemana: DiaSemana,
+    Contexto: Contexto,
+    ModeloTelaApp: ModeloTelaApp,
+    PaletaCor: PaletaCor,
+    PaletaAplicacao: PaletaAplicacao,
+    ComponenteApp: ComponenteApp,
+    ProcessoNegocioEtapaProjeto: ProcessoNegocioEtapaProjeto,
+    PaginaInstalacaoApp: PaginaInstalacaoApp,
+    AnuncioAplicativo: AnuncioAplicativo,
+    VersaoApp: VersaoApp,
+    RespostaVersao: RespostaVersao,
+    PresencaLoja: PresencaLoja,
+    IdeiaMelhoria: IdeiaMelhoria,
+    Recurso: Recurso,
+    GrupoAnuncioAplicativo: GrupoAnuncioAplicativo,
+    ClienteExperimental: ClienteExperimental,
     
   };
 

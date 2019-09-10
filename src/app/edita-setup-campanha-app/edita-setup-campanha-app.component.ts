@@ -73,9 +73,11 @@ export class EditaSetupCampanhaAppComponent implements OnInit {
   }
 
   getTamanho() {
-    if (this.item.diaSemanaInicio && this.item.diaSemanaFinal)
-      return this.getDia(this.item.diaSemanaFinal) - this.getDia(this.item.diaSemanaInicio) + 1;
-    else
+    if (this.item.diaSemanaInicio && this.item.diaSemanaFinal) {
+      let qtde = this.getDia(this.item.diaSemanaFinal) - this.getDia(this.item.diaSemanaInicio) + 1;
+      if (qtde==0) qtde = 7;
+      return qtde;
+    } else
       return 0;
   }
 

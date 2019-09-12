@@ -3,7 +3,8 @@
     <div class="row">
         <div class="col-md-12">
             <mat-card>
-                <mat-card-subtitle>{{campanha.nome}} - R$ {{campanha.orcamentoTotalExecutado | number : '1.2-2'}}</mat-card-subtitle>
+                <mat-card-subtitle>{{campanha.nome}} - R$ {{campanha.orcamentoTotalExecutado | number : '1.2-2'}}
+                </mat-card-subtitle>
                 <mat-card-subtitle>ID: {{campanha.idAds}}</mat-card-subtitle>
             </mat-card>
         </div>
@@ -15,24 +16,26 @@
         </div>
     </div>
 
+ 
     <div class="row">
         <div class="col-md-12">
             <app-resultado-campanha-anuncio [campanha]="campanha"></app-resultado-campanha-anuncio>
         </div>
     </div>
-
+ 
     <div class="row">
         <div class="col-md-12">
             <app-display-setup-campanha [campanha]="campanha"></app-display-setup-campanha>
         </div>
     </div>
-
+ 
     <div class="row">
         <div class="col-md-12">
             <app-display-anuncio-aplicacao [campanha]="campanha"></app-display-anuncio-aplicacao>
         </div>
     </div>
 
+  
     <div class="row">
         <div class="col-md-12">
             <app-display-presenca-loja [campanha]="campanha"></app-display-presenca-loja>

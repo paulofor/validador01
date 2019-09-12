@@ -19,16 +19,17 @@ export class DisplayPresencaLojaComponent implements OnInit {
   ngOnInit() {
     if (this.campanha && this.campanha.presencaLojaId != 0) {
       this.carregaItem(this.campanha.presencaLojaId);
-    }
-    if (this.id && this.id != 0) {
-      this.carregaItem(this.id);
     } else {
-      this.route.params.subscribe((params: Params) => {
-        let id = params['id'];
-        if (id) {
-          this.carregaItem(id);
-        }
-      })
+      if (this.id && this.id != 0) {
+        this.carregaItem(this.id);
+      } else {
+        this.route.params.subscribe((params: Params) => {
+          let id = params['id'];
+          if (id) {
+            this.carregaItem(id);
+          }
+        })
+      }
     }
   }
 

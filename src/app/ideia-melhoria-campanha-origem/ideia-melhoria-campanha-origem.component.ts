@@ -19,16 +19,21 @@ export class IdeiaMelhoriaCampanhaOrigemComponent implements OnInit {
 
   ngOnInit() {
     if (this.campanha) {
+      console.log('IdeiaMelhoriaCampanhaOrigemComponent-Existe campanha (id:' + this.campanha.id + ')');
       this.carregaIdeia();
-    }
+    } 
     if (this.campanha.versaoAppId && this.campanha.versaoAppId!=0) {
+      console.log('IdeiaMelhoriaCampanhaOrigemComponent-Existe versaoApp');
       this.carregaVersaoApp();
     }
   }
 
   carregaIdeia() {
-    this.srv.find({'where' : {'campanhaAdsOrigemId' : this.campanha.id }})
+    let filtro = {"where" : {"campanhaAdsOrigemId" : this.campanha.id }};
+    console.log('filtro:' , filtro);
+    this.srv.find(filtro)
       .subscribe((result:IdeiaMelhoria[]) => {
+        console.log('IdeiaMelhoriaCampanhaOrigemComponent-ideiaCampanha', result);
         this.ideiaCampanha = result;
       })
   }
@@ -36,6 +41,7 @@ export class IdeiaMelhoriaCampanhaOrigemComponent implements OnInit {
   carregaVersaoApp() {
     this.srvVersaoApp.findById(this.campanha.versaoAppId)
       .subscribe((result:VersaoApp) => {
+        console.log('IdeiaMelhoriaCampanhaOrigemComponent-Resultado', result);
         this.versaoApp = result;
       })
   }

@@ -1,0 +1,24 @@
+<div class="card" *ngIf="ideiaCampanha">
+
+  <div class="header">
+    <h4 class="title">Idéia de Melhoria</h4>
+    <button class="btn btn-primary btn-sm" padding (click)="openDialog()">Nova</button>
+    <button class="btn btn-primary btn-sm" padding (click)="openDialog(ideiaCampanha[0])">Editar</button>
+  </div>
+
+  <div  class="content table-responsive table-full-width" *ngIf="ideiaCampanha.length >0">
+    <table class="table table-hover table-striped">
+      <tbody>
+        <tr>
+          <td style="text-align: center;font-weight: 500;">{{ideiaCampanha[0].descricaoBreve}}</td>
+        </tr>
+
+        <tr>
+          <td class="celulaTextoImportante">{{ideiaCampanha[0].descricaoCompleta}}</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+</div>

@@ -211,6 +211,7 @@ import { DisplaySetupCampanhaComponent } from './display-setup-campanha/display-
 import { DisplayAnuncioAplicacaoComponent } from './display-anuncio-aplicacao/display-anuncio-aplicacao.component';
 import { IdeiaMelhoriaCampanhaOrigemComponent } from './ideia-melhoria-campanha-origem/ideia-melhoria-campanha-origem.component';
 import { IdeiaMelhoriaEditaComponent } from './ideia-melhoria-edita/ideia-melhoria-edita.component';
+import { DisplayIdeiaMelhoriaOrigemComponent } from './display-ideia-melhoria-origem/display-ideia-melhoria-origem.component';
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -408,7 +409,9 @@ registerLocaleData(localePt, 'pt-BR');
 
     IdeiaMelhoriaCampanhaOrigemComponent,
 
-    IdeiaMelhoriaEditaComponent
+    IdeiaMelhoriaEditaComponent,
+
+    DisplayIdeiaMelhoriaOrigemComponent
 
   ],
   entryComponents: [

@@ -31,6 +31,7 @@ export class EditaSetupCampanhaComponent implements OnInit {
   onSubmit() {
     this.item.custoTotal = this.getCustoTotal();
     this.item.cliqueTotal = this.getTotalClique();
+    
     this.item.tipoCampanha = 'GERAL';
     console.log('Model: ' + JSON.stringify(this.item));
     if (!this.item.id) {
@@ -62,6 +63,7 @@ export class EditaSetupCampanhaComponent implements OnInit {
     }
     return saida;
   }
+
 
   getCustoTotal() {
     var saida = 0;

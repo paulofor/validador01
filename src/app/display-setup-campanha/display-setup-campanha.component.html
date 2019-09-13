@@ -13,13 +13,28 @@
         </tr>
         <tr>
           <td>Orçamento Diário</td>
-          <td>{{setupCampanha.budgetDiario}}</td>
+          <td>R$ {{setupCampanha.budgetDiario | number : '1.2-2' }}</td>
         </tr>
         <tr>
           <td>Custo Instalação</td>
-          <td>{{setupCampanha.custoInstalacao}}</td>
+          <td>R$ {{setupCampanha.custoInstalacao | number : '1.2-2' }}</td>
         </tr>
-      
+        <tr>
+          <td>Custo Total Estimado</td>
+          <td>R$ {{setupCampanha.custoTotal | number : '1.2-2' }}</td>
+        </tr>
+        <tr>
+          <td>Instalações Totais Estimada</td>
+          <td>{{setupCampanha.totalInstalacao}}</td>
+        </tr>
+        <tr>
+          <td>Período</td>
+          <td>{{setupCampanha.diaSemanaInicio}} até {{setupCampanha.diaSemanaFinal}}</td>
+        </tr>
+        <tr>
+          <td>Tipo</td>
+          <td>{{setupCampanha.tipoCampanha}}</td>
+        </tr>
       </tbody>
     </table>
   </div>

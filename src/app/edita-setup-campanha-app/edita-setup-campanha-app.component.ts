@@ -31,6 +31,7 @@ export class EditaSetupCampanhaAppComponent implements OnInit {
   onSubmit() {
     this.item.custoTotal = this.getCustoTotal();
     //this.item.cliqueTotal = this.getTotalClique();
+    this.item.totalInstalacao = this.getTotalInstalacao();
     this.item.tipoCampanha = 'INSTALACAO';
     console.log('Model: ' + JSON.stringify(this.item));
     if (!this.item.id) {
@@ -54,14 +55,7 @@ export class EditaSetupCampanhaAppComponent implements OnInit {
     this.dialogRef.close('Pizza!');
   }
 
-  getTotalInstalacao() {
-    var saida = 0;
-    let tamanho = this.getTamanho();
-    if (this.item.budgetDiario>0 && this.item.custoInstalacao > 0 && tamanho> 0) {
-      saida = tamanho * (this.item.budgetDiario / this.item.custoInstalacao);
-    }
-    return saida;
-  }
+ 
 
   getCustoTotal() {
     var saida = 0;
@@ -79,6 +73,18 @@ export class EditaSetupCampanhaAppComponent implements OnInit {
       return qtde;
     } else
       return 0;
+  }
+
+
+  getTotalInstalacao() {
+    var saida = 0;
+    let tamanho = this.getTamanho();
+    console.log('EditaSetupCampanhaComponent-SetupCampanha:' + this.item);
+    console.log('Tamanho:' , tamanho);
+    if (this.item.custoInstalacao>0 && this.item.budgetDiario>0 && tamanho > 0) {
+      saida = tamanho * (this.item.budgetDiario / this.item.custoInstalacao);
+    }
+    return saida;
   }
 
   getDia(dia : string) {

@@ -3,7 +3,8 @@ import {
   PaginaValidacaoWeb,
   PaginaInstalacaoApp,
   VersaoApp,
-  RespostaVersao
+  RespostaVersao,
+  ClienteExperimental
 } from '../index';
 
 declare var Object: any;
@@ -17,10 +18,12 @@ export interface VisitanteInterface {
   "paginaValidacaoWebId"?: number;
   "paginaInstalacaoAppId"?: number;
   "versaoAppId"?: number;
+  "clienteExperimentalId"?: number;
   paginaValidacaoWeb?: PaginaValidacaoWeb;
   paginaInstalacaoApp?: PaginaInstalacaoApp;
   versaoApp?: VersaoApp;
   respostaVersaos?: RespostaVersao[];
+  clienteExperimental?: ClienteExperimental;
 }
 
 export class Visitante implements VisitanteInterface {
@@ -33,10 +36,12 @@ export class Visitante implements VisitanteInterface {
   "paginaValidacaoWebId": number;
   "paginaInstalacaoAppId": number;
   "versaoAppId": number;
+  "clienteExperimentalId": number;
   paginaValidacaoWeb: PaginaValidacaoWeb;
   paginaInstalacaoApp: PaginaInstalacaoApp;
   versaoApp: VersaoApp;
   respostaVersaos: RespostaVersao[];
+  clienteExperimental: ClienteExperimental;
   constructor(data?: VisitanteInterface) {
     Object.assign(this, data);
   }
@@ -106,6 +111,10 @@ export class Visitante implements VisitanteInterface {
           name: 'versaoAppId',
           type: 'number'
         },
+        "clienteExperimentalId": {
+          name: 'clienteExperimentalId',
+          type: 'number'
+        },
       },
       relations: {
         paginaValidacaoWeb: {
@@ -139,6 +148,14 @@ export class Visitante implements VisitanteInterface {
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'visitanteId'
+        },
+        clienteExperimental: {
+          name: 'clienteExperimental',
+          type: 'ClienteExperimental',
+          model: 'ClienteExperimental',
+          relationType: 'belongsTo',
+                  keyFrom: 'clienteExperimentalId',
+          keyTo: 'id'
         },
       }
     }

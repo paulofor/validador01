@@ -26,7 +26,7 @@ export class VisitantePorVersaoAppComponent implements OnInit {
   carregaAnuncios() {
     this.route.params.subscribe((params: Params) => {
       let id = params['id'];
-      this.srv.findById(id, { 'include': 'visitantes' })
+      this.srv.findById(id,{ "include" : {"relation" : "visitantes" , "scope" : {"include": "clienteExperimental" } } })
         .subscribe((resultado: VersaoApp) => {
           this.versaoApp = resultado;
         })

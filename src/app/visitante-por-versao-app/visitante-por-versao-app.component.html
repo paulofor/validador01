@@ -12,13 +12,25 @@
                   <tr>
                     <th width="5%">Id</th>
                     <th width="20%">Data</th>
-                    <th width="20"></th>
+                    <th width="20%">Cliente</th>
+                    <th width="20%">Email</th>
+                    <th width="10%">Tempo</th>
+                    <th width="10%">Idade</th>
+                    <th width="10%"></th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr *ngFor="let item of versaoApp.visitantes">
                     <td>{{item.codigoCookie}}</td>
                     <td>{{item.dataHora  |  date : 'dd/MM/yyyy HH:mm:ss '}}</td>
+                    <td *ngIf="item.clienteExperimental">{{item.clienteExperimental.nome}}</td>
+                    <td *ngIf="!item.clienteExperimental">-</td>
+                    <td *ngIf="item.clienteExperimental">{{item.clienteExperimental.email}}</td>
+                    <td *ngIf="!item.clienteExperimental">-</td>
+                    <td *ngIf="item.clienteExperimental">{{item.clienteExperimental.tempoDisponivel}}</td>
+                    <td *ngIf="!item.clienteExperimental">-</td>
+                    <td *ngIf="item.clienteExperimental">{{item.clienteExperimental.faixaEtaria}}</td>
+                    <td *ngIf="!item.clienteExperimental">-</td>
                     <td><button class="btn btn-primary btn-sm " (click)="openDialog(item)">Detalhe</button></td>
                   </tr>
                 </tbody>

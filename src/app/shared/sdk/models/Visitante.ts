@@ -18,7 +18,6 @@ export interface VisitanteInterface {
   "paginaValidacaoWebId"?: number;
   "paginaInstalacaoAppId"?: number;
   "versaoAppId"?: number;
-  "clienteExperimentalId"?: number;
   paginaValidacaoWeb?: PaginaValidacaoWeb;
   paginaInstalacaoApp?: PaginaInstalacaoApp;
   versaoApp?: VersaoApp;
@@ -36,7 +35,6 @@ export class Visitante implements VisitanteInterface {
   "paginaValidacaoWebId": number;
   "paginaInstalacaoAppId": number;
   "versaoAppId": number;
-  "clienteExperimentalId": number;
   paginaValidacaoWeb: PaginaValidacaoWeb;
   paginaInstalacaoApp: PaginaInstalacaoApp;
   versaoApp: VersaoApp;
@@ -111,10 +109,6 @@ export class Visitante implements VisitanteInterface {
           name: 'versaoAppId',
           type: 'number'
         },
-        "clienteExperimentalId": {
-          name: 'clienteExperimentalId',
-          type: 'number'
-        },
       },
       relations: {
         paginaValidacaoWeb: {
@@ -153,9 +147,9 @@ export class Visitante implements VisitanteInterface {
           name: 'clienteExperimental',
           type: 'ClienteExperimental',
           model: 'ClienteExperimental',
-          relationType: 'belongsTo',
-                  keyFrom: 'clienteExperimentalId',
-          keyTo: 'id'
+          relationType: 'hasOne',
+                  keyFrom: 'id',
+          keyTo: 'visitanteId'
         },
       }
     }

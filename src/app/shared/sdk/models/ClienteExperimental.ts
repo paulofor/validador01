@@ -10,6 +10,7 @@ export interface ClienteExperimentalInterface {
   "tempoDisponivel"?: string;
   "id"?: number;
   "projetoMySqlId"?: number;
+  "visitanteId"?: number;
   "campanhaAdsId"?: number;
   "anuncioAplicativoId"?: number;
   "versaoAppId"?: number;
@@ -25,6 +26,7 @@ export class ClienteExperimental implements ClienteExperimentalInterface {
   "tempoDisponivel": string;
   "id": number;
   "projetoMySqlId": number;
+  "visitanteId": number;
   "campanhaAdsId": number;
   "anuncioAplicativoId": number;
   "versaoAppId": number;
@@ -92,6 +94,10 @@ export class ClienteExperimental implements ClienteExperimentalInterface {
         },
         "projetoMySqlId": {
           name: 'projetoMySqlId',
+          type: 'number'
+        },
+        "visitanteId": {
+          name: 'visitanteId',
           type: 'number'
         },
         "campanhaAdsId": {

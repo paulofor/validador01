@@ -64,5 +64,6 @@ export * from './IdeiaMelhoria';
 export * from './Recurso';
 export * from './GrupoAnuncioAplicativo';
 export * from './ClienteExperimental';
+export * from './DispositivoUsuario';
 export * from './BaseModels';
 export * from './FireLoopRef';

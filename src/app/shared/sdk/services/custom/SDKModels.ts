@@ -65,6 +65,7 @@ import { IdeiaMelhoria } from '../../models/IdeiaMelhoria';
 import { Recurso } from '../../models/Recurso';
 import { GrupoAnuncioAplicativo } from '../../models/GrupoAnuncioAplicativo';
 import { ClienteExperimental } from '../../models/ClienteExperimental';
+import { DispositivoUsuario } from '../../models/DispositivoUsuario';
 
 export interface Models { [name: string]: any }
 
@@ -137,6 +138,7 @@ export class SDKModels {
     Recurso: Recurso,
     GrupoAnuncioAplicativo: GrupoAnuncioAplicativo,
     ClienteExperimental: ClienteExperimental,
+    DispositivoUsuario: DispositivoUsuario,
     
   };
 

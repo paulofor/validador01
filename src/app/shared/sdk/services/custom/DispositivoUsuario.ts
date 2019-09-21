@@ -92,6 +92,34 @@ export class DispositivoUsuarioApi extends BaseLoopBackApi {
   }
 
   /**
+   * Atualiza com o id campanha atual
+   *
+   * @param {object} data Request data.
+   *
+   *  - `idDispositivoUsuario` – `{number}` - 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `DispositivoUsuario` object.)
+   * </em>
+   */
+  public AtualizaCampanha(idDispositivoUsuario: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "PUT";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/DispositivoUsuarios/atualizaCampanha";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof idDispositivoUsuario !== 'undefined' && idDispositivoUsuario !== null) _urlParams.idDispositivoUsuario = idDispositivoUsuario;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * The name of the model represented by this $resource,
    * i.e. `DispositivoUsuario`.
    */

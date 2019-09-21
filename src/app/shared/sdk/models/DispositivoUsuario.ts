@@ -5,6 +5,7 @@ export interface DispositivoUsuarioInterface {
   "tokenFcm"?: string;
   "dataHoraCriacao"?: Date;
   "dataUltimoAcesso"?: Date;
+  "dataAlteracao"?: Date;
   "dataChamada"?: Date;
   "temMudanca"?: number;
   "ativo"?: number;
@@ -19,6 +20,7 @@ export class DispositivoUsuario implements DispositivoUsuarioInterface {
   "tokenFcm": string;
   "dataHoraCriacao": Date;
   "dataUltimoAcesso": Date;
+  "dataAlteracao": Date;
   "dataChamada": Date;
   "temMudanca": number;
   "ativo": number;
@@ -70,6 +72,10 @@ export class DispositivoUsuario implements DispositivoUsuarioInterface {
         },
         "dataUltimoAcesso": {
           name: 'dataUltimoAcesso',
+          type: 'Date'
+        },
+        "dataAlteracao": {
+          name: 'dataAlteracao',
           type: 'Date'
         },
         "dataChamada": {

@@ -37,11 +37,11 @@
                   <td>{{campanha.quantidadeImpressao}}</td>
                   <td>{{campanha.quantidadeClique}}</td>
                   <td>{{campanha.ctr | number : '1.2-2' }}</td>
-                  <td>{{campanha.orcamentoTotalExecutado | number : '1.2-2'}}</td>
+                  <td>{{campanha.orcamentoTotalExecutado | number : '1.2-2'}} ({{campanha.setupCustoTotal | number : '1.2-2'}})</td>
                   <td>{{campanha.cpcMedio | number : '1.2-2' }}</td>
-                  <td>{{campanha.conversao | number : '1.0-0' }}</td>
+                  <td>{{campanha.conversao | number : '1.0-0' }}({{campanha.setupTotalInstalacao | number : '1.0-0' }})</td>
                   <td>{{campanha.taxaConversao | number : '1.2-2' }}</td>
-                  <td>{{campanha.custoConversao | number : '1.2-2' }}</td>
+                  <td>{{campanha.custoConversao | number : '1.2-2' }}({{campanha.setupCustoInstalacao | number : '1.2-2' }})</td>
                   <td>
                     <button color="primary"  matTooltip="Configurações" mat-icon-button aria-label="Configurações" routerLink="/detalheCampanhaParaFechamento/{{campanha.id}}">
                       <mat-icon>settings</mat-icon>

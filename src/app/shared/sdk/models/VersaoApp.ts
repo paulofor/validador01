@@ -4,7 +4,8 @@ import {
   ProjetoMySql,
   Visitante,
   RespostaVersao,
-  ClienteExperimental
+  ClienteExperimental,
+  DispositivoUsuario
 } from '../index';
 
 declare var Object: any;
@@ -22,6 +23,7 @@ export interface VersaoAppInterface {
   visitantes?: Visitante[];
   respostaVersaos?: RespostaVersao[];
   clienteExperimentals?: ClienteExperimental[];
+  dispositivoUsuarios?: DispositivoUsuario[];
 }
 
 export class VersaoApp implements VersaoAppInterface {
@@ -38,6 +40,7 @@ export class VersaoApp implements VersaoAppInterface {
   visitantes: Visitante[];
   respostaVersaos: RespostaVersao[];
   clienteExperimentals: ClienteExperimental[];
+  dispositivoUsuarios: DispositivoUsuario[];
   constructor(data?: VersaoAppInterface) {
     Object.assign(this, data);
   }
@@ -141,6 +144,14 @@ export class VersaoApp implements VersaoAppInterface {
           name: 'clienteExperimentals',
           type: 'ClienteExperimental[]',
           model: 'ClienteExperimental',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'versaoAppId'
+        },
+        dispositivoUsuarios: {
+          name: 'dispositivoUsuarios',
+          type: 'DispositivoUsuario[]',
+          model: 'DispositivoUsuario',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'versaoAppId'

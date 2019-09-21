@@ -12,6 +12,7 @@ export interface DispositivoUsuarioInterface {
   "microSd"?: number;
   "id"?: number;
   "campanhaAdsId"?: number;
+  "versaoAppId"?: number;
 }
 
 export class DispositivoUsuario implements DispositivoUsuarioInterface {
@@ -25,6 +26,7 @@ export class DispositivoUsuario implements DispositivoUsuarioInterface {
   "microSd": number;
   "id": number;
   "campanhaAdsId": number;
+  "versaoAppId": number;
   constructor(data?: DispositivoUsuarioInterface) {
     Object.assign(this, data);
   }
@@ -96,6 +98,10 @@ export class DispositivoUsuario implements DispositivoUsuarioInterface {
         },
         "campanhaAdsId": {
           name: 'campanhaAdsId',
+          type: 'number'
+        },
+        "versaoAppId": {
+          name: 'versaoAppId',
           type: 'number'
         },
       },

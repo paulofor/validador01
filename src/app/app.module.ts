@@ -212,6 +212,7 @@ import { DisplayAnuncioAplicacaoComponent } from './display-anuncio-aplicacao/di
 import { IdeiaMelhoriaCampanhaOrigemComponent } from './ideia-melhoria-campanha-origem/ideia-melhoria-campanha-origem.component';
 import { IdeiaMelhoriaEditaComponent } from './ideia-melhoria-edita/ideia-melhoria-edita.component';
 import { DisplayIdeiaMelhoriaOrigemComponent } from './display-ideia-melhoria-origem/display-ideia-melhoria-origem.component';
+import { VersaoAppDetalheComponent } from './versao-app-detalhe/versao-app-detalhe.component';
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -411,7 +412,9 @@ registerLocaleData(localePt, 'pt-BR');
 
     IdeiaMelhoriaEditaComponent,
 
-    DisplayIdeiaMelhoriaOrigemComponent
+    DisplayIdeiaMelhoriaOrigemComponent,
+
+    VersaoAppDetalheComponent
 
   ],
   entryComponents: [

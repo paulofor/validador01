@@ -65,5 +65,7 @@ export * from './Recurso';
 export * from './GrupoAnuncioAplicativo';
 export * from './ClienteExperimental';
 export * from './DispositivoUsuario';
+export * from './ItemValorApp';
+export * from './ValorVersao';
 export * from './SDKModels';
 export * from './logger.service';

@@ -5,7 +5,8 @@ import {
   Visitante,
   RespostaVersao,
   ClienteExperimental,
-  DispositivoUsuario
+  DispositivoUsuario,
+  ValorVersao
 } from '../index';
 
 declare var Object: any;
@@ -24,6 +25,7 @@ export interface VersaoAppInterface {
   respostaVersaos?: RespostaVersao[];
   clienteExperimentals?: ClienteExperimental[];
   dispositivoUsuarios?: DispositivoUsuario[];
+  valorVersaos?: ValorVersao[];
 }
 
 export class VersaoApp implements VersaoAppInterface {
@@ -41,6 +43,7 @@ export class VersaoApp implements VersaoAppInterface {
   respostaVersaos: RespostaVersao[];
   clienteExperimentals: ClienteExperimental[];
   dispositivoUsuarios: DispositivoUsuario[];
+  valorVersaos: ValorVersao[];
   constructor(data?: VersaoAppInterface) {
     Object.assign(this, data);
   }
@@ -152,6 +155,14 @@ export class VersaoApp implements VersaoAppInterface {
           name: 'dispositivoUsuarios',
           type: 'DispositivoUsuario[]',
           model: 'DispositivoUsuario',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'versaoAppId'
+        },
+        valorVersaos: {
+          name: 'valorVersaos',
+          type: 'ValorVersao[]',
+          model: 'ValorVersao',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'versaoAppId'

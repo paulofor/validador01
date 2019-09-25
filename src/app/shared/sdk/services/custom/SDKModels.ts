@@ -66,6 +66,8 @@ import { Recurso } from '../../models/Recurso';
 import { GrupoAnuncioAplicativo } from '../../models/GrupoAnuncioAplicativo';
 import { ClienteExperimental } from '../../models/ClienteExperimental';
 import { DispositivoUsuario } from '../../models/DispositivoUsuario';
+import { ItemValorApp } from '../../models/ItemValorApp';
+import { ValorVersao } from '../../models/ValorVersao';
 
 export interface Models { [name: string]: any }
 
@@ -139,6 +141,8 @@ export class SDKModels {
     GrupoAnuncioAplicativo: GrupoAnuncioAplicativo,
     ClienteExperimental: ClienteExperimental,
     DispositivoUsuario: DispositivoUsuario,
+    ItemValorApp: ItemValorApp,
+    ValorVersao: ValorVersao,
     
   };
 

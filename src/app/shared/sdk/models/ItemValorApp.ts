@@ -1,4 +1,7 @@
 /* tslint:disable */
+import {
+  ValorVersao
+} from '../index';
 
 declare var Object: any;
 export interface ItemValorAppInterface {
@@ -8,6 +11,7 @@ export interface ItemValorAppInterface {
   "imagem1"?: string;
   "id"?: number;
   "projetoMySqlId"?: number;
+  valorVersaos?: ValorVersao[];
 }
 
 export class ItemValorApp implements ItemValorAppInterface {
@@ -17,6 +21,7 @@ export class ItemValorApp implements ItemValorAppInterface {
   "imagem1": string;
   "id": number;
   "projetoMySqlId": number;
+  valorVersaos: ValorVersao[];
   constructor(data?: ItemValorAppInterface) {
     Object.assign(this, data);
   }
@@ -76,6 +81,14 @@ export class ItemValorApp implements ItemValorAppInterface {
         },
       },
       relations: {
+        valorVersaos: {
+          name: 'valorVersaos',
+          type: 'ValorVersao[]',
+          model: 'ValorVersao',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'itemValorAppId'
+        },
       }
     }
   }

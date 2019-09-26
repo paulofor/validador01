@@ -213,6 +213,8 @@ import { IdeiaMelhoriaCampanhaOrigemComponent } from './ideia-melhoria-campanha-
 import { IdeiaMelhoriaEditaComponent } from './ideia-melhoria-edita/ideia-melhoria-edita.component';
 import { DisplayIdeiaMelhoriaOrigemComponent } from './display-ideia-melhoria-origem/display-ideia-melhoria-origem.component';
 import { VersaoAppDetalheComponent } from './versao-app-detalhe/versao-app-detalhe.component';
+import { ListaItemValorPorProjetoComponent } from './lista-item-valor-por-projeto/lista-item-valor-por-projeto.component';
+import { EditaItemValorPorProjetoComponent } from './edita-item-valor-por-projeto/edita-item-valor-por-projeto.component';
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -414,7 +416,11 @@ registerLocaleData(localePt, 'pt-BR');
 
     DisplayIdeiaMelhoriaOrigemComponent,
 
-    VersaoAppDetalheComponent
+    VersaoAppDetalheComponent,
+
+    ListaItemValorPorProjetoComponent,
+
+    EditaItemValorPorProjetoComponent
 
   ],
   entryComponents: [
@@ -462,7 +468,8 @@ registerLocaleData(localePt, 'pt-BR');
     VersaoAppEditaComponent,
     DetalheRespostaVisitanteComponent,
     PresencaLojaEditaComponent,
-    IdeiaMelhoriaEditaComponent
+    IdeiaMelhoriaEditaComponent,
+    EditaItemValorPorProjetoComponent
   ],
   imports: [
     BrowserModule,

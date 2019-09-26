@@ -12,7 +12,7 @@ export class VersaoAppDetalheComponent implements OnInit {
 
 
   versaoApp: VersaoApp;
-  filtro = {};
+  filtro = {"include" : { "relation" : "valorVersaos" , "scope" : {"include" : "itemValorApp" } } };
   
   constructor(private route: ActivatedRoute, private srv: VersaoAppApi) { }
 

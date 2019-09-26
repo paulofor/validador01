@@ -7,6 +7,7 @@ export interface ItemValorAppInterface {
   "dataCriacao"?: Date;
   "imagem1"?: string;
   "id"?: number;
+  "projetoMySqlId"?: number;
 }
 
 export class ItemValorApp implements ItemValorAppInterface {
@@ -15,6 +16,7 @@ export class ItemValorApp implements ItemValorAppInterface {
   "dataCriacao": Date;
   "imagem1": string;
   "id": number;
+  "projetoMySqlId": number;
   constructor(data?: ItemValorAppInterface) {
     Object.assign(this, data);
   }
@@ -66,6 +68,10 @@ export class ItemValorApp implements ItemValorAppInterface {
         },
         "id": {
           name: 'id',
+          type: 'number'
+        },
+        "projetoMySqlId": {
+          name: 'projetoMySqlId',
           type: 'number'
         },
       },

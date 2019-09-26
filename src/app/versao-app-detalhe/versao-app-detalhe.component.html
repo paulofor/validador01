@@ -1,19 +1,46 @@
-
 <div *ngIf="versaoApp" class="main-content">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="card">
-            <div class="header">
-              <h4 class="title">Nome: {{versaoApp.nome}}</h4>
-              <h4 class="title">Objetivo: {{versaoApp.objetivo}}</h4>
-              <h4 class="title">Código: {{versaoApp.codigo}}</h4>
-              <h4 class="title">Pacote: {{versaoApp.pacote}}</h4>
-            </div>
 
+  <div class="container-fluid">
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">Nome: {{versaoApp.nome}}</h4>
+            <h4 class="title">Objetivo: {{versaoApp.objetivo}}</h4>
+            <h4 class="title">Código: {{versaoApp.codigo}}</h4>
+            <h4 class="title">Pacote: {{versaoApp.pacote}}</h4>
           </div>
         </div>
-  
       </div>
     </div>
+
+
+    <div class="row">
+      <div class="col-md-12">
+          <div *ngIf="lista" class="card">
+              <div class="header">
+                <h4 class="title">Itens de Valor</h4>
+                <button class="btn btn-primary btn-sm" >Novo</button>
+              </div>
+              <div class="content table-responsive table-full-width">
+                <table *ngIf="lista" class="table table-hover table-striped">
+                  <thead>
+                    <tr>
+                      <th width="100%">Nome</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let item of versaoApp.valorVersaos">
+                      <td>{{item.itemValorApp.nome}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+            
+              </div>
+            </div>
+      </div>
+    </div>
+
   </div>
+</div>

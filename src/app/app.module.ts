@@ -472,7 +472,8 @@ registerLocaleData(localePt, 'pt-BR');
     DetalheRespostaVisitanteComponent,
     PresencaLojaEditaComponent,
     IdeiaMelhoriaEditaComponent,
-    EditaItemValorPorProjetoComponent
+    EditaItemValorPorProjetoComponent,
+    AssociaItemValorVersaoAppComponent
   ],
   imports: [
     BrowserModule,

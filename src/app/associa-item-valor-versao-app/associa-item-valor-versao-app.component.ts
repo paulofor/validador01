@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ItemValorApp, VersaoApp, ItemValorAppApi } from '../shared/sdk';
+import { ItemValorApp, VersaoApp, ItemValorAppApi, ValorVersao, ValorVersaoApi } from '../shared/sdk';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { Inject } from '@angular/core';
 
@@ -18,7 +18,7 @@ export class AssociaItemValorVersaoAppComponent implements OnInit {
   
 
   constructor(public dialogRef: MatDialogRef<AssociaItemValorVersaoAppComponent>
-    , @Inject(MAT_DIALOG_DATA) public data: any, private srvEtapa: ItemValorAppApi, 
+    , @Inject(MAT_DIALOG_DATA) public data: any, private srvEtapa: ItemValorAppApi, private relSrv: ValorVersaoApi
       ) { }
 
   ngOnInit() {
@@ -34,7 +34,7 @@ export class AssociaItemValorVersaoAppComponent implements OnInit {
   }
 
   carregaItemValor() {
-    let filtro = {"projetoMySqlId" : "32" , "include" : {"relation" : "valorVersaos" , "scope" : { "where" : {"versaoAppId" : "5"}} } }
+    let filtro = {"projetoMySqlId" : this.item.projetoMySqlId , "include" : {"relation" : "valorVersaos" , "scope" : { "where" : {"versaoAppId" : this.item.id}} } }
     this.srvEtapa.find(filtro)
       .subscribe((result: ItemValorApp[]) => {
         this.listaItemValor = result;
@@ -43,19 +43,18 @@ export class AssociaItemValorVersaoAppComponent implements OnInit {
   }
 
 
-  /*
+
   onSubmit() {
-    console.log(this.listaEtapa);
-    this.srvProcessoEtapa.AtualizaPorProcesso(this.item.id, this.listaEtapa)
+    console.log(this.listaItemValor);
+    this.relSrv.AtualizaPorVersaoApp(this.item.id, this.listaItemValor)
       .subscribe((result) => {
         this.dialogRef.close('Pizza!');
       })
   }
-  */
-
+ 
 
   getCheck(item:ItemValorApp) : boolean {
-    return (item.valorVersaos!=null);
+    return (item.valorVersaos.length>0);
   }
 
   closeDialog() {
@@ -63,15 +62,14 @@ export class AssociaItemValorVersaoAppComponent implements OnInit {
   }
 
   onChange(event, index, item : ItemValorApp) {
-    /*
-    if (item.valorVersaos==null) {
-      item.valorVersaos = new ItemValorApp();
-      item.valorVersaos.processoNegocioId = this.item.id;
-      item.valorVersaos.etapaProjetoId = etapa.id;
+    if (item.valorVersaos.length==0) {
+      let rel: ValorVersao = new ValorVersao();
+      rel.itemValorAppId = item.id;
+      rel.versaoAppId = this.item.id;
     } else {
-      item.valorVersaos = null;
+      item.valorVersaos = [];
     }
-    */
+    
   }
 
 }

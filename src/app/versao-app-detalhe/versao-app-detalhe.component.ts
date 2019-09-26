@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { VersaoApp, VersaoAppApi } from '../shared/sdk';
 import { ActivatedRoute } from '@angular/router';
 import { Params } from '@angular/router';
+import { MatDialog } from '@angular/material';
+import { AssociaItemValorVersaoAppComponent } from '../associa-item-valor-versao-app/associa-item-valor-versao-app.component';
 
 @Component({
   selector: 'app-versao-app-detalhe',
@@ -14,7 +16,7 @@ export class VersaoAppDetalheComponent implements OnInit {
   versaoApp: VersaoApp;
   filtro = {"include" : { "relation" : "valorVersaos" , "scope" : {"include" : "itemValorApp" } } };
   
-  constructor(private route: ActivatedRoute, private srv: VersaoAppApi) { }
+  constructor(private route: ActivatedRoute, private srv: VersaoAppApi, private dialog : MatDialog) { }
 
 
   ngOnInit() {
@@ -33,6 +35,16 @@ export class VersaoAppDetalheComponent implements OnInit {
     })
   }
 
- 
+  openDialog(versao?) {
+    this.dialog.afterAllClosed.subscribe(result => {
+      this.carregaVersao();
+    });
+    this.dialog.open(AssociaItemValorVersaoAppComponent, {
+      width: '800px',
+      data: {
+        item: versao
+      }
+    });
+  }
 
 }

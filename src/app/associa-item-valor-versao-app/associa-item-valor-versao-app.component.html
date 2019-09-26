@@ -1,10 +1,10 @@
-<h2 *ngIf="item" mat-dialog-title>Processo - {{item.nome}}</h2>
+<h2 *ngIf="item" mat-dialog-title>VersãoApp - {{item.nome}}</h2>
 
-<form *ngIf="listaEtapa" class="example-full-width" (ngSubmit)="onSubmit()">
+<form *ngIf="listaItemValor" class="example-full-width" (ngSubmit)="onSubmit()">
 
   <mat-dialog-content>
 
-    <div *ngFor="let item of listaEtapa; let i = index;">
+    <div *ngFor="let item of listaItemValor; let i = index;">
       <mat-checkbox  [checked]="getCheck(item)"  (change)="onChange($event, i, item)">
         {{item.nome}}
       </mat-checkbox>

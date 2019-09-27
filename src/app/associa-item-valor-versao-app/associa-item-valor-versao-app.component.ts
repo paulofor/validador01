@@ -45,7 +45,8 @@ export class AssociaItemValorVersaoAppComponent implements OnInit {
 
 
   onSubmit() {
-    console.log(this.listaItemValor);
+    console.log('AtualizaPorVersaoApp(1):' , this.item.id);
+    console.log('AtualizaPorVersaoApp(2):' , JSON.stringify(this.listaItemValor));
     this.relSrv.AtualizaPorVersaoApp(this.item.id, this.listaItemValor)
       .subscribe((result) => {
         this.dialogRef.close('Pizza!');

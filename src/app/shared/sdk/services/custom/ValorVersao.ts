@@ -123,6 +123,37 @@ export class ValorVersaoApi extends BaseLoopBackApi {
   }
 
   /**
+   * Atualizacao do relacionamento de um versao app
+   *
+   * @param {object} data Request data.
+   *
+   *  - `idVersaoApp` – `{number}` - 
+   *
+   *  - `listaRelacionamento` – `{any}` - 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ValorVersao` object.)
+   * </em>
+   */
+  public AtualizaPorVersaoApp(idVersaoApp: any, listaRelacionamento: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "PUT";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ValorVersaos/atualizaPorVersaoApp";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof idVersaoApp !== 'undefined' && idVersaoApp !== null) _urlParams.idVersaoApp = idVersaoApp;
+    if (typeof listaRelacionamento !== 'undefined' && listaRelacionamento !== null) _urlParams.listaRelacionamento = listaRelacionamento;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * The name of the model represented by this $resource,
    * i.e. `ValorVersao`.
    */

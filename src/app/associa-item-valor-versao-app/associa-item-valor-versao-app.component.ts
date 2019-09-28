@@ -67,6 +67,7 @@ export class AssociaItemValorVersaoAppComponent implements OnInit {
       let rel: ValorVersao = new ValorVersao();
       rel.itemValorAppId = item.id;
       rel.versaoAppId = this.item.id;
+      item.valorVersaos.push(rel);
     } else {
       item.valorVersaos = [];
     }

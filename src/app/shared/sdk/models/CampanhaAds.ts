@@ -2,6 +2,7 @@
 import {
   AnuncioAds,
   PaginaValidacaoWeb,
+  ProjetoMySql,
   PalavraChaveAds,
   ModeloCampanhaAds,
   CampanhaAnuncioResultado,
@@ -46,6 +47,7 @@ export interface CampanhaAdsInterface {
   "cliquePlanejado"?: number;
   "objetivo"?: string;
   "paginaValidacaoWebId"?: number;
+  "projetoMySqlId"?: number;
   "modeloCampanhaAdsId"?: number;
   "setupCampanhaId"?: number;
   "paginaInstalacaoAppId"?: number;
@@ -55,6 +57,7 @@ export interface CampanhaAdsInterface {
   "ideiaMelhoriaId"?: number;
   anuncioAds?: AnuncioAds[];
   paginaValidacaoWeb?: PaginaValidacaoWeb;
+  projetoMySql?: ProjetoMySql;
   palavraChaveAds?: PalavraChaveAds[];
   modeloCampanhaAds?: ModeloCampanhaAds;
   campanhaAnuncioResultados?: CampanhaAnuncioResultado[];
@@ -98,6 +101,7 @@ export class CampanhaAds implements CampanhaAdsInterface {
   "cliquePlanejado": number;
   "objetivo": string;
   "paginaValidacaoWebId": number;
+  "projetoMySqlId": number;
   "modeloCampanhaAdsId": number;
   "setupCampanhaId": number;
   "paginaInstalacaoAppId": number;
@@ -107,6 +111,7 @@ export class CampanhaAds implements CampanhaAdsInterface {
   "ideiaMelhoriaId": number;
   anuncioAds: AnuncioAds[];
   paginaValidacaoWeb: PaginaValidacaoWeb;
+  projetoMySql: ProjetoMySql;
   palavraChaveAds: PalavraChaveAds[];
   modeloCampanhaAds: ModeloCampanhaAds;
   campanhaAnuncioResultados: CampanhaAnuncioResultado[];
@@ -261,6 +266,10 @@ export class CampanhaAds implements CampanhaAdsInterface {
           name: 'paginaValidacaoWebId',
           type: 'number'
         },
+        "projetoMySqlId": {
+          name: 'projetoMySqlId',
+          type: 'number'
+        },
         "modeloCampanhaAdsId": {
           name: 'modeloCampanhaAdsId',
           type: 'number'
@@ -307,6 +316,14 @@ export class CampanhaAds implements CampanhaAdsInterface {
           model: 'PaginaValidacaoWeb',
           relationType: 'belongsTo',
                   keyFrom: 'paginaValidacaoWebId',
+          keyTo: 'id'
+        },
+        projetoMySql: {
+          name: 'projetoMySql',
+          type: 'ProjetoMySql',
+          model: 'ProjetoMySql',
+          relationType: 'belongsTo',
+                  keyFrom: 'projetoMySqlId',
           keyTo: 'id'
         },
         palavraChaveAds: {

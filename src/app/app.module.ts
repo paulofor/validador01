@@ -217,6 +217,7 @@ import { ListaItemValorPorProjetoComponent } from './lista-item-valor-por-projet
 import { EditaItemValorPorProjetoComponent } from './edita-item-valor-por-projeto/edita-item-valor-por-projeto.component';
 import { AssociaItemValorVersaoAppComponent } from './associa-item-valor-versao-app/associa-item-valor-versao-app.component';
 import { DisplayVersaoAppComponent } from './display-versao-app/display-versao-app.component';
+import { ListaProjetoFinanceiroGeralComponent } from './lista-projeto-financeiro-geral/lista-projeto-financeiro-geral.component';
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -426,7 +427,9 @@ registerLocaleData(localePt, 'pt-BR');
 
     AssociaItemValorVersaoAppComponent,
 
-    DisplayVersaoAppComponent
+    DisplayVersaoAppComponent,
+
+    ListaProjetoFinanceiroGeralComponent
 
   ],
   entryComponents: [

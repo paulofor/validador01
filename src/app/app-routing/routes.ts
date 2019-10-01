@@ -77,6 +77,7 @@ import { PresencaLojaDetalheComponent } from '../presenca-loja-detalhe/presenca-
 import { DisplayPresencaLojaComponent } from '../display-presenca-loja/display-presenca-loja.component';
 import { VersaoAppDetalheComponent } from '../versao-app-detalhe/versao-app-detalhe.component';
 import { ListaItemValorPorProjetoComponent } from '../lista-item-valor-por-projeto/lista-item-valor-por-projeto.component';
+import { ListaProjetoFinanceiroGeralComponent } from '../lista-projeto-financeiro-geral/lista-projeto-financeiro-geral.component';
 
 
 export const routes : Routes = [
@@ -194,6 +195,8 @@ export const routes : Routes = [
     { path: 'versaoAppDetalhe/:id' , component : VersaoAppDetalheComponent },
 
     { path: 'listaItemValorProjeto/:id' , component : ListaItemValorPorProjetoComponent },
+
+    { path: 'financeiroGeralProjeto' , component : ListaProjetoFinanceiroGeralComponent },
 
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

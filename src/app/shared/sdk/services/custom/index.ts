@@ -67,5 +67,6 @@ export * from './ClienteExperimental';
 export * from './DispositivoUsuario';
 export * from './ItemValorApp';
 export * from './ValorVersao';
+export * from './CustoMes';
 export * from './SDKModels';
 export * from './logger.service';

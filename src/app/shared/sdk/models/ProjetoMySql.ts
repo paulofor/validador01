@@ -14,7 +14,8 @@ import {
   VersaoApp,
   PresencaLoja,
   ClienteExperimental,
-  ItemValorApp
+  ItemValorApp,
+  CustoMes
 } from '../index';
 
 declare var Object: any;
@@ -47,6 +48,7 @@ export interface ProjetoMySqlInterface {
   presencaLojas?: PresencaLoja[];
   clienteExperimentals?: ClienteExperimental[];
   itemValorApps?: ItemValorApp[];
+  custoMes?: CustoMes[];
 }
 
 export class ProjetoMySql implements ProjetoMySqlInterface {
@@ -78,6 +80,7 @@ export class ProjetoMySql implements ProjetoMySqlInterface {
   presencaLojas: PresencaLoja[];
   clienteExperimentals: ClienteExperimental[];
   itemValorApps: ItemValorApp[];
+  custoMes: CustoMes[];
   constructor(data?: ProjetoMySqlInterface) {
     Object.assign(this, data);
   }
@@ -281,6 +284,14 @@ export class ProjetoMySql implements ProjetoMySqlInterface {
           name: 'itemValorApps',
           type: 'ItemValorApp[]',
           model: 'ItemValorApp',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'projetoMySqlId'
+        },
+        custoMes: {
+          name: 'custoMes',
+          type: 'CustoMes[]',
+          model: 'CustoMes',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'projetoMySqlId'

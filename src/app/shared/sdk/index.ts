@@ -116,6 +116,7 @@ import { ClienteExperimentalApi } from './services/custom/ClienteExperimental';
 import { DispositivoUsuarioApi } from './services/custom/DispositivoUsuario';
 import { ItemValorAppApi } from './services/custom/ItemValorApp';
 import { ValorVersaoApi } from './services/custom/ValorVersao';
+import { CustoMesApi } from './services/custom/CustoMes';
 /**
 * @module SDKBrowserModule
 * @description
@@ -214,6 +215,7 @@ export class SDKBrowserModule {
         DispositivoUsuarioApi,
         ItemValorAppApi,
         ValorVersaoApi,
+        CustoMesApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser },
 

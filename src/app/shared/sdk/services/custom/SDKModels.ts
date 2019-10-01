@@ -68,6 +68,7 @@ import { ClienteExperimental } from '../../models/ClienteExperimental';
 import { DispositivoUsuario } from '../../models/DispositivoUsuario';
 import { ItemValorApp } from '../../models/ItemValorApp';
 import { ValorVersao } from '../../models/ValorVersao';
+import { CustoMes } from '../../models/CustoMes';
 
 export interface Models { [name: string]: any }
 
@@ -143,6 +144,7 @@ export class SDKModels {
     DispositivoUsuario: DispositivoUsuario,
     ItemValorApp: ItemValorApp,
     ValorVersao: ValorVersao,
+    CustoMes: CustoMes,
     
   };
 

@@ -67,5 +67,6 @@ export * from './ClienteExperimental';
 export * from './DispositivoUsuario';
 export * from './ItemValorApp';
 export * from './ValorVersao';
+export * from './CustoMes';
 export * from './BaseModels';
 export * from './FireLoopRef';

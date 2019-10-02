@@ -1,4 +1,4 @@
-<div class="main-content">
+<div *ngIf="valorTotal" class="main-content">
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
@@ -10,6 +10,7 @@
             <table class="table table-hover table-striped">
               <thead>
                 <tr>
+                  <th>Id</th>
                   <th>Projeto</th>
                   <th>Código</th>
                   <th>Custo Total (R$)</th>
@@ -17,7 +18,15 @@
                 </tr>
               </thead>
               <tbody>
+                <tr>
+                  <td></td>
+                  <td>Total</td>
+                  <td></td>
+                  <td>{{valorTotal | number : '1.2-2' }}</td>
+                  <td></td>
+                </tr>
                 <tr *ngFor="let projeto of projetos">
+                  <td>{{projeto.id}}</td>
                   <td>{{projeto.nome}}</td>
                   <td>{{projeto.codigo}}</td>
                   <td>{{projeto.custoCampanha | number : '1.2-2' }}</td>

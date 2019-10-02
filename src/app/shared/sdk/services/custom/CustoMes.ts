@@ -92,6 +92,68 @@ export class CustoMesApi extends BaseLoopBackApi {
   }
 
   /**
+   * Cria itens para um projeto no ano 12 + 1
+   *
+   * @param {object} data Request data.
+   *
+   *  - `ano` – `{number}` - 
+   *
+   *  - `idProjeto` – `{number}` - 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `CustoMes` object.)
+   * </em>
+   */
+  public CriaAnoProjeto(ano: any, idProjeto: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/CustoMes/criaAnoProjeto";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof ano !== 'undefined' && ano !== null) _urlParams.ano = ano;
+    if (typeof idProjeto !== 'undefined' && idProjeto !== null) _urlParams.idProjeto = idProjeto;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Atualiza Custo Mes
+   *
+   * @param {object} data Request data.
+   *
+   *  - `mes` – `{number}` - 
+   *
+   *  - `ano` – `{string}` - 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `CustoMes` object.)
+   * </em>
+   */
+  public AtualizaCustoMes(mes: any = {}, ano: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/CustoMes/atualizaCustoMes";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof mes !== 'undefined' && mes !== null) _urlParams.mes = mes;
+    if (typeof ano !== 'undefined' && ano !== null) _urlParams.ano = ano;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * The name of the model represented by this $resource,
    * i.e. `CustoMes`.
    */

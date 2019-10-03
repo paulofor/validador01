@@ -198,7 +198,7 @@ export const routes : Routes = [
     { path: 'listaItemValorProjeto/:id' , component : ListaItemValorPorProjetoComponent },
 
     { path: 'financeiroGeralProjeto' , component : ListaProjetoFinanceiroGeralComponent },
-    { path: 'custoAno' , component: CustoAnoComponent },
+    { path: 'custoAno/:id' , component: CustoAnoComponent },
 
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

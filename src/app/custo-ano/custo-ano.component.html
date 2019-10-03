@@ -1,4 +1,4 @@
-<div *ngIf="valorTotal" class="main-content">
+<div *ngIf="listaCusto" class="main-content">
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
@@ -12,25 +12,19 @@
                 <tr>
                   <th>Id</th>
                   <th>Projeto</th>
-                  <th>Código</th>
-                  <th>Custo Total (R$)</th>
                   <th></th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td></td>
-                  <td>Total</td>
                   <td></td>
-                  <td>{{valorTotal | number : '1.2-2' }}</td>
                   <td></td>
                 </tr>
-                <tr *ngFor="let projeto of projetos">
-                  <td>{{projeto.id}}</td>
-                  <td>{{projeto.nome}}</td>
-                  <td>{{projeto.codigo}}</td>
-                  <td>{{projeto.custoCampanha | number : '1.2-2' }}</td>
-                  <td><a routerLink="/projetosValor/{{projeto.id}}">Detalhe</a></td>
+                <tr *ngFor="let mes of listaCusto">
+                  <td>{{mes.mes}}</td>
+                  <td>{{mes.valorCampanha | number : '1.2-2' }}</td>
+                  <td><a routerLink="/projetosValor/{{mes.id}}">Detalhe</a></td>
                 </tr>
               </tbody>
             </table>

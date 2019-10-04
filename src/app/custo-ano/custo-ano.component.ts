@@ -13,6 +13,8 @@ export class CustoAnoComponent implements OnInit {
 
 
   listaCusto: CustoMes[];
+  ano : number;
+  valorTotal: number;
 
   constructor(private route: ActivatedRoute, private servico: CustoMesApi, private dialog: MatDialog) { }
 
@@ -23,17 +25,32 @@ export class CustoAnoComponent implements OnInit {
 
   carregaCustoMes() {
     this.route.params.subscribe((params: Params[]) => {
-      let ano = params['id'];
+      this.ano = params['id'];
       let filtro = {}
-      this.servico.find({"where":{"and":[{"ano":ano},{"mes":{ "neq": null }},{"projetoMySqlId": null }]},"order":"mes"} )
+      this.servico.find({"where":{"and":[{"ano":this.ano},{"mes":{ "neq": null }},{"projetoMySqlId": null }]},"order":"mes"} )
         .subscribe((result: CustoMes[]) => {
           console.log("Result - CustoAnoComponent: ", JSON.stringify(result));
           this.listaCusto = result;
+          this.calculaValorTotal();
         })
     })
   }
 
+  atualizaMes(mes:number) {
+    this.servico.AtualizaCustoMes(mes,this.ano)
+      .subscribe((result) => {
+        this.carregaCustoMes();
+      });
+  }
 
+  calculaValorTotal() {
+    this.valorTotal = 0;
+    for (var i=0; i < this.listaCusto.length; i++) {
+      var item = this.listaCusto[i];
+      this.valorTotal += item.valorCampanha;
+    }
+    console.log('Total:' , this.valorTotal);
+  }
   /*
   openDialog(item?) {
     if (!item) {

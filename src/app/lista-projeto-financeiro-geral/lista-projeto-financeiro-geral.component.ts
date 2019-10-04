@@ -19,10 +19,14 @@ export class ListaProjetoFinanceiroGeralComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.atualizaTela();
+  }
+
+  atualizaTela() {
     this.projetoService.find({'order' : 'custoCampanha desc'})
-      .subscribe((projetos: ProjetoMySql[]) =>
-        this.calculaTotal(projetos)
-      );
+    .subscribe((projetos: ProjetoMySql[]) =>
+      this.calculaTotal(projetos)
+    );
   }
 
   calculaTotal(projetos) {
@@ -44,6 +48,13 @@ export class ListaProjetoFinanceiroGeralComponent implements OnInit {
       this.valorTotal += item.custoCampanha;
     }
     console.log('Total:' , this.valorTotal);
+  }
+
+  atualizaCampanhas() {
+    this.projetoService.AtualizaTotais()
+      .subscribe((result) => {
+        this.atualizaTela();
+      })
   }
 
   

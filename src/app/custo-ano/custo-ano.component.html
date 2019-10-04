@@ -4,27 +4,35 @@
       <div class="col-md-12">
         <div class="card">
           <div class="header">
-            <h4 class="title">2019</h4>
+            <h4 class="title">{{ano}}</h4>
           </div>
           <div class="content table-responsive table-full-width">
             <table class="table table-hover table-striped">
               <thead>
                 <tr>
-                  <th>Id</th>
-                  <th>Projeto</th>
-                  <th></th>
+                  <th width="5%">Mês</th>
+                  <th width="30%">Valor Gasto</th>
+                  <th width="60%"></th>
+                  <th width="5%"></th>
+                  <th width="5%"></th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
+                  <td></td>
+                  <td align="right">{{valorTotal | number : '1.2-2' }}</td>
                   <td></td>
                   <td></td>
                   <td></td>
                 </tr>
                 <tr *ngFor="let mes of listaCusto">
                   <td>{{mes.mes}}</td>
-                  <td>{{mes.valorCampanha | number : '1.2-2' }}</td>
-                  <td><a routerLink="/projetosValor/{{mes.id}}">Detalhe</a></td>
+                  <td align="right">{{mes.valorCampanha | number : '1.2-2' }}</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                      <button class="btn btn-primary btn-sm " (click)="atualizaMes(mes.mes)">Atualizar</button>
+                  </td>
                 </tr>
               </tbody>
             </table>

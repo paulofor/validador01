@@ -46,6 +46,8 @@ export interface CampanhaAdsInterface {
   "taxaConversao"?: number;
   "cliquePlanejado"?: number;
   "objetivo"?: string;
+  "quantidadeInstalacaoUsuario"?: number;
+  "taxaInstalacaoUsuario"?: number;
   "paginaValidacaoWebId"?: number;
   "projetoMySqlId"?: number;
   "modeloCampanhaAdsId"?: number;
@@ -100,6 +102,8 @@ export class CampanhaAds implements CampanhaAdsInterface {
   "taxaConversao": number;
   "cliquePlanejado": number;
   "objetivo": string;
+  "quantidadeInstalacaoUsuario": number;
+  "taxaInstalacaoUsuario": number;
   "paginaValidacaoWebId": number;
   "projetoMySqlId": number;
   "modeloCampanhaAdsId": number;
@@ -261,6 +265,14 @@ export class CampanhaAds implements CampanhaAdsInterface {
         "objetivo": {
           name: 'objetivo',
           type: 'string'
+        },
+        "quantidadeInstalacaoUsuario": {
+          name: 'quantidadeInstalacaoUsuario',
+          type: 'number'
+        },
+        "taxaInstalacaoUsuario": {
+          name: 'taxaInstalacaoUsuario',
+          type: 'number'
         },
         "paginaValidacaoWebId": {
           name: 'paginaValidacaoWebId',

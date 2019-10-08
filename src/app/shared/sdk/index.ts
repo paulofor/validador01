@@ -117,6 +117,7 @@ import { DispositivoUsuarioApi } from './services/custom/DispositivoUsuario';
 import { ItemValorAppApi } from './services/custom/ItemValorApp';
 import { ValorVersaoApi } from './services/custom/ValorVersao';
 import { CustoMesApi } from './services/custom/CustoMes';
+import { AnuncioAplicacaoResultadoApi } from './services/custom/AnuncioAplicacaoResultado';
 /**
 * @module SDKBrowserModule
 * @description
@@ -216,9 +217,10 @@ export class SDKBrowserModule {
         ItemValorAppApi,
         ValorVersaoApi,
         CustoMesApi,
+        AnuncioAplicacaoResultadoApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser },
-
+        { provide: SocketDriver, useClass: SocketBrowser }
       ]
     };
   }

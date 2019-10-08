@@ -24,6 +24,7 @@
                   <th width="10%">Conv.</th>
                   <th width="10%">Tx. Conv. (%)</th>
                   <th width="10%">Custo. Conv.</th>
+                  <th width="10%">Custo. Instal.(R$)</th>
                   <th width="5%"></th>
                   <th width="5%"></th> 
                 </tr>
@@ -42,6 +43,7 @@
                   <td>{{campanha.conversao | number : '1.0-0' }}({{campanha.setupTotalInstalacao | number : '1.0-0' }})</td>
                   <td>{{campanha.taxaConversao | number : '1.2-2' }}</td>
                   <td>{{campanha.custoConversao | number : '1.2-2' }}({{campanha.setupCustoInstalacao | number : '1.2-2' }})</td>
+                  <td>{{campanha.taxaInstalacaoUsuario | number : '1.2-2' }}</td>
                   <td>
                     <button color="primary"  matTooltip="Configurações" mat-icon-button aria-label="Configurações" routerLink="/detalheCampanhaParaFechamento/{{campanha.id}}">
                       <mat-icon>settings</mat-icon>

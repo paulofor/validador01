@@ -220,7 +220,6 @@ export class SDKBrowserModule {
         AnuncioAplicacaoResultadoApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser },
-        { provide: SocketDriver, useClass: SocketBrowser }
       ]
     };
   }

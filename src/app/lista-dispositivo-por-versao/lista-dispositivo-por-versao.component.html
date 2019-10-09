@@ -1,0 +1,32 @@
+<div class="main-content" *ngIf="versao">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">Dispositivos</h4>
+          </div>
+          <div class="content table-responsive table-full-width">
+            <table class="table table-hover table-striped">
+              <thead>
+                <tr>
+                  <th width="50%">Token FCM</th>
+                  <th width="25%">Criação</th>
+                  <th width="25%">ID Camapnha</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let dispositivo of versao.dispositivoUsuarios">
+                  <td>{{dispositivo.tokenFcm | slice:0:20}}</td>
+                  <td>{{dispositivo.dataHoraCriacao | date : 'dd/MM/yyyy HH:mm'}}</td>
+                  <td>{{dispositivo.campanhaAdsId}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -30,6 +30,7 @@
                     <button *ngIf="permiteEdicao(item)" class="btn btn-primary btn-sm " (click)="openDialog(item)">Alterar</button>
                     <button class="btn btn-primary btn-sm" routerLink="/visitantePorVersaoApp/{{item.id}}">Visitantes</button>
                     <button class="btn btn-primary btn-sm" routerLink="/versaoAppDetalhe/{{item.id}}">Detalhe</button>
+                    <button class="btn btn-primary btn-sm" routerLink="/dispositivoUsuarioPorVersao/{{item.id}}">Instalação</button>
                   </td>
                 </tr>
               </tbody>

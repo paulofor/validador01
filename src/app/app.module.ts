@@ -219,6 +219,7 @@ import { AssociaItemValorVersaoAppComponent } from './associa-item-valor-versao-
 import { DisplayVersaoAppComponent } from './display-versao-app/display-versao-app.component';
 import { ListaProjetoFinanceiroGeralComponent } from './lista-projeto-financeiro-geral/lista-projeto-financeiro-geral.component';
 import { CustoAnoComponent } from './custo-ano/custo-ano.component';
+import { ListaDispositivoPorVersaoComponent } from './lista-dispositivo-por-versao/lista-dispositivo-por-versao.component';
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -432,7 +433,9 @@ registerLocaleData(localePt, 'pt-BR');
 
     ListaProjetoFinanceiroGeralComponent,
 
-    CustoAnoComponent
+    CustoAnoComponent,
+
+    ListaDispositivoPorVersaoComponent
 
   ],
   entryComponents: [
@@ -483,6 +486,7 @@ registerLocaleData(localePt, 'pt-BR');
     IdeiaMelhoriaEditaComponent,
     EditaItemValorPorProjetoComponent,
     AssociaItemValorVersaoAppComponent
+
   ],
   imports: [
     BrowserModule,

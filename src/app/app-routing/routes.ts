@@ -79,6 +79,7 @@ import { VersaoAppDetalheComponent } from '../versao-app-detalhe/versao-app-deta
 import { ListaItemValorPorProjetoComponent } from '../lista-item-valor-por-projeto/lista-item-valor-por-projeto.component';
 import { ListaProjetoFinanceiroGeralComponent } from '../lista-projeto-financeiro-geral/lista-projeto-financeiro-geral.component';
 import { CustoAnoComponent } from '../custo-ano/custo-ano.component';
+import { ListaDispositivoPorVersaoComponent } from '../lista-dispositivo-por-versao/lista-dispositivo-por-versao.component';
 
 
 export const routes : Routes = [
@@ -199,6 +200,8 @@ export const routes : Routes = [
 
     { path: 'financeiroGeralProjeto' , component : ListaProjetoFinanceiroGeralComponent },
     { path: 'custoAno/:id' , component: CustoAnoComponent },
+
+    { path: 'dispositivoUsuarioPorVersao/:id' , component: ListaDispositivoPorVersaoComponent },
 
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

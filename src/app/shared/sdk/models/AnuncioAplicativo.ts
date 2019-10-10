@@ -1,7 +1,8 @@
 /* tslint:disable */
 import {
   GrupoAnuncioAplicativo,
-  ClienteExperimental
+  ClienteExperimental,
+  AnuncioAplicacaoResultado
 } from '../index';
 
 declare var Object: any;
@@ -17,6 +18,7 @@ export interface AnuncioAplicativoInterface {
   "conceitoProdutoId"?: number;
   grupoAnuncioAplicativos?: GrupoAnuncioAplicativo[];
   clienteExperimentals?: ClienteExperimental[];
+  anuncioAplicacaoResultados?: AnuncioAplicacaoResultado[];
 }
 
 export class AnuncioAplicativo implements AnuncioAplicativoInterface {
@@ -31,6 +33,7 @@ export class AnuncioAplicativo implements AnuncioAplicativoInterface {
   "conceitoProdutoId": number;
   grupoAnuncioAplicativos: GrupoAnuncioAplicativo[];
   clienteExperimentals: ClienteExperimental[];
+  anuncioAplicacaoResultados: AnuncioAplicacaoResultado[];
   constructor(data?: AnuncioAplicativoInterface) {
     Object.assign(this, data);
   }
@@ -114,6 +117,14 @@ export class AnuncioAplicativo implements AnuncioAplicativoInterface {
           name: 'clienteExperimentals',
           type: 'ClienteExperimental[]',
           model: 'ClienteExperimental',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'anuncioAplicativoId'
+        },
+        anuncioAplicacaoResultados: {
+          name: 'anuncioAplicacaoResultados',
+          type: 'AnuncioAplicacaoResultado[]',
+          model: 'AnuncioAplicacaoResultado',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'anuncioAplicativoId'

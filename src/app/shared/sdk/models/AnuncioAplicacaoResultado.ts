@@ -1,20 +1,45 @@
 /* tslint:disable */
+import {
+  AnuncioAplicativo
+} from '../index';
 
 declare var Object: any;
 export interface AnuncioAplicacaoResultadoInterface {
-  "idAds1"?: string;
-  "idAds2"?: string;
-  "conversao1"?: number;
-  "ctr1"?: number;
+  "idAds"?: string;
+  "quantidadeImpressao"?: number;
+  "quantidadeClique"?: number;
+  "quantidadeConversao"?: number;
+  "orcamentoTotalExecutado"?: number;
+  "ctr"?: number;
+  "cpcMedio"?: number;
+  "conversao"?: number;
+  "custoConversao"?: number;
+  "taxaConversao"?: number;
+  "quantidadeInstalacaoUsuario"?: number;
+  "taxaInstalacaoUsuario"?: number;
   "id"?: number;
+  "anuncioAplicativoId"?: number;
+  "campanhaAdsId"?: number;
+  anuncioAplicativo?: AnuncioAplicativo;
 }
 
 export class AnuncioAplicacaoResultado implements AnuncioAplicacaoResultadoInterface {
-  "idAds1": string;
-  "idAds2": string;
-  "conversao1": number;
-  "ctr1": number;
+  "idAds": string;
+  "quantidadeImpressao": number;
+  "quantidadeClique": number;
+  "quantidadeConversao": number;
+  "orcamentoTotalExecutado": number;
+  "ctr": number;
+  "cpcMedio": number;
+  "conversao": number;
+  "custoConversao": number;
+  "taxaConversao": number;
+  "quantidadeInstalacaoUsuario": number;
+  "taxaInstalacaoUsuario": number;
   "id": number;
+  "anuncioAplicativoId": number;
+  "campanhaAdsId": number;
+  anuncioAplicativo: AnuncioAplicativo;
   constructor(data?: AnuncioAplicacaoResultadoInterface) {
     Object.assign(this, data);
   }
@@ -48,28 +73,76 @@ export class AnuncioAplicacaoResultado implements AnuncioAplicacaoResultadoInter
       path: 'AnuncioAplicacaoResultados',
       idName: 'id',
       properties: {
-        "idAds1": {
-          name: 'idAds1',
+        "idAds": {
+          name: 'idAds',
           type: 'string'
         },
-        "idAds2": {
-          name: 'idAds2',
-          type: 'string'
-        },
-        "conversao1": {
-          name: 'conversao1',
+        "quantidadeImpressao": {
+          name: 'quantidadeImpressao',
           type: 'number'
         },
-        "ctr1": {
-          name: 'ctr1',
+        "quantidadeClique": {
+          name: 'quantidadeClique',
+          type: 'number'
+        },
+        "quantidadeConversao": {
+          name: 'quantidadeConversao',
+          type: 'number'
+        },
+        "orcamentoTotalExecutado": {
+          name: 'orcamentoTotalExecutado',
+          type: 'number'
+        },
+        "ctr": {
+          name: 'ctr',
+          type: 'number'
+        },
+        "cpcMedio": {
+          name: 'cpcMedio',
+          type: 'number'
+        },
+        "conversao": {
+          name: 'conversao',
+          type: 'number'
+        },
+        "custoConversao": {
+          name: 'custoConversao',
+          type: 'number'
+        },
+        "taxaConversao": {
+          name: 'taxaConversao',
+          type: 'number'
+        },
+        "quantidadeInstalacaoUsuario": {
+          name: 'quantidadeInstalacaoUsuario',
+          type: 'number'
+        },
+        "taxaInstalacaoUsuario": {
+          name: 'taxaInstalacaoUsuario',
           type: 'number'
         },
         "id": {
           name: 'id',
           type: 'number'
         },
+        "anuncioAplicativoId": {
+          name: 'anuncioAplicativoId',
+          type: 'number'
+        },
+        "campanhaAdsId": {
+          name: 'campanhaAdsId',
+          type: 'number'
+        },
       },
       relations: {
+        anuncioAplicativo: {
+          name: 'anuncioAplicativo',
+          type: 'AnuncioAplicativo',
+          model: 'AnuncioAplicativo',
+          relationType: 'belongsTo',
+                  keyFrom: 'anuncioAplicativoId',
+          keyTo: 'id'
+        },
       }
     }
   }

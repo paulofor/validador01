@@ -20,7 +20,8 @@ export class DisplayAnuncioAplicacaoComponent implements OnInit {
   }
 
   carregaItem() {
-    this.srv.findById(this.campanha.anuncioAplicativoId)
+    let filtro = { "include" : { "relation" : "anuncioAplicacaoResultados" , "scope" : { "where" : {"campanhaAdsId" : this.campanha.id } } } }
+    this.srv.findById(this.campanha.anuncioAplicativoId, filtro )
       .subscribe((result: AnuncioAplicativo) => {
         this.anuncioApp = result;
       })

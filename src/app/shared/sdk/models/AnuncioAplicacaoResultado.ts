@@ -8,7 +8,6 @@ export interface AnuncioAplicacaoResultadoInterface {
   "idAds"?: string;
   "quantidadeImpressao"?: number;
   "quantidadeClique"?: number;
-  "quantidadeConversao"?: number;
   "orcamentoTotalExecutado"?: number;
   "ctr"?: number;
   "cpcMedio"?: number;
@@ -27,7 +26,6 @@ export class AnuncioAplicacaoResultado implements AnuncioAplicacaoResultadoInter
   "idAds": string;
   "quantidadeImpressao": number;
   "quantidadeClique": number;
-  "quantidadeConversao": number;
   "orcamentoTotalExecutado": number;
   "ctr": number;
   "cpcMedio": number;
@@ -83,10 +81,6 @@ export class AnuncioAplicacaoResultado implements AnuncioAplicacaoResultadoInter
         },
         "quantidadeClique": {
           name: 'quantidadeClique',
-          type: 'number'
-        },
-        "quantidadeConversao": {
-          name: 'quantidadeConversao',
           type: 'number'
         },
         "orcamentoTotalExecutado": {

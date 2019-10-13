@@ -32,7 +32,6 @@ export interface CampanhaAdsInterface {
   "dataFechamento"?: Date;
   "quantidadeImpressao"?: number;
   "quantidadeClique"?: number;
-  "quantidadeConversao"?: number;
   "orcamentoDia"?: number;
   "orcamentoTotalPlanejado"?: number;
   "orcamentoTotalExecutado"?: number;
@@ -89,7 +88,6 @@ export class CampanhaAds implements CampanhaAdsInterface {
   "dataFechamento": Date;
   "quantidadeImpressao": number;
   "quantidadeClique": number;
-  "quantidadeConversao": number;
   "orcamentoDia": number;
   "orcamentoTotalPlanejado": number;
   "orcamentoTotalExecutado": number;
@@ -207,10 +205,6 @@ export class CampanhaAds implements CampanhaAdsInterface {
         },
         "quantidadeClique": {
           name: 'quantidadeClique',
-          type: 'number'
-        },
-        "quantidadeConversao": {
-          name: 'quantidadeConversao',
           type: 'number'
         },
         "orcamentoDia": {

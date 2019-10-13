@@ -220,7 +220,7 @@ export class SDKBrowserModule {
         AnuncioAplicacaoResultadoApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
- 
+
       ]
     };
   }

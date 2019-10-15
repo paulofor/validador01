@@ -37,6 +37,13 @@ export class ListaCampanhaPorProjetoComponent implements OnInit {
   }
 
 
+  atualizaInstalacoes() {
+    this.srv.AtualizaInstalacao()
+      .subscribe((resultado) => {
+        this.carregaLista();
+      })
+  }
+
 
 
   openDialog(campanha) {

@@ -1,4 +1,7 @@
 /* tslint:disable */
+import {
+  UsuarioProduto
+} from '../index';
 
 declare var Object: any;
 export interface DispositivoUsuarioInterface {
@@ -14,6 +17,8 @@ export interface DispositivoUsuarioInterface {
   "id"?: number;
   "campanhaAdsId"?: number;
   "versaoAppId"?: number;
+  "usuarioProdutoId"?: number;
+  usuarioProduto?: UsuarioProduto;
 }
 
 export class DispositivoUsuario implements DispositivoUsuarioInterface {
@@ -29,6 +34,8 @@ export class DispositivoUsuario implements DispositivoUsuarioInterface {
   "id": number;
   "campanhaAdsId": number;
   "versaoAppId": number;
+  "usuarioProdutoId": number;
+  usuarioProduto: UsuarioProduto;
   constructor(data?: DispositivoUsuarioInterface) {
     Object.assign(this, data);
   }
@@ -110,8 +117,20 @@ export class DispositivoUsuario implements DispositivoUsuarioInterface {
           name: 'versaoAppId',
           type: 'number'
         },
+        "usuarioProdutoId": {
+          name: 'usuarioProdutoId',
+          type: 'number'
+        },
       },
       relations: {
+        usuarioProduto: {
+          name: 'usuarioProduto',
+          type: 'UsuarioProduto',
+          model: 'UsuarioProduto',
+          relationType: 'belongsTo',
+                  keyFrom: 'usuarioProdutoId',
+          keyTo: 'id'
+        },
       }
     }
   }

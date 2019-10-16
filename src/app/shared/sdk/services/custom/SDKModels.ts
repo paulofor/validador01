@@ -70,6 +70,7 @@ import { ItemValorApp } from '../../models/ItemValorApp';
 import { ValorVersao } from '../../models/ValorVersao';
 import { CustoMes } from '../../models/CustoMes';
 import { AnuncioAplicacaoResultado } from '../../models/AnuncioAplicacaoResultado';
+import { UsuarioProduto } from '../../models/UsuarioProduto';
 
 export interface Models { [name: string]: any }
 
@@ -147,6 +148,7 @@ export class SDKModels {
     ValorVersao: ValorVersao,
     CustoMes: CustoMes,
     AnuncioAplicacaoResultado: AnuncioAplicacaoResultado,
+    UsuarioProduto: UsuarioProduto,
     
   };
 

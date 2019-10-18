@@ -70,5 +70,6 @@ export * from './ValorVersao';
 export * from './CustoMes';
 export * from './AnuncioAplicacaoResultado';
 export * from './UsuarioProduto';
+export * from './VisitaApp';
 export * from './BaseModels';
 export * from './FireLoopRef';

@@ -14,6 +14,7 @@ export interface TelaAppInterface {
   "sobrescreveHtml"?: number;
   "sobrescreveTs"?: number;
   "nomeMenu"?: string;
+  "chave"?: string;
   "posicaoMenu"?: number;
   "ativo"?: number;
   "id"?: number;
@@ -40,6 +41,7 @@ export class TelaApp implements TelaAppInterface {
   "sobrescreveHtml": number;
   "sobrescreveTs": number;
   "nomeMenu": string;
+  "chave": string;
   "posicaoMenu": number;
   "ativo": number;
   "id": number;
@@ -109,6 +111,10 @@ export class TelaApp implements TelaAppInterface {
         },
         "nomeMenu": {
           name: 'nomeMenu',
+          type: 'string'
+        },
+        "chave": {
+          name: 'chave',
           type: 'string'
         },
         "posicaoMenu": {

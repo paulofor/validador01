@@ -11,6 +11,7 @@ export interface TelaWebInterface {
   "objetivo"?: string;
   "nome"?: string;
   "nomeMenu"?: string;
+  "chave"?: string;
   "aplicacaoId"?: number;
   "conceitoProdutoId"?: number;
   aplicacao?: Aplicacao;
@@ -23,6 +24,7 @@ export class TelaWeb implements TelaWebInterface {
   "objetivo": string;
   "nome": string;
   "nomeMenu": string;
+  "chave": string;
   "aplicacaoId": number;
   "conceitoProdutoId": number;
   aplicacao: Aplicacao;
@@ -75,6 +77,10 @@ export class TelaWeb implements TelaWebInterface {
         },
         "nomeMenu": {
           name: 'nomeMenu',
+          type: 'string'
+        },
+        "chave": {
+          name: 'chave',
           type: 'string'
         },
         "aplicacaoId": {

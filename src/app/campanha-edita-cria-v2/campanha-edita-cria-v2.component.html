@@ -77,6 +77,13 @@
   </mat-form-field>
 
 
+  <mat-form-field class="example-full-width">
+    <mat-select placeholder="Campanha Base" [(ngModel)]="campanhaSelId" (ngModelChange)="onChange2()" name="campanhaSel">
+      <mat-option *ngFor="let campanha of listaCampanha" [value]="campanha.id" >
+        {{ campanha.nome }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 
   <mat-dialog-actions>
     <button mat-raised-button>Salvar</button>

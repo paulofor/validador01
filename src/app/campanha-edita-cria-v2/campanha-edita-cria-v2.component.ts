@@ -12,6 +12,8 @@ import { Inject } from '@angular/core';
 export class CampanhaEditaCriaV2Component implements OnInit {
 
 
+  private listaCampanha: CampanhaAds[];
+
   private item: CampanhaAds;
   private listaPagina: PaginaValidacaoWeb[];
   private listaPaginaInstalacao: PaginaInstalacaoApp[];
@@ -23,12 +25,22 @@ export class CampanhaEditaCriaV2Component implements OnInit {
   private listaSetup: SetupCampanha[];
   private idProjeto: number;
 
+  campanhaSelId: string;
+
   constructor(public dialogRef: MatDialogRef<CampanhaEditaCriaComponent>
     , @Inject(MAT_DIALOG_DATA) public data: any, private campanhaSrv: CampanhaAdsApi,
     private projetoSrv: ProjetoMySqlApi, private setupCampanhaSrv: SetupCampanhaApi, private versaoAppSrv: VersaoAppApi,
     private anuncioAppSrv: AnuncioAplicativoApi, private presencaLojaSrv:PresencaLojaApi,
     private ideiaMelhoriaSrv: IdeiaMelhoriaApi) { }
 
+
+
+  carregaListaCampanha() {
+    this.campanhaSrv.GeralPorProjeto(this.idProjeto)
+      .subscribe((resultado:CampanhaAds[]) => {
+        this.listaCampanha = resultado;
+      })  
+  }  
 
   carregaListaPaginaInstalacao() {
     this.projetoSrv.getPaginaInstalacaoApps(this.idProjeto)
@@ -97,6 +109,7 @@ export class CampanhaEditaCriaV2Component implements OnInit {
     this.carregaVersaoApp();
     this.carregaListaPresencaLoja();
     this.carregaIdeiaMelhoria();
+    this.carregaListaCampanha();
   }
 
   onSubmit() {
@@ -120,6 +133,20 @@ export class CampanhaEditaCriaV2Component implements OnInit {
 
   closeDialog() {
     this.dialogRef.close('Pizza!');
+  }
+
+
+  onChange2() {
+    this.campanhaSrv.findById(this.campanhaSelId)
+      .subscribe((campanhaBase:CampanhaAds) => {
+        this.item.anuncioAplicativoId = campanhaBase.anuncioAplicativoId;
+        this.item.modeloCampanhaAdsId = campanhaBase.modeloCampanhaAdsId;
+        this.item.paginaInstalacaoAppId = campanhaBase.paginaInstalacaoAppId;
+        this.item.paginaValidacaoWebId = campanhaBase.paginaValidacaoWebId;
+        this.item.presencaLojaId = campanhaBase.presencaLojaId;
+        this.item.setupCampanhaId = campanhaBase.setupCampanhaId;
+        this.item.versaoAppId = campanhaBase.versaoAppId;
+      })
   }
 
 }

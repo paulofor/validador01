@@ -29,11 +29,18 @@
                       <button *ngIf="permiteEdicao(item)" class="btn btn-primary btn-sm " (click)="openDialog(item)">Alterar</button>
                     </td>
                   </tr>
+                  <tr>
+                    <td>Campanha</td>
+                    <td>Impressão</td>
+                    <td>Ctr</td>
+                    <td>Custo Conversão</td>
+                    <td></td>
+                  </tr>
                   <tr *ngFor="let resultado of item.anuncioAplicacaoResultados">
                     <td>{{resultado.campanhaAds.nome}}</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>{{resultado.quantidadeImpressao}}</td>
+                    <td>{{resultado.ctr}}</td>
+                    <td>{{resultado.custoConversao}}</td>
                     <td></td>
                   </tr>
                 </ng-container>

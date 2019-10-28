@@ -23,7 +23,15 @@ export class AnuncioAppGerenciadorComponent implements OnInit {
   carregaAnuncios(){
     this.route.params.subscribe((params: Params) => {
       this.idProjeto = params['id'];
-      let filtro = {"where" : { "projetoMySqlId" : this.idProjeto } , "include" : {"relation" : "anuncioAplicacaoResultados" , "scope" : { "include" : "campanhaAds" } } }
+      let filtro = {
+          "where" : { "projetoMySqlId" : this.idProjeto } , 
+          "include" : {
+            "relation" : "anuncioAplicacaoResultados" , 
+            "scope" : { 
+              "include" : "campanhaAds" 
+            } 
+          } 
+        }
       this.srv.find(filtro)
         .subscribe((result: AnuncioAplicativo[]) => {
           this.lista = result;

@@ -19,14 +19,24 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let item of lista">
-                  <td>{{item.titulo1}}</td>
-                  <td>{{item.titulo2}}</td>
-                  <td>{{item.titulo3}}</td>
-                  <td>{{item.titulo4}}</td>
-                  <td><button *ngIf="permiteEdicao(item)" class="btn btn-primary btn-sm "
-                      (click)="openDialog(item)">Alterar</button></td>
-                </tr>
+                <ng-container *ngFor="let item of lista">
+                  <tr>
+                    <td>{{item.titulo1}}</td>
+                    <td>{{item.titulo2}}</td>
+                    <td>{{item.titulo3}}</td>
+                    <td>{{item.titulo4}}</td>
+                    <td>
+                      <button *ngIf="permiteEdicao(item)" class="btn btn-primary btn-sm " (click)="openDialog(item)">Alterar</button>
+                    </td>
+                  </tr>
+                  <tr *ngFor="let resultado of item.anuncioAplicacaoResultados">
+                    <td>{{resultado.campanhaAds.nome}}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </ng-container>
               </tbody>
             </table>
           </div>

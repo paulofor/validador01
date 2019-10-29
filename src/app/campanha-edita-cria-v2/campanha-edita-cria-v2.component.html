@@ -80,7 +80,7 @@
   <mat-form-field class="example-full-width">
     <mat-select placeholder="Campanha Base" [(ngModel)]="campanhaSelId" (ngModelChange)="onChange2()" name="campanhaSel">
       <mat-option *ngFor="let campanha of listaCampanha" [value]="campanha.id" >
-        {{ campanha.nome }}
+        {{ campanha.nome }} ({{campanha.dataInicial | date: 'dd/MM/yyyy' : 'UTC'}})  R$ {{campanha.taxaInstalacaoUsuario | number : '1.2-2' }}
       </mat-option>
     </mat-select>
   </mat-form-field>

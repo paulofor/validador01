@@ -39,8 +39,8 @@
                   <tr *ngFor="let resultado of item.anuncioAplicacaoResultados">
                     <td>{{resultado.campanhaAds.nome}}</td>
                     <td>{{resultado.quantidadeImpressao}}</td>
-                    <td>{{resultado.ctr}}</td>
-                    <td>{{resultado.custoConversao}}</td>
+                    <td>{{resultado.ctr | number : '1.2-2'}}</td>
+                    <td>{{resultado.custoConversao | number : '1.2-2'}}</td>
                     <td></td>
                   </tr>
                 </ng-container>

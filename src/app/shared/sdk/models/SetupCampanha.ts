@@ -1,4 +1,7 @@
 /* tslint:disable */
+import {
+  CampanhaAds
+} from '../index';
 
 declare var Object: any;
 export interface SetupCampanhaInterface {
@@ -17,7 +20,17 @@ export interface SetupCampanhaInterface {
   "tipoCampanha"?: string;
   "custoInstalacao"?: number;
   "totalInstalacao"?: number;
+  "mediaCtr"?: number;
+  "mediaConversao"?: number;
+  "mediaCustoConversao"?: number;
+  "mediaInstalacao"?: number;
+  "mediaCustoInstalacao"?: number;
+  "mediaTaxaInstalacao"?: number;
+  "mediaImpressao"?: number;
+  "mediaClique"?: number;
+  "quantidadeCampanha"?: number;
   "id"?: number;
+  campanhaAds?: CampanhaAds[];
 }
 
 export class SetupCampanha implements SetupCampanhaInterface {
@@ -36,7 +49,17 @@ export class SetupCampanha implements SetupCampanhaInterface {
   "tipoCampanha": string;
   "custoInstalacao": number;
   "totalInstalacao": number;
+  "mediaCtr": number;
+  "mediaConversao": number;
+  "mediaCustoConversao": number;
+  "mediaInstalacao": number;
+  "mediaCustoInstalacao": number;
+  "mediaTaxaInstalacao": number;
+  "mediaImpressao": number;
+  "mediaClique": number;
+  "quantidadeCampanha": number;
   "id": number;
+  campanhaAds: CampanhaAds[];
   constructor(data?: SetupCampanhaInterface) {
     Object.assign(this, data);
   }
@@ -130,12 +153,56 @@ export class SetupCampanha implements SetupCampanhaInterface {
           name: 'totalInstalacao',
           type: 'number'
         },
+        "mediaCtr": {
+          name: 'mediaCtr',
+          type: 'number'
+        },
+        "mediaConversao": {
+          name: 'mediaConversao',
+          type: 'number'
+        },
+        "mediaCustoConversao": {
+          name: 'mediaCustoConversao',
+          type: 'number'
+        },
+        "mediaInstalacao": {
+          name: 'mediaInstalacao',
+          type: 'number'
+        },
+        "mediaCustoInstalacao": {
+          name: 'mediaCustoInstalacao',
+          type: 'number'
+        },
+        "mediaTaxaInstalacao": {
+          name: 'mediaTaxaInstalacao',
+          type: 'number'
+        },
+        "mediaImpressao": {
+          name: 'mediaImpressao',
+          type: 'number'
+        },
+        "mediaClique": {
+          name: 'mediaClique',
+          type: 'number'
+        },
+        "quantidadeCampanha": {
+          name: 'quantidadeCampanha',
+          type: 'number'
+        },
         "id": {
           name: 'id',
           type: 'number'
         },
       },
       relations: {
+        campanhaAds: {
+          name: 'campanhaAds',
+          type: 'CampanhaAds[]',
+          model: 'CampanhaAds',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'setupCampanhaId'
+        },
       }
     }
   }

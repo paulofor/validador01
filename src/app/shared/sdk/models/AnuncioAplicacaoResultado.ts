@@ -1,6 +1,7 @@
 /* tslint:disable */
 import {
-  AnuncioAplicativo
+  AnuncioAplicativo,
+  CampanhaAds
 } from '../index';
 
 declare var Object: any;
@@ -20,6 +21,7 @@ export interface AnuncioAplicacaoResultadoInterface {
   "anuncioAplicativoId"?: number;
   "campanhaAdsId"?: number;
   anuncioAplicativo?: AnuncioAplicativo;
+  campanhaAds?: CampanhaAds;
 }
 
 export class AnuncioAplicacaoResultado implements AnuncioAplicacaoResultadoInterface {
@@ -38,6 +40,7 @@ export class AnuncioAplicacaoResultado implements AnuncioAplicacaoResultadoInter
   "anuncioAplicativoId": number;
   "campanhaAdsId": number;
   anuncioAplicativo: AnuncioAplicativo;
+  campanhaAds: CampanhaAds;
   constructor(data?: AnuncioAplicacaoResultadoInterface) {
     Object.assign(this, data);
   }
@@ -135,6 +138,14 @@ export class AnuncioAplicacaoResultado implements AnuncioAplicacaoResultadoInter
           model: 'AnuncioAplicativo',
           relationType: 'belongsTo',
                   keyFrom: 'anuncioAplicativoId',
+          keyTo: 'id'
+        },
+        campanhaAds: {
+          name: 'campanhaAds',
+          type: 'CampanhaAds',
+          model: 'CampanhaAds',
+          relationType: 'belongsTo',
+                  keyFrom: 'campanhaAdsId',
           keyTo: 'id'
         },
       }

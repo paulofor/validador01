@@ -6,6 +6,7 @@
           <div class="header">
             <h4 class="title">Anuncios Aplicativos</h4>
             <button class="btn btn-primary btn-sm " (click)="openDialog()">Novo</button>
+            <button class="btn btn-primary btn-sm " (click)="atualizaMedia()">Atualiza</button>
           </div>
           <div class="content table-responsive table-full-width">
             <table class="table table-hover table-striped">
@@ -31,16 +32,16 @@
                   </tr>
                   <tr>
                     <td>Campanha</td>
-                    <td>Impressão</td>
-                    <td>Ctr</td>
-                    <td>Custo Conversão</td>
+                    <td>Impressão ({{item.mediaImpressao}})</td>
+                    <td>Ctr ({{item.mediaCtr | number : '1.2-2'}})</td>
+                    <td>Cpc ({{item.mediaCpc  | number : '1.2-2'}})</td>
                     <td></td>
                   </tr>
                   <tr *ngFor="let resultado of item.anuncioAplicacaoResultados">
                     <td>{{resultado.campanhaAds.nome}}</td>
                     <td>{{resultado.quantidadeImpressao}}</td>
                     <td>{{resultado.ctr | number : '1.2-2'}}</td>
-                    <td>{{resultado.custoConversao | number : '1.2-2'}}</td>
+                    <td>{{resultado.cpcMedio | number : '1.2-2'}}</td>
                     <td></td>
                   </tr>
                 </ng-container>

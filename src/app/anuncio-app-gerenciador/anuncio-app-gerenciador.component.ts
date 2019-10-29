@@ -56,6 +56,12 @@ export class AnuncioAppGerenciadorComponent implements OnInit {
     });
   }
 
+  atualizaMedia() {
+    this.srv.CalculaMedias()
+      .subscribe((result) => {
+        this.carregaAnuncios();
+      })
+  }
 
   permiteEdicao(item) {
     return (item.permiteEdicao == 1);

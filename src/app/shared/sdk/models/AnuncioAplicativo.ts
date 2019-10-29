@@ -13,6 +13,16 @@ export interface AnuncioAplicativoInterface {
   "titulo4"?: string;
   "pacoteApp"?: string;
   "permiteEdicao"?: number;
+  "mediaCtr"?: number;
+  "mediaConversao"?: number;
+  "mediaCustoConversao"?: number;
+  "mediaInstalacao"?: number;
+  "mediaCustoInstalacao"?: number;
+  "mediaTaxaInstalacao"?: number;
+  "mediaImpressao"?: number;
+  "mediaClique"?: number;
+  "quantidadeCampanha"?: number;
+  "mediaCpc"?: number;
   "id"?: number;
   "projetoMySqlId"?: number;
   "conceitoProdutoId"?: number;
@@ -28,6 +38,16 @@ export class AnuncioAplicativo implements AnuncioAplicativoInterface {
   "titulo4": string;
   "pacoteApp": string;
   "permiteEdicao": number;
+  "mediaCtr": number;
+  "mediaConversao": number;
+  "mediaCustoConversao": number;
+  "mediaInstalacao": number;
+  "mediaCustoInstalacao": number;
+  "mediaTaxaInstalacao": number;
+  "mediaImpressao": number;
+  "mediaClique": number;
+  "quantidadeCampanha": number;
+  "mediaCpc": number;
   "id": number;
   "projetoMySqlId": number;
   "conceitoProdutoId": number;
@@ -89,6 +109,46 @@ export class AnuncioAplicativo implements AnuncioAplicativoInterface {
         },
         "permiteEdicao": {
           name: 'permiteEdicao',
+          type: 'number'
+        },
+        "mediaCtr": {
+          name: 'mediaCtr',
+          type: 'number'
+        },
+        "mediaConversao": {
+          name: 'mediaConversao',
+          type: 'number'
+        },
+        "mediaCustoConversao": {
+          name: 'mediaCustoConversao',
+          type: 'number'
+        },
+        "mediaInstalacao": {
+          name: 'mediaInstalacao',
+          type: 'number'
+        },
+        "mediaCustoInstalacao": {
+          name: 'mediaCustoInstalacao',
+          type: 'number'
+        },
+        "mediaTaxaInstalacao": {
+          name: 'mediaTaxaInstalacao',
+          type: 'number'
+        },
+        "mediaImpressao": {
+          name: 'mediaImpressao',
+          type: 'number'
+        },
+        "mediaClique": {
+          name: 'mediaClique',
+          type: 'number'
+        },
+        "quantidadeCampanha": {
+          name: 'quantidadeCampanha',
+          type: 'number'
+        },
+        "mediaCpc": {
+          name: 'mediaCpc',
           type: 'number'
         },
         "id": {

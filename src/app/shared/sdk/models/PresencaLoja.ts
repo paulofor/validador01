@@ -2,6 +2,7 @@
 import {
   ProjetoMySql,
   ConceitoProduto,
+  CampanhaAds,
   ClienteExperimental
 } from '../index';
 
@@ -28,11 +29,18 @@ export interface PresencaLojaInterface {
   "mediaConversao"?: number;
   "mediaTaxaConversao"?: number;
   "mediaCustoConversao"?: number;
+  "mediaCtr"?: number;
+  "mediaInstalacao"?: number;
+  "mediaCustoInstalacao"?: number;
+  "mediaTaxaInstalacao"?: number;
+  "mediaImpressao"?: number;
+  "mediaClique"?: number;
   "id"?: number;
   "projetoMySqlId"?: number;
   "conceitoProdutoId"?: number;
   projetoMySql?: ProjetoMySql;
   conceitoProduto?: ConceitoProduto;
+  campanhaAds?: CampanhaAds[];
   clienteExperimentals?: ClienteExperimental[];
 }
 
@@ -58,11 +66,18 @@ export class PresencaLoja implements PresencaLojaInterface {
   "mediaConversao": number;
   "mediaTaxaConversao": number;
   "mediaCustoConversao": number;
+  "mediaCtr": number;
+  "mediaInstalacao": number;
+  "mediaCustoInstalacao": number;
+  "mediaTaxaInstalacao": number;
+  "mediaImpressao": number;
+  "mediaClique": number;
   "id": number;
   "projetoMySqlId": number;
   "conceitoProdutoId": number;
   projetoMySql: ProjetoMySql;
   conceitoProduto: ConceitoProduto;
+  campanhaAds: CampanhaAds[];
   clienteExperimentals: ClienteExperimental[];
   constructor(data?: PresencaLojaInterface) {
     Object.assign(this, data);
@@ -181,6 +196,30 @@ export class PresencaLoja implements PresencaLojaInterface {
           name: 'mediaCustoConversao',
           type: 'number'
         },
+        "mediaCtr": {
+          name: 'mediaCtr',
+          type: 'number'
+        },
+        "mediaInstalacao": {
+          name: 'mediaInstalacao',
+          type: 'number'
+        },
+        "mediaCustoInstalacao": {
+          name: 'mediaCustoInstalacao',
+          type: 'number'
+        },
+        "mediaTaxaInstalacao": {
+          name: 'mediaTaxaInstalacao',
+          type: 'number'
+        },
+        "mediaImpressao": {
+          name: 'mediaImpressao',
+          type: 'number'
+        },
+        "mediaClique": {
+          name: 'mediaClique',
+          type: 'number'
+        },
         "id": {
           name: 'id',
           type: 'number'
@@ -210,6 +249,14 @@ export class PresencaLoja implements PresencaLojaInterface {
           relationType: 'belongsTo',
                   keyFrom: 'conceitoProdutoId',
           keyTo: 'id'
+        },
+        campanhaAds: {
+          name: 'campanhaAds',
+          type: 'CampanhaAds[]',
+          model: 'CampanhaAds',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'presencaLojaId'
         },
         clienteExperimentals: {
           name: 'clienteExperimentals',

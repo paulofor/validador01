@@ -3,6 +3,7 @@ import {
   ConceitoProduto,
   ProjetoMySql,
   Visitante,
+  CampanhaAds,
   RespostaVersao,
   ClienteExperimental,
   DispositivoUsuario,
@@ -22,6 +23,7 @@ export interface VersaoAppInterface {
   conceitoProduto?: ConceitoProduto;
   projetoMySql?: ProjetoMySql;
   visitantes?: Visitante[];
+  campanhaAds?: CampanhaAds[];
   respostaVersaos?: RespostaVersao[];
   clienteExperimentals?: ClienteExperimental[];
   dispositivoUsuarios?: DispositivoUsuario[];
@@ -40,6 +42,7 @@ export class VersaoApp implements VersaoAppInterface {
   conceitoProduto: ConceitoProduto;
   projetoMySql: ProjetoMySql;
   visitantes: Visitante[];
+  campanhaAds: CampanhaAds[];
   respostaVersaos: RespostaVersao[];
   clienteExperimentals: ClienteExperimental[];
   dispositivoUsuarios: DispositivoUsuario[];
@@ -131,6 +134,14 @@ export class VersaoApp implements VersaoAppInterface {
           name: 'visitantes',
           type: 'Visitante[]',
           model: 'Visitante',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'versaoAppId'
+        },
+        campanhaAds: {
+          name: 'campanhaAds',
+          type: 'CampanhaAds[]',
+          model: 'CampanhaAds',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'versaoAppId'

@@ -80,6 +80,8 @@ import { ListaItemValorPorProjetoComponent } from '../lista-item-valor-por-proje
 import { ListaProjetoFinanceiroGeralComponent } from '../lista-projeto-financeiro-geral/lista-projeto-financeiro-geral.component';
 import { CustoAnoComponent } from '../custo-ano/custo-ano.component';
 import { ListaDispositivoPorVersaoComponent } from '../lista-dispositivo-por-versao/lista-dispositivo-por-versao.component';
+import { ProjetoUsuarioComponent } from '../projeto-usuario/projeto-usuario.component';
+import { ProjetoUsuarioDetalheComponent } from '../projeto-usuario-detalhe/projeto-usuario-detalhe.component';
 
 
 export const routes : Routes = [
@@ -202,6 +204,9 @@ export const routes : Routes = [
     { path: 'custoAno/:id' , component: CustoAnoComponent },
 
     { path: 'dispositivoUsuarioPorVersao/:id' , component: ListaDispositivoPorVersaoComponent },
+
+    { path: 'projetosUsuario' , component : ProjetoUsuarioComponent},
+    { path: 'projetosUsuario/:id' , component : ProjetoUsuarioDetalheComponent },
 
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

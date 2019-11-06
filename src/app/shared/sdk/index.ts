@@ -223,7 +223,7 @@ export class SDKBrowserModule {
         UsuarioProdutoApi,
         VisitaAppApi,
         internalStorageProvider,
-        { provide: SDKStorage, useClass: StorageBrowser },
+        { provide: SDKStorage, useClass: StorageBrowser }
 
       ]
     };

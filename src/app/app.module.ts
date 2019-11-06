@@ -220,6 +220,8 @@ import { DisplayVersaoAppComponent } from './display-versao-app/display-versao-a
 import { ListaProjetoFinanceiroGeralComponent } from './lista-projeto-financeiro-geral/lista-projeto-financeiro-geral.component';
 import { CustoAnoComponent } from './custo-ano/custo-ano.component';
 import { ListaDispositivoPorVersaoComponent } from './lista-dispositivo-por-versao/lista-dispositivo-por-versao.component';
+import { ProjetoUsuarioComponent } from './projeto-usuario/projeto-usuario.component';
+import { ProjetoUsuarioDetalheComponent } from './projeto-usuario-detalhe/projeto-usuario-detalhe.component';
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -435,7 +437,11 @@ registerLocaleData(localePt, 'pt-BR');
 
     CustoAnoComponent,
 
-    ListaDispositivoPorVersaoComponent
+    ListaDispositivoPorVersaoComponent,
+
+    ProjetoUsuarioComponent,
+
+    ProjetoUsuarioDetalheComponent
 
   ],
   entryComponents: [

@@ -8,6 +8,8 @@ export interface UsuarioProdutoInterface {
   "nome"?: string;
   "senha"?: string;
   "chave"?: string;
+  "dataHoraCriacao"?: Date;
+  "dataUltimoAcesso"?: Date;
   "id"?: number;
   "projetoMySqlId"?: number;
   dispositivoUsuarios?: DispositivoUsuario[];
@@ -17,6 +19,8 @@ export class UsuarioProduto implements UsuarioProdutoInterface {
   "nome": string;
   "senha": string;
   "chave": string;
+  "dataHoraCriacao": Date;
+  "dataUltimoAcesso": Date;
   "id": number;
   "projetoMySqlId": number;
   dispositivoUsuarios: DispositivoUsuario[];
@@ -64,6 +68,14 @@ export class UsuarioProduto implements UsuarioProdutoInterface {
         "chave": {
           name: 'chave',
           type: 'string'
+        },
+        "dataHoraCriacao": {
+          name: 'dataHoraCriacao',
+          type: 'Date'
+        },
+        "dataUltimoAcesso": {
+          name: 'dataUltimoAcesso',
+          type: 'Date'
         },
         "id": {
           name: 'id',

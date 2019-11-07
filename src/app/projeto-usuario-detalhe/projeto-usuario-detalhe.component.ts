@@ -20,11 +20,35 @@ export class ProjetoUsuarioDetalheComponent implements OnInit {
     this.carregaUsuario();
   }
 
+  getQtdeToken() {
+    let saida = 0;
+    this.listaUsuario.forEach(usuario => {
+      if (usuario.dispositivoUsuarios.length>0 && usuario.dispositivoUsuarios[0].tokenFcm) {
+        saida++;
+      }
+    });
+    return saida;
+  }
+
+  getToken(usuario: UsuarioProduto) {
+    if (usuario.dispositivoUsuarios.length>0 && usuario.dispositivoUsuarios[0].tokenFcm) {
+      return usuario.dispositivoUsuarios[0].tokenFcm.substring(0,10);
+    } else {
+      return "-";
+    }
+  }
+
   carregaUsuario() {
     this.route.params.subscribe((params: Params) => {
       let id = params['id'];
-      this.usuarioSrv.find( {"where" : {"projetoMySqlId" : id }} )
+      this.usuarioSrv.find( 
+            {
+              "where" : {"projetoMySqlId" : id },
+              "order": "dataHoraCriacao DESC",
+              "include" : "dispositivoUsuarios"
+            } )
         .subscribe((result:UsuarioProduto[]) => {
+          console.log('ListaUsuario: ' , result);
           this.listaUsuario = result;
         }
       )

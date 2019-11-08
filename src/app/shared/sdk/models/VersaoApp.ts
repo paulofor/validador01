@@ -4,6 +4,7 @@ import {
   ProjetoMySql,
   Visitante,
   CampanhaAds,
+  TelaApp,
   RespostaVersao,
   ClienteExperimental,
   DispositivoUsuario,
@@ -17,13 +18,16 @@ export interface VersaoAppInterface {
   "codigoVersao"?: string;
   "permiteEdicao"?: number;
   "pacoteApp"?: string;
+  "analise"?: string;
   "id"?: number;
   "conceitoProdutoId"?: number;
   "projetoMySqlId"?: number;
+  "telaAppInicialId"?: number;
   conceitoProduto?: ConceitoProduto;
   projetoMySql?: ProjetoMySql;
   visitantes?: Visitante[];
   campanhaAds?: CampanhaAds[];
+  telaAppInicial?: TelaApp;
   respostaVersaos?: RespostaVersao[];
   clienteExperimentals?: ClienteExperimental[];
   dispositivoUsuarios?: DispositivoUsuario[];
@@ -36,13 +40,16 @@ export class VersaoApp implements VersaoAppInterface {
   "codigoVersao": string;
   "permiteEdicao": number;
   "pacoteApp": string;
+  "analise": string;
   "id": number;
   "conceitoProdutoId": number;
   "projetoMySqlId": number;
+  "telaAppInicialId": number;
   conceitoProduto: ConceitoProduto;
   projetoMySql: ProjetoMySql;
   visitantes: Visitante[];
   campanhaAds: CampanhaAds[];
+  telaAppInicial: TelaApp;
   respostaVersaos: RespostaVersao[];
   clienteExperimentals: ClienteExperimental[];
   dispositivoUsuarios: DispositivoUsuario[];
@@ -100,6 +107,10 @@ export class VersaoApp implements VersaoAppInterface {
           name: 'pacoteApp',
           type: 'string'
         },
+        "analise": {
+          name: 'analise',
+          type: 'string'
+        },
         "id": {
           name: 'id',
           type: 'number'
@@ -110,6 +121,10 @@ export class VersaoApp implements VersaoAppInterface {
         },
         "projetoMySqlId": {
           name: 'projetoMySqlId',
+          type: 'number'
+        },
+        "telaAppInicialId": {
+          name: 'telaAppInicialId',
           type: 'number'
         },
       },
@@ -145,6 +160,14 @@ export class VersaoApp implements VersaoAppInterface {
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'versaoAppId'
+        },
+        telaAppInicial: {
+          name: 'telaAppInicial',
+          type: 'TelaApp',
+          model: 'TelaApp',
+          relationType: 'belongsTo',
+                  keyFrom: 'telaAppInicialId',
+          keyTo: 'id'
         },
         respostaVersaos: {
           name: 'respostaVersaos',

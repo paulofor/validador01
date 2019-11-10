@@ -14,6 +14,7 @@ export interface DispositivoUsuarioInterface {
   "ativo"?: number;
   "codigoDispositivo"?: string;
   "microSd"?: number;
+  "versaoSo"?: string;
   "id"?: number;
   "campanhaAdsId"?: number;
   "versaoAppId"?: number;
@@ -31,6 +32,7 @@ export class DispositivoUsuario implements DispositivoUsuarioInterface {
   "ativo": number;
   "codigoDispositivo": string;
   "microSd": number;
+  "versaoSo": string;
   "id": number;
   "campanhaAdsId": number;
   "versaoAppId": number;
@@ -104,6 +106,10 @@ export class DispositivoUsuario implements DispositivoUsuarioInterface {
         "microSd": {
           name: 'microSd',
           type: 'number'
+        },
+        "versaoSo": {
+          name: 'versaoSo',
+          type: 'string'
         },
         "id": {
           name: 'id',

@@ -15,6 +15,9 @@ export interface DispositivoUsuarioInterface {
   "codigoDispositivo"?: string;
   "microSd"?: number;
   "versaoSo"?: string;
+  "serial"?: string;
+  "uuid"?: string;
+  "fabricante"?: string;
   "id"?: number;
   "campanhaAdsId"?: number;
   "versaoAppId"?: number;
@@ -33,6 +36,9 @@ export class DispositivoUsuario implements DispositivoUsuarioInterface {
   "codigoDispositivo": string;
   "microSd": number;
   "versaoSo": string;
+  "serial": string;
+  "uuid": string;
+  "fabricante": string;
   "id": number;
   "campanhaAdsId": number;
   "versaoAppId": number;
@@ -109,6 +115,18 @@ export class DispositivoUsuario implements DispositivoUsuarioInterface {
         },
         "versaoSo": {
           name: 'versaoSo',
+          type: 'string'
+        },
+        "serial": {
+          name: 'serial',
+          type: 'string'
+        },
+        "uuid": {
+          name: 'uuid',
+          type: 'string'
+        },
+        "fabricante": {
+          name: 'fabricante',
           type: 'string'
         },
         "id": {

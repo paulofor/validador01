@@ -72,6 +72,11 @@ import { CustoMes } from '../../models/CustoMes';
 import { AnuncioAplicacaoResultado } from '../../models/AnuncioAplicacaoResultado';
 import { UsuarioProduto } from '../../models/UsuarioProduto';
 import { VisitaApp } from '../../models/VisitaApp';
+import { DispositivoUsuarioDesen } from '../../models/DispositivoUsuarioDesen';
+import { UsuarioProdutoDesen } from '../../models/UsuarioProdutoDesen';
+import { Cosmetic_OportunidadeDia } from '../../models/Cosmetic_OportunidadeDia';
+import { ContagemProduto } from '../../models/ContagemProduto';
+import { LojaVirtual } from '../../models/LojaVirtual';
 
 export interface Models { [name: string]: any }
 
@@ -151,6 +156,11 @@ export class SDKModels {
     AnuncioAplicacaoResultado: AnuncioAplicacaoResultado,
     UsuarioProduto: UsuarioProduto,
     VisitaApp: VisitaApp,
+    DispositivoUsuarioDesen: DispositivoUsuarioDesen,
+    UsuarioProdutoDesen: UsuarioProdutoDesen,
+    Cosmetic_OportunidadeDia: Cosmetic_OportunidadeDia,
+    ContagemProduto: ContagemProduto,
+    LojaVirtual: LojaVirtual,
     
   };
 

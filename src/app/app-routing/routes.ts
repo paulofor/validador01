@@ -82,6 +82,7 @@ import { CustoAnoComponent } from '../custo-ano/custo-ano.component';
 import { ListaDispositivoPorVersaoComponent } from '../lista-dispositivo-por-versao/lista-dispositivo-por-versao.component';
 import { ProjetoUsuarioComponent } from '../projeto-usuario/projeto-usuario.component';
 import { ProjetoUsuarioDetalheComponent } from '../projeto-usuario-detalhe/projeto-usuario-detalhe.component';
+import { CosmeticCenterOportunidadeComponent } from '../cosmetic-center-oportunidade/cosmetic-center-oportunidade.component';
 
 
 export const routes : Routes = [
@@ -207,6 +208,8 @@ export const routes : Routes = [
 
     { path: 'projetosUsuario' , component : ProjetoUsuarioComponent},
     { path: 'projetosUsuario/:id' , component : ProjetoUsuarioDetalheComponent },
+
+    { path: 'cosmeticCenterOportunidades' , component : CosmeticCenterOportunidadeComponent },
 
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

@@ -222,6 +222,7 @@ import { CustoAnoComponent } from './custo-ano/custo-ano.component';
 import { ListaDispositivoPorVersaoComponent } from './lista-dispositivo-por-versao/lista-dispositivo-por-versao.component';
 import { ProjetoUsuarioComponent } from './projeto-usuario/projeto-usuario.component';
 import { ProjetoUsuarioDetalheComponent } from './projeto-usuario-detalhe/projeto-usuario-detalhe.component';
+import { CosmeticCenterOportunidadeComponent } from './cosmetic-center-oportunidade/cosmetic-center-oportunidade.component';
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -441,7 +442,9 @@ registerLocaleData(localePt, 'pt-BR');
 
     ProjetoUsuarioComponent,
 
-    ProjetoUsuarioDetalheComponent
+    ProjetoUsuarioDetalheComponent,
+
+    CosmeticCenterOportunidadeComponent
 
   ],
   entryComponents: [

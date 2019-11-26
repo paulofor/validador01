@@ -4,26 +4,30 @@
       <div class="col-md-12">
         <div class="card">
           <div class="header">
-            <h4 class="title">Oportunidades - Cosmetic Center</h4>
+            <h4 class="title">Oportunidades - Cosmetic Center ({{lista.length}})</h4>
           </div>
           <div class="content table-responsive table-full-width">
             <table class="table table-hover table-striped">
               <thead>
                 <tr>
-                  <th>Nome</th>
+                  <th></th>
+                  <th></th>
+                  <th>Produto</th>
                   <th>Loja</th>
-                  <th></th>
-                  <th></th>
-                  <th></th>
+                  <th>Para</th>
+                  <th>De</th>
+                  <th>Redução</th>
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let item of lista">
+                <tr  *ngFor="let item of lista; let i = index; index as i">
+                  <td>{{i+1}}</td>
+                  <td><img src="{{item.imagemProduto}}" height="40" width="40"/></td>
                   <td>{{item.nomeProduto}}</td>
                   <td>{{item.nomeLojaVirtual}}</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>{{item.precoVendaAtual | number : '1.2-2'}}</td>
+                  <td>{{item.precoVendaAnterior | number : '1.2-2'}}</td>
+                  <td>{{item.percentualAjusteVenda | number : '1.1-1'}}%</td>
                 </tr>
               </tbody>
             </table>

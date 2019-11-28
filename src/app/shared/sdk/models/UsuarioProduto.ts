@@ -1,6 +1,7 @@
 /* tslint:disable */
 import {
-  DispositivoUsuario
+  DispositivoUsuario,
+  NotificacaoApp
 } from '../index';
 
 declare var Object: any;
@@ -13,6 +14,7 @@ export interface UsuarioProdutoInterface {
   "id"?: number;
   "projetoMySqlId"?: number;
   dispositivoUsuarios?: DispositivoUsuario[];
+  notificacaoApps?: NotificacaoApp[];
 }
 
 export class UsuarioProduto implements UsuarioProdutoInterface {
@@ -24,6 +26,7 @@ export class UsuarioProduto implements UsuarioProdutoInterface {
   "id": number;
   "projetoMySqlId": number;
   dispositivoUsuarios: DispositivoUsuario[];
+  notificacaoApps: NotificacaoApp[];
   constructor(data?: UsuarioProdutoInterface) {
     Object.assign(this, data);
   }
@@ -91,6 +94,14 @@ export class UsuarioProduto implements UsuarioProdutoInterface {
           name: 'dispositivoUsuarios',
           type: 'DispositivoUsuario[]',
           model: 'DispositivoUsuario',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'usuarioProdutoId'
+        },
+        notificacaoApps: {
+          name: 'notificacaoApps',
+          type: 'NotificacaoApp[]',
+          model: 'NotificacaoApp',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'usuarioProdutoId'

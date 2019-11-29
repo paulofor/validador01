@@ -29687,7 +29687,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFtPIoPZR8SRjM="
 							},
-							"name": "dataHoraCriacao"
+							"name": "dataHoraCriacao",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -139805,7 +139806,7 @@
 												"$ref": "AAAAAAFuskMhaNc2l+E="
 											},
 											"edgePosition": 1,
-											"text": "4 : tokenNotificacao"
+											"text": "4 : notificacao"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -140545,7 +140546,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFusjzScZcNx54="
 							},
-							"name": "tokenNotificacao",
+							"name": "notificacao",
 							"source": {
 								"$ref": "AAAAAAFuskJ9gNb/HsY="
 							},
@@ -140704,7 +140705,8 @@
 					"_parent": {
 						"$ref": "AAAAAAFusjzScZcMDq8="
 					},
-					"name": "Role3"
+					"name": "Role3",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -140712,7 +140714,8 @@
 					"_parent": {
 						"$ref": "AAAAAAFusjzScZcMDq8="
 					},
-					"name": "Role4"
+					"name": "Role4",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -140720,7 +140723,8 @@
 					"_parent": {
 						"$ref": "AAAAAAFusjzScZcMDq8="
 					},
-					"name": "Role5"
+					"name": "Role5",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -140728,7 +140732,8 @@
 					"_parent": {
 						"$ref": "AAAAAAFusjzScZcMDq8="
 					},
-					"name": "Role6"
+					"name": "Role6",
+					"type": ""
 				},
 				{
 					"_type": "UMLAttribute",
@@ -140736,7 +140741,8 @@
 					"_parent": {
 						"$ref": "AAAAAAFusjzScZcMDq8="
 					},
-					"name": "Role7"
+					"name": "Role7",
+					"type": ""
 				}
 			]
 		}

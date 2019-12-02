@@ -5,12 +5,14 @@ export interface NotificacaoAppInterface {
   "dataHoraEnvio"?: Date;
   "tokenNotificacao"?: string;
   "dataHoraAcesso"?: Date;
+  "dataHoraCriacao"?: Date;
   "resultadoEnvio"?: string;
   "tipoEnvio"?: string;
   "titulo"?: string;
   "corpo"?: string;
   "badge"?: string;
   "cor"?: string;
+  "tokenFcm"?: string;
   "id"?: number;
   "dispositivoUsuarioId"?: number;
   "usuarioProdutoId"?: number;
@@ -20,12 +22,14 @@ export class NotificacaoApp implements NotificacaoAppInterface {
   "dataHoraEnvio": Date;
   "tokenNotificacao": string;
   "dataHoraAcesso": Date;
+  "dataHoraCriacao": Date;
   "resultadoEnvio": string;
   "tipoEnvio": string;
   "titulo": string;
   "corpo": string;
   "badge": string;
   "cor": string;
+  "tokenFcm": string;
   "id": number;
   "dispositivoUsuarioId": number;
   "usuarioProdutoId": number;
@@ -74,6 +78,10 @@ export class NotificacaoApp implements NotificacaoAppInterface {
           name: 'dataHoraAcesso',
           type: 'Date'
         },
+        "dataHoraCriacao": {
+          name: 'dataHoraCriacao',
+          type: 'Date'
+        },
         "resultadoEnvio": {
           name: 'resultadoEnvio',
           type: 'string'
@@ -96,6 +104,10 @@ export class NotificacaoApp implements NotificacaoAppInterface {
         },
         "cor": {
           name: 'cor',
+          type: 'string'
+        },
+        "tokenFcm": {
+          name: 'tokenFcm',
           type: 'string'
         },
         "id": {

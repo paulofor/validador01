@@ -11,6 +11,8 @@ export interface UsuarioProdutoInterface {
   "chave"?: string;
   "dataHoraCriacao"?: Date;
   "dataUltimoAcesso"?: Date;
+  "codigoPagSeguro"?: string;
+  "dataPagSeguro"?: Date;
   "id"?: number;
   "projetoMySqlId"?: number;
   dispositivoUsuarios?: DispositivoUsuario[];
@@ -23,6 +25,8 @@ export class UsuarioProduto implements UsuarioProdutoInterface {
   "chave": string;
   "dataHoraCriacao": Date;
   "dataUltimoAcesso": Date;
+  "codigoPagSeguro": string;
+  "dataPagSeguro": Date;
   "id": number;
   "projetoMySqlId": number;
   dispositivoUsuarios: DispositivoUsuario[];
@@ -78,6 +82,14 @@ export class UsuarioProduto implements UsuarioProdutoInterface {
         },
         "dataUltimoAcesso": {
           name: 'dataUltimoAcesso',
+          type: 'Date'
+        },
+        "codigoPagSeguro": {
+          name: 'codigoPagSeguro',
+          type: 'string'
+        },
+        "dataPagSeguro": {
+          name: 'dataPagSeguro',
           type: 'Date'
         },
         "id": {

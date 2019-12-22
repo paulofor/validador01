@@ -569,6 +569,39 @@ export class UsuarioProdutoApi extends BaseLoopBackApi {
   }
 
   /**
+   * <em>
+         * (The remote method definition does not provide any description.)
+         * </em>
+   *
+   * @param {object} data Request data.
+   *
+   *  - `chaveUsuario` – `{string}` - 
+   *
+   *  - `pagSeguroId` – `{string}` - 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `UsuarioProduto` object.)
+   * </em>
+   */
+  public RegistraAssinatura(chaveUsuario: any = {}, pagSeguroId: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/UsuarioProdutos/registraAssinatura";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof chaveUsuario !== 'undefined' && chaveUsuario !== null) _urlParams.chaveUsuario = chaveUsuario;
+    if (typeof pagSeguroId !== 'undefined' && pagSeguroId !== null) _urlParams.pagSeguroId = pagSeguroId;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Creates a new instance in dispositivoUsuarios of this model.
    *
    * @param {any} id UsuarioProduto id

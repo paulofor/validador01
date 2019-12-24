@@ -55,7 +55,7 @@ export class PaginaInstalacaoGerenciadorComponent implements OnInit {
 
 
   visitar(item){
-    window.open("http://validacao.kinghost.net/oferta/?inst=" + item.codigoHash , "_blank");
+    window.open("http://www.digicom.inf.br/oferta/?inst=" + item.codigoHash , "_blank");
   }
  
 

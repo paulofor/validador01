@@ -31,10 +31,10 @@ export class DisplayPaginaValidacaoWebComponent implements OnInit {
   }
 
   visitar(){
-    window.open("http://validacao.kinghost.net/oferta/?id=" + this.item.codigoHash , "_blank");
+    window.open("http://www.digicom.inf.br/oferta/?id=" + this.item.codigoHash , "_blank");
   }
   mobile(){
-    window.open("http://validacao.kinghost.net/oferta/?id=" + this.item.codigoHash , "_blank");
+    window.open("http://www.digicom.inf.br/oferta/?id=" + this.item.codigoHash , "_blank");
   }
 
   permiteAlterar(item : PaginaValidacaoWeb) {

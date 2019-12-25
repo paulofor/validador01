@@ -12,7 +12,7 @@ import { Params } from '@angular/router';
 })
 export class ProjetoUsuarioDetalheComponent implements OnInit {
 
-  private listaUsuario:UsuarioProduto[];
+  listaUsuario:UsuarioProduto[];
 
   constructor(private route: ActivatedRoute, private usuarioSrv:UsuarioProdutoApi) { }
 

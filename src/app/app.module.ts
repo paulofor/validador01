@@ -10,7 +10,7 @@ import { ProjetosComponent } from './projetos/projetos.component';
 /* Coloquei manualmente */
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { ProjetoCriaComponent } from './projeto-cria/projeto-cria.component';
-import { ProjetoEditaComponent } from './projeto-edita/projeto-edita.component';
+//import { ProjetoEditaComponent } from './projeto-edita/projeto-edita.component';
 import { ProjetoExibeComponent } from './projeto-exibe/projeto-exibe.component'
 import { FormsModule } from '@angular/forms';
 
@@ -61,7 +61,7 @@ import { ImageTesteComponent } from './image-teste/image-teste.component';
 import { NgxImgModule } from 'ngx-img';
 
 
-import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-upload/ng2-file-upload';
+//import { FileSelectDirective, FileDropDirective, FileUploader } from 'ng2-file-upload/ng2-file-upload';
 import { FileUploadNg2FileUploadComponent } from './file-upload-ng2-file-upload/file-upload-ng2-file-upload.component';
 import { FileUploadNgxFileDropComponent } from './file-upload-ngx-file-drop/file-upload-ngx-file-drop.component';
 
@@ -233,7 +233,7 @@ registerLocaleData(localePt, 'pt-BR');
     HomeComponent,
     ProjetosComponent,
     ProjetoCriaComponent,
-    ProjetoEditaComponent,
+    //ProjetoEditaComponent,
     ProjetoExibeComponent,
     CanvasProjetoComponent,
     ProjetoCanvasCriaComponent,
@@ -251,7 +251,7 @@ registerLocaleData(localePt, 'pt-BR');
     ReceitaEditaComponent,
     ImageTesteComponent,
     //ArquivosComponent,
-    FileSelectDirective,
+    //FileSelectDirective,
     FileUploadNg2FileUploadComponent,
     FileUploadNgxFileDropComponent,
     Angular2ImageUploadComponent,

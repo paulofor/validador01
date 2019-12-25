@@ -10,7 +10,7 @@ import { CampanhaAds, PaginaValidacaoWeb, CampanhaAdsApi } from '../shared/sdk';
 })
 export class CampanhaEditaCriaComponent implements OnInit {
 
-  private item: CampanhaAds;
+  item: CampanhaAds;
   private pagina: PaginaValidacaoWeb;
 
   constructor(public dialogRef: MatDialogRef<CampanhaEditaCriaComponent>

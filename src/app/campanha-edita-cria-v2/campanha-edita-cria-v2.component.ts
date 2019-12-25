@@ -15,14 +15,14 @@ export class CampanhaEditaCriaV2Component implements OnInit {
   private listaCampanha: CampanhaAds[];
 
   private item: CampanhaAds;
-  private listaPagina: PaginaValidacaoWeb[];
-  private listaPaginaInstalacao: PaginaInstalacaoApp[];
+  listaPagina: PaginaValidacaoWeb[];
+  listaPaginaInstalacao: PaginaInstalacaoApp[];
   private listaAnuncioApp: AnuncioAplicativo[];
   private listaVersaoApp: VersaoApp[];
   private listaPresencaLoja: PresencaLoja[];
-  private listaIdeiaMelhoria: IdeiaMelhoria[];
+  listaIdeiaMelhoria: IdeiaMelhoria[];
 
-  private listaSetup: SetupCampanha[];
+  listaSetup: SetupCampanha[];
   private idProjeto: number;
 
   campanhaSelId: string;

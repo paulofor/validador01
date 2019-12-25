@@ -1,1 +1,1 @@
-ng build --base-href=/admin/
+ng build --prod --base-href=/admin/ 

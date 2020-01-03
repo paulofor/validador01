@@ -4,24 +4,29 @@
       <div class="col-md-12">
         <div class="card">
           <div class="header">
-            <h4 class="title">Métricas - {{nomeMes}}}/{{diaBase.getFullYear()}}</h4>
+            <h4 class="title">Métricas - {{nomeMes}}/{{diaBase.getFullYear()}}</h4>
           </div>
           <div class="content table-responsive table-full-width">
             <table class="table table-hover table-striped">
               <thead>
                 <tr>
-                  <th width="30%">Dia</th>
-                  <td width="20%">Nova Instalação</td>
-                  <td width="20%">Tot Instalado</td>
-                  <td width="20%">Abriu App</td>
-                  <td width="20%">Periodo Gratuito</td>
-                  <td width="20%">Fluxo Assinatura</td>
-                  <td width="20%">Tot Assinante</td>
+                  <th width="10%">Dia</th>
+                  <th width="10%">Nova Instalação</th>
+                  <th width="15%">Tot Instalado</th>
+                  <th width="10%">Abriu App</th>
+                  <th width="10%">Periodo Gratuito</th>
+                  <th width="10%">Fluxo Assinatura</th>
+                  <th width="15%">Tot Assinante</th>
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let dia of projeto.dsUsuarios">
                   <td>{{dia.dia | date: 'dd/MM' }}</td>
+                  <td>{{dia.instalacao}}</td>
+                  <td>{{dia.qtdeAtivoNotificacao}}</td>
+                  <td>{{dia.qtdeAbreAplicacao}}</td>
+                  <td></td>
+                  <td></td>
                   <td></td>
                 </tr>
               </tbody>

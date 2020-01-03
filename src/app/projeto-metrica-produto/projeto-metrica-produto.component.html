@@ -1,0 +1,33 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">Projetos</h4>
+          </div>
+          <div class="content table-responsive table-full-width">
+            <table class="table table-hover table-striped">
+              <thead>
+                <tr>
+                  <th width="30%">Projeto</th>
+                  <th width="10%">Código</th>
+                  <th width="5%"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let projeto of projetos">
+                  <td>{{projeto.nome}}</td>
+                  <td>{{projeto.codigo}}</td>
+                  <td><a routerLink="/metricaMesProduto/{{projeto.id}}">métricas</a></td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

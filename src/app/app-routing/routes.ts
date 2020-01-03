@@ -83,6 +83,8 @@ import { ListaDispositivoPorVersaoComponent } from '../lista-dispositivo-por-ver
 import { ProjetoUsuarioComponent } from '../projeto-usuario/projeto-usuario.component';
 import { ProjetoUsuarioDetalheComponent } from '../projeto-usuario-detalhe/projeto-usuario-detalhe.component';
 import { CosmeticCenterOportunidadeComponent } from '../cosmetic-center-oportunidade/cosmetic-center-oportunidade.component';
+import { ProjetoMetricaProdutoComponent } from '../projeto-metrica-produto/projeto-metrica-produto.component';
+import { MetricaMesProdutoComponent } from '../metrica-mes-produto/metrica-mes-produto.component';
 
 
 export const routes : Routes = [
@@ -210,6 +212,9 @@ export const routes : Routes = [
     { path: 'projetosUsuario/:id' , component : ProjetoUsuarioDetalheComponent },
 
     { path: 'cosmeticCenterOportunidades' , component : CosmeticCenterOportunidadeComponent },
+
+    { path: 'projetoMetricaProduto' , component: ProjetoMetricaProdutoComponent },
+    { path: 'metricaMesProduto/:id' , component: MetricaMesProdutoComponent },
 
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

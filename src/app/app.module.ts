@@ -223,6 +223,8 @@ import { ListaDispositivoPorVersaoComponent } from './lista-dispositivo-por-vers
 import { ProjetoUsuarioComponent } from './projeto-usuario/projeto-usuario.component';
 import { ProjetoUsuarioDetalheComponent } from './projeto-usuario-detalhe/projeto-usuario-detalhe.component';
 import { CosmeticCenterOportunidadeComponent } from './cosmetic-center-oportunidade/cosmetic-center-oportunidade.component';
+import { ProjetoMetricaProdutoComponent } from './projeto-metrica-produto/projeto-metrica-produto.component';
+import { MetricaMesProdutoComponent } from './metrica-mes-produto/metrica-mes-produto.component';
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -444,7 +446,11 @@ registerLocaleData(localePt, 'pt-BR');
 
     ProjetoUsuarioDetalheComponent,
 
-    CosmeticCenterOportunidadeComponent
+    CosmeticCenterOportunidadeComponent,
+
+    ProjetoMetricaProdutoComponent,
+
+    MetricaMesProdutoComponent
 
   ],
   entryComponents: [

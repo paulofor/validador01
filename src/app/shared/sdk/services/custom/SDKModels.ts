@@ -76,6 +76,8 @@ import { Cosmetic_OportunidadeDia } from '../../models/Cosmetic_OportunidadeDia'
 import { ContagemProduto } from '../../models/ContagemProduto';
 import { LojaVirtual } from '../../models/LojaVirtual';
 import { NotificacaoApp } from '../../models/NotificacaoApp';
+import { PagSeguro } from '../../models/PagSeguro';
+import { DsUsuario } from '../../models/DsUsuario';
 
 export interface Models { [name: string]: any }
 
@@ -159,6 +161,8 @@ export class SDKModels {
     ContagemProduto: ContagemProduto,
     LojaVirtual: LojaVirtual,
     NotificacaoApp: NotificacaoApp,
+    PagSeguro: PagSeguro,
+    DsUsuario: DsUsuario,
     
   };
 

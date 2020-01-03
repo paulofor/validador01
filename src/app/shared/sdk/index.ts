@@ -124,6 +124,8 @@ import { Cosmetic_OportunidadeDiaApi } from './services/custom/Cosmetic_Oportuni
 import { ContagemProdutoApi } from './services/custom/ContagemProduto';
 import { LojaVirtualApi } from './services/custom/LojaVirtual';
 import { NotificacaoAppApi } from './services/custom/NotificacaoApp';
+import { PagSeguroApi } from './services/custom/PagSeguro';
+import { DsUsuarioApi } from './services/custom/DsUsuario';
 /**
 * @module SDKBrowserModule
 * @description
@@ -230,6 +232,8 @@ export class SDKBrowserModule {
         ContagemProdutoApi,
         LojaVirtualApi,
         NotificacaoAppApi,
+        PagSeguroApi,
+        DsUsuarioApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
 

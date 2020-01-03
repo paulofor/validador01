@@ -555,6 +555,8 @@ export class UsuarioProdutoApi extends BaseLoopBackApi {
    * Data properties:
    *
    *  - `dias` – `{number}` - 
+   *
+   *  - `status` – `{string}` - 
    */
   public PeriodoGratuito(chave: any, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";

@@ -75,5 +75,7 @@ export * from './Cosmetic_OportunidadeDia';
 export * from './ContagemProduto';
 export * from './LojaVirtual';
 export * from './NotificacaoApp';
+export * from './PagSeguro';
+export * from './DsUsuario';
 export * from './BaseModels';
 export * from './FireLoopRef';

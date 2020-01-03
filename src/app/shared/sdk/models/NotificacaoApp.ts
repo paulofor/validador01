@@ -13,7 +13,9 @@ export interface NotificacaoAppInterface {
   "badge"?: string;
   "cor"?: string;
   "tokenFcm"?: string;
+  "erroEnvio"?: string;
   "id"?: number;
+  "projetoMySqlId"?: number;
   "dispositivoUsuarioId"?: number;
   "usuarioProdutoId"?: number;
 }
@@ -30,7 +32,9 @@ export class NotificacaoApp implements NotificacaoAppInterface {
   "badge": string;
   "cor": string;
   "tokenFcm": string;
+  "erroEnvio": string;
   "id": number;
+  "projetoMySqlId": number;
   "dispositivoUsuarioId": number;
   "usuarioProdutoId": number;
   constructor(data?: NotificacaoAppInterface) {
@@ -110,8 +114,16 @@ export class NotificacaoApp implements NotificacaoAppInterface {
           name: 'tokenFcm',
           type: 'string'
         },
+        "erroEnvio": {
+          name: 'erroEnvio',
+          type: 'string'
+        },
         "id": {
           name: 'id',
+          type: 'number'
+        },
+        "projetoMySqlId": {
+          name: 'projetoMySqlId',
           type: 'number'
         },
         "dispositivoUsuarioId": {

@@ -8,16 +8,36 @@ import { ProjetoMySql, ProjetoMySqlApi } from '../shared/sdk';
 })
 export class MetricaMesProdutoComponent implements OnInit {
 
+  ano = 2020;
+  mes = 1;
+  idProjeto = 32
 
-  projeto : ProjetoMySql;
+  projeto: ProjetoMySql;
+  nomeMes : string;
 
-  constructor(private srv:ProjetoMySqlApi) { }
+  diaBase : Date = new Date();
 
+  constructor(private srv: ProjetoMySqlApi) { }
+
+ 
   ngOnInit() {
+    this.nomeMes = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"][this.diaBase.getMonth()];
+    this.diaBase = new Date();
+    this.carregaMes();
   }
 
   carregaMes() {
-    
+    let filtro = { "include": { "relation": "dsUsuarios", "scope": 
+        { 
+          "where": { "and": [{ "numMes": this.diaBase.getMonth() + 1 }, { "numAno": this.diaBase.getFullYear() }] }, 
+          "order": "dia" 
+        } } }
+    this.srv.findById(this.idProjeto, filtro)
+      .subscribe((resultado: ProjetoMySql) => {
+        this.projeto = resultado;
+      })
+
+
   }
 
 }

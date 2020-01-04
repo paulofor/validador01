@@ -214,7 +214,7 @@ export const routes : Routes = [
     { path: 'cosmeticCenterOportunidades' , component : CosmeticCenterOportunidadeComponent },
 
     { path: 'projetoMetricaProduto' , component: ProjetoMetricaProdutoComponent },
-    { path: 'metricaMesProduto/:id' , component: MetricaMesProdutoComponent },
+    { path: 'metricaMesProduto/:id/:mes/:ano' , component: MetricaMesProdutoComponent },
 
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

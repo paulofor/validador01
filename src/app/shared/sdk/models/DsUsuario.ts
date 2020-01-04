@@ -13,7 +13,7 @@ export interface DsUsuarioInterface {
   "numMes"?: number;
   "numAno"?: number;
   "qtdeAssinatura"?: number;
-  "qtdeTotalAssinatura"?: any;
+  "qtdeTotalAssinatura"?: number;
   "qtdeFluxoAssinatura"?: number;
   "qtdePeriodoGratuito"?: number;
 }
@@ -30,7 +30,7 @@ export class DsUsuario implements DsUsuarioInterface {
   "numMes": number;
   "numAno": number;
   "qtdeAssinatura": number;
-  "qtdeTotalAssinatura": any;
+  "qtdeTotalAssinatura": number;
   "qtdeFluxoAssinatura": number;
   "qtdePeriodoGratuito": number;
   constructor(data?: DsUsuarioInterface) {
@@ -112,7 +112,7 @@ export class DsUsuario implements DsUsuarioInterface {
         },
         "qtdeTotalAssinatura": {
           name: 'qtdeTotalAssinatura',
-          type: 'any'
+          type: 'number'
         },
         "qtdeFluxoAssinatura": {
           name: 'qtdeFluxoAssinatura',

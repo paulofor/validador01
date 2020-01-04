@@ -2,9 +2,11 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
-        <div class="card">
+        <div class="card" *ngIf="projeto">
           <div class="header">
-            <h4 class="title">Métricas - {{nomeMes}}/{{diaBase.getFullYear()}}</h4>
+            <h4 class="title">{{projeto.nome}} - {{nomeMes}}/{{numAno}}</h4>
+            <button padding class="btn btn-primary btn-sm " routerLink="/metricaMesProduto/{{idProjeto}}/{{anteriorMes}}/{{anteriorAno}}">Anterior</button>
+            <button padding class="btn btn-primary btn-sm " routerLink="/metricaMesProduto/{{idProjeto}}/{{proximoMes}}/{{proximoAno}}">Próximo</button>
           </div>
           <div class="content table-responsive table-full-width">
             <table class="table table-hover table-striped">
@@ -12,22 +14,22 @@
                 <tr>
                   <th width="10%">Dia</th>
                   <th width="10%">Nova Instalação</th>
-                  <th width="15%">Tot Instalado</th>
+                  <th width="10%">Tot Instalado</th>
                   <th width="10%">Abriu App</th>
                   <th width="10%">Periodo Gratuito</th>
                   <th width="10%">Fluxo Assinatura</th>
-                  <th width="15%">Tot Assinante</th>
+                  <th width="10%">Tot Assinante</th>
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let dia of projeto.dsUsuarios">
-                  <td>{{dia.dia | date: 'dd/MM' }}</td>
-                  <td>{{dia.instalacao}}</td>
+                  <td>{{dia.dia | date: 'dd/MM' : 'UTC'}}</td>
+                  <td>{{dia.qtdeInstalacao}}</td>
                   <td>{{dia.qtdeAtivoNotificacao}}</td>
                   <td>{{dia.qtdeAbreAplicacao}}</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>{{dia.qtdePeriodoGratuito}}</td>
+                  <td>{{dia.qtdeFluxoAssinatura}}</td>
+                  <td>{{dia.qtdeTotalAssinatura}}</td>
                 </tr>
               </tbody>
             </table>

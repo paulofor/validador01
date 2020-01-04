@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjetoMySql, ProjetoMySqlApi } from '../shared/sdk';
+import { DS_MES } from '../constantes/base.url';
+import { Params, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-metrica-mes-produto',
@@ -8,34 +10,78 @@ import { ProjetoMySql, ProjetoMySqlApi } from '../shared/sdk';
 })
 export class MetricaMesProdutoComponent implements OnInit {
 
-  ano = 2020;
-  mes = 1;
-  idProjeto = 32
+  idProjeto;
 
-  projeto: ProjetoMySql;
-  nomeMes : string;
+  projeto: ProjetoMySql = null;
+  nomeMes: string;
+  numMes : number;
+  numAno : number;
 
-  diaBase : Date = new Date();
+  proximoMes: number;
+  proximoAno: number;
+  anteriorMes: number;
+  anteriorAno: number;
 
-  constructor(private srv: ProjetoMySqlApi) { }
+  constructor(private srv: ProjetoMySqlApi, private route: ActivatedRoute, ) { }
 
- 
+
   ngOnInit() {
-    this.nomeMes = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"][this.diaBase.getMonth()];
-    this.diaBase = new Date();
     this.carregaMes();
   }
 
+  calculaDeslocamento() {
+    this.proximoMes = this.numMes + 1;
+    if (this.proximoMes == 13) {
+      this.proximoMes = 1;
+      this.proximoAno = this.numAno + 1;
+    } else {
+      this.proximoAno = this.numAno;
+    }
+    this.anteriorMes = this.numMes - 1;
+    if (this.anteriorMes == 0) {
+      this.anteriorMes = 12;
+      this.anteriorAno = this.numAno - 1;
+    } else {
+      this.anteriorAno = this.numAno;
+    }
+
+  }
+
+
+
   carregaMes() {
-    let filtro = { "include": { "relation": "dsUsuarios", "scope": 
-        { 
-          "where": { "and": [{ "numMes": this.diaBase.getMonth() + 1 }, { "numAno": this.diaBase.getFullYear() }] }, 
-          "order": "dia" 
-        } } }
-    this.srv.findById(this.idProjeto, filtro)
-      .subscribe((resultado: ProjetoMySql) => {
-        this.projeto = resultado;
-      })
+
+    this.route.params.subscribe((params: Params) => {
+      this.idProjeto = params['id'];
+      this.numMes = Number(params['mes']);
+      this.numAno = Number(params['ano']);
+      this.nomeMes = DS_MES[this.numMes - 1];
+      this.calculaDeslocamento();
+      console.log('Mes: ' , this.nomeMes);
+      let filtro = {
+        "include": {
+          "relation": "dsUsuarios", 
+          "scope":
+          {
+            "where": {
+              "and": [
+                { "numMes": this.numMes },
+                { "numAno": this.numAno }
+              ]
+            },
+            "order": "dia"
+          }
+        }
+      };
+
+      this.srv.findById(this.idProjeto, filtro)
+        .subscribe((resultado: ProjetoMySql) => {
+          this.projeto = resultado;
+        })
+
+
+    })
+
 
 
   }

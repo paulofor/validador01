@@ -8,12 +8,16 @@ import { ProjetoMySql, ProjetoMySqlApi } from '../shared/sdk';
 })
 export class ProjetoMetricaProdutoComponent implements OnInit {
 
-  projetos : ProjetoMySql[]
+  projetos : ProjetoMySql[];
+
+  mes: number;
+  ano: number;
 
   constructor(private srv: ProjetoMySqlApi) { }
 
   ngOnInit() {
     this.carregaProjeto();
+    this.montaData();
   }
 
   carregaProjeto() {
@@ -21,6 +25,12 @@ export class ProjetoMetricaProdutoComponent implements OnInit {
       .subscribe((result: ProjetoMySql[]) => {
         this.projetos = result;
       })
+  }
+
+  montaData() {
+    let dataAtual = new Date();
+    this.mes = dataAtual.getMonth() + 1;
+    this.ano = dataAtual.getFullYear();
   }
 
 }

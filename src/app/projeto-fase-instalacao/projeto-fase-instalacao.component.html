@@ -25,16 +25,21 @@
                 <tr *ngFor="let projeto of projetos">
                   <td>{{projeto.nome}}</td>
                   <td><a routerLink="/listaItemValorProjeto/{{projeto.id}}">item valor</a></td>
+
+                  <td><a routerLink="/itemValidacaoProjeto/{{projeto.id}}">item validação</a></td>
+                  <td><a routerLink="/paginaValidacaoGerenciador/{{projeto.id}}">página validação</a></td>
+                  <td><a routerLink="/paginaInstalacaoGerenciador/{{projeto.id}}">página instalação</a></td>
+                  <td><a routerLink="/anuncioAppGerenciador/{{projeto.id}}">anúncio app</a></td>
                   <td>
                     <button color="primary" mat-button routerLink="/presencaLojaProjeto/{{projeto.id}}">
                       Presença Loja
                     </button>
                   </td>
-                  <td><a routerLink="/itemValidacaoProjeto/{{projeto.id}}">item validação</a></td>
-                  <td><a routerLink="/paginaValidacaoGerenciador/{{projeto.id}}">página validação</a></td>
-                  <td><a routerLink="/paginaInstalacaoGerenciador/{{projeto.id}}">página instalação</a></td>
-                  <td><a routerLink="/anuncioAppGerenciador/{{projeto.id}}">anúncio app</a></td>
-                  <td><a routerLink="/versaoAppLista/{{projeto.id}}">versão app</a></td>
+                  <td>
+                    <button color="primary" mat-button routerLink="/versaoAppLista/{{projeto.id}}">
+                      Versão App
+                    </button>
+                  </td>
                   <td>
                     <button color="primary" mat-button routerLink="/listaCampanhaPorProjeto/{{projeto.id}}">
                       Campanhas

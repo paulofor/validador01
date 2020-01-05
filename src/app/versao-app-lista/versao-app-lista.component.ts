@@ -26,14 +26,11 @@ export class VersaoAppListaComponent implements OnInit {
   carregaAnuncios(){
     this.route.params.subscribe((params: Params) => {
       this.idProjeto = params['id'];
-      this.srvProjeto.findById(this.idProjeto, {'include' : 'versaoApps'})
+      let filtro = {"include" : {"relation" : "versaoApps" , "scope" : {"order" : "id desc"} }};
+      this.srvProjeto.findById(this.idProjeto, filtro)
         .subscribe((resultado:ProjetoMySql) => {
           this.projeto = resultado;
         })
-      //this.srv.find({'where' : {'projetoMySqlId' : this.idProjeto }})
-      //  .subscribe((result: VersaoApp[]) => {
-      //    this.lista = result;
-      //  });
     })
   }
 

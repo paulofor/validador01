@@ -48,5 +48,11 @@ export class PresencaLojaListaComponent implements OnInit {
     });
   }
 
+  atualizar() {
+    this.srv.CalculaMetricaProjeto(this.idProjeto)
+      .subscribe((result) => {
+        this.carregaPresencas();
+      })
+  }
 
 }

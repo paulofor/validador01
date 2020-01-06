@@ -1,6 +1,6 @@
-export const BASE_URL = 'https://www.digicom.inf.br:21040'; // desen
+//export const BASE_URL = 'https://www.digicom.inf.br:21040'; // desen
 //export const BASE_URL = 'http://localhost:21101';
-//export const BASE_URL = 'https://www.digicom.inf.br:21101'; // prod
+export const BASE_URL = 'https://www.digicom.inf.br:21101'; // prod
 
 export const API_VERSION = 'api';
 

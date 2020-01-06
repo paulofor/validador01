@@ -71,7 +71,7 @@
   <mat-form-field class="example-full-width">
     <mat-select placeholder="Presença Loja" #presencaLojaId [(ngModel)]="item.presencaLojaId" name="presencaLojaId">
       <mat-option *ngFor="let presenca of listaPresencaLoja" [value]="presenca.id">
-        {{ presenca.descricaoBreve }}
+        {{ presenca.descricaoBreve }} ({{presenca.quantidadeCampanha}} - {{{item.mediaTaxaConversao | number : '1.1-1'}% - R$ {{item.mediaCustoConversao | number : '1.2-2'}}})
       </mat-option>
     </mat-select>
   </mat-form-field>

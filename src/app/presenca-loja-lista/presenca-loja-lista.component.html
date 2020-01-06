@@ -2,19 +2,25 @@
   <div class="header">
     <h4 class="title">Lista Presença</h4>
     <button class="btn btn-primary btn-sm"  (click)="openDialog()">Novo</button>
+    <button class="btn btn-primary btn-sm"  (click)="atualizar()">Atualizar</button>
   </div>
   <div class="content table-responsive table-full-width">
     <table *ngIf="listaPresenca" class="table table-hover table-striped">
       <thead>
         <tr>
-          <th width="90%">Descrição</th>
-          <th></th>
+          <th width="40%">Descrição</th>
+          <th>Campanhas</th>
+          <th>Tx Conv.(%)</th>
+          <th>Custo Conv.(R$)</th>
           <th></th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let item of listaPresenca">
           <td>{{item.descricaoBreve}}</td>
+          <td>{{item.quantidadeCampanha}}</td>
+          <td>{{item.mediaTaxaConversao | number : '1.1-1'}}</td>
+          <td>{{item.mediaCustoConversao | number : '1.2-2'}}</td>
           <td align="right">
             <a routerLink="/presencaLojaDetalhe/{{item.id}}">Detalhe</a>
           </td>

@@ -96,7 +96,7 @@ export class DsUsuarioApi extends BaseLoopBackApi {
    *
    * @param {object} data Request data.
    *
-   *  - `idAplicacao` – `{number}` - 
+   *  - `idProjeto` – `{number}` - 
    *
    *  - `ano` – `{number}` - Ano com quatro dígitos
    *
@@ -109,14 +109,14 @@ export class DsUsuarioApi extends BaseLoopBackApi {
    * This usually means the response is a `DsUsuario` object.)
    * </em>
    */
-  public CriaDiaAnoAplicacao(idAplicacao: any, ano: any, customHeaders?: Function): Observable<any> {
+  public CriaDiaAnoProjeto(idProjeto: any, ano: any, customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/DsUsuarios/criaDiaAnoAplicacao";
+    "/DsUsuarios/criaDiaAnoProjeto";
     let _routeParams: any = {};
     let _postBody: any = {};
     let _urlParams: any = {};
-    if (typeof idAplicacao !== 'undefined' && idAplicacao !== null) _urlParams.idAplicacao = idAplicacao;
+    if (typeof idProjeto !== 'undefined' && idProjeto !== null) _urlParams.idProjeto = idProjeto;
     if (typeof ano !== 'undefined' && ano !== null) _urlParams.ano = ano;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
@@ -135,10 +135,7 @@ export class DsUsuarioApi extends BaseLoopBackApi {
    *   populated with the actual data once the response is returned
    *   from the server.
    *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `DsUsuario` object.)
-   * </em>
+   * Atualiza a tabela toda.
    */
   public AtualizaPeriodo(customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
@@ -160,7 +157,7 @@ export class DsUsuarioApi extends BaseLoopBackApi {
    *
    *  - `mes` – `{number}` - 
    *
-   *  - `ano` – `{number}` - 
+   *  - `ano` – `{number}` - Atualiza apenas para um mês - atualmente: tabela toda.
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -191,7 +188,7 @@ export class DsUsuarioApi extends BaseLoopBackApi {
    *
    * @param {object} data Request data.
    *
-   *  - `ano` – `{number}` - 
+   *  - `ano` – `{number}` - Atualiza apenas um ano - atualmente: tabela toda.
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned

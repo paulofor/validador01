@@ -1,3 +1,5 @@
+import { BASE_URL } from "../../constantes/base.url";
+
 /* tslint:disable */
 /**
 * @module LoopBackConfig
@@ -20,7 +22,7 @@
 * }
 **/
 export class LoopBackConfig {
-  private static path: string = 'https://www.digicom.inf.br:21040';
+  private static path: string = BASE_URL;
   private static version: string | number = 'api';
   private static authPrefix: string = '';
   private static debug: boolean = true;

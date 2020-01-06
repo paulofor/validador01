@@ -2338,7 +2338,7 @@ export class CampanhaAdsApi extends BaseLoopBackApi {
   }
 
   /**
-   * vai retornar uma lista com as campanhas que precisam atualizar resultados
+   * vai retornar uma lista com as campanhas que precisam atualizar resultados 45 dias para tras.
    *
    * @returns {object[]} An empty reference that will be
    *   populated with the actual data once the response is returned

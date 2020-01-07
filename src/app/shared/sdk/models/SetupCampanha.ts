@@ -29,6 +29,7 @@ export interface SetupCampanhaInterface {
   "mediaImpressao"?: number;
   "mediaClique"?: number;
   "quantidadeCampanha"?: number;
+  "mediaCustoTotal"?: number;
   "id"?: number;
   campanhaAds?: CampanhaAds[];
 }
@@ -58,6 +59,7 @@ export class SetupCampanha implements SetupCampanhaInterface {
   "mediaImpressao": number;
   "mediaClique": number;
   "quantidadeCampanha": number;
+  "mediaCustoTotal": number;
   "id": number;
   campanhaAds: CampanhaAds[];
   constructor(data?: SetupCampanhaInterface) {
@@ -187,6 +189,10 @@ export class SetupCampanha implements SetupCampanhaInterface {
         },
         "quantidadeCampanha": {
           name: 'quantidadeCampanha',
+          type: 'number'
+        },
+        "mediaCustoTotal": {
+          name: 'mediaCustoTotal',
           type: 'number'
         },
         "id": {

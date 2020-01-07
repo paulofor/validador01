@@ -62,7 +62,7 @@
   <mat-form-field class="example-full-width">
     <mat-select placeholder="Setup" #setupCampanhaId [(ngModel)]="item.setupCampanhaId" name="setupCampanhaId">
       <mat-option *ngFor="let setup of listaSetup" [value]="setup.id">
-        {{ setup.nome }} ( {{setup.quantidadeCampanha}}  - R$ {{setup.mediaCustoConversao | number : '1.2-2'}} )
+        {{ setup.nome }} ( {{setup.quantidadeCampanha}}  - R$ {{setup.mediaCustoConversao | number : '1.2-2'}} R$ {{setup.mediaCustoTotal | number : '1.2-2'}})
       </mat-option>
     </mat-select>
   </mat-form-field>  

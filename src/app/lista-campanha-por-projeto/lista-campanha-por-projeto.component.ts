@@ -51,7 +51,7 @@ export class ListaCampanhaPorProjetoComponent implements OnInit {
       this.carregaLista();
     });
     this.dialog.open(CampanhaEditaCriaV2Component, {
-      width: '800px',
+      width: '1000px',
       maxHeight: '550px', 
       data: {
         idProjeto: this.idProjeto,

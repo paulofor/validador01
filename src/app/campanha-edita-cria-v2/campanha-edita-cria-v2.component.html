@@ -46,7 +46,7 @@
     <mat-select placeholder="Anúncio Aplicação" #anuncioAplicativoId [(ngModel)]="item.anuncioAplicativoId"
       name="anuncioAplicativoId">
       <mat-option *ngFor="let anuncio of listaAnuncioApp" [value]="anuncio.id">
-        {{ anuncio.titulo1 }} ({{anuncio.quantidadeCampanha}} - Impr:{{anuncio.mediaImpressao | number : '1.0-0'}} ctr:{{anuncio.mediaCtr | number : '1.1-1'}} cpc: {{anuncio.mediaCpc | number : '1.2-2'}})
+        {{ anuncio.titulo1 }} ( Qtde:{{anuncio.quantidadeCampanha}}  Impr:{{anuncio.mediaImpressao | number : '1.0-0'}}  Ctr:{{anuncio.mediaCtr | number : '1.1-1'}}%  Cpc:R$ {{anuncio.mediaCpc | number : '1.2-2'}} )
       </mat-option>
     </mat-select>
   </mat-form-field>
@@ -62,7 +62,7 @@
   <mat-form-field class="example-full-width">
     <mat-select placeholder="Setup" #setupCampanhaId [(ngModel)]="item.setupCampanhaId" name="setupCampanhaId">
       <mat-option *ngFor="let setup of listaSetup" [value]="setup.id">
-        {{ setup.nome }} ( {{setup.quantidadeCampanha}}  - R$ {{setup.mediaCustoConversao | number : '1.2-2'}} R$ {{setup.mediaCustoTotal | number : '1.2-2'}})
+        {{ setup.nome }} ( Qtde:{{setup.quantidadeCampanha}}  Conv: R${{setup.mediaCustoConversao | number : '1.2-2'}}  Total: R${{setup.mediaCustoTotal | number : '1.2-2'}} )
       </mat-option>
     </mat-select>
   </mat-form-field>  
@@ -71,7 +71,7 @@
   <mat-form-field class="example-full-width">
     <mat-select placeholder="Presença Loja" #presencaLojaId [(ngModel)]="item.presencaLojaId" name="presencaLojaId">
       <mat-option *ngFor="let presenca of listaPresencaLoja" [value]="presenca.id">
-        {{ presenca.descricaoBreve }} ({{presenca.quantidadeCampanha}} - {{presenca.mediaTaxaConversao | number : '1.1-1'}}% - R$ {{presenca.mediaCustoConversao | number : '1.2-2'}})
+        {{ presenca.descricaoBreve }} ( Qtde:{{presenca.quantidadeCampanha}}  Conv:{{presenca.mediaTaxaConversao | number : '1.1-1'}}%  Conv: R${{presenca.mediaCustoConversao | number : '1.2-2'}})
       </mat-option>
     </mat-select>
   </mat-form-field>

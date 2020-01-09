@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProjetoMySql, ProjetoMySqlApi } from '../shared/sdk';
+import { ProjetoMySql, ProjetoMySqlApi, DsUsuario, DsUsuarioApi } from '../shared/sdk';
 import { DS_MES } from '../constantes/base.url';
 import { Params, ActivatedRoute } from '@angular/router';
 
@@ -22,7 +22,7 @@ export class MetricaMesProdutoComponent implements OnInit {
   anteriorMes: number;
   anteriorAno: number;
 
-  constructor(private srv: ProjetoMySqlApi, private route: ActivatedRoute, ) { }
+  constructor(private srv: ProjetoMySqlApi, private route: ActivatedRoute, private dsUsuario : DsUsuarioApi) { }
 
 
   ngOnInit() {
@@ -47,6 +47,12 @@ export class MetricaMesProdutoComponent implements OnInit {
 
   }
 
+  atualiza() {
+    this.dsUsuario.AtualizaPeriodo()
+      .subscribe((result) => {
+        this.carregaMes();
+      })
+  }
 
 
   carregaMes() {

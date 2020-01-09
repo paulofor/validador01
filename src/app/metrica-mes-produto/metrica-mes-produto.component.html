@@ -7,6 +7,7 @@
             <h4 class="title">{{projeto.nome}} - {{nomeMes}}/{{numAno}}</h4>
             <button padding class="btn btn-primary btn-sm " routerLink="/metricaMesProduto/{{idProjeto}}/{{anteriorMes}}/{{anteriorAno}}">Anterior</button>
             <button padding class="btn btn-primary btn-sm " routerLink="/metricaMesProduto/{{idProjeto}}/{{proximoMes}}/{{proximoAno}}">Próximo</button>
+            <button padding class="btn btn-primary btn-sm " (click)="atualiza()">Atualizar</button>
           </div>
           <div class="content table-responsive table-full-width">
             <table class="table table-hover table-striped">

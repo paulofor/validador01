@@ -236,6 +236,7 @@ export class SDKBrowserModule {
         DsUsuarioApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
+
       ]
     };
   }

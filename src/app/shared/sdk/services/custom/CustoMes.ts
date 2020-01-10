@@ -154,6 +154,34 @@ export class CustoMesApi extends BaseLoopBackApi {
   }
 
   /**
+   * Criar dados com projeto null, totalizacao para meses
+   *
+   * @param {object} data Request data.
+   *
+   *  - `ano` – `{number}` - 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `CustoMes` object.)
+   * </em>
+   */
+  public CriaAno(ano: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/CustoMes/criaAno";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof ano !== 'undefined' && ano !== null) _urlParams.ano = ano;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * The name of the model represented by this $resource,
    * i.e. `CustoMes`.
    */

@@ -1,0 +1,27 @@
+<div class="card" >
+  <div class="header">
+    <h4 class="title">Indicador Produto</h4>
+    <td><button mat-raised-button color="primary" (click)="openDialog()">Novo</button></td>
+
+  </div>
+
+  <div class="content table-responsive table-full-width">
+    <table class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th width="20%">Nome</th>
+          <th width="80%"></th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr *ngFor="let indicador of listaIndicador">
+          <td>{{indicador.nome}}</td>
+          <td>{{indicador.formula}}</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+</div>

@@ -78,6 +78,8 @@ import { LojaVirtual } from '../../models/LojaVirtual';
 import { NotificacaoApp } from '../../models/NotificacaoApp';
 import { PagSeguro } from '../../models/PagSeguro';
 import { DsUsuario } from '../../models/DsUsuario';
+import { RecursoProduto } from '../../models/RecursoProduto';
+import { IndicadorProduto } from '../../models/IndicadorProduto';
 
 export interface Models { [name: string]: any }
 
@@ -163,6 +165,8 @@ export class SDKModels {
     NotificacaoApp: NotificacaoApp,
     PagSeguro: PagSeguro,
     DsUsuario: DsUsuario,
+    RecursoProduto: RecursoProduto,
+    IndicadorProduto: IndicadorProduto,
     
   };
 

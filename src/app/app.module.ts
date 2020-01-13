@@ -225,6 +225,10 @@ import { ProjetoUsuarioDetalheComponent } from './projeto-usuario-detalhe/projet
 import { CosmeticCenterOportunidadeComponent } from './cosmetic-center-oportunidade/cosmetic-center-oportunidade.component';
 import { ProjetoMetricaProdutoComponent } from './projeto-metrica-produto/projeto-metrica-produto.component';
 import { MetricaMesProdutoComponent } from './metrica-mes-produto/metrica-mes-produto.component';
+import { ListaRecursoProdutoComponent } from './lista-recurso-produto/lista-recurso-produto.component';
+import { EditaRecursoProdutoComponent } from './edita-recurso-produto/edita-recurso-produto.component';
+import { EditaIndicadorProdutoComponent } from './edita-indicador-produto/edita-indicador-produto.component';
+import { ListaIndicadorProdutoComponent } from './lista-indicador-produto/lista-indicador-produto.component';
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -450,7 +454,15 @@ registerLocaleData(localePt, 'pt-BR');
 
     ProjetoMetricaProdutoComponent,
 
-    MetricaMesProdutoComponent
+    MetricaMesProdutoComponent,
+
+    ListaRecursoProdutoComponent,
+
+    EditaRecursoProdutoComponent,
+
+    EditaIndicadorProdutoComponent,
+
+    ListaIndicadorProdutoComponent
 
   ],
   entryComponents: [

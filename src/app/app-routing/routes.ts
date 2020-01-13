@@ -85,6 +85,10 @@ import { ProjetoUsuarioDetalheComponent } from '../projeto-usuario-detalhe/proje
 import { CosmeticCenterOportunidadeComponent } from '../cosmetic-center-oportunidade/cosmetic-center-oportunidade.component';
 import { ProjetoMetricaProdutoComponent } from '../projeto-metrica-produto/projeto-metrica-produto.component';
 import { MetricaMesProdutoComponent } from '../metrica-mes-produto/metrica-mes-produto.component';
+import { ListaIndicadorProdutoComponent } from '../lista-indicador-produto/lista-indicador-produto.component';
+import { ListaRecursoProdutoComponent } from '../lista-recurso-produto/lista-recurso-produto.component';
+import { EditaIndicadorProdutoComponent } from '../edita-indicador-produto/edita-indicador-produto.component';
+import { EditaRecursoProdutoComponent } from '../edita-recurso-produto/edita-recurso-produto.component';
 
 
 export const routes : Routes = [
@@ -215,6 +219,12 @@ export const routes : Routes = [
 
     { path: 'projetoMetricaProduto' , component: ProjetoMetricaProdutoComponent },
     { path: 'metricaMesProduto/:id/:mes/:ano' , component: MetricaMesProdutoComponent },
+
+    { path: 'indicadorProduto' , component: ListaIndicadorProdutoComponent},
+    { path: 'indicadorProduto/:id' , component: EditaIndicadorProdutoComponent },
+    { path: 'recursoProduto' , component : ListaRecursoProdutoComponent},
+    { path: 'recursoProduto/:id' , component: EditaRecursoProdutoComponent },
+
 
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

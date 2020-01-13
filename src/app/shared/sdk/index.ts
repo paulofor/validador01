@@ -126,6 +126,8 @@ import { LojaVirtualApi } from './services/custom/LojaVirtual';
 import { NotificacaoAppApi } from './services/custom/NotificacaoApp';
 import { PagSeguroApi } from './services/custom/PagSeguro';
 import { DsUsuarioApi } from './services/custom/DsUsuario';
+import { RecursoProdutoApi } from './services/custom/RecursoProduto';
+import { IndicadorProdutoApi } from './services/custom/IndicadorProduto';
 /**
 * @module SDKBrowserModule
 * @description
@@ -234,6 +236,8 @@ export class SDKBrowserModule {
         NotificacaoAppApi,
         PagSeguroApi,
         DsUsuarioApi,
+        RecursoProdutoApi,
+        IndicadorProdutoApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
 

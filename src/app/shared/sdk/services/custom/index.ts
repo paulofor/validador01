@@ -77,5 +77,7 @@ export * from './LojaVirtual';
 export * from './NotificacaoApp';
 export * from './PagSeguro';
 export * from './DsUsuario';
+export * from './RecursoProduto';
+export * from './IndicadorProduto';
 export * from './SDKModels';
 export * from './logger.service';

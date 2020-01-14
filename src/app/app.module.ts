@@ -230,6 +230,7 @@ import { EditaRecursoProdutoComponent } from './edita-recurso-produto/edita-recu
 import { EditaIndicadorProdutoComponent } from './edita-indicador-produto/edita-indicador-produto.component';
 import { ListaIndicadorProdutoComponent } from './lista-indicador-produto/lista-indicador-produto.component';
 
+
 registerLocaleData(localePt, 'pt-BR');
 
 @NgModule({
@@ -464,6 +465,7 @@ registerLocaleData(localePt, 'pt-BR');
 
     ListaIndicadorProdutoComponent
 
+ 
   ],
   entryComponents: [
     ProjetoCanvasCriaComponent,

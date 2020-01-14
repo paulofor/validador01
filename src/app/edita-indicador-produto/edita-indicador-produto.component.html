@@ -3,8 +3,13 @@
 <form *ngIf="item" class="example-full-width" (ngSubmit)="onSubmit()">
 
   <mat-dialog-content>
+
     <mat-form-field class="example-full-width">
       <input matInput maxlength="100" #nome [(ngModel)]="item.nome" name="nome" placeholder="Nome" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput maxlength="200" #formula [(ngModel)]="item.formula" name="formula" placeholder="Formula" />
     </mat-form-field>
 
 

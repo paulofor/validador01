@@ -10,7 +10,8 @@
       <thead>
         <tr>
           <th width="40%">Nome</th>
-          <th width="60%"></th>
+          <th width="55%"></th>
+          <th width="5%"></th>
         </tr>
       </thead>
       <tbody>
@@ -18,6 +19,9 @@
         <tr *ngFor="let recurso of listaRecurso">
           <td>{{recurso.nome}}</td>
           <td></td>
+          <td>
+            <button class="btn btn-primary btn-sm " (click)="openDialog(recurso)">Alterar</button>
+          </td>
         </tr>
 
       </tbody>

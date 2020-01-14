@@ -128,6 +128,8 @@ import { PagSeguroApi } from './services/custom/PagSeguro';
 import { DsUsuarioApi } from './services/custom/DsUsuario';
 import { RecursoProdutoApi } from './services/custom/RecursoProduto';
 import { IndicadorProdutoApi } from './services/custom/IndicadorProduto';
+import { FunilNegocioApi } from './services/custom/FunilNegocio';
+import { EtapaClienteApi } from './services/custom/EtapaCliente';
 /**
 * @module SDKBrowserModule
 * @description
@@ -238,6 +240,8 @@ export class SDKBrowserModule {
         DsUsuarioApi,
         RecursoProdutoApi,
         IndicadorProdutoApi,
+        FunilNegocioApi,
+        EtapaClienteApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
 

@@ -1,0 +1,31 @@
+<div class="card" >
+  <div class="header">
+    <h4 class="title">Recurso Produto</h4>
+    <td><button mat-raised-button color="primary" (click)="openDialog()">Novo</button></td>
+
+  </div>
+
+  <div class="content table-responsive table-full-width">
+    <table class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th width="40%">Nome</th>
+          <th width="55%"></th>
+          <th width="5%"></th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr *ngFor="let recurso of listaRecurso">
+          <td>{{recurso.nome}}</td>
+          <td></td>
+          <td>
+            <button class="btn btn-primary btn-sm " (click)="openDialog(recurso)">Alterar</button>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+</div>

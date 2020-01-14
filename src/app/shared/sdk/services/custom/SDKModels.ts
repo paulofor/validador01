@@ -80,6 +80,8 @@ import { PagSeguro } from '../../models/PagSeguro';
 import { DsUsuario } from '../../models/DsUsuario';
 import { RecursoProduto } from '../../models/RecursoProduto';
 import { IndicadorProduto } from '../../models/IndicadorProduto';
+import { FunilNegocio } from '../../models/FunilNegocio';
+import { EtapaCliente } from '../../models/EtapaCliente';
 
 export interface Models { [name: string]: any }
 
@@ -167,6 +169,8 @@ export class SDKModels {
     DsUsuario: DsUsuario,
     RecursoProduto: RecursoProduto,
     IndicadorProduto: IndicadorProduto,
+    FunilNegocio: FunilNegocio,
+    EtapaCliente: EtapaCliente,
     
   };
 

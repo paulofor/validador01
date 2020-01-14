@@ -79,5 +79,7 @@ export * from './PagSeguro';
 export * from './DsUsuario';
 export * from './RecursoProduto';
 export * from './IndicadorProduto';
+export * from './FunilNegocio';
+export * from './EtapaCliente';
 export * from './SDKModels';
 export * from './logger.service';

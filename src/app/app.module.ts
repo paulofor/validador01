@@ -229,7 +229,7 @@ import { ListaRecursoProdutoComponent } from './lista-recurso-produto/lista-recu
 import { EditaRecursoProdutoComponent } from './edita-recurso-produto/edita-recurso-produto.component';
 import { EditaIndicadorProdutoComponent } from './edita-indicador-produto/edita-indicador-produto.component';
 import { ListaIndicadorProdutoComponent } from './lista-indicador-produto/lista-indicador-produto.component';
-import { ListaFunilPorProjetoComponent } from './lista-funil-por-projeto/lista-funil-por-projeto.component';
+
 import { ListaFunilComponent } from './lista-funil/lista-funil.component';
 import { EditaFunilComponent } from './edita-funil/edita-funil.component';
 import { ListaEtapaFunilComponent } from './lista-etapa-funil/lista-etapa-funil.component';
@@ -468,8 +468,6 @@ registerLocaleData(localePt, 'pt-BR');
     EditaIndicadorProdutoComponent,
 
     ListaIndicadorProdutoComponent,
-
-    ListaFunilPorProjetoComponent,
 
     ListaFunilComponent,
 

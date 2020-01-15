@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FunilNegocio, FunilNegocioApi } from 'src/app/shared/sdk';
+import { FunilNegocio, FunilNegocioApi } from '../shared/sdk';
 import { Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FunilNegocio, FunilNegocioApi } from 'src/app/shared/sdk';
+import { FunilNegocio, FunilNegocioApi } from '../shared/sdk';
 import { MatDialog } from '@angular/material';
-import { EditaFunilComponent } from 'src/app/edita-funil/edita-funil.component';
+import { EditaFunilComponent } from '../edita-funil/edita-funil.component';
 
 @Component({
   selector: 'app-lista-funil',

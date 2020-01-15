@@ -89,8 +89,10 @@ import { ListaIndicadorProdutoComponent } from '../lista-indicador-produto/lista
 import { ListaRecursoProdutoComponent } from '../lista-recurso-produto/lista-recurso-produto.component';
 import { EditaIndicadorProdutoComponent } from '../edita-indicador-produto/edita-indicador-produto.component';
 import { EditaRecursoProdutoComponent } from '../edita-recurso-produto/edita-recurso-produto.component';
-import { ListaFunilComponent } from 'src/app/lista-funil/lista-funil.component';
-import { ListaEtapaFunilComponent } from 'src/app/lista-etapa-funil/lista-etapa-funil.component';
+import { ListaFunilComponent } from '../lista-funil/lista-funil.component';
+import { ListaEtapaFunilComponent } from '../lista-etapa-funil/lista-etapa-funil.component';
+
+
 
 
 export const routes : Routes = [

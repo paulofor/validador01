@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FunilNegocio, FunilNegocioApi } from '../shared/sdk';
 
 @Component({
   selector: 'app-lista-etapa-funil',
@@ -7,9 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaEtapaFunilComponent implements OnInit {
 
-  constructor() { }
+  funil:FunilNegocio
+
+  constructor(private srv:FunilNegocioApi) { }
 
   ngOnInit() {
+  }
+
+  openDialog(item?) {
+    /*
+    this.dialog.afterAllClosed.subscribe(result => {
+      console.log('Dialog result: ${result}');
+      this.carregaIndicador();
+    });
+    this.dialog.open(EditaIndicadorProdutoComponent, {
+      width: '800px',
+      data: {
+        item: item
+      }
+    });
+    */
   }
 
 }

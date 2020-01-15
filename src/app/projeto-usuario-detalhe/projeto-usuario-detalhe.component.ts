@@ -38,6 +38,30 @@ export class ProjetoUsuarioDetalheComponent implements OnInit {
     }
   }
 
+  getModelo(usuario: UsuarioProduto) {
+    if (usuario.dispositivoUsuarios.length>0 && usuario.dispositivoUsuarios[0].tokenFcm) {
+      return usuario.dispositivoUsuarios[0].codigoDispositivo;
+    } else {
+      return "-";
+    }
+  }
+
+  getVersao(usuario: UsuarioProduto) {
+    if (usuario.dispositivoUsuarios.length>0 && usuario.dispositivoUsuarios[0].tokenFcm) {
+      return usuario.dispositivoUsuarios[0].versaoSo;
+    } else {
+      return "-";
+    }
+  }
+
+  getUuid(usuario: UsuarioProduto) {
+    if (usuario.dispositivoUsuarios.length>0 && usuario.dispositivoUsuarios[0].tokenFcm) {
+      return usuario.dispositivoUsuarios[0].uuid;
+    } else {
+      return "-";
+    }
+  }
+
   carregaUsuario() {
     this.route.params.subscribe((params: Params) => {
       let id = params['id'];

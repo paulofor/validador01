@@ -10,10 +10,13 @@
             <table class="table table-hover table-striped">
               <thead>
                 <tr>
-                  <th width="20%">ID</th>
-                  <th width="25%">Criação</th>
-                  <th width="25%">Último Acesso</th>
-                  <th width="30%">Chave</th>
+                  <th width="5%">ID</th>
+                  <th width="10%">Criação</th>
+                  <th width="10%">Último Acesso</th>
+                  <th width="10%">Chave</th>
+                  <th width="15%">Modelo</th>
+                  <th width="10%">Android</th>
+                  <th widht="40%">uuid</th>
                 </tr>
               </thead>
               <tbody>
@@ -22,6 +25,9 @@
                   <td>{{usuario.dataHoraCriacao  | date : 'dd/MM/yyy HH:mm:ss' : 'UTC-3'}}</td>
                   <td>{{usuario.dataUltimoAcesso  | date : 'dd/MM/yyy HH:mm:ss' : 'UTC-3'}}</td>
                   <td>{{getToken(usuario)}}</td>
+                  <td>{{getModelo(usuario)}}</td>
+                  <td>{{getVersao(usuario)}}</td>
+                  <td>{{getUuid(usuario)}}</td>
                 </tr>
               </tbody>
             </table>

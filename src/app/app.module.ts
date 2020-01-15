@@ -233,6 +233,7 @@ import { ListaIndicadorProdutoComponent } from './lista-indicador-produto/lista-
 import { ListaFunilComponent } from './lista-funil/lista-funil.component';
 import { EditaFunilComponent } from './edita-funil/edita-funil.component';
 import { ListaEtapaFunilComponent } from './lista-etapa-funil/lista-etapa-funil.component';
+import { EditaEtapaFunilComponent } from './edita-etapa-funil/edita-etapa-funil.component';
 
 
 registerLocaleData(localePt, 'pt-BR');
@@ -473,7 +474,9 @@ registerLocaleData(localePt, 'pt-BR');
 
     EditaFunilComponent,
 
-    ListaEtapaFunilComponent
+    ListaEtapaFunilComponent,
+
+    EditaEtapaFunilComponent
 
  
   ],
@@ -524,7 +527,9 @@ registerLocaleData(localePt, 'pt-BR');
     PresencaLojaEditaComponent,
     IdeiaMelhoriaEditaComponent,
     EditaItemValorPorProjetoComponent,
-    AssociaItemValorVersaoAppComponent
+    AssociaItemValorVersaoAppComponent,
+    EditaFunilComponent,
+    EditaEtapaFunilComponent
 
   ],
   imports: [

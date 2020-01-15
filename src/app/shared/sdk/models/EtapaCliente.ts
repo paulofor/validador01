@@ -3,12 +3,14 @@
 declare var Object: any;
 export interface EtapaClienteInterface {
   "nome"?: string;
+  "posicao"?: number;
   "id"?: number;
   "funilNegocioId"?: number;
 }
 
 export class EtapaCliente implements EtapaClienteInterface {
   "nome": string;
+  "posicao": number;
   "id": number;
   "funilNegocioId": number;
   constructor(data?: EtapaClienteInterface) {
@@ -47,6 +49,10 @@ export class EtapaCliente implements EtapaClienteInterface {
         "nome": {
           name: 'nome',
           type: 'string'
+        },
+        "posicao": {
+          name: 'posicao',
+          type: 'number'
         },
         "id": {
           name: 'id',

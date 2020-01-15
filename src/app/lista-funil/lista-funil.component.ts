@@ -15,9 +15,10 @@ export class ListaFunilComponent implements OnInit {
   constructor(private srv: FunilNegocioApi, private dialog: MatDialog) { }
 
   ngOnInit() {
+    this.carregaFunil();
   }
 
-  carregaIndicador() {
+  carregaFunil() {
     this.srv.find()
       .subscribe((result:FunilNegocio[]) => {
         this.listaFunil = result;
@@ -27,7 +28,7 @@ export class ListaFunilComponent implements OnInit {
   openDialog(item?) {
     this.dialog.afterAllClosed.subscribe(result => {
       console.log('Dialog result: ${result}');
-      this.carregaIndicador();
+      this.carregaFunil();
     });
     this.dialog.open(EditaFunilComponent, {
       width: '800px',

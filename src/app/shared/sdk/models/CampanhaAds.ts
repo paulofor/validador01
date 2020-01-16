@@ -16,7 +16,8 @@ import {
   GrupoAnuncioAplicativo,
   ClienteExperimental,
   DispositivoUsuario,
-  AnuncioAplicacaoResultado
+  AnuncioAplicacaoResultado,
+  MetricaCampanha
 } from '../index';
 
 declare var Object: any;
@@ -74,6 +75,7 @@ export interface CampanhaAdsInterface {
   clienteExperimentals?: ClienteExperimental[];
   dispositivoUsuarios?: DispositivoUsuario[];
   anuncioAplicacaoResultados?: AnuncioAplicacaoResultado[];
+  metricaCampanhas?: MetricaCampanha[];
 }
 
 export class CampanhaAds implements CampanhaAdsInterface {
@@ -130,6 +132,7 @@ export class CampanhaAds implements CampanhaAdsInterface {
   clienteExperimentals: ClienteExperimental[];
   dispositivoUsuarios: DispositivoUsuario[];
   anuncioAplicacaoResultados: AnuncioAplicacaoResultado[];
+  metricaCampanhas: MetricaCampanha[];
   constructor(data?: CampanhaAdsInterface) {
     Object.assign(this, data);
   }
@@ -445,6 +448,14 @@ export class CampanhaAds implements CampanhaAdsInterface {
           name: 'anuncioAplicacaoResultados',
           type: 'AnuncioAplicacaoResultado[]',
           model: 'AnuncioAplicacaoResultado',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'campanhaAdsId'
+        },
+        metricaCampanhas: {
+          name: 'metricaCampanhas',
+          type: 'MetricaCampanha[]',
+          model: 'MetricaCampanha',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'campanhaAdsId'

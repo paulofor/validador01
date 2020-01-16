@@ -81,5 +81,6 @@ export * from './RecursoProduto';
 export * from './IndicadorProduto';
 export * from './FunilNegocio';
 export * from './EtapaCliente';
+export * from './MetricaCampanha';
 export * from './BaseModels';
 export * from './FireLoopRef';

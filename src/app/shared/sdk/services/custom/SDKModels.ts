@@ -82,6 +82,7 @@ import { RecursoProduto } from '../../models/RecursoProduto';
 import { IndicadorProduto } from '../../models/IndicadorProduto';
 import { FunilNegocio } from '../../models/FunilNegocio';
 import { EtapaCliente } from '../../models/EtapaCliente';
+import { MetricaCampanha } from '../../models/MetricaCampanha';
 
 export interface Models { [name: string]: any }
 
@@ -171,6 +172,7 @@ export class SDKModels {
     IndicadorProduto: IndicadorProduto,
     FunilNegocio: FunilNegocio,
     EtapaCliente: EtapaCliente,
+    MetricaCampanha: MetricaCampanha,
     
   };
 

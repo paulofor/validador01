@@ -131,6 +131,7 @@ import { IndicadorProdutoApi } from './services/custom/IndicadorProduto';
 import { FunilNegocioApi } from './services/custom/FunilNegocio';
 import { EtapaClienteApi } from './services/custom/EtapaCliente';
 import { MetricaCampanhaApi } from './services/custom/MetricaCampanha';
+import { ValorMetricaEtapaApi } from './services/custom/ValorMetricaEtapa';
 /**
 * @module SDKBrowserModule
 * @description
@@ -244,6 +245,7 @@ export class SDKBrowserModule {
         FunilNegocioApi,
         EtapaClienteApi,
         MetricaCampanhaApi,
+        ValorMetricaEtapaApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
 

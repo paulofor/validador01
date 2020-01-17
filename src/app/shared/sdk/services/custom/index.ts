@@ -82,5 +82,6 @@ export * from './IndicadorProduto';
 export * from './FunilNegocio';
 export * from './EtapaCliente';
 export * from './MetricaCampanha';
+export * from './ValorMetricaEtapa';
 export * from './SDKModels';
 export * from './logger.service';

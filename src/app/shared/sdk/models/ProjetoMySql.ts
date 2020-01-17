@@ -18,7 +18,8 @@ import {
   CustoMes,
   UsuarioProduto,
   NotificacaoApp,
-  DsUsuario
+  DsUsuario,
+  ValorMetricaEtapa
 } from '../index';
 
 declare var Object: any;
@@ -55,6 +56,7 @@ export interface ProjetoMySqlInterface {
   usuarioProdutos?: UsuarioProduto[];
   notificacaoApps?: NotificacaoApp[];
   dsUsuarios?: DsUsuario[];
+  valorMetricaEtapas?: ValorMetricaEtapa[];
 }
 
 export class ProjetoMySql implements ProjetoMySqlInterface {
@@ -90,6 +92,7 @@ export class ProjetoMySql implements ProjetoMySqlInterface {
   usuarioProdutos: UsuarioProduto[];
   notificacaoApps: NotificacaoApp[];
   dsUsuarios: DsUsuario[];
+  valorMetricaEtapas: ValorMetricaEtapa[];
   constructor(data?: ProjetoMySqlInterface) {
     Object.assign(this, data);
   }
@@ -325,6 +328,14 @@ export class ProjetoMySql implements ProjetoMySqlInterface {
           name: 'dsUsuarios',
           type: 'DsUsuario[]',
           model: 'DsUsuario',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'projetoMySqlId'
+        },
+        valorMetricaEtapas: {
+          name: 'valorMetricaEtapas',
+          type: 'ValorMetricaEtapa[]',
+          model: 'ValorMetricaEtapa',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'projetoMySqlId'

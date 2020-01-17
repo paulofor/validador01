@@ -9,8 +9,8 @@
     <table class="table table-hover table-striped">
       <thead>
         <tr>
-          <th width="40%">Nome</th>
-          <th width="50%"></th>
+          <th width="30%">Nome</th>
+          <th width="600%"></th>
           <th width="5%"></th>
           <th width="5%"></th>
         </tr>
@@ -19,7 +19,7 @@
 
         <tr *ngFor="let item of funil.etapaClientes">
           <td>{{item.nome}}</td>
-          <td></td>
+          <td>{{item.descricao}}</td>
           <td>
             <button class="btn btn-primary btn-sm " (click)="subir(item)">Subir</button>
           </td>

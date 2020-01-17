@@ -83,6 +83,7 @@ import { IndicadorProduto } from '../../models/IndicadorProduto';
 import { FunilNegocio } from '../../models/FunilNegocio';
 import { EtapaCliente } from '../../models/EtapaCliente';
 import { MetricaCampanha } from '../../models/MetricaCampanha';
+import { ValorMetricaEtapa } from '../../models/ValorMetricaEtapa';
 
 export interface Models { [name: string]: any }
 
@@ -173,6 +174,7 @@ export class SDKModels {
     FunilNegocio: FunilNegocio,
     EtapaCliente: EtapaCliente,
     MetricaCampanha: MetricaCampanha,
+    ValorMetricaEtapa: ValorMetricaEtapa,
     
   };
 

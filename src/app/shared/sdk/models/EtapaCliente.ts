@@ -1,18 +1,29 @@
 /* tslint:disable */
+import {
+  ValorMetricaEtapa
+} from '../index';
 
 declare var Object: any;
 export interface EtapaClienteInterface {
   "nome"?: string;
   "posicao"?: number;
+  "descricao"?: string;
+  "formula"?: string;
+  "sql"?: string;
   "id"?: number;
   "funilNegocioId"?: number;
+  valorMetricaEtapas?: ValorMetricaEtapa[];
 }
 
 export class EtapaCliente implements EtapaClienteInterface {
   "nome": string;
   "posicao": number;
+  "descricao": string;
+  "formula": string;
+  "sql": string;
   "id": number;
   "funilNegocioId": number;
+  valorMetricaEtapas: ValorMetricaEtapa[];
   constructor(data?: EtapaClienteInterface) {
     Object.assign(this, data);
   }
@@ -54,6 +65,18 @@ export class EtapaCliente implements EtapaClienteInterface {
           name: 'posicao',
           type: 'number'
         },
+        "descricao": {
+          name: 'descricao',
+          type: 'string'
+        },
+        "formula": {
+          name: 'formula',
+          type: 'string'
+        },
+        "sql": {
+          name: 'sql',
+          type: 'string'
+        },
         "id": {
           name: 'id',
           type: 'number'
@@ -64,6 +87,14 @@ export class EtapaCliente implements EtapaClienteInterface {
         },
       },
       relations: {
+        valorMetricaEtapas: {
+          name: 'valorMetricaEtapas',
+          type: 'ValorMetricaEtapa[]',
+          model: 'ValorMetricaEtapa',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'etapaClienteId'
+        },
       }
     }
   }

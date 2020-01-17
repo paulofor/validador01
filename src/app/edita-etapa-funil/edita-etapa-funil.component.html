@@ -7,6 +7,18 @@
       <input matInput maxlength="100" #nome [(ngModel)]="item.nome" name="nome" placeholder="Nome" />
     </mat-form-field>
 
+    <mat-form-field class="example-full-width">
+      <input matInput  #descricao [(ngModel)]="item.descricao" name="descricao" placeholder="Descrição" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput  #formula [(ngModel)]="item.formula" name="formula" placeholder="Fórmula" />
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput  #sql [(ngModel)]="item.sql" name="sql" placeholder="Sql" />
+    </mat-form-field>
+
 
   </mat-dialog-content>
 

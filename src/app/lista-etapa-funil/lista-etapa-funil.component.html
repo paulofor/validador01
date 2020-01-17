@@ -10,7 +10,8 @@
       <thead>
         <tr>
           <th width="40%">Nome</th>
-          <th width="55%"></th>
+          <th width="50%"></th>
+          <th width="5%"></th>
           <th width="5%"></th>
         </tr>
       </thead>
@@ -19,6 +20,9 @@
         <tr *ngFor="let item of funil.etapaClientes">
           <td>{{item.nome}}</td>
           <td></td>
+          <td>
+            <button class="btn btn-primary btn-sm " (click)="subir(item)">Subir</button>
+          </td>
           <td>
             <button class="btn btn-primary btn-sm " (click)="openDialog(item)">Alterar</button>
           </td>

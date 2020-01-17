@@ -31,7 +31,7 @@ export class EditaEtapaFunilComponent implements OnInit {
   onSubmit() {
     console.log('Model: ' + JSON.stringify(this.item));
     if (!this.item.id) {
-      this.servico.create(this.item, (err, obj) => {
+      this.servico.CriaPosicionada(this.item, (err, obj) => {
         console.log("Erro:" + err.message);
       }).subscribe((e: any) => {
         console.log(JSON.stringify(e));

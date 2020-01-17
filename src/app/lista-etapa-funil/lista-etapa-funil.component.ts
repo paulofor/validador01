@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FunilNegocio, FunilNegocioApi } from '../shared/sdk';
+import { FunilNegocio, FunilNegocioApi, EtapaClienteApi } from '../shared/sdk';
 import { ActivatedRoute } from '@angular/router';
 import { Params } from '@angular/router';
 import { EditaEtapaFunilComponent } from '../edita-etapa-funil/edita-etapa-funil.component';
@@ -14,9 +14,9 @@ export class ListaEtapaFunilComponent implements OnInit {
 
   funil:FunilNegocio;
 
-  filtro = { "include": "etapaClientes" };
+  filtro ={"include" : {"relation" : "etapaClientes" , "scope" : {"order" : "posicao" } } };
 
-  constructor(private route: ActivatedRoute, private srv:FunilNegocioApi, private dialog: MatDialog) { }
+  constructor(private route: ActivatedRoute, private srv:FunilNegocioApi, private dialog: MatDialog, private srvEtapa: EtapaClienteApi) { }
 
   ngOnInit() {
     this.carregaFunilEtapa();
@@ -31,6 +31,13 @@ export class ListaEtapaFunilComponent implements OnInit {
           this.funil = result;
         })
     })
+  }
+
+  subir(item) {
+    this.srvEtapa.DeslocaPosicao(item.id,-1)
+      .subscribe((result) => {
+        this.carregaFunilEtapa();
+      })
   }
 
   openDialog(item?) {

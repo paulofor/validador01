@@ -61,4 +61,11 @@ export class ListaSetupCampanhaComponent implements OnInit {
     return (item.permiteEdicao == 1);
   }
 
+  atualiza() {
+    this.srv.CalculaMetrica()
+      .subscribe((result) => {
+        this.carregaLista();
+      })
+  }
+
 }

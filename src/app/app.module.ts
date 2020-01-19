@@ -573,6 +573,7 @@ registerLocaleData(localePt, 'pt-BR');
     InternalStorage,
     ProcessoNegocioApi,
     { provide: LOCALE_ID, useValue: 'pt-BR' } 
+
   ],
   bootstrap: [AppComponent]
 })

@@ -92,6 +92,28 @@ export class Cosmetic_OportunidadeDiaApi extends BaseLoopBackApi {
   }
 
   /**
+   * chamada pelos aplicativos
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `Cosmetic_OportunidadeDia` object.)
+   * </em>
+   */
+  public ListaApp(customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = 'https://www.digicom.inf.br:21189/api/Cosmetic_OportunidadeDias/listaApp';
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * The name of the model represented by this $resource,
    * i.e. `Cosmetic_OportunidadeDia`.
    */

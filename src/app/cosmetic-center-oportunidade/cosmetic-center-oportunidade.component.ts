@@ -17,7 +17,7 @@ export class CosmeticCenterOportunidadeComponent implements OnInit {
   }
 
   carregaLista() {
-    this.oportunidadeSrv.find()
+    this.oportunidadeSrv.ListaApp()
       .subscribe((result:Cosmetic_OportunidadeDia[]) => {
         this.lista = result;
       })

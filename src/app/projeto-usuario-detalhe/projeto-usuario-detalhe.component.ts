@@ -62,6 +62,22 @@ export class ProjetoUsuarioDetalheComponent implements OnInit {
     }
   }
 
+  getIdCampanha(usuario : UsuarioProduto) {
+    if (usuario.dispositivoUsuarios.length>0 && usuario.dispositivoUsuarios[0].tokenFcm) {
+      return usuario.dispositivoUsuarios[0].campanhaAdsId;
+    } else {
+      return "-";
+    }
+  }
+
+  getIdVersaoApp(usuario : UsuarioProduto) {
+    if (usuario.dispositivoUsuarios.length>0 && usuario.dispositivoUsuarios[0].tokenFcm) {
+      return usuario.dispositivoUsuarios[0].versaoAppId;
+    } else {
+      return "-";
+    }
+  }
+
   carregaUsuario() {
     this.route.params.subscribe((params: Params) => {
       let id = params['id'];

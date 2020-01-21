@@ -40,6 +40,30 @@
     </div>
 
     <div *ngIf="urlUpload" class="content table-responsive table-full-width">
+      <img height="300" *ngIf="item.tela5" src="{{item.tela5}}">
+      <image-upload url="{{urlUpload}}" (uploadFinished)="onUploadFinished5($event)" buttonCaption="Tela 5"
+        dropBoxMessage="ou arraste aqui"></image-upload>
+    </div>
+
+    <div *ngIf="urlUpload" class="content table-responsive table-full-width">
+      <img height="300" *ngIf="item.tela6" src="{{item.tela6}}">
+      <image-upload url="{{urlUpload}}" (uploadFinished)="onUploadFinished6($event)" buttonCaption="Tela 6"
+        dropBoxMessage="ou arraste aqui"></image-upload>
+    </div>
+
+    <div *ngIf="urlUpload" class="content table-responsive table-full-width">
+      <img height="300" *ngIf="item.tela7" src="{{item.tela7}}">
+      <image-upload url="{{urlUpload}}" (uploadFinished)="onUploadFinished7($event)" buttonCaption="Tela 7"
+        dropBoxMessage="ou arraste aqui"></image-upload>
+    </div>
+
+    <div *ngIf="urlUpload" class="content table-responsive table-full-width">
+      <img height="300" *ngIf="item.tela8" src="{{item.tela8}}">
+      <image-upload url="{{urlUpload}}" (uploadFinished)="onUploadFinished8($event)" buttonCaption="Tela 8"
+        dropBoxMessage="ou arraste aqui"></image-upload>
+    </div>
+
+    <div *ngIf="urlUpload" class="content table-responsive table-full-width">
       <img height="100" *ngIf="item.icone512x512" src="{{item.icone512x512}}">
       <image-upload url="{{urlUpload}}" (uploadFinished)="onUploadFinishedIcone($event)" buttonCaption="Ícone 512x512"
         dropBoxMessage="ou arraste aqui"></image-upload>

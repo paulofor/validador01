@@ -113,6 +113,30 @@ export class PresencaLojaEditaComponent implements OnInit {
     console.log('this.item.tela4', this.item.tela4);
   }
 
+  onUploadFinished5(item: FileHolder) {
+    //console.log('onUploadFinished4', item.file.name);
+    this.item.tela5 = URL_IMAGEM + '/' +  item.serverResponse.response.body.result.files.image[0].name;
+    console.log('this.item.tela5', this.item.tela5);
+  }
+
+  onUploadFinished6(item: FileHolder) {
+    //console.log('onUploadFinished4', item.file.name);
+    this.item.tela6 = URL_IMAGEM + '/' +  item.serverResponse.response.body.result.files.image[0].name;
+    console.log('this.item.tela6', this.item.tela6);
+  }
+
+  onUploadFinished7(item: FileHolder) {
+    //console.log('onUploadFinished4', item.file.name);
+    this.item.tela7 = URL_IMAGEM + '/' +  item.serverResponse.response.body.result.files.image[0].name;
+    console.log('this.item.tela7', this.item.tela7);
+  }
+
+  onUploadFinished8(item: FileHolder) {
+    //console.log('onUploadFinished4', item.file.name);
+    this.item.tela8 = URL_IMAGEM + '/' +  item.serverResponse.response.body.result.files.image[0].name;
+    console.log('this.item.tela8', this.item.tela8);
+  }
+
 
   onUploadFinishedIcone(item: FileHolder) {
     //console.log('onUploadFinished4', item.file.name);

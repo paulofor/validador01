@@ -78,6 +78,21 @@ export class ProjetoUsuarioDetalheComponent implements OnInit {
     }
   }
 
+  getUltNotificacao(usuario : UsuarioProduto) {
+    if (usuario.notificacaoApps.length>0 && usuario.notificacaoApps[0].resultadoEnvio) {
+      return usuario.notificacaoApps[0].resultadoEnvio;
+    } else {
+      return "-";
+    }
+  }
+
+  getDataUltNotificacao(usuario : UsuarioProduto) {
+    if (usuario.notificacaoApps.length>0 && usuario.notificacaoApps[0].dataHoraCriacao) {
+      return usuario.notificacaoApps[0].dataHoraCriacao;
+    } else {
+      return "";
+    }
+  }
   carregaUsuario() {
     this.route.params.subscribe((params: Params) => {
       let id = params['id'];
@@ -85,7 +100,7 @@ export class ProjetoUsuarioDetalheComponent implements OnInit {
             {
               "where" : {"projetoMySqlId" : id },
               "order": "dataHoraCriacao DESC",
-              "include" : "dispositivoUsuarios"
+              "include" : ["dispositivoUsuarios",{"relation" : "notificacaoApps" , "scope" : {"order" : "dataHoraCriacao desc" , "limit" : "1" } }] 
             } )
         .subscribe((result:UsuarioProduto[]) => {
           console.log('ListaUsuario: ' , result);

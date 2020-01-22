@@ -16,9 +16,10 @@
                   <th width="10%">Chave</th>
                   <th width="15%">Modelo</th>
                   <th width="10%">Android</th>
-                  <th widht="30%">uuid</th>
+                  <th widht="20%">uuid</th>
                   <th widht="5%">Id Campanha</th>
                   <th widht="5%">Id VersaoApp</th>
+                  <th width="5%">Ult Notificacao</th>
                 </tr>
               </thead>
               <tbody>
@@ -32,6 +33,7 @@
                   <td>{{getUuid(usuario)}}</td>
                   <td>{{getIdCampanha(usuario)}}</td>
                   <td>{{getIdVersaoApp(usuario)}}</td>
+                  <td>{{getUltNotificacao(usuario)}} ({{getDataUltNotificacao(usuario)  | date : 'dd/MM/yyy HH:mm:ss' : 'UTC-3'}})</td>
                 </tr>
               </tbody>
             </table>

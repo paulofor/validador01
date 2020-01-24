@@ -13,12 +13,14 @@
                   <th width="30%">Projeto</th>
                   <th width="10%">Código</th>
                   <th width="5%"></th>
+                  <th width="5%"></th>
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let projeto of projetos">
                   <td>{{projeto.nome}}</td>
                   <td>{{projeto.codigo}}</td>
+                  <td><a routerLink="/metricaCampanha/{{projeto.id}}">métricas campanha</a></td>
                   <td><a routerLink="/metricaMesProduto/{{projeto.id}}/{{mes}}/{{ano}}">métricas</a></td>
                 </tr>
               </tbody>

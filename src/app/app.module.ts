@@ -234,6 +234,7 @@ import { ListaFunilComponent } from './lista-funil/lista-funil.component';
 import { EditaFunilComponent } from './edita-funil/edita-funil.component';
 import { ListaEtapaFunilComponent } from './lista-etapa-funil/lista-etapa-funil.component';
 import { EditaEtapaFunilComponent } from './edita-etapa-funil/edita-etapa-funil.component';
+import { MetricaCampanhaComponent } from './metrica-campanha/metrica-campanha.component';
 
 
 registerLocaleData(localePt, 'pt-BR');
@@ -476,7 +477,9 @@ registerLocaleData(localePt, 'pt-BR');
 
     ListaEtapaFunilComponent,
 
-    EditaEtapaFunilComponent
+    EditaEtapaFunilComponent,
+
+    MetricaCampanhaComponent
 
  
   ],

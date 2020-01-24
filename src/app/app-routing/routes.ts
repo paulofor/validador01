@@ -91,6 +91,7 @@ import { EditaIndicadorProdutoComponent } from '../edita-indicador-produto/edita
 import { EditaRecursoProdutoComponent } from '../edita-recurso-produto/edita-recurso-produto.component';
 import { ListaFunilComponent } from '../lista-funil/lista-funil.component';
 import { ListaEtapaFunilComponent } from '../lista-etapa-funil/lista-etapa-funil.component';
+import { MetricaCampanhaComponent } from '../metrica-campanha/metrica-campanha.component';
 
 
 
@@ -231,6 +232,8 @@ export const routes : Routes = [
 
     { path: 'funilNegocio' , component: ListaFunilComponent},
     { path: 'funilNegocio/:id' , component: ListaEtapaFunilComponent },
+
+    { path: 'metricaCampanha/:id' , component: MetricaCampanhaComponent }, 
 
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

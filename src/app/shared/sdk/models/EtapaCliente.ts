@@ -1,6 +1,8 @@
 /* tslint:disable */
 import {
-  ValorMetricaEtapa
+  ValorMetricaEtapa,
+  ValorEtapaFunilDia,
+  ValorEtapaFunilCampanha
 } from '../index';
 
 declare var Object: any;
@@ -13,6 +15,8 @@ export interface EtapaClienteInterface {
   "id"?: number;
   "funilNegocioId"?: number;
   valorMetricaEtapas?: ValorMetricaEtapa[];
+  valorEtapaFunilDia?: ValorEtapaFunilDia[];
+  valorEtapaFunilCampanhas?: ValorEtapaFunilCampanha[];
 }
 
 export class EtapaCliente implements EtapaClienteInterface {
@@ -24,6 +28,8 @@ export class EtapaCliente implements EtapaClienteInterface {
   "id": number;
   "funilNegocioId": number;
   valorMetricaEtapas: ValorMetricaEtapa[];
+  valorEtapaFunilDia: ValorEtapaFunilDia[];
+  valorEtapaFunilCampanhas: ValorEtapaFunilCampanha[];
   constructor(data?: EtapaClienteInterface) {
     Object.assign(this, data);
   }
@@ -91,6 +97,22 @@ export class EtapaCliente implements EtapaClienteInterface {
           name: 'valorMetricaEtapas',
           type: 'ValorMetricaEtapa[]',
           model: 'ValorMetricaEtapa',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'etapaClienteId'
+        },
+        valorEtapaFunilDia: {
+          name: 'valorEtapaFunilDia',
+          type: 'ValorEtapaFunilDia[]',
+          model: 'ValorEtapaFunilDia',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'etapaClienteId'
+        },
+        valorEtapaFunilCampanhas: {
+          name: 'valorEtapaFunilCampanhas',
+          type: 'ValorEtapaFunilCampanha[]',
+          model: 'ValorEtapaFunilCampanha',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'etapaClienteId'

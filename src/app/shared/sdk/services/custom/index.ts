@@ -83,5 +83,8 @@ export * from './FunilNegocio';
 export * from './EtapaCliente';
 export * from './MetricaCampanha';
 export * from './ValorMetricaEtapa';
+export * from './ValorEtapaFunilDia';
+export * from './ValorEtapaFunilSemana';
+export * from './ValorEtapaFunilCampanha';
 export * from './SDKModels';
 export * from './logger.service';

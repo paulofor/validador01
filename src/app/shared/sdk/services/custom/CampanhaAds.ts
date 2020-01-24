@@ -29,6 +29,7 @@ import { ClienteExperimental } from '../../models/ClienteExperimental';
 import { DispositivoUsuario } from '../../models/DispositivoUsuario';
 import { AnuncioAplicacaoResultado } from '../../models/AnuncioAplicacaoResultado';
 import { MetricaCampanha } from '../../models/MetricaCampanha';
+import { ValorEtapaFunilCampanha } from '../../models/ValorEtapaFunilCampanha';
 
 
 /**
@@ -1341,6 +1342,99 @@ export class CampanhaAdsApi extends BaseLoopBackApi {
   }
 
   /**
+   * Find a related item by id for valorEtapaFunilCampanhas.
+   *
+   * @param {any} id CampanhaAds id
+   *
+   * @param {any} fk Foreign key for valorEtapaFunilCampanhas
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `CampanhaAds` object.)
+   * </em>
+   */
+  public findByIdValorEtapaFunilCampanhas(id: any, fk: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/CampanhaAds/:id/valorEtapaFunilCampanhas/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Delete a related item by id for valorEtapaFunilCampanhas.
+   *
+   * @param {any} id CampanhaAds id
+   *
+   * @param {any} fk Foreign key for valorEtapaFunilCampanhas
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public destroyByIdValorEtapaFunilCampanhas(id: any, fk: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "DELETE";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/CampanhaAds/:id/valorEtapaFunilCampanhas/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Update a related item by id for valorEtapaFunilCampanhas.
+   *
+   * @param {any} id CampanhaAds id
+   *
+   * @param {any} fk Foreign key for valorEtapaFunilCampanhas
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `CampanhaAds` object.)
+   * </em>
+   */
+  public updateByIdValorEtapaFunilCampanhas(id: any, fk: any, data: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "PUT";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/CampanhaAds/:id/valorEtapaFunilCampanhas/:fk";
+    let _routeParams: any = {
+      id: id,
+      fk: fk
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Queries anuncioAds of CampanhaAds.
    *
    * @param {any} id CampanhaAds id
@@ -2385,6 +2479,122 @@ export class CampanhaAdsApi extends BaseLoopBackApi {
   }
 
   /**
+   * Queries valorEtapaFunilCampanhas of CampanhaAds.
+   *
+   * @param {any} id CampanhaAds id
+   *
+   * @param {object} filter 
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `CampanhaAds` object.)
+   * </em>
+   */
+  public getValorEtapaFunilCampanhas(id: any, filter: LoopBackFilter = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/CampanhaAds/:id/valorEtapaFunilCampanhas";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof filter !== 'undefined' && filter !== null) _urlParams.filter = filter;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Creates a new instance in valorEtapaFunilCampanhas of this model.
+   *
+   * @param {any} id CampanhaAds id
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `CampanhaAds` object.)
+   * </em>
+   */
+  public createValorEtapaFunilCampanhas(id: any, data: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/CampanhaAds/:id/valorEtapaFunilCampanhas";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Deletes all valorEtapaFunilCampanhas of this model.
+   *
+   * @param {any} id CampanhaAds id
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public deleteValorEtapaFunilCampanhas(id: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "DELETE";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/CampanhaAds/:id/valorEtapaFunilCampanhas";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Counts valorEtapaFunilCampanhas of CampanhaAds.
+   *
+   * @param {any} id CampanhaAds id
+   *
+   * @param {object} where Criteria to match model instances
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * Data properties:
+   *
+   *  - `count` – `{number}` - 
+   */
+  public countValorEtapaFunilCampanhas(id: any, where: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/CampanhaAds/:id/valorEtapaFunilCampanhas/count";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof where !== 'undefined' && where !== null) _urlParams.where = where;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Patch an existing model instance or insert a new one into the data source.
    *
    * @param {object} data Request data.
@@ -3123,6 +3333,39 @@ export class CampanhaAdsApi extends BaseLoopBackApi {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/CampanhaAds/:id/metricaCampanhas";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {
+      data: data
+    };
+    let _urlParams: any = {};
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Creates a new instance in valorEtapaFunilCampanhas of this model.
+   *
+   * @param {any} id CampanhaAds id
+   *
+   * @param {object} data Request data.
+   *
+   * This method expects a subset of model properties as request parameters.
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `CampanhaAds` object.)
+   * </em>
+   */
+  public createManyValorEtapaFunilCampanhas(id: any, data: any[] = [], customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/CampanhaAds/:id/valorEtapaFunilCampanhas";
     let _routeParams: any = {
       id: id
     };

@@ -19,7 +19,9 @@ import {
   UsuarioProduto,
   NotificacaoApp,
   DsUsuario,
-  ValorMetricaEtapa
+  ValorMetricaEtapa,
+  ValorEtapaFunilDia,
+  ValorEtapaFunilSemana
 } from '../index';
 
 declare var Object: any;
@@ -57,6 +59,8 @@ export interface ProjetoMySqlInterface {
   notificacaoApps?: NotificacaoApp[];
   dsUsuarios?: DsUsuario[];
   valorMetricaEtapas?: ValorMetricaEtapa[];
+  valorEtapaFunilDia?: ValorEtapaFunilDia[];
+  valorEtapaFunilSemanas?: ValorEtapaFunilSemana[];
 }
 
 export class ProjetoMySql implements ProjetoMySqlInterface {
@@ -93,6 +97,8 @@ export class ProjetoMySql implements ProjetoMySqlInterface {
   notificacaoApps: NotificacaoApp[];
   dsUsuarios: DsUsuario[];
   valorMetricaEtapas: ValorMetricaEtapa[];
+  valorEtapaFunilDia: ValorEtapaFunilDia[];
+  valorEtapaFunilSemanas: ValorEtapaFunilSemana[];
   constructor(data?: ProjetoMySqlInterface) {
     Object.assign(this, data);
   }
@@ -336,6 +342,22 @@ export class ProjetoMySql implements ProjetoMySqlInterface {
           name: 'valorMetricaEtapas',
           type: 'ValorMetricaEtapa[]',
           model: 'ValorMetricaEtapa',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'projetoMySqlId'
+        },
+        valorEtapaFunilDia: {
+          name: 'valorEtapaFunilDia',
+          type: 'ValorEtapaFunilDia[]',
+          model: 'ValorEtapaFunilDia',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'projetoMySqlId'
+        },
+        valorEtapaFunilSemanas: {
+          name: 'valorEtapaFunilSemanas',
+          type: 'ValorEtapaFunilSemana[]',
+          model: 'ValorEtapaFunilSemana',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'projetoMySqlId'

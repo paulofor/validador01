@@ -1,7 +1,8 @@
 /* tslint:disable */
 import {
   PlanoExecucao,
-  ValorMetricaEtapa
+  ValorMetricaEtapa,
+  ValorEtapaFunilSemana
 } from '../index';
 
 declare var Object: any;
@@ -14,6 +15,7 @@ export interface SemanaInterface {
   "id"?: number;
   planoExecucaos?: PlanoExecucao[];
   valorMetricaEtapas?: ValorMetricaEtapa[];
+  valorEtapaFunilSemanas?: ValorEtapaFunilSemana[];
 }
 
 export class Semana implements SemanaInterface {
@@ -25,6 +27,7 @@ export class Semana implements SemanaInterface {
   "id": number;
   planoExecucaos: PlanoExecucao[];
   valorMetricaEtapas: ValorMetricaEtapa[];
+  valorEtapaFunilSemanas: ValorEtapaFunilSemana[];
   constructor(data?: SemanaInterface) {
     Object.assign(this, data);
   }
@@ -96,6 +99,14 @@ export class Semana implements SemanaInterface {
           name: 'valorMetricaEtapas',
           type: 'ValorMetricaEtapa[]',
           model: 'ValorMetricaEtapa',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'semanaId'
+        },
+        valorEtapaFunilSemanas: {
+          name: 'valorEtapaFunilSemanas',
+          type: 'ValorEtapaFunilSemana[]',
+          model: 'ValorEtapaFunilSemana',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'semanaId'

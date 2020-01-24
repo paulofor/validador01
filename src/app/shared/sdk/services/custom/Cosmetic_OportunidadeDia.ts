@@ -105,7 +105,8 @@ export class Cosmetic_OportunidadeDiaApi extends BaseLoopBackApi {
    */
   public ListaApp(customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
-    let _url: string = 'https://www.digicom.inf.br:21189/api/Cosmetic_OportunidadeDias/listaApp';
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/Cosmetic_OportunidadeDia/listaApp";
     let _routeParams: any = {};
     let _postBody: any = {};
     let _urlParams: any = {};

@@ -45,7 +45,7 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CookieBrowser } from './storage/cookie.browser';
 import { StorageBrowser } from './storage/storage.browser';
 import { SocketBrowser } from './sockets/socket.browser';
-
+import { SocketDriver } from './sockets/socket.driver';
 import { SocketConnection } from './sockets/socket.connections';
 import { RealTime } from './services/core/real.time';
 import { UserApi } from './services/custom/User';
@@ -132,6 +132,9 @@ import { FunilNegocioApi } from './services/custom/FunilNegocio';
 import { EtapaClienteApi } from './services/custom/EtapaCliente';
 import { MetricaCampanhaApi } from './services/custom/MetricaCampanha';
 import { ValorMetricaEtapaApi } from './services/custom/ValorMetricaEtapa';
+import { ValorEtapaFunilDiaApi } from './services/custom/ValorEtapaFunilDia';
+import { ValorEtapaFunilSemanaApi } from './services/custom/ValorEtapaFunilSemana';
+import { ValorEtapaFunilCampanhaApi } from './services/custom/ValorEtapaFunilCampanha';
 /**
 * @module SDKBrowserModule
 * @description
@@ -246,9 +249,12 @@ export class SDKBrowserModule {
         EtapaClienteApi,
         MetricaCampanhaApi,
         ValorMetricaEtapaApi,
+        ValorEtapaFunilDiaApi,
+        ValorEtapaFunilSemanaApi,
+        ValorEtapaFunilCampanhaApi,
         internalStorageProvider,
-        { provide: SDKStorage, useClass: StorageBrowser }
-
+        { provide: SDKStorage, useClass: StorageBrowser },
+        { provide: SocketDriver, useClass: SocketBrowser }
       ]
     };
   }

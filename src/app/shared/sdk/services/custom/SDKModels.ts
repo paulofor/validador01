@@ -84,6 +84,9 @@ import { FunilNegocio } from '../../models/FunilNegocio';
 import { EtapaCliente } from '../../models/EtapaCliente';
 import { MetricaCampanha } from '../../models/MetricaCampanha';
 import { ValorMetricaEtapa } from '../../models/ValorMetricaEtapa';
+import { ValorEtapaFunilDia } from '../../models/ValorEtapaFunilDia';
+import { ValorEtapaFunilSemana } from '../../models/ValorEtapaFunilSemana';
+import { ValorEtapaFunilCampanha } from '../../models/ValorEtapaFunilCampanha';
 
 export interface Models { [name: string]: any }
 
@@ -175,6 +178,9 @@ export class SDKModels {
     EtapaCliente: EtapaCliente,
     MetricaCampanha: MetricaCampanha,
     ValorMetricaEtapa: ValorMetricaEtapa,
+    ValorEtapaFunilDia: ValorEtapaFunilDia,
+    ValorEtapaFunilSemana: ValorEtapaFunilSemana,
+    ValorEtapaFunilCampanha: ValorEtapaFunilCampanha,
     
   };
 

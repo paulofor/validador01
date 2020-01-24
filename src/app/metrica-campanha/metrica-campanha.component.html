@@ -1,3 +1,37 @@
-<p>
-  metrica-campanha works!
-</p>
+<div *ngIf="listaCampanha" class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">Campanhas - Geral</h4>
+          </div>
+          <div class="content table-responsive table-full-width">
+            <table class="table table-hover table-striped" style="font-size: 12px !important">
+
+              <thead>
+                <tr>
+                  <th width="10%">Titulo</th>
+                  <ng-container *ngFor="let etapa of listaEtapaFunil">
+                    <th width="5%">{{etapa.nome}}</th>
+                  </ng-container>
+                </tr>
+              </thead>
+              <tbody>
+                <ng-container *ngFor="let campanha of listaCampanha">
+                  <tr *ngIf="campanha.valorEtapaFunilCampanhas.length>0">
+                    <td>{{campanha.nome}}</td>
+                    <ng-container *ngFor="let valor of campanha.valorEtapaFunilCampanhas">
+                      <td>{{valor.valor}}</td>
+                    </ng-container>
+                  </tr>
+                </ng-container>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

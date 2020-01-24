@@ -17,7 +17,8 @@ import {
   ClienteExperimental,
   DispositivoUsuario,
   AnuncioAplicacaoResultado,
-  MetricaCampanha
+  MetricaCampanha,
+  ValorEtapaFunilCampanha
 } from '../index';
 
 declare var Object: any;
@@ -76,6 +77,7 @@ export interface CampanhaAdsInterface {
   dispositivoUsuarios?: DispositivoUsuario[];
   anuncioAplicacaoResultados?: AnuncioAplicacaoResultado[];
   metricaCampanhas?: MetricaCampanha[];
+  valorEtapaFunilCampanhas?: ValorEtapaFunilCampanha[];
 }
 
 export class CampanhaAds implements CampanhaAdsInterface {
@@ -133,6 +135,7 @@ export class CampanhaAds implements CampanhaAdsInterface {
   dispositivoUsuarios: DispositivoUsuario[];
   anuncioAplicacaoResultados: AnuncioAplicacaoResultado[];
   metricaCampanhas: MetricaCampanha[];
+  valorEtapaFunilCampanhas: ValorEtapaFunilCampanha[];
   constructor(data?: CampanhaAdsInterface) {
     Object.assign(this, data);
   }
@@ -456,6 +459,14 @@ export class CampanhaAds implements CampanhaAdsInterface {
           name: 'metricaCampanhas',
           type: 'MetricaCampanha[]',
           model: 'MetricaCampanha',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'campanhaAdsId'
+        },
+        valorEtapaFunilCampanhas: {
+          name: 'valorEtapaFunilCampanhas',
+          type: 'ValorEtapaFunilCampanha[]',
+          model: 'ValorEtapaFunilCampanha',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'campanhaAdsId'

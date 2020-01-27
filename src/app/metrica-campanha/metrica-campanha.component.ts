@@ -41,7 +41,6 @@ export class MetricaCampanhaComponent implements OnInit {
       "include": {
         "relation": "valorEtapaFunilCampanhas",
         "scope" : { "include": "etapaCliente" },
-        "order" : "posicao"
       }
     };
     this.srv.find(filtro)

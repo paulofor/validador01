@@ -6,6 +6,7 @@ export interface ValorEtapaFunilDiaInterface {
   "valor"?: number;
   "taxa"?: number;
   "custo"?: number;
+  "posicaoEtapa"?: number;
   "id"?: number;
   "projetoMySqlId"?: number;
   "etapaClienteId"?: number;
@@ -16,6 +17,7 @@ export class ValorEtapaFunilDia implements ValorEtapaFunilDiaInterface {
   "valor": number;
   "taxa": number;
   "custo": number;
+  "posicaoEtapa": number;
   "id": number;
   "projetoMySqlId": number;
   "etapaClienteId": number;
@@ -66,6 +68,10 @@ export class ValorEtapaFunilDia implements ValorEtapaFunilDiaInterface {
         },
         "custo": {
           name: 'custo',
+          type: 'number'
+        },
+        "posicaoEtapa": {
+          name: 'posicaoEtapa',
           type: 'number'
         },
         "id": {

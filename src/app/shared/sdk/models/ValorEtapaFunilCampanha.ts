@@ -10,6 +10,7 @@ export interface ValorEtapaFunilCampanhaInterface {
   "valor"?: number;
   "taxa"?: number;
   "custo"?: number;
+  "posicaoEtapa"?: number;
   etapaCliente?: EtapaCliente;
 }
 
@@ -19,6 +20,7 @@ export class ValorEtapaFunilCampanha implements ValorEtapaFunilCampanhaInterface
   "valor": number;
   "taxa": number;
   "custo": number;
+  "posicaoEtapa": number;
   etapaCliente: EtapaCliente;
   constructor(data?: ValorEtapaFunilCampanhaInterface) {
     Object.assign(this, data);
@@ -71,6 +73,10 @@ export class ValorEtapaFunilCampanha implements ValorEtapaFunilCampanhaInterface
         },
         "custo": {
           name: 'custo',
+          type: 'number'
+        },
+        "posicaoEtapa": {
+          name: 'posicaoEtapa',
           type: 'number'
         },
       },

@@ -7,6 +7,7 @@ export interface ValorEtapaFunilSemanaInterface {
   "valor"?: number;
   "taxa"?: number;
   "custo"?: number;
+  "posicaoEtapa"?: number;
 }
 
 export class ValorEtapaFunilSemana implements ValorEtapaFunilSemanaInterface {
@@ -15,6 +16,7 @@ export class ValorEtapaFunilSemana implements ValorEtapaFunilSemanaInterface {
   "valor": number;
   "taxa": number;
   "custo": number;
+  "posicaoEtapa": number;
   constructor(data?: ValorEtapaFunilSemanaInterface) {
     Object.assign(this, data);
   }
@@ -66,6 +68,10 @@ export class ValorEtapaFunilSemana implements ValorEtapaFunilSemanaInterface {
         },
         "custo": {
           name: 'custo',
+          type: 'number'
+        },
+        "posicaoEtapa": {
+          name: 'posicaoEtapa',
           type: 'number'
         },
       },

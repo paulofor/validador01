@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EtapaCliente, CampanhaAds, CampanhaAdsApi, EtapaClienteApi } from '../shared/sdk';
+import { EtapaCliente, CampanhaAds, CampanhaAdsApi, EtapaClienteApi, ProjetoMySqlApi, ValorEtapaFunilCampanhaApi } from '../shared/sdk';
 import { Params } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 
@@ -15,7 +15,8 @@ export class MetricaCampanhaComponent implements OnInit {
 
   idProjeto: number;
 
-  constructor(private srv : CampanhaAdsApi, private srvEtapa: EtapaClienteApi, private route: ActivatedRoute) { }
+  constructor(private srv : CampanhaAdsApi, private srvEtapa: EtapaClienteApi, private route: ActivatedRoute,
+                private srvProjeto: ProjetoMySqlApi, private metricaCampanhaSrv: ValorEtapaFunilCampanhaApi) { }
 
   ngOnInit() {
     this.route.params.subscribe((params: Params) => {
@@ -46,6 +47,14 @@ export class MetricaCampanhaComponent implements OnInit {
     this.srv.find(filtro)
       .subscribe((resultado:CampanhaAds[]) => {
         this.listaCampanha = resultado;
+      })
+  }
+
+
+  atualizaMetrica() {
+    this.metricaCampanhaSrv.AtualizaValor()
+      .subscribe((result) => {
+        this.carregaCampanha();
       })
   }
 

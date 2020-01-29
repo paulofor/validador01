@@ -10,25 +10,25 @@
             <table class="table table-hover table-striped">
               <thead>
                 <tr>
-                  <th width="5%">Mês</th>
-                  <th width="30%">Valor Gasto</th>
-                  <th width="60%"></th>
-                  <th width="5%"></th>
+                  <th width="20%">Mês</th>
+                  <th align="right" width="15%">{{anoAnterior}}</th>
+                  <th align="right" width="15%">{{ano}}</th>
+                  <th width="45%"></th>
                   <th width="5%"></th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td></td>
+                  <td align="right">{{valorTotalAnterior | number : '1.2-2' }}</td>
                   <td align="right">{{valorTotal | number : '1.2-2' }}</td>
                   <td></td>
                   <td></td>
-                  <td></td>
                 </tr>
-                <tr *ngFor="let mes of listaCusto">
+                <tr *ngFor="let mes of listaCusto; let i = index">
                   <td>{{mes.mes}}</td>
+                  <td align="right">{{listaCustoAnterior[i].valorCampanha | number : '1.2-2' }}</td>
                   <td align="right">{{mes.valorCampanha | number : '1.2-2' }}</td>
-                  <td></td>
                   <td></td>
                   <td>
                       <button class="btn btn-primary btn-sm " (click)="atualizaMes(mes.mes)">Atualizar</button>

@@ -13,13 +13,19 @@ export class CustoAnoComponent implements OnInit {
 
 
   listaCusto: CustoMes[];
+  listaCustoAnterior: CustoMes[];
+
   ano : number;
+  anoAnterior : number;
+
   valorTotal: number;
+  valorTotalAnterior : number;
 
   constructor(private route: ActivatedRoute, private servico: CustoMesApi, private dialog: MatDialog) { }
 
   ngOnInit() {
     this.carregaCustoMes();
+
   }
 
 
@@ -32,7 +38,14 @@ export class CustoAnoComponent implements OnInit {
           console.log("Result - CustoAnoComponent: ", JSON.stringify(result));
           this.listaCusto = result;
           this.calculaValorTotal();
-        })
+        });
+      this.anoAnterior = this.ano - 1;
+      this.servico.find({"where":{"and":[{"ano":this.anoAnterior},{"mes":{ "neq": null }},{"projetoMySqlId": null }]},"order":"mes"} )
+      .subscribe((result: CustoMes[]) => {
+        console.log("Result - CustoAnoAnteriorComponent: ", JSON.stringify(result));
+        this.listaCustoAnterior = result;
+        this.calculaValorTotalAnterior();
+      });
     })
   }
 
@@ -50,6 +63,14 @@ export class CustoAnoComponent implements OnInit {
       this.valorTotal += item.valorCampanha;
     }
     console.log('Total:' , this.valorTotal);
+  }
+  calculaValorTotalAnterior() {
+    this.valorTotalAnterior = 0;
+    for (var i=0; i < this.listaCustoAnterior.length; i++) {
+      var item = this.listaCustoAnterior[i];
+      this.valorTotalAnterior += item.valorCampanha;
+    }
+    console.log('TotalAnterior:' , this.valorTotalAnterior);
   }
   /*
   openDialog(item?) {

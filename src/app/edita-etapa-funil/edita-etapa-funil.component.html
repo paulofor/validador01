@@ -1,4 +1,4 @@
-<h2 mat-dialog-title>Etapa - {{funil.nome}}</h2>
+<h2 mat-dialog-title>Etapa (id: {{item.id}}) - {{funil.nome}}</h2>
 
 <form *ngIf="item" class="example-full-width" (ngSubmit)="onSubmit()">
 
@@ -16,9 +16,8 @@
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
-      <input matInput  #sql [(ngModel)]="item.sql" name="sql" placeholder="Sql" />
+      <textarea matInput  #sql [(ngModel)]="item.sql" name="sql" placeholder="Sql" rows="12" ></textarea>
     </mat-form-field>
-
 
   </mat-dialog-content>
 

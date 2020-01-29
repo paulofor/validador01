@@ -27,7 +27,8 @@ export class MetricaCampanhaComponent implements OnInit {
   }
 
   carregaEtapa() {
-    this.srvEtapa.find()
+    let filtro = {'order' : 'posicao'};
+    this.srvEtapa.find(filtro)
       .subscribe((result:EtapaCliente[]) => {
         this.listaEtapaFunil = result;
       })
@@ -41,11 +42,13 @@ export class MetricaCampanhaComponent implements OnInit {
       "order" : "dataInicial desc",
       "include": {
         "relation": "valorEtapaFunilCampanhas",
+        'order' : 'posicaoEtapa',
         "scope" : { "include": "etapaCliente" },
       }
     };
     this.srv.find(filtro)
       .subscribe((resultado:CampanhaAds[]) => {
+        console.log('Resultado:' , JSON.stringify(resultado));
         this.listaCampanha = resultado;
       })
   }

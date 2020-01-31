@@ -1,5 +1,6 @@
 /* tslint:disable */
 import {
+  FunilNegocio,
   ValorMetricaEtapa,
   ValorEtapaFunilDia,
   ValorEtapaFunilCampanha
@@ -14,6 +15,7 @@ export interface EtapaClienteInterface {
   "sql"?: string;
   "id"?: number;
   "funilNegocioId"?: number;
+  funilNegocio?: FunilNegocio;
   valorMetricaEtapas?: ValorMetricaEtapa[];
   valorEtapaFunilDia?: ValorEtapaFunilDia[];
   valorEtapaFunilCampanhas?: ValorEtapaFunilCampanha[];
@@ -27,6 +29,7 @@ export class EtapaCliente implements EtapaClienteInterface {
   "sql": string;
   "id": number;
   "funilNegocioId": number;
+  funilNegocio: FunilNegocio;
   valorMetricaEtapas: ValorMetricaEtapa[];
   valorEtapaFunilDia: ValorEtapaFunilDia[];
   valorEtapaFunilCampanhas: ValorEtapaFunilCampanha[];
@@ -93,6 +96,14 @@ export class EtapaCliente implements EtapaClienteInterface {
         },
       },
       relations: {
+        funilNegocio: {
+          name: 'funilNegocio',
+          type: 'FunilNegocio',
+          model: 'FunilNegocio',
+          relationType: 'belongsTo',
+                  keyFrom: 'funilNegocioId',
+          keyTo: 'id'
+        },
         valorMetricaEtapas: {
           name: 'valorMetricaEtapas',
           type: 'ValorMetricaEtapa[]',

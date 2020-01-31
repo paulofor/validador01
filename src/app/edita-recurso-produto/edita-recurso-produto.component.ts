@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RecursoProdutoApi, RecursoProduto } from '../shared/sdk';
+import { RecursoProdutoApi, RecursoProduto, EtapaCliente, EtapaClienteApi } from '../shared/sdk';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { Inject } from '@angular/core';
 
@@ -12,12 +12,24 @@ export class EditaRecursoProdutoComponent implements OnInit {
 
   item: RecursoProduto;
 
+  listaEtapa:EtapaCliente[];
+
   constructor(public dialogRef: MatDialogRef<EditaRecursoProdutoComponent>, 
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private servico: RecursoProdutoApi) {
+    private servico: RecursoProdutoApi, private srvEtapa: EtapaClienteApi) {
   }
 
+
+  carregaEtapa() {
+    let filtro = {};
+    this.srvEtapa.find(filtro)
+      .subscribe((result: EtapaCliente[]) => {
+        this.listaEtapa = result;
+      })
+  }
+  
   ngOnInit() {
+    this.carregaEtapa();
     if (!this.data.item) {
       this.item = new RecursoProduto();
     } else {

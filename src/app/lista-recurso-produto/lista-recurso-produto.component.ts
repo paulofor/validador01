@@ -19,7 +19,8 @@ export class ListaRecursoProdutoComponent implements OnInit {
   }
 
   carregaRecurso() {
-    this.srv.find() 
+    let filtro = { 'include' : 'etapaCliente' };
+    this.srv.find(filtro) 
       .subscribe((result:RecursoProduto[]) => {
         this.listaRecurso = result;
       })

@@ -6,7 +6,8 @@ import {
   PlanoExecucao,
   DiaSemana,
   Contexto,
-  IdeiaMelhoria
+  IdeiaMelhoria,
+  RecursoProduto
 } from '../index';
 
 declare var Object: any;
@@ -23,6 +24,7 @@ export interface TempoExecucaoInterface {
   "diaSemanaId"?: number;
   "contextoId"?: number;
   "ideiaMelhoriaId"?: number;
+  "recursoProdutoId"?: number;
   projetoMySql?: ProjetoMySql;
   semana?: Semana;
   processoNegocio?: ProcessoNegocio;
@@ -30,6 +32,7 @@ export interface TempoExecucaoInterface {
   diaSemana?: DiaSemana;
   contexto?: Contexto;
   ideiaMelhoria?: IdeiaMelhoria;
+  recursoProduto?: RecursoProduto;
 }
 
 export class TempoExecucao implements TempoExecucaoInterface {
@@ -45,6 +48,7 @@ export class TempoExecucao implements TempoExecucaoInterface {
   "diaSemanaId": number;
   "contextoId": number;
   "ideiaMelhoriaId": number;
+  "recursoProdutoId": number;
   projetoMySql: ProjetoMySql;
   semana: Semana;
   processoNegocio: ProcessoNegocio;
@@ -52,6 +56,7 @@ export class TempoExecucao implements TempoExecucaoInterface {
   diaSemana: DiaSemana;
   contexto: Contexto;
   ideiaMelhoria: IdeiaMelhoria;
+  recursoProduto: RecursoProduto;
   constructor(data?: TempoExecucaoInterface) {
     Object.assign(this, data);
   }
@@ -133,6 +138,10 @@ export class TempoExecucao implements TempoExecucaoInterface {
           name: 'ideiaMelhoriaId',
           type: 'number'
         },
+        "recursoProdutoId": {
+          name: 'recursoProdutoId',
+          type: 'number'
+        },
       },
       relations: {
         projetoMySql: {
@@ -189,6 +198,14 @@ export class TempoExecucao implements TempoExecucaoInterface {
           model: 'IdeiaMelhoria',
           relationType: 'belongsTo',
                   keyFrom: 'ideiaMelhoriaId',
+          keyTo: 'id'
+        },
+        recursoProduto: {
+          name: 'recursoProduto',
+          type: 'RecursoProduto',
+          model: 'RecursoProduto',
+          relationType: 'belongsTo',
+                  keyFrom: 'recursoProdutoId',
           keyTo: 'id'
         },
       }

@@ -8,6 +8,23 @@
     </mat-form-field>
 
 
+    <mat-form-field class="example-full-width">
+      <textarea matInput rows="4" #descricao [(ngModel)]="item.descricao" name="descricao"
+        placeholder="Descrição"></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-select placeholder="Etapa Alvo" #etapaClienteId [(ngModel)]="item.etapaClienteId" name="etapaClienteId">
+        <mat-option *ngFor="let item of listaEtapa" [value]="item.id">
+          {{ item.nome }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-checkbox #desenvolvimento [(ngModel)]="item.desenvolvimento" name="desenvolvimento">Em desenvolvimento
+    </mat-checkbox>
+
+
   </mat-dialog-content>
 
   <mat-dialog-actions>

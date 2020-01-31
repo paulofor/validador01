@@ -10,7 +10,8 @@
       <thead>
         <tr>
           <th width="40%">Nome</th>
-          <th width="55%"></th>
+          <th width="50%">Etapa</th>
+          <th width="5%"></th>
           <th width="5%"></th>
         </tr>
       </thead>
@@ -18,7 +19,8 @@
 
         <tr *ngFor="let recurso of listaRecurso">
           <td>{{recurso.nome}}</td>
-          <td></td>
+          <td><span *ngIf="recurso.etapaCliente">{{recurso.etapaCliente.nome}}</span></td>
+          <td>{{recurso.desenvolvimento}}</td>
           <td>
             <button class="btn btn-primary btn-sm " (click)="openDialog(recurso)">Alterar</button>
           </td>

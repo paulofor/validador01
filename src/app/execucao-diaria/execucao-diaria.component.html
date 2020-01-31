@@ -31,7 +31,7 @@
       <thead>
         <tr>
           <th width="50%">Execuções</th>
-          <th width="20%">Projeto</th>
+          <th width="20%">Projeto/Recurso</th>
           <th width="20%">Início</th>
           <th width="20%">Término</th>
           <th width="20%">Tempo</th>
@@ -41,7 +41,10 @@
       <tbody>
         <tr *ngFor="let execucao of listaExecucao">
           <td>{{execucao.processoNegocio.nome}}</td>
-          <td>{{(execucao.projetoMySql?execucao.projetoMySql.nome:'')}}</td>
+          <td>
+            <span *ngIf="execucao.projetoMySql">{{execucao.projetoMySql.nome}} (projeto)</span>
+            <span *ngIf="execucao.recursoProduto">{{execucao.recursoProduto.nome}} (recurso)</span>
+
           <td>{{getHoraInicio(execucao) | date : 'HH:mm:ss'}}</td>
           <td>{{getHoraTermino(execucao) | date : 'HH:mm:ss'}}</td>
           <td>{{getTempo(execucao) | date : 'HH:mm:ss'}}</td>

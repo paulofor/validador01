@@ -1,7 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { Template } from '@angular/compiler/src/render3/r3_ast';
-import { TempoExecucao, PlanoExecucao, TempoExecucaoApi, ProjetoMySql, ProjetoMySqlApi, IdeiaMelhoria, IdeiaMelhoriaApi } from '../shared/sdk';
+import { TempoExecucao, PlanoExecucao, TempoExecucaoApi, ProjetoMySql, ProjetoMySqlApi, IdeiaMelhoria, IdeiaMelhoriaApi, RecursoProdutoApi } from '../shared/sdk';
+import { RecursoProduto } from '../shared/sdk/models';
 
 @Component({
   selector: 'app-edita-tempo-execucao',
@@ -16,74 +17,86 @@ export class EditaTempoExecucaoComponent implements OnInit {
   tempoOk = false;
   idProcesso: number;
   idProjeto: number;
+  listaRecurso: RecursoProduto[];
+  idRecurso: number;
 
   listaIdeia: IdeiaMelhoria[];
 
+
+
   constructor(public dialogRef: MatDialogRef<EditaTempoExecucaoComponent>,
-    private servico: TempoExecucaoApi, private srvIdeiaMelhoria: IdeiaMelhoriaApi
+    private servico: TempoExecucaoApi, private srvIdeiaMelhoria: IdeiaMelhoriaApi, private srvRecursoProduto: RecursoProdutoApi
     , @Inject(MAT_DIALOG_DATA) public data: any, private srvProjeto: ProjetoMySqlApi) { }
 
   ngOnInit() {
-    console.log("Parametro entrada", this.data);
+    //console.log("Parametro entrada", this.data);
+    this.carregaRecursoProduto();
     if (!this.data.tempo) {
-      console.log("fluxo nova");
+      //console.log("fluxo nova");
       this.tempo = new TempoExecucao();
       this.tempo.dataReferencia = new Date();
       this.tempo.horaInicio = new Date();
       this.tempo.horaTermino = new Date();
       this.plano = this.data.plano;
-      console.log('Plano: ', this.plano);
+      //console.log('Plano: ', this.plano);
       this.tempoOk = true;
       this.idProcesso = this.plano.processoNegocioId;
     } else {
-      console.log('fluxo altera');
+      //console.log('fluxo altera');
       this.tempo = this.data.tempo;
       this.tempo.horaTermino = new Date();
       this.tempo.horaInicio = new Date(this.tempo.horaInicio);
-      console.log('Tempo:', JSON.stringify(this.tempo));
+      //console.log('Tempo:', JSON.stringify(this.tempo));
       this.tempoOk = true;
       this.idProcesso = this.tempo.processoNegocioId;
       this.idProjeto = this.tempo.projetoMySqlId;
       this.carregaIdeiaMelhoria()
     }
-    console.log('IdProcesso: ', this.idProcesso);
+    //console.log('IdProcesso: ', this.idProcesso);
     this.srvProjeto.ObtemPorIdProcesso(this.idProcesso)
       .subscribe((res: ProjetoMySql[]) => {
-        console.log('Lista Projeto: ', res);
+        //console.log('Lista Projeto: ', res);
         this.listaProjeto = res;
-
-      })
+    })
   }
 
 
 
   selecionado(evento) {
-    console.log('Item Selecionado(Projeto):', evento);
+    //console.log('Item Selecionado(Projeto):', evento);
     this.idProjeto = evento;
     this.carregaIdeiaMelhoria();
   }
+  selecionadoRecurso(evento) {
+    //console.log('Item Selecionado(Recurso):', evento);
+    this.idProjeto = evento;
+    this.carregaRecursoProduto();
+  }
+
+
   carregaIdeiaMelhoria() {
     this.srvIdeiaMelhoria.find({ "where": { "and": [{ "projetoMySqlId": this.idProjeto }, { "ativa": "1" }] } })
       .subscribe((result: IdeiaMelhoria[]) => {
         this.listaIdeia = result;
       })
   }
-
+  carregaRecursoProduto() {
+    this.srvRecursoProduto.find({ "where": { "desenvolvimento": "1" } })
+      .subscribe((result: RecursoProduto[]) => {
+        this.listaRecurso = result;
+      })
+  }
 
   onSubmit() {
-    console.log('Model: ' + JSON.stringify(this.tempo));
+    //console.log('Model: ' + JSON.stringify(this.tempo));
     if (!this.tempo.id) {
-
-
       this.tempo.planoExecucaoId = this.plano.id;
       this.tempo.processoNegocioId = this.plano.processoNegocioId;
       this.tempo.contextoId = this.plano.contextoId;
       this.tempo.diaSemanaId = this.plano.diaSemanaId;
       this.tempo.semanaId = this.plano.semanaId;
       this.tempo.tempo = new Date(0);
-
-
-      console.log("TempoExecucao: ", JSON.stringify(this.tempo));
+      //console.log("TempoExecucao: ", JSON.stringify(this.tempo));
       /*
       this.servico.create(this.tempo, (err, obj) => {
         console.log("Erro:" + JSON.stringify(err));
@@ -93,10 +106,11 @@ export class EditaTempoExecucaoComponent implements OnInit {
         this.closeDialog();
       });
       */
+      console.log("TempoExecucao(insere): ", JSON.stringify(this.tempo));
       this.servico.Insere(this.tempo)
         .subscribe(
           data => {
-            console.log('Data:', JSON.stringify(data));
+            //console.log('Data:', JSON.stringify(data));
             this.closeDialog();
           },
           err => {
@@ -105,16 +119,17 @@ export class EditaTempoExecucaoComponent implements OnInit {
           }
         );
     } else {
-      console.log("TempoExecucao(alterar): ", JSON.stringify(this.tempo));
+      //console.log("TempoExecucao(alterar): ", JSON.stringify(this.tempo));
       var x = this.tempo.horaTermino.getTime();
-      console.log('Hora Inicio:', this.tempo.horaInicio);
-      console.log('Hora Termino:', this.tempo.horaTermino);
+      //console.log('Hora Inicio:', this.tempo.horaInicio);
+      //console.log('Hora Termino:', this.tempo.horaTermino);
       this.tempo.tempo = new Date(0);
       this.tempo.tempo.setTime(this.tempo.horaTermino.getTime() - this.tempo.horaInicio.getTime());
+      console.log("TempoExecucao(altera): ", JSON.stringify(this.tempo));
       this.servico.Altera(this.tempo)
         .subscribe(
           data => {
-            console.log('Data:', JSON.stringify(data));
+            //console.log('Data:', JSON.stringify(data));
             this.closeDialog();
           },
           err => {

@@ -15,7 +15,9 @@ export interface EtapaClienteInterface {
   "sql"?: string;
   "id"?: number;
   "funilNegocioId"?: number;
+  "etapaClienteId"?: number;
   funilNegocio?: FunilNegocio;
+  etapaCliente?: EtapaCliente;
   valorMetricaEtapas?: ValorMetricaEtapa[];
   valorEtapaFunilDia?: ValorEtapaFunilDia[];
   valorEtapaFunilCampanhas?: ValorEtapaFunilCampanha[];
@@ -29,7 +31,9 @@ export class EtapaCliente implements EtapaClienteInterface {
   "sql": string;
   "id": number;
   "funilNegocioId": number;
+  "etapaClienteId": number;
   funilNegocio: FunilNegocio;
+  etapaCliente: EtapaCliente;
   valorMetricaEtapas: ValorMetricaEtapa[];
   valorEtapaFunilDia: ValorEtapaFunilDia[];
   valorEtapaFunilCampanhas: ValorEtapaFunilCampanha[];
@@ -94,6 +98,10 @@ export class EtapaCliente implements EtapaClienteInterface {
           name: 'funilNegocioId',
           type: 'number'
         },
+        "etapaClienteId": {
+          name: 'etapaClienteId',
+          type: 'number'
+        },
       },
       relations: {
         funilNegocio: {
@@ -102,6 +110,14 @@ export class EtapaCliente implements EtapaClienteInterface {
           model: 'FunilNegocio',
           relationType: 'belongsTo',
                   keyFrom: 'funilNegocioId',
+          keyTo: 'id'
+        },
+        etapaCliente: {
+          name: 'etapaCliente',
+          type: 'EtapaCliente',
+          model: 'EtapaCliente',
+          relationType: 'belongsTo',
+                  keyFrom: 'etapaClienteId',
           keyTo: 'id'
         },
         valorMetricaEtapas: {

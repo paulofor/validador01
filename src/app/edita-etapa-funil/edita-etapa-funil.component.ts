@@ -13,12 +13,15 @@ export class EditaEtapaFunilComponent implements OnInit {
   item : EtapaCliente;
   funil : FunilNegocio;
 
+  listaEtapa: EtapaCliente[];
+
   constructor(public dialogRef: MatDialogRef<EditaEtapaFunilComponent>, 
     @Inject(MAT_DIALOG_DATA) public data: any,
     private servico: EtapaClienteApi) {
   }
 
   ngOnInit() {
+    this.carregaEtapaTaxa();
     this.funil = this.data.funil;
     if (!this.data.item) {
       this.item = new EtapaCliente();
@@ -26,6 +29,14 @@ export class EditaEtapaFunilComponent implements OnInit {
     } else {
       this.item = this.data.item;
     }
+  }
+
+  carregaEtapaTaxa() {
+    let filtro = {'order' : 'posicao'}
+    this.servico.find(filtro)
+      .subscribe((etapas:EtapaCliente[]) => {
+        this.listaEtapa = etapas;
+      })
   }
 
   onSubmit() {

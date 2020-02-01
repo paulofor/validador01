@@ -14,7 +14,7 @@ export class ListaEtapaFunilComponent implements OnInit {
 
   funil:FunilNegocio;
 
-  filtro ={"include" : {"relation" : "etapaClientes" , "scope" : {"order" : "posicao" } } };
+  filtro ={"include" : {"relation" : "etapaClientes" , "scope" : {"order" : "posicao" , "include" : "etapaCliente" } } };
 
   constructor(private route: ActivatedRoute, private srv:FunilNegocioApi, private dialog: MatDialog, private srvEtapa: EtapaClienteApi) { }
 

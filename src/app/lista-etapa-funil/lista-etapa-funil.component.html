@@ -12,7 +12,7 @@
           <th width="5%">Id</th>
           <th width="20%">Nome</th>
           <th width="45%">Descrição</th>
-          <th width="20%">Formula</th>
+          <th width="20%">Taxa</th>
           <th width="5%"></th>
           <th width="5%"></th>
         </tr>
@@ -23,7 +23,7 @@
           <td>{{item.id}}</td>
           <td>{{item.nome}}</td>
           <td>{{item.descricao}}</td>
-          <td>{{item.formula}}</td>
+          <td><span *ngIf="item.etapaCliente">{{item.etapaCliente.nome}}</span></td>
           <td>
             <button class="btn btn-primary btn-sm " (click)="subir(item)">Subir</button>
           </td>

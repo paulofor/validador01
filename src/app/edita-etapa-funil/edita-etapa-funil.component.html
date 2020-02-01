@@ -8,15 +8,24 @@
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
-      <input matInput  #descricao [(ngModel)]="item.descricao" name="descricao" placeholder="Descrição" />
+      <input matInput #descricao [(ngModel)]="item.descricao" name="descricao" placeholder="Descrição" />
+    </mat-form-field>
+
+
+    <mat-form-field class="example-full-width">
+      <mat-select placeholder="Etapa taxa" #etapaClienteId [(ngModel)]="item.etapaClienteId" name="etapaClienteId">
+        <mat-option *ngFor="let etapa of listaEtapa" [value]="etapa.id">
+          {{ etapa.nome }}
+        </mat-option>
+      </mat-select>
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
-      <input matInput  #formula [(ngModel)]="item.formula" name="formula" placeholder="Fórmula" />
+      <input matInput #formula [(ngModel)]="item.formula" name="formula" placeholder="Fórmula" />
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
-      <textarea matInput  #sql [(ngModel)]="item.sql" name="sql" placeholder="Sql" rows="12" ></textarea>
+      <textarea matInput #sql [(ngModel)]="item.sql" name="sql" placeholder="Sql" rows="12"></textarea>
     </mat-form-field>
 
   </mat-dialog-content>

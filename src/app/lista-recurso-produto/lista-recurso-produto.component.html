@@ -19,9 +19,13 @@
       <tbody>
 
         <tr *ngFor="let recurso of listaRecurso">
-          <td>{{recurso.nome}}</td>
-          <td><span *ngIf="recurso.etapaCliente">{{recurso.etapaCliente.nome}}</span></td>
-          <td>{{recurso.tempoConsumido  }}</td>
+          <td>
+            <div>
+            {{recurso.nome}}
+            </div>
+          </td>  
+          <td><span *ngIf="recurso.etapaCliente"  >{{recurso.etapaCliente.nome}}</span></td>
+          <td>{{recurso.tempoConsumido}}</td>
           <td>{{recurso.desenvolvimento}}</td>
           <td>
             <button class="btn btn-primary btn-sm " (click)="openDialog(recurso)">Alterar</button>

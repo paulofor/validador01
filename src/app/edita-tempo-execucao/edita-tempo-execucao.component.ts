@@ -39,6 +39,7 @@ export class EditaTempoExecucaoComponent implements OnInit {
       this.tempo.horaTermino = new Date();
       this.plano = this.data.plano;
       //console.log('Plano: ', this.plano);
+      console.log('Tempo:' , this.tempo);
       this.tempoOk = true;
       this.idProcesso = this.plano.processoNegocioId;
     } else {

@@ -254,7 +254,6 @@ export class SDKBrowserModule {
         ValorEtapaFunilCampanhaApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
-
       ]
     };
   }

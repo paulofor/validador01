@@ -22,10 +22,12 @@
                 <ng-container *ngFor="let campanha of listaCampanha">
                   <tr *ngIf="campanha.valorEtapaFunilCampanhas.length>0">
                     <td>{{campanha.nome}}</td>
-                    <ng-container *ngFor="let valor of campanha.valorEtapaFunilCampanhas">
+                    <ng-container *ngFor="let valor of campanha.valorEtapaFunilCampanhas; let i = index">
                       <td>
                         {{valor.valor}} 
-                        <span class="custo" *ngIf="valor.custo && valor.custo > 0.01"> R$ {{valor.custo | number: '1.2-2'}} </span>
+                        <span class="custo" *ngIf="valor.custo && i > 0"> R$ {{valor.custo | number: '1.2-2'}} </span>
+                        <span class="custo" *ngIf="valor.custo && i == 0"> $ {{(valor.custo*1000) | number: '1.2-2'}} </span>
+
                         <span class="taxa" *ngIf="valor.taxa && valor.taxa > 0.01"> {{valor.taxa | number: '1.1-1'}}% </span>
                       </td>
                     </ng-container>

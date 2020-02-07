@@ -87,6 +87,7 @@ import { ValorMetricaEtapa } from '../../models/ValorMetricaEtapa';
 import { ValorEtapaFunilDia } from '../../models/ValorEtapaFunilDia';
 import { ValorEtapaFunilSemana } from '../../models/ValorEtapaFunilSemana';
 import { ValorEtapaFunilCampanha } from '../../models/ValorEtapaFunilCampanha';
+import { VersaoRecurso } from '../../models/VersaoRecurso';
 
 export interface Models { [name: string]: any }
 
@@ -181,6 +182,7 @@ export class SDKModels {
     ValorEtapaFunilDia: ValorEtapaFunilDia,
     ValorEtapaFunilSemana: ValorEtapaFunilSemana,
     ValorEtapaFunilCampanha: ValorEtapaFunilCampanha,
+    VersaoRecurso: VersaoRecurso,
     
   };
 

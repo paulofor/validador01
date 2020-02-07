@@ -1,6 +1,7 @@
 /* tslint:disable */
 import {
-  EtapaCliente
+  EtapaCliente,
+  CampanhaAds
 } from '../index';
 
 declare var Object: any;
@@ -12,6 +13,7 @@ export interface ValorEtapaFunilCampanhaInterface {
   "custo"?: number;
   "posicaoEtapa"?: number;
   etapaCliente?: EtapaCliente;
+  campanhaAds?: CampanhaAds;
 }
 
 export class ValorEtapaFunilCampanha implements ValorEtapaFunilCampanhaInterface {
@@ -22,6 +24,7 @@ export class ValorEtapaFunilCampanha implements ValorEtapaFunilCampanhaInterface
   "custo": number;
   "posicaoEtapa": number;
   etapaCliente: EtapaCliente;
+  campanhaAds: CampanhaAds;
   constructor(data?: ValorEtapaFunilCampanhaInterface) {
     Object.assign(this, data);
   }
@@ -87,6 +90,14 @@ export class ValorEtapaFunilCampanha implements ValorEtapaFunilCampanhaInterface
           model: 'EtapaCliente',
           relationType: 'belongsTo',
                   keyFrom: 'etapaClienteId',
+          keyTo: 'id'
+        },
+        campanhaAds: {
+          name: 'campanhaAds',
+          type: 'CampanhaAds',
+          model: 'CampanhaAds',
+          relationType: 'belongsTo',
+                  keyFrom: 'campanhaAdsId',
           keyTo: 'id'
         },
       }

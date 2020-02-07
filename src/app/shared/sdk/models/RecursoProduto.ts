@@ -1,6 +1,7 @@
 /* tslint:disable */
 import {
-  EtapaCliente
+  EtapaCliente,
+  VersaoRecurso
 } from '../index';
 
 declare var Object: any;
@@ -13,6 +14,7 @@ export interface RecursoProdutoInterface {
   "id"?: number;
   "etapaClienteId"?: number;
   etapaCliente?: EtapaCliente;
+  versaoRecursos?: VersaoRecurso[];
 }
 
 export class RecursoProduto implements RecursoProdutoInterface {
@@ -24,6 +26,7 @@ export class RecursoProduto implements RecursoProdutoInterface {
   "id": number;
   "etapaClienteId": number;
   etapaCliente: EtapaCliente;
+  versaoRecursos: VersaoRecurso[];
   constructor(data?: RecursoProdutoInterface) {
     Object.assign(this, data);
   }
@@ -94,6 +97,14 @@ export class RecursoProduto implements RecursoProdutoInterface {
           relationType: 'belongsTo',
                   keyFrom: 'etapaClienteId',
           keyTo: 'id'
+        },
+        versaoRecursos: {
+          name: 'versaoRecursos',
+          type: 'VersaoRecurso[]',
+          model: 'VersaoRecurso',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'recursoProdutoId'
         },
       }
     }

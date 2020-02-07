@@ -135,6 +135,7 @@ import { ValorMetricaEtapaApi } from './services/custom/ValorMetricaEtapa';
 import { ValorEtapaFunilDiaApi } from './services/custom/ValorEtapaFunilDia';
 import { ValorEtapaFunilSemanaApi } from './services/custom/ValorEtapaFunilSemana';
 import { ValorEtapaFunilCampanhaApi } from './services/custom/ValorEtapaFunilCampanha';
+import { VersaoRecursoApi } from './services/custom/VersaoRecurso';
 /**
 * @module SDKBrowserModule
 * @description
@@ -252,6 +253,7 @@ export class SDKBrowserModule {
         ValorEtapaFunilDiaApi,
         ValorEtapaFunilSemanaApi,
         ValorEtapaFunilCampanhaApi,
+        VersaoRecursoApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
       ]

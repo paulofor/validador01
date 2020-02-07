@@ -9,6 +9,7 @@ import { LoopBackFilter,  } from '../../models/BaseModels';
 import { ErrorHandler } from '../core/error.service';
 import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Cosmetic_OportunidadeDia } from '../../models/Cosmetic_OportunidadeDia';
 import { SocketConnection } from '../../sockets/socket.connections';
 import { URL_COSMETIC } from '../../../../constantes/base.url';
 

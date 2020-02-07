@@ -235,6 +235,8 @@ import { EditaFunilComponent } from './edita-funil/edita-funil.component';
 import { ListaEtapaFunilComponent } from './lista-etapa-funil/lista-etapa-funil.component';
 import { EditaEtapaFunilComponent } from './edita-etapa-funil/edita-etapa-funil.component';
 import { MetricaCampanhaComponent } from './metrica-campanha/metrica-campanha.component';
+import { DetalheRecursoProdutoComponent } from './detalhe-recurso-produto/detalhe-recurso-produto.component';
+import { EditaVersaoRecursoComponent } from './edita-versao-recurso/edita-versao-recurso.component';
 
 
 registerLocaleData(localePt, 'pt-BR');
@@ -479,7 +481,11 @@ registerLocaleData(localePt, 'pt-BR');
 
     EditaEtapaFunilComponent,
 
-    MetricaCampanhaComponent
+    MetricaCampanhaComponent,
+
+    DetalheRecursoProdutoComponent,
+
+    EditaVersaoRecursoComponent
 
  
   ],

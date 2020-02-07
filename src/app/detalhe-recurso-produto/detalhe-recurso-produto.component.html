@@ -1,0 +1,33 @@
+<div class="card" >
+  <div class="header">
+    <h4 class="title">Recurso {{recurso.nome}}</h4>
+    <td><button mat-raised-button color="primary" (click)="openDialog()">Novo</button></td>
+
+  </div>
+
+  <div class="content table-responsive table-full-width">
+    <table class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th width="35%">Nome</th>
+          <th width="70%"></th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr *ngFor="let versao of listaRecurso">
+          <td>
+            <div>
+            {{versao.nome}}
+            </div>
+          </td>  
+          <td>
+            <button class="btn btn-primary btn-sm " (click)="openDialog(versao)">Alterar</button>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+</div>

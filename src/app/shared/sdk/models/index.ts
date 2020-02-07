@@ -86,5 +86,6 @@ export * from './ValorMetricaEtapa';
 export * from './ValorEtapaFunilDia';
 export * from './ValorEtapaFunilSemana';
 export * from './ValorEtapaFunilCampanha';
+export * from './VersaoRecurso';
 export * from './BaseModels';
 export * from './FireLoopRef';

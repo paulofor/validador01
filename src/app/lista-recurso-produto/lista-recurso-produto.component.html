@@ -10,9 +10,10 @@
       <thead>
         <tr>
           <th width="35%">Nome</th>
-          <th width="40%">Etapa</th>
+          <th width="35%">Etapa</th>
           <th width="10%">Tempo</th>
           <th width="10%">Desenvolvendo</th>
+          <th width="5%"></th>
           <th width="5%"></th>
         </tr>
       </thead>
@@ -27,6 +28,9 @@
           <td><span *ngIf="recurso.etapaCliente"  >{{recurso.etapaCliente.nome}}</span></td>
           <td>{{recurso.tempoConsumido}}</td>
           <td>{{recurso.desenvolvimento}}</td>
+          <td>
+            <a routerLink="/detalheRecursoProduto/{{recurso.id}}">Detalhe</a>
+          </td>
           <td>
             <button class="btn btn-primary btn-sm " (click)="openDialog(recurso)">Alterar</button>
           </td>

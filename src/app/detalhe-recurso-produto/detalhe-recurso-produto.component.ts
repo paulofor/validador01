@@ -30,15 +30,16 @@ export class DetalheRecursoProdutoComponent implements OnInit {
     this.dialog.open(EditaVersaoRecursoComponent, {
       width: '800px',
       data: {
-        item: item
+        item: item,
+        recurso : this.recurso
       }
     });
   }
   carregaRecurso() {
-    let filtro = {'include' : 'versaoRecurso'};
+    let filtro = {'include' : 'versaoRecursos'};
      this.route.params.subscribe((params: Params) => {
       let id = params['id'];
-      this.srv.findById(id)
+      this.srv.findById(id, filtro)
         .subscribe((result:RecursoProduto) => {
           this.recurso = result;
         })

@@ -538,7 +538,8 @@ registerLocaleData(localePt, 'pt-BR');
     EditaItemValorPorProjetoComponent,
     AssociaItemValorVersaoAppComponent,
     EditaFunilComponent,
-    EditaEtapaFunilComponent
+    EditaEtapaFunilComponent,
+    EditaVersaoRecursoComponent
 
   ],
   imports: [

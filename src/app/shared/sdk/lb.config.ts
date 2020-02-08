@@ -1,4 +1,4 @@
-import { BASE_URL } from "../../constantes/base.url";
+import { BASE_URL } from "src/app/constantes/base.url";
 
 /* tslint:disable */
 /**

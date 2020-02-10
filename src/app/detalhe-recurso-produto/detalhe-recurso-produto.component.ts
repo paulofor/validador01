@@ -41,6 +41,7 @@ export class DetalheRecursoProdutoComponent implements OnInit {
       let id = params['id'];
       this.srv.findById(id, filtro)
         .subscribe((result:RecursoProduto) => {
+          console.log('Result:' , JSON.stringify(result));
           this.recurso = result;
         })
     })

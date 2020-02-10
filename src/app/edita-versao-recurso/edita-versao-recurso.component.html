@@ -7,13 +7,15 @@
       <input matInput maxlength="100" #nome [(ngModel)]="item.nome" name="nome" placeholder="Nome" />
     </mat-form-field>
     <mat-form-field class="example-full-width">
-      <textarea matInput rows="3" #descricao [(ngModel)]="item.descricao" name="descricao"
-        placeholder="Descrição"></textarea>
+      <textarea matInput rows="3" #descricao [(ngModel)]="item.descricao" name="descricao" placeholder="Descrição"></textarea>
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
-      <input [(ngModel)]="item.tempoPlanejado" matInput maxlength="5" [ngModelOptions]="{standalone: true}" placeholder="Tempo Planejado" />
+      <input [(ngModel)]="item.tempoPlanejadoStr" matInput maxlength="5" [ngModelOptions]="{standalone: true}" placeholder="Tempo Planejado" />
     </mat-form-field>
+
+    <mat-checkbox #emExecucao [(ngModel)]="item.emExecucao" name="emExecucao">Em execução
+    </mat-checkbox>
 
   </mat-dialog-content>
 

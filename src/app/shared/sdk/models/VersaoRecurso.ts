@@ -2,8 +2,8 @@
 
 declare var Object: any;
 export interface VersaoRecursoInterface {
-  "tempoConsumido"?: Date;
-  "tempoPlanejado"?: Date;
+  "tempoConsumido"?: string;
+  "tempoPlanejado"?: string;
   "tempoPlanejadoStr"?: string;
   "dataImplantacao"?: Date;
   "mediaIndicadorAntes"?: number;
@@ -16,8 +16,8 @@ export interface VersaoRecursoInterface {
 }
 
 export class VersaoRecurso implements VersaoRecursoInterface {
-  "tempoConsumido": Date;
-  "tempoPlanejado": Date;
+  "tempoConsumido": string;
+  "tempoPlanejado": string;
   "tempoPlanejadoStr": string;
   "dataImplantacao": Date;
   "mediaIndicadorAntes": number;
@@ -62,11 +62,11 @@ export class VersaoRecurso implements VersaoRecursoInterface {
       properties: {
         "tempoConsumido": {
           name: 'tempoConsumido',
-          type: 'Date'
+          type: 'string'
         },
         "tempoPlanejado": {
           name: 'tempoPlanejado',
-          type: 'Date'
+          type: 'string'
         },
         "tempoPlanejadoStr": {
           name: 'tempoPlanejadoStr',

@@ -30,6 +30,8 @@ export class EditaVersaoRecursoComponent implements OnInit {
 
   onSubmit() {
     console.log('Model: ' + JSON.stringify(this.item));
+    //this.item.tempoPlanejado = this.getDateFromStr(this.item.tempoPlanejadoStr);
+    this.item.tempoPlanejado = this.item.tempoPlanejadoStr;
     if (!this.item.id) {
       this.item.recursoProdutoId = this.recurso.id;
       this.servico.create(this.item, (err, obj) => {
@@ -52,5 +54,14 @@ export class EditaVersaoRecursoComponent implements OnInit {
     this.dialogRef.close('Pizza!');
   }
 
+  getDateFromStr(tempoStr) : Date{
+    console.log('tempoStr' + tempoStr);
+    var tempo = tempoStr.split(":");
+    var saida = new Date(0);
+    saida.setUTCHours(Number(tempo[0]));
+    saida.setUTCMinutes(Number(tempo[1]));
+    console.log('saida' , saida);
+    return saida;
+  }
 
 }

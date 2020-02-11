@@ -11,6 +11,9 @@ export interface VersaoRecursoInterface {
   "emExecucao"?: number;
   "nome"?: string;
   "descricao"?: string;
+  "tempoPlanejadoSemana"?: string;
+  "tempoRestantePlano"?: string;
+  "dataPrevista"?: Date;
   "id"?: number;
   "recursoProdutoId"?: number;
 }
@@ -25,6 +28,9 @@ export class VersaoRecurso implements VersaoRecursoInterface {
   "emExecucao": number;
   "nome": string;
   "descricao": string;
+  "tempoPlanejadoSemana": string;
+  "tempoRestantePlano": string;
+  "dataPrevista": Date;
   "id": number;
   "recursoProdutoId": number;
   constructor(data?: VersaoRecursoInterface) {
@@ -95,6 +101,18 @@ export class VersaoRecurso implements VersaoRecursoInterface {
         "descricao": {
           name: 'descricao',
           type: 'string'
+        },
+        "tempoPlanejadoSemana": {
+          name: 'tempoPlanejadoSemana',
+          type: 'string'
+        },
+        "tempoRestantePlano": {
+          name: 'tempoRestantePlano',
+          type: 'string'
+        },
+        "dataPrevista": {
+          name: 'dataPrevista',
+          type: 'Date'
         },
         "id": {
           name: 'id',

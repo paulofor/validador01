@@ -14,6 +14,10 @@
       <input [(ngModel)]="item.tempoPlanejadoStr" matInput maxlength="5" [ngModelOptions]="{standalone: true}" placeholder="Tempo Planejado" />
     </mat-form-field>
 
+    <mat-form-field class="example-full-width">
+      <input matInput maxlength="5" #tempoPlanejadoSemana [(ngModel)]="item.tempoPlanejadoSemana" name="tempoPlanejadoSemana" placeholder="Tempo Semana" />
+    </mat-form-field>
+
     <mat-checkbox #emExecucao [(ngModel)]="item.emExecucao" name="emExecucao">Em execução
     </mat-checkbox>
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProcessoNegocioApi, DiaSemana, Semana, PlanoExecucao, TempoExecucao, Contexto } from '../shared/sdk';
+import { ProcessoNegocioApi, DiaSemana, Semana, PlanoExecucao, TempoExecucao, Contexto, VersaoRecurso } from '../shared/sdk';
 import { MatDialog } from '@angular/material';
 import { ActivatedRoute } from '@angular/router';
 import { EditaTempoExecucaoComponent } from '../edita-tempo-execucao/edita-tempo-execucao.component';
@@ -17,6 +17,7 @@ export class ExecucaoDiariaComponent implements OnInit {
   listaPlano: PlanoExecucao[];
   listaExecucao: TempoExecucao[];
 
+  versaoCorrente: VersaoRecurso;
   //contexto: Contexto;
 
 
@@ -78,5 +79,12 @@ export class ExecucaoDiariaComponent implements OnInit {
   getTempo(tempo: TempoExecucao) {
     //console.log('getTempo:' , tempo.tempo);
     return new Date("1970-01-01 " + tempo.tempo);
+  }
+
+  selecionadoRecurso(item) {
+    console.log('RecursoSelecionado:' , item );
+    if (item.versaoRecursos && item.versaoRecursos.length==1) {
+      this.versaoCorrente = item.versaoRecursos[0]
+    }
   }
 }

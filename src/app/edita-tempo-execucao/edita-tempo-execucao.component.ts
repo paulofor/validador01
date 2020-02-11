@@ -82,7 +82,7 @@ export class EditaTempoExecucaoComponent implements OnInit {
       })
   }
   carregaRecursoProduto() {
-    this.srvRecursoProduto.find({ "where": { "desenvolvimento": "1" } })
+    this.srvRecursoProduto.find({ "where": { "desenvolvimento": "1" } , "include" : {"relation" : "versaoRecursos" , "scope" : {"where" : {"emExecucao":"1"} } } })
       .subscribe((result: RecursoProduto[]) => {
         this.listaRecurso = result;
       })
@@ -97,16 +97,7 @@ export class EditaTempoExecucaoComponent implements OnInit {
       this.tempo.diaSemanaId = this.plano.diaSemanaId;
       this.tempo.semanaId = this.plano.semanaId;
       this.tempo.tempo = new Date(0);
-      //console.log("TempoExecucao: ", JSON.stringify(this.tempo));
-      /*
-      this.servico.create(this.tempo, (err, obj) => {
-        console.log("Erro:" + JSON.stringify(err));
-        console.log('Obj' + obj );
-      }).subscribe((e: any) => {
-        console.log('Resposta:' , JSON.stringify(e));
-        this.closeDialog();
-      });
-      */
+
       console.log("TempoExecucao(insere): ", JSON.stringify(this.tempo));
       this.servico.Insere(this.tempo)
         .subscribe(

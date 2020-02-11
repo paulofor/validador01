@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { EditaVersaoRecursoComponent } from '../edita-versao-recurso/edita-versao-recurso.component';
-import { RecursoProduto, RecursoProdutoApi } from '../shared/sdk';
+import { RecursoProduto, RecursoProdutoApi, VersaoRecursoApi } from '../shared/sdk';
 import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
@@ -13,7 +13,8 @@ export class DetalheRecursoProdutoComponent implements OnInit {
 
   recurso: RecursoProduto;
 
-  constructor(private srv:RecursoProdutoApi, private dialog: MatDialog, private route: ActivatedRoute) { 
+  constructor(private srv:RecursoProdutoApi, private dialog: MatDialog, 
+            private route: ActivatedRoute, private srvVersao: VersaoRecursoApi) { 
 
   }
 
@@ -21,6 +22,12 @@ export class DetalheRecursoProdutoComponent implements OnInit {
     this.carregaRecurso();
   }
 
+  atualizaPrazo() {
+    this.srvVersao.CalculaDataFinalizacao()
+      .subscribe((result) => {
+        this.carregaRecurso();
+      })
+  }
 
   openDialog(item?) {
     this.dialog.afterAllClosed.subscribe(result => {

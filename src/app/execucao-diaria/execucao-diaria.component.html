@@ -43,7 +43,9 @@
           <td>{{execucao.processoNegocio.nome}}</td>
           <td>
             <span *ngIf="execucao.projetoMySql">{{execucao.projetoMySql.nome}} (projeto)</span>
-            <span *ngIf="execucao.recursoProduto">{{execucao.recursoProduto.nome}} (recurso)</span>
+            <span *ngIf="execucao.recursoProduto">{{execucao.recursoProduto.nome}} 
+                <span *ngIf="execucao.recursoProduto.versaoRecursos && execucao.recursoProduto.versaoRecursos.length==1"><br>({{execucao.recursoProduto.versaoRecursos[0].nome}})</span>
+            </span>
 
           <td>{{getHoraInicio(execucao) | date : 'HH:mm:ss'}}</td>
           <td>{{getHoraTermino(execucao) | date : 'HH:mm:ss'}}</td>

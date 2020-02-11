@@ -7,7 +7,8 @@ import {
   DiaSemana,
   Contexto,
   IdeiaMelhoria,
-  RecursoProduto
+  RecursoProduto,
+  VersaoRecurso
 } from '../index';
 
 declare var Object: any;
@@ -25,6 +26,7 @@ export interface TempoExecucaoInterface {
   "contextoId"?: number;
   "ideiaMelhoriaId"?: number;
   "recursoProdutoId"?: number;
+  "versaoRecursoId"?: number;
   projetoMySql?: ProjetoMySql;
   semana?: Semana;
   processoNegocio?: ProcessoNegocio;
@@ -33,6 +35,7 @@ export interface TempoExecucaoInterface {
   contexto?: Contexto;
   ideiaMelhoria?: IdeiaMelhoria;
   recursoProduto?: RecursoProduto;
+  versaoRecurso?: VersaoRecurso;
 }
 
 export class TempoExecucao implements TempoExecucaoInterface {
@@ -49,6 +52,7 @@ export class TempoExecucao implements TempoExecucaoInterface {
   "contextoId": number;
   "ideiaMelhoriaId": number;
   "recursoProdutoId": number;
+  "versaoRecursoId": number;
   projetoMySql: ProjetoMySql;
   semana: Semana;
   processoNegocio: ProcessoNegocio;
@@ -57,6 +61,7 @@ export class TempoExecucao implements TempoExecucaoInterface {
   contexto: Contexto;
   ideiaMelhoria: IdeiaMelhoria;
   recursoProduto: RecursoProduto;
+  versaoRecurso: VersaoRecurso;
   constructor(data?: TempoExecucaoInterface) {
     Object.assign(this, data);
   }
@@ -142,6 +147,10 @@ export class TempoExecucao implements TempoExecucaoInterface {
           name: 'recursoProdutoId',
           type: 'number'
         },
+        "versaoRecursoId": {
+          name: 'versaoRecursoId',
+          type: 'number'
+        },
       },
       relations: {
         projetoMySql: {
@@ -206,6 +215,14 @@ export class TempoExecucao implements TempoExecucaoInterface {
           model: 'RecursoProduto',
           relationType: 'belongsTo',
                   keyFrom: 'recursoProdutoId',
+          keyTo: 'id'
+        },
+        versaoRecurso: {
+          name: 'versaoRecurso',
+          type: 'VersaoRecurso',
+          model: 'VersaoRecurso',
+          relationType: 'belongsTo',
+                  keyFrom: 'versaoRecursoId',
           keyTo: 'id'
         },
       }

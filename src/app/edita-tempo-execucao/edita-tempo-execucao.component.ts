@@ -2,7 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { Template } from '@angular/compiler/src/render3/r3_ast';
 import { TempoExecucao, PlanoExecucao, TempoExecucaoApi, ProjetoMySql, ProjetoMySqlApi, IdeiaMelhoria, IdeiaMelhoriaApi, RecursoProdutoApi } from '../shared/sdk';
-import { RecursoProduto } from '../shared/sdk/models';
+import { RecursoProduto, VersaoRecurso } from '../shared/sdk/models';
 
 @Component({
   selector: 'app-edita-tempo-execucao',
@@ -21,7 +21,8 @@ export class EditaTempoExecucaoComponent implements OnInit {
   idRecurso: number;
 
   listaIdeia: IdeiaMelhoria[];
-
+  recurso : RecursoProduto;
+  versaoRecurso : VersaoRecurso;
 
 
   constructor(public dialogRef: MatDialogRef<EditaTempoExecucaoComponent>,
@@ -47,7 +48,7 @@ export class EditaTempoExecucaoComponent implements OnInit {
       this.tempo = this.data.tempo;
       this.tempo.horaTermino = new Date();
       this.tempo.horaInicio = new Date(this.tempo.horaInicio);
-      //console.log('Tempo:', JSON.stringify(this.tempo));
+      console.log('Tempo:', JSON.stringify(this.tempo));
       this.tempoOk = true;
       this.idProcesso = this.tempo.processoNegocioId;
       this.idProjeto = this.tempo.projetoMySqlId;
@@ -69,8 +70,8 @@ export class EditaTempoExecucaoComponent implements OnInit {
     this.carregaIdeiaMelhoria();
   }
   selecionadoRecurso(evento) {
-    //console.log('Item Selecionado(Recurso):', evento);
-    this.idProjeto = evento;
+    console.log('Item Selecionado(Recurso):', evento);
+    this.recurso = evento;
     this.carregaRecursoProduto();
   }
 
@@ -117,6 +118,7 @@ export class EditaTempoExecucaoComponent implements OnInit {
       //console.log('Hora Termino:', this.tempo.horaTermino);
       this.tempo.tempo = new Date(0);
       this.tempo.tempo.setTime(this.tempo.horaTermino.getTime() - this.tempo.horaInicio.getTime());
+      if (this.recurso) this.tempo.recursoProdutoId = this.recurso.id;
       console.log("TempoExecucao(altera): ", JSON.stringify(this.tempo));
       this.servico.Altera(this.tempo)
         .subscribe(

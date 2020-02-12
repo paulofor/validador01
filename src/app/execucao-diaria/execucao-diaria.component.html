@@ -44,7 +44,7 @@
           <td>
             <span *ngIf="execucao.projetoMySql">{{execucao.projetoMySql.nome}} (projeto)</span>
             <span *ngIf="execucao.recursoProduto">{{execucao.recursoProduto.nome}} 
-                <span *ngIf="execucao.recursoProduto.versaoRecursos && execucao.recursoProduto.versaoRecursos.length==1"><br>({{execucao.recursoProduto.versaoRecursos[0].nome}})</span>
+                <span *ngIf="execucao.versaoRecurso"><br>({{execucao.versaoRecurso.nome}})</span>
             </span>
 
           <td>{{getHoraInicio(execucao) | date : 'HH:mm:ss'}}</td>

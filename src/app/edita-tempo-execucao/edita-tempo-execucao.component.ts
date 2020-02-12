@@ -21,8 +21,8 @@ export class EditaTempoExecucaoComponent implements OnInit {
   idRecurso: number;
 
   listaIdeia: IdeiaMelhoria[];
-  recurso : RecursoProduto;
-  versaoRecurso : VersaoRecurso;
+  recurso: RecursoProduto;
+  versao: VersaoRecurso;
 
 
   constructor(public dialogRef: MatDialogRef<EditaTempoExecucaoComponent>,
@@ -40,7 +40,7 @@ export class EditaTempoExecucaoComponent implements OnInit {
       this.tempo.horaTermino = new Date();
       this.plano = this.data.plano;
       //console.log('Plano: ', this.plano);
-      console.log('Tempo:' , this.tempo);
+      console.log('Tempo:', this.tempo);
       this.tempoOk = true;
       this.idProcesso = this.plano.processoNegocioId;
     } else {
@@ -59,7 +59,7 @@ export class EditaTempoExecucaoComponent implements OnInit {
       .subscribe((res: ProjetoMySql[]) => {
         //console.log('Lista Projeto: ', res);
         this.listaProjeto = res;
-    })
+      })
   }
 
 
@@ -70,8 +70,13 @@ export class EditaTempoExecucaoComponent implements OnInit {
     this.carregaIdeiaMelhoria();
   }
   selecionadoRecurso(evento) {
-    console.log('Item Selecionado(Recurso):', evento);
+    //console.log('** Item Selecionado(Recurso):', evento);
     this.recurso = evento;
+    if (evento.versaoRecursos && evento.versaoRecursos.length == 1)
+      this.versao = evento.versaoRecursos[0];
+    if (this.recurso) this.tempo.recursoProdutoId = this.recurso.id;
+    if (this.versao) this.tempo.versaoRecursoId = this.versao.id;
+    //console.log('** Tempo no final: ', this.tempo);
     this.carregaRecursoProduto();
   }
 
@@ -83,10 +88,14 @@ export class EditaTempoExecucaoComponent implements OnInit {
       })
   }
   carregaRecursoProduto() {
-    this.srvRecursoProduto.find({ "where": { "desenvolvimento": "1" } , "include" : {"relation" : "versaoRecursos" , "scope" : {"where" : {"emExecucao":"1"} } } })
+    this.srvRecursoProduto.find({ "where": { "desenvolvimento": "1" }, "include": { "relation": "versaoRecursos", "scope": { "where": { "emExecucao": "1" } } } })
       .subscribe((result: RecursoProduto[]) => {
         this.listaRecurso = result;
       })
+  }
+
+  compareRecurso(object1: any, object2: any) {
+    return object1 && object2 && object1.id == object2.id;
   }
 
   onSubmit() {
@@ -99,17 +108,19 @@ export class EditaTempoExecucaoComponent implements OnInit {
       this.tempo.semanaId = this.plano.semanaId;
       this.tempo.tempo = new Date(0);
 
+
+
       console.log("TempoExecucao(insere): ", JSON.stringify(this.tempo));
       this.servico.Insere(this.tempo)
         .subscribe(
-          data => {
-            //console.log('Data:', JSON.stringify(data));
-            this.closeDialog();
-          },
-          err => {
-            console.log('Erro - :', err.message);
-            console.log('SQL:', err.sql);
-          }
+        data => {
+          //console.log('Data:', JSON.stringify(data));
+          this.closeDialog();
+        },
+        err => {
+          console.log('Erro - :', err.message);
+          console.log('SQL:', err.sql);
+        }
         );
     } else {
       //console.log("TempoExecucao(alterar): ", JSON.stringify(this.tempo));
@@ -122,14 +133,14 @@ export class EditaTempoExecucaoComponent implements OnInit {
       console.log("TempoExecucao(altera): ", JSON.stringify(this.tempo));
       this.servico.Altera(this.tempo)
         .subscribe(
-          data => {
-            //console.log('Data:', JSON.stringify(data));
-            this.closeDialog();
-          },
-          err => {
-            console.log('Erro - :', err.message);
-            console.log('SQL:', err.sql);
-          }
+        data => {
+          //console.log('Data:', JSON.stringify(data));
+          this.closeDialog();
+        },
+        err => {
+          console.log('Erro - :', err.message);
+          console.log('SQL:', err.sql);
+        }
         );
     }
   }

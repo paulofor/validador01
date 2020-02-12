@@ -20,18 +20,21 @@
   </mat-form-field>
 
   <ng-container *ngIf="!tempo.id">
-  <mat-form-field class="example-full-width">
-    <mat-select placeholder="Recurso" (selectionChange)="selecionadoRecurso($event.value)">
-      <mat-option *ngFor="let recurso of listaRecurso" [value]="recurso">
-        {{ recurso.nome }}
-        <span *ngIf="recurso.versaoRecursos.length==1">({{recurso.versaoRecursos[0].nome}})</span>
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-select  [compareWith]="compareRecurso" [(ngModel)]="tempo.recursoProduto" name="recursoProduto" #recursoProduto placeholder="Recurso" (selectionChange)="selecionadoRecurso($event.value)">
+        <mat-option *ngFor="let recurso of listaRecurso" [value]="recurso">
+          {{ recurso.nome }}
+          <span *ngIf="recurso.versaoRecursos.length==1">({{recurso.versaoRecursos[0].nome}})</span>
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
   </ng-container>
 
   <ng-container *ngIf="tempo.id">
-    Recurso <span>{{tempo.recursoProduto.nome}}</span>
+    Recurso:
+    <span *ngIf="tempo.recursoProduto">{{tempo.recursoProduto.nome}}</span>
   </ng-container>
 
   <mat-dialog-content>

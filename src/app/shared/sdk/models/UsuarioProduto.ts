@@ -13,6 +13,7 @@ export interface UsuarioProdutoInterface {
   "dataUltimoAcesso"?: Date;
   "codigoPagSeguro"?: string;
   "dataPagSeguro"?: Date;
+  "email"?: string;
   "id"?: number;
   "projetoMySqlId"?: number;
   dispositivoUsuarios?: DispositivoUsuario[];
@@ -27,6 +28,7 @@ export class UsuarioProduto implements UsuarioProdutoInterface {
   "dataUltimoAcesso": Date;
   "codigoPagSeguro": string;
   "dataPagSeguro": Date;
+  "email": string;
   "id": number;
   "projetoMySqlId": number;
   dispositivoUsuarios: DispositivoUsuario[];
@@ -91,6 +93,10 @@ export class UsuarioProduto implements UsuarioProdutoInterface {
         "dataPagSeguro": {
           name: 'dataPagSeguro',
           type: 'Date'
+        },
+        "email": {
+          name: 'email',
+          type: 'string'
         },
         "id": {
           name: 'id',

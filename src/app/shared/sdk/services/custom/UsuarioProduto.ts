@@ -634,6 +634,37 @@ export class UsuarioProdutoApi extends BaseLoopBackApi {
   }
 
   /**
+   * <em>
+         * (The remote method definition does not provide any description.)
+         * </em>
+   *
+   * @param {string} login 
+   *
+   * @param {string} senha 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `UsuarioProduto` object.)
+   * </em>
+   */
+  public ValidaLogin(login: any, senha: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/UsuarioProdutos/validaLogin";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof login !== 'undefined' && login !== null) _urlParams.login = login;
+    if (typeof senha !== 'undefined' && senha !== null) _urlParams.senha = senha;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Creates a new instance in dispositivoUsuarios of this model.
    *
    * @param {any} id UsuarioProduto id

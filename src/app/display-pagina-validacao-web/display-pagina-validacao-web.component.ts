@@ -31,10 +31,12 @@ export class DisplayPaginaValidacaoWebComponent implements OnInit {
   }
 
   visitar(){
-    window.open("http://www.digicom.inf.br/oferta/?id=" + this.item.codigoHash , "_blank");
+    //window.open("http://www.digicom.inf.br/oferta/?id=" + this.item.codigoHash , "_blank");
+    window.open("https://www.digicom.inf.br:21101/?id=" + this.item.codigoHash , "_blank");
   }
   mobile(){
-    window.open("http://www.digicom.inf.br/oferta/?id=" + this.item.codigoHash , "_blank");
+    //window.open("http://www.digicom.inf.br/oferta/?id=" + this.item.codigoHash , "_blank");
+    window.open("https://www.digicom.inf.br:21101/?id=" + this.item.codigoHash , "_blank");
   }
 
   permiteAlterar(item : PaginaValidacaoWeb) {

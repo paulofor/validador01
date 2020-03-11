@@ -11,7 +11,8 @@ import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Cosmetic_OportunidadeDia } from '../../models/Cosmetic_OportunidadeDia';
 import { SocketConnection } from '../../sockets/socket.connections';
-import { URL_COSMETIC } from '../../../constantes/base.url';
+import { URL_COSMETIC } from '../../../../../app/constantes/base.url';
+
 
 
 /**
@@ -107,7 +108,7 @@ export class Cosmetic_OportunidadeDiaApi extends BaseLoopBackApi {
   public ListaApp(customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = URL_COSMETIC + "/" + LoopBackConfig.getApiVersion() +
-    "/Cosmetic_OportunidadeDia/listaApp";
+    "/Cosmetic_OportunidadeDias/listaApp";
     let _routeParams: any = {};
     let _postBody: any = {};
     let _urlParams: any = {};

@@ -20,9 +20,10 @@
           <td colspan="2">
             <mat-card>
               <mat-card-title>{{validador.titulo}}</mat-card-title>
-              <mat-card-subtitle>{{validador.bullet1}}</mat-card-subtitle>
-              <mat-card-subtitle>{{validador.bullet2}}</mat-card-subtitle>
-              <mat-card-subtitle>{{validador.bullet3}}</mat-card-subtitle>
+              <mat-card-subtitle>{{validador.descricaoSimples}}</mat-card-subtitle>
+              <p>{{validador.bullet1}}</p>
+              <p>{{validador.bullet2}}</p>
+              <p>{{validador.bullet3}}</p>
               <mat-card-actions>
                 <button mat-stroked-button color="primary" [disabled]="validador.permiteEdicao==0" (click)="openDialog(validador)">Alterar</button>
                 &nbsp;&nbsp;&nbsp;

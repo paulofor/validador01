@@ -35,6 +35,7 @@ export class EditaFunilComponent implements OnInit {
         this.closeDialog();
       });
     } else {
+
       this.servico.updateAttributes(this.item.id, this.item, (err, obj) => {
         console.log("Erro:" + err.message);
       }).subscribe((e: any) => {

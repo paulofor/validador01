@@ -49,6 +49,8 @@ export class EditaEtapaFunilComponent implements OnInit {
         this.closeDialog();
       });
     } else {
+      delete this.item["etapaCliente"];
+      console.log('EtapaCliente: ' , this.item);
       this.servico.updateAttributes(this.item.id, this.item, (err, obj) => {
         console.log("Erro:" + err.message);
       }).subscribe((e: any) => {

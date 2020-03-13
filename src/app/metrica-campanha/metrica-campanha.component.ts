@@ -20,7 +20,7 @@ export class MetricaCampanhaComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe((params: Params) => {
-      let idProjeto = params['id'];
+      this.idProjeto = params['id'];
       this.carregaCampanha();
       this.carregaEtapa();
     });
@@ -35,7 +35,7 @@ export class MetricaCampanhaComponent implements OnInit {
   }
 
   carregaCampanha() {
-    let filtro = {
+    var filtro = {
       "where": {
         "projetoMySqlId": this.idProjeto
       },
@@ -45,6 +45,7 @@ export class MetricaCampanhaComponent implements OnInit {
         "scope" : { "order" : "posicaoEtapa", "include": "etapaCliente" },
       }
     };
+    console.log('MetricaCampanhaComponent-filtro: ' , JSON.stringify(filtro));
     this.srv.find(filtro)
       .subscribe((resultado:CampanhaAds[]) => {
         console.log('Resultado:' , JSON.stringify(resultado));

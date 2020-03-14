@@ -27,7 +27,7 @@ export class MetricaCampanhaComponent implements OnInit {
   }
 
   carregaEtapa() {
-    let filtro = {'order' : 'posicao'};
+    let filtro = {'order' : 'posicao' , 'where' : { 'funilNegocioId' : '1' }  };
     this.srvEtapa.find(filtro)
       .subscribe((result:EtapaCliente[]) => {
         this.listaEtapaFunil = result;

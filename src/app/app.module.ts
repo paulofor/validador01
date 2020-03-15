@@ -240,6 +240,8 @@ import { EditaVersaoRecursoComponent } from './edita-versao-recurso/edita-versao
 import { PlanejamentoExecucaoRecursoComponent } from './planejamento-execucao-recurso/planejamento-execucao-recurso.component';
 import { PlanoSemanaPorContextoRecursoComponent } from './plano-semana-por-contexto-recurso/plano-semana-por-contexto-recurso.component';
 import { DisplayPlanoSemanaRecursoComponent } from './display-plano-semana-recurso/display-plano-semana-recurso.component';
+import { ExecucaoDiariaRecursoComponent } from './execucao-diaria-recurso/execucao-diaria-recurso.component';
+import { EditaTempoExecucaoRecursoComponent } from './edita-tempo-execucao-recurso/edita-tempo-execucao-recurso.component';
 
 
 registerLocaleData(localePt, 'pt-BR');
@@ -494,7 +496,11 @@ registerLocaleData(localePt, 'pt-BR');
 
     PlanoSemanaPorContextoRecursoComponent,
 
-    DisplayPlanoSemanaRecursoComponent
+    DisplayPlanoSemanaRecursoComponent,
+
+    ExecucaoDiariaRecursoComponent,
+
+    EditaTempoExecucaoRecursoComponent
 
  
   ],
@@ -548,7 +554,8 @@ registerLocaleData(localePt, 'pt-BR');
     AssociaItemValorVersaoAppComponent,
     EditaFunilComponent,
     EditaEtapaFunilComponent,
-    EditaVersaoRecursoComponent
+    EditaVersaoRecursoComponent,
+    EditaTempoExecucaoRecursoComponent
 
   ],
   imports: [

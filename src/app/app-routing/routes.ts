@@ -94,6 +94,7 @@ import { ListaEtapaFunilComponent } from '../lista-etapa-funil/lista-etapa-funil
 import { MetricaCampanhaComponent } from '../metrica-campanha/metrica-campanha.component';
 import { DetalheRecursoProdutoComponent } from '../detalhe-recurso-produto/detalhe-recurso-produto.component';
 import { PlanejamentoExecucaoRecursoComponent } from '../planejamento-execucao-recurso/planejamento-execucao-recurso.component';
+import { ExecucaoDiariaRecursoComponent } from '../execucao-diaria-recurso/execucao-diaria-recurso.component';
 
 
 
@@ -193,6 +194,7 @@ export const routes : Routes = [
     { path : 'planejamentoExecucaoRecurso/:id' , component: PlanejamentoExecucaoRecursoComponent },
 
     { path : 'execucaoDiaria/:id' , component: ExecucaoDiariaComponent },
+    { path : 'execucaoDiariaRecurso/:id' , component: ExecucaoDiariaRecursoComponent },
 
     { path : 'listaPaletaCor' , component : ListaPaletaCorComponent} ,
 

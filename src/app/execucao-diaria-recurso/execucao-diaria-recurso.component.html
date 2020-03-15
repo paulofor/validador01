@@ -1,0 +1,61 @@
+<div *ngIf="listaExecucao" class="card">
+  <div class="header">
+    <h4 class="title">{{diaSemana.nomeDia}} ( {{semana.primeiroDia | date : 'dd/MM/yyyy' : 'UTC'}} até {{ semana.ultimoDia | date : 'dd/MM/yyyy'
+      : 'UTC'}} )</h4>
+  </div>
+  <div class="content table-responsive table-full-width">
+    <table *ngIf="listaPlano" class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th width="40%">Versão Recurso</th>
+          <th width="25%">Tempo Estimado</th>
+          <th width="25%">Tempo Execução</th>
+          <th width="10%"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let plano of listaPlano">
+          <td>{{plano.versaoRecurso.nome}}<br>({{plano.versaoRecurso.recursoProduto.nome}})</td>
+          <td>{{plano.tempoEstimado }}</td>
+          <td>{{plano.tempoExecucao }}</td>
+          <td>
+            <button class="btn btn-primary btn-sm " (click)="criaExecucao(plano)">Executar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="content table-responsive table-full-width">
+    <table *ngIf="listaPlano" class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th width="30%">Execuções</th>
+          <th width="40%">Projeto/Recurso</th>
+          <th width="20%">Início</th>
+          <th width="20%">Término</th>
+          <th width="20%">Tempo</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let execucao of listaExecucao">
+          <td>{{execucao.processoNegocio.nome}}</td>
+          <td>
+            <span *ngIf="execucao.projetoMySql">{{execucao.projetoMySql.nome}} (projeto)</span>
+            <span *ngIf="execucao.recursoProduto">{{execucao.recursoProduto.nome}} 
+                <span *ngIf="execucao.versaoRecurso"><br>({{execucao.versaoRecurso.nome}})</span>
+            </span>
+
+          <td>{{getHoraInicio(execucao) | date : 'HH:mm:ss'}}</td>
+          <td>{{getHoraTermino(execucao) | date : 'HH:mm:ss'}}</td>
+          <td>{{getTempo(execucao) | date : 'HH:mm:ss'}}</td>
+          <td>
+            <button class="btn btn-primary btn-sm " (click)="alteraExecucao(execucao)">Alterar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>

@@ -30,9 +30,16 @@ export class ProcessoNegocioListaComponent implements OnInit {
      );
   }
 
-  criaPlano(item) {
-    this.srvPlano.CriaPorProcesso(item.id,1);
-    this.srvPlano.CriaPorProcesso(item.id,2);
+  geraTempos(item) {
+    console.log("ID:" , item.id);
+    this.srvPlano.CriaPorProcesso(item.id,1)
+      .subscribe((resultado : any) => {
+        console.log('resultado1' , resultado);
+      });
+    this.srvPlano.CriaPorProcesso(item.id,2)
+    .subscribe((resultado : any) => {
+      console.log('resultado2' , resultado);
+    });
   }
 
 
@@ -61,6 +68,8 @@ export class ProcessoNegocioListaComponent implements OnInit {
       }
     });
   }
+
+
 
 
   getAtivoClasse(item) {

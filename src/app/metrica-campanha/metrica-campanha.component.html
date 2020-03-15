@@ -21,7 +21,7 @@
               <tbody>
                 <ng-container *ngFor="let campanha of listaCampanha">
                   <tr *ngIf="campanha.valorEtapaFunilCampanhas.length>0">
-                    <td>{{campanha.nome}}</td>
+                    <td>{{campanha.nome}}<br>({{campanha.dataInicial | date: 'dd/MM/yyyy' : 'UTC'}})</td>
                     <ng-container *ngFor="let valor of campanha.valorEtapaFunilCampanhas; let i = index">
                       <td>
                         {{valor.valor}} 

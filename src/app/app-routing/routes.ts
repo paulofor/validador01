@@ -93,6 +93,7 @@ import { ListaFunilComponent } from '../lista-funil/lista-funil.component';
 import { ListaEtapaFunilComponent } from '../lista-etapa-funil/lista-etapa-funil.component';
 import { MetricaCampanhaComponent } from '../metrica-campanha/metrica-campanha.component';
 import { DetalheRecursoProdutoComponent } from '../detalhe-recurso-produto/detalhe-recurso-produto.component';
+import { PlanejamentoExecucaoRecursoComponent } from '../planejamento-execucao-recurso/planejamento-execucao-recurso.component';
 
 
 
@@ -189,6 +190,7 @@ export const routes : Routes = [
     { path : 'melhoresPalavrasBaixoCusto' , component: NavegadorPalavrasComponent},
 
     { path : 'planejamentoExecucao/:id' , component: PlanejamentoExecucaoComponent },
+    { path : 'planejamentoExecucaoRecurso/:id' , component: PlanejamentoExecucaoRecursoComponent },
 
     { path : 'execucaoDiaria/:id' , component: ExecucaoDiariaComponent },
 

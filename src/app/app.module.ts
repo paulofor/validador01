@@ -237,6 +237,9 @@ import { EditaEtapaFunilComponent } from './edita-etapa-funil/edita-etapa-funil.
 import { MetricaCampanhaComponent } from './metrica-campanha/metrica-campanha.component';
 import { DetalheRecursoProdutoComponent } from './detalhe-recurso-produto/detalhe-recurso-produto.component';
 import { EditaVersaoRecursoComponent } from './edita-versao-recurso/edita-versao-recurso.component';
+import { PlanejamentoExecucaoRecursoComponent } from './planejamento-execucao-recurso/planejamento-execucao-recurso.component';
+import { PlanoSemanaPorContextoRecursoComponent } from './plano-semana-por-contexto-recurso/plano-semana-por-contexto-recurso.component';
+import { DisplayPlanoSemanaRecursoComponent } from './display-plano-semana-recurso/display-plano-semana-recurso.component';
 
 
 registerLocaleData(localePt, 'pt-BR');
@@ -485,7 +488,13 @@ registerLocaleData(localePt, 'pt-BR');
 
     DetalheRecursoProdutoComponent,
 
-    EditaVersaoRecursoComponent
+    EditaVersaoRecursoComponent,
+
+    PlanejamentoExecucaoRecursoComponent,
+
+    PlanoSemanaPorContextoRecursoComponent,
+
+    DisplayPlanoSemanaRecursoComponent
 
  
   ],

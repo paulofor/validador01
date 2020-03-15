@@ -1,0 +1,58 @@
+<form  *ngIf="versaoRecursoExecucao" (ngSubmit)="onSubmit()" >
+  <div class="card">
+    <div class="header">
+      <h4 class="title">Semana: {{semana.primeiroDia | date: 'dd/MM/yyyy' : 'UTC'}} 
+        até {{semana.ultimoDia | date: 'dd/MM/yyyy' : 'UTC'}} ({{semana.seqAno}}) - {{contexto.nome}}</h4>
+      <button class="btn btn-primary btn-sm " (click)="criaPlano()">Cria</button>
+    </div>
+
+    <div class="content table-responsive table-full-width">
+      <table class="table table-hover table-striped">
+        <thead>
+          <tr>
+            <th width="25%">Processo</th>
+            <th width="7%">Total Tempo</th>
+            <th width="7%">Segunda</th>
+            <th width="7%">Terça</th>
+            <th width="7%">Quarta</th>
+            <th width="7%">Quinta</th>
+            <th width="7%">Sexta</th>
+            <th width="7%">Sábado</th>
+            <th width="7%">Domingo</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td style='font-weight:bold;'>{{getDataItemSoma(1) | date : 'HH:mm' : 'UTC'}}</td>
+            <td style='font-weight:bold;'>{{getDataItemSoma(2) | date : 'HH:mm' : 'UTC'}}</td>
+            <td style='font-weight:bold;'>{{getDataItemSoma(3) | date : 'HH:mm' : 'UTC'}}</td>
+            <td style='font-weight:bold;'>{{getDataItemSoma(4) | date : 'HH:mm' : 'UTC'}}</td>
+            <td style='font-weight:bold;'>{{getDataItemSoma(5) | date : 'HH:mm' : 'UTC'}}</td>
+            <td style='font-weight:bold;'>{{getDataItemSoma(6) | date : 'HH:mm' : 'UTC'}}</td>
+            <td style='font-weight:bold;'>{{getDataItemSoma(7) | date : 'HH:mm' : 'UTC'}}</td>
+
+          </tr>
+          <tr *ngFor="let item of versaoRecursoExecucao">
+            <td>{{item.nome}}<br>({{item.recursoProduto.nome}})</td>
+            <td style='font-weight:bold;'>{{getSoma(item) |  date : 'HH:mm' : 'UTC' }}</td>
+            <td *ngFor="let coluna of item.planoExecucaos">
+              <mat-form-field style="width: 50px; ">
+                <input [(ngModel)]="coluna.tempoEstimadoStr" matInput maxlength="5" [ngModelOptions]="{standalone: true}" />
+              </mat-form-field>
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+  <button mat-raised-button color="primary" type="submit">Salvar</button>
+  <button mat-raised-button color="primary" type="button" (click)="ajustaTempos()">Calcular</button>
+</form>

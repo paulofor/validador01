@@ -3,7 +3,8 @@ import {
   ProcessoNegocio,
   Semana,
   DiaSemana,
-  Contexto
+  Contexto,
+  VersaoRecurso
 } from '../index';
 
 declare var Object: any;
@@ -17,10 +18,12 @@ export interface PlanoExecucaoInterface {
   "semanaId"?: number;
   "diaSemanaId"?: number;
   "contextoId"?: number;
+  "versaoRecursoId"?: number;
   processoNegocio?: ProcessoNegocio;
   semana?: Semana;
   diaSemana?: DiaSemana;
   contexto?: Contexto;
+  versaoRecurso?: VersaoRecurso;
 }
 
 export class PlanoExecucao implements PlanoExecucaoInterface {
@@ -33,10 +36,12 @@ export class PlanoExecucao implements PlanoExecucaoInterface {
   "semanaId": number;
   "diaSemanaId": number;
   "contextoId": number;
+  "versaoRecursoId": number;
   processoNegocio: ProcessoNegocio;
   semana: Semana;
   diaSemana: DiaSemana;
   contexto: Contexto;
+  versaoRecurso: VersaoRecurso;
   constructor(data?: PlanoExecucaoInterface) {
     Object.assign(this, data);
   }
@@ -106,6 +111,10 @@ export class PlanoExecucao implements PlanoExecucaoInterface {
           name: 'contextoId',
           type: 'number'
         },
+        "versaoRecursoId": {
+          name: 'versaoRecursoId',
+          type: 'number'
+        },
       },
       relations: {
         processoNegocio: {
@@ -138,6 +147,14 @@ export class PlanoExecucao implements PlanoExecucaoInterface {
           model: 'Contexto',
           relationType: 'belongsTo',
                   keyFrom: 'contextoId',
+          keyTo: 'id'
+        },
+        versaoRecurso: {
+          name: 'versaoRecurso',
+          type: 'VersaoRecurso',
+          model: 'VersaoRecurso',
+          relationType: 'belongsTo',
+                  keyFrom: 'versaoRecursoId',
           keyTo: 'id'
         },
       }

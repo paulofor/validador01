@@ -1,4 +1,8 @@
 /* tslint:disable */
+import {
+  PlanoExecucao,
+  RecursoProduto
+} from '../index';
 
 declare var Object: any;
 export interface VersaoRecursoInterface {
@@ -16,6 +20,8 @@ export interface VersaoRecursoInterface {
   "dataPrevista"?: Date;
   "id"?: number;
   "recursoProdutoId"?: number;
+  planoExecucaos?: PlanoExecucao[];
+  recursoProduto?: RecursoProduto;
 }
 
 export class VersaoRecurso implements VersaoRecursoInterface {
@@ -33,6 +39,8 @@ export class VersaoRecurso implements VersaoRecursoInterface {
   "dataPrevista": Date;
   "id": number;
   "recursoProdutoId": number;
+  planoExecucaos: PlanoExecucao[];
+  recursoProduto: RecursoProduto;
   constructor(data?: VersaoRecursoInterface) {
     Object.assign(this, data);
   }
@@ -124,6 +132,22 @@ export class VersaoRecurso implements VersaoRecursoInterface {
         },
       },
       relations: {
+        planoExecucaos: {
+          name: 'planoExecucaos',
+          type: 'PlanoExecucao[]',
+          model: 'PlanoExecucao',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'versaoRecursoId'
+        },
+        recursoProduto: {
+          name: 'recursoProduto',
+          type: 'RecursoProduto',
+          model: 'RecursoProduto',
+          relationType: 'belongsTo',
+                  keyFrom: 'recursoProdutoId',
+          keyTo: 'id'
+        },
       }
     }
   }

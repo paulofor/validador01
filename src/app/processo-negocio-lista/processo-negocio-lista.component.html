@@ -13,7 +13,8 @@
                 <tr>
                   <th width="15%">ID</th>
                   <th width="50%">Nome</th>
-                  <th width="15%"></th>
+                  <th width="10%"></th>
+                  <th width="10%"></th>
                   <th width="10%"></th>
                   <th width="10%"></th>
                 </tr>
@@ -26,9 +27,11 @@
                   <td>
                     <button class="btn btn-primary btn-sm " (click)="editaEtapa(item)">Etapas</button>
                   </td>
-
                   <td>
                     <button class="btn btn-primary btn-sm " (click)="openDialog(item)">Alterar</button>
+                  </td>
+                  <td>
+                    <button class="btn btn-primary btn-sm " (click)="geraTempos(item)">Gera Tempos</button>
                   </td>
                 </tr>
               </tbody>

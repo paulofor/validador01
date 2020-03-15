@@ -256,6 +256,7 @@ export class SDKBrowserModule {
         VersaoRecursoApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
+
       ]
     };
   }

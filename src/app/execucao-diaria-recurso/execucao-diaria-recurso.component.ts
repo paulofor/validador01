@@ -36,7 +36,7 @@ export class ExecucaoDiariaRecursoComponent implements OnInit {
         this.diaSemana = result.diaSemana;
         this.listaPlano = result.listaProcesso;
         this.listaExecucao = result.listaTempoExecucao;
-        console.log('ListaPlano', this.listaPlano);
+        //console.log('ListaPlano', this.listaPlano);
       })
     });
    

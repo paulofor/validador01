@@ -10,38 +10,39 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 export class EditaTempoExecucaoRecursoComponent implements OnInit {
   tempo: TempoExecucao;
   plano: PlanoExecucao;
-  listaProjeto: ProjetoMySql[];
+  //listaProjeto: ProjetoMySql[];
   tempoOk = false;
   idProcesso: number;
   idProjeto: number;
-  listaRecurso: RecursoProduto[];
+  //listaRecurso: RecursoProduto[];
   idRecurso: number;
 
-  listaIdeia: IdeiaMelhoria[];
+  //listaIdeia: IdeiaMelhoria[];
   recurso: RecursoProduto;
   versao: VersaoRecurso;
 
 
   constructor(public dialogRef: MatDialogRef<EditaTempoExecucaoRecursoComponent>,
-    private servico: TempoExecucaoApi, private srvIdeiaMelhoria: IdeiaMelhoriaApi, private srvRecursoProduto: RecursoProdutoApi
+    private servico: TempoExecucaoApi, private srvIdeiaMelhoria: IdeiaMelhoriaApi, 
+    private srvRecursoProduto: RecursoProdutoApi
     , @Inject(MAT_DIALOG_DATA) public data: any, private srvProjeto: ProjetoMySqlApi) { }
 
   ngOnInit() {
     //console.log("Parametro entrada", this.data);
     this.carregaRecursoProduto();
     if (!this.data.tempo) {
-      //console.log("fluxo nova");
+      console.log("fluxo nova");
       this.tempo = new TempoExecucao();
       this.tempo.dataReferencia = new Date();
       this.tempo.horaInicio = new Date();
       this.tempo.horaTermino = new Date();
       this.plano = this.data.plano;
-      //console.log('Plano: ', this.plano);
+      console.log('Plano: ', this.plano);
       console.log('Tempo:', this.tempo);
       this.tempoOk = true;
       this.idProcesso = this.plano.processoNegocioId;
     } else {
-      //console.log('fluxo altera');
+      console.log('fluxo altera');
       this.tempo = this.data.tempo;
       this.tempo.horaTermino = new Date();
       this.tempo.horaInicio = new Date(this.tempo.horaInicio);
@@ -52,11 +53,14 @@ export class EditaTempoExecucaoRecursoComponent implements OnInit {
       this.carregaIdeiaMelhoria()
     }
     //console.log('IdProcesso: ', this.idProcesso);
+    /*
     this.srvProjeto.ObtemPorIdProcesso(this.idProcesso)
       .subscribe((res: ProjetoMySql[]) => {
         //console.log('Lista Projeto: ', res);
         this.listaProjeto = res;
       })
+    */
+    //this.listaProjeto = [];
   }
 
 
@@ -81,13 +85,13 @@ export class EditaTempoExecucaoRecursoComponent implements OnInit {
   carregaIdeiaMelhoria() {
     this.srvIdeiaMelhoria.find({ "where": { "and": [{ "projetoMySqlId": this.idProjeto }, { "ativa": "1" }] } })
       .subscribe((result: IdeiaMelhoria[]) => {
-        this.listaIdeia = result;
+        //this.listaIdeia = result;
       })
   }
   carregaRecursoProduto() {
     this.srvRecursoProduto.find({ "where": { "desenvolvimento": "1" }, "include": { "relation": "versaoRecursos", "scope": { "where": { "emExecucao": "1" } } } })
       .subscribe((result: RecursoProduto[]) => {
-        this.listaRecurso = result;
+        //this.listaRecurso = result;
       })
   }
 
@@ -103,6 +107,7 @@ export class EditaTempoExecucaoRecursoComponent implements OnInit {
       this.tempo.contextoId = this.plano.contextoId;
       this.tempo.diaSemanaId = this.plano.diaSemanaId;
       this.tempo.semanaId = this.plano.semanaId;
+      this.tempo.versaoRecursoId = this.plano.versaoRecursoId;
       this.tempo.tempo = new Date(0);
 
 

@@ -30,8 +30,8 @@
     <table *ngIf="listaPlano" class="table table-hover table-striped">
       <thead>
         <tr>
-          <th width="30%">Execuções</th>
-          <th width="40%">Projeto/Recurso</th>
+          <th width="30%">Recurso</th>
+          <th width="40%">Versão</th>
           <th width="20%">Início</th>
           <th width="20%">Término</th>
           <th width="20%">Tempo</th>
@@ -40,13 +40,8 @@
       </thead>
       <tbody>
         <tr *ngFor="let execucao of listaExecucao">
-          <td>{{execucao.processoNegocio.nome}}</td>
-          <td>
-            <span *ngIf="execucao.projetoMySql">{{execucao.projetoMySql.nome}} (projeto)</span>
-            <span *ngIf="execucao.recursoProduto">{{execucao.recursoProduto.nome}} 
-                <span *ngIf="execucao.versaoRecurso"><br>({{execucao.versaoRecurso.nome}})</span>
-            </span>
-
+          <td></td>
+          <td><span *ngIf="execucao.versaoRecurso">{{execucao.versaoRecurso.nome}}</span></td>
           <td>{{getHoraInicio(execucao) | date : 'HH:mm:ss'}}</td>
           <td>{{getHoraTermino(execucao) | date : 'HH:mm:ss'}}</td>
           <td>{{getTempo(execucao) | date : 'HH:mm:ss'}}</td>

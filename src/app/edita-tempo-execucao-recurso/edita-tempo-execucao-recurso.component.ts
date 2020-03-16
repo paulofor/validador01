@@ -29,7 +29,6 @@ export class EditaTempoExecucaoRecursoComponent implements OnInit {
 
   ngOnInit() {
     //console.log("Parametro entrada", this.data);
-    this.carregaRecursoProduto();
     if (!this.data.tempo) {
       console.log("fluxo nova");
       this.tempo = new TempoExecucao();
@@ -46,11 +45,10 @@ export class EditaTempoExecucaoRecursoComponent implements OnInit {
       this.tempo = this.data.tempo;
       this.tempo.horaTermino = new Date();
       this.tempo.horaInicio = new Date(this.tempo.horaInicio);
-      console.log('Tempo:', JSON.stringify(this.tempo));
+      console.log('Tempo:', this.tempo);
       this.tempoOk = true;
       this.idProcesso = this.tempo.processoNegocioId;
       this.idProjeto = this.tempo.projetoMySqlId;
-      this.carregaIdeiaMelhoria()
     }
     //console.log('IdProcesso: ', this.idProcesso);
     /*
@@ -65,40 +63,6 @@ export class EditaTempoExecucaoRecursoComponent implements OnInit {
 
 
 
-  selecionado(evento) {
-    //console.log('Item Selecionado(Projeto):', evento);
-    this.idProjeto = evento;
-    this.carregaIdeiaMelhoria();
-  }
-  selecionadoRecurso(evento) {
-    //console.log('** Item Selecionado(Recurso):', evento);
-    this.recurso = evento;
-    if (evento.versaoRecursos && evento.versaoRecursos.length == 1)
-      this.versao = evento.versaoRecursos[0];
-    if (this.recurso) this.tempo.recursoProdutoId = this.recurso.id;
-    if (this.versao) this.tempo.versaoRecursoId = this.versao.id;
-    //console.log('** Tempo no final: ', this.tempo);
-    this.carregaRecursoProduto();
-  }
-
-
-  carregaIdeiaMelhoria() {
-    this.srvIdeiaMelhoria.find({ "where": { "and": [{ "projetoMySqlId": this.idProjeto }, { "ativa": "1" }] } })
-      .subscribe((result: IdeiaMelhoria[]) => {
-        //this.listaIdeia = result;
-      })
-  }
-  carregaRecursoProduto() {
-    this.srvRecursoProduto.find({ "where": { "desenvolvimento": "1" }, "include": { "relation": "versaoRecursos", "scope": { "where": { "emExecucao": "1" } } } })
-      .subscribe((result: RecursoProduto[]) => {
-        //this.listaRecurso = result;
-      })
-  }
-
-  compareRecurso(object1: any, object2: any) {
-    return object1 && object2 && object1.id == object2.id;
-  }
-
   onSubmit() {
     //console.log('Model: ' + JSON.stringify(this.tempo));
     if (!this.tempo.id) {
@@ -109,9 +73,6 @@ export class EditaTempoExecucaoRecursoComponent implements OnInit {
       this.tempo.semanaId = this.plano.semanaId;
       this.tempo.versaoRecursoId = this.plano.versaoRecursoId;
       this.tempo.tempo = new Date(0);
-
-
-
       console.log("TempoExecucao(insere): ", JSON.stringify(this.tempo));
       this.servico.Insere(this.tempo)
         .subscribe(

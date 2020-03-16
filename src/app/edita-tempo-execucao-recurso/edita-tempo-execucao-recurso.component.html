@@ -1,12 +1,8 @@
 <h2 *ngIf="plano" mat-dialog-title>{{plano.versaoRecurso.nome}}</h2>
+<h2 *ngIf="tempo.versaoRecurso">{{tempo.versaoRecurso.nome}}</h2>
 
 <form *ngIf="tempoOk" class="example-full-width" (ngSubmit)="onSubmit()">
 
-
-  <ng-container >
-    Versão:
-    <span>{{plano.versaoRecurso.nome}}</span>
-  </ng-container>
 
   <mat-dialog-content>
     <mat-form-field class="example-full-width">

@@ -22,7 +22,7 @@ export class EditaPalavraChaveEmCampanhaComponent implements OnInit {
   carregaLista() {
     this.srvConsulta.ObtemPorCampanha(this.campanha.id)
     .subscribe((resultado:PalavraGoogleProjeto[]) => {
-      console.log('Resultado: ' , resultado);
+      console.log('Resultado-listaPalavra: ' , resultado);
       this.listaPalavra = resultado;
     })
   }

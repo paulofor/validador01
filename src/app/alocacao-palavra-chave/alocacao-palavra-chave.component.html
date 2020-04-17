@@ -1,4 +1,5 @@
-<h2 *ngIf="data" mat-dialog-title>Atributo - {{palavra}}</h2>
+<div  *ngIf="palavra">
+<h2 mat-dialog-title>Atributo - {{palavra}}</h2>
 
 <form class="example-form" (ngSubmit)="onSubmit()">
 
@@ -20,3 +21,4 @@
   </mat-dialog-actions>
 
 </form>
+</div>

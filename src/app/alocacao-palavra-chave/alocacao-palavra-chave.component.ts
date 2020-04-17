@@ -18,7 +18,7 @@ export class AlocacaoPalavraChaveComponent implements OnInit {
   filteredOptions: Observable<string[]>;
   palavra: string;
 
-  projeto: ProjetoMySql;
+  projeto: ProjetoMySql = new ProjetoMySql();
   palavraProjeto: PalavraGoogleProjeto;
 
   projetoSelecionado: ProjetoMySql;
@@ -30,8 +30,10 @@ export class AlocacaoPalavraChaveComponent implements OnInit {
 
  
   ngOnInit() {
+    console.log('Entrou no init');
     this.palavraProjeto = new PalavraGoogleProjeto();
     this.palavra = this.data.itemSelecionado.palavraChaveGoogleId;
+    console.log('Palavra escolhida: ' , this.palavra);
     this.filteredOptions = this.myControl.valueChanges
       .pipe(
       startWith(' '),
@@ -41,8 +43,12 @@ export class AlocacaoPalavraChaveComponent implements OnInit {
 
   onSubmit() {
     this.palavraProjeto.palavraChaveGoogleId = this.data.itemSelecionado.palavraChaveGoogleId;
-    this.palavraProjeto.projetoMySql = this.projeto;
-    
+    this.palavraProjeto.projetoMySqlId = this.projeto.id;
+    console.log('Relacionameto-Submit: ' , this.palavraProjeto);
+    this.srvPalavra.create(this.palavraProjeto)
+      .subscribe((result) => {
+        this.closeDialog();
+      })
   }
 
   mostraNome(projeto: ProjetoMySql): string {
@@ -53,4 +59,7 @@ export class AlocacaoPalavraChaveComponent implements OnInit {
     this.projeto.id = (objeto.id?objeto.id:0);
   }
 
+  closeDialog() {
+    this.dialogRef.close('Pizza!');
+  }
 }

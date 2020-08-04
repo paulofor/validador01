@@ -5,7 +5,20 @@
 
   </div>
 
-  <div class="content table-responsive table-full-width">
+  <div class="content">
+    <ul class="list-group">
+      <div class="dgc_quadro" *ngFor="let recurso of listaRecurso">
+        <p class="dgc_titulo">{{recurso.nome}}</p>
+        <p class="dgc_subtitulo" *ngIf="recurso.etapaCliente"  >{{recurso.etapaCliente.nome}}</p>
+        <p class="dgc_descricao">{{recurso.descricao}}</p>
+        <span class="badge badge-info badge-pill">{{recurso.tempoConsumido}}</span>
+        <!--
+        <p><small>
+        <span class="badge badge-info badge-pill">{{recurso.tempoConsumido}}</span>
+        -->
+      </div>
+    </ul>
+    <!--
     <table class="table table-hover table-striped">
       <thead>
         <tr>
@@ -38,6 +51,8 @@
 
       </tbody>
     </table>
+    -->
+
   </div>
 
 </div>

@@ -10,7 +10,7 @@
       <table class="table table-hover table-striped">
         <thead>
           <tr>
-            <th width="25%">Processo</th>
+            <th width="25%">Processsso</th>
             <th width="7%">Total Tempo</th>
             <th width="7%">Segunda</th>
             <th width="7%">Terça</th>
@@ -36,7 +36,9 @@
 
           </tr>
           <tr *ngFor="let item of versaoRecursoExecucao">
-            <td>{{item.nome}}<br>({{item.recursoProduto.nome}})</td>
+            <td>
+              {{item.nome}}<br>
+            (<a routerLink="/detalheRecursoProduto/{{item.recursoProduto.id}}">{{item.recursoProduto.nome}})</a></td>
             <td style='font-weight:bold;'>{{getSoma(item) |  date : 'HH:mm' : 'UTC' }}</td>
             <td *ngFor="let coluna of item.planoExecucaos">
               <mat-form-field style="width: 50px; ">

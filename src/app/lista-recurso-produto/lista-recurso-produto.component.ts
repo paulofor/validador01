@@ -22,6 +22,12 @@ export class ListaRecursoProdutoComponent implements OnInit {
     let filtro = { 'include' : 'etapaCliente' };
     this.srv.find(filtro) 
       .subscribe((result:RecursoProduto[]) => {
+        console.log('Result recursos:' , result);
+        result.sort((a:RecursoProduto,b:RecursoProduto) => {
+          if (a.desenvolvimento==null) a.desenvolvimento = 0;
+          if (b.desenvolvimento==null) b.desenvolvimento = 0;
+          return b.desenvolvimento - a.desenvolvimento;
+        })
         this.listaRecurso = result;
       })
   }

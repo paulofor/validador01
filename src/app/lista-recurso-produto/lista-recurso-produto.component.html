@@ -10,7 +10,8 @@
       <div class="dgc_quadro" *ngFor="let recurso of listaRecurso">
         <p class="dgc_titulo">
           <a routerLink="/detalheRecursoProduto/{{recurso.id}}">{{recurso.nome}}</a>
-          <img (click)="openDialog(recurso)" heigth="18px" width="18px" src="assets/img/editar.png">
+          <img (click)="openDialog(recurso)" style="margin-left: 4px" heigth="18px" width="18px" src="assets/img/editar.png"/>
+          <img *ngIf="exibeCorrendo(recurso)" style="margin-left: 4px" height="18px" width="18px" src="assets/img/correndo.jpg"/>
         </p>
         <p class="dgc_subtitulo" *ngIf="recurso.etapaCliente"  >{{recurso.etapaCliente.nome}}</p>
         <p class="dgc_descricao">{{recurso.descricao}}</p>

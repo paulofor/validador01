@@ -18,6 +18,10 @@ export class ListaRecursoProdutoComponent implements OnInit {
     this.carregaRecurso();
   }
 
+  exibeCorrendo(recurso) {
+    return recurso.desenvolvimento == 1;
+  }
+
   carregaRecurso() {
     let filtro = { 'include' : 'etapaCliente' };
     this.srv.find(filtro) 

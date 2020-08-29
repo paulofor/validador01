@@ -333,6 +333,35 @@ export class VersaoRecursoApi extends BaseLoopBackApi {
   }
 
   /**
+   * Obtem lista de versao-recurso com filtro de contexto e semana
+   *
+   * @param {number} idSemana 
+   *
+   * @param {number} idContexto 
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `VersaoRecurso` object.)
+   * </em>
+   */
+  public ObtemComPlanoPorSemana(idSemana: any = {}, idContexto: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/VersaoRecursos/obtemComPlanoPorSemana";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof idSemana !== 'undefined' && idSemana !== null) _urlParams.idSemana = idSemana;
+    if (typeof idContexto !== 'undefined' && idContexto !== null) _urlParams.idContexto = idContexto;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Obtem todas as informações para o dia
    *
    * @param {number} idContexto 
@@ -358,35 +387,6 @@ export class VersaoRecursoApi extends BaseLoopBackApi {
     let _routeParams: any = {};
     let _postBody: any = {};
     let _urlParams: any = {};
-    if (typeof idContexto !== 'undefined' && idContexto !== null) _urlParams.idContexto = idContexto;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
-  }
-
-  /**
-   * Obtem lista de versao-recurso com filtro de contexto e semana
-   *
-   * @param {number} idSemana 
-   *
-   * @param {number} idContexto 
-   *
-   * @returns {object[]} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `VersaoRecurso` object.)
-   * </em>
-   */
-  public ObtemComPlanoPorSemana(idSemana: any = {}, idContexto: any, customHeaders?: Function): Observable<any> {
-    let _method: string = "GET";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/VersaoRecursos/obtemComPlanoPorSemana";
-    let _routeParams: any = {};
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    if (typeof idSemana !== 'undefined' && idSemana !== null) _urlParams.idSemana = idSemana;
     if (typeof idContexto !== 'undefined' && idContexto !== null) _urlParams.idContexto = idContexto;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;

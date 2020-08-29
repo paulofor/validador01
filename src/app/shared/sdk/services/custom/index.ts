@@ -87,5 +87,6 @@ export * from './ValorEtapaFunilDia';
 export * from './ValorEtapaFunilSemana';
 export * from './ValorEtapaFunilCampanha';
 export * from './VersaoRecurso';
+export * from './ErroLogicoLog';
 export * from './SDKModels';
 export * from './logger.service';

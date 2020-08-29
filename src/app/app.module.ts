@@ -242,6 +242,8 @@ import { PlanoSemanaPorContextoRecursoComponent } from './plano-semana-por-conte
 import { DisplayPlanoSemanaRecursoComponent } from './display-plano-semana-recurso/display-plano-semana-recurso.component';
 import { ExecucaoDiariaRecursoComponent } from './execucao-diaria-recurso/execucao-diaria-recurso.component';
 import { EditaTempoExecucaoRecursoComponent } from './edita-tempo-execucao-recurso/edita-tempo-execucao-recurso.component';
+import { VisitaAppComponent } from './visita-app/visita-app.component';
+import { ErroLogicoLogComponent } from './erro-logico-log/erro-logico-log.component';
 
 
 registerLocaleData(localePt, 'pt-BR');
@@ -500,7 +502,11 @@ registerLocaleData(localePt, 'pt-BR');
 
     ExecucaoDiariaRecursoComponent,
 
-    EditaTempoExecucaoRecursoComponent
+    EditaTempoExecucaoRecursoComponent,
+
+    VisitaAppComponent,
+
+    ErroLogicoLogComponent
 
  
   ],

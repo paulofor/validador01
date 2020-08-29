@@ -1,0 +1,37 @@
+<div class="main-content" *ngIf="lista">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">Visitas Aplicativos</h4>
+            <button class="btn btn-primary btn-sm " (click)="carregaVisitas()">Atualiza</button>
+          </div>
+          <div class="content table-responsive table-full-width">
+            <table class="table table-hover table-striped">
+              <thead>
+                <tr>
+                  <th width="5%">Horário</th>
+                  <th width="10%">Tela</th>
+                  <th width="10%">Id Usuario</th>
+                  <th width="10%">Dispositivo</th>
+                  <th width="10%">Chave</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of lista">
+                  <td>{{item.dataHora | date : 'dd/MM/yyyy HH:mm:ss' }}</td>
+                  <td><span *ngIf="item.telaApp">{{ item.telaApp.nome}}</span></td>
+                  <td>{{item.usuarioProdutoId}}</td>
+                  <td>{{item.usuarioProduto.dispositivoUsuarios[0].codigoDispositivo}}</td>
+                  <td>{{item.usuarioProduto.chave.substr(5)}}...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

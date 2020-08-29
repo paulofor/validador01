@@ -96,7 +96,8 @@ import { DetalheRecursoProdutoComponent } from '../detalhe-recurso-produto/detal
 import { PlanejamentoExecucaoRecursoComponent } from '../planejamento-execucao-recurso/planejamento-execucao-recurso.component';
 import { ExecucaoDiariaRecursoComponent } from '../execucao-diaria-recurso/execucao-diaria-recurso.component';
 
-
+import { VisitaAppComponent } from '../visita-app/visita-app.component';
+import { ErroLogicoLogComponent } from '../erro-logico-log/erro-logico-log.component';
 
 
 export const routes : Routes = [
@@ -241,6 +242,9 @@ export const routes : Routes = [
     { path: 'metricaCampanha/:id' , component: MetricaCampanhaComponent }, 
 
     { path: 'detalheRecursoProduto/:id' , component: DetalheRecursoProdutoComponent },
+    { path: 'visitaApp' , component: VisitaAppComponent },
+    { path: 'erroLogicoLog' , component: ErroLogicoLogComponent },
+
 
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

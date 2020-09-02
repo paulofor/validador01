@@ -24,7 +24,7 @@
                   <td><span *ngIf="item.telaApp">{{ item.telaApp.nome}}</span></td>
                   <td>{{item.usuarioProdutoId}}</td>
                   <td>{{item.usuarioProduto.dispositivoUsuarios[0].codigoDispositivo}}</td>
-                  <td>{{item.usuarioProduto.chave.substr(5)}}...</td>
+                  <td>{{item.usuarioProduto.chave.substring(0,10)}}...</td>
                 </tr>
               </tbody>
             </table>

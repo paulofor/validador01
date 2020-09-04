@@ -115,6 +115,7 @@ export class CampanhaEditaCriaV2Component implements OnInit {
   onSubmit() {
     console.log('Model: ' + JSON.stringify(this.item));
     if (!this.item.id) {
+      this.item.projetoMySqlId = this.idProjeto;
       this.campanhaSrv.CriaNova(this.item, (err, obj) => {
         console.log("Erro:" + err.message);
       }).subscribe((e: any) => {

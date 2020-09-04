@@ -244,6 +244,7 @@ import { ExecucaoDiariaRecursoComponent } from './execucao-diaria-recurso/execuc
 import { EditaTempoExecucaoRecursoComponent } from './edita-tempo-execucao-recurso/edita-tempo-execucao-recurso.component';
 import { VisitaAppComponent } from './visita-app/visita-app.component';
 import { ErroLogicoLogComponent } from './erro-logico-log/erro-logico-log.component';
+import { MonitorFaseInicialAppComponent } from './monitor-fase-inicial-app/monitor-fase-inicial-app.component';
 
 
 registerLocaleData(localePt, 'pt-BR');
@@ -506,7 +507,9 @@ registerLocaleData(localePt, 'pt-BR');
 
     VisitaAppComponent,
 
-    ErroLogicoLogComponent
+    ErroLogicoLogComponent,
+
+    MonitorFaseInicialAppComponent
 
  
   ],

@@ -137,6 +137,8 @@ import { ValorEtapaFunilSemanaApi } from './services/custom/ValorEtapaFunilSeman
 import { ValorEtapaFunilCampanhaApi } from './services/custom/ValorEtapaFunilCampanha';
 import { VersaoRecursoApi } from './services/custom/VersaoRecurso';
 import { ErroLogicoLogApi } from './services/custom/ErroLogicoLog';
+import { VisitaAppLogApi } from './services/custom/VisitaAppLog';
+import { MonitorFaseInicialAppApi } from './services/custom/MonitorFaseInicialApp';
 /**
 * @module SDKBrowserModule
 * @description
@@ -256,8 +258,10 @@ export class SDKBrowserModule {
         ValorEtapaFunilCampanhaApi,
         VersaoRecursoApi,
         ErroLogicoLogApi,
+        VisitaAppLogApi,
+        MonitorFaseInicialAppApi,
         internalStorageProvider,
-        { provide: SDKStorage, useClass: StorageBrowser },
+        { provide: SDKStorage, useClass: StorageBrowser }
       ]
     };
   }

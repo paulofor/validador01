@@ -89,6 +89,8 @@ import { ValorEtapaFunilSemana } from '../../models/ValorEtapaFunilSemana';
 import { ValorEtapaFunilCampanha } from '../../models/ValorEtapaFunilCampanha';
 import { VersaoRecurso } from '../../models/VersaoRecurso';
 import { ErroLogicoLog } from '../../models/ErroLogicoLog';
+import { VisitaAppLog } from '../../models/VisitaAppLog';
+import { MonitorFaseInicialApp } from '../../models/MonitorFaseInicialApp';
 
 export interface Models { [name: string]: any }
 
@@ -185,6 +187,8 @@ export class SDKModels {
     ValorEtapaFunilCampanha: ValorEtapaFunilCampanha,
     VersaoRecurso: VersaoRecurso,
     ErroLogicoLog: ErroLogicoLog,
+    VisitaAppLog: VisitaAppLog,
+    MonitorFaseInicialApp: MonitorFaseInicialApp,
     
   };
 

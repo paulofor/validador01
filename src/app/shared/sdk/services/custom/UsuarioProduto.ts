@@ -665,6 +665,32 @@ export class UsuarioProdutoApi extends BaseLoopBackApi {
   }
 
   /**
+   * Lista para envio de email estimulano acesso ao app
+   *
+   * @param {number} idProjeto 
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `UsuarioProduto` object.)
+   * </em>
+   */
+  public listaEmail(idProjeto: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/UsuarioProdutos/listaEmail";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof idProjeto !== 'undefined' && idProjeto !== null) _urlParams.idProjeto = idProjeto;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Creates a new instance in dispositivoUsuarios of this model.
    *
    * @param {any} id UsuarioProduto id

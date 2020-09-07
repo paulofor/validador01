@@ -28,7 +28,9 @@ export class EditaTempoExecucaoRecursoComponent implements OnInit {
     , @Inject(MAT_DIALOG_DATA) public data: any, private srvProjeto: ProjetoMySqlApi) { }
 
   ngOnInit() {
-    //console.log("Parametro entrada", this.data);
+    console.log("Parametro entrada", this.data);
+    this.versao = this.data.plano.versaoRecurso;
+    this.recurso = this.versao.recursoProduto;
     if (!this.data.tempo) {
       console.log("fluxo nova");
       this.tempo = new TempoExecucao();
@@ -73,6 +75,8 @@ export class EditaTempoExecucaoRecursoComponent implements OnInit {
       this.tempo.semanaId = this.plano.semanaId;
       this.tempo.versaoRecursoId = this.plano.versaoRecursoId;
       this.tempo.tempo = new Date(0);
+      this.tempo.recursoProdutoId = this.recurso.id;
+      
       console.log("TempoExecucao(insere): ", JSON.stringify(this.tempo));
       this.servico.Insere(this.tempo)
         .subscribe(

@@ -29,10 +29,11 @@ export class EditaTempoExecucaoRecursoComponent implements OnInit {
 
   ngOnInit() {
     console.log("Parametro entrada", this.data);
-    this.versao = this.data.plano.versaoRecurso;
-    this.recurso = this.versao.recursoProduto;
     if (!this.data.tempo) {
       console.log("fluxo nova");
+      this.versao = this.data.plano.versaoRecurso;
+      this.recurso = this.versao.recursoProduto;
+  
       this.tempo = new TempoExecucao();
       this.tempo.dataReferencia = new Date();
       this.tempo.horaInicio = new Date();

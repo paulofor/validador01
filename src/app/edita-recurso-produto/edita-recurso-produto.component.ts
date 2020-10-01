@@ -47,6 +47,7 @@ export class EditaRecursoProdutoComponent implements OnInit {
         this.closeDialog();
       });
     } else {
+      delete this.item.tempoConsumido;
       this.servico.updateAttributes(this.item.id, this.item, (err, obj) => {
         console.log("Erro:" + err.message);
       }).subscribe((e: any) => {

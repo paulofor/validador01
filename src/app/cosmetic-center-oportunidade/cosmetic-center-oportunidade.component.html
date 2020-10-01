@@ -32,6 +32,7 @@
                   <td>{{item.precoVendaAtual | number : '1.2-2'}}</td>
                   <td>{{item.precoVendaAnterior | number : '1.2-2'}}</td>
                   <td>{{item.percentualAjusteVenda | number : '1.1-1'}}%</td>
+                  <td><button class="btn btn-primary btn-sm " (click)="excluiItem(item)">Excluir</button></td>
                 </tr>
               </tbody>
             </table>

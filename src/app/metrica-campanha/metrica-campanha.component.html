@@ -1,10 +1,10 @@
-<div *ngIf="listaCampanha" class="main-content">
+<div *ngIf="listaCampanha" class="main-content" >
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
         <div class="card">
           <div class="header">
-            <h4 class="title">Campanhas - Geral</h4>
+            <h4 class="title">Campanhas - Geral {{projeto.nome}}</h4>
             <button mat-raised-button (click)="atualizaMetrica()">Atualiza</button>
           </div>
           <div class="content table-responsive table-full-width">

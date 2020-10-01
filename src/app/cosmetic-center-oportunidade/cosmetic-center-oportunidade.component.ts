@@ -23,4 +23,11 @@ export class CosmeticCenterOportunidadeComponent implements OnInit {
       })
   }
 
+
+  excluiItem(item) {
+    this.oportunidadeSrv.deleteById(item.id)
+      .subscribe((result) => {
+        this.carregaLista();
+      })
+  }
 }

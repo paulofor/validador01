@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EtapaCliente, CampanhaAds, CampanhaAdsApi, EtapaClienteApi, ProjetoMySqlApi, ValorEtapaFunilCampanhaApi } from '../shared/sdk';
+import { EtapaCliente, CampanhaAds, CampanhaAdsApi, EtapaClienteApi, ProjetoMySqlApi, ValorEtapaFunilCampanhaApi, ProjetoMySql } from '../shared/sdk';
 import { Params } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 
@@ -14,6 +14,7 @@ export class MetricaCampanhaComponent implements OnInit {
   listaEtapaFunil: EtapaCliente[];
 
   idProjeto: number;
+  projeto: ProjetoMySql;
 
   constructor(private srv : CampanhaAdsApi, private srvEtapa: EtapaClienteApi, private route: ActivatedRoute,
                 private srvProjeto: ProjetoMySqlApi, private metricaCampanhaSrv: ValorEtapaFunilCampanhaApi) { }
@@ -24,6 +25,13 @@ export class MetricaCampanhaComponent implements OnInit {
       this.carregaCampanha();
       this.carregaEtapa();
     });
+  }
+
+  carregaProjeto() {
+    this.srvProjeto.findById(this.idProjeto)
+      .subscribe((result:ProjetoMySql) => {
+        this.projeto = result;
+      })
   }
 
   carregaEtapa() {

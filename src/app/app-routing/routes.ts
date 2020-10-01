@@ -99,6 +99,7 @@ import { ExecucaoDiariaRecursoComponent } from '../execucao-diaria-recurso/execu
 import { VisitaAppComponent } from '../visita-app/visita-app.component';
 import { ErroLogicoLogComponent } from '../erro-logico-log/erro-logico-log.component';
 import { MonitorFaseInicialAppComponent } from '../monitor-fase-inicial-app/monitor-fase-inicial-app.component';
+import { ExplicaProcessoComponent } from '../explica-processo/explica-processo.component';
 
 
 export const routes : Routes = [
@@ -247,6 +248,7 @@ export const routes : Routes = [
     { path: 'erroLogicoLog' , component: ErroLogicoLogComponent },
     { path: 'monitorFaseInicialApp' , component : MonitorFaseInicialAppComponent },
 
+    { path: 'explicaProcesso/:id' , component : ExplicaProcessoComponent }, 
 
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

@@ -3,6 +3,8 @@ import { DiaSemana, ProcessoNegocio, Semana, ProcessoNegocioApi, PlanoExecucao, 
 import { Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ProcessoNegocioService } from '../comum/processo-negocio.service';
+import { ExplicaProcessoComponent } from '../explica-processo/explica-processo.component';
+import { MatDialog } from '@angular/material';
 
 
 
@@ -24,11 +26,21 @@ export class PlanoSemanaPorContextoComponent implements OnInit {
   @Input() semana: Semana;
   myControl = new FormControl();
 
-  constructor(private srv: ProcessoNegocioApi, private srvPost: ProcessoNegocioService) { }
+  constructor(private srv: ProcessoNegocioApi, private srvPost: ProcessoNegocioService, private dialog:MatDialog) { }
 
   ngOnInit() {
     this.carregaProcesso();
   }
+
+  abreExplicacao(itemCorrente) {
+    this.dialog.open(ExplicaProcessoComponent, {
+      width: '600px',
+      data: {
+        item: itemCorrente
+      }
+    });
+  }
+
 
   criaSomaDia() {
     this.somaDias = [];

@@ -1,3 +1,8 @@
-<p>
-  explica-processo works!
-</p>
+  <h2   *ngIf="item" mat-dialog-title>Processo Negócio: {{item.nome}}</h2>
+  
+    <h4>Desscrição:</h4>
+    <p>{{item.descricao}}</p>
+    <h4>Etapas:</h4>
+    <p>{{etapas}}</p>
+    <button mat-raised-button mat-dialog-close>Fechar</button>
+  

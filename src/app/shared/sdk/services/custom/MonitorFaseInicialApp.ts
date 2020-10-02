@@ -92,42 +92,6 @@ export class MonitorFaseInicialAppApi extends BaseLoopBackApi {
   }
 
   /**
-   * <em>
-         * (The remote method definition does not provide any description.)
-         * </em>
-   *
-   * @param {object} data Request data.
-   *
-   *  - `IdAplicacao` – `{number}` - 
-   *
-   *  - `descricao` – `{string}` - 
-   *
-   *  - `objeto` – `{string}` - 
-   *
-   * @returns {object} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `MonitorFaseInicialApp` object.)
-   * </em>
-   */
-  public Insere(IdAplicacao: any = {}, descricao: any = {}, objeto: any = {}, customHeaders?: Function): Observable<any> {
-    let _method: string = "PUT";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/MonitorFaseInicialApps/insere";
-    let _routeParams: any = {};
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    if (typeof IdAplicacao !== 'undefined' && IdAplicacao !== null) _urlParams.IdAplicacao = IdAplicacao;
-    if (typeof descricao !== 'undefined' && descricao !== null) _urlParams.descricao = descricao;
-    if (typeof objeto !== 'undefined' && objeto !== null) _urlParams.objeto = objeto;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
-  }
-
-  /**
    * The name of the model represented by this $resource,
    * i.e. `MonitorFaseInicialApp`.
    */

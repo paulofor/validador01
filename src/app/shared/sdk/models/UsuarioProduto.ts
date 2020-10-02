@@ -14,6 +14,7 @@ export interface UsuarioProdutoInterface {
   "codigoPagSeguro"?: string;
   "dataPagSeguro"?: Date;
   "email"?: string;
+  "naoEnviaEmail"?: number;
   "id"?: number;
   "projetoMySqlId"?: number;
   dispositivoUsuarios?: DispositivoUsuario[];
@@ -29,6 +30,7 @@ export class UsuarioProduto implements UsuarioProdutoInterface {
   "codigoPagSeguro": string;
   "dataPagSeguro": Date;
   "email": string;
+  "naoEnviaEmail": number;
   "id": number;
   "projetoMySqlId": number;
   dispositivoUsuarios: DispositivoUsuario[];
@@ -97,6 +99,10 @@ export class UsuarioProduto implements UsuarioProdutoInterface {
         "email": {
           name: 'email',
           type: 'string'
+        },
+        "naoEnviaEmail": {
+          name: 'naoEnviaEmail',
+          type: 'number'
         },
         "id": {
           name: 'id',

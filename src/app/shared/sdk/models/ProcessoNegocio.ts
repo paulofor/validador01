@@ -14,7 +14,7 @@ export interface ProcessoNegocioInterface {
   "codigo"?: string;
   "id"?: number;
   planoExecucaos?: PlanoExecucao[];
-  processoNegocioEtapaProjetos?: ProcessoNegocioEtapaProjeto;
+  processoNegocioEtapaProjetos?: ProcessoNegocioEtapaProjeto[];
 }
 
 export class ProcessoNegocio implements ProcessoNegocioInterface {
@@ -26,7 +26,7 @@ export class ProcessoNegocio implements ProcessoNegocioInterface {
   "codigo": string;
   "id": number;
   planoExecucaos: PlanoExecucao[];
-  processoNegocioEtapaProjetos: ProcessoNegocioEtapaProjeto;
+  processoNegocioEtapaProjetos: ProcessoNegocioEtapaProjeto[];
   constructor(data?: ProcessoNegocioInterface) {
     Object.assign(this, data);
   }
@@ -100,9 +100,9 @@ export class ProcessoNegocio implements ProcessoNegocioInterface {
         },
         processoNegocioEtapaProjetos: {
           name: 'processoNegocioEtapaProjetos',
-          type: 'ProcessoNegocioEtapaProjeto',
+          type: 'ProcessoNegocioEtapaProjeto[]',
           model: 'ProcessoNegocioEtapaProjeto',
-          relationType: 'hasOne',
+          relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'processoNegocioId'
         },

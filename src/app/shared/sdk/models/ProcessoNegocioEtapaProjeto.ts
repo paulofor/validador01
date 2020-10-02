@@ -1,16 +1,21 @@
 /* tslint:disable */
+import {
+  EtapaProjeto
+} from '../index';
 
 declare var Object: any;
 export interface ProcessoNegocioEtapaProjetoInterface {
   "id"?: number;
   "etapaProjetoId"?: number;
   "processoNegocioId"?: number;
+  etapaProjeto?: EtapaProjeto;
 }
 
 export class ProcessoNegocioEtapaProjeto implements ProcessoNegocioEtapaProjetoInterface {
   "id": number;
   "etapaProjetoId": number;
   "processoNegocioId": number;
+  etapaProjeto: EtapaProjeto;
   constructor(data?: ProcessoNegocioEtapaProjetoInterface) {
     Object.assign(this, data);
   }
@@ -58,6 +63,14 @@ export class ProcessoNegocioEtapaProjeto implements ProcessoNegocioEtapaProjetoI
         },
       },
       relations: {
+        etapaProjeto: {
+          name: 'etapaProjeto',
+          type: 'EtapaProjeto',
+          model: 'EtapaProjeto',
+          relationType: 'belongsTo',
+                  keyFrom: 'etapaProjetoId',
+          keyTo: 'id'
+        },
       }
     }
   }

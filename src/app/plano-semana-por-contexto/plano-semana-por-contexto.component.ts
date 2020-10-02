@@ -35,6 +35,7 @@ export class PlanoSemanaPorContextoComponent implements OnInit {
   abreExplicacao(itemCorrente) {
     this.dialog.open(ExplicaProcessoComponent, {
       width: '600px',
+      height: '400px',
       data: {
         item: itemCorrente
       }

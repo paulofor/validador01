@@ -35,7 +35,7 @@
 
           </tr>
           <tr *ngFor="let item of processoComPlano">
-            <td>{{item.nome}} <button (click)="abreExplicacao(item)">?</button></td>
+            <td>{{item.nome}} <button type="button" (click)="abreExplicacao(item)">?</button></td>
             <td style='font-weight:bold;'>{{getSoma(item) |  date : 'HH:mm' : 'UTC' }}</td>
             <td *ngFor="let coluna of item.planoExecucaos">
               <mat-form-field style="width: 50px; ">

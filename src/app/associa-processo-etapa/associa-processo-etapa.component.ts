@@ -60,6 +60,7 @@ export class AssociaProcessoEtapaComponent implements OnInit {
   }
 
   onChange(event, index, processo : ProcessoNegocio) {
+    /*
     if (processo.processoNegocioEtapaProjetos==null) {
       processo.processoNegocioEtapaProjetos = new ProcessoNegocioEtapaProjeto();
       processo.processoNegocioEtapaProjetos.etapaProjetoId = this.item.id;
@@ -67,6 +68,7 @@ export class AssociaProcessoEtapaComponent implements OnInit {
     } else {
       processo.processoNegocioEtapaProjetos = null;
     }
+    */
   }
 
 }

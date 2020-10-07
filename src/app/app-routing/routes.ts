@@ -100,6 +100,7 @@ import { VisitaAppComponent } from '../visita-app/visita-app.component';
 import { ErroLogicoLogComponent } from '../erro-logico-log/erro-logico-log.component';
 import { MonitorFaseInicialAppComponent } from '../monitor-fase-inicial-app/monitor-fase-inicial-app.component';
 import { ExplicaProcessoComponent } from '../explica-processo/explica-processo.component';
+import { TecnologiaOportunidadeComponent } from '../tecnologia-oportunidade/tecnologia-oportunidade.component';
 
 
 export const routes : Routes = [
@@ -229,6 +230,7 @@ export const routes : Routes = [
     { path: 'projetosUsuario/:id' , component : ProjetoUsuarioDetalheComponent },
 
     { path: 'cosmeticCenterOportunidades' , component : CosmeticCenterOportunidadeComponent },
+    { path: 'tecnologiaOportunidades' , component : TecnologiaOportunidadeComponent },
 
     { path: 'projetoMetricaProduto' , component: ProjetoMetricaProdutoComponent },
     { path: 'metricaMesProduto/:id/:mes/:ano' , component: MetricaMesProdutoComponent },

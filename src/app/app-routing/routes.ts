@@ -101,6 +101,7 @@ import { ErroLogicoLogComponent } from '../erro-logico-log/erro-logico-log.compo
 import { MonitorFaseInicialAppComponent } from '../monitor-fase-inicial-app/monitor-fase-inicial-app.component';
 import { ExplicaProcessoComponent } from '../explica-processo/explica-processo.component';
 import { TecnologiaOportunidadeComponent } from '../tecnologia-oportunidade/tecnologia-oportunidade.component';
+import { ProjetoEvolucaoComponent } from '../projeto-evolucao/projeto-evolucao.component';
 
 
 export const routes : Routes = [
@@ -251,6 +252,8 @@ export const routes : Routes = [
     { path: 'monitorFaseInicialApp' , component : MonitorFaseInicialAppComponent },
 
     { path: 'explicaProcesso/:id' , component : ExplicaProcessoComponent }, 
+
+    { path: 'projetoEvolucao/:id' , component: ProjetoEvolucaoComponent} ,
 
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

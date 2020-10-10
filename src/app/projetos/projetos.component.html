@@ -22,7 +22,7 @@
               </thead>
               <tbody>
                 <tr *ngFor="let projeto of projetos">
-                  <td>{{projeto.nome}}</td>
+                  <td><a routerLink="/projetoEvolucao/{{projeto.id}}">{{projeto.nome}}</a></td>
                   <td>{{projeto.codigo}}</td>
                   <td><a routerLink="/receita/{{projeto.id}}">Receitas</a></td>
                   <td><a routerLink="/dorGanhoCanvas/{{projeto.id}}">Ganho/Dor</a></td>

@@ -247,6 +247,7 @@ import { ErroLogicoLogComponent } from './erro-logico-log/erro-logico-log.compon
 import { MonitorFaseInicialAppComponent } from './monitor-fase-inicial-app/monitor-fase-inicial-app.component';
 import { ExplicaProcessoComponent } from './explica-processo/explica-processo.component';
 import { TecnologiaOportunidadeComponent } from './tecnologia-oportunidade/tecnologia-oportunidade.component';
+import { ProjetoEvolucaoComponent } from './projeto-evolucao/projeto-evolucao.component';
 
 
 registerLocaleData(localePt, 'pt-BR');
@@ -515,7 +516,9 @@ registerLocaleData(localePt, 'pt-BR');
 
     ExplicaProcessoComponent,
 
-    TecnologiaOportunidadeComponent
+    TecnologiaOportunidadeComponent,
+
+    ProjetoEvolucaoComponent
 
  
   ],

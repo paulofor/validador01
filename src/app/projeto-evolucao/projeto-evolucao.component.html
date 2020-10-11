@@ -1,6 +1,24 @@
-<p *ngIf="!projeto">
-  carregando
-</p>
-<div *ngIf="projeto">
-  <h1>{{projeto.nome}}</h1>
+<div class="main-content">
+
+  <p *ngIf="!projeto">
+    carregando
+  </p>
+
+  <div *ngIf="projeto" class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="header">
+            <h2 class="title">{{projeto.nome}}</h2>
+          </div>
+          <div class="content">
+            Primeira Campanha:
+            Última Campanha:
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </div>

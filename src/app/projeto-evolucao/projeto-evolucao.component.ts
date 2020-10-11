@@ -21,7 +21,10 @@ export class ProjetoEvolucaoComponent implements OnInit {
   carregaProjeto() {
     this.router.params.subscribe((params:Params) => {
       let id = params['id'];
-      this.srv.findById(id)
+      let filtro = {
+        'include' : { 'relation' : 'campanhaAds' }
+      }
+      this.srv.findById(id, filtro)
         .subscribe((result:ProjetoMySql) => {
           this.projeto = result;
         })

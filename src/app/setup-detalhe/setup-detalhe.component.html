@@ -10,16 +10,22 @@
           <table class="table table-hover table-striped">
             <thead>
               <tr>
+                <th>Data Inicio</th>
                 <th>Campanha</th>
                 <th>Projeto</th>
                 <th>Impressões</th>
+                <th>Cliques</th>
+                <th>Conversão</th>
               </tr>
             </thead>
             <tbody>
               <tr *ngFor="let campanha of item.campanhaAds">
+                <td>{{campanha.dataInicial | date: 'dd-MM-yyyy'}}</td>
                 <td>{{campanha.nome}}</td>
                 <td>{{campanha.projetoMySql.nome}}</td>
                 <td>{{campanha.quantidadeImpressao}}</td>
+                <td>{{campanha.quantidadeClique}}</td>
+                <td>{{campanha.conversao}}</td>
               </tr>
             </tbody>
           </table>

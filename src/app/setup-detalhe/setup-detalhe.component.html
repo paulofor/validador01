@@ -1,0 +1,32 @@
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div *ngIf="item" class="card">
+        <div class="header">
+          <h4 class="title">Setup - {{item.nome}}</h4>
+        </div>
+
+        <div class="content table-responsive table-full-width">
+          <table class="table table-hover table-striped">
+            <thead>
+              <tr>
+                <th>Campanha</th>
+                <th>Projeto</th>
+                <th>Impressões</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let campanha of item.campanhaAds">
+                <td>{{campanha.nome}}</td>
+                <td>{{campanha.projetoMySql.nome}}</td>
+                <td>{{campanha.quantidadeImpressao}}</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

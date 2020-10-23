@@ -1,6 +1,7 @@
+/* tslint:disable */
+
 import { BASE_URL } from "../../constantes/base.url";
 
-/* tslint:disable */
 /**
 * @module LoopBackConfig
 * @description

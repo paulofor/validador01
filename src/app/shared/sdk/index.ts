@@ -262,7 +262,8 @@ export class SDKBrowserModule {
         MonitorFaseInicialAppApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
-       ]
+
+      ]
     };
   }
 }

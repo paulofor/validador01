@@ -106,7 +106,7 @@ export class Cosmetic_OportunidadeDiaApi extends BaseLoopBackApi {
    */
   public ListaApp(customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
-    let _url: string = URL_COSMETIC + "/" + LoopBackConfig.getApiVersion() +
+    let _url: string = URL_COSMETIC+ "/" + LoopBackConfig.getApiVersion() +
     "/Cosmetic_OportunidadeDias/listaApp";
     let _routeParams: any = {};
     let _postBody: any = {};
@@ -115,6 +115,18 @@ export class Cosmetic_OportunidadeDiaApi extends BaseLoopBackApi {
     return result;
   }
 
+  /**
+   * chamada pelos aplicativos
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `Cosmetic_OportunidadeDia` object.)
+   * </em>
+   */
   public ListaAppComputador(customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = URL_COSMETIC + "/" + LoopBackConfig.getApiVersion() +

@@ -1,4 +1,4 @@
-<div class="main-content">
+<div  class="main-content">
 
   <p *ngIf="!projeto">
     carregando
@@ -16,15 +16,87 @@
           </div>
         
           <div class="row">
-            <div class="col-md-6">
-              Primeira Campanha: 10-10-1010
+            <div class="col-md-4">
+              <span class="label">Primeira Campanha:</span><span class="dado">{{projeto.primeiraCampanha | date : 'dd-MM-yyyy'}}</span>
             </div>
-            <div class="col-md-6">
-              Última Campanha: 10-10-1010
+            <div class="col-md-4">
+              <span class="label">Última Campanha:</span><span class="dado">{{projeto.ultimaCampanha | date : 'dd-MM-yyyy'}}</span>
+            </div>
+            <div class="col-md-4">
+              <span class="label">Duração:</span><span class="dado">{{projeto.periodoCampanha | number : '1.1-1'}} meses</span>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col-md-4">
+              <span class="label">Custo:</span><span class="dado">R$ {{projeto.custoCampanha | number:'1.2-2'}}</span>
+            </div>
+            <div class="col-md-4">
+              <span class="label">Tempo:</span><span class="dado">{{projeto.tempoTotal}}</span>
+            </div>
+            <div class="col-md-4">
+              <span class="label">Campanhas:</span><span class="dado">{{projeto.quantidadeCampanha}}</span>
             </div>
           </div>
         </div>
 
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">Campanhas</h4>
+          </div>
+          <div class="content table-responsive table-full-width">
+            <table class="table table-hover table-striped">
+              <thead>
+                <tr>
+                    <th width="10%">Data Inicial</th>
+                    <th width="20%">Nome</th>
+                    <th width="70%">Objetivo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of projeto.campanhaAds">
+                    <td>{{item.dataInicial | date: 'dd-MM-yyyy'}}</td>
+                    <td>{{item.nome}}</td>
+                    <td>{{item.objetivo}}</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">Versao Aplicativo</h4>
+          </div>
+          <div class="content table-responsive table-full-width">
+            <table class="table table-hover table-striped">
+              <thead>
+                <tr>
+                  <th>Nome</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of projeto.versaoApps">
+                  <td>{{item.nome}}</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+        </div>
       </div>
     </div>
   </div>

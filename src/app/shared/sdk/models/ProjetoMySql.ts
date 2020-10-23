@@ -38,6 +38,9 @@ export interface ProjetoMySqlInterface {
   "quantidadeAnuncio"?: number;
   "quantidadeCampanhaAberta"?: number;
   "quantidadePalavraChave"?: number;
+  "primeiraCampanha"?: Date;
+  "ultimaCampanha"?: Date;
+  "periodoCampanha"?: number;
   "etapaProjetoId"?: number;
   projetoCanvasMySqls?: ProjetoCanvasMySql[];
   mvpCanvasMySqls?: MvpCanvasMySql[];
@@ -76,6 +79,9 @@ export class ProjetoMySql implements ProjetoMySqlInterface {
   "quantidadeAnuncio": number;
   "quantidadeCampanhaAberta": number;
   "quantidadePalavraChave": number;
+  "primeiraCampanha": Date;
+  "ultimaCampanha": Date;
+  "periodoCampanha": number;
   "etapaProjetoId": number;
   projetoCanvasMySqls: ProjetoCanvasMySql[];
   mvpCanvasMySqls: MvpCanvasMySql[];
@@ -178,6 +184,18 @@ export class ProjetoMySql implements ProjetoMySqlInterface {
         },
         "quantidadePalavraChave": {
           name: 'quantidadePalavraChave',
+          type: 'number'
+        },
+        "primeiraCampanha": {
+          name: 'primeiraCampanha',
+          type: 'Date'
+        },
+        "ultimaCampanha": {
+          name: 'ultimaCampanha',
+          type: 'Date'
+        },
+        "periodoCampanha": {
+          name: 'periodoCampanha',
           type: 'number'
         },
         "etapaProjetoId": {

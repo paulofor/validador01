@@ -248,6 +248,7 @@ import { MonitorFaseInicialAppComponent } from './monitor-fase-inicial-app/monit
 import { ExplicaProcessoComponent } from './explica-processo/explica-processo.component';
 import { TecnologiaOportunidadeComponent } from './tecnologia-oportunidade/tecnologia-oportunidade.component';
 import { ProjetoEvolucaoComponent } from './projeto-evolucao/projeto-evolucao.component';
+import { SetupDetalheComponent } from './setup-detalhe/setup-detalhe.component';
 
 
 registerLocaleData(localePt, 'pt-BR');
@@ -518,7 +519,9 @@ registerLocaleData(localePt, 'pt-BR');
 
     TecnologiaOportunidadeComponent,
 
-    ProjetoEvolucaoComponent
+    ProjetoEvolucaoComponent,
+
+    SetupDetalheComponent
 
  
   ],
@@ -574,6 +577,7 @@ registerLocaleData(localePt, 'pt-BR');
     EditaEtapaFunilComponent,
     EditaVersaoRecursoComponent,
     EditaTempoExecucaoRecursoComponent
+    
 
   ],
   imports: [

@@ -102,6 +102,7 @@ import { MonitorFaseInicialAppComponent } from '../monitor-fase-inicial-app/moni
 import { ExplicaProcessoComponent } from '../explica-processo/explica-processo.component';
 import { TecnologiaOportunidadeComponent } from '../tecnologia-oportunidade/tecnologia-oportunidade.component';
 import { ProjetoEvolucaoComponent } from '../projeto-evolucao/projeto-evolucao.component';
+import { SetupDetalheComponent } from '../setup-detalhe/setup-detalhe.component';
 
 
 export const routes : Routes = [
@@ -254,6 +255,8 @@ export const routes : Routes = [
     { path: 'explicaProcesso/:id' , component : ExplicaProcessoComponent }, 
 
     { path: 'projetoEvolucao/:id' , component: ProjetoEvolucaoComponent} ,
+
+    { path: 'setupDetalhe/:id' , component: SetupDetalheComponent },
 
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

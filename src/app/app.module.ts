@@ -249,6 +249,7 @@ import { ExplicaProcessoComponent } from './explica-processo/explica-processo.co
 import { TecnologiaOportunidadeComponent } from './tecnologia-oportunidade/tecnologia-oportunidade.component';
 import { ProjetoEvolucaoComponent } from './projeto-evolucao/projeto-evolucao.component';
 import { SetupDetalheComponent } from './setup-detalhe/setup-detalhe.component';
+import { ProjetoResultadoComponent } from './projeto-resultado/projeto-resultado.component';
 
 
 registerLocaleData(localePt, 'pt-BR');
@@ -521,7 +522,9 @@ registerLocaleData(localePt, 'pt-BR');
 
     ProjetoEvolucaoComponent,
 
-    SetupDetalheComponent
+    SetupDetalheComponent,
+
+    ProjetoResultadoComponent
 
  
   ],

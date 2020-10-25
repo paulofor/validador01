@@ -103,6 +103,7 @@ import { ExplicaProcessoComponent } from '../explica-processo/explica-processo.c
 import { TecnologiaOportunidadeComponent } from '../tecnologia-oportunidade/tecnologia-oportunidade.component';
 import { ProjetoEvolucaoComponent } from '../projeto-evolucao/projeto-evolucao.component';
 import { SetupDetalheComponent } from '../setup-detalhe/setup-detalhe.component';
+import { ProjetoResultadoComponent } from '../projeto-resultado/projeto-resultado.component';
 
 
 export const routes : Routes = [
@@ -257,6 +258,8 @@ export const routes : Routes = [
     { path: 'projetoEvolucao/:id' , component: ProjetoEvolucaoComponent} ,
 
     { path: 'setupDetalhe/:id' , component: SetupDetalheComponent },
+
+    { path: 'projetoResultado' , component: ProjetoResultadoComponent },
 
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

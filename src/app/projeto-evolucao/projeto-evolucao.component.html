@@ -57,16 +57,20 @@
               <thead>
                 <tr>
                     <th width="10%">Data Inicial</th>
-                    <th width="20%">Nome</th>
                     <th width="55%">Objetivo</th>
-                    <th width="15%">Versão App</th>"
+                    <th width="10%">CTR</th>
+                    <th width="10%">Conversão</th>
+                    <th width="10%">Tipo</th>
+                    <th width="15%">Versão App</th>
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let item of projeto.campanhaAds">
                     <td>{{item.dataInicial | date: 'dd-MM-yyyy'}}</td>
-                    <td>{{item.nome}}</td>
                     <td>{{item.objetivo}}</td>
+                    <td>{{item.ctr | number: '1.2-2'}}</td>
+                    <td>{{item.taxaInstalacaoUsuario | number: '1.2-2'}}</td>
+                    <td>{{item.setupCampanha.tipoCampanha}}</td>
                     <td>{{(item.versaoApp ? item.versaoApp.nome : '')}}</td>
                 </tr>
               </tbody>

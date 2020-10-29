@@ -104,6 +104,7 @@ import { TecnologiaOportunidadeComponent } from '../tecnologia-oportunidade/tecn
 import { ProjetoEvolucaoComponent } from '../projeto-evolucao/projeto-evolucao.component';
 import { SetupDetalheComponent } from '../setup-detalhe/setup-detalhe.component';
 import { ProjetoResultadoComponent } from '../projeto-resultado/projeto-resultado.component';
+import { UsuarioHistoricoComponent } from '../usuario-historico/usuario-historico.component';
 
 
 export const routes : Routes = [
@@ -260,6 +261,7 @@ export const routes : Routes = [
     { path: 'setupDetalhe/:id' , component: SetupDetalheComponent },
 
     { path: 'projetoResultado' , component: ProjetoResultadoComponent },
+    { path: 'usuarioHistorico/:id' , component: UsuarioHistoricoComponent },
 
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

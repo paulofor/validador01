@@ -250,6 +250,7 @@ import { TecnologiaOportunidadeComponent } from './tecnologia-oportunidade/tecno
 import { ProjetoEvolucaoComponent } from './projeto-evolucao/projeto-evolucao.component';
 import { SetupDetalheComponent } from './setup-detalhe/setup-detalhe.component';
 import { ProjetoResultadoComponent } from './projeto-resultado/projeto-resultado.component';
+import { UsuarioHistoricoComponent } from './usuario-historico/usuario-historico.component';
 
 
 registerLocaleData(localePt, 'pt-BR');
@@ -524,7 +525,9 @@ registerLocaleData(localePt, 'pt-BR');
 
     SetupDetalheComponent,
 
-    ProjetoResultadoComponent
+    ProjetoResultadoComponent,
+
+    UsuarioHistoricoComponent
 
  
   ],

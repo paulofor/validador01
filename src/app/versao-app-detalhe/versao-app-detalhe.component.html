@@ -41,5 +41,31 @@
       </div>
     </div>
 
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">Telas</h4>
+            <button class="btn btn-primary btn-sm"  (click)="openDialog(versaoApp)" >Novo</button>
+          </div>
+          <div class="content table-responsive table-full-width">
+            <table class="table table-hover table-striped">
+              <thead>
+                <tr>
+                  <th width="100%">Nome</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of versaoApp.valorVersaos">
+                  <td>{{item.itemValorApp.nome}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
   </div>
 </div>

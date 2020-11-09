@@ -105,6 +105,7 @@ import { ProjetoEvolucaoComponent } from '../projeto-evolucao/projeto-evolucao.c
 import { SetupDetalheComponent } from '../setup-detalhe/setup-detalhe.component';
 import { ProjetoResultadoComponent } from '../projeto-resultado/projeto-resultado.component';
 import { UsuarioHistoricoComponent } from '../usuario-historico/usuario-historico.component';
+import { TelaAppExibeDetalheComponent } from '../tela-app-exibe-detalhe/tela-app-exibe-detalhe.component';
 
 
 export const routes : Routes = [
@@ -262,6 +263,7 @@ export const routes : Routes = [
 
     { path: 'projetoResultado' , component: ProjetoResultadoComponent },
     { path: 'usuarioHistorico/:id' , component: UsuarioHistoricoComponent },
+    { path: 'telaAppExibeDetalhe/:id' , component: TelaAppExibeDetalheComponent },
 
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

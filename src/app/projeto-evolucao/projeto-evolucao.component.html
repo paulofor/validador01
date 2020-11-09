@@ -71,7 +71,7 @@
                     <td>{{item.ctr | number: '1.2-2'}}</td>
                     <td>{{item.taxaInstalacaoUsuario | number: '1.2-2'}}</td>
                     <td>{{item.setupCampanha.tipoCampanha}}</td>
-                    <td>{{(item.versaoApp ? item.versaoApp.nome : '')}}</td>
+                    <td><a *ngIf="item.versaoApp" routerLink="/versaoAppDetalhe/{{item.versaoApp.id}}">{{(item.versaoApp ? item.versaoApp.nome : '')}}</a></td>
                 </tr>
               </tbody>
             </table>
@@ -97,7 +97,7 @@
               </thead>
               <tbody>
                 <tr *ngFor="let item of projeto.versaoApps">
-                  <td>{{item.nome}}</td>
+                  <td><a routerLink="/versaoAppDetalhe/{{item.id}}">{{item.nome}}</a></td>
                 </tr>
               </tbody>
             </table>

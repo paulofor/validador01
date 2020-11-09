@@ -22,7 +22,7 @@
         <ng-container *ngFor="let item of listaTelaApp">
           <tr>
             <td [ngClass]="getClasse(item)">
-              {{item.nome}}
+              <a routerLink="/telaAppExibeDetalhe/{{item.id}}">{{item.nome}}</a>
             </td>
             <td>
               {{item.nomeMenu}}

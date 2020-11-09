@@ -251,6 +251,9 @@ import { ProjetoEvolucaoComponent } from './projeto-evolucao/projeto-evolucao.co
 import { SetupDetalheComponent } from './setup-detalhe/setup-detalhe.component';
 import { ProjetoResultadoComponent } from './projeto-resultado/projeto-resultado.component';
 import { UsuarioHistoricoComponent } from './usuario-historico/usuario-historico.component';
+import { ImagemTelaDetalheComponent } from './imagem-tela-detalhe/imagem-tela-detalhe.component';
+import { TelaAppExibeDetalheComponent } from './tela-app-exibe-detalhe/tela-app-exibe-detalhe.component';
+import { AssociaVersaoTelaComponent } from './associa-versao-tela/associa-versao-tela.component';
 
 
 registerLocaleData(localePt, 'pt-BR');
@@ -527,7 +530,13 @@ registerLocaleData(localePt, 'pt-BR');
 
     ProjetoResultadoComponent,
 
-    UsuarioHistoricoComponent
+    UsuarioHistoricoComponent,
+
+    ImagemTelaDetalheComponent,
+
+    TelaAppExibeDetalheComponent,
+
+    AssociaVersaoTelaComponent
 
  
   ],

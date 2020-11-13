@@ -90,5 +90,7 @@ export * from './VersaoRecurso';
 export * from './ErroLogicoLog';
 export * from './VisitaAppLog';
 export * from './MonitorFaseInicialApp';
+export * from './ValorEtapaFunilVersaoApp';
+export * from './VersaoTelaApp';
 export * from './BaseModels';
 export * from './FireLoopRef';

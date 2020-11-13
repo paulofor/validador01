@@ -86,6 +86,9 @@ export class EditaSetupCampanhaComponent implements OnInit {
   getDia(dia : string) {
     if (dia == 'SUNDAY') return 1;
     if (dia == 'MONDAY') return 2;
+    if (dia == 'TUESDAY') return 3;
+    if (dia == 'WEDNESDAY') return 4;
+    if (dia == 'TUESDAY') return 5;
     if (dia == 'FRIDAY') return 6;
     if (dia == 'SATURDAY') return 7;
   }

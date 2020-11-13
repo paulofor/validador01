@@ -512,7 +512,7 @@ export class ProcessoNegocioApi extends BaseLoopBackApi {
   }
 
   /**
-   * Obtem os processos de negocio ativos e com a etapa quando associado
+   * Obtem lista de processo com filtro de contexto e semana
    *
    * @param {number} idSemana 
    *
@@ -527,7 +527,7 @@ export class ProcessoNegocioApi extends BaseLoopBackApi {
    * This usually means the response is a `ProcessoNegocio` object.)
    * </em>
    */
-  public ObtemComPlanoPorSemana(idSemana: any, idContexto: any, customHeaders?: Function): Observable<any> {
+  public ObtemComPlanoPorSemana(idSemana: any = {}, idContexto: any, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/ProcessoNegocios/obtemComPlanoPorSemana";
@@ -541,7 +541,7 @@ export class ProcessoNegocioApi extends BaseLoopBackApi {
   }
 
   /**
-   * Obtem os processos de negocio ativos e com a etapa quando associado
+   * Obtem todas as informações para o dia
    *
    * @param {number} idContexto 
    *

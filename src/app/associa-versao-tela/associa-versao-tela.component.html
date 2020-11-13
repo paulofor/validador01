@@ -1,3 +1,26 @@
-<p>
-  associa-versao-tela works!
-</p>
+<h4 mat-dialog-title>VersãoApp: {{item.nome}}</h4>
+
+<form *ngIf="item" class="example-full-width" (ngSubmit)="onSubmit()">
+
+  <mat-dialog-content>
+
+
+    <mat-form-field class="example-full-width">
+      <mat-select placeholder="Tela" #telaAppId [(ngModel)]="versaoTela.telaAppId" name="telaAppId">
+        <mat-option *ngFor="let tela of listaTela" [value]="tela.id">
+          {{ tela.nome }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+
+
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button mat-raised-button>Salvar</button>
+    <button mat-raised-button mat-dialog-close>Fechar</button>
+  </mat-dialog-actions>
+
+</form>

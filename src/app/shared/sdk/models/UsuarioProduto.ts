@@ -1,6 +1,7 @@
 /* tslint:disable */
 import {
   DispositivoUsuario,
+  VisitaApp,
   NotificacaoApp
 } from '../index';
 
@@ -18,6 +19,7 @@ export interface UsuarioProdutoInterface {
   "id"?: number;
   "projetoMySqlId"?: number;
   dispositivoUsuarios?: DispositivoUsuario[];
+  visitaApps?: VisitaApp[];
   notificacaoApps?: NotificacaoApp[];
 }
 
@@ -34,6 +36,7 @@ export class UsuarioProduto implements UsuarioProdutoInterface {
   "id": number;
   "projetoMySqlId": number;
   dispositivoUsuarios: DispositivoUsuario[];
+  visitaApps: VisitaApp[];
   notificacaoApps: NotificacaoApp[];
   constructor(data?: UsuarioProdutoInterface) {
     Object.assign(this, data);
@@ -118,6 +121,14 @@ export class UsuarioProduto implements UsuarioProdutoInterface {
           name: 'dispositivoUsuarios',
           type: 'DispositivoUsuario[]',
           model: 'DispositivoUsuario',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'usuarioProdutoId'
+        },
+        visitaApps: {
+          name: 'visitaApps',
+          type: 'VisitaApp[]',
+          model: 'VisitaApp',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'usuarioProdutoId'

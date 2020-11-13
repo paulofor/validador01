@@ -91,6 +91,8 @@ import { VersaoRecurso } from '../../models/VersaoRecurso';
 import { ErroLogicoLog } from '../../models/ErroLogicoLog';
 import { VisitaAppLog } from '../../models/VisitaAppLog';
 import { MonitorFaseInicialApp } from '../../models/MonitorFaseInicialApp';
+import { ValorEtapaFunilVersaoApp } from '../../models/ValorEtapaFunilVersaoApp';
+import { VersaoTelaApp } from '../../models/VersaoTelaApp';
 
 export interface Models { [name: string]: any }
 
@@ -189,6 +191,8 @@ export class SDKModels {
     ErroLogicoLog: ErroLogicoLog,
     VisitaAppLog: VisitaAppLog,
     MonitorFaseInicialApp: MonitorFaseInicialApp,
+    ValorEtapaFunilVersaoApp: ValorEtapaFunilVersaoApp,
+    VersaoTelaApp: VersaoTelaApp,
     
   };
 

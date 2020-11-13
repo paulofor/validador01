@@ -254,6 +254,7 @@ import { UsuarioHistoricoComponent } from './usuario-historico/usuario-historico
 import { ImagemTelaDetalheComponent } from './imagem-tela-detalhe/imagem-tela-detalhe.component';
 import { TelaAppExibeDetalheComponent } from './tela-app-exibe-detalhe/tela-app-exibe-detalhe.component';
 import { AssociaVersaoTelaComponent } from './associa-versao-tela/associa-versao-tela.component';
+import { VersaoTelaAppEditaComponent } from './versao-tela-app-edita/versao-tela-app-edita.component';
 
 
 registerLocaleData(localePt, 'pt-BR');
@@ -536,7 +537,9 @@ registerLocaleData(localePt, 'pt-BR');
 
     TelaAppExibeDetalheComponent,
 
-    AssociaVersaoTelaComponent
+    AssociaVersaoTelaComponent,
+
+    VersaoTelaAppEditaComponent
 
  
   ],
@@ -591,7 +594,8 @@ registerLocaleData(localePt, 'pt-BR');
     EditaFunilComponent,
     EditaEtapaFunilComponent,
     EditaVersaoRecursoComponent,
-    EditaTempoExecucaoRecursoComponent
+    EditaTempoExecucaoRecursoComponent,
+    AssociaVersaoTelaComponent
     
 
   ],

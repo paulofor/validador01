@@ -7,6 +7,7 @@ import {
   ModeloCampanhaAds,
   CampanhaAnuncioResultado,
   CampanhaPalavraChaveResultado,
+  EtapaProjeto,
   SetupCampanha,
   PaginaInstalacaoApp,
   AnuncioAplicativo,
@@ -53,6 +54,7 @@ export interface CampanhaAdsInterface {
   "paginaValidacaoWebId"?: number;
   "projetoMySqlId"?: number;
   "modeloCampanhaAdsId"?: number;
+  "etapaProjetoId"?: number;
   "setupCampanhaId"?: number;
   "paginaInstalacaoAppId"?: number;
   "anuncioAplicativoId"?: number;
@@ -66,6 +68,7 @@ export interface CampanhaAdsInterface {
   modeloCampanhaAds?: ModeloCampanhaAds;
   campanhaAnuncioResultados?: CampanhaAnuncioResultado[];
   campanhaPalavraChaveResultados?: CampanhaPalavraChaveResultado[];
+  etapaProjeto?: EtapaProjeto;
   setupCampanha?: SetupCampanha;
   paginaInstalacaoApp?: PaginaInstalacaoApp;
   anuncioAplicativo?: AnuncioAplicativo;
@@ -111,6 +114,7 @@ export class CampanhaAds implements CampanhaAdsInterface {
   "paginaValidacaoWebId": number;
   "projetoMySqlId": number;
   "modeloCampanhaAdsId": number;
+  "etapaProjetoId": number;
   "setupCampanhaId": number;
   "paginaInstalacaoAppId": number;
   "anuncioAplicativoId": number;
@@ -124,6 +128,7 @@ export class CampanhaAds implements CampanhaAdsInterface {
   modeloCampanhaAds: ModeloCampanhaAds;
   campanhaAnuncioResultados: CampanhaAnuncioResultado[];
   campanhaPalavraChaveResultados: CampanhaPalavraChaveResultado[];
+  etapaProjeto: EtapaProjeto;
   setupCampanha: SetupCampanha;
   paginaInstalacaoApp: PaginaInstalacaoApp;
   anuncioAplicativo: AnuncioAplicativo;
@@ -289,6 +294,10 @@ export class CampanhaAds implements CampanhaAdsInterface {
           name: 'modeloCampanhaAdsId',
           type: 'number'
         },
+        "etapaProjetoId": {
+          name: 'etapaProjetoId',
+          type: 'number'
+        },
         "setupCampanhaId": {
           name: 'setupCampanhaId',
           type: 'number'
@@ -374,6 +383,14 @@ export class CampanhaAds implements CampanhaAdsInterface {
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'campanhaAdsId'
+        },
+        etapaProjeto: {
+          name: 'etapaProjeto',
+          type: 'EtapaProjeto',
+          model: 'EtapaProjeto',
+          relationType: 'belongsTo',
+                  keyFrom: 'etapaProjetoId',
+          keyTo: 'id'
         },
         setupCampanha: {
           name: 'setupCampanha',

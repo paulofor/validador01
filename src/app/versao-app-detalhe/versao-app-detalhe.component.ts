@@ -5,6 +5,7 @@ import { Params } from '@angular/router';
 import { MatDialog } from '@angular/material';
 import { AssociaItemValorVersaoAppComponent } from '../associa-item-valor-versao-app/associa-item-valor-versao-app.component';
 import { AssociaVersaoTelaComponent } from '../associa-versao-tela/associa-versao-tela.component';
+import { VersaoTelaAppEditaComponent } from '../versao-tela-app-edita/versao-tela-app-edita.component';
 
 @Component({
   selector: 'app-versao-app-detalhe',
@@ -22,7 +23,7 @@ export class VersaoAppDetalheComponent implements OnInit {
     ] 
   };
   
-  constructor(private route: ActivatedRoute, private srv: VersaoAppApi, private dialog : MatDialog) { }
+  constructor(private route: ActivatedRoute, private srv: VersaoAppApi, private dialog : MatDialog, private dialog2:MatDialog) { }
 
 
   ngOnInit() {
@@ -51,6 +52,16 @@ export class VersaoAppDetalheComponent implements OnInit {
         item: versao
       }
     });
+  }
+
+  opentTelaEdicao(versaoTelaApp) {
+    this.dialog2.open(VersaoTelaAppEditaComponent, {
+      width: '800px',
+      data: {
+        item: versaoTelaApp
+      }
+    })
+
   }
 
 }

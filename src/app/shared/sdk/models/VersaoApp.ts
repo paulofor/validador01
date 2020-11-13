@@ -8,7 +8,9 @@ import {
   RespostaVersao,
   ClienteExperimental,
   DispositivoUsuario,
-  ValorVersao
+  ValorVersao,
+  ValorEtapaFunilVersaoApp,
+  VersaoTelaApp
 } from '../index';
 
 declare var Object: any;
@@ -32,6 +34,8 @@ export interface VersaoAppInterface {
   clienteExperimentals?: ClienteExperimental[];
   dispositivoUsuarios?: DispositivoUsuario[];
   valorVersaos?: ValorVersao[];
+  valorEtapaFunilVersaoApps?: ValorEtapaFunilVersaoApp[];
+  versaoTelaApps?: VersaoTelaApp[];
 }
 
 export class VersaoApp implements VersaoAppInterface {
@@ -54,6 +58,8 @@ export class VersaoApp implements VersaoAppInterface {
   clienteExperimentals: ClienteExperimental[];
   dispositivoUsuarios: DispositivoUsuario[];
   valorVersaos: ValorVersao[];
+  valorEtapaFunilVersaoApps: ValorEtapaFunilVersaoApp[];
+  versaoTelaApps: VersaoTelaApp[];
   constructor(data?: VersaoAppInterface) {
     Object.assign(this, data);
   }
@@ -197,6 +203,22 @@ export class VersaoApp implements VersaoAppInterface {
           name: 'valorVersaos',
           type: 'ValorVersao[]',
           model: 'ValorVersao',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'versaoAppId'
+        },
+        valorEtapaFunilVersaoApps: {
+          name: 'valorEtapaFunilVersaoApps',
+          type: 'ValorEtapaFunilVersaoApp[]',
+          model: 'ValorEtapaFunilVersaoApp',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'versaoAppId'
+        },
+        versaoTelaApps: {
+          name: 'versaoTelaApps',
+          type: 'VersaoTelaApp[]',
+          model: 'VersaoTelaApp',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'versaoAppId'

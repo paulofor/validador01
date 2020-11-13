@@ -4,7 +4,8 @@ import {
   Entidade,
   ConceitoProduto,
   ModeloTelaApp,
-  ComponenteApp
+  ComponenteApp,
+  VersaoTelaApp
 } from '../index';
 
 declare var Object: any;
@@ -33,6 +34,7 @@ export interface TelaAppInterface {
   conceitoProduto?: ConceitoProduto;
   modeloTelaApp?: ModeloTelaApp;
   componenteApps?: ComponenteApp[];
+  versaoTelaApps?: VersaoTelaApp[];
 }
 
 export class TelaApp implements TelaAppInterface {
@@ -60,6 +62,7 @@ export class TelaApp implements TelaAppInterface {
   conceitoProduto: ConceitoProduto;
   modeloTelaApp: ModeloTelaApp;
   componenteApps: ComponenteApp[];
+  versaoTelaApps: VersaoTelaApp[];
   constructor(data?: TelaAppInterface) {
     Object.assign(this, data);
   }
@@ -219,6 +222,14 @@ export class TelaApp implements TelaAppInterface {
           name: 'componenteApps',
           type: 'ComponenteApp[]',
           model: 'ComponenteApp',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'telaAppId'
+        },
+        versaoTelaApps: {
+          name: 'versaoTelaApps',
+          type: 'VersaoTelaApp[]',
+          model: 'VersaoTelaApp',
           relationType: 'hasMany',
                   keyFrom: 'id',
           keyTo: 'telaAppId'

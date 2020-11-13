@@ -139,6 +139,8 @@ import { VersaoRecursoApi } from './services/custom/VersaoRecurso';
 import { ErroLogicoLogApi } from './services/custom/ErroLogicoLog';
 import { VisitaAppLogApi } from './services/custom/VisitaAppLog';
 import { MonitorFaseInicialAppApi } from './services/custom/MonitorFaseInicialApp';
+import { ValorEtapaFunilVersaoAppApi } from './services/custom/ValorEtapaFunilVersaoApp';
+import { VersaoTelaAppApi } from './services/custom/VersaoTelaApp';
 /**
 * @module SDKBrowserModule
 * @description
@@ -260,6 +262,8 @@ export class SDKBrowserModule {
         ErroLogicoLogApi,
         VisitaAppLogApi,
         MonitorFaseInicialAppApi,
+        ValorEtapaFunilVersaoAppApi,
+        VersaoTelaAppApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
 

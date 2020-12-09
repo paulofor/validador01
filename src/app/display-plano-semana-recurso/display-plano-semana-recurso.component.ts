@@ -39,7 +39,7 @@ export class DisplayPlanoSemanaRecursoComponent implements OnInit {
 
   carregaProcesso() {
 
-    this.srv.ObtemComPlanoPorSemana(this.semana.id, this.contexto.id)
+    this.srv.ObtemComPlanoPorSemanaVersao(this.semana.id, this.contexto.id)
       .subscribe((resultado) => {
         this.versaoRecursoComPlano = resultado;
         console.log('carregaProcesso:', this.versaoRecursoComPlano);

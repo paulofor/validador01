@@ -11,7 +11,7 @@ import { Inject } from '@angular/core';
 export class Angular2ImageUploadComponent implements OnInit {
 
 
-  url = 'http://localhost:21101/api/containers/container1/upload?nome=meuarquivo';
+  url = 'https://www.digicom.inf.br:21101/api/containers/container1/upload?nome=meuarquivo';
   //url = 'http://validacao.kinghost.net:21101/api/containers/container1/upload'
   //url = URL_UPLOAD;
 

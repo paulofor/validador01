@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { VersaoApp, VersaoAppApi } from '../shared/sdk';
+import { VersaoApp, VersaoAppApi, VersaoTelaApp } from '../shared/sdk';
 import { ActivatedRoute } from '@angular/router';
 import { Params } from '@angular/router';
 import { MatDialog } from '@angular/material';
 import { AssociaItemValorVersaoAppComponent } from '../associa-item-valor-versao-app/associa-item-valor-versao-app.component';
 import { AssociaVersaoTelaComponent } from '../associa-versao-tela/associa-versao-tela.component';
 import { VersaoTelaAppEditaComponent } from '../versao-tela-app-edita/versao-tela-app-edita.component';
+import { ImagemTelaUploadComponent } from '../imagem-tela-upload/imagem-tela-upload.component';
 
 @Component({
   selector: 'app-versao-app-detalhe',
@@ -18,8 +19,11 @@ export class VersaoAppDetalheComponent implements OnInit {
   versaoApp: VersaoApp;
   filtro = { 
     "include" : [
-      { "relation" : "valorVersaos" , "scope" : {"include" : "itemValorApp" } },
-      { "relation" : "versaoTelaApps" , "scope" : {"include" : "telaApp" }} 
+      { "relation" : "valorVersaos" , "scope" : { "include" : "itemValorApp" }},
+      { "relation" : "versaoTelaApps" , "scope" : { "include" : [
+        {"relation" : "telaApp"} , {"relation" : "versaoTelaAppMetricas"}
+      ]}} ,
+    
     ] 
   };
   
@@ -42,7 +46,7 @@ export class VersaoAppDetalheComponent implements OnInit {
     })
   }
 
-  openDialog(versao?) {
+  openDialog(versao? : VersaoTelaApp) {
     this.dialog.afterAllClosed.subscribe(result => {
       this.carregaVersao();
     });
@@ -54,7 +58,7 @@ export class VersaoAppDetalheComponent implements OnInit {
     });
   }
 
-  opentTelaEdicao(versaoTelaApp) {
+  opentTelaEdicao(versaoTelaApp : VersaoTelaApp) {
     this.dialog2.open(VersaoTelaAppEditaComponent, {
       width: '800px',
       data: {
@@ -62,6 +66,46 @@ export class VersaoAppDetalheComponent implements OnInit {
       }
     })
 
+  }
+
+  editaImagem(item : VersaoTelaApp) {
+    this.dialog2.open(ImagemTelaUploadComponent, {
+      width: '800px',
+      data : {
+        item: item,
+        tipo : 'imagem'
+      }
+    })
+  }
+
+  editaHtml(item : VersaoTelaApp) {
+    this.dialog2.open(VersaoTelaAppEditaComponent, {
+      width: '800px',
+      data : {
+        item: item,
+        tipo : 'html'
+      }
+    })
+  }
+
+  editaTs(item : VersaoTelaApp) {
+    this.dialog2.open(VersaoTelaAppEditaComponent, {
+      width: '800px',
+      data : {
+        item: item,
+        tipo : 'ts'
+      }
+    })
+  }
+
+  editaCss(item : VersaoTelaApp) {
+    this.dialog2.open(VersaoTelaAppEditaComponent, {
+      width: '800px',
+      data : {
+        item: item,
+        tipo : 'css'
+      }
+    })
   }
 
 }

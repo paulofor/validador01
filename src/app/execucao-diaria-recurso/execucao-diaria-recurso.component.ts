@@ -29,7 +29,7 @@ export class ExecucaoDiariaRecursoComponent implements OnInit {
   carregaDados() {
     this.route.params.subscribe((params: Params) => {
       let id  = params['id'];
-      this.srv.ObtemPlanoDia(id)
+      this.srv.ObtemPlanoDiaVersao(id)
       .subscribe((result) => {
         console.log('Result: ', result);
         this.semana = result.semana;

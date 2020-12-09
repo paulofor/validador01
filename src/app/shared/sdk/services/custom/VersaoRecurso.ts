@@ -348,10 +348,10 @@ export class VersaoRecursoApi extends BaseLoopBackApi {
    * This usually means the response is a `VersaoRecurso` object.)
    * </em>
    */
-  public ObtemComPlanoPorSemana(idSemana: any = {}, idContexto: any, customHeaders?: Function): Observable<any> {
+  public ObtemComPlanoPorSemanaVersao(idSemana: any = {}, idContexto: any, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/VersaoRecursos/obtemComPlanoPorSemana";
+    "/VersaoRecursos/obtemComPlanoPorSemanaVersao";
     let _routeParams: any = {};
     let _postBody: any = {};
     let _urlParams: any = {};
@@ -380,10 +380,10 @@ export class VersaoRecursoApi extends BaseLoopBackApi {
    *
    *  - `listaTempoExecucao` – `{any}` - 
    */
-  public ObtemPlanoDia(idContexto: any, customHeaders?: Function): Observable<any> {
+  public ObtemPlanoDiaVersao(idContexto: any, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/VersaoRecursos/obtemPlanoDia";
+    "/VersaoRecursos/obtemPlanoDiaVersao";
     let _routeParams: any = {};
     let _postBody: any = {};
     let _urlParams: any = {};

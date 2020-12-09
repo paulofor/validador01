@@ -512,35 +512,6 @@ export class ProcessoNegocioApi extends BaseLoopBackApi {
   }
 
   /**
-   * Obtem lista de processo com filtro de contexto e semana
-   *
-   * @param {number} idSemana 
-   *
-   * @param {number} idContexto 
-   *
-   * @returns {object[]} An empty reference that will be
-   *   populated with the actual data once the response is returned
-   *   from the server.
-   *
-   * <em>
-   * (The remote method definition does not provide any description.
-   * This usually means the response is a `ProcessoNegocio` object.)
-   * </em>
-   */
-  public ObtemComPlanoPorSemana(idSemana: any = {}, idContexto: any, customHeaders?: Function): Observable<any> {
-    let _method: string = "GET";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/ProcessoNegocios/obtemComPlanoPorSemana";
-    let _routeParams: any = {};
-    let _postBody: any = {};
-    let _urlParams: any = {};
-    if (typeof idSemana !== 'undefined' && idSemana !== null) _urlParams.idSemana = idSemana;
-    if (typeof idContexto !== 'undefined' && idContexto !== null) _urlParams.idContexto = idContexto;
-    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
-    return result;
-  }
-
-  /**
    * Obtem todas as informações para o dia
    *
    * @param {number} idContexto 
@@ -559,13 +530,42 @@ export class ProcessoNegocioApi extends BaseLoopBackApi {
    *
    *  - `listaTempoExecucao` – `{any}` - 
    */
-  public ObtemPlanoDia(idContexto: any, customHeaders?: Function): Observable<any> {
+  public ObtemPlanoDiaProcesso(idContexto: any, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/ProcessoNegocios/obtemPlanoDia";
+    "/ProcessoNegocios/obtemPlanoDiaProcesso";
     let _routeParams: any = {};
     let _postBody: any = {};
     let _urlParams: any = {};
+    if (typeof idContexto !== 'undefined' && idContexto !== null) _urlParams.idContexto = idContexto;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Obtem lista de processo com filtro de contexto e semana
+   *
+   * @param {number} idSemana 
+   *
+   * @param {number} idContexto 
+   *
+   * @returns {object[]} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `ProcessoNegocio` object.)
+   * </em>
+   */
+  public ObtemComPlanoPorSemanaProcesso(idSemana: any = {}, idContexto: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/ProcessoNegocios/obtemComPlanoPorSemanaProcesso";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof idSemana !== 'undefined' && idSemana !== null) _urlParams.idSemana = idSemana;
     if (typeof idContexto !== 'undefined' && idContexto !== null) _urlParams.idContexto = idContexto;
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;

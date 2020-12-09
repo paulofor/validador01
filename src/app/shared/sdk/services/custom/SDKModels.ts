@@ -93,6 +93,9 @@ import { VisitaAppLog } from '../../models/VisitaAppLog';
 import { MonitorFaseInicialApp } from '../../models/MonitorFaseInicialApp';
 import { ValorEtapaFunilVersaoApp } from '../../models/ValorEtapaFunilVersaoApp';
 import { VersaoTelaApp } from '../../models/VersaoTelaApp';
+import { VersaoTelaAppMetrica } from '../../models/VersaoTelaAppMetrica';
+import { PeriodoMetrica } from '../../models/PeriodoMetrica';
+import { SessaoApp } from '../../models/SessaoApp';
 
 export interface Models { [name: string]: any }
 
@@ -193,6 +196,9 @@ export class SDKModels {
     MonitorFaseInicialApp: MonitorFaseInicialApp,
     ValorEtapaFunilVersaoApp: ValorEtapaFunilVersaoApp,
     VersaoTelaApp: VersaoTelaApp,
+    VersaoTelaAppMetrica: VersaoTelaAppMetrica,
+    PeriodoMetrica: PeriodoMetrica,
+    SessaoApp: SessaoApp,
     
   };
 

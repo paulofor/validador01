@@ -109,10 +109,10 @@ export class ValorEtapaFunilVersaoAppApi extends BaseLoopBackApi {
    * This usually means the response is a `ValorEtapaFunilVersaoApp` object.)
    * </em>
    */
-  public AtualizaValor(customHeaders?: Function): Observable<any> {
+  public AtualizaValorVersaoApp(customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/ValorEtapaFunilVersaoApps/atualizaValor";
+    "/ValorEtapaFunilVersaoApps/atualizaValorVersaoApp";
     let _routeParams: any = {};
     let _postBody: any = {};
     let _urlParams: any = {};

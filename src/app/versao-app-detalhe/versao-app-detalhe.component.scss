@@ -1,0 +1,20 @@
+.mat-card {
+    margin: 8px;
+}
+
+.mat-card button {
+    min-width: 60px;
+    margin: 4px;
+}
+
+.mat-card-actions {
+    align-content: flex-end;
+}
+
+.example-fill-remaining-space {
+    /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+  }
+
+

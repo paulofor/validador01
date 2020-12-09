@@ -14,6 +14,7 @@ import { SocketConnection } from '../../sockets/socket.connections';
 import { TelaApp } from '../../models/TelaApp';
 import { UsuarioProduto } from '../../models/UsuarioProduto';
 import { VersaoApp } from '../../models/VersaoApp';
+import { SessaoApp } from '../../models/SessaoApp';
 
 
 /**
@@ -112,6 +113,36 @@ export class VisitaAppApi extends BaseLoopBackApi {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/VisitaApps/:id/versaoApp";
+    let _routeParams: any = {
+      id: id
+    };
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof refresh !== 'undefined' && refresh !== null) _urlParams.refresh = refresh;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * Fetches belongsTo relation sessaoApp.
+   *
+   * @param {any} id VisitaApp id
+   *
+   * @param {boolean} refresh 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `VisitaApp` object.)
+   * </em>
+   */
+  public getSessaoApp(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/VisitaApps/:id/sessaoApp";
     let _routeParams: any = {
       id: id
     };
@@ -244,6 +275,75 @@ export class VisitaAppApi extends BaseLoopBackApi {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/VisitaApps/registraVisitaVersaoApp";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof chaveUsuario !== 'undefined' && chaveUsuario !== null) _urlParams.chaveUsuario = chaveUsuario;
+    if (typeof chaveVersaoApp !== 'undefined' && chaveVersaoApp !== null) _urlParams.chaveVersaoApp = chaveVersaoApp;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * <em>
+         * (The remote method definition does not provide any description.)
+         * </em>
+   *
+   * @param {object} data Request data.
+   *
+   *  - `chaveUsuario` – `{string}` - 
+   *
+   *  - `chavePagina` – `{string}` - 
+   *
+   *  - `chaveVersaoApp` – `{string}` - 
+   *
+   *  - `chaveSessao` – `{string}` - 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * This method returns no data.
+   */
+  public RegistraVisitaTelaAppSessao(chaveUsuario: any = {}, chavePagina: any = {}, chaveVersaoApp: any = {}, chaveSessao: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/VisitaApps/registraVisitaTelaAppSessao";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof chaveUsuario !== 'undefined' && chaveUsuario !== null) _urlParams.chaveUsuario = chaveUsuario;
+    if (typeof chavePagina !== 'undefined' && chavePagina !== null) _urlParams.chavePagina = chavePagina;
+    if (typeof chaveVersaoApp !== 'undefined' && chaveVersaoApp !== null) _urlParams.chaveVersaoApp = chaveVersaoApp;
+    if (typeof chaveSessao !== 'undefined' && chaveSessao !== null) _urlParams.chaveSessao = chaveSessao;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
+   * <em>
+         * (The remote method definition does not provide any description.)
+         * </em>
+   *
+   * @param {object} data Request data.
+   *
+   *  - `chaveUsuario` – `{string}` - 
+   *
+   *  - `chaveVersaoApp` – `{string}` - 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `VisitaApp` object.)
+   * </em>
+   */
+  public RegistraVisitaVersaoAppSessao(chaveUsuario: any = {}, chaveVersaoApp: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/VisitaApps/registraVisitaVersaoAppSessao";
     let _routeParams: any = {};
     let _postBody: any = {};
     let _urlParams: any = {};

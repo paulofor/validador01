@@ -1,6 +1,7 @@
 /* tslint:disable */
 import {
-  TelaApp
+  TelaApp,
+  VersaoTelaAppMetrica
 } from '../index';
 
 declare var Object: any;
@@ -10,10 +11,12 @@ export interface VersaoTelaAppInterface {
   "fonteCss"?: string;
   "fonteTs"?: string;
   "fonteHtml"?: string;
+  "imagem1"?: string;
   "id"?: number;
   "telaAppId"?: number;
   "versaoAppId"?: number;
   telaApp?: TelaApp;
+  versaoTelaAppMetricas?: VersaoTelaAppMetrica[];
 }
 
 export class VersaoTelaApp implements VersaoTelaAppInterface {
@@ -22,10 +25,12 @@ export class VersaoTelaApp implements VersaoTelaAppInterface {
   "fonteCss": string;
   "fonteTs": string;
   "fonteHtml": string;
+  "imagem1": string;
   "id": number;
   "telaAppId": number;
   "versaoAppId": number;
   telaApp: TelaApp;
+  versaoTelaAppMetricas: VersaoTelaAppMetrica[];
   constructor(data?: VersaoTelaAppInterface) {
     Object.assign(this, data);
   }
@@ -79,6 +84,10 @@ export class VersaoTelaApp implements VersaoTelaAppInterface {
           name: 'fonteHtml',
           type: 'string'
         },
+        "imagem1": {
+          name: 'imagem1',
+          type: 'string'
+        },
         "id": {
           name: 'id',
           type: 'number'
@@ -100,6 +109,14 @@ export class VersaoTelaApp implements VersaoTelaAppInterface {
           relationType: 'belongsTo',
                   keyFrom: 'telaAppId',
           keyTo: 'id'
+        },
+        versaoTelaAppMetricas: {
+          name: 'versaoTelaAppMetricas',
+          type: 'VersaoTelaAppMetrica[]',
+          model: 'VersaoTelaAppMetrica',
+          relationType: 'hasMany',
+                  keyFrom: 'id',
+          keyTo: 'versaoTelaAppId'
         },
       }
     }

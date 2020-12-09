@@ -255,7 +255,8 @@ import { ImagemTelaDetalheComponent } from './imagem-tela-detalhe/imagem-tela-de
 import { TelaAppExibeDetalheComponent } from './tela-app-exibe-detalhe/tela-app-exibe-detalhe.component';
 import { AssociaVersaoTelaComponent } from './associa-versao-tela/associa-versao-tela.component';
 import { VersaoTelaAppEditaComponent } from './versao-tela-app-edita/versao-tela-app-edita.component';
-
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { ImagemTelaUploadComponent } from './imagem-tela-upload/imagem-tela-upload.component';
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -539,9 +540,10 @@ registerLocaleData(localePt, 'pt-BR');
 
     AssociaVersaoTelaComponent,
 
-    VersaoTelaAppEditaComponent
+    VersaoTelaAppEditaComponent,
 
- 
+    ImagemTelaUploadComponent
+
   ],
   entryComponents: [
     ProjetoCanvasCriaComponent,
@@ -595,7 +597,9 @@ registerLocaleData(localePt, 'pt-BR');
     EditaEtapaFunilComponent,
     EditaVersaoRecursoComponent,
     EditaTempoExecucaoRecursoComponent,
-    AssociaVersaoTelaComponent
+    AssociaVersaoTelaComponent,
+    VersaoTelaAppEditaComponent,
+    ImagemTelaUploadComponent
     
 
   ],
@@ -627,7 +631,9 @@ registerLocaleData(localePt, 'pt-BR');
     ReactiveFormsModule,
     MatCheckboxModule,
     FormsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatToolbarModule
+    
 
 
   ],

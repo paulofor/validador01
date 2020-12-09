@@ -63,7 +63,7 @@ export class MetricaCampanhaComponent implements OnInit {
 
 
   atualizaMetrica() {
-    this.metricaCampanhaSrv.AtualizaValor()
+    this.metricaCampanhaSrv.AtualizaValorCampanha()
       .subscribe((result) => {
         this.carregaCampanha();
       })

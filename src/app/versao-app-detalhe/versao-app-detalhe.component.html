@@ -21,7 +21,7 @@
         <div *ngIf="versaoApp" class="card">
           <div class="header">
             <h4 class="title">Itens de Valor</h4>
-            <button class="btn btn-primary btn-sm"  (click)="openDialog(versaoApp)" >Novo</button>
+            <button class="btn btn-primary btn-sm" (click)="openDialog(versaoApp)">Novo</button>
           </div>
           <div class="content table-responsive table-full-width">
             <table class="table table-hover table-striped">
@@ -43,18 +43,50 @@
 
     <div class="row">
       <div class="col-md-12">
-        <div>
-          <h3 class="title">Telas</h3>
-          <button class="btn btn-primary btn-sm" (click)="openDialog(versaoApp)">Novo</button>
-        </div>
-        <div class="card" *ngFor="let item of versaoApp.versaoTelaApps">
-          <h4 class="title">{{item.telaApp.nome}}</h4>
-          <div class="content">
-            <button class="btn btn-primary btn-sm" (click)="openDialog(versaoApp)">html</button>
-            <button class="btn btn-primary btn-sm" (click)="openDialog(versaoApp)">ts</button>
-            <button class="btn btn-primary btn-sm" (click)="openDialog(versaoApp)">css</button>
+        <section class="dgc-painel">
+
+          <header class="dgc-painel-header">
+            <span>TELAS</span>
+            <button class="btn btn-primary btn-sm dgc-botao-comando dgc-direita">
+              novo
+            </button>
+          </header>
+
+          <div class="dgc-painel-principal">
+            <div class="dgc-card" width="300px" *ngFor="let item of versaoApp.versaoTelaApps">
+              <div class="dgc-card-imagem">
+                <img *ngIf="item.imagem1" src="{{item.imagem1}}" />
+              </div>
+              <div class="dgc-card-header">
+                <span>{{item.telaApp.nome}}</span>
+              </div>
+              <div class="dgc-card-detalhe">
+                <table>
+                  <tr>
+                    <td class="dgc-metrica-celula-label">total</td>
+                    <td class="dgc-metrica-celula-valor">{{item.versaoTelaAppMetricas[0].quantidadeTotal}}</td>
+                  </tr>
+                  <tr>
+                    <td class="dgc-metrica-celula-label">usuários</td>
+                    <td class="dgc-metrica-celula-valor">{{item.versaoTelaAppMetricas[0].quantidadeUsuario}}</td>
+                  </tr>
+                  <tr>
+                    <td class="dgc-metrica-celula-label">sessões</td>
+                    <td class="dgc-metrica-celula-valor">{{item.versaoTelaAppMetricas[0].quantidadeSessao}}</td>
+                  </tr>
+                </table>
+              </div>
+              <div class="dgc-card-comandos">
+                <button class="btn btn-primary btn-sm dgc-botao-comando" (click)="editaImagem(item)">imagem</button>
+                <button class="btn btn-primary btn-sm dgc-botao-comando" (click)="editaHtml(item)">html</button>
+                <button class="btn btn-primary btn-sm dgc-botao-comando" (click)="editaTs(item)">ts</button>
+                <button class="btn btn-primary btn-sm dgc-botao-comando" (click)="editaCss(item)">css</button>
+              </div>
+            </div>
           </div>
-        </div>
+
+        </section>
+
       </div>
     </div>
 

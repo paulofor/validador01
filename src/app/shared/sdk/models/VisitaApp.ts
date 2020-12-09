@@ -2,7 +2,8 @@
 import {
   TelaApp,
   UsuarioProduto,
-  VersaoApp
+  VersaoApp,
+  SessaoApp
 } from '../index';
 
 declare var Object: any;
@@ -12,9 +13,11 @@ export interface VisitaAppInterface {
   "telaAppId"?: number;
   "usuarioProdutoId"?: number;
   "versaoAppId"?: number;
+  "sessaoAppId"?: number;
   telaApp?: TelaApp;
   usuarioProduto?: UsuarioProduto;
   versaoApp?: VersaoApp;
+  sessaoApp?: SessaoApp;
 }
 
 export class VisitaApp implements VisitaAppInterface {
@@ -23,9 +26,11 @@ export class VisitaApp implements VisitaAppInterface {
   "telaAppId": number;
   "usuarioProdutoId": number;
   "versaoAppId": number;
+  "sessaoAppId": number;
   telaApp: TelaApp;
   usuarioProduto: UsuarioProduto;
   versaoApp: VersaoApp;
+  sessaoApp: SessaoApp;
   constructor(data?: VisitaAppInterface) {
     Object.assign(this, data);
   }
@@ -79,6 +84,10 @@ export class VisitaApp implements VisitaAppInterface {
           name: 'versaoAppId',
           type: 'number'
         },
+        "sessaoAppId": {
+          name: 'sessaoAppId',
+          type: 'number'
+        },
       },
       relations: {
         telaApp: {
@@ -103,6 +112,14 @@ export class VisitaApp implements VisitaAppInterface {
           model: 'VersaoApp',
           relationType: 'belongsTo',
                   keyFrom: 'versaoAppId',
+          keyTo: 'id'
+        },
+        sessaoApp: {
+          name: 'sessaoApp',
+          type: 'SessaoApp',
+          model: 'SessaoApp',
+          relationType: 'belongsTo',
+                  keyFrom: 'sessaoAppId',
           keyTo: 'id'
         },
       }

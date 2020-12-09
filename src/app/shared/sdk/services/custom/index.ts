@@ -92,5 +92,8 @@ export * from './VisitaAppLog';
 export * from './MonitorFaseInicialApp';
 export * from './ValorEtapaFunilVersaoApp';
 export * from './VersaoTelaApp';
+export * from './VersaoTelaAppMetrica';
+export * from './PeriodoMetrica';
+export * from './SessaoApp';
 export * from './SDKModels';
 export * from './logger.service';

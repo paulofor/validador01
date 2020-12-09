@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { VersaoTelaApp } from '../shared/sdk';
+import { VersaoTelaApp, VersaoTelaAppApi } from '../shared/sdk';
 
 @Component({
   selector: 'app-versao-tela-app-edita',
@@ -10,7 +10,7 @@ import { VersaoTelaApp } from '../shared/sdk';
 export class VersaoTelaAppEditaComponent implements OnInit {
 
   constructor(public dialogRef:MatDialogRef<VersaoTelaAppEditaComponent> 
-    , @Inject(MAT_DIALOG_DATA) public data: any, private servico: VersaoTelaApp) { }
+    , @Inject(MAT_DIALOG_DATA) public data: any, private servico: VersaoTelaAppApi) { }
 
   ngOnInit() {
   }

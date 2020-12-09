@@ -154,7 +154,13 @@ export class ValorEtapaFunilCampanhaApi extends BaseLoopBackApi {
   }
 
   /**
-   * Obtem todas as informações para o dia
+   * <em>
+         * (The remote method definition does not provide any description.)
+         * </em>
+   *
+   * @param {object} data Request data.
+   *
+   * This method does not accept any data. Supply an empty object.
    *
    * @returns {object} An empty reference that will be
    *   populated with the actual data once the response is returned
@@ -165,10 +171,10 @@ export class ValorEtapaFunilCampanhaApi extends BaseLoopBackApi {
    * This usually means the response is a `ValorEtapaFunilCampanha` object.)
    * </em>
    */
-  public AtualizaValor(customHeaders?: Function): Observable<any> {
-    let _method: string = "GET";
+  public AtualizaValorCampanha(customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/ValorEtapaFunilCampanhas/atualizaValor";
+    "/ValorEtapaFunilCampanhas/atualizaValorCampanha";
     let _routeParams: any = {};
     let _postBody: any = {};
     let _urlParams: any = {};

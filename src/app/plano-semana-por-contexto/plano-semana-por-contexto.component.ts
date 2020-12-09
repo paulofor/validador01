@@ -57,7 +57,7 @@ export class PlanoSemanaPorContextoComponent implements OnInit {
   carregaProcesso() {
     //console.log('IdSemana: ', this.semana.id);
     //this.criaSomaDia();
-    this.srv.ObtemComPlanoPorSemana(this.semana.id, this.contexto.id)
+    this.srv.ObtemComPlanoPorSemanaProcesso(this.semana.id, this.contexto.id)
       .subscribe((resultado) => {
         this.processoComPlano = resultado;
         console.log('carregaProcesso:', this.processoComPlano);

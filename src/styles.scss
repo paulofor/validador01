@@ -29,7 +29,6 @@
  }
 
 
-
  
 /*   Digicom Estilo   */
 /*****************************************************************************/
@@ -168,18 +167,32 @@ body {
   display: block;
 }
 
-.dgc-direita {
-  margin-left: auto;
+.dgc-card-metrica-celula {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  text-align: center;
+}
+.dgc-card-metrica-linha {
+  display: flex;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  box-sizing: border-box;
+  border: 1 solid #ccc;
+}
+.dgc-card-metrica-celula-label {
+  font-size: 12px;
+}
+.dgc-card-metrica-celula-valor {
+  font-size: 12px;
 }
 
-.dgc-metrica-celula-label {
-  font-size: 12px;
-  text-align: right;
-  border: none; // não adianta nada
-}
-.dgc-metrica-celula-valor {
-  font-size: 12px;
-  border: none; // não adianta nada
+
+
+.dgc-direita {
+  margin-left: auto;
 }
 
  

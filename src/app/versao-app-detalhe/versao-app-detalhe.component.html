@@ -61,20 +61,22 @@
                 <span>{{item.telaApp.nome}}</span>
               </div>
               <div class="dgc-card-detalhe">
-                <table>
-                  <tr>
-                    <td class="dgc-metrica-celula-label">total</td>
-                    <td class="dgc-metrica-celula-valor">{{item.versaoTelaAppMetricas[0].quantidadeTotal}}</td>
-                  </tr>
-                  <tr>
-                    <td class="dgc-metrica-celula-label">usuários</td>
-                    <td class="dgc-metrica-celula-valor">{{item.versaoTelaAppMetricas[0].quantidadeUsuario}}</td>
-                  </tr>
-                  <tr>
-                    <td class="dgc-metrica-celula-label">sessões</td>
-                    <td class="dgc-metrica-celula-valor">{{item.versaoTelaAppMetricas[0].quantidadeSessao}}</td>
-                  </tr>
-                </table>
+                <div class="dgc-card-metrica-linha">
+                  <div class="dgc-card-metrica-celula">
+                    <p class="dgc-card-metrica-celula-label">total</p>
+                    <p class="dgc-card-metrica-celula-valor">{{item.versaoTelaAppMetricas[0].quantidadeTotal}}</p>
+                  </div>
+                  <div class="dgc-card-metrica-celula-separacao"></div>
+                  <div class="dgc-card-metrica-celula">
+                    <p class="dgc-card-metrica-celula-label">usuários</p>
+                    <p class="dgc-card-metrica-celula-valor">{{item.versaoTelaAppMetricas[0].quantidadeUsuario}}</p>
+                  </div>
+                  <div class="dgc-card-metrica-celula-separacao"></div>
+                  <div class="dgc-card-metrica-celula">
+                    <p class="dgc-card-metrica-celula-label">sessões</p>
+                    <p class="dgc-card-metrica-celula-valor">{{item.versaoTelaAppMetricas[0].quantidadeSessao}}</p>
+                  </div>
+                </div>
               </div>
               <div class="dgc-card-comandos">
                 <button class="btn btn-primary btn-sm dgc-botao-comando" (click)="editaImagem(item)">imagem</button>

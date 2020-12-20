@@ -257,6 +257,7 @@ import { AssociaVersaoTelaComponent } from './associa-versao-tela/associa-versao
 import { VersaoTelaAppEditaComponent } from './versao-tela-app-edita/versao-tela-app-edita.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { ImagemTelaUploadComponent } from './imagem-tela-upload/imagem-tela-upload.component';
+import { CampanhaSemTabelaListComponent } from './campanha-sem-tabela-list/campanha-sem-tabela-list.component';
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -542,7 +543,9 @@ registerLocaleData(localePt, 'pt-BR');
 
     VersaoTelaAppEditaComponent,
 
-    ImagemTelaUploadComponent
+    ImagemTelaUploadComponent,
+
+    CampanhaSemTabelaListComponent
 
   ],
   entryComponents: [

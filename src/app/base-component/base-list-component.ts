@@ -34,7 +34,10 @@ export class BaseListComponent implements OnInit {
         });
     }
 
-    getComponente():any {}
+    getComponente():any {
+        
+    }
+
 
     getFiltro() {
         return {}

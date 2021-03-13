@@ -31,7 +31,7 @@ export class VersaoTelaAppMetricaApi extends BaseLoopBackApi {
   }
 
   /**
-   * Fetches belongsTo relation periodoMetricas.
+   * Fetches belongsTo relation periodoMetrica.
    *
    * @param {any} id VersaoTelaAppMetrica id
    *
@@ -46,10 +46,10 @@ export class VersaoTelaAppMetricaApi extends BaseLoopBackApi {
    * This usually means the response is a `VersaoTelaAppMetrica` object.)
    * </em>
    */
-  public getPeriodoMetricas(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
+  public getPeriodoMetrica(id: any, refresh: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/VersaoTelaAppMetricas/:id/periodoMetricas";
+    "/VersaoTelaAppMetricas/:id/periodoMetrica";
     let _routeParams: any = {
       id: id
     };

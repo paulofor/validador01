@@ -376,7 +376,7 @@ export class DispositivoUsuarioApi extends BaseLoopBackApi {
    * This usually means the response is a `DispositivoUsuario` object.)
    * </em>
    */
-  public CriaComUsuario(dispositivo: any, customHeaders?: Function): Observable<any> {
+  public CriaComUsuario(dispositivo: any = {}, customHeaders?: Function): Observable<any> {
     let _method: string = "POST";
     let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
     "/DispositivoUsuarios/criaComUsuario";

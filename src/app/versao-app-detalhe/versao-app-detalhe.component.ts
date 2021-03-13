@@ -7,6 +7,7 @@ import { AssociaItemValorVersaoAppComponent } from '../associa-item-valor-versao
 import { AssociaVersaoTelaComponent } from '../associa-versao-tela/associa-versao-tela.component';
 import { VersaoTelaAppEditaComponent } from '../versao-tela-app-edita/versao-tela-app-edita.component';
 import { ImagemTelaUploadComponent } from '../imagem-tela-upload/imagem-tela-upload.component';
+import { EscolheTelaAppParaVersaoComponent } from '../escolhe-tela-app-para-versao/escolhe-tela-app-para-versao.component';
 
 @Component({
   selector: 'app-versao-app-detalhe',
@@ -32,6 +33,18 @@ export class VersaoAppDetalheComponent implements OnInit {
 
   ngOnInit() {
     this.carregaVersao();
+  }
+
+  escolheTela() {
+    this.dialog.afterAllClosed.subscribe(result => {
+      this.carregaVersao();
+    });
+    this.dialog.open(EscolheTelaAppParaVersaoComponent, {
+      width: '800px',
+      data: {
+        versao: this.versaoApp
+      }
+    });
   }
 
   carregaVersao() {

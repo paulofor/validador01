@@ -333,6 +333,36 @@ export class VersaoTelaAppApi extends BaseLoopBackApi {
   }
 
   /**
+   * <em>
+         * (The remote method definition does not provide any description.)
+         * </em>
+   *
+   * @param {object} data Request data.
+   *
+   *  - `versaoTelaApp` – `{object}` - 
+   *
+   * @returns {object} An empty reference that will be
+   *   populated with the actual data once the response is returned
+   *   from the server.
+   *
+   * <em>
+   * (The remote method definition does not provide any description.
+   * This usually means the response is a `VersaoTelaApp` object.)
+   * </em>
+   */
+  public CriaVersaoComMetrica(versaoTelaApp: any = {}, customHeaders?: Function): Observable<any> {
+    let _method: string = "POST";
+    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
+    "/VersaoTelaApps/criaVersaoComMetrica";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof versaoTelaApp !== 'undefined' && versaoTelaApp !== null) _urlParams.versaoTelaApp = versaoTelaApp;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
+
+  /**
    * Creates a new instance in versaoTelaAppMetricas of this model.
    *
    * @param {any} id VersaoTelaApp id

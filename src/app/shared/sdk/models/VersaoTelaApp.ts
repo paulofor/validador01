@@ -6,6 +6,8 @@ import {
 
 declare var Object: any;
 export interface VersaoTelaAppInterface {
+  "versaoAppId"?: number;
+  "telaAppId"?: number;
   "descricao"?: string;
   "codigo"?: string;
   "fonteCss"?: string;
@@ -13,13 +15,13 @@ export interface VersaoTelaAppInterface {
   "fonteHtml"?: string;
   "imagem1"?: string;
   "id"?: number;
-  "telaAppId"?: number;
-  "versaoAppId"?: number;
   telaApp?: TelaApp;
   versaoTelaAppMetricas?: VersaoTelaAppMetrica[];
 }
 
 export class VersaoTelaApp implements VersaoTelaAppInterface {
+  "versaoAppId": number;
+  "telaAppId": number;
   "descricao": string;
   "codigo": string;
   "fonteCss": string;
@@ -27,8 +29,6 @@ export class VersaoTelaApp implements VersaoTelaAppInterface {
   "fonteHtml": string;
   "imagem1": string;
   "id": number;
-  "telaAppId": number;
-  "versaoAppId": number;
   telaApp: TelaApp;
   versaoTelaAppMetricas: VersaoTelaAppMetrica[];
   constructor(data?: VersaoTelaAppInterface) {
@@ -64,6 +64,14 @@ export class VersaoTelaApp implements VersaoTelaAppInterface {
       path: 'VersaoTelaApps',
       idName: 'id',
       properties: {
+        "versaoAppId": {
+          name: 'versaoAppId',
+          type: 'number'
+        },
+        "telaAppId": {
+          name: 'telaAppId',
+          type: 'number'
+        },
         "descricao": {
           name: 'descricao',
           type: 'string'
@@ -90,14 +98,6 @@ export class VersaoTelaApp implements VersaoTelaAppInterface {
         },
         "id": {
           name: 'id',
-          type: 'number'
-        },
-        "telaAppId": {
-          name: 'telaAppId',
-          type: 'number'
-        },
-        "versaoAppId": {
-          name: 'versaoAppId',
           type: 'number'
         },
       },

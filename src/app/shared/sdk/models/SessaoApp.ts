@@ -2,15 +2,13 @@
 
 declare var Object: any;
 export interface SessaoAppInterface {
-  "chaveSessao"?: string;
+  "id"?: string;
   "dataHora"?: string;
-  "id"?: number;
 }
 
 export class SessaoApp implements SessaoAppInterface {
-  "chaveSessao": string;
+  "id": string;
   "dataHora": string;
-  "id": number;
   constructor(data?: SessaoAppInterface) {
     Object.assign(this, data);
   }
@@ -44,17 +42,13 @@ export class SessaoApp implements SessaoAppInterface {
       path: 'SessaoApps',
       idName: 'id',
       properties: {
-        "chaveSessao": {
-          name: 'chaveSessao',
+        "id": {
+          name: 'id',
           type: 'string'
         },
         "dataHora": {
           name: 'dataHora',
           type: 'string'
-        },
-        "id": {
-          name: 'id',
-          type: 'number'
         },
       },
       relations: {

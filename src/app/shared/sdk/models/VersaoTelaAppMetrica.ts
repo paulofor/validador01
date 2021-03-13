@@ -5,23 +5,21 @@ import {
 
 declare var Object: any;
 export interface VersaoTelaAppMetricaInterface {
+  "versaoTelaAppId"?: number;
+  "periodoMetricaId"?: number;
   "quantidadeTotal"?: number;
   "quantidadeSessao"?: number;
   "quantidadeUsuario"?: number;
-  "id"?: number;
-  "versaoTelaAppId"?: number;
-  "periodoMetricasId"?: number;
-  periodoMetricas?: PeriodoMetrica;
+  periodoMetrica?: PeriodoMetrica;
 }
 
 export class VersaoTelaAppMetrica implements VersaoTelaAppMetricaInterface {
+  "versaoTelaAppId": number;
+  "periodoMetricaId": number;
   "quantidadeTotal": number;
   "quantidadeSessao": number;
   "quantidadeUsuario": number;
-  "id": number;
-  "versaoTelaAppId": number;
-  "periodoMetricasId": number;
-  periodoMetricas: PeriodoMetrica;
+  periodoMetrica: PeriodoMetrica;
   constructor(data?: VersaoTelaAppMetricaInterface) {
     Object.assign(this, data);
   }
@@ -53,8 +51,16 @@ export class VersaoTelaAppMetrica implements VersaoTelaAppMetricaInterface {
       name: 'VersaoTelaAppMetrica',
       plural: 'VersaoTelaAppMetricas',
       path: 'VersaoTelaAppMetricas',
-      idName: 'id',
+      idName: 'versaoTelaAppId',
       properties: {
+        "versaoTelaAppId": {
+          name: 'versaoTelaAppId',
+          type: 'number'
+        },
+        "periodoMetricaId": {
+          name: 'periodoMetricaId',
+          type: 'number'
+        },
         "quantidadeTotal": {
           name: 'quantidadeTotal',
           type: 'number'
@@ -67,26 +73,14 @@ export class VersaoTelaAppMetrica implements VersaoTelaAppMetricaInterface {
           name: 'quantidadeUsuario',
           type: 'number'
         },
-        "id": {
-          name: 'id',
-          type: 'number'
-        },
-        "versaoTelaAppId": {
-          name: 'versaoTelaAppId',
-          type: 'number'
-        },
-        "periodoMetricasId": {
-          name: 'periodoMetricasId',
-          type: 'number'
-        },
       },
       relations: {
-        periodoMetricas: {
-          name: 'periodoMetricas',
+        periodoMetrica: {
+          name: 'periodoMetrica',
           type: 'PeriodoMetrica',
           model: 'PeriodoMetrica',
           relationType: 'belongsTo',
-                  keyFrom: 'periodoMetricasId',
+                  keyFrom: 'periodoMetricaId',
           keyTo: 'id'
         },
       }

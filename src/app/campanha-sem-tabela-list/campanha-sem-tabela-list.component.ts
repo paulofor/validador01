@@ -15,5 +15,10 @@ export class CampanhaSemTabelaListComponent extends BaseListComponent {
   }
 
 
-  
+  getFiltro() {
+    return {
+      'order' : 'ultimaCampanha desc',
+      'where' : { 'quantidadeCampanha' : {'gt' : '0'} } 
+    }
+  }
 }

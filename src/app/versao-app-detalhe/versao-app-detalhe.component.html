@@ -6,7 +6,7 @@
       <div class="col-md-12">
         <div class="card">
           <div class="header">
-            <h4 class="title">Nome: {{versaoApp.nome}}</h4>
+            <h4 class="title">Nome: {{versaoApp.nome}} ({{versaoApp.id}})</h4>
             <h4 class="title">Objetivo: {{versaoApp.objetivo}}</h4>
             <h4 class="title">Código: {{versaoApp.codigo}}</h4>
             <h4 class="title">Pacote: {{versaoApp.pacote}}</h4>
@@ -16,30 +16,6 @@
     </div>
 
 
-    <div class="row">
-      <div class="col-md-12">
-        <div *ngIf="versaoApp" class="card">
-          <div class="header">
-            <h4 class="title">Itens de Valor</h4>
-            <button class="btn btn-primary btn-sm" (click)="openDialog(versaoApp)">Novo</button>
-          </div>
-          <div class="content table-responsive table-full-width">
-            <table class="table table-hover table-striped">
-              <thead>
-                <tr>
-                  <th width="100%">Nome</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let item of versaoApp.valorVersaos">
-                  <td>{{item.itemValorApp.nome}}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <div class="row">
       <div class="col-md-12">
@@ -47,7 +23,7 @@
 
           <header class="dgc-painel-header">
             <span>TELAS</span>
-            <button class="btn btn-primary btn-sm dgc-botao-comando dgc-direita">
+            <button class="btn btn-primary btn-sm dgc-botao-comando dgc-direita" (click)="escolheTela()">
               novo
             </button>
           </header>
@@ -91,6 +67,34 @@
 
       </div>
     </div>
+
+
+
+    <div class="row">
+      <div class="col-md-12">
+        <div *ngIf="versaoApp" class="card">
+          <div class="header">
+            <h4 class="title">Itens de Valor</h4>
+            <button class="btn btn-primary btn-sm" (click)="openDialog(versaoApp)">Novo</button>
+          </div>
+          <div class="content table-responsive table-full-width">
+            <table class="table table-hover table-striped">
+              <thead>
+                <tr>
+                  <th width="100%">Nome</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of versaoApp.valorVersaos">
+                  <td>{{item.itemValorApp.nome}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
   </div>
 </div>

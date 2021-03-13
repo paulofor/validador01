@@ -1,0 +1,23 @@
+<h2 mat-dialog-title>Edição Etapa de Projeto</h2>
+
+
+<form *ngIf="telas" class="example-full-width" (ngSubmit)="onSubmit()">
+
+  <mat-dialog-content>
+
+    <mat-form-field class="example-full-width">
+      <mat-select placeholder="Tela" #telaAppId [(ngModel)]="versaoTelaApp.telaAppId" name="telaAppId">
+        <mat-option *ngFor="let tela of telas" [value]="tela.id">
+          {{ tela.nome }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button mat-raised-button>Salvar</button>
+    <button mat-raised-button mat-dialog-close>Fechar</button>
+  </mat-dialog-actions>
+
+</form>

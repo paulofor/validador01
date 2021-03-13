@@ -13,7 +13,7 @@ export interface VisitaAppInterface {
   "telaAppId"?: number;
   "usuarioProdutoId"?: number;
   "versaoAppId"?: number;
-  "sessaoAppId"?: number;
+  "sessaoAppId"?: string;
   telaApp?: TelaApp;
   usuarioProduto?: UsuarioProduto;
   versaoApp?: VersaoApp;
@@ -26,7 +26,7 @@ export class VisitaApp implements VisitaAppInterface {
   "telaAppId": number;
   "usuarioProdutoId": number;
   "versaoAppId": number;
-  "sessaoAppId": number;
+  "sessaoAppId": string;
   telaApp: TelaApp;
   usuarioProduto: UsuarioProduto;
   versaoApp: VersaoApp;
@@ -86,7 +86,7 @@ export class VisitaApp implements VisitaAppInterface {
         },
         "sessaoAppId": {
           name: 'sessaoAppId',
-          type: 'number'
+          type: 'string'
         },
       },
       relations: {

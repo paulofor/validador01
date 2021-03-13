@@ -17,7 +17,7 @@ export class TelaAppExibeDetalheComponent implements OnInit {
     this.router.params.subscribe((param:Params) => {
       let id = param['id'];
       let filtro = { 
-          'include' : { 'relation' : 'versaoApps' }
+          'include' : { 'relation' : 'versaoTelaApps' }
       }
       this.srv.findById(id, filtro)
         .subscribe((result:TelaApp) => {

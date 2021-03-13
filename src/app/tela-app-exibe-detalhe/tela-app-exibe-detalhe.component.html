@@ -4,11 +4,13 @@
       <div class="col-md-12">
         <div class="card">
           <div class="header">
-            <h4 class="title">TelaApp: {{item.nome}}</h4>
+            <h4 class="title">TelaApp: {{item.nome}}</h4><br>
+            
           </div>
           <div class="content">
+            <h5>Chave: {{item.chave}}</h5>
             <li>
-              <ul *ngFor="let versao of item.versaoApps"> 
+              <ul *ngFor="let versao of item.versaoTelaApps"> 
                 {{versao.codigo}} 
               </ul>
             </li>

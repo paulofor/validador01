@@ -24,10 +24,12 @@ export class MetricaCampanhaComponent implements OnInit {
       this.idProjeto = params['id'];
       this.carregaCampanha();
       this.carregaEtapa();
+      this.carregaProjeto();
     });
   }
 
   carregaProjeto() {
+    //console.log('IdProjeto: ', this.idProjeto);
     this.srvProjeto.findById(this.idProjeto)
       .subscribe((result:ProjetoMySql) => {
         this.projeto = result;
@@ -56,7 +58,7 @@ export class MetricaCampanhaComponent implements OnInit {
     console.log('MetricaCampanhaComponent-filtro: ' , JSON.stringify(filtro));
     this.srv.find(filtro)
       .subscribe((resultado:CampanhaAds[]) => {
-        console.log('Resultado:' , JSON.stringify(resultado));
+        console.log('Resultado:' , resultado);
         this.listaCampanha = resultado;
       })
   }

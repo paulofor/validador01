@@ -53,7 +53,7 @@ export class VersaoAppDetalheComponent implements OnInit {
       console.log('ID-VersaoApp:' , id);
       this.srv.findById(id,this.filtro)
         .subscribe((resultado: VersaoApp) => {
-          console.log('Resultado: ' , resultado);
+          console.log('versaoApp: ' , resultado);
           this.versaoApp = resultado;
         })
     })

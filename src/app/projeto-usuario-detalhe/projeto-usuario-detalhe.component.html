@@ -24,7 +24,7 @@
               </thead>
               <tbody>
                 <tr *ngFor="let usuario of listaUsuario">
-                  <td>{{usuario.id}}</td>
+                  <td><a routerLink="/usuarioProdutoHistorico/{{usuario.id}}">{{usuario.id}}</a></td>
                   <td>{{usuario.dataHoraCriacao  | date : 'dd/MM/yyy HH:mm:ss' : 'UTC-3'}}</td>
                   <td>{{usuario.dataUltimoAcesso  | date : 'dd/MM/yyy HH:mm:ss' : 'UTC-3'}}</td>
                   <td>{{getToken(usuario)}}</td>

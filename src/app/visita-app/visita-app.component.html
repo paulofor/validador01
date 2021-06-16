@@ -14,6 +14,7 @@
                   <th width="5%">Horário</th>
                   <th width="10%">Tela</th>
                   <th width="10%">Id Usuario</th>
+                  <th width="10%">Id Versão<output></output></th>
                   <th width="10%">Dispositivo</th>
                   <th width="10%">Chave</th>
                 </tr>
@@ -23,6 +24,7 @@
                   <td>{{item.dataHora | date : 'dd/MM/yyyy HH:mm:ss' }}</td>
                   <td><span *ngIf="item.telaApp">{{ item.telaApp.nome}}</span></td>
                   <td>{{item.usuarioProdutoId}}</td>
+                  <td>{{item.versaoAppId}}</td>
                   <td>{{item.usuarioProduto.dispositivoUsuarios[0].codigoDispositivo}}</td>
                   <td>{{item.usuarioProduto.chave.substring(0,10)}}...</td>
                 </tr>

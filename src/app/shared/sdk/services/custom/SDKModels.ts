@@ -96,6 +96,7 @@ import { VersaoTelaApp } from '../../models/VersaoTelaApp';
 import { VersaoTelaAppMetrica } from '../../models/VersaoTelaAppMetrica';
 import { PeriodoMetrica } from '../../models/PeriodoMetrica';
 import { SessaoApp } from '../../models/SessaoApp';
+import { AcessoAssinatura } from '../../models/AcessoAssinatura';
 
 export interface Models { [name: string]: any }
 
@@ -199,6 +200,7 @@ export class SDKModels {
     VersaoTelaAppMetrica: VersaoTelaAppMetrica,
     PeriodoMetrica: PeriodoMetrica,
     SessaoApp: SessaoApp,
+    AcessoAssinatura: AcessoAssinatura,
     
   };
 

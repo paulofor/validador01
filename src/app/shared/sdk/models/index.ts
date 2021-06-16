@@ -95,5 +95,6 @@ export * from './VersaoTelaApp';
 export * from './VersaoTelaAppMetrica';
 export * from './PeriodoMetrica';
 export * from './SessaoApp';
+export * from './AcessoAssinatura';
 export * from './BaseModels';
 export * from './FireLoopRef';

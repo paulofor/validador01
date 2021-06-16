@@ -144,6 +144,7 @@ import { VersaoTelaAppApi } from './services/custom/VersaoTelaApp';
 import { VersaoTelaAppMetricaApi } from './services/custom/VersaoTelaAppMetrica';
 import { PeriodoMetricaApi } from './services/custom/PeriodoMetrica';
 import { SessaoAppApi } from './services/custom/SessaoApp';
+import { AcessoAssinaturaApi } from './services/custom/AcessoAssinatura';
 /**
 * @module SDKBrowserModule
 * @description
@@ -270,6 +271,7 @@ export class SDKBrowserModule {
         VersaoTelaAppMetricaApi,
         PeriodoMetricaApi,
         SessaoAppApi,
+        AcessoAssinaturaApi,
         internalStorageProvider,
         { provide: SDKStorage, useClass: StorageBrowser }
 

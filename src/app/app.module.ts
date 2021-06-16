@@ -259,6 +259,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { ImagemTelaUploadComponent } from './imagem-tela-upload/imagem-tela-upload.component';
 import { CampanhaSemTabelaListComponent } from './campanha-sem-tabela-list/campanha-sem-tabela-list.component';
 import { EscolheTelaAppParaVersaoComponent } from './escolhe-tela-app-para-versao/escolhe-tela-app-para-versao.component';
+import { UsuarioProdutoHistoricoComponent } from './usuario-produto-historico/usuario-produto-historico.component';
+import { AcessoAssinaturaListComponent } from './acesso-assinatura-list/acesso-assinatura-list.component';
+import { UsuarioPerdidoListaComponent } from './usuario-perdido-lista/usuario-perdido-lista.component';
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -548,7 +551,13 @@ registerLocaleData(localePt, 'pt-BR');
 
     CampanhaSemTabelaListComponent,
 
-    EscolheTelaAppParaVersaoComponent
+    EscolheTelaAppParaVersaoComponent,
+
+    UsuarioProdutoHistoricoComponent,
+
+    AcessoAssinaturaListComponent,
+
+    UsuarioPerdidoListaComponent
 
   ],
   entryComponents: [

@@ -107,6 +107,8 @@ import { ProjetoResultadoComponent } from '../projeto-resultado/projeto-resultad
 import { UsuarioHistoricoComponent } from '../usuario-historico/usuario-historico.component';
 import { TelaAppExibeDetalheComponent } from '../tela-app-exibe-detalhe/tela-app-exibe-detalhe.component';
 import { CampanhaSemTabelaListComponent } from '../campanha-sem-tabela-list/campanha-sem-tabela-list.component';
+import { UsuarioProdutoHistoricoComponent } from '../usuario-produto-historico/usuario-produto-historico.component';
+import { AcessoAssinaturaListComponent } from '../acesso-assinatura-list/acesso-assinatura-list.component';
 
 
 export const routes : Routes = [
@@ -267,6 +269,9 @@ export const routes : Routes = [
     { path: 'telaAppExibeDetalhe/:id' , component: TelaAppExibeDetalheComponent },
 
     { path: 'campanhaSemTabela' , component: CampanhaSemTabelaListComponent },
+
+    { path: 'usuarioProdutoHistorico/:id' , component: UsuarioProdutoHistoricoComponent },
+    { path: 'acessoAssinatura' , component: AcessoAssinaturaListComponent },
 
     { path: '',          redirectTo: 'home', pathMatch: 'full' }
 ]

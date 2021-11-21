@@ -73,6 +73,7 @@ import { AnuncioAplicacaoResultado } from '../../models/AnuncioAplicacaoResultad
 import { UsuarioProduto } from '../../models/UsuarioProduto';
 import { VisitaApp } from '../../models/VisitaApp';
 import { Cosmetic_OportunidadeDia } from '../../models/Cosmetic_OportunidadeDia';
+import { Cosmetic_Produto } from '../../models/Cosmetic_Produto';
 import { ContagemProduto } from '../../models/ContagemProduto';
 import { LojaVirtual } from '../../models/LojaVirtual';
 import { NotificacaoApp } from '../../models/NotificacaoApp';
@@ -177,6 +178,7 @@ export class SDKModels {
     UsuarioProduto: UsuarioProduto,
     VisitaApp: VisitaApp,
     Cosmetic_OportunidadeDia: Cosmetic_OportunidadeDia,
+    Cosmetic_Produto: Cosmetic_Produto,
     ContagemProduto: ContagemProduto,
     LojaVirtual: LojaVirtual,
     NotificacaoApp: NotificacaoApp,

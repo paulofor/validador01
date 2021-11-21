@@ -262,6 +262,7 @@ import { EscolheTelaAppParaVersaoComponent } from './escolhe-tela-app-para-versa
 import { UsuarioProdutoHistoricoComponent } from './usuario-produto-historico/usuario-produto-historico.component';
 import { AcessoAssinaturaListComponent } from './acesso-assinatura-list/acesso-assinatura-list.component';
 import { UsuarioPerdidoListaComponent } from './usuario-perdido-lista/usuario-perdido-lista.component';
+import { MetricaVersaoAppComponent } from './metrica-versao-app/metrica-versao-app.component';
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -557,7 +558,9 @@ registerLocaleData(localePt, 'pt-BR');
 
     AcessoAssinaturaListComponent,
 
-    UsuarioPerdidoListaComponent
+    UsuarioPerdidoListaComponent,
+
+    MetricaVersaoAppComponent
 
   ],
   entryComponents: [

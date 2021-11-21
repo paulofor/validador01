@@ -18,7 +18,7 @@ export class AcessoAssinaturaListComponent extends BaseListComponent {
     getFiltro() {
       return {
         'order' : 'dataHora desc',
-        'limit' : 100
+        'limit' : 40
       }
     }
 

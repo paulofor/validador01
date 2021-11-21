@@ -129,8 +129,8 @@ export class Cosmetic_OportunidadeDiaApi extends BaseLoopBackApi {
    */
   public ListaAppComputador(customHeaders?: Function): Observable<any> {
     let _method: string = "GET";
-    let _url: string = LoopBackConfig.getPath() + "/" + LoopBackConfig.getApiVersion() +
-    "/Cosmetic_OportunidadeDia/listaAppComputador";
+    let _url: string = URL_COSMETIC + "/" + LoopBackConfig.getApiVersion() +
+    "/Cosmetic_OportunidadeDias/listaAppComputador";
     let _routeParams: any = {};
     let _postBody: any = {};
     let _urlParams: any = {};

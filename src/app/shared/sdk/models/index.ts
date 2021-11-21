@@ -72,6 +72,7 @@ export * from './AnuncioAplicacaoResultado';
 export * from './UsuarioProduto';
 export * from './VisitaApp';
 export * from './Cosmetic_OportunidadeDia';
+export * from './Cosmetic_Produto';
 export * from './ContagemProduto';
 export * from './LojaVirtual';
 export * from './NotificacaoApp';

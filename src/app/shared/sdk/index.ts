@@ -121,6 +121,7 @@ import { AnuncioAplicacaoResultadoApi } from './services/custom/AnuncioAplicacao
 import { UsuarioProdutoApi } from './services/custom/UsuarioProduto';
 import { VisitaAppApi } from './services/custom/VisitaApp';
 import { Cosmetic_OportunidadeDiaApi } from './services/custom/Cosmetic_OportunidadeDia';
+import { Cosmetic_ProdutoApi } from './services/custom/Cosmetic_Produto';
 import { ContagemProdutoApi } from './services/custom/ContagemProduto';
 import { LojaVirtualApi } from './services/custom/LojaVirtual';
 import { NotificacaoAppApi } from './services/custom/NotificacaoApp';
@@ -248,6 +249,7 @@ export class SDKBrowserModule {
         UsuarioProdutoApi,
         VisitaAppApi,
         Cosmetic_OportunidadeDiaApi,
+        Cosmetic_ProdutoApi,
         ContagemProdutoApi,
         LojaVirtualApi,
         NotificacaoAppApi,

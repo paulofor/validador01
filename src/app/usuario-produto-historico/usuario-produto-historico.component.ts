@@ -21,7 +21,11 @@ export class UsuarioProdutoHistoricoComponent implements OnInit {
     this.route.params.subscribe((params:Params) => {
       let id = params['id'];
       let filtro = {
-          'include' : {'relation' : 'visitaApps' , 'order' : 'dataHora' , 'scope' : {'include' : 'telaApp'}}
+          'include' : [ 
+            {'relation' : 'visitaApps' , "scope" : { 'order' : 'dataHora desc' , 'include' : 'telaApp'}},
+            {'relation' : 'dispositivoUsuarios' } ,
+            {'relation' : 'notificacaoApps' ,  "scope" : {"order" : "dataHoraCriacao desc" , "limit" : "1" }}
+          ]
       };
       this.srv.findById(id, filtro)
         .subscribe((result:UsuarioProduto) => {

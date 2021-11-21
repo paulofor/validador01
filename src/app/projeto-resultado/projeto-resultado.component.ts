@@ -27,4 +27,11 @@ export class ProjetoResultadoComponent implements OnInit {
       })
   }
 
+  atualizaDados() {
+    this.srv.CalculaSomatorioTodos()
+      .subscribe((result) => {
+        this.carregaLista();
+      })
+  }
+
 }

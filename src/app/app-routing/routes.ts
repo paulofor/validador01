@@ -109,6 +109,7 @@ import { TelaAppExibeDetalheComponent } from '../tela-app-exibe-detalhe/tela-app
 import { CampanhaSemTabelaListComponent } from '../campanha-sem-tabela-list/campanha-sem-tabela-list.component';
 import { UsuarioProdutoHistoricoComponent } from '../usuario-produto-historico/usuario-produto-historico.component';
 import { AcessoAssinaturaListComponent } from '../acesso-assinatura-list/acesso-assinatura-list.component';
+import { MetricaVersaoAppComponent } from '../metrica-versao-app/metrica-versao-app.component';
 
 
 export const routes : Routes = [
@@ -252,6 +253,7 @@ export const routes : Routes = [
     { path: 'funilNegocio/:id' , component: ListaEtapaFunilComponent },
 
     { path: 'metricaCampanha/:id' , component: MetricaCampanhaComponent }, 
+    { path: 'metricaVersaoApp/:id' , component: MetricaVersaoAppComponent },
 
     { path: 'detalheRecursoProduto/:id' , component: DetalheRecursoProdutoComponent },
     { path: 'visitaApp' , component: VisitaAppComponent },

@@ -110,6 +110,7 @@ import { CampanhaSemTabelaListComponent } from '../campanha-sem-tabela-list/camp
 import { UsuarioProdutoHistoricoComponent } from '../usuario-produto-historico/usuario-produto-historico.component';
 import { AcessoAssinaturaListComponent } from '../acesso-assinatura-list/acesso-assinatura-list.component';
 import { MetricaVersaoAppComponent } from '../metrica-versao-app/metrica-versao-app.component';
+import { ComputadorMelhoresComponent } from '../computador-melhores/computador-melhores.component';
 
 
 export const routes : Routes = [
@@ -240,6 +241,7 @@ export const routes : Routes = [
 
     { path: 'cosmeticCenterOportunidades' , component : CosmeticCenterOportunidadeComponent },
     { path: 'tecnologiaOportunidades' , component : TecnologiaOportunidadeComponent },
+    { path: 'computadorMelhores' , component: ComputadorMelhoresComponent },
 
     { path: 'projetoMetricaProduto' , component: ProjetoMetricaProdutoComponent },
     { path: 'metricaMesProduto/:id/:mes/:ano' , component: MetricaMesProdutoComponent },

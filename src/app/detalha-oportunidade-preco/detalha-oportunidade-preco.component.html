@@ -1,0 +1,35 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">Atual: {{produto.precoVendaAtual| number : '1.2-2'}} 
+              - Anterior: {{produto.precoVendaAnterior| number : '1.2-2'}} [# {{produto.id}} ]</h4>
+          </div>
+          <div class="content table-responsive table-full-width">
+            <table class="table table-hover table-striped">
+              <thead>
+                <tr>
+                  <th width="50%"></th>
+                  <th width="50%"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of listaPreco">
+                  <td >{{item.data  | date: 'dd/MM/yyyy' : 'UTC'}}</td>
+                  <td >{{item.precoVenda | number : '1.2-2'}}</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <mat-dialog-actions>
+    <button mat-button mat-dialog-close>Cancelar</button>
+  </mat-dialog-actions>
+</div>

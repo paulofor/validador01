@@ -263,6 +263,8 @@ import { UsuarioProdutoHistoricoComponent } from './usuario-produto-historico/us
 import { AcessoAssinaturaListComponent } from './acesso-assinatura-list/acesso-assinatura-list.component';
 import { UsuarioPerdidoListaComponent } from './usuario-perdido-lista/usuario-perdido-lista.component';
 import { MetricaVersaoAppComponent } from './metrica-versao-app/metrica-versao-app.component';
+import { DetalhaOportunidadePrecoComponent } from './detalha-oportunidade-preco/detalha-oportunidade-preco.component';
+import { ComputadorMelhoresComponent } from './computador-melhores/computador-melhores.component';
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -560,7 +562,11 @@ registerLocaleData(localePt, 'pt-BR');
 
     UsuarioPerdidoListaComponent,
 
-    MetricaVersaoAppComponent
+    MetricaVersaoAppComponent,
+
+    DetalhaOportunidadePrecoComponent,
+
+    ComputadorMelhoresComponent
 
   ],
   entryComponents: [
@@ -618,7 +624,8 @@ registerLocaleData(localePt, 'pt-BR');
     AssociaVersaoTelaComponent,
     VersaoTelaAppEditaComponent,
     ImagemTelaUploadComponent,
-    EscolheTelaAppParaVersaoComponent
+    EscolheTelaAppParaVersaoComponent,
+    DetalhaOportunidadePrecoComponent
 
   ],
   imports: [

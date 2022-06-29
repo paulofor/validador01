@@ -17,9 +17,11 @@
                   <th>Produto</th>
                   <th>Data</th>
                   <th>Loja</th>
-                  <th>Para</th>
                   <th>De</th>
+                  <th>Para</th>
                   <th>Redução</th>
+                  <th></th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
@@ -29,9 +31,10 @@
                   <td><a href="{{item.urlProduto}}" target="_blank">{{item.nomeProduto}}</a></td>
                   <td>{{item.dataUltimaPrecoAnterior | date : 'dd/MM/yyyy' : 'UTC'}}</td>
                   <td>{{item.nomeLojaVirtual}}</td>
-                  <td>{{item.precoVendaAtual | number : '1.2-2'}}</td>
                   <td>{{item.precoVendaAnterior | number : '1.2-2'}}</td>
+                  <td>{{item.precoVendaAtual | number : '1.2-2'}}</td>
                   <td>{{item.percentualAjusteVenda | number : '1.1-1'}}%</td>
+                  <td><button class="btn btn-primary btn-sm " (click)="precos(item)">Preços</button></td>
                   <td><button class="btn btn-primary btn-sm " (click)="excluiItem(item)">Excluir</button></td>
                 </tr>
               </tbody>

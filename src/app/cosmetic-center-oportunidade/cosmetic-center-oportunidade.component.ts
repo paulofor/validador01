@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material';
+import { DetalhaOportunidadePrecoComponent } from '../detalha-oportunidade-preco/detalha-oportunidade-preco.component';
 import { Cosmetic_OportunidadeDiaApi, Cosmetic_OportunidadeDia } from '../shared/sdk';
 
 @Component({
@@ -9,8 +11,9 @@ import { Cosmetic_OportunidadeDiaApi, Cosmetic_OportunidadeDia } from '../shared
 export class CosmeticCenterOportunidadeComponent implements OnInit {
 
   lista: Cosmetic_OportunidadeDia[];
+  
 
-  constructor(private oportunidadeSrv:Cosmetic_OportunidadeDiaApi) { }
+  constructor(protected dialog: MatDialog, private oportunidadeSrv:Cosmetic_OportunidadeDiaApi) { }
 
   ngOnInit() {
     this.carregaLista();
@@ -29,5 +32,22 @@ export class CosmeticCenterOportunidadeComponent implements OnInit {
       .subscribe((result) => {
         this.carregaLista();
       })
+  }
+
+  precos(itemPrecos) {
+    this.dialog.afterAllClosed.subscribe(result => {
+      this.carregaLista();
+    });
+    this.dialog.open(this.getComponente(), {
+      width: '600px',
+      height: '600px',
+      data: {
+          item: itemPrecos
+      }
+    });
+  }
+
+  getComponente() : any {
+    return DetalhaOportunidadePrecoComponent;
   }
 }

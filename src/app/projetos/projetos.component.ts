@@ -6,6 +6,9 @@ import { ProjetoMySql } from '../shared/sdk/models';
 import { ProjetoMySqlApi } from '../shared/sdk/services/custom/ProjetoMySql';
 
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material';
+import { BaseListComponent } from '../base-component/base-list-component';
+import { ProjetoEditaComponent } from '../projeto-edita/projeto-edita.component';
 
 
 
@@ -15,23 +18,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./projetos.component.scss']
 })
 
-export class ProjetosComponent implements OnInit {
+export class ProjetosComponent extends BaseListComponent  {
 
-  projetos: ProjetoMySql[];
-  errMess: string;
-
-  constructor(private projetoService: ProjetoMySqlApi,
-              private router: Router) { 
-
+  constructor(protected dialog: MatDialog, protected srv:ProjetoMySqlApi, private router: Router) {
+    super(dialog, srv);
   }
 
-  ngOnInit() {
-    this.projetoService.find()
-      .subscribe((projetos: ProjetoMySql[]) => 
-        this.projetos = projetos
-       );
-  }
 
+  getComponente() {
+    return ProjetoEditaComponent;
+  }
   goCanvas(id: number){        
     this.router.navigate(['projetoCanvas/' + id]);
   }

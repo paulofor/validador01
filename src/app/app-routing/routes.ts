@@ -111,6 +111,8 @@ import { UsuarioProdutoHistoricoComponent } from '../usuario-produto-historico/u
 import { AcessoAssinaturaListComponent } from '../acesso-assinatura-list/acesso-assinatura-list.component';
 import { MetricaVersaoAppComponent } from '../metrica-versao-app/metrica-versao-app.component';
 import { ComputadorMelhoresComponent } from '../computador-melhores/computador-melhores.component';
+import { CelularMelhoresComponent } from '../celular-melhores/celular-melhores.component';
+import { TvMelhoresComponent } from '../tv-melhores/tv-melhores.component';
 
 
 export const routes : Routes = [
@@ -242,6 +244,8 @@ export const routes : Routes = [
     { path: 'cosmeticCenterOportunidades' , component : CosmeticCenterOportunidadeComponent },
     { path: 'tecnologiaOportunidades' , component : TecnologiaOportunidadeComponent },
     { path: 'computadorMelhores' , component: ComputadorMelhoresComponent },
+    { path: 'celularMelhores' , component: CelularMelhoresComponent },
+    { path: 'tvMelhores' , component: TvMelhoresComponent },
 
     { path: 'projetoMetricaProduto' , component: ProjetoMetricaProdutoComponent },
     { path: 'metricaMesProduto/:id/:mes/:ano' , component: MetricaMesProdutoComponent },

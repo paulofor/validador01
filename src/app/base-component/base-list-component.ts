@@ -11,14 +11,19 @@ export class BaseListComponent implements OnInit {
 
 
     ngOnInit() {
-       this.carregaTela();
+        this.preCarregaTela();
+        this.carregaTela();
     }
+
+    preCarregaTela() {}
+    posCarregaLista() {}
 
     carregaTela() {
         this.srv.find(this.getFiltro())
         .subscribe((result:any[]) => {
             console.log('result: ' , result);
             this.listaBase = result;
+            this.posCarregaLista();
         })
     }
 
@@ -34,12 +39,44 @@ export class BaseListComponent implements OnInit {
         });
     }
 
-    getComponente():any {
-        
+    dialogo1(dados) {
+        console.log('dialogo1.dados:' , dados);
+        this.dialog.afterAllClosed.subscribe(result => {
+            this.carregaTela();
+        });
+        this.dialog.open(this.getDialogo1(), {
+            width: '800px',
+            data: dados
+        });
+    }
+    getDialogo1() : any {
+
     }
 
+    dialogo2(dados) {
+        console.log('dialogo2.dados:' , dados);
+        this.dialog.afterAllClosed.subscribe(result => {
+            this.carregaTela();
+        });
+        this.dialog.open(this.getDialogo2(), {
+            width: '800px',
+            data: dados
+        });
+    }
+    getDialogo2() : any {
+
+    }
+
+
+    getComponente():any {}
 
     getFiltro() {
         return {}
     }
+
+    percentual(valorPerc,valor) {
+        let result = ((valorPerc - valor) / valor) * 100;
+        return result.toFixed(1);
+    }
+ 
 }

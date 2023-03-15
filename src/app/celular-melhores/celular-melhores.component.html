@@ -1,0 +1,46 @@
+<div class="main-content">
+  <div class="container-fluid" *ngIf="lista">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="header">
+            <h4 class="title">Oportunidades - Celulares ({{lista.length}})</h4>
+            <!--
+            <span>https://vps-40d69db1.vps.ovh.ca:21189/api/Cosmetic_OportunidadeDia<span style="color:red">s</span>/listaApp
+            <br>(URL_COSMETIC em Cosmetic_OportunidadeDiaApi.ListaApp)</span>
+            -->
+          </div>
+          <div class="content table-responsive table-full-width">
+            <table class="table table-hover table-striped">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <th>Produto</th>
+                  <th>Preço</th>
+                  <th>Nota</th>
+                  <th>Posição</th>
+                  <th>Data</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr  *ngFor="let item of lista; let i = index; index as i">
+                  <td>{{i+1}}</td>
+                  <td><img src="{{item.imagemProduto}}" height="40" width="40"/></td>
+                  <td><a href="{{item.urlProduto}}" target="_blank">{{item.nomeProduto}}</a></td>
+                  <td>{{item.precoVendaAtual | number : '1.2-2'}}</td>
+                  <td>{{item.notaAvaliacao | number : '1.1-1'}}({{item.contaAvaliacao}})</td>
+                  <td>{{item.posicaoProduto}}</td>
+                  <td>{{item.dataInsercao  | date : 'dd/MM/yyyy' : 'UTC'}}</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+

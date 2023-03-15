@@ -265,6 +265,9 @@ import { UsuarioPerdidoListaComponent } from './usuario-perdido-lista/usuario-pe
 import { MetricaVersaoAppComponent } from './metrica-versao-app/metrica-versao-app.component';
 import { DetalhaOportunidadePrecoComponent } from './detalha-oportunidade-preco/detalha-oportunidade-preco.component';
 import { ComputadorMelhoresComponent } from './computador-melhores/computador-melhores.component';
+import { CelularMelhoresComponent } from './celular-melhores/celular-melhores.component';
+import { ProjetoEditaComponent } from './projeto-edita/projeto-edita.component';
+import { TvMelhoresComponent } from './tv-melhores/tv-melhores.component';
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -566,7 +569,13 @@ registerLocaleData(localePt, 'pt-BR');
 
     DetalhaOportunidadePrecoComponent,
 
-    ComputadorMelhoresComponent
+    ComputadorMelhoresComponent,
+
+    CelularMelhoresComponent,
+
+    ProjetoEditaComponent,
+
+    TvMelhoresComponent
 
   ],
   entryComponents: [
@@ -625,7 +634,8 @@ registerLocaleData(localePt, 'pt-BR');
     VersaoTelaAppEditaComponent,
     ImagemTelaUploadComponent,
     EscolheTelaAppParaVersaoComponent,
-    DetalhaOportunidadePrecoComponent
+    DetalhaOportunidadePrecoComponent,
+    ProjetoEditaComponent
 
   ],
   imports: [

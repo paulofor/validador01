@@ -149,6 +149,18 @@ export class Cosmetic_OportunidadeDiaApi extends BaseLoopBackApi {
     let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
     return result;
   }
+
+  public ListaAppMelhoresNatureza(idNatureza: any, customHeaders?: Function): Observable<any> {
+    let _method: string = "GET";
+    let _url: string = URL_COSMETIC + "/" + LoopBackConfig.getApiVersion() +
+    "/Cosmetic_OportunidadeDias/listaAppMelhoresNatureza";
+    let _routeParams: any = {};
+    let _postBody: any = {};
+    let _urlParams: any = {};
+    if (typeof idNatureza !== 'undefined' && idNatureza !== null) _urlParams.idNatureza = idNatureza;
+    let result = this.request(_method, _url, _routeParams, _urlParams, _postBody, null, customHeaders);
+    return result;
+  }
   /**
    * The name of the model represented by this $resource,
    * i.e. `Cosmetic_OportunidadeDia`.

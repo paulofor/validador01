@@ -19,9 +19,10 @@ export class ComputadorMelhoresComponent implements OnInit {
   }
 
   carregaLista() {
-    this.oportunidadeSrv.ListaAppMelhoresComputador()
+    this.oportunidadeSrv.ListaAppMelhoresNatureza(10)
       .subscribe((result:Cosmetic_OportunidadeDia[]) => {
         this.lista = result;
+        console.log('lista: ' , this.lista);
       })
   }
 
